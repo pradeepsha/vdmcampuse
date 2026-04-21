@@ -1,0 +1,679 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<title>Course Details</title>
+	<base href="../">
+	<meta charset="utf-8">
+	<script src="bca\it_tools_content.js"></script>
+
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="description" content="Unicat project">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" type="text/css" href="styles/bootstrap4/bootstrap.min.css">
+	<link href="plugins/font-awesome-4.7.0/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+	<link href="plugins/colorbox/colorbox.css" rel="stylesheet" type="text/css">
+	<link rel="stylesheet" type="text/css" href="plugins/OwlCarousel2-2.2.1/owl.carousel.css">
+	<link rel="stylesheet" type="text/css" href="plugins/OwlCarousel2-2.2.1/owl.theme.default.css">
+	<link rel="stylesheet" type="text/css" href="plugins/OwlCarousel2-2.2.1/animate.css">
+	<link rel="stylesheet" type="text/css" href="styles/courses.css">
+	<link rel="stylesheet" type="text/css" href="styles/course_responsive.css">
+
+</head>
+<style>
+	body {
+		margin: 0;
+		font-family: Arial;
+		background: #f5f6fa;
+		/* STOP FULL PAGE SCROLL */
+		height: 100%;
+		overflow: hidden;
+	}
+
+	/* MOBILE MENU BUTTON */
+
+	.mobile_menu_btn {
+		display: none;
+		background: #4a6cf7;
+		color: #fff;
+		padding: 10px 15px;
+		margin: 10px;
+		border-radius: 6px;
+		cursor: pointer;
+	}
+
+	/* LAYOUT */
+
+	.notes_layout {
+		display: flex;
+		gap: 20px;
+		padding: 20px;
+		height: 100vh;
+		/* adjust based on header */
+		height: calc(100vh - 180px);
+	}
+
+	/* LEFT SIDEBAR */
+
+	.notes_sidebar {
+		width: 260px;
+		background: #f8f4f4;
+		border: 1px solid #eee;
+		border-radius: 8px;
+		overflow: hidden;
+		/* overflow-y: auto; */
+	}
+
+	.notes_title {
+		padding: 15px;
+		font-weight: bold;
+		border-bottom: 1px solid #bb1010;
+		font-size: 18px;
+		color: #7b0f3f;
+	}
+
+	.unit_title {
+		padding: 12px 15px;
+		cursor: pointer;
+		font-weight: 600;
+		background: #f8f9fc;
+		color: #1647c0;
+
+	}
+
+	.unit_title:hover {
+		/* background: #eef2ff; */
+		background: #eee;
+	}
+
+	.lecture_list {
+		display: none;
+	}
+
+	.lecture {
+		padding: 10px 30px;
+		cursor: pointer;
+		font-size: 14px;
+		color: #01050f
+	}
+
+	.lecture:hover {
+		background: #f3f6ff;
+	}
+
+	.lecture.active {
+		background: #e8ecff;
+		border-left: 4px solid #4a6cf7;
+		font-weight: 600;
+	}
+
+	/* CONTENT */
+
+	.notes_content {
+		flex: 1;
+		background: #fff;
+		padding: 30px;
+		border-radius: 8px;
+		border: 1px solid #eee;
+		max-width: 800px;
+
+		/* max-height: 100vh; */
+		overflow-y: auto;
+	}
+
+	.notes_text {
+		line-height: 1.8;
+		color: #0d0000;
+	}
+
+	.notes_text h2 {
+		color: #2980b9;
+		margin-bottom: 10px;
+	}
+
+	.notes_text h4 {
+		color: #2980b9;
+		margin-bottom: 10px;
+	}
+
+	.notes_text h3 {
+		color: #2980b9;
+		margin-top: 15px;
+		margin-bottom: 5px;
+		font-size: 18px;
+	}
+
+	/* Paragraphs */
+	.notes_text p {
+		margin-left: 10px;
+		margin-bottom: 10px;
+		font-size: 15px;
+	}
+
+	.notes_text ul {
+		list-style: none;
+		padding-left: 0;
+		margin-top: 10px;
+	}
+
+	.notes_text ul li {
+		background: #f4f8fb;
+		margin-bottom: 10px;
+		padding: 10px 15px;
+		border-left: 4px solid #3498db;
+		border-radius: 6px;
+		font-size: 15px;
+	}
+
+	/* Highlight the heading (Input, Processing, etc.) */
+	.notes_text ul li strong {
+		color: #2c3e50;
+	}
+
+	/* RIGHT SIDEBAR */
+
+	.notes_right {
+		width: 260px;
+	}
+
+	.ad_box {
+		background: #fff;
+		border: 1px solid #eee;
+		border-radius: 8px;
+		padding: 15px;
+		margin-bottom: 20px;
+		text-align: center;
+	}
+
+	/* OVERLAY */
+
+	.overlay {
+		position: fixed;
+		top: 0;
+		left: 0;
+		width: 100%;
+		height: 100%;
+		background: rgba(0, 0, 0, 0.4);
+		display: none;
+		z-index: 999;
+	}
+
+	/* MOBILE */
+
+	@media(max-width:991px) {
+
+		html,
+		body {
+			overflow: auto;
+			/* ✅ allow scroll on mobile */
+		}
+
+		.notes_content {
+			max-width: 100%;
+			height: auto;
+			overflow-y: visible;
+			 height: calc(100vh - 120px); /* adjust header */
+		}
+
+		.notes_layout {
+			flex-direction: column;
+			/* height: 100vh; */
+			height: auto;
+		}
+
+		.mobile_menu_btn {
+			display: inline-block;
+		}
+
+		.notes_sidebar {
+			position: fixed;
+			top: 0;
+			left: -270px;
+			height: 100%;
+			z-index: 1000;
+			transition: 0.3s;
+		}
+
+		.notes_sidebar.show {
+			left: 0;
+		}
+
+		.notes_right {
+			width: 100%;
+		}
+
+	}
+</style>
+
+<body>
+
+	<div class="super_container">
+
+		<!-- Header -->
+
+
+		<header class="header">
+
+			<!-- Top Bar -->
+			<div class="top_bar">
+				<div class="top_bar_container">
+					<div class="container">
+						<div class="row">
+							<div class="col">
+								<div class="top_bar_content d-flex flex-row align-items-center justify-content-start">
+									<ul class="top_bar_contact_list">
+										<li>
+											<div class="question">Have any questions?</div>
+										</li>
+										<li>
+											<i class="fa fa-phone" aria-hidden="true"></i>
+											<div>8181-050-321</div>
+										</li>
+										<li>
+											<i class="fa fa-envelope-o" aria-hidden="true"></i>
+											<div>info.deercreative@gmail.com</div>
+										</li>
+									</ul>
+									<!-- <div class="top_bar_login ml-auto">
+										<div class="login_button"><a href="#">Register or Login</a></div>
+									</div> -->
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+
+			<!-- Header Content -->
+			<div class="header_container">
+				<div class="container">
+					<div class="row">
+						<div class="col">
+							<div class="header_content d-flex flex-row align-items-center justify-content-start">
+								<div class="logo_container">
+									<!-- <a href="#">
+										<div class="logo_text">SHARADA<span>IT</span></div>
+									</a> -->
+									<a class="navbar-brand" href="index.html">
+										<img src="images/sharada_it_final.png" alt="" style="width: 215px;">
+									</a>
+								</div>
+								<nav class="main_nav_contaner ml-auto">
+									<div class="hamburger menu_mm">
+										<i class="fa fa-bars menu_mm" aria-hidden="true"></i>
+									</div>
+									<ul class="main_nav">
+										<li class="active"><a href="#">Home</a></li>
+										<li><a href="/bca/bca_home_page.html">BCA</a></li>
+										<li class="dropdown">
+											<a href="">Courses </a>
+											<ul class="dropdown-menu">
+												<li><a href="courses.html">Mobile App Development</a></li>
+												<li><a href="web-development.html">Web Development</a></li>
+												<li><a href="database-management.html">Database Management</a></li>
+												<li><a href="database-management.html">UI-UX Design</a></li>
+											</ul>
+										</li>
+
+										<!-- <li><a href="blog.html">Blog</a></li>
+										<li><a href="#">Page</a></li> -->
+										<li><a href="contact.html">Contact</a></li>
+										<li><a href="about.html">About</a></li>
+									</ul>
+									<!-- <div class="search_button"><i class="fa fa-search" aria-hidden="true"></i></div> -->
+
+									<!-- Hamburger -->
+
+									<!-- <div class="shopping_cart"><i class="fa fa-shopping-cart" aria-hidden="true"></i> -->
+							</div>
+
+							</nav>
+
+						</div>
+					</div>
+				</div>
+			</div>
+
+			<!-- Header Search Panel -->
+			<!-- <div class="header_search_container">
+				<div class="container">
+					<div class="row">
+						<div class="col">
+							<div class="header_search_content d-flex flex-row align-items-center justify-content-end">
+								<form action="#" class="header_search_form">
+									<input type="search" class="search_input" placeholder="Search" required="required">
+									<button
+										class="header_search_button d-flex flex-column align-items-center justify-content-center">
+										<i class="fa fa-search" aria-hidden="true"></i>
+									</button>
+								</form>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div> -->
+		</header>
+
+		<!-- Menu -->
+
+
+
+		<!-- Menu  for mobile-->
+
+		<div class="menu d-flex flex-column align-items-end justify-content-start text-right menu_mm trans_400">
+			<div class="menu_close_container">
+				<div class="menu_close">
+					<div></div>
+					<div></div>
+				</div>
+			</div>
+
+			<nav class="menu_nav">
+				<ul class="menu_mm">
+					<li class="menu_mm"><a href="index.html">Home</a></li>
+					<li class="menu_mm"><a href="bca_home_page.html">BCA</a></li>
+					<li class="menu_mm"><a href="#">About</a></li>
+					<li class="menu_mm"><a href="#">Courses</a></li>
+					<li class="menu_mm"><a href="contact.html">Contact</a></li>
+				</ul>
+			</nav>
+		</div>
+
+
+
+
+
+
+		<!-- <div class="menu d-flex flex-column align-items-end justify-content-start text-right menu_mm trans_400">
+
+			<nav class="menu_nav">
+				<ul class="menu_mm">
+					<li class="menu_mm"><a href="index.html">Home</a></li>
+					<li class="menu_mm"><a href="#">About</a></li>
+					<li class="menu_mm"><a href="#">Courses</a></li>
+					<li class="menu_mm"><a href="#">Blog</a></li>
+					<li class="menu_mm"><a href="#">Page</a></li>
+					<li class="menu_mm"><a href="contact.html">Contact</a></li>
+				</ul>
+			</nav>
+		</div> -->
+
+		<!-- Home -->
+
+		<div class="home">
+			<div class="breadcrumbs_container">
+				<div class="container">
+					<div class="row">
+						<div class="col">
+							<div class="breadcrumbs">
+								<ul>
+									<li><a href="index.html">Home</a></li>
+									<li><a href="/bca/bca_home_page.html">Courses</a></li>
+									<li>Course Details</li>
+								</ul>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<!-- Course -->
+
+		<div class="mobile_menu_btn" onclick="openSidebar()">
+			<i class="fa fa-bars"></i> Units
+		</div>
+
+		<div class="overlay" id="overlay" onclick="closeSidebar()"></div>
+
+
+		<div class="notes_layout">
+
+			<!-- SIDEBAR -->
+
+			<div class="notes_sidebar" id="sidebar">
+
+				<div class="notes_title">IT Tools and Applications</div>
+
+				<!-- UNIT 1 -->
+
+				<div class="unit">
+
+					<div class="unit_title" onclick="toggleUnit(this)">
+						Unit 1 : Computer Fundamentals
+					</div>
+
+					<div class="lecture_list">
+
+						<div class="lecture active" onclick="loadNote('What is a Computer ?', introNote, event)">
+							Lecture 1.1 Introduction
+						</div>
+
+						<div class="lecture" onclick="loadNote('', characteristics, event)">
+							Lecture 1.2 Characteristics
+						</div>
+
+					</div>
+
+				</div>
+
+				<!-- UNIT 2 -->
+
+				<div class="unit">
+
+					<div class="unit_title" onclick="toggleUnit(this)">
+						Unit 2 : Computer Organization
+					</div>
+
+					<div class="lecture_list">
+
+						<div class="lecture" onclick="loadNote('Input Devices', inputDevices, event)">
+							Lecture 2.1 Input Devices
+						</div>
+
+						<div class="lecture" onclick="loadNote('Output Devices', outputDevices, event)">
+							Lecture 2.2 Output Devices
+						</div>
+
+					</div>
+
+				</div>
+
+				<!-- UNIT 3 -->
+
+				<div class="unit">
+
+					<div class="unit_title" onclick="toggleUnit(this)">
+						Unit 3 : Computer Softwares:
+					</div>
+
+					<div class="lecture_list">
+
+						<div class="lecture" onclick="loadNote('Input Devices', inputDevices, event)">
+							Lecture 2.1 Input Devices
+						</div>
+
+						<div class="lecture" onclick="loadNote('Output Devices', outputDevices, event)">
+							Lecture 2.2 Output Devices
+						</div>
+
+					</div>
+
+				</div>
+
+				<!-- UNIT 4 -->
+
+				<div class="unit">
+
+					<div class="unit_title" onclick="toggleUnit(this)">
+						Unit 4 :Multimedia and Word Processing:
+					</div>
+
+					<div class="lecture_list">
+
+						<div class="lecture" onclick="loadNote('Input Devices', inputDevices, event)">
+							Lecture 2.1 Input Devices
+						</div>
+
+						<div class="lecture" onclick="loadNote('Output Devices', outputDevices, event)">
+							Lecture 2.2 Output Devices
+						</div>
+
+					</div>
+
+				</div>
+
+				<!-- UNIT 5 -->
+
+				<div class="unit">
+
+					<div class="unit_title" onclick="toggleUnit(this)">
+						Unit 5 : Spreadsheet and Presentation Packages
+					</div>
+
+					<div class="lecture_list">
+
+						<div class="lecture" onclick="loadNote('Input Devices', spreadsheet, event)">
+							Lecture 2.1 Input Devices
+						</div>
+
+						<div class="lecture" onclick="loadNote('Output Devices', outputDevi, event)">
+							Lecture 2.2 Output Devices
+						</div>
+
+					</div>
+
+				</div>
+
+			</div>
+
+
+			<!-- CONTENT -->
+
+			<div class="notes_content">
+
+				<h4 id="notes_title">Introduction to Computer</h4>
+
+				<div class="notes_text" id="notes_text">
+
+					A computer is an electronic device used to process data and convert it into useful information.
+
+				</div>
+
+			</div>
+
+
+			<!-- RIGHT SIDEBAR -->
+
+			<div class="notes_right">
+
+				<div class="ad_box">
+					<h4>BASIC TO ADVANCE</h4>
+					<a class="navbar-brand" href="../index.html">
+						<img src="../images/C-Programming-Language-Course-Banner.png" alt=""
+							style="width: 215px; border-radius: 8px;">
+					</a>
+					<!-- <p>Google Ads Area</p> -->
+				</div>
+
+				<div class="ad_box">
+					<h4>Download Notes</h4>
+					<p>BCA PDF Download</p>
+				</div>
+
+				<div class="ad_box">
+					<h4>Useful Links</h4>
+					<p>Previous Year Papers</p>
+				</div>
+
+				<div class="ad_box">
+					<h4>Related Course</h4>
+					<p>Learn MySQL</p>
+				</div>
+
+			</div>
+
+		</div>
+
+		<!-- Newsletter -->
+
+
+		<!-- Footer -->
+
+
+	</div>
+
+
+
+
+	<script>
+
+		/* NOTES DATA */
+
+		/* LOAD INTRO */
+
+		function openIntro(event) {
+
+			loadNote("Introduction to Computer", introNote, event);
+
+		}
+
+
+		/* LOAD NOTE */
+
+		function loadNote(title, text, event) {
+
+			document.getElementById("notes_title").innerHTML = title;
+			document.getElementById("notes_text").innerHTML = text;
+
+			let lectures = document.querySelectorAll(".lecture");
+
+			lectures.forEach(l => l.classList.remove("active"));
+
+			event.currentTarget.classList.add("active");
+
+			closeSidebar();
+
+		}
+
+
+		/* TOGGLE UNIT */
+
+		function toggleUnit(unit) {
+
+			let list = unit.nextElementSibling;
+
+			list.style.display =
+				list.style.display === "block" ? "none" : "block";
+
+		}
+
+
+		/* MOBILE SIDEBAR */
+
+		function openSidebar() {
+
+			document.getElementById("sidebar").classList.add("show");
+			document.getElementById("overlay").style.display = "block";
+
+		}
+
+		function closeSidebar() {
+
+			document.getElementById("sidebar").classList.remove("show");
+			document.getElementById("overlay").style.display = "none";
+
+		}
+	</script>
+
+	<script src="js/jquery-3.2.1.min.js"></script>
+	<script src="styles/bootstrap4/popper.js"></script>
+	<script src="styles/bootstrap4/bootstrap.min.js"></script>
+	<script src="plugins/OwlCarousel2-2.2.1/owl.carousel.js"></script>
+	<script src="plugins/easing/easing.js"></script>
+	<script src="plugins/parallax-js-master/parallax.min.js"></script>
+	<script src="plugins/colorbox/jquery.colorbox-min.js"></script>
+	<script src="js/course.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,1175 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<title>Unicat</title>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="description" content="Unicat project">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" type="text/css" href="styles/bootstrap4/bootstrap.min.css">
+	<link href="plugins/font-awesome-4.7.0/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+	<link rel="stylesheet" type="text/css" href="plugins/OwlCarousel2-2.2.1/owl.carousel.css">
+	<link rel="stylesheet" type="text/css" href="plugins/OwlCarousel2-2.2.1/owl.theme.default.css">
+	<link rel="stylesheet" type="text/css" href="plugins/OwlCarousel2-2.2.1/animate.css">
+	<link rel="stylesheet" type="text/css" href="styles/main_styles.css">
+	<link rel="stylesheet" type="text/css" href="styles/responsive.css">
+</head>
+<style>
+	body {
+		font-family: "Inter", Arial, sans-serif;
+		padding: 5px;
+	}
+
+	/* Container */
+	.form-box {
+		display: none;
+		background: #fff;
+		width: 360px;
+		padding: 35px;
+		border-radius: 14px;
+		box-shadow: 0 8px 35px rgba(0, 0, 0, 0.15);
+		animation: fadeIn 0.6s ease-out;
+		margin-top: 140px;
+	}
+
+
+	@keyframes fadeIn {
+		from {
+			opacity: 0;
+			transform: translateY(20px);
+		}
+
+		to {
+			opacity: 1;
+			transform: translateY(0);
+		}
+	}
+
+	/* Buttons */
+	.btn-main {
+		padding: 5px 9px;
+		background: #11b1cb;
+		color: #fff;
+		border: none;
+		border-radius: 8px;
+		cursor: pointer;
+		font-size: 16px;
+		font-weight: 600;
+		margin-right: 10px;
+	}
+
+	.btn-main:hover {
+		background: #5711a5;
+	}
+
+	/* Inputs */
+	.input-field {
+		width: 100%;
+		margin-bottom: 15px;
+	}
+
+	.input-field input {
+		width: 100%;
+		padding: 12px;
+		border-radius: 8px;
+		border: 1px solid #ccc;
+	}
+
+	.main-btn {
+		width: 100%;
+		padding: 12px;
+		background: #6a11cb;
+		color: white;
+		border: none;
+		border-radius: 8px;
+		cursor: pointer;
+		font-size: 16px;
+		margin-bottom: 18px;
+
+	}
+
+	.main-btn:hover {
+		background: #5711a5;
+	}
+
+	/* Social Buttons */
+	.social-btn {
+		width: 100%;
+		padding: 12px;
+		border-radius: 8px;
+		border: 1px solid #ccc;
+		background: #fff;
+		cursor: pointer;
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		gap: 10px;
+		font-size: 15px;
+		transition: transform 0.2s, background 0.2s;
+		margin-bottom: 10px;
+		font-weight: 500;
+	}
+
+	.social-btn:hover {
+		background: #f5f5f5;
+		transform: scale(1.02);
+	}
+
+	.social-btn img {
+		width: 20px;
+		height: 20px;
+	}
+
+	.separator {
+		text-align: center;
+		margin: 18px 0;
+		font-size: 14px;
+		color: #666;
+	}
+
+	.switch-link {
+		text-align: center;
+		margin-top: 15px;
+	}
+
+	.switch-link a {
+		color: #6a11cb;
+		font-weight: 600;
+		cursor: pointer;
+	}
+
+	/* Close Button */
+	.close-btn {
+		position: absolute;
+		top: 10px;
+		right: 12px;
+		font-size: 22px;
+		cursor: pointer;
+		color: #444;
+	}
+</style>
+<script>
+	function openLogin() {
+		document.getElementById("overlay").style.display = "flex";
+		showLogin();
+	}
+
+	function openSignup() {
+		document.getElementById("overlay").style.display = "flex";
+		showSignup();
+	}
+
+	function closePopup() {
+		document.getElementById("overlay").style.display = "none";
+	}
+
+	function showLogin() {
+		document.getElementById("loginBox").style.display = "block";
+		document.getElementById("signupBox").style.display = "none";
+	}
+
+	function showSignup() {
+		document.getElementById("signupBox").style.display = "block";
+		document.getElementById("loginBox").style.display = "none";
+	}
+</script>
+
+
+
+<body>
+	<style>
+		.main_nav li.dropdown {
+			position: relative;
+		}
+
+		.main_nav li .dropdown-menu {
+			display: none;
+			position: absolute;
+			top: 100%;
+			/* position below Courses */
+			left: 0;
+			background-color: #fff;
+			min-width: 160px;
+			box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+			z-index: 9999;
+			/* ensures it appears above everything */
+			border-radius: 6px;
+			padding: 6px 0;
+		}
+
+		.main_nav li .dropdown-menu li a {
+			display: block;
+			padding: 6px 14px;
+			font-size: 13px;
+			color: #333;
+			text-decoration: none;
+			white-space: nowrap;
+			/* keeps "Web Development" on one line */
+		}
+
+		.main_nav li .dropdown-menu li a:hover {
+			background-color: #f0f0f0;
+		}
+
+		/* ✅ Show dropdown on hover */
+		.main_nav li.dropdown:hover>.dropdown-menu {
+			display: block;
+		}
+	</style>
+
+
+	<div class="super_container">
+
+		<!-- Header -->
+
+		<header class="header">
+
+			<!-- Top Bar -->
+			<div class="top_bar">
+				<div class="top_bar_container">
+					<div class="container">
+						<div class="row">
+							<div class="col">
+								<div class="top_bar_content d-flex flex-row align-items-center justify-content-start">
+									<ul class="top_bar_contact_list">
+										<li>
+											<div class="question">Have any questions?</div>
+										</li>
+										<li>
+											<i class="fa fa-phone" aria-hidden="true"></i>
+											<div>8181-050-321</div>
+										</li>
+										<li>
+											<i class="fa fa-envelope-o" aria-hidden="true"></i>
+											<div>info.deercreative@gmail.com</div>
+										</li>
+									</ul>
+
+									<div class="top_bar_login ml-auto">
+
+										<!-- OVERLAY + POPUP -->
+										<div id="overlay">
+
+											<!-- Login Box -->
+											<div class="form-box" id="loginBox">
+												<span class="close-btn" onclick="closePopup()">✖</span>
+												<h2>Login</h2>
+
+												<div class="input-field"><input type="email" placeholder="Email"></div>
+												<div class="input-field"><input type="password" placeholder="Password">
+												</div>
+
+												<button class="main-btn">Login</button>
+
+												<div class="separator">or continue with</div>
+
+												<button class="social-btn"><img
+														src="https://img.icons8.com/color/48/google-logo.png"
+														width="20"> Google</button>
+												<button class="social-btn"><img
+														src="https://img.icons8.com/color/48/facebook-new.png"
+														width="20"> Facebook</button>
+												<button class="social-btn"><img
+														src="https://img.icons8.com/ios-glyphs/30/github.png"
+														width="20"> GitHub</button>
+
+												<div class="switch-link">No account? <a onclick="showSignup()">Sign
+														Up</a></div>
+											</div>
+
+											<!-- Signup Box -->
+											<div class="form-box" id="signupBox" style="display:none;">
+												<span class="close-btn" onclick="closePopup()">✖</span>
+												<h2>Sign Up</h2>
+
+												<div class="input-field"><input type="text" placeholder="Full Name">
+												</div>
+												<div class="input-field"><input type="email" placeholder="Email"></div>
+												<div class="input-field"><input type="password"
+														placeholder="Create Password"></div>
+
+												<button class="main-btn">Create Account</button>
+
+												<div class="separator">or sign up with</div>
+
+												<button class="social-btn"><img
+														src="https://img.icons8.com/color/48/google-logo.png"
+														width="20"> Google</button>
+												<button class="social-btn"><img
+														src="https://img.icons8.com/color/48/facebook-new.png"
+														width="20"> Facebook</button>
+												<button class="social-btn"><img
+														src="https://img.icons8.com/ios-glyphs/30/github.png"
+														width="20"> GitHub</button>
+
+												<div class="switch-link">Already have an account? <a
+														onclick="showLogin()">Login</a></div>
+											</div>
+
+										</div>
+
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+
+			<!-- Header Content -->
+			<div class="header_container">
+				<div class="container">
+					<div class="row">
+						<div class="col">
+							<div class="header_content d-flex flex-row align-items-center justify-content-start">
+								<div class="logo_container">
+									<!-- <a href="#">
+										<div class="logo_text">SHARADA<span>IT</span></div>
+									</a> -->
+									<a class="navbar-brand" href="index.html">
+										<img src="images/sharada_it_final.png" alt="" style="width: 215px;">
+									</a>
+								</div>
+								<nav class="main_nav_contaner ml-auto">
+									<!-- for mobile nav bar icon triple bar -->
+									<div class="hamburger menu_mm">
+										<i class="fa fa-bars menu_mm" aria-hidden="true"></i>
+									</div>
+
+									<!-- desktop menu -->
+									<ul class="main_nav">
+										<li class="active"><a href="#">Home</a></li>
+										<li><a href="./bca/bca_home_page.html">BCA</a></li>
+										<li class="dropdown">
+											<a href="">Courses </a>
+											<ul class="dropdown-menu">
+												<li><a href="">Mobile App Development</a></li>
+												<li><a href="">Web Development</a></li>
+												<li><a href="">Database Management</a></li>
+												<li><a href="">UI-UX Design</a></li>
+											</ul>
+										</li>
+
+										<li><a href="contact.html">Contact</a></li>
+										<li><a href="about.html">About</a></li>
+										<li>
+											<button class="btn-main" onclick="openLogin()">Login</button>
+										</li>
+										<li>
+											<button style="margin-left: -56px;" class="btn-main"
+												onclick="openSignup()">Signup</button>
+										</li>
+									</ul>
+
+								</nav>
+							</div>
+
+
+
+						</div>
+					</div>
+				</div>
+			</div>
+	</div>
+
+
+	</header>
+
+	<!-- Menu  for mobile-->
+
+	<div class="menu d-flex flex-column align-items-end justify-content-start text-right menu_mm trans_400">
+		<div class="menu_close_container">
+			<div class="menu_close">
+				<div></div>
+				<div></div>
+			</div>
+		</div>
+
+		<nav class="menu_nav">
+			<ul class="menu_mm">
+				<li class="menu_mm"><a href="index.html">Home</a></li>
+				<li class="menu_mm"><a href="/bca/bca_home_page.html">BCA</a></li>
+				<li class="menu_mm"><a href="#">About</a></li>
+				<li class="menu_mm"><a href="#">Courses</a></li>
+				<li class="menu_mm"><a href="contact.html">Contact</a></li>
+				<li>
+					<!-- <button class="btn-main" onclick="openLogin()">Login</button> -->
+					<button class="open-btn" onclick="openPopup()">Login</button>
+				</li>
+
+				<!-- <li>
+					<button style="margin-left: -56px;" class="btn-main" onclick="openSignup()">Signup</button>
+				</li> -->
+			</ul>
+		</nav>
+	</div>
+
+	<!-- Home -->
+
+	<div id="overlaymb" class="overlaymb">
+		<div class="container-mb">
+			<h2>Login</h2>
+			<div class="input-field"><input type="email" placeholder="Email"></div>
+			<div class="input-field"><input type="password" placeholder="Password">
+			</div>
+
+			<button class="main-btn">Login</button>
+			<div class="separator">or continue with</div>
+			<span class="close-btn-mb" onclick="closePopupMb()">×</span>
+
+			<button class="social-btn-mb"><img src="https://img.icons8.com/color/48/google-logo.png" width="20">
+				Google</button>
+			<button class="social-btn-mb"><img src="https://img.icons8.com/color/48/facebook-new.png" width="20">
+				Facebook</button>
+
+			<button class="social-btn-mb"><img src="https://img.icons8.com/ios-glyphs/30/github.png" width="20">
+				GitHub</button>
+		</div>
+	</div>
+
+	<script>
+		function openPopup() {
+			document.getElementById("overlaymb").style.display = "flex";
+		}
+
+		function closePopupMb() {
+			document.getElementById("overlaymb").style.display = "none";
+		}
+
+		// Optional: close on outside click
+		window.onclick = function (e) {
+			let overlay = document.getElementById("overlaymb");
+			if (e.target === overlay) {
+				overlay.style.display = "none";
+			}
+		}
+	</script>
+
+	<style>
+		/* Login Button */
+		.open-btn {
+			padding: 12px 20px;
+			background: #6a11cb;
+			color: #fff;
+			border: none;
+			border-radius: 8px;
+			cursor: pointer;
+			margin: 20px;
+		}
+
+		/* Overlay */
+		.overlaymb {
+			position: fixed;
+			top: 0;
+			left: 0;
+			width: 100%;
+			height: 100%;
+			background: rgba(0, 0, 0, 0.6);
+			display: none;
+			align-items: center;
+			justify-content: center;
+			z-index: 999;
+			padding: 15px;
+		}
+
+		/* Popup Box */
+		.container-mb {
+			width: 100%;
+			max-width: 360px;
+			background: #fff;
+			border-radius: 14px;
+			padding: 20px;
+			text-align: center;
+			position: relative;
+			animation: fadeIn 0.4s ease;
+		}
+
+		/* Close Button */
+		.close-btn-mb {
+			position: absolute;
+			top: 10px;
+			right: 12px;
+			font-size: 22px;
+			cursor: pointer;
+		}
+
+		/* Social Buttons */
+		.social-btn-mb {
+			width: 100%;
+			padding: 14px;
+			margin-bottom: 12px;
+			border-radius: 10px;
+			border: 1px solid #ddd;
+			background: #fff;
+			cursor: pointer;
+			font-size: 15px;
+			display: flex;
+			align-items: center;
+			justify-content: center;
+			gap: 10px;
+		}
+
+		.social-btn-mb:hover {
+			background: #f5f5f5;
+		}
+
+		/* Mobile */
+		@media (max-width: 480px) {
+			.container {
+				padding: 18px;
+			}
+		}
+	</style>
+
+
+
+	<!-- Features -->
+
+	<div class="features">
+		<div class="container">
+			<div class="row">
+				<div class="col">
+					<div class="section_title_container text-center">
+						<!-- <h2 class="section_title">Welcome To Unicat E-Learning </h2> -->
+						<h2 style="font-size: 20px;" class="section_title"> Your Digital Campus for IT and Computer
+							Science Learning. </h2>
+						<div class="section_subtitle">
+							<p>Learn, practice, and master IT skills — anytime, anywhere.
+								From coding fundamentals to advanced computing — all in one place.
+							</p>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="row features_row">
+
+				<!-- Features Item -->
+				<div class="col-lg-3 feature_col">
+					<div class="feature text-center trans_400">
+						<div class="feature_icon"><img src="images/icons8-online-learning-64.png" alt=""></div>
+						<h3 class="feature_title">Academic</h3>
+						<div class="feature_text">
+							<p>Learn your college subjects with guided courses, notes & projects .</p>
+						</div>
+					</div>
+				</div>
+
+				<!-- Features Item -->
+				<div class="col-lg-3 feature_col">
+					<div class="feature text-center trans_400">
+						<div class="feature_icon"><img src="images/icons8-mobile-app-development-56.png" alt=""></div>
+						<h3 style="font-size: 19px;" class="feature_title">Mobile App Development</h3>
+						<div class="feature_text">
+							<p>Learn to design, code, and powerful mobile apps for Android and iOS.</p>
+						</div>
+					</div>
+				</div>
+
+				<!-- Features Item -->
+				<div class="col-lg-3 feature_col">
+					<div class="feature text-center trans_400">
+						<div class="feature_icon"><img src="images/icon_3.png" alt=""></div>
+						<h3 class="feature_title">Web App Development</h3>
+						<div class="feature_text">
+							<p>Start your journey to becoming a professional web developer.</p>
+						</div>
+					</div>
+				</div>
+
+				<!-- Features Item -->
+				<div class="col-lg-3 feature_col">
+					<div class="feature text-center trans_400">
+						<div class="feature_icon"><img src="images/icon_4.png" alt=""></div>
+						<h3 class="feature_title">UI - UX Design</h3>
+						<div class="feature_text">
+							<p>Design smarter, not harder — start your creative journey today!</p>
+						</div>
+					</div>
+				</div>
+
+			</div>
+		</div>
+	</div>
+
+	<!-- Popular Courses -->
+
+	<div class="courses">
+		<div class="section_background parallax-window" data-parallax="scroll"
+			data-image-src="images/courses_background.jpg" data-speed="0.8"></div>
+		<div class="container">
+			<div class="row">
+				<div class="col">
+					<div class="section_title_container text-center">
+						<h2 class="section_title">Popular Online Courses</h2>
+						<div class="section_subtitle">
+							<p>
+								Upgrade your skills with our most in-demand tech courses.
+								Learn from experts and build real-world projects in Web Development, App Development,
+								MEARN Stack,and UI/UX.
+							</p>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="row courses_row">
+
+				<!-- Course -->
+				<div class="col-lg-4 course_col">
+					<div class="course">
+						<div class="course_image"><img style="height: 230px;" src="images/mearn.png" alt=""></div>
+						<div class="course_body">
+							<h3 class="course_title"><a href="course.html">Mearn Stack Developer</a></h3>
+							<!-- <div class="course_teacher">Mr. Pradeep Yadav </div> -->
+							<div class="course_text">
+								<p>Build dynamic full-stack web apps with MongoDB, Express, React, and Node.js.</p>
+							</div>
+						</div>
+						<div class="course_footer">
+							<div class="course_footer_content d-flex flex-row align-items-center justify-content-start">
+								<!-- <div class="course_info">
+									<i class="fa fa-graduation-cap" aria-hidden="true"></i>
+									<span>200 Student</span>
+								</div> -->
+								<div class="course_info">
+									<i class="fa fa-star" aria-hidden="true"></i>
+									<span>5 Ratings</span>
+								</div>
+								<div class="course_price ml-auto">Free</div>
+							</div>
+						</div>
+					</div>
+				</div>
+
+				<!-- Course -->
+				<div class="col-lg-4 course_col">
+					<div class="course">
+						<div class="course_image"><img style="height: 230px;" src="images/mean.jpeg" alt=""></div>
+						<div class="course_body">
+							<h3 class="course_title"><a href="course.html">Mean Stack Developer</a></h3>
+							<!-- <div class="course_teacher">Ms. Lucius</div> -->
+							<div class="course_text">
+								<p>Build dynamic full-stack web apps with MongoDB, Express, Angular, and Node.js.</p>
+							</div>
+						</div>
+						<div class="course_footer">
+							<div class="course_footer_content d-flex flex-row align-items-center justify-content-start">
+								<!-- <div class="course_info">
+									<i class="fa fa-graduation-cap" aria-hidden="true"></i>
+									<span>99 Student</span>
+								</div> -->
+								<div class="course_info">
+									<i class="fa fa-star" aria-hidden="true"></i>
+									<span>5 Ratings</span>
+								</div>
+								<div class="course_price ml-auto">Free</div>
+							</div>
+						</div>
+					</div>
+				</div>
+
+				<!-- Course -->
+				<div class="col-lg-4 course_col">
+					<div class="course">
+						<div class="course_image"><img src="images/BCA-01.jpg" alt=""></div>
+						<div class="course_body">
+							<h3 class="course_title"><a href="./bca/bca_home_page.html">Bachelor of Computer (BCA)</a>
+							</h3>
+							<!-- <div class="course_teacher">Gorakhpur University</div> -->
+							<div class="course_text">
+								<p>Your Complete BCA Learning Hub — From First Semester to Final Year!</p>
+							</div>
+						</div>
+						<div class="course_footer">
+							<div class="course_footer_content d-flex flex-row align-items-center justify-content-start">
+								<!-- <div class="course_info">
+									<i class="fa fa-graduation-cap" aria-hidden="true"></i>
+									<span>101 Student</span>
+								</div> -->
+								<div class="course_info">
+									<i class="fa fa-star" aria-hidden="true"></i>
+									<span>5 Ratings</span>
+								</div>
+								<div class="course_price ml-auto"><span></span>Free</div>
+							</div>
+						</div>
+					</div>
+				</div>
+
+			</div>
+			<div class="row">
+				<div class="col">
+					<div class="courses_button trans_200"><a href="#">view all courses</a></div>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<!-- Counter -->
+
+	<div class="counter">
+		<div class="counter_background" style="background-image:url(images/counter_background.jpg)"></div>
+		<div class="container">
+			<div class="row">
+				<div class="col-lg-6">
+					<div class="counter_content">
+						<h2 class="counter_title">Register Now</h2>
+						<div class="counter_text">
+							<p>
+								Join our community of passionate learners and start your journey toward mastering IT
+								and computer science. Gain access to expert-led courses,
+								live sessions, and hands-on projects that prepare you for real-world success.
+							</p>
+						</div>
+
+						<!-- Milestones -->
+
+						<div
+							class="milestones d-flex flex-md-row flex-column align-items-center justify-content-between">
+
+							<!-- Milestone -->
+							<div class="milestone">
+								<div class="milestone_counter" data-end-value="15">0</div>
+								<div class="milestone_text">years</div>
+							</div>
+
+							<!-- Milestone -->
+							<div class="milestone">
+								<div class="milestone_counter" data-end-value="120" data-sign-after="k">0</div>
+								<div class="milestone_text">Students</div>
+							</div>
+
+							<!-- Milestone -->
+							<div class="milestone">
+								<div class="milestone_counter" data-end-value="670" data-sign-after="+">0</div>
+								<div class="milestone_text">Topics</div>
+							</div>
+
+							<!-- Milestone -->
+							<div class="milestone">
+								<div class="milestone_counter" data-end-value="920">0</div>
+								<div class="milestone_text">Lectures</div>
+							</div>
+
+						</div>
+					</div>
+
+				</div>
+			</div>
+
+			<div class="counter_form">
+				<div class="row fill_height">
+					<div class="col fill_height">
+						<form class="counter_form_content d-flex flex-column align-items-center justify-content-center"
+							action="#">
+							<div class="counter_form_title">courses now</div>
+							<input type="text" class="counter_input" placeholder="Your Name:" required="required">
+							<input type="tel" class="counter_input" placeholder="Phone:" required="required">
+							<select name="counter_select" id="counter_select" class="counter_input counter_options">
+								<option>Choose Subject</option>
+								<option>Subject</option>
+								<option>Subject</option>
+								<option>Subject</option>
+							</select>
+							<textarea class="counter_input counter_text_input" placeholder="Message:"
+								required="required"></textarea>
+							<button type="submit" class="counter_form_button">submit now</button>
+						</form>
+					</div>
+				</div>
+			</div>
+
+		</div>
+	</div>
+
+	<!-- Events -->
+
+	<div class="events">
+		<div class="container">
+			<div class="row">
+				<div class="col">
+					<div class="section_title_container text-center">
+						<h2 class="section_title">Interactive Learning</h2>
+						<div class="section_subtitle">
+							<p>Join interactive live classes designed to make learning fun, practical, and
+								result-driven.
+								Collaborate with peers and mentors to strengthen your skills and confidence every day.
+							</p>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="row events_row">
+
+				<!-- Event -->
+				<div class="col-lg-4 event_col">
+					<div class="event event_left">
+						<div class="event_image"><img src="images/event_2.jpg" alt=""></div>
+						<div class="event_body d-flex flex-row align-items-start justify-content-start">
+							<!-- <div class="event_date">
+								<div class="d-flex flex-column align-items-center justify-content-center trans_200">
+									<div class="event_day trans_200">21</div>
+									<div class="event_month trans_200">Aug</div>
+								</div>
+							</div> -->
+							<div class="event_content">
+								<div class="event_title"><a href="#"> Daily live classes </a></div>
+								<div class="event_info_container">
+									<!-- <div class="event_info"><i class="fa fa-clock-o" aria-hidden="true"></i><span>15.00
+											- 19.30</span></div>
+									<div class="event_info"><i class="fa fa-map-marker" aria-hidden="true"></i><span>25
+											New York City</span></div> -->
+									<div class="event_text">
+										<p>Policy analysts generally agree on a need for reform, but not on which
+											path...</p>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+
+				<!-- Event -->
+				<div class="col-lg-4 event_col">
+					<div class="event event_mid">
+						<div class="event_image"><img src="images/side-view-app-development.jpg" alt=""></div>
+						<div class="event_body d-flex flex-row align-items-start justify-content-start">
+							<!-- <div class="event_date">
+								<div class="d-flex flex-column align-items-center justify-content-center trans_200">
+									<div class="event_day trans_200">27</div>
+									<div class="event_month trans_200">Aug</div>
+								</div>
+							</div> -->
+							<div class="event_content">
+								<div class="event_title"><a href="#">Practice and revise</a></div>
+								<div class="event_info_container">
+									<!-- <div class="event_info"><i class="fa fa-clock-o" aria-hidden="true"></i><span>09.00
+											- 17.30</span></div>
+									<div class="event_info"><i class="fa fa-map-marker" aria-hidden="true"></i><span>25
+											Brooklyn City</span></div> -->
+									<div class="event_text">
+										<p>This Consumer Action News issue covers topics now being debated before...
+										</p>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+
+				<!-- Event -->
+				<div class="col-lg-4 event_col">
+					<div class="event event_right">
+						<div class="event_image"><img src="images/Group-Of-University-Students.jpg" alt=""
+								style="height:230px;"></div>
+						<div class="event_body d-flex flex-row align-items-start justify-content-start">
+							<!-- <div class="event_date">
+								<div class="d-flex flex-column align-items-center justify-content-center trans_200">
+									<div class="event_day trans_200">01</div>
+									<div class="event_month trans_200">Sep</div>
+								</div>
+							</div> -->
+							<div class="event_content">
+								<div class="event_title"><a href="#">Learn anytime, anywhere</a>
+								</div>
+								<div class="event_info_container">
+									<!-- <div class="event_info"><i class="fa fa-clock-o" aria-hidden="true"></i><span>13.00
+											- 18.30</span></div>
+									<div class="event_info"><i class="fa fa-map-marker" aria-hidden="true"></i><span>25
+											New York City</span></div> -->
+									<div class="event_text">
+										<p>Policy analysts generally agree on a need for reform, but not on which
+											path...</p>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+
+			</div>
+		</div>
+	</div>
+
+	<!-- Team -->
+
+
+	<!-- Latest News -->
+
+	<div class="news">
+		<div class="container">
+			<div class="row">
+				<div class="col">
+					<div class="section_title_container text-center">
+						<h2 class="section_title">Latest Topics</h2>
+						<div class="section_subtitle">
+							<p>Don’t miss out — explore trending IT topics every learner should know.</p>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="row news_row">
+				<div class="col-lg-7 news_col">
+
+					<!-- News Post Large -->
+					<div class="news_post_large_container">
+						<div class="news_post_large">
+							<div class="news_post_image"><img src="images/ChatGPT Image Nov 8, 2025, 09_01_44 PM.png"
+									alt=""></div>
+							<div class="news_post_large_title"><a href="blog_singledf.html">
+									🧠 Future Minds — AI and the Jobs of Tomorrow
+								</a>
+							</div>
+							<div class="news_post_meta">
+								<ul>
+									<!-- <li><a href="#">admin</a></li> -->
+									<li><a href="#">november 11, 2017</a></li>
+								</ul>
+							</div>
+							<div class="news_post_text">
+								<p>
+									Step into the world where humans and machines work together. Learn how AI is
+									transforming industries, creating new opportunities,
+									and the essential skills you need to thrive in the next generation of jobs.
+								</p>
+							</div>
+							<div class="news_post_link"><a href="">read more</a></div>
+						</div>
+					</div>
+				</div>
+
+				<div class="col-lg-5 news_col">
+					<div class="news_posts_small">
+
+						<!-- News Posts Small -->
+						<div class="news_post_small">
+							<div class="news_post_small_title"><a href="">
+									Mastering Joins and Subqueries in Oracle — Unlock the Power of Data Relationships!
+								</a>
+
+							</div>
+							<!-- <div class="news_post_meta">
+								<ul>
+									<li><a href="#">admin</a></li>
+									<li><a href="#">november 11, 2025</a></li>
+								</ul>
+							</div> -->
+						</div>
+
+						<!-- News Posts Small -->
+						<div class="news_post_small">
+							<div class="news_post_small_title"><a>
+									Understanding Pointers and Memory — Boost Your Programming Efficiency in C.
+								</a></div>
+							<div class="news_post_meta">
+								<ul>
+									<!-- <li><a href="#">admin</a></li> -->
+									<li><a href="#">november 11, 2025</a></li>
+								</ul>
+							</div>
+						</div>
+
+						<!-- News Posts Small -->
+						<div class="news_post_small">
+							<div class="news_post_small_title"><a>
+									Mastering Inheritance and Polymorphism — Write Reusable and Powerful Code in C++.
+								</a></div>
+							<div class="news_post_meta">
+								<ul>
+									<!-- <li><a href="#">admin</a></li> -->
+									<li><a href="#">november 11, 2025</a></li>
+								</ul>
+							</div>
+						</div>
+
+						<!-- News Posts Small -->
+						<div class="news_post_small">
+							<div class="news_post_small_title"><a>
+									Designing Efficient Databases — Learn Normalization and Relationships in MySQL.
+								</a></div>
+							<div class="news_post_meta">
+								<ul>
+									<!-- <li><a href="#">admin</a></li> -->
+									<li><a href="#">november 11, 2025</a></li>
+								</ul>
+							</div>
+						</div>
+
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<!-- Newsletter -->
+
+	<div class="newsletter">
+		<div class="newsletter_background parallax-window" data-parallax="scroll" data-image-src="images/newsletter.jpg"
+			data-speed="0.8"></div>
+		<div class="container">
+			<div class="row">
+				<div class="col">
+					<div
+						class="newsletter_container d-flex flex-lg-row flex-column align-items-center justify-content-start">
+
+						<!-- Newsletter Content -->
+						<div class="newsletter_content text-lg-left text-center">
+							<div class="newsletter_title">sign up for news and offers</div>
+							<div class="newsletter_subtitle">Subcribe to lastest smartphones news & great deals we
+								offer</div>
+						</div>
+
+						<!-- Newsletter Form -->
+						<div class="newsletter_form_container ml-lg-auto">
+							<form action="#" id="newsletter_form"
+								class="newsletter_form d-flex flex-row align-items-center justify-content-center">
+								<input type="email" class="newsletter_input" placeholder="Your Email"
+									required="required">
+								<button type="submit" class="newsletter_button">subscribe</button>
+							</form>
+						</div>
+
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<!-- Footer -->
+
+	<footer class="footer">
+		<div class="footer_background" style="background-image:url(images/footer_background.png)"></div>
+		<div class="container">
+			<div class="row footer_row">
+				<div class="col">
+					<div class="footer_content">
+						<div class="row">
+
+							<div class="col-lg-3 footer_col">
+
+								<!-- Footer About -->
+								<div class="footer_section footer_about">
+									<div class="footer_logo_container">
+										<a href="#">
+											<div class="footer_logo_text">SHARADA-<span>IT</span></div>
+										</a>
+									</div>
+									<div class="footer_about_text">
+										<p>
+											Sharada-IT offers BCA, MCA, and BBA programs designed to launch your career
+											in technology and business ,
+											With hands-on training in MEAN & MERN Stack, AI, and AWS to make you
+											job-ready.
+										</p>
+									</div>
+									<div class="footer_social">
+										<ul>
+											<li><a href="#"><i class="fa fa-facebook" aria-hidden="true"></i></a>
+											</li>
+											<li><a href="#"><i class="fa fa-google-plus" aria-hidden="true"></i></a>
+											</li>
+											<li><a href="#"><i class="fa fa-instagram" aria-hidden="true"></i></a>
+											</li>
+											<li><a href="#"><i class="fa fa-twitter" aria-hidden="true"></i></a>
+											</li>
+										</ul>
+									</div>
+								</div>
+
+							</div>
+
+							<div class="col-lg-3 footer_col">
+
+								<!-- Footer Contact -->
+								<div class="footer_section footer_contact">
+									<div class="footer_title">Contact Us</div>
+									<div class="footer_contact_info">
+										<ul>
+											<li>Email: sharadait@gmail.com</li>
+											<li>Phone: +(91) 8181 050 321</li>
+											<li>40 Baria Sreet 133/2 Noida</li>
+										</ul>
+									</div>
+								</div>
+
+							</div>
+
+							<div class="col-lg-3 footer_col">
+
+								<!-- Footer links -->
+								<div class="footer_section footer_links">
+									<div class="footer_title">Contact Us</div>
+									<div class="footer_links_container">
+										<ul>
+											<li><a href="#">Home</a></li>
+											<li><a href="#">About</a></li>
+											<li><a href="#">Contact</a></li>
+											<li><a href="#">Features</a></li>
+											<li><a href="#">Courses</a></li>
+											<li><a href="#">Events</a></li>
+											<li><a href="#">Gallery</a></li>
+											<li><a href="#">FAQs</a></li>
+										</ul>
+									</div>
+								</div>
+
+							</div>
+
+							<div class="col-lg-3 footer_col clearfix">
+
+								<!-- Footer links -->
+								<div class="footer_section footer_mobile">
+									<div class="footer_title">Mobile</div>
+									<div class="footer_mobile_content">
+										<div class="footer_image"><a href="#"><img src="images/mobile_1.png" alt=""></a>
+										</div>
+										<div class="footer_image"><a href="#"><img src="images/mobile_2.png" alt=""></a>
+										</div>
+									</div>
+								</div>
+
+							</div>
+
+						</div>
+					</div>
+				</div>
+			</div>
+
+			<div class="row copyright_row">
+				<div class="col">
+					<div class="copyright d-flex flex-lg-row flex-column align-items-center justify-content-start">
+						<div class="cr_text">
+							<!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
+							Copyright &copy;
+							<script>document.write(new Date().getFullYear());</script> All rights reserved
+							<!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
+						</div>
+						<div class="ml-lg-auto cr_links">
+							<ul class="cr_list">
+								<li><a href="#">Copyright notification</a></li>
+								<li><a href="#">Terms of Use</a></li>
+								<li><a href="#">Privacy Policy</a></li>
+							</ul>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</footer>
+	</div>
+
+	<script src="js/jquery-3.2.1.min.js"></script>
+	<script src="styles/bootstrap4/popper.js"></script>
+	<script src="styles/bootstrap4/bootstrap.min.js"></script>
+	<script src="plugins/greensock/TweenMax.min.js"></script>
+	<script src="plugins/greensock/TimelineMax.min.js"></script>
+	<script src="plugins/scrollmagic/ScrollMagic.min.js"></script>
+	<script src="plugins/greensock/animation.gsap.min.js"></script>
+	<script src="plugins/greensock/ScrollToPlugin.min.js"></script>
+	<script src="plugins/OwlCarousel2-2.2.1/owl.carousel.js"></script>
+	<script src="plugins/easing/easing.js"></script>
+	<script src="plugins/parallax-js-master/parallax.min.js"></script>
+	<script src="js/custom.js"></script>
+</body>
+
+</html>
