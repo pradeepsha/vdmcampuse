@@ -2,17 +2,17 @@
 
 let introNote = `
 
-    <p>
-        A computer is an electronic device that:
-    </p>
+<p>A computer is an electronic device that works in the following way:</p>
 
-    <ul>
-        <li>Takes input (data or instructions)</li>
-        <li>Processes that input according to a set of instructions (program)</li>
-        <li>Produces output (results)</li>
-        <li>And can store data for future use</li>
-    </ul>
+<ul>
+  <li>Takes input (data or instructions) using devices like keyboard, mouse, or scanner.</li>
+  <li>Processes that input according to a set of instructions (program) with the help of the CPU.</li>
+  <li>Produces output (results) on devices like monitor, printer, or speakers.</li>
+  <li>And can store data for future use with the help of storage devices like hard disk, SSD, or pen drive.</li>
+</ul>
 
+
+<p>A computer system is a complete set of parts that work together to take input, process it, store data, and give output. It includes both hardware (physical parts) and software (programs and instructions).</p>
     <h4>We say it works in four basic steps:</h4>
 
     <ul>
@@ -21,6 +21,73 @@ let introNote = `
         <li><strong>Output:</strong> You see or hear the result (e.g., on screen or printer)</li>
         <li><strong>Storage:</strong> Data is saved for later use</li>
     </ul>
+
+<h4>Main Parts of a Computer System</h4>
+
+<ul>
+  
+<li>
+  <b>Input devices</b> – Tools like keyboard, mouse, and scanner that you use to give data and commands to the computer.  
+  They help you type, click, draw, or scan things and send them inside the system.  
+  Without input devices, you cannot tell the computer what to do.  
+  They are very useful for students to write notes, browse the internet, and work on projects.
+</li>
+
+ <li>
+  <b>Output devices</b> – Tools like monitor, printer, and speakers that show or give the results of what the computer has processed.  
+  The monitor displays text, images, and videos so you can see your work.  
+  The printer gives you a hard copy on paper, and speakers or headphones let you hear sound.  
+  Without output devices, you cannot see, hear, or get the final result of your work.
+</li>
+<li>
+  <b>CPU (Central Processing Unit)</b> – The brain of the computer that controls all operations and performs calculations.  
+  It takes data from input devices and memory, processes it, and gives results to output devices.  
+  A good CPU makes the computer faster and smoother for games, videos, and projects.  
+  It is a small chip fixed on the motherboard inside the CPU cabinet.
+</li>
+<li>
+  <b>Memory (RAM and ROM)</b> – RAM stores data temporarily while you are working on the computer, so it is lost when the computer is turned off.  
+  ROM stores permanent instructions that the computer needs to start and work properly.  
+  RAM helps in opening and running programs quickly, while ROM keeps basic system settings safe.  
+  Both are very important for the computer to work fast and correctly.
+</li>
+
+<li>
+  <b>Storage devices</b> – Parts like hard disk, SSD, pen drive, and memory cards that store your files safely even when the computer is turned off.  
+  You can save your notes, projects, photos, and videos on them and use them later.  
+  They are very useful for students to keep backups and carry study material from school to home.  
+  Always remove them safely to avoid losing your important data.
+</li>
+
+<li>
+  <b>Motherboard</b> – The main circuit board inside the CPU cabinet that connects the CPU, memory, storage, and other parts of the computer.  
+  It allows all components to talk to each other and work together smoothly.  
+  It also has slots and ports for attaching devices like keyboard, mouse, and monitor.  
+  Without the motherboard, the computer cannot connect its parts and will not work properly.
+</li>
+
+<li>
+  <b>Software</b> – Programs and apps such as operating system, web browser, and MS Word that tell the hardware what to do.  
+  It helps you type notes, browse the internet, play games, and work on projects.  
+  Without software, the computer cannot understand your commands or open any file.  
+  It is very useful for students to study, search information, and make presentations.
+</li>
+<li>
+  <b>Peripherals</b> – Extra devices like webcam, microphone, projector, and external hard drive that are connected to the computer to help in studies and projects.  
+  A webcam and microphone are used for online classes and video meetings.  
+  A projector helps show your work on a big screen during presentations.  
+  External hard drives and other peripherals make it easy to store, share, and display your data.
+</li>
+
+<li>
+  <b>User</b> – The person (like a student or teacher) who gives input, uses the computer, and gets the output.  
+  You use input devices to type, click, or draw, and see or hear the results on output devices.  
+  The user is very important because the computer works for the user’s needs and tasks.  
+  Students use computers every day to study, write assignments, and learn new skills.
+</li>
+
+</ul>
+
 
     <h4>Historical Perspective of Computer (Important Points)</h4>
 
@@ -58,29 +125,33 @@ let introNote = `
         </li>
     </ul>
 
-    <h4>Early Computers</h4>
+<h3>Early Computers – ENIAC (1945)</h3>
 
-    <h5>ENIAC (1945)</h5>
-    <ul>
-        <li>First general-purpose electronic digital computer</li>
-        <li>Used vacuum tubes</li>
-        <li>Very large (about 1800 sq ft)</li>
-        <li>Consumed a lot of electricity ⚡</li>
-        <li>Produced a lot of heat 🔥</li>
-    </ul>
+<ul>
+  <li>ENIAC was the first general‑purpose electronic digital computer, made in 1945.</li>
+  <li>It used many vacuum tubes to work and was very big, about the size of a big room (around 1800 square feet).</li>
+  <li>It used a lot of electricity and produced a lot of heat, so it needed special cooling and a big space.</li>
+  <li>Even though it was very large and slow by today’s standards, ENIAC was a very important step in the history of computers.</li>
+</ul>
 
-    <h5>EDVAC (1949)</h5>
-    <ul>
-        <li>First stored-program computer</li>
-        <li>Based on the idea of John von Neumann</li>
-        <li>Could store instructions in memory</li>
-    </ul>
 
-    <h5>UNIVAC I (1951)</h5>
-    <ul>
-        <li>First commercial computer</li>
-        <li>Used for business and government work</li>
-    </ul>
+<h3>EDVAC (1949)</h3>
+
+<ul>
+  <li>EDVAC was one of the earliest computers made in 1949.</li>
+  <li>It was the first “stored‑program” computer, which means it could keep programs (instructions) inside its memory.</li>
+  <li>It was based on ideas given by a scientist named John von Neumann.</li>
+  <li>Because it could store instructions in memory, it could run different programs without changing the hardware, making computers more flexible and useful.</li>
+</ul>
+
+<h3>UNIVAC I (1951)</h3>
+
+<ul>
+  <li>UNIVAC I was the first commercial computer, introduced in 1951.</li>
+  <li>It was used by businesses and government offices to store data and do calculations.</li>
+  <li>Companies used it for tasks like payroll, billing, and record‑keeping.</li>
+  <li>UNIVAC I showed that computers could be useful not only in science but also in everyday business and government work.</li>
+</ul>
 
 `;
 let characteristicsvg = `
@@ -192,14 +263,140 @@ let characteristics = `
 
 const outputDevi = `
 
-<h2>Output Devices uit 5</h2>
+<h3>Input Units (Devices)</h3>
 
-<p>Output devices display the result of processing.</p>
+<p>Input units are the parts of the computer that send data and instructions into the system. The input unit is the "gateway" through which the computer receives all information from the user. The input can be in many forms such as text, numbers, images, sound, or movement. It converts this data into binary form (0s and 1s) so the computer can understand it.</p>
 
 <ul>
-<li>Monitor</li>
-<li>Printer</li>
-<li>Speaker</li>
+<li><b>Keyboard:</b> A keyboard is an input device used to type letters, numbers, and commands into the computer.</li>
+<li><b>Mouse:</b> A mouse is an input device that controls the cursor on the screen and helps the user point, click, and select items.</li>
+<li><b>Scanner:</b> A scanner is an input device that captures images or text from paper and converts them into digital form for the computer.</li>
+<li><b>Microphone:</b> A microphone is an input device that records sound and converts it into digital signals for the computer to process.</li>
+<li><b>Webcam:</b> A webcam is an input device that captures live video and sends it to the computer for video calls or recording.</li>
+<li><b>Touchscreen:</b> A touchscreen is an input device where the user touches the display directly to give commands and select options.</li>
+<li><b>Barcode reader:</b> A barcode reader is an input device that scans barcodes and sends the encoded information to the computer.</li>
+<li><b>Joystick:</b> A joystick is an input device used mainly in games to control movement and direction on the screen.</li>
+<li><b>Graphics tablet:</b> A graphics tablet is an input device that lets artists draw directly on a pressure-sensitive surface for digital art.</li>
+<li><b>Light pen:</b> A light pen is an input device shaped like a pen that allows the user to draw or select items directly on the screen.</li>
+</ul>
+
+<h3>Output Units (Devices)</h3>
+
+<p>Output units show or give the results of what the computer has processed. Output devices convert digital data into a form we can see, hear, or touch. Without output devices, the user cannot see, hear, or get the results of what the computer has done.</p>
+
+<ul>
+<li><b>Monitor:</b> A monitor is an output device that displays processed data such as text, images, and videos on the screen.</li>
+<li><b>Printer:</b> A printer is an output device that produces hard copies of documents and images on paper.</li>
+<li><b>Speakers:</b> Speakers are output devices that convert electrical signals into sound so you can hear music, alerts, or voices from the computer.</li>
+<li><b>Headphones:</b> Headphones are output devices that give private audio output to the user without disturbing others.</li>
+<li><b>Projector:</b> A projector is an output device that enlarges and displays the computer's visual output onto a wall or screen for presentations.</li>
+<li><b>Plotter:</b> A plotter is an output device that draws detailed graphics, maps, or designs on paper using pens or ink.</li>
+<li><b>Braille display:</b> A Braille display is an output device that shows text for visually impaired users by raising small pins to form Braille characters.</li>
+<li><b>3D printer:</b> A 3D printer is an output device that creates three-dimensional solid objects from a digital model by printing layer by layer.</li>
+<li><b>GPS device:</b> A GPS device is an output device that shows the user's location, direction, and route map on a screen.</li>
+<li><b>Soundbar:</b> A soundbar is an output device that improves audio quality by producing louder and clearer sound for movies or music.</li>
+</ul>
+
+`;
+
+const storageDevices = `
+
+<h3>Storage Devices</h3>
+
+<p>Storage devices are hardware components that store data, programs, and information for later use in a computer or other digital device. They keep your files even when the power is turned off, unlike temporary memory (RAM).</p>
+
+<h4>What storage devices do</h4>
+
+<ul>
+  <li>Save operating systems, software, documents, photos, videos, and music.</li>
+  <li>Allow you to reuse or share data on different computers or devices.</li>
+  <li>Help in backing up important files so they are not lost if the system crashes.</li>
+</ul>
+
+<h4>Common types of storage devices</h4>
+
+<ul>
+ <li>
+  <b>Hard Disk Drive (HDD)</b> – A large storage device inside computers that can hold many files, photos, videos, and programs.  
+  It is usually cheaper than an SSD, so it is good for storing lots of data.  
+  It works with spinning disks, so it is a little slower and makes a small sound.  
+  Because of moving parts, it should be handled carefully and not dropped.
+</li>
+   <li>
+  <b>Solid State Drive (SSD)</b> – A fast and modern storage device used in computers and laptops.  
+  It saves your files, games, and apps and opens them very quickly, so your computer feels smoother.  
+  It has no moving parts, so it is quiet and less likely to break.  
+  But usually, an SSD costs more than a normal hard disk for the same amount of space.
+</li>
+
+<li>
+  <b>USB flash drive (pen drive)</b> – 
+  USB flash drive and pen drive are the same thing.
+It is a small plastic stick‑like device that you plug into the USB port of a computer or laptop.
+  A small and light storage device that you can easily carry in your pocket.  
+  You can plug it into any computer’s USB port and copy your notes, projects, or videos.  
+  It is very useful for sharing files between home, school, and friends.  
+  Always remove it safely from the computer to avoid losing your data.
+</li>
+
+  <li>
+  <b>Memory card (SD card, microSD)</b> – A small, flat storage card used in mobile phones, cameras, and tablets.  
+  It saves your photos, videos, songs, and apps so you can keep more files on your device.  
+  You can remove it and put it in another device to view or copy your data.  
+  It is very useful for students who take many pictures or videos for projects and presentations.
+</li>
+  
+<li>
+  <b>Optical discs (CD, DVD, Blu‑ray)</b> – Round discs that store data using a laser beam.  
+  They are often used for movies, music, software, and important backups.  
+  You need a disc drive in the computer or laptop to read or write on them.  
+  They are not used as much today but are still good for storing data safely for a long time.
+</li>
+
+  <li>
+  <b>External hard drive</b> – A bigger, box‑like storage device that you connect to the computer with a USB cable.  
+  It can store many files, photos, videos, and even full backups of your computer.  
+  You can carry it easily and use it at home, in school, or at a friend’s place.  
+  It is very helpful for students who work on large projects or need extra space for their study material.
+</li>
+
+<li>
+  <b>Cloud storage</b> – Online services like Google Drive, OneDrive, or Dropbox that save your files on the internet instead of your computer.  
+  You can open your notes, projects, and photos from any phone, tablet, or computer if you have internet.  
+  It is very useful for students to keep their work safe and share files with teachers or friends easily.  
+  Just remember to use a strong password and log out from shared computers for safety.
+</li>
+
+  </ul>
+
+`;
+
+const cpu = `
+
+<h3>CPU</h3>
+
+<p><b>CPU</b> stands for <b>Central Processing Unit</b>. It is often called the “brain” of the computer because it processes all the data and instructions.</p>
+
+<ul>
+  <li>The CPU takes input from the keyboard, mouse, or other devices and tells the computer what to do.</li>
+  <li>It runs programs, opens files, and performs calculations very fast (millions of times per second).</li>
+  <li>It is a small chip inside the computer’s mainboard (motherboard) and is very important for the computer’s speed and performance.</li>
+  <li>Without the CPU, a computer cannot work, just like a human body cannot work without a brain.</li>
+</ul>
+
+<h4>10 Points on CPU</h4>
+
+<ul>
+  <li><b>CPU means Central Processing Unit</b> – It is the main chip that controls and runs the computer.</li>
+  <li><b>Brain of the computer</b> – Just like the brain controls the body, the CPU controls all computer tasks.</li>
+  <li><b>Does calculations and tasks</b> – It adds, subtracts, compares data, and runs programs very quickly.</li>
+  <li><b>Works with RAM and storage</b> – It takes data from memory and storage, processes it, and gives results.</li>
+  <li><b>Makes the computer fast</b> – A good CPU opens programs and games faster and makes the system smooth.</li>
+  <li><b>Inside the system unit</b> – The CPU is a small square chip fixed on the motherboard inside the CPU cabinet.</li>
+  <li><b>Needs cooling</b> – It gets hot when working, so computers use a fan or cooler to keep it safe.</li>
+  <li><b>Different types and speeds</b> – Some CPUs are basic (slow) and some are advanced (fast), used in mobiles, laptops, and desktops.</li>
+  <li><b>Helps in studies</b> – A better CPU helps you open large files, videos, and projects without hanging.</li>
+  <li><b>Very important for performance</b> – Without CPU the computer cannot start or work at all.</li>
 </ul>
 
 `;
