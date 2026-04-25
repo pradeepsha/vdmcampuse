@@ -375,7 +375,9 @@ const cpu = `
 
 <h3>CPU</h3>
 
-<p><b>CPU</b> stands for <b>Central Processing Unit</b>. It is often called the “brain” of the computer because it processes all the data and instructions.</p>
+<p><b>CPU</b> stands for <b>Central Processing Unit</b>. 
+A Central Processing Unit is also called a processor, central processor, or microprocessor. It carries out all the important functions of a computer. It performs calculations, manipulates data, and produces output based on instructions and stores all important programs.
+.</p>
 
 <ul>
   <li>The CPU takes input from the keyboard, mouse, or other devices and tells the computer what to do.</li>
@@ -399,7 +401,247 @@ const cpu = `
   <li><b>Very important for performance</b> – Without CPU the computer cannot start or work at all.</li>
 </ul>
 
+<!-- YouTube Video Button -->
+<div class="video-section">
+  <a href="https://www.youtube.com/watch?v=TtPAG0Bd54Q" target="_blank" class="youtube-btn">
+    🎥 Watch: CPU Explained (Hindi)
+  </a>
+    <a href="https://www.youtube.com/watch?v=TtPAG0Bd54Q" target="_blank" class="youtube-btn">
+    🎥 Watch: CPU Explained (English)
+  </a>
+</div>
+
 `;
+
+
+const numberSystem = `
+
+
+<h3>Number system in computer science</h3>
+
+
+<p>In computer science, a <strong>number system</strong> is a way of writing numbers using a fixed set of digits and a base (radix). The value of each digit depends on its position (place value).</p>
+
+
+<h3>Main types of number systems</h3>
+
+<ul>
+  <li><strong>Decimal (Base 10):</strong> Uses digits 0 to 9. Used in daily life. Example: 125, 34.</li>
+  <li><strong>Binary (Base 2):</strong> Uses digits 0 and 1. Used inside computers. Example: 101, 1100.</li>
+  <li><strong>Octal (Base 8):</strong> Uses digits 0 to 7. Example: 75, 342.</li>
+  <li><strong>Hexadecimal (Base 16):</strong> Uses 0–9 and A–F (A=10, B=11, ..., F=15). Used in memory, colors, and programming. Example: 2F, A1E.</li>
+</ul>
+
+
+<h3>Binary to Decimal conversion</h3>
+
+<p>To convert a binary number to decimal, write powers of 2 under each bit (from right to left) and add the values where the bit is 1.</p>
+
+<p>Example: Convert <strong>1101</strong><sub>2</sub> to decimal:</p>
+
+<ul>
+  <li>Write place values: 8, 4, 2, 1</li>
+  <li>Binary digits:     1  1  0  1</li>
+  <li>Calculation: 1×8 + 1×4 + 0×2 + 1×1 = 8 + 4 + 0 + 1 = 13</li>
+  <li>So, 1101<sub>2</sub> = 13<sub>10</sub></li>
+</ul>
+
+
+<h3>Decimal to Binary conversion</h3>
+
+<p>To convert a decimal number to binary, repeatedly divide by 2 and collect remainders (write them from bottom to top).</p>
+
+<p>Example: Convert <strong>13</strong><sub>10</sub> to binary:</p>
+
+<ul>
+  <li>13 ÷ 2 = 6 remainder 1</li>
+  <li>6  ÷ 2 = 3 remainder 0</li>
+  <li>3  ÷ 2 = 1 remainder 1</li>
+  <li>1  ÷ 2 = 0 remainder 1</li>
+  <li>Read remainders from bottom up: 1101</li>
+  <li>So, 13<sub>10</sub> = 1101<sub>2</sub></li>
+</ul>
+
+
+<h3>Binary to Octal / Octal to Binary</h3>
+
+<p>Group 3 bits of binary to get one octal digit (0–7), or split each octal digit into 3 bits.</p>
+
+<p>Example: Convert <strong>110101</strong><sub>2</sub> to octal:</p>
+
+<ul>
+  <li>Group from right: 110 101</li>
+  <li>Convert each group: 110 = 6, 101 = 5</li>
+  <li>Result: 65<sub>8</sub></li>
+</ul>
+
+
+<h3>Binary to Hexadecimal / Hexadecimal to Binary</h3>
+
+<p>Group 4 bits of binary to get one hex digit (0–9, A–F), or split each hex digit into 4 bits.</p>
+
+<p>Example: Convert <strong>11010110</strong><sub>2</sub> to hexadecimal:</p>
+
+<ul>
+  <li>Group from right: 1101 0110</li>
+  <li>1101 = 13 = D, 0110 = 6</li>
+  <li>Result: D6<sub>16</sub></li>
+</ul>
+
+
+<h3>Decimal to Octal and Decimal to Hexadecimal</h3>
+
+<p>For Octal: repeatedly divide the decimal number by 8 and collect remainders from bottom to top.</p>
+<p>For Hexadecimal: repeatedly divide by 16 and replace remainders 10–15 by A–F.</p>
+
+<p>Example (Octal): 95 ÷ 8 = 11 remainder 7, 11 ÷ 8 = 1 remainder 3, 1 ÷ 8 = 0 remainder 1 → 137<sub>8</sub></p>
+<p>Example (Hex): 255 ÷ 16 = 15 rem 15 → 15 is F, so 255<sub>10</sub> = FF<sub>16</sub></p>
+
+
+<h3>Summary of conversions</h3>
+
+<p>Key conversions you must know are:</p>
+<ul>
+  <li>Binary ⇄ Decimal</li>
+  <li>Decimal ⇄ Octal</li>
+  <li>Decimal ⇄ Hexadecimal</li>
+  <li>Binary ⇄ Octal</li>
+  <li>Binary ⇄ Hexadecimal</li>
+</ul>
+
+
+<p>All these conversions are based on place values and the base of the number system.</p>
+
+<h3>Number System Practice Sheet</h3>
+
+
+<p>Solve these conversions and fill in the blanks.</p>
+
+
+<ul>
+  <li>(1010)<sub>2</sub> = (________)<sub>10</sub></li>
+  <li>(1111)<sub>2</sub> = (________)<sub>10</sub></li>
+  <li>(10010)<sub>2</sub> = (________)<sub>10</sub></li>
+  <li>(11011)<sub>2</sub> = (________)<sub>10</sub></li>
+  <li>(110101)<sub>2</sub> = (________)<sub>8</sub></li>
+  <li>(10101100)<sub>2</sub> = (________)<sub>16</sub></li>
+  <li>(57)<sub>10</sub> = (________)<sub>8</sub></li>
+  <li>(100)<sub>10</sub> = (________)<sub>16</sub></li>
+</ul>
+
+
+<h3>Short answer questions</h3>
+
+<ol>
+  <li>Write the base of decimal, binary, octal, and hexadecimal.</li>
+  <li>Why is binary the main number system used inside computers?</li>
+  <li>What is the difference between fixed‑point and floating‑point representation?</li>
+</ol>
+
+
+<p>Hint: Check your answers using the conversion rules from the number‑system lesson.</p>
+
+
+`;
+
+
+const bcdASCII = `
+
+
+<h3>Binary Coded Decimal (BCD) – Easy Notes</h3>
+
+
+<p><strong>BCD (Binary Coded Decimal)</strong> is a special way to represent each decimal digit (0–9) as a 4‑bit binary number. It is not pure binary; instead of converting the whole number into binary, each digit is written separately in 4 bits.</p>
+
+
+<h3>Key points (for exam)</h3>
+
+<ul>
+  <li>In BCD, each decimal digit uses exactly <strong>4 bits</strong>.</li>
+  <li>Valid BCD codes: 0000 = 0, 0001 = 1, 0010 = 2, 0011 = 3, ..., 1001 = 9.</li>
+  <li>Codes 1010, 1011, ..., 1111 are <strong>not allowed</strong> in BCD.</li>
+</ul>
+
+
+<h3>Example (must practice)</h3>
+
+<p>Convert decimal number <strong>45</strong> into BCD:</p>
+
+<ul>
+  <li>4 → 0100</li>
+  <li>5 → 0101</li>
+  <li>So BCD of 45 = 0100 0101</li>
+</ul>
+
+
+<h3>Why is BCD used?</h3>
+
+<ul>
+  <li>Used in digital clocks, calculators, and 7‑segment displays where each digit is shown separately.</li>
+  <li>Easy to convert to decimal for display, but takes more memory than normal binary.</li>
+</ul>
+
+
+<h3>ASCII Code </h3>
+
+
+<p><strong>ASCII (American Standard Code for Information Interchange)</strong> is a code that gives each letter, digit, and symbol a unique number so computers can store and process text.</p>
+
+
+<h3>What ASCII represents</h3>
+
+<ul>
+  <li>Capital letters: A to Z.</li>
+  <li>Small letters: a to z.</li>
+  <li>Digits: 0 to 9.</li>
+  <li>Symbols: space, comma, dot, +, –, etc.</li>
+</ul>
+
+
+<h3>Important ASCII ranges (for exam)</h3>
+
+<ul>
+  <li><strong>0–31</strong>: Control characters (non‑printable, used for actions like newline, tab).</li>
+  <li><strong>32–126</strong>: Printable characters (text and symbols).</li>
+  <ul>
+  <li><strong>0–31</strong>: Control characters (non‑printable, used for actions like newline, tab, backspace, etc.).</li>
+  <li><strong>32–126</strong>: Printable characters (letters A–Z, a–z, digits 0–9, punctuation, and symbols like space, comma, dot, +, −, etc.).</li>
+  <li><strong>127</strong>: Delete (DEL) control character (special control use).</li>
+  <li><strong>128–255</strong>: Extended ASCII (extra symbols, special characters, and some language‑specific characters, depending on the system).</li>
+</ul>
+  Some common codes:
+        <ul>
+          <li>'A' = 65</li>
+          <li>'a' = 97</li>
+          <li>'0' = 48</li>
+        </ul>
+
+
+
+<h3>Uses of ASCII in real life and exams</h3>
+
+<ul>
+  <li>Text files (like .txt), simple web pages, and basic input/output use ASCII to store characters.</li>
+  <li>Modern systems usually use Unicode (extension of ASCII), but the basic idea is the same.</li>
+</ul>
+
+
+<h3>Short exam‑type questions</h3>
+
+<ol>
+  <li>Write BCD code for the decimal number 27.</li>
+  <li>Write the ASCII decimal code for the character 'B'.</li>
+  <li>Explain in short why BCD is used in digital clocks and calculators.</li>
+</ol>
+
+
+<p>Remember for exams: BCD is used for <strong>digit‑wise decimal representation (4 bits per digit)</strong>, and ASCII is used for <strong>representing text characters as numbers</strong> inside computers.</p>
+
+
+`;
+
+
+
 
 const spreadsheet = `
 

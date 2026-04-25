@@ -165,6 +165,23 @@
 		font-size: 15px;
 	}
 
+	    .notes_text ol {
+        /* list-style: none; */
+        padding-left: 0;
+        margin-top: 10px;
+		padding-left: 20px; 
+    }
+
+.notes_text ol li {
+    /* background: #f4f8fb; */
+    margin-bottom: 10px;
+    /* padding: 10px 15px; */
+    /* border-left: 4px solid #3498db; */
+    /* border-radius: 6px; */
+    font-size: 15px;
+    list-style-type: decimal; /* ← added: show 1., 2., 3. */
+}
+
 	/* Highlight the heading (Input, Processing, etc.) */
 	.notes_text ul li strong {
 		color: #2c3e50;
@@ -198,6 +215,8 @@
 		z-index: 999;
 	}
 
+
+
 	/* MOBILE */
 
 	@media(max-width:991px) {
@@ -209,6 +228,7 @@
 		}
 
 		.notes_content {
+			padding: 10px;
 			max-width: 100%;
 			height: auto;
 			overflow-y: visible;
@@ -464,6 +484,13 @@
 
 						<div class="lecture" onclick="loadNote('', cpu, event)">
 							Lecture 1.4 CPU
+						</div>
+						<div class="lecture" onclick="loadNote('', numberSystem, event)">
+							Lecture 1.5 Number System
+						</div>
+
+												<div class="lecture" onclick="loadNote('', bcdASCII, event)">
+							Lecture 1.6 BCD & ASCII
 						</div>
 
 					</div>
