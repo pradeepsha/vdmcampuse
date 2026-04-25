@@ -153,9 +153,22 @@ let introNote = `
   <li>UNIVAC I showed that computers could be useful not only in science but also in everyday business and government work.</li>
 </ul>
 
-<button class = "watchNowButton" onclick="showVideo()">Watch Now</button>
+	<a class="video-btn"
+																onclick="openVideo('videoOverlay', 'popupVideo')">Watch
+																Lecture</a>
 
-<div id="videoBox"></div>
+                                	<!-- Video Popup -->
+                                  <div class="video-overlay" id="videoOverlay">
+    <div class="video-popup">
+
+        <button class="close-btn"
+            onclick="closeVideo('videoOverlay','popupVideo')">✖</button>
+
+        <div id="popupVideo"></div>
+
+    </div>
+</div>
+
 
 `;
 let characteristicsvg = `
