@@ -30,6 +30,8 @@
 		overflow: hidden;
 	}
 
+	;
+
 	/* MOBILE MENU BUTTON */
 
 	.mobile_menu_btn {
@@ -165,22 +167,22 @@
 		font-size: 15px;
 	}
 
-	    .notes_text ol {
-        /* list-style: none; */
-        padding-left: 0;
-        margin-top: 10px;
-		padding-left: 20px; 
-    }
+	.notes_text ol {
+		list-style: none;
+		counter-reset: num;
+	}
 
-.notes_text ol li {
-    /* background: #f4f8fb; */
-    margin-bottom: 10px;
-    /* padding: 10px 15px; */
-    /* border-left: 4px solid #3498db; */
-    /* border-radius: 6px; */
-    font-size: 15px;
-    list-style-type: decimal; /* ← added: show 1., 2., 3. */
-}
+	.notes_text ol li {
+		counter-increment: num;
+		position: relative;
+		padding-left: 40px;
+	}
+
+	.notes_text ol li::before {
+		content: counter(num) ".";
+		position: absolute;
+		left: 0;
+	}
 
 	/* Highlight the heading (Input, Processing, etc.) */
 	.notes_text ul li strong {
@@ -489,7 +491,7 @@
 							Lecture 1.5 Number System
 						</div>
 
-												<div class="lecture" onclick="loadNote('', bcdASCII, event)">
+						<div class="lecture" onclick="loadNote('', bcdASCII, event)">
 							Lecture 1.6 BCD & ASCII
 						</div>
 
