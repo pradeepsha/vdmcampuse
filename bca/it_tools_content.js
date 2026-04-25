@@ -153,20 +153,27 @@ let introNote = `
   <li>UNIVAC I showed that computers could be useful not only in science but also in everyday business and government work.</li>
 </ul>
 
-	<a class="video-btn"
-																onclick="openVideo('videoOverlay', 'popupVideo')">Watch
-																Lecture</a>
+<!-- Trigger Button -->
+<a class="video-btn"  onclick="openVideo()">
+  Watch Lecture
+</a>
 
-                                	<!-- Video Popup -->
-                                  <div class="video-overlay" id="videoOverlay">
-    <div class="video-popup">
+<!-- Video Modal -->
+<div class="video-overlay" id="videoOverlay">
+  <div class="video-popup">
+    <button class="close-btn" onclick="closeVideo()">×</button>
 
-        <button class="close-btn"
-            onclick="closeVideo('videoOverlay','popupVideo')">✖</button>
-
-        <div id="popupVideo"></div>
-
+    <div class="video-frame">
+      <iframe
+        id="popupVideo"
+        src=""
+        title="Lecture Video"
+        frameborder="0"
+        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+        allowfullscreen>
+      </iframe>
     </div>
+  </div>
 </div>
 
 

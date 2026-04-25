@@ -20,7 +20,7 @@
 	<link rel="stylesheet" type="text/css" href="styles/course_responsive.css">
 
 </head>
-<style>
+<!-- <style>
 	.video-btn {
 		display: inline-block;
 		background-color: #6989e8;
@@ -102,7 +102,91 @@
 		background-color: #aa94ca;
 		box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
 	}
+</style> -->
+
+
+<style>
+  .video-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    background: linear-gradient(135deg, #6989e8, #8b5cf6);
+    color: #fff !important;
+    padding: 12px 20px;
+    border-radius: 14px;
+    text-decoration: none;
+    font-weight: 600;
+    box-shadow: 0 10px 25px rgba(105, 137, 232, 0.25);
+    transition: all 0.3s ease;
+  }
+
+  .video-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 14px 30px rgba(105, 137, 232, 0.35);
+  }
+
+  .video-overlay {
+    display: none;
+    position: fixed;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.78);
+    backdrop-filter: blur(6px);
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+    padding: 20px;
+  }
+
+  .video-popup {
+    position: relative;
+    width: 100%;
+    max-width: 900px;
+    background: #111827;
+    border-radius: 20px;
+    overflow: hidden;
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.45);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+  }
+
+  .video-frame {
+    position: relative;
+    width: 100%;
+    aspect-ratio: 16 / 9;
+    background: #000;
+  }
+
+  .video-frame iframe {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    border: 0;
+  }
+
+  .close-btn {
+    position: absolute;
+    top: 12px;
+    right: 12px;
+    width: 40px;
+    height: 40px;
+    border: none;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.12);
+    color: #fff;
+    font-size: 24px;
+    line-height: 1;
+    cursor: pointer;
+    z-index: 10;
+    transition: 0.3s;
+  }
+
+  .close-btn:hover {
+    background: #ef4444;
+    transform: rotate(90deg);
+  }
 </style>
+
+
 <style>
 	body {
 		margin: 0;
@@ -797,7 +881,35 @@
 		}
 
 
-/* open view button */
+//
+
+  function openVideo() {
+    const overlay = document.getElementById('videoOverlay');
+    const iframe = document.getElementById('popupVideo');
+
+    iframe.src = "https://www.youtube.com/embed/VIDEO_ID?autoplay=1";
+    overlay.style.display = "flex";
+  }
+
+  function closeVideo() {
+    const overlay = document.getElementById('videoOverlay');
+    const iframe = document.getElementById('popupVideo');
+
+    overlay.style.display = "none";
+    iframe.src = "";
+  }
+
+  window.addEventListener("click", function (e) {
+    const overlay = document.getElementById('videoOverlay');
+    if (e.target === overlay) {
+      closeVideo();
+    }
+  });
+
+
+
+/* 
+
 function openVideo() {
     document.getElementById("videoOverlay").style.display = "flex";
 
@@ -813,6 +925,8 @@ function closeVideo(overlayId, videoId) {
     // 🔥 FORCE STOP VIDEO (BEST WAY)
     document.getElementById(videoId).innerHTML = "";
 }
+
+*/
 
 	</script>
 
