@@ -1,9 +1,141 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Watch Video</title>
+
+<style>
+/* body {
+    margin: 0;
+    font-family: Arial;
+    text-align: center;
+    background: linear-gradient(135deg, #0f2027, #203a43, #2c5364);
+    color: white;
+} */
+
+/* Button */
+.watchNowButton {
+    margin-top: 60px;
+    padding: 14px 28px;
+    border: none;
+    border-radius: 40px;
+    background: #ff3d00;
+    color: white;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+/* Overlay */
+#videoBox {
+    position: fixed;
+    inset: 0;
+    background: rgba(0,0,0,0.9);
+
+    display: none;
+    align-items: center;
+    justify-content: center;
+
+    animation: fadeIn 0.3s ease;
+}
+
+/* Show popup */
+#videoBox.show {
+    display: flex;
+}
+
+/* Video container */
+.videoWrapper {
+    position: relative;
+    width: 90%;
+    max-width: 900px;
+
+    animation: zoomIn 0.3s ease;
+}
+
+/* iframe */
+iframe {
+    width: 100%;
+    height: 500px;
+    border-radius: 12px;
+}
+
+/* Close button */
+.closeBtn {
+    position: absolute;
+    top: -15px;
+    right: -15px;
+
+    background: red;
+    color: white;
+    border: none;
+    width: 36px;
+    height: 36px;
+    border-radius: 50%;
+    cursor: pointer;
+    font-size: 18px;
+}
+
+/* Animations */
+@keyframes fadeIn {
+    from {opacity: 0;}
+    to {opacity: 1;}
+}
+
+@keyframes zoomIn {
+    from {transform: scale(0.8);}
+    to {transform: scale(1);}
+}
+
+/* 📱 Mobile fullscreen style */
+@media (max-width: 768px) {
+
+    .videoWrapper {
+        width: 100%;
+        height: 100%;
+    }
+
+    iframe {
+        height: 100vh;
+        border-radius: 0;
+    }
+
+    .closeBtn {
+        top: 15px;
+        right: 15px;
+    }
+}
+</style>
+</head>
+
 <body>
 
-<iframe width="420" height="345" src="https://www.youtube.com/embed/tgbNymZ7vqY">
-</iframe>
+<h2>Watch Video</h2>
+
+<button class="watchNowButton" onclick="showVideo()">Watch Now</button>
+
+<div id="videoBox">
+    <div class="videoWrapper">
+        <button class="closeBtn" onclick="closeVideo()">✖</button>
+        <div id="videoFrame"></div>
+    </div>
+</div>
+
+<script>
+function showVideo() {
+    document.getElementById("videoBox").classList.add("show");
+
+    document.getElementById("videoFrame").innerHTML =
+        `<iframe src="https://www.youtube-nocookie.com/embed/tgbNymZ7vqY?autoplay=1"
+        frameborder="0"
+        allow="autoplay; encrypted-media"
+        allowfullscreen></iframe>`;
+}
+
+function closeVideo() {
+    document.getElementById("videoBox").classList.remove("show");
+    document.getElementById("videoFrame").innerHTML = "";
+}
+</script>
 
 </body>
 </html>
