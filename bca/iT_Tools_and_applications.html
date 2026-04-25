@@ -18,173 +18,9 @@
 	<link rel="stylesheet" type="text/css" href="plugins/OwlCarousel2-2.2.1/animate.css">
 	<link rel="stylesheet" type="text/css" href="styles/courses.css">
 	<link rel="stylesheet" type="text/css" href="styles/course_responsive.css">
+	<link rel="stylesheet" type="text/css" href="bca\watch_lecture.css">
 
 </head>
-<!-- <style>
-	.video-btn {
-		display: inline-block;
-		background-color: #6989e8;
-		text-decoration: none;
-		cursor: pointer;
-		color: #fff !important;
-		padding: 8px 16px;
-		border-radius: 8px;
-		text-decoration: none;
-		font-weight: 600;
-		transition: 0.3s;
-	}
-
-	/* Overlay background */
-	.video-overlay {
-		display: none;
-		position: fixed;
-		top: 0;
-		left: 0;
-		width: 100%;
-		height: 100%;
-		background: rgba(0, 0, 0, 0.7);
-		justify-content: center;
-		align-items: center;
-		z-index: 1000;
-	}
-
-	/* Popup box */
-	.video-popup {
-		position: relative;
-		width: 80%;
-		max-width: 800px;
-		background: #000;
-		border-radius: 10px;
-		overflow: hidden;
-	}
-
-
-	.close-btn {
-		position: absolute;
-		top: 10px;
-		right: 8px;
-		font-size: 28px;
-		color: white;
-		cursor: pointer;
-		background: none;
-		border: none;
-		outline: none;
-		z-index: 9999;
-		/* ensures it's above everything */
-	}
-
-	.close-btn:hover {
-		color: #ff0000;
-	}
-
-	.video-popup video {
-		width: 100%;
-		height: auto;
-		display: block;
-		object-fit: cover;
-	}
-
-
-
-	.video-link {
-		display: inline-block;
-		background-color: #6989e8;
-		/* YouTube red */
-		color: #fff;
-		padding: 8px 16px;
-		border-radius: 8px;
-		text-decoration: none;
-		font-weight: 600;
-		transition: 0.3s;
-	}
-
-	.video-link:hover {
-		background-color: #aa94ca;
-		box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
-	}
-</style> -->
-
-
-<style>
-  .video-btn {
-    display: inline-flex;
-    align-items: center;
-    gap: 8px;
-    background: linear-gradient(135deg, #6989e8, #8b5cf6);
-    color: #fff !important;
-    padding: 12px 20px;
-    border-radius: 14px;
-    text-decoration: none;
-    font-weight: 600;
-    box-shadow: 0 10px 25px rgba(105, 137, 232, 0.25);
-    transition: all 0.3s ease;
-  }
-
-  .video-btn:hover {
-    transform: translateY(-2px);
-    box-shadow: 0 14px 30px rgba(105, 137, 232, 0.35);
-  }
-
-  .video-overlay {
-    display: none;
-    position: fixed;
-    inset: 0;
-    background: rgba(0, 0, 0, 0.78);
-    backdrop-filter: blur(6px);
-    justify-content: center;
-    align-items: center;
-    z-index: 1000;
-    padding: 20px;
-  }
-
-  .video-popup {
-    position: relative;
-    width: 100%;
-    max-width: 900px;
-    background: #111827;
-    border-radius: 20px;
-    overflow: hidden;
-    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.45);
-    border: 1px solid rgba(255, 255, 255, 0.08);
-  }
-
-  .video-frame {
-    position: relative;
-    width: 100%;
-    aspect-ratio: 16 / 9;
-    background: #000;
-  }
-
-  .video-frame iframe {
-    position: absolute;
-    inset: 0;
-    width: 100%;
-    height: 100%;
-    border: 0;
-  }
-
-  .close-btn {
-    position: absolute;
-    top: 12px;
-    right: 12px;
-    width: 40px;
-    height: 40px;
-    border: none;
-    border-radius: 50%;
-    background: rgba(255, 255, 255, 0.12);
-    color: #fff;
-    font-size: 24px;
-    line-height: 1;
-    cursor: pointer;
-    z-index: 10;
-    transition: 0.3s;
-  }
-
-  .close-btn:hover {
-    background: #ef4444;
-    transform: rotate(90deg);
-  }
-</style>
 
 
 <style>
@@ -201,14 +37,40 @@
 
 	/* MOBILE MENU BUTTON */
 
-	.mobile_menu_btn {
-		display: none;
+	/* .mobile_menu_btn {
+		display: block !important;
 		background: #4a6cf7;
 		color: #fff;
 		padding: 10px 15px;
 		margin: 10px;
 		border-radius: 6px;
 		cursor: pointer;
+	} */
+
+	body.mobile_menu_btn {
+    display: none;
+}
+
+	.mobile_menu_btn {
+		 display: none; /* hidden on desktop */
+
+    align-items: center;
+    gap: 8px;
+
+    background: linear-gradient(135deg, #4a6cf7, #6a82fb);
+    color: #fff;
+
+    padding: 10px 16px;
+    margin: 12px;
+
+    border-radius: 8px;
+    font-size: 15px;
+    font-weight: 500;
+
+    cursor: pointer;
+    transition: all 0.3s ease;
+
+    box-shadow: 0 4px 12px rgba(0,0,0,0.15);
 	}
 
 	/* LAYOUT */
@@ -334,12 +196,14 @@
 		font-size: 15px;
 	}
 
-	.notes_text ol {
+	
+
+	body.notes_text ol {
 		list-style: none;
 		counter-reset: num;
 	}
 
-	.notes_text ol li {
+	body.notes_text ol li {
 		counter-increment: num;
 		position: relative;
 		padding-left: 40px;
@@ -767,11 +631,27 @@
 
 			<div class="notes_content">
 
-				<h4 id="notes_title">Introduction to Computer</h4>
+				<h4 id="notes_title">IT Tools and Applications</h4>
 
 				<div class="notes_text" id="notes_text">
+<p><strong>IT Tools and Applications</strong> is a subject that teaches us about the basic tools and software used in computers and digital work.</p>
 
-					A computer is an electronic device used to process data and convert it into useful information.
+<p>It helps students learn how to use things like word processors, spreadsheets, presentations, email, the internet, and file management. It also introduces useful computer skills such as typing documents, making tables, creating slides, saving files, and using online tools.</p>
+
+<p><strong>Easy meaning:</strong> IT Tools and Applications means learning how to use computer tools and applications in a simple and practical way.</p>
+
+<p><strong>What students learn:</strong></p>
+<ul>
+    <li>Basic computer knowledge.</li>
+    <li>Using MS Word, Excel, and PowerPoint.</li>
+    <li>Managing files and folders.</li>
+    <li>Using the internet and email.</li>
+    <li>Working with useful digital applications.</li>
+</ul>
+
+<p><strong>Why it is important:</strong> This subject is important because it helps students become comfortable with computers. It also improves school work, communication, and digital skills for the future.</p>
+
+<p>IT Tools and Applications is a subject that teaches students how to use common computer tools and applications. It makes learning computers easy, useful, and practical.</p>
 
 				</div>
 
@@ -881,7 +761,6 @@
 		}
 
 
-//
 
   function openVideo() {
     const overlay = document.getElementById('videoOverlay');
@@ -906,28 +785,6 @@
       closeVideo();
     }
   });
-
-
-
-/* 
-
-function openVideo() {
-    document.getElementById("videoOverlay").style.display = "flex";
-
-    document.getElementById("popupVideo").innerHTML =
-        `<iframe src="https://www.youtube.com/embed/tgbNymZ7vqY?autoplay=1"
-        allow="autoplay; encrypted-media"
-        allowfullscreen></iframe>`;
-}
-
-function closeVideo(overlayId, videoId) {
-    document.getElementById(overlayId).style.display = "none";
-
-    // 🔥 FORCE STOP VIDEO (BEST WAY)
-    document.getElementById(videoId).innerHTML = "";
-}
-
-*/
 
 	</script>
 

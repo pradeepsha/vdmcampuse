@@ -1,26 +1,31 @@
 
 
 let introNote = `
+<p>A computer is an electronic device that takes input, processes the input with the help of the CPU, gives output, and stores data for future use.</p>
 
-<p>A computer is an electronic device that works in the following way:</p>
+<p>It accepts data or instructions through devices like a keyboard, mouse, or scanner. Then it works on that information and shows the result on a monitor, printer, or speakers. It can also save information in storage devices like a hard disk, SSD, or pen drive.</p>
+
+<p>In simple words, a computer is a machine that helps us do work quickly by taking input, processing it, producing output, and storing data.</p>
+
+
+
+
 
 <ul>
-  <li>Takes input (data or instructions) using devices like keyboard, mouse, or scanner.</li>
-  <li>Processes that input according to a set of instructions (program) with the help of the CPU.</li>
-  <li>Produces output (results) on devices like monitor, printer, or speakers.</li>
-  <li>And can store data for future use with the help of storage devices like hard disk, SSD, or pen drive.</li>
+<li>
+  A computer system is a complete set of parts that work together to take input, process it, store data, and give output. It includes both hardware (physical parts) and software (programs and instructions).
+
+</li>
 </ul>
 
+    <h4> We say it works in four basic steps :</h4>
 
-<p>A computer system is a complete set of parts that work together to take input, process it, store data, and give output. It includes both hardware (physical parts) and software (programs and instructions).</p>
-    <h4>We say it works in four basic steps:</h4>
-
-    <ul>
-        <li><strong>Input:</strong> You give data (e.g., typing on keyboard)</li>
-        <li><strong>Processing:</strong> CPU works on it</li>
-        <li><strong>Output:</strong> You see or hear the result (e.g., on screen or printer)</li>
-        <li><strong>Storage:</strong> Data is saved for later use</li>
-    </ul>
+<ul>
+    <li><strong>Input:</strong> You give data or instructions to the computer through devices like a keyboard, mouse, or scanner. This is the first step because the computer needs information to start working.</li>
+    <li><strong>Processing:</strong> The CPU works on the data and follows the given instructions. It changes the input into useful information.</li>
+    <li><strong>Output:</strong> You see or hear the result through devices like a monitor, printer, or speakers. This is the final result of the computer’s work.</li>
+    <li><strong>Storage:</strong> The computer saves data for future use in devices like a hard disk, SSD, or pen drive. This helps you open and use the information later.</li>
+</ul>
 
 <h4>Main Parts of a Computer System</h4>
 
