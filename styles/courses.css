@@ -1249,14 +1249,17 @@ section
 }
 .latest_image div
 {
-	width: 90px;
-	height: 74px;
+
 	border-radius: 3px;
 	overflow: hidden;
+
+	/* width: 287px;
+    height: 215px; */
 }
 .latest_image div img
 {
 	max-width: 100%;
+	border-radius: 23px;
 }
 .latest_content
 {
