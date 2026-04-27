@@ -163,6 +163,10 @@ let introNote = `
   Watch Lecture
 </a>
 
+<a class="video-btn"  onclick="openVideo()">
+  Watch Lecture nm
+</a>
+
 <!-- Video Modal -->
 <div class="video-overlay" id="videoOverlay">
   <div class="video-popup">
@@ -569,8 +573,7 @@ const numberSystem = `
 
 
 <p>Hint: Check your answers using the conversion rules from the number‑system lesson.</p>
-<iframe width="420" height="345" src="https://www.youtube.com/embed/tgbNymZ7vqY">
-</iframe>
+
 
 `;
 
@@ -673,6 +676,226 @@ const bcdASCII = `
 
 
 
+/* Unit 2 */
+
+const cpu2 = `
+
+<h3>CPU</h3>
+
+<p><b>CPU</b> stands for <b>Central Processing Unit</b>. 
+A Central Processing Unit is also called a processor, central processor, or microprocessor. It carries out all the important functions of a computer. It performs calculations, manipulates data, and produces output based on instructions and stores all important programs.</p>
+
+<ul>
+  <li>The CPU takes input from the keyboard, mouse, or other devices and tells the computer what to do.</li>
+  <li>It runs programs, opens files, and performs calculations very fast (millions of times per second).</li>
+  <li>It is a small chip inside the computer’s mainboard (motherboard) and is very important for the computer’s speed and performance.</li>
+  <li>Without the CPU, a computer cannot work, just like a human body cannot work without a brain.</li>
+</ul>
+
+<h4>Main Parts of CPU</h4>
+
+<h5>1. Control Unit (CU)</h5>
+<p><b>Control Unit</b> controls all operations of the computer. It tells other parts what to do and how to do it.</p>
+<ul>
+  <li>Acts like a manager or teacher.</li>
+  <li>Controls input and output devices.</li>
+  <li>Sends instructions to ALU and memory.</li>
+  <li>Manages the flow of data inside the computer.</li>
+</ul>
+
+
+<h5>2. Arithmetic Logic Unit (ALU)</h5>
+<p><b>Arithmetic Logic Unit (ALU)</b> is the CPU's "math and logic brain"—a key component that performs all basic calculations (arithmetic) and decision-making operations (logic).</p>
+<p>It is one of the most important parts of the CPU. The ALU performs all types of calculations and logical operations in a computer system.</p>
+
+
+<p>Think of it like a smart calculator inside your computer: it crunches numbers and checks conditions super fast, using data from registers.</p>
+
+<p><b>What It Does</b></p>
+<ul>
+  <li><b>Arithmetic Operations</b>: Addition (+), subtraction (-), multiplication (×), division (÷).<br>
+    Example: \( 5 + 3 = 8 \) happens here!</li>
+  <li><b>Logical Operations</b>: AND, OR, NOT, XOR—for comparing bits (0s and 1s).<br>
+    Example: Is A greater than B? (Like deciding "true" or "false" in a game).</li>
+  <li><b>Bitwise Operations</b>: Shifts and rotates bits, useful for graphics or encryption.</li>
+</ul>
+
+<p><b>How It Works</b> </p>
+
+<ol>
+  <li>Grabs data from registers (e.g., numbers to add).</li>
+  <li>Follows an instruction (like "ADD").</li>
+  <li>Computes the result and updates flags (e.g., "zero?" or "overflow?").</li>
+  <li>Sends the answer back to a register.</li>
+</ol>
+
+
+
+
+<h5>3. Registers</h5>
+<p><b>Registers</b> 
+are small and fast memory inside the CPU used to store temporary data.
+
+Registers are small, ultra-fast memory locations embedded directly inside the CPU (Central Processing Unit). They act as the CPU's closest and quickest storage for temporary data during instruction execution, holding values like operands, addresses, or intermediate results. 
+
+</p>
+<ul>
+  <li>Stores data and instructions temporarily.</li>
+  <li>Very fast compared to normal memory.</li>
+  <li>Helps in quick processing.</li>
+  <li>Examples: Accumulator, Instruction Register (IR), Program Counter (PC).</li>
+</ul>
+
+`;
+
+
+const memory = `
+
+<p><b>Memory</b> is the place where a computer stores data and instructions.
+It works like a <b>library</b> where information is kept for use.</p>
+
+<p><b>Main Memory (RAM - Random Access Memory)</b> is like your <b>study table</b>.
+It stores the data and programs the CPU is using <i>right now</i>.
+It is fast but <b>temporary</b> (data is lost when power is off).</p>
+
+<p><b>Secondary Storage Devices</b> (also called Auxiliary Storage) are like your <b>long-term notebook or school bag</b>.
+They store data, files, photos, videos, and programs <b>permanently</b>, even when the computer is switched off.
+They have much more space than RAM but are slower.</p>
+
+<p><b>Common Secondary Storage Examples:</b></p>
+<ul>
+<li><b>Hard Disk Drive (HDD)</b>: Big spinning disks inside the computer.</li>
+<li><b>Solid State Drive (SSD)</b>: Faster, no moving parts (used in modern laptops).</li>
+<li><b>Pen Drive / USB Flash Drive</b>: Small portable stick for carrying files.</li>
+<li><b>Memory Card (SD Card)</b>: Used in phones and cameras.</li>
+<li><b>External Hard Drive</b>: Portable extra storage for backup.</li>
+</ul>
+
+<p><b>Storage Evaluation Criteria</b> (How we choose memory):</p>
+<ul>
+<li><b>Speed</b>: How fast data is read or written.</li>
+<li><b>Cost</b>: Price of memory (RAM is expensive).</li>
+<li><b>Capacity</b>: How much data it can store (KB, MB, GB, TB).</li>
+<li><b>Volatility</b>: Data is lost or not when power is off (RAM is volatile, secondary storage is non-volatile).</li>
+</ul>
+
+<p><b>Memory Organization</b> (How memory is arranged):</p>
+<ul>
+<li><b>Cells</b>: Small units that store data (0 or 1).</li>
+<li><b>Address</b>: Each cell has a unique number.</li>
+<li><b>Structure</b>: Arranged in rows and columns.</li>
+<li><b>Word Size</b>: Computer reads multiple bits at once.</li>
+</ul>
+
+<p><b>Capacity</b> (Memory size):</p>
+<ul>
+<li><b>1 Byte</b> = 1 character</li>
+<li><b>1 KB</b> = 1,000 bytes (approx.)</li>
+<li><b>1 MB</b> = 1,000 KB</li>
+<li><b>1 GB</b> = 1,000 MB</li>
+<li><b>1 TB</b> = 1,000 GB</li>
+</ul>
+
+<p><b>Input Devices</b> are like your <b>eyes, ears, and hands</b>. They help you <b>give data and instructions</b> to the computer.</p>
+<ul>
+<li><b>Keyboard</b>: For typing letters and numbers.</li>
+<li><b>Mouse / Touchpad</b>: For pointing and clicking.</li>
+<li><b>Microphone</b>: For voice input.</li>
+<li><b>Webcam</b>: For video and photos.</li>
+<li><b>Scanner</b>: To copy paper documents into the computer.</li>
+<li><b>Touchscreen</b>: Direct touch on the screen.</li>
+</ul>
+
+<p><b>Output Devices</b> are like your <b>mouth and eyes</b>. They help the computer <b>show results</b> to you.</p>
+<ul>
+<li><b>Monitor / Screen</b>: Shows text, images, and videos.</li>
+<li><b>Printer</b>: Prints on paper.</li>
+<li><b>Speakers / Headphones</b>: Plays sound and music.</li>
+<li><b>Projector</b>: Displays on a big screen (used in classrooms).</li>
+</ul>
+
+<p><b>Example</b>: Opening many apps uses more RAM.
+If RAM is low, the computer becomes slow.
+Secondary storage keeps all your files safe even after you shut down the computer.</p>
+
+
+`
+
+
+const ssd = `
+<h4>Secondary Storage Devices</h4>
+<p>Also called <b>Auxiliary</b> or <b>External Storage</b>, these devices store data <b>permanently</b> and do not lose information when the computer is switched off.</p>
+
+
+<ul>
+
+<li>
+Your primary memory (RAM) is like your short-term memory during a busy day—it holds homework notes, phone numbers, and to-do lists for quick access.
+But when you "sleep" (computer powers off), <i>poof!</i>—everything vanishes, just like forgetting details after a nap!
+</li>
+
+<li><b>Secondary storage</b> is like your <b>long-term memory or a notebook</b> — it remembers things even when the power is off.</li>
+</ul>
+
+<p><b>What is Secondary Storage?</b> It is a <b>permanent</b> (non-volatile) storage where you save your files, photos, videos, games, and programs for a long time. The data stays safe even if you switch off the computer. It has much more space than RAM, but it is slower to access.</p>
+
+<p><b>Why do we need it?</b> You cannot keep everything in RAM (it is expensive and small). Secondary storage is cheaper and bigger, so we use it to store everything permanently.</p>
+
+<p><b>Common Examples:</b></p>
+<ul>
+<li><b>Hard Disk Drive (HDD)</b>: Like a big spinning notebook inside the computer. It has platters (disks) that spin and a head that reads/writes data. Good for large storage, but slower and makes some noise.</li>
+<li><b>Solid State Drive (SSD)</b>: Modern and faster version. No moving parts — like a super-fast USB stick built inside. Used in laptops and phones because it is quick and quiet.</li>
+<li><b>Pen Drive / USB Flash Drive</b>: Small, portable stick you plug into USB port. Great for carrying files from one computer to another.</li>
+<li><b>Memory Card (SD Card)</b>: Used in phones, cameras, and tablets to store photos and videos.</li>
+<li><b>CD/DVD/Blu-ray</b>: Optical discs (shiny round disks). You burn data using laser. Old but still used for movies or backups.</li>
+<li><b>External Hard Drive</b>: Big portable version of HDD/SSD for extra backup.</li>
+</ul>
+
+<p><b>Key Points to Remember:</b></p>
+<ul>
+<li><b>Permanent</b> (data not lost when power is off)</li>
+<li><b>Large capacity</b> (GBs to TBs)</li>
+<li><b>Slower than RAM</b></li>
+<li>Used for storing <b>Operating System (Windows)</b>, files, documents, etc.</li>
+</ul>
+
+<p><b>2. Input Devices</b></p>
+<p>These are devices that help you <b>"talk" to the computer</b> or give instructions to it. You <b>put data IN</b> to the computer using these devices.</p>
+
+<p><b>Simple Analogy:</b> Input devices are like your <b>eyes, ears, and hands</b> — they collect information from the outside world and send it to your brain (computer).</p>
+
+<p><b>Common Input Devices and What They Do:</b></p>
+<ul>
+<li><b>Keyboard</b>: You type letters, numbers, and commands. (Like writing on paper)</li>
+<li><b>Mouse</b>: Pointing and clicking device. You move cursor, select, drag things. (Trackpad on laptops does the same)</li>
+<li><b>Touchscreen</b>: You directly touch the screen with your finger (like on phones and tablets).</li>
+<li><b>Microphone</b>: Records your voice or sound. Used for voice commands (like Siri/Google Assistant) or recording.</li>
+<li><b>Webcam</b>: Captures video and photos. Used for video calls.</li>
+<li><b>Scanner</b>: Copies real paper documents or photos into digital form inside the computer.</li>
+<li><b>Joystick / Gamepad</b>: Used for playing games — controls direction and actions.</li>
+<li><b>Graphics Tablet / Stylus</b>: For drawing or writing naturally (like digital pen and paper).</li>
+</ul>
+
+<p><b>How they work (simply):</b> These devices convert your actions (pressing a key, moving mouse, speaking) into <b>electrical signals (0s and 1s)</b> that the computer can understand.</p>
+
+<p><b>3. Output Devices</b></p>
+<p>These are devices that help the computer <b>"talk back" to you</b> or show results. The computer <b>sends data OUT</b> in a form that humans can see, hear, or read.</p>
+
+<p><b>Simple Analogy:</b> Output devices are like your <b>mouth, eyes (for seeing results), and hands (for writing answers)</b> — they present what your brain has processed.</p>
+
+<p><b>Common Output Devices and What They Do:</b></p>
+<ul>
+<li><b>Monitor / Screen</b>: Shows text, images, videos, and everything you see. (Like your eyes seeing the result)</li>
+<li><b>Printer</b>: Prints your documents, photos, or assignments on paper.</li>
+<li><b>Speakers / Headphones</b>: Plays sound, music, voice, or alerts.</li>
+<li><b>Projector</b>: Displays the computer screen on a big wall (used in classrooms).</li>
+<li><b>Plotter</b>: Special printer for big drawings, maps, or engineering designs.</li>
+</ul>
+
+<p><b>How they work (simply):</b> The computer processes the data and sends signals to these devices, which convert 0s and 1s back into something we can understand (pictures on screen, sound, or printed paper).</p>
+`
+
+
 const spreadsheet = `
 
 <h2 style="background: #ffa07f;">Spreadsheet uit 5</h2>
@@ -686,3 +909,4 @@ const spreadsheet = `
 </ul>
 
 `;
+

@@ -20,6 +20,7 @@
 	<link rel="stylesheet" type="text/css" href="styles/course_responsive.css">
 	<link rel="stylesheet" type="text/css" href="bca\watch_lecture.css">
 
+
 </head>
 
 
@@ -33,228 +34,6 @@
 		overflow: hidden;
 	}
 
-	;
-
-	/* MOBILE MENU BUTTON */
-
-	/* .mobile_menu_btn {
-		display: block !important;
-		background: #4a6cf7;
-		color: #fff;
-		padding: 10px 15px;
-		margin: 10px;
-		border-radius: 6px;
-		cursor: pointer;
-	} */
-
-	body.mobile_menu_btn {
-    display: none;
-}
-
-	.mobile_menu_btn {
-		 display: none; /* hidden on desktop */
-
-    align-items: center;
-    gap: 8px;
-
-    background: linear-gradient(135deg, #4a6cf7, #6a82fb);
-    color: #fff;
-
-    padding: 10px 16px;
-    margin: 12px;
-
-    border-radius: 8px;
-    font-size: 15px;
-    font-weight: 500;
-
-    cursor: pointer;
-    transition: all 0.3s ease;
-
-    box-shadow: 0 4px 12px rgba(0,0,0,0.15);
-	}
-
-	/* LAYOUT */
-
-	.notes_layout {
-		display: flex;
-		gap: 20px;
-		padding: 20px;
-		height: 100vh;
-		/* adjust based on header */
-		height: calc(100vh - 180px);
-	}
-
-	/* LEFT SIDEBAR */
-
-	.notes_sidebar {
-		width: 260px;
-		background: #f8f4f4;
-		border: 1px solid #eee;
-		border-radius: 8px;
-		overflow: hidden;
-		/* overflow-y: auto; */
-	}
-
-	.notes_title {
-		padding: 15px;
-		font-weight: bold;
-		border-bottom: 1px solid #bb1010;
-		font-size: 18px;
-		color: #7b0f3f;
-	}
-
-	.unit_title {
-		padding: 12px 15px;
-		cursor: pointer;
-		font-weight: 600;
-		background: #f8f9fc;
-		color: #1647c0;
-
-	}
-
-	.unit_title:hover {
-		/* background: #eef2ff; */
-		background: #eee;
-	}
-
-	.lecture_list {
-		display: none;
-	}
-
-	.lecture {
-		padding: 10px 30px;
-		cursor: pointer;
-		font-size: 14px;
-		color: #01050f
-	}
-
-	.lecture:hover {
-		background: #f3f6ff;
-	}
-
-	.lecture.active {
-		background: #e8ecff;
-		border-left: 4px solid #4a6cf7;
-		font-weight: 600;
-	}
-
-	/* CONTENT */
-
-	.notes_content {
-		flex: 1;
-		background: #fff;
-		padding: 30px;
-		border-radius: 8px;
-		border: 1px solid #eee;
-		max-width: 800px;
-
-		/* max-height: 100vh; */
-		overflow-y: auto;
-	}
-
-	.notes_text {
-		line-height: 1.8;
-		color: #0d0000;
-	}
-
-	.notes_text h2 {
-		color: #2980b9;
-		margin-bottom: 10px;
-	}
-
-	.notes_text h4 {
-		color: #2980b9;
-		margin-bottom: 10px;
-	}
-
-	.notes_text h3 {
-		color: #2980b9;
-		margin-top: 15px;
-		margin-bottom: 5px;
-		font-size: 18px;
-	}
-
-	/* Paragraphs */
-	.notes_text p {
-		margin-left: 10px;
-		margin-bottom: 10px;
-		font-size: 15px;
-	}
-
-	.notes_text ul {
-		list-style: none;
-		padding-left: 0;
-		margin-top: 10px;
-	}
-
-	.notes_text ul li {
-		background: #f4f8fb;
-		margin-bottom: 10px;
-		padding: 10px 15px;
-		border-left: 4px solid #3498db;
-		border-radius: 6px;
-		font-size: 15px;
-	}
-
-	
-
-	body.notes_text ol {
-		list-style: none;
-		counter-reset: num;
-	}
-
-	body.notes_text ol li {
-		counter-increment: num;
-		position: relative;
-		padding-left: 40px;
-	}
-
-	.notes_text ol li::before {
-		content: counter(num) ".";
-		position: absolute;
-		left: 0;
-	}
-
-	/* Highlight the heading (Input, Processing, etc.) */
-	.notes_text ul li strong {
-		color: #2c3e50;
-	}
-
-	/* RIGHT SIDEBAR */
-
-	.notes_right {
-		width: 260px;
-	}
-
-	.ad_box {
-		background: #fff;
-		border: 1px solid #eee;
-		border-radius: 8px;
-		padding: 15px;
-		margin-bottom: 20px;
-		text-align: center;
-	}
-
-	/* OVERLAY */
-
-	.overlay {
-		position: fixed;
-		top: 0;
-		left: 0;
-		width: 100%;
-		height: 100%;
-		background: rgba(0, 0, 0, 0.4);
-		display: none;
-		z-index: 999;
-	}
-
-
-
-/* ▶ Watch Now Button */
-
-
-
-/* close view button  */
 
 	/* MOBILE */
 
@@ -546,12 +325,16 @@
 
 					<div class="lecture_list">
 
-						<div class="lecture" onclick="loadNote('Input Devices', inputDevices, event)">
-							Lecture 2.1 Input Devices
+						<div class="lecture" onclick="loadNote('', cpu2, event)">
+							Lecture 2.1 CPU
 						</div>
 
-						<div class="lecture" onclick="loadNote('Output Devices', outputDevices, event)">
-							Lecture 2.2 Output Devices
+						<div class="lecture active" onclick="loadNote('', memory, event)">
+							Lecture 2.2 Memory
+						</div>
+
+						<div class="lecture" onclick="loadNote('', ssd, event)">
+							Lecture 2.3 Secondary Storage
 						</div>
 
 					</div>
@@ -634,24 +417,31 @@
 				<h4 id="notes_title">IT Tools and Applications</h4>
 
 				<div class="notes_text" id="notes_text">
-<p><strong>IT Tools and Applications</strong> is a subject that teaches us about the basic tools and software used in computers and digital work.</p>
+					<p><strong>IT Tools and Applications</strong> is a subject that teaches us about the basic tools and
+						software used in computers and digital work.</p>
 
-<p>It helps students learn how to use things like word processors, spreadsheets, presentations, email, the internet, and file management. It also introduces useful computer skills such as typing documents, making tables, creating slides, saving files, and using online tools.</p>
+					<p>It helps students learn how to use things like word processors, spreadsheets, presentations,
+						email, the internet, and file management. It also introduces useful computer skills such as
+						typing documents, making tables, creating slides, saving files, and using online tools.</p>
 
-<p><strong>Easy meaning:</strong> IT Tools and Applications means learning how to use computer tools and applications in a simple and practical way.</p>
+					<p><strong>Easy meaning:</strong> IT Tools and Applications means learning how to use computer tools
+						and applications in a simple and practical way.</p>
 
-<p><strong>What students learn:</strong></p>
-<ul>
-    <li>Basic computer knowledge.</li>
-    <li>Using MS Word, Excel, and PowerPoint.</li>
-    <li>Managing files and folders.</li>
-    <li>Using the internet and email.</li>
-    <li>Working with useful digital applications.</li>
-</ul>
+					<p><strong>What students learn:</strong></p>
+					<ul>
+						<li>Basic computer knowledge.</li>
+						<li>Using MS Word, Excel, and PowerPoint.</li>
+						<li>Managing files and folders.</li>
+						<li>Using the internet and email.</li>
+						<li>Working with useful digital applications.</li>
+					</ul>
 
-<p><strong>Why it is important:</strong> This subject is important because it helps students become comfortable with computers. It also improves school work, communication, and digital skills for the future.</p>
+					<p><strong>Why it is important:</strong> This subject is important because it helps students become
+						comfortable with computers. It also improves school work, communication, and digital skills for
+						the future.</p>
 
-<p>IT Tools and Applications is a subject that teaches students how to use common computer tools and applications. It makes learning computers easy, useful, and practical.</p>
+					<p>IT Tools and Applications is a subject that teaches students how to use common computer tools and
+						applications. It makes learning computers easy, useful, and practical.</p>
 
 				</div>
 
@@ -762,29 +552,29 @@
 
 
 
-  function openVideo() {
-    const overlay = document.getElementById('videoOverlay');
-    const iframe = document.getElementById('popupVideo');
+		function openVideo() {
+			const overlay = document.getElementById('videoOverlay');
+			const iframe = document.getElementById('popupVideo');
 
-    iframe.src="https://www.youtube.com/embed/pO5SX5QCbTw?si=3kbVPkSOsEmyMa38" ;
-	
-    overlay.style.display = "flex";
-  }
+			iframe.src = "https://www.youtube.com/embed/pO5SX5QCbTw?si=3kbVPkSOsEmyMa38";
 
-  function closeVideo() {
-    const overlay = document.getElementById('videoOverlay');
-    const iframe = document.getElementById('popupVideo');
+			overlay.style.display = "flex";
+		}
 
-    overlay.style.display = "none";
-    iframe.src = "";
-  }
+		function closeVideo() {
+			const overlay = document.getElementById('videoOverlay');
+			const iframe = document.getElementById('popupVideo');
 
-  window.addEventListener("click", function (e) {
-    const overlay = document.getElementById('videoOverlay');
-    if (e.target === overlay) {
-      closeVideo();
-    }
-  });
+			overlay.style.display = "none";
+			iframe.src = "";
+		}
+
+		window.addEventListener("click", function (e) {
+			const overlay = document.getElementById('videoOverlay');
+			if (e.target === overlay) {
+				closeVideo();
+			}
+		});
 
 	</script>
 
