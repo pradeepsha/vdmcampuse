@@ -895,7 +895,41 @@ But when you "sleep" (computer powers off), <i>poof!</i>—everything vanishes, 
 <p><b>How they work (simply):</b> The computer processes the data and sends signals to these devices, which convert 0s and 1s back into something we can understand (pictures on screen, sound, or printed paper).</p>
 `
 
+const prquestions = `
 
+    <h4><strong>Previous Year Questions</strong></h4>
+    
+    <div class="question">
+        <div class="year">YEAR-2023</div>
+        <div class="q-title">
+            <strong>What is the difference between RAM, ROM, PROM, EPROM?</strong>
+        </div>
+    </div>
+
+    <div class="question">
+        <div class="year">YEAR-2026</div>
+        <div class="q-title">
+            <strong>What is chart of MS-Excel? Write any two charts of MS-Excel</strong>
+        </div>
+    </div>
+
+        <div class="question">
+        <div class="year">YEAR-2025</div>
+        <div class="q-title">
+            <strong>What is the difference between RAM, ROM, PROM, EPROM?</strong>
+        </div>
+    </div>
+
+    <div class="question">
+        <div class="year">YEAR-2024</div>
+        <div class="q-title">
+            <strong>What is chart of MS-Excel? Write any two charts of MS-Excel</strong>
+        </div>
+    </div>
+
+    <div style="clear: both;"></div>
+
+`
 const spreadsheet = `
 
 <h2 style="background: #ffa07f;">Spreadsheet uit 5</h2>
