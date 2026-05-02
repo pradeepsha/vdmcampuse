@@ -1,15 +1,12 @@
 
 
 let introNote = `
+
 <p>A computer is an electronic device that takes input, processes the input with the help of the CPU, gives output, and stores data for future use.</p>
 
 <p>It accepts data or instructions through devices like a keyboard, mouse, or scanner. Then it works on that information and shows the result on a monitor, printer, or speakers. It can also save information in storage devices like a hard disk, SSD, or pen drive.</p>
 
 <p>In simple words, a computer is a machine that helps us do work quickly by taking input, processing it, producing output, and storing data.</p>
-
-
-
-
 
 <ul>
 <li>
@@ -163,9 +160,10 @@ let introNote = `
   Watch Lecture
 </a>
 
-<a class="video-btn"  onclick="openVideo()">
-  Watch Lecture nm
+<a class="video-btn" onclick="openVideos('https://www.youtube.com/embed/pO5SX5QCbTw?si=3kbVPkSOsEmyMa38')">
+  Watch Lecture-2
 </a>
+
 
 <!-- Video Modal -->
 <div class="video-overlay" id="videoOverlay">
@@ -930,17 +928,1039 @@ const prquestions = `
     <div style="clear: both;"></div>
 
 `
-const spreadsheet = `
 
-<h2 style="background: #ffa07f;">Spreadsheet uit 5</h2>
 
-<p>Output devices display the result of processing.</p>
 
+/* unit 3 */
+
+const hardwareSoftwareContent = `
+<div class="hardware-software">
+<h3>🖥️ HARDWARE AND SOFTWARE</h3>
+
+<p><b>What's the difference?</b> Think of a computer like your <b>body and brain</b>! <b>Hardware</b> = body parts you can touch. <b>Software</b> = brain instructions that tell the body what to do!</p>
+
+<h4>🔧 1. HARDWARE (Touchable Parts)</h4>
+
+<p><b>Simple Analogy:</b> Hardware is like your <b>body parts</b> — eyes, hands, legs. You can see and touch them!</p>
+
+<p><b>What's Hardware?</b> All the <b>physical parts</b> of a computer that you can touch. They make the computer work.</p>
+
+<p><b>Common Hardware Examples:</b></p>
 <ul>
-<li>Monitor</li>
-<li>Printer</li>
-<li>Speaker</li>
+<li><b>Monitor:</b> Screen where you see everything (like eyes)</li>
+<li><b>Keyboard:</b> Type letters/numbers (like hands typing)</li>
+<li><b>Mouse:</b> Point and click (like your finger pointing)</li>
+<li><b>CPU:</b> Brain of computer (does all thinking/calculations)</li>
+<li><b>RAM:</b> Short-term memory (holds data while working)</li>
+<li><b>Hard Drive/SSD:</b> Long-term memory (saves files permanently)</li>
+<li><b>Speakers:</b> Play sound (like mouth)</li>
+<li><b>Printer:</b> Prints on paper</li>
 </ul>
 
-`;
+<h5>Key Points:</h5>
+<ul>
+<li><b>Physical</b> — you can touch it</li>
+<li><b>Expensive</b> to buy</li>
+<li><b>Breaks</b> over time (like phone screen cracks)</li>
+<li><b>Needs power</b> to work</li>
+</ul>
 
+<h4>💻 2. SOFTWARE (Instructions)</h4>
+
+<p><b>Simple Analogy:</b> Software is like <b>recipes in your brain</b> — tells your hands (hardware) exactly what to do step-by-step!</p>
+
+<p><b>What's Software?</b> Programs and apps with <b>instructions</b> that tell hardware what to do. You can't touch software!</p>
+
+<p><b>Types of Software:</b></p>
+<ul>
+<li><b>System Software:</b> Controls the computer itself
+  <ul>
+  <li><b>Operating System:</b> Windows 11, macOS, Android (like brain manager)</li>
+  <li><b>Drivers:</b> Help hardware talk to OS (like translators)</li>
+  </ul>
+</li>
+
+<li><b>Application Software:</b> Programs for your work
+  <ul>
+  <li><b>MS Word:</b> Typing documents</li>
+  <li><b>Google Chrome:</b> Internet browsing</li>
+  <li><b>Games:</b> PUBG, Minecraft</li>
+  <li><b>Excel:</b> Calculations and charts</li>
+  </ul>
+</li>
+</ul>
+
+<h5>Key Points:</h5>
+<ul>
+<li><b>Invisible</b> — can't touch it</li>
+<li><b>Cheap/Free</b> (download from internet)</li>
+<li><b>Updates</b> fix bugs (doesn't break physically)</li>
+<li><b>Needs hardware</b> to run</li>
+</ul>
+
+<h4>🤝 HOW HARDWARE & SOFTWARE WORK TOGETHER</h4>
+
+<p><b>Perfect Teamwork!</b></p>
+
+<ul>
+<li>Hardware = <b>Body</b> (muscles, bones)</li>
+<li>Software = <b>Brain commands</b> (what to do, how to do)</li>
+<li><b>Example:</b> When you type in Word:
+  <ol>
+  <li>Keyboard (hardware) feels your finger press</li>
+  <li>Software (Word) shows letter on screen</li>
+  <li>Monitor (hardware) displays the letter</li>
+  </ol>
+</li>
+</ul>
+
+<h4>⚠️ Quick Comparison Table:</h4>
+<table style="border-collapse: collapse; width: 100%; margin: 10px 0;">
+<tr style="background: #4CAF50; color: white;">
+<th style="border: 1px solid #ddd; padding: 8px;">Feature</th>
+<th style="border: 1px solid #ddd; padding: 8px;">Hardware</th>
+<th style="border: 1px solid #ddd; padding: 8px;">Software</th>
+</tr>
+<tr>
+<td style="border: 1px solid #ddd; padding: 8px;"><b>Touch?</b></td>
+<td style="border: 1px solid #ddd; padding: 8px;">✅ Yes</td>
+<td style="border: 1px solid #ddd; padding: 8px;">❌ No</td>
+</tr>
+<tr style="background: #f2f2f2;">
+<td style="border: 1px solid #ddd; padding: 8px;"><b>Breaks?</b></td>
+<td style="border: 1px solid #ddd; padding: 8px;">⚠️ Physical damage</td>
+<td style="border: 1px solid #ddd; padding: 8px;">🐛 Bugs/viruses</td>
+</tr>
+<tr>
+<td style="border: 1px solid #ddd; padding: 8px;"><b>Examples</b></td>
+<td style="border: 1px solid #ddd; padding: 8px;">CPU, Keyboard</td>
+<td style="border: 1px solid #ddd; padding: 8px;">Windows, Word</td>
+</tr>
+</table>
+
+<h4>🎯 Student Memory Trick:</h4>
+<ul>
+<li><b>HARDware</b> = <b>HARD</b> things you can hold</li>
+<li><b>SOFTware</b> = <b>SOFT</b> programs you download</li>
+</ul>
+
+<h4>🚀 Why Both Matter:</h4>
+<ul>
+<li>No hardware = No computer (just empty box!)</li>
+<li>No software = Useless computer (like body without brain!)</li>
+<li>Together = Your phone, laptop, tablet! ✨</li>
+</ul>
+
+<h4>💡 Pro Tips for Students:</h4>
+<ul>
+<li>Save homework on <b>hardware</b> (hard drive)</li>
+<li>Type in <b>software</b> (MS Word)</li>
+<li>Print using both (printer hardware + print software)</li>
+<li>Update software = faster computer!</li>
+</ul>
+</div>
+`
+
+const typesOfSoftwareContent = `
+<div class="types-software">
+<h3>💻 TYPES OF SOFTWARE</h3>
+
+<p><b>What's Software?</b> Think of software like <b>recipe books</b> for your computer! Different recipes (types) tell it how to do different jobs. Here are the main types students need to know!</p>
+
+<h4>1️⃣ SYSTEM SOFTWARE (The Boss)</h4>
+
+<p><b>Simple Analogy:</b> Like your <b>house manager</b> who controls lights, water, doors — makes sure everything works smoothly!</p>
+
+<p><b>What it does:</b> Controls the computer hardware and helps other programs run.</p>
+
+<h5>Types of System Software:</h5>
+<ul>
+<li><b>Operating System (OS):</b> Windows 11, macOS, Android, Linux
+  <ul>
+  <li>Starts computer</li>
+  <li>Manages files/folders</li>
+  <li>Controls RAM, keyboard, mouse</li>
+  </ul>
+</li>
+<li><b>Device Drivers:</b> Help hardware talk to OS
+  <ul>
+  <li>Printer driver = printer works</li>
+  <li>Graphics driver = better games</li>
+  </ul>
+</li>
+<li><b>Utility Software:</b> Helper tools
+  <ul>
+  <li>Antivirus (protects computer)</li>
+  <li>Disk cleanup (frees space)</li>
+  <li>Backup software</li>
+  </ul>
+</li>
+</ul>
+
+<h4>2️⃣ APPLICATION SOFTWARE (Your Tools)</h4>
+
+<p><b>Simple Analogy:</b> Like your <b>school bag tools</b> — pen, calculator, notebook. Each tool for different homework!</p>
+
+<p><b>What it does:</b> Helps you do specific tasks like studying, gaming, browsing.</p>
+
+<h5>Common Application Software:</h5>
+<ul>
+<li><b>Word Processing:</b> MS Word, Google Docs (type essays)</li>
+<li><b>Spreadsheets:</b> Excel, Google Sheets (math, charts)</li>
+<li><b>Presentations:</b> PowerPoint, Google Slides (class projects)</li>
+<li><b>Web Browser:</b> Chrome, Firefox (internet surfing)</li>
+<li><b>Media Players:</b> VLC, Windows Media Player (videos, music)</li>
+<li><b>Games:</b> Minecraft, PUBG, Candy Crush</li>
+<li><b>Photo Editors:</b> Photoshop, Canva (edit pictures)</li>
+</ul>
+
+<h4>3️⃣ PROGRAMMING SOFTWARE (For Coders)</h4>
+
+<p><b>Simple Analogy:</b> Like <b>factory tools</b> that make other tools! Coders use these to create apps.</p>
+
+<h5>Examples:</h5>
+<ul>
+<li><b>Code Editors:</b> VS Code, Notepad++</li>
+<li><b>Compilers:</b> Turn code into programs</li>
+<li><b>IDEs:</b> Visual Studio, PyCharm (all-in-one coding)</li>
+</ul>
+
+<h4>⚠️ Quick Comparison Table:</h4>
+<table style="border-collapse: collapse; width: 100%; margin: 20px 0;">
+<tr style="background: #2196F3; color: white;">
+<th style="border: 1px solid #ddd; padding: 12px;">Type</th>
+<th style="border: 1px solid #ddd; padding: 12px;">Examples</th>
+<th style="border: 1px solid #ddd; padding: 12px;">Job</th>
+</tr>
+<tr style="background: #E3F2FD;">
+<td style="border: 1px solid #ddd; padding: 10px;"><b>System</b></td>
+<td style="border: 1px solid #ddd; padding: 10px;">Windows, Drivers</td>
+<td style="border: 1px solid #ddd; padding: 10px;">Controls hardware</td>
+</tr>
+<tr>
+<td style="border: 1px solid #ddd; padding: 10px;"><b>Application</b></td>
+<td style="border: 1px solid #ddd; padding: 10px;">Word, Chrome, Games</td>
+<td style="border: 1px solid #ddd; padding: 10px;">Your daily work</td>
+</tr>
+<tr style="background: #E3F2FD;">
+<td style="border: 1px solid #ddd; padding: 10px;"><b>Programming</b></td>
+<td style="border: 1px solid #ddd; padding: 10px;">VS Code, Compilers</td>
+<td style="border: 1px solid #ddd; padding: 10px;">Makes other software</td>
+</tr>
+</table>
+
+<h4>🎯 Student Memory Trick:</h4>
+<ul>
+<li><b>System Software</b> = <b>S</b>uper <b>S</b>ervant (controls everything)</li>
+<li><b>Application Software</b> = <b>A</b>wesome <b>A</b>pps (your tools)</li>
+<li><b>Programming Software</b> = <b>P</b>rogrammer's <b>P</b>ower tools</li>
+</ul>
+
+<h4>🚀 Real-Life Examples:</h4>
+<ul>
+<li><b>Your Phone:</b> Android (system) + WhatsApp (application)</li>
+<li><b>School Laptop:</b> Windows (system) + MS Word (application)</li>
+<li><b>Game Development:</b> Unity (application) + Visual Studio (programming)</li>
+</ul>
+
+<h4>💡 Pro Tips for Students:</h4>
+<ul>
+<li><b>Never delete System Software</b> (computer stops!)</li>
+<li><b>Update Applications</b> = new features, no viruses</li>
+<li><b>Free alternatives:</b> Google Docs (not Word), LibreOffice</li>
+<li><b>Ctrl+Alt+Del</b> = see all running software!</li>
+</ul>
+
+<h4>✨ Perfect Team:</h4>
+<p>Hardware + System Software + Application Software = Your complete computer! 🎉</p>
+</div>
+`
+
+/*  unit 4  */
+
+const multimediaContent = `
+<div class="multimedia-word">
+<h3>🎨 MULTIMEDIA</h3>
+
+<p><b>What's Multimedia?</b> It's like a <b>magic show</b> on your computer that combines different types of media to make things fun and engaging! Think movies, games, and presentations all in one.</p>
+
+<h5>1. What Multimedia Contains:</h5>
+<ul>
+<li><b>Text:</b> Words you read (like this explanation!)</li>
+<li><b>Graphics:</b> Pictures, drawings, logos</li>
+<li><b>Animation:</b> Moving pictures (like cartoons or bouncing balls)</li>
+<li><b>Audio:</b> Sound, music, voice (songs, effects, talking)</li>
+<li><b>Images:</b> Photos, illustrations</li>
+<li><b>Video:</b> Moving pictures with sound (like YouTube videos)</li>
+</ul>
+
+<p><b>Simple Analogy:</b> Multimedia is like a <b>party invitation</b> with colorful paper (graphics), music (audio), dancing figures (animation), photos (images), and a video message!</p>
+
+<h5>2. Where We Use Multimedia:</h5>
+<ul>
+<li><b>Education:</b> Interactive lessons, educational games</li>
+<li><b>Entertainment:</b> Movies, video games, music videos</li>
+<li><b>Business:</b> Company presentations, advertisements</li>
+<li><b>Medicine:</b> 3D body animations for doctors</li>
+<li><b>Web:</b> YouTube, websites with videos and music</li>
+<li><b>Art:</b> Digital paintings with sound effects</li>
+</ul>
+
+<h5>3. Why Multimedia is Awesome:</h5>
+<ul>
+<li>Makes learning <b>fun and easy</b></li>
+<li>Helps remember information better</li>
+<li>Attracts attention quickly</li>
+<li>Works on phones, computers, tablets</li>
+</ul>
+</div>
+`
+
+const wordProcessingContent = `
+<div class="word-processing">
+<h3>📝 WORD PROCESSING</h3>
+
+<p><b>What's Word Processing?</b> It's like a <b>super-smart notebook</b> on your computer where you type letters, assignments, stories, and reports. Much better than pen and paper!</p>
+
+<h5>1. Basic Document Operations:</h5>
+<ul>
+<li><b>Create:</b> Open MS Word/Google Docs → New → Blank Document</li>
+<li><b>Save:</b> Ctrl+S → "MyEssay.docx"</li>
+<li><b>Close:</b> Ctrl+W or File → Close</li>
+<li><b>Open:</b> File → Open → pick your file</li>
+</ul>
+
+<h5>2. Working with Text:</h5>
+<ul>
+<li><b>Select text:</b> Drag mouse over words or Ctrl+A (all)</li>
+<li><b>Edit:</b> Delete (Backspace), Cut (Ctrl+X), Copy (Ctrl+C), Paste (Ctrl+V)</li>
+<li><b>Find:</b> Ctrl+F → type word to search</li>
+<li><b>Replace:</b> Ctrl+H → old word → new word</li>
+</ul>
+
+<h5>3. Printing Documents:</h5>
+<ul>
+<li>File → Print → Choose printer → Print</li>
+<li>Options: Black/White, pages 1-5, multiple copies</li>
+</ul>
+
+<h5>4. Mail Merge (Merged Documents):</h5>
+<ul>
+<li><b>What:</b> One letter to many people (like birthday cards)</li>
+<li><b>How:</b> Write letter → Mailings → Start Mail Merge → Select Recipients → Finish</li>
+</ul>
+
+<h5>5. Character Formatting (Letters):</h5>
+<ul>
+<li><b>Bold:</b> Ctrl+B, <b>Italic:</b> Ctrl+I, <b>Underline:</b> Ctrl+U</li>
+<li>Font size: 12, 14, 16 (Home tab)</li>
+<li>Colors: Red, Blue, Green (Font color button)</li>
+</ul>
+
+<h5>6. Paragraph Formatting:</h5>
+<ul>
+<li><b>Align:</b> Left, Center, Right, Justify (4 buttons)</li>
+<li><b>Bullets/Numbers:</b> Home → Bullets/Numbering</li>
+<li><b>Line spacing:</b> 1.0, 1.15, 2.0 (more space between lines)</li>
+</ul>
+
+<h5>7. Page Design & Layout:</h5>
+<ul>
+<li><b>Margins:</b> Narrow, Normal, Wide (Page Layout)</li>
+<li><b>Headers/Footers:</b> Page numbers, your name</li>
+<li><b>Page size:</b> A4, Letter</li>
+<li><b>Orientation:</b> Portrait (tall) or Landscape (wide)</li>
+</ul>
+
+<h5>🎯 Quick Tips:</h5>
+<ul>
+<li>Ctrl+Z = Undo (magic fix button!)</li>
+<li>Ctrl+Y = Redo</li>
+<li>Save often = Never lose work!</li>
+<li>Use Spell Check (ABC button)</li>
+</ul>
+
+
+</div>
+`
+
+const operatingSystemContent = `
+<div class="operating-system">
+<h3>🖥️ OPERATING SYSTEM (OS)</h3>
+
+<p><b>What's an Operating System?</b> Think of it like your <b>class monitor</b> who manages the entire classroom! The OS controls your computer and makes sure all programs work together nicely.</p>
+
+<h4>🎯 SIMPLE ANALOGY</h4>
+<p>Your computer is like a <b>busy kitchen</b>:</p>
+<ul>
+<li><b>Chef (CPU)</b> = cooks food</li>
+<li><b>Ingredients (RAM)</b> = ready on table</li>
+<li><b>OS (Head Chef)</b> = tells everyone what to do, when to do it!</li>
+</ul>
+
+<h4>1️⃣ WHAT DOES OS DO?</h4>
+<p><b>Main Jobs of Operating System:</b></p>
+<ul>
+<li><b>Manages Hardware:</b> Controls keyboard, mouse, screen, printer</li>
+<li><b>Manages Memory:</b> Gives RAM space to different programs</li>
+<li><b>Manages Files:</b> Creates, saves, finds your documents</li>
+<li><b>Runs Programs:</b> Opens Word, Chrome, games smoothly</li>
+<li><b>Security:</b> Protects from viruses, asks for passwords</li>
+</ul>
+
+<h4>2️⃣ COMMON OPERATING SYSTEMS</h4>
+<p><b>Popular OS for Students:</b></p>
+<ul>
+<li><b>Windows 11:</b> Most popular for laptops/PCs 💻
+  <ul>
+  <li>Great for MS Office, games</li>
+  <li>Easy for beginners</li>
+  </ul>
+</li>
+<li><b>macOS:</b> Apple computers 🍎
+  <ul>
+  <li>Smooth, beautiful design</li>
+  <li>Perfect for creative work</li>
+  </ul>
+</li>
+<li><b>Android:</b> Phones & tablets 📱
+  <ul>
+  <li>Google's mobile OS</li>
+  <li>Touch-friendly</li>
+  </ul>
+</li>
+<li><b>iOS:</b> iPhones/iPads 📲
+  <ul>
+  <li>Apple's mobile OS</li>
+  <li>Super secure</li>
+  </ul>
+</li>
+<li><b>Linux:</b> Free for advanced users 🐧
+  <ul>
+  <li>Programmers love it</li>
+  <li>Very fast & secure</li>
+  </ul>
+</li>
+</ul>
+
+<h4>3️⃣ TYPES OF OPERATING SYSTEMS</h4>
+<table style="border-collapse: collapse; width: 100%; margin: 20px 0;">
+<tr style="background: #FF9800; color: white;">
+<th style="border: 1px solid #ddd; padding: 12px;">Type</th>
+<th style="border: 1px solid #ddd; padding: 12px;">Example</th>
+<th style="border: 1px solid #ddd; padding: 12px;">Use</th>
+</tr>
+<tr style="background: #FFF3E0;">
+<td style="border: 1px solid #ddd; padding: 10px;"><b>Single User</b></td>
+<td style="border: 1px solid #ddd; padding: 10px;">MS-DOS</td>
+<td style="border: 1px solid #ddd; padding: 10px;">One person only</td>
+</tr>
+<tr>
+<td style="border: 1px solid #ddd; padding: 10px;"><b>Multi-User</b></td>
+<td style="border: 1px solid #ddd; padding: 10px;">Windows Server</td>
+<td style="border: 1px solid #ddd; padding: 10px;">Many users together</td>
+</tr>
+<tr style="background: #FFF3E0;">
+<td style="border: 1px solid #ddd; padding: 10px;"><b>Real-Time</b></td>
+<td style="border: 1px solid #ddd; padding: 10px;">RTOS</td>
+<td style="border: 1px solid #ddd; padding: 10px;">Airplanes, medical</td>
+</tr>
+<tr>
+<td style="border: 1px solid #ddd; padding: 10px;"><b>Mobile</b></td>
+<td style="border: 1px solid #ddd; padding: 10px;">Android, iOS</td>
+<td style="border: 1px solid #ddd; padding: 10px;">Phones/tablets</td>
+</tr>
+</table>
+
+<h4>4️⃣ HOW OS STARTS (Boot Process)</h4>
+<ol>
+<li>Power ON → <b>BIOS</b> checks hardware</li>
+<li>BIOS finds OS on hard drive</li>
+<li>OS loads into RAM</li>
+<li>Desktop appears → Ready to use! ✨</li>
+</ol>
+
+<h4>5️⃣ OS INTERFACE</h4>
+<p><b>How You See It:</b></p>
+<ul>
+<li><b>GUI:</b> Windows, macOS (pictures, mouse)
+  <ul>
+  <li>Icons, Start menu, taskbar</li>
+  </ul>
+</li>
+<li><b>Command Line:</b> Black screen typing
+  <ul>
+  <li>CMD, Terminal (fast for experts)</li>
+  </ul>
+</li>
+</ul>
+
+<h4>🎯 STUDENT MEMORY TRICKS</h4>
+<ul>
+<li><b>OS</b> = <b>O</b>verall <b>S</b>upervisor</li>
+<li><b>Windows</b> = <b>W</b>ork + <b>I</b>nternet + <b>N</b>otes + <b>D</b>ocuments + <b>O</b>ffice + <b>W</b>ebsites + <b>S</b>tudy</li>
+<li><b>Boot</b> = <b>B</b>egin <b>O</b>perating <b>O</b>S <b>T</b>oday</li>
+</ul>
+
+<h4>🚀 COOL OS FEATURES</h4>
+<ul>
+<li><b>Multi-tasking:</b> Homework + YouTube + Music together!</li>
+<li><b>File Search:</b> Find lost assignments fast</li>
+<li><b>Updates:</b> Makes computer faster/safer</li>
+<li><b>Recycle Bin:</b> Accidentally deleted? No problem!</li>
+</ul>
+
+<h4>💡 PRO TIPS FOR STUDENTS</h4>
+<ul>
+<li><b>Ctrl+Alt+Delete</b> = Task Manager (close frozen apps)</li>
+<li><b>Windows Key</b> = Quick Start menu</li>
+<li><b>Update OS monthly</b> = No viruses!</li>
+<li><b>Restart weekly</b> = Faster computer</li>
+</ul>
+
+<h4>✨ SUMMARY</h4>
+<p><b>Operating System = Your computer's best friend!</b> It runs in background so you can focus on studies, games, and fun! 🎉</p>
+</div>
+`
+
+
+const dosOperatingSystemContent = `
+<div class="dos-operating-system">
+<h3>💾 DOS OPERATING SYSTEM</h3>
+
+<p><b>What's DOS?</b> DOS stands for <b>Disk Operating System</b>. It's the <b>grandfather of modern Windows</b>! Think of it like typing commands on a <b>black screen</b> instead of clicking icons.</p>
+
+<h4>🕰️ DOS HISTORY</h4>
+<p><b>1981:</b> IBM asked Microsoft to make an OS for their first PC. Microsoft bought QDOS and called it <b>MS-DOS</b>.</p>
+<p><b>1980s-90s:</b> EVERY computer used DOS! Windows 95/98 ran ON TOP of DOS.</p>
+<p><b>Today:</b> Still used in old machines, embedded systems, and learning!</p>
+
+<h4>🎯 SIMPLE ANALOGY</h4>
+<p>DOS = <b>Old typewriter with no pictures</b>. You type exact commands to do everything!</p>
+
+<h4>1️⃣ WHY DOS IS IMPORTANT</h4>
+<ul>
+<li><b>No mouse needed</b> — super fast typing!</li>
+<li><b>Tiny size</b> — fits on floppy disk</li>
+<li><b>Learns you computer basics</b></li>
+<li><b>Still used</b> in factories, ATMs, medical machines</li>
+</ul>
+
+<h4>2️⃣ HOW TO OPEN DOS</h4>
+<p><b>Modern Windows:</b></p>
+<ol>
+<li>Press <b>Windows + R</b></li>
+<li>Type <code>cmd</code> → Enter</li>
+<li>Black screen = DOS/Command Prompt!</li>
+</ol>
+
+<h4>3️⃣ MOST IMPORTANT DOS COMMANDS</h4>
+
+<h5>📁 DIRECTORY COMMANDS</h5>
+<table style="border-collapse: collapse; width: 100%; margin: 15px 0;">
+<tr style="background: #2196F3; color: white;">
+<th style="border: 1px solid #ddd; padding: 10px;">Command</th>
+<th style="border: 1px solid #ddd; padding: 10px;">What it does</th>
+<th style="border: 1px solid #ddd; padding: 10px;">Example</th>
+</tr>
+<tr style="background: #E3F2FD;">
+<td style="border: 1px solid #ddd; padding: 8px;"><code>DIR</code></td>
+<td style="border: 1px solid #ddd; padding: 8px;">Shows all files/folders</td>
+<td style="border: 1px solid #ddd; padding: 8px;"><code>DIR</code></td>
+</tr>
+<tr>
+<td style="border: 1px solid #ddd; padding: 8px;"><code>CD foldername</code></td>
+<td style="border: 1px solid #ddd; padding: 8px;">Enter folder</td>
+<td style="border: 1px solid #ddd; padding: 8px;"><code>CD Documents</code></td>
+</tr>
+<tr style="background: #E3F2FD;">
+<td style="border: 1px solid #ddd; padding: 8px;"><code>CD ..</code></td>
+<td style="border: 1px solid #ddd; padding: 8px;">Go back 1 folder</td>
+<td style="border: 1px solid #ddd; padding: 8px;"><code>CD ..</code></td>
+</tr>
+<tr>
+<td style="border: 1px solid #ddd; padding: 8px;"><code>CD \\</code></td>
+<td style="border: 1px solid #ddd; padding: 8px;">Go to C: drive root</td>
+<td style="border: 1px solid #ddd; padding: 8px;"><code>CD \\</code></td>
+</tr>
+</table>
+
+<h5>📄 FILE COMMANDS</h5>
+<table style="border-collapse: collapse; width: 100%; margin: 15px 0;">
+<tr style="background: #4CAF50; color: white;">
+<th style="border: 1px solid #ddd; padding: 10px;">Command</th>
+<th style="border: 1px solid #ddd; padding: 10px;">What it does</th>
+<th style="border: 1px solid #ddd; padding: 10px;">Example</th>
+</tr>
+<tr style="background: #E8F5E8;">
+<td style="border: 1px solid #ddd; padding: 8px;"><code>COPY file1.txt file2.txt</code></td>
+<td style="border: 1px solid #ddd; padding: 8px;">Copy file</td>
+<td style="border: 1px solid #ddd; padding: 8px;"><code>COPY homework.txt backup.txt</code></td>
+</tr>
+<tr>
+<td style="border: 1px solid #ddd; padding: 8px;"><code>DEL filename</code></td>
+<td style="border: 1px solid #ddd; padding: 8px;">Delete file</td>
+<td style="border: 1px solid #ddd; padding: 8px;"><code>DEL old.txt</code></td>
+</tr>
+<tr style="background: #E8F5E8;">
+<td style="border: 1px solid #ddd; padding: 8px;"><code>REN oldname newname</code></td>
+<td style="border: 1px solid #ddd; padding: 8px;">Rename file</td>
+<td style="border: 1px solid #ddd; padding: 8px;"><code>REN hw1.txt homework.txt</code></td>
+</tr>
+<tr>
+<td style="border: 1px solid #ddd; padding: 8px;"><code>TYPE filename</code></td>
+<td style="border: 1px solid #ddd; padding: 8px;">Read file content</td>
+<td style="border: 1px solid #ddd; padding: 8px;"><code>TYPE notes.txt</code></td>
+</tr>
+</table>
+
+<h5>💾 DRIVE & SYSTEM COMMANDS</h5>
+<table style="border-collapse: collapse; width: 100%; margin: 15px 0;">
+<tr style="background: #FF9800; color: white;">
+<th style="border: 1px solid #ddd; padding: 10px;">Command</th>
+<th style="border: 1px solid #ddd; padding: 10px;">What it does</th>
+<th style="border: 1px solid #ddd; padding: 10px;">Example</th>
+</tr>
+<tr style="background: #FFF3E0;">
+<td style="border: 1px solid #ddd; padding: 8px;"><code>C:</code></td>
+<td style="border: 1px solid #ddd; padding: 8px;">Switch to C: drive</td>
+<td style="border: 1px solid #ddd; padding: 8px;"><code>C:</code></td>
+</tr>
+<tr>
+<td style="border: 1px solid #ddd; padding: 8px;"><code>D:</code></td>
+<td style="border: 1px solid #ddd; padding: 8px;">Switch to D: drive</td>
+<td style="border: 1px solid #ddd; padding: 8px;"><code>D:</code></td>
+</tr>
+<tr style="background: #FFF3E0;">
+<td style="border: 1px solid #ddd; padding: 8px;"><code>CLS</code></td>
+<td style="border: 1px solid #ddd; padding: 8px;">Clear screen</td>
+<td style="border: 1px solid #ddd; padding: 8px;"><code>CLS</code></td>
+</tr>
+<tr>
+<td style="border: 1px solid #ddd; padding: 8px;"><code>MD foldername</code></td>
+<td style="border: 1px solid #ddd; padding: 8px;">Make new folder</td>
+<td style="border: 1px solid #ddd; padding: 8px;"><code>MD Homework</code></td>
+</tr>
+<tr style="background: #FFF3E0;">
+<td style="border: 1px solid #ddd; padding: 8px;"><code>RD foldername</code></td>
+<td style="border: 1px solid #ddd; padding: 8px;">Remove empty folder</td>
+<td style="border: 1px solid #ddd; padding: 8px;"><code>RD temp</code></td>
+</tr>
+</table>
+
+<h4>4️⃣ SUPER USEFUL COMMANDS</h4>
+<ul>
+<li><code>HELP</code> — Shows all commands</li>
+<li><code>CHKDSK</code> — Check disk errors</li>
+<li><code>TIME</code> — Show current time</li>
+<li><code>DATE</code> — Show current date</li>
+<li><code>VER</code> — Show DOS version</li>
+<li><code>EXIT</code> — Close DOS</li>
+</ul>
+
+<h4>5️⃣ STUDENT PRACTICE SEQUENCE</h4>
+<ol>
+<li><code>DIR</code> (see files)</li>
+<li><code>MD Study</code> (make folder)</li>
+<li><code>CD Study</code> (enter folder)</li>
+<li><code>NOTEPAD notes.txt</code> (create file)</li>
+<li><code>DIR</code> (check file created)</li>
+<li><code>CD ..</code> (go back)</li>
+<li><code>CLS</code> (clean screen)</li>
+</ol>
+
+<h4>🎯 MEMORY TRICKS</h4>
+<ul>
+<li><code>DIR</code> = <b>D</b>isplay <b>IR</b> (files)</li>
+<li><code>CD</code> = <b>C</b>hange <b>D</b>irectory</li>
+<li><code>DEL</code> = <b>DEL</b>ete</li>
+<li><code>COPY</code> = Copy file</li>
+<li><code>CLS</code> = <b>CL</b>ean <b>S</b>creen</li>
+</ul>
+
+<h4>🚀 PRO TIPS</h4>
+<ul>
+<li>Press <b>↑ arrow</b> = repeat last command</li>
+<li>Type first 3 letters + <b>TAB</b> = auto-complete</li>
+<li><b>F1</b> = letter-by-letter previous command</li>
+<li><code>COMMAND /?</code> = shows help for any command</li>
+</ul>
+
+<h4>✨ WHY LEARN DOS?</h4>
+<ul>
+<li><b>Exam questions</b> always ask DOS commands!</li>
+<li><b>Fast file management</b></li>
+<li><b>Understand Windows CMD</b></li>
+<li><b>Retro gaming</b> (old DOS games!)</li>
+</ul>
+
+<h4>💻 TRY NOW</h4>
+<p>Open CMD and type <code>DIR</code> → See the magic! ✨</p>
+</div>
+`
+
+const fileSystemContent = `
+<div class="file-system">
+<h3>📁 FILE SYSTEM</h3>
+
+<p><b>What's a File System?</b> Think of it like a <b>giant library system</b> in your computer! It organizes all your files, photos, videos, and homework in folders, just like books on library shelves with a special numbering system.</p>
+
+<h4>🎯 SIMPLE LIBRARY ANALOGY</h4>
+<p>Your computer hard drive = <b>Library building</b></p>
+<ul>
+<li><b>Files</b> = Books (your documents, photos, videos)</li>
+<li><b>Folders</b> = Bookshelves (organize related books)</li>
+<li><b>File System</b> = <b>Librarian + Catalog system</b> (knows exactly where every book is!)</li>
+</ul>
+
+<h4>1️⃣ WHAT FILE SYSTEM DOES</h4>
+<ul>
+<li><b>Organizes files</b> in folders (C:\Homework\Math)</li>
+<li><b>Tracks location</b> — knows exactly where each file lives on hard drive</li>
+<li><b>Manages space</b> — tells you how much storage left</li>
+<li><b>Keeps file info</b> — name, size, date created, who owns it</li>
+<li><b>Controls access</b> — who can read/write/delete</li>
+</ul>
+
+<h4>2️⃣ INSIDE A FILE SYSTEM (How It Works)</h4>
+
+<h5>🧩 PHYSICAL LAYOUT</h5>
+<table style="border-collapse: collapse; width: 100%; margin: 15px 0;">
+<tr style="background: #2196F3; color: white;">
+<th style="border: 1px solid #ddd; padding: 10px;">Part</th>
+<th style="border: 1px solid #ddd; padding: 10px;">What it does</th>
+<th style="border: 1px solid #ddd; padding: 10px;">Example</th>
+</tr>
+<tr style="background: #E3F2FD;">
+<td style="border: 1px solid #ddd; padding: 8px;"><b>Root Directory</b></td>
+<td style="border: 1px solid #ddd; padding: 8px;">Main folder (top level)</td>
+<td style="border: 1px solid #ddd; padding: 8px;">C:\</td>
+</tr>
+<tr>
+<td style="border: 1px solid #ddd; padding: 8px;"><b>Subdirectories</b></td>
+<td style="border: 1px solid #ddd; padding: 8px;">Folders inside folders</td>
+<td style="border: 1px solid #ddd; padding: 8px;">C:\Homework\Math</td>
+</tr>
+<tr style="background: #E3F2FD;">
+<td style="border: 1px solid #ddd; padding: 8px;"><b>Inode/File Table</b></td>
+<td style="border: 1px solid #ddd; padding: 8px;">File address book</td>
+<td style="border: 1px solid #ddd; padding: 8px;">File location map</td>
+</tr>
+<tr>
+<td style="border: 1px solid #ddd; padding: 8px;"><b>Data Blocks</b></td>
+<td style="border: 1px solid #ddd; padding: 8px;">Actual file content</td>
+<td style="border: 1px solid #ddd; padding: 8px;">Your photo bytes</td>
+</tr>
+</table>
+
+<h4>3️⃣ FILE SYSTEM STRUCTURE (TREE)</h4>
+<pre style="background: #f4f4f4; padding: 15px; border-radius: 5px; overflow-x: auto;">
+C: (Root)
+├── Documents
+│   ├── Homework
+│   │   ├── Math.docx ← FILE
+│   │   └── Science.pdf
+│   └── Projects
+├── Pictures
+│   └── School Trip.jpg ← FILE
+└── Music
+    └── Study.mp3 ← FILE
+</pre>
+
+<h4>4️⃣ FILE METADATA (File Information Card)</h4>
+<p>Every file has a <b>secret info card</b>:</p>
+<ul>
+<li><b>Name:</b> homework.docx</li>
+<li><b>Size:</b> 25 KB</li>
+<li><b>Created:</b> 2026-05-02 10:00 AM</li>
+<li><b>Modified:</b> 2026-05-02 3:30 PM</li>
+<li><b>Owner:</b> Sabita</li>
+<li><b>Permissions:</b> Read/Write for owner</li>
+<li><b>Location:</b> Block 4567-4570 on disk</li>
+</ul>
+
+<h4>5️⃣ COMMON FILE SYSTEMS</h4>
+<table style="border-collapse: collapse; width: 100%; margin: 15px 0;">
+<tr style="background: #4CAF50; color: white;">
+<th style="border: 1px solid #ddd; padding: 10px;">File System</th>
+<th style="border: 1px solid #ddd; padding: 10px;">Used In</th>
+<th style="border: 1px solid #ddd; padding: 10px;">Best For</th>
+</tr>
+<tr style="background: #E8F5E8;">
+<td style="border: 1px solid #ddd; padding: 8px;"><b>NTFS</b></td>
+<td style="border: 1px solid #ddd; padding: 8px;">Windows 10/11</td>
+<td style="border: 1px solid #ddd; padding: 8px;">Security, large files</td>
+</tr>
+<tr>
+<td style="border: 1px solid #ddd; padding: 8px;"><b>FAT32</b></td>
+<td style="border: 1px solid #ddd; padding: 8px;">USB drives</td>
+<td style="border: 1px solid #ddd; padding: 8px;">All devices</td>
+</tr>
+<tr style="background: #E8F5E8;">
+<td style="border: 1px solid #ddd; padding: 8px;"><b>exFAT</b></td>
+<td style="border: 1px solid #ddd; padding: 8px;">SD cards</td>
+<td style="border: 1px solid #ddd; padding: 8px;">Big files (videos)</td>
+</tr>
+<tr>
+<td style="border: 1px solid #ddd; padding: 8px;"><b>ext4</b></td>
+<td style="border: 1px solid #ddd; padding: 8px;">Linux</td>
+<td style="border: 1px solid #ddd; padding: 8px;">Fast, reliable</td>
+</tr>
+</table>
+
+<h4>6️⃣ HOW FILES ARE CREATED</h4>
+<ol>
+<li>You save <code>homework.docx</code></li>
+<li>File System creates <b>inode entry</b> (file info card)</li>
+<li>Finds <b>free disk blocks</b> for data</li>
+<li>Links inode → data blocks</li>
+<li>Adds to folder (Documents\Homework)</li>
+<li>Done! File ready to open</li>
+</ol>
+
+<h4>7️⃣ HOW YOU OPEN A FILE</h4>
+<ol>
+<li>Click <code>C:\Documents\Homework\math.docx</code></li>
+<li>File System reads path step-by-step</li>
+<li>Finds inode for math.docx</li>
+<li>Reads data blocks</li>
+<li>Loads into RAM → MS Word opens!</li>
+</ol>
+
+<h4>8️⃣ FILE SYSTEM OPERATIONS</h4>
+<ul>
+<li><b>Create:</b> New file/folder</li>
+<li><b>Read:</b> Open and view</li>
+<li><b>Write:</b> Edit and save changes</li>
+<li><b>Delete:</b> Mark blocks as free</li>
+<li><b>Move:</b> Change folder location</li>
+<li><b>Copy:</b> Duplicate to new location</li>
+</ul>
+
+<h4>🎯 STUDENT MEMORY TRICKS</h4>
+<ul>
+<li><b>File System</b> = <b>F</b>older + <b>I</b>nfo + <b>L</b>ocation + <b>E</b>verything organized</li>
+<li><b>NTFS</b> = <b>N</b>ew <b>T</b>echnology <b>F</b>ile <b>S</b>ystem (Windows)</li>
+<li><b>FAT</b> = <b>F</b>iles <b>A</b>ll <b>T</b>ogether (USB)</li>
+</ul>
+
+<h4>🚀 REAL EXAMPLES</h4>
+<ul>
+<li><b>Your photo:</b> C:\Pictures\Trip.jpg (5MB, created May 2026)</li>
+<li><b>Homework:</b> D:\Study\Math\Ch1.docx (25KB, owner: Sabita)</li>
+<li><b>Music:</b> E:\Songs\Study.mp3 (4MB, NTFS, read-only)</li>
+</ul>
+
+<h4>💡 PRO TIPS</h4>
+<ul>
+<li><b>Right-click file → Properties</b> = See metadata!</li>
+<li><b>Don't delete System32 folder</b> (file system crash!)</li>
+<li><b>Defrag monthly</b> = Faster file access</li>
+<li><b>CHKDSK C:</b> = Fix file system errors</li>
+</ul>
+
+<h4>✨ SUMMARY</h4>
+<p><b>File System = Your computer's super librarian!</b> Organizes millions of files so you find homework instantly! 📚✨</p>
+</div>
+`
+
+/*  unit - 5  */
+
+const spreadsheet = `
+<div class="spreadsheet-presentation">
+<h3>Spreadsheet</h3>
+<p>These are super useful tools for students! <b>Spreadsheets</b> help organize numbers, make calculations, and create charts. <b>Presentations</b> turn your ideas into beautiful slideshows for class projects.</p>
+
+<h4>📊 SPREADSHEET SECTION</h4>
+
+<p><b>What's a Spreadsheet?</b> Think of it like a <b>magic calculator notebook</b> with rows and columns (called cells). Perfect for tracking marks, budgets, or science data!</p>
+
+<h5>1. Spreadsheet Concepts</h5>
+<ul>
+<li>Grid of <b>rows</b> (1,2,3...) and <b>columns</b> (A,B,C...)</li>
+<li>Each box is a <b>cell</b> (like A1, B2) where you type data</li>
+<li><b>Workbook</b> = full file with many sheets (like a notebook with pages)</li>
+</ul>
+
+<h5>2. Creating, Saving, Editing Workbook</h5>
+<ul>
+<li><b>Create:</b> Open Excel/Google Sheets → New → Blank Workbook</li>
+<li><b>Save:</b> Ctrl+S or File → Save As → "MyGrades.xlsx"</li>
+<li><b>Edit:</b> Double-click any cell to change data</li>
+<li><b>Open:</b> File → Open → pick your file</li>
+</ul>
+
+<h5>3. Inserting/Deleting Worksheets</h5>
+<ul>
+<li><b>Add sheet:</b> Click <b>+</b> button at bottom</li>
+<li><b>Delete:</b> Right-click sheet tab → Delete</li>
+<li><b>Rename:</b> Right-click → Rename → "Math" or "Science"</li>
+</ul>
+
+<h5>4. Entering Data & Formulas</h5>
+<ul>
+<li>Click cell → type numbers/text → Enter</li>
+<li><b>Formula:</b> Type <code>=A1+B1</code> (adds two cells)</li>
+<li><b>Copy:</b> Ctrl+C → Ctrl+V or drag small square corner</li>
+<li><b>Move:</b> Ctrl+X → Ctrl+V</li>
+</ul>
+
+<h5>5. Formula Operators (Math Signs)</h5>
+<ul>
+<li><code>+</code> Add, <code>-</code> Subtract, <code>*</code> Multiply, <code>/</code> Divide</li>
+<li><code>= (A1+B1)*2</code> → Does brackets first!</li>
+</ul>
+
+<h5>6. Functions (Ready-Made Formulas)</h5>
+<p>Click <b>fx</b> button for Function Wizard (easy helper!)</p>
+
+<ul>
+<li><b>Mathematical:</b> <code>SUM(A1:A10)</code>, <code>AVERAGE</code>, <code>ROUND</code></li>
+<li><b>Logical:</b> <code>IF(A1>50,"PASS","FAIL")</code></li>
+<li><b>Statistical:</b> <code>COUNT</code>, <code>MAX</code>, <code>MIN</code></li>
+<li><b>Text:</b> <code>CONCAT("Hi",A1)</code></li>
+<li><b>Financial:</b> <code>PMT</code> (loan calculator)</li>
+<li><b>Date/Time:</b> <code>TODAY()</code>, <code>DATEDIF</code></li>
+</ul>
+
+<h5>7. Charts & Graphs</h5>
+<ul>
+<li>Select data → Insert → Chart (bar/pie/line)</li>
+<li>Charts update automatically when you change numbers!</li>
+</ul>
+
+<hr>
+
+<h4>🎬 PRESENTATION SECTION</h4>
+
+<p><b>What's a Presentation?</b> Like a <b>digital storybook</b> with slides. Perfect for school projects, reports, or explaining topics!</p>
+
+<h5>1. Creating, Opening, Saving</h5>
+<ul>
+<li><b>Create:</b> PowerPoint/Google Slides → New → Blank Presentation</li>
+<li><b>Save:</b> Ctrl+S → "MyProject.pptx"</li>
+<li><b>Open:</b> File → Open</li>
+</ul>
+
+<h5>2. Working with Slides</h5>
+<ul>
+<li><b>Add:</b> Home → New Slide (pick Title/Content layout)</li>
+<li><b>Delete:</b> Right-click slide → Delete</li>
+<li><b>Copy:</b> Right-click → Duplicate Slide</li>
+<li><b>Move:</b> Drag slides in left panel</li>
+</ul>
+
+<h5>3. Drawing & Working with Objects</h5>
+<ul>
+<li>Insert → Shapes → draw arrows, circles, boxes</li>
+<li>Insert → Text Box → type notes</li>
+<li>Select multiple → right-click → Group (move together)</li>
+</ul>
+
+<h5>4. Adding Clip Art & Pictures</h5>
+<ul>
+<li>Insert → Pictures → From computer/online</li>
+<li>Insert → Icons → search stars, arrows</li>
+<li>Drag corners to resize, right-click → Crop</li>
+</ul>
+
+<h5>5. Designing Slide Shows</h5>
+<ul>
+<li>Design → Themes (auto colors/fonts)</li>
+<li>Design → Format Background (colors/gradients)</li>
+<li>Transitions → Fade/Wipe → Apply to All</li>
+</ul>
+
+<h5>6. Running & Controlling Slide Show</h5>
+<ul>
+<li>F5 → Start from beginning</li>
+<li>Right/Enter → Next slide</li>
+<li>Left Arrow → Previous slide</li>
+<li>Esc → End show</li>
+</ul>
+
+<h5>7. Printing Presentations</h5>
+<ul>
+<li>File → Print → Handouts (3-6 slides per page)</li>
+<li>Or Notes Pages (slide + your notes below)</li>
+<li>Black/White or Color</li>
+</ul>
+
+<h4>🎯 Key Points to Remember:</h4>
+<ul>
+<li><b>Spreadsheets:</b> Great for numbers, calculations, charts</li>
+<li><b>Presentations:</b> Perfect for visual stories and class reports</li>
+<li>Both save your work permanently!</li>
+<li>Practice makes perfect 🚀</li>
+</ul>
+</div>
+`
+
+const presentation = `
+<div class="spreadsheet-presentation">
+<p>These are super useful tools for students! <b>Spreadsheets</b> help organize numbers, make calculations, and create charts. <b>Presentations</b> turn your ideas into beautiful slideshows for class projects.</p>
+
+<h4>🎬 Presentation Packages</h4>
+
+<p><b>What's a Presentation?</b> Like a <b>digital storybook</b> with slides. Perfect for school projects, reports, or explaining topics!</p>
+
+<h5>1. Creating, Opening, Saving</h5>
+<ul>
+<li><b>Create:</b> PowerPoint/Google Slides → New → Blank Presentation</li>
+<li><b>Save:</b> Ctrl+S → "MyProject.pptx"</li>
+<li><b>Open:</b> File → Open</li>
+</ul>
+
+<h5>2. Working with Slides</h5>
+<ul>
+<li><b>Add:</b> Home → New Slide (pick Title/Content layout)</li>
+<li><b>Delete:</b> Right-click slide → Delete</li>
+<li><b>Copy:</b> Right-click → Duplicate Slide</li>
+<li><b>Move:</b> Drag slides in left panel</li>
+</ul>
+
+<h5>3. Drawing & Working with Objects</h5>
+<ul>
+<li>Insert → Shapes → draw arrows, circles, boxes</li>
+<li>Insert → Text Box → type notes</li>
+<li>Select multiple → right-click → Group (move together)</li>
+</ul>
+
+<h5>4. Adding Clip Art & Pictures</h5>
+<ul>
+<li>Insert → Pictures → From computer/online</li>
+<li>Insert → Icons → search stars, arrows</li>
+<li>Drag corners to resize, right-click → Crop</li>
+</ul>
+
+<h5>5. Designing Slide Shows</h5>
+<ul>
+<li>Design → Themes (auto colors/fonts)</li>
+<li>Design → Format Background (colors/gradients)</li>
+<li>Transitions → Fade/Wipe → Apply to All</li>
+</ul>
+
+<h5>6. Running & Controlling Slide Show</h5>
+<ul>
+<li>F5 → Start from beginning</li>
+<li>Right/Enter → Next slide</li>
+<li>Left Arrow → Previous slide</li>
+<li>Esc → End show</li>
+</ul>
+
+<h5>7. Printing Presentations</h5>
+<ul>
+<li>File → Print → Handouts (3-6 slides per page)</li>
+<li>Or Notes Pages (slide + your notes below)</li>
+<li>Black/White or Color</li>
+</ul>
+
+<h4>🎯 Key Points to Remember:</h4>
+<ul>
+<li><b>Spreadsheets:</b> Great for numbers, calculations, charts</li>
+<li><b>Presentations:</b> Perfect for visual stories and class reports</li>
+<li>Both save your work permanently!</li>
+<li>Practice makes perfect 🚀</li>
+</ul>
+</div>
+`
