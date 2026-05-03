@@ -235,12 +235,13 @@ body.mobile_menu_btn {
 }
 
 .notes_text ul li {
-	background: #f4f8fb;
+	/* background: #f4f8fb; */
 	margin-bottom: 10px;
 	padding: 10px 15px;
 	border-left: 4px solid #3498db;
 	border-radius: 6px;
 	font-size: 15px;
+	font-family: 'Roboto', sans-serif;
 }
 
 

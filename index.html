@@ -240,10 +240,10 @@
 											<i class="fa fa-phone" aria-hidden="true"></i>
 											<div>8181-050-321</div>
 										</li>
-										<li>
+										<!-- <li>
 											<i class="fa fa-envelope-o" aria-hidden="true"></i>
 											<div>info.deercreative@gmail.com</div>
-										</li>
+										</li> -->
 									</ul>
 
 									<div class="top_bar_login ml-auto">
@@ -282,14 +282,32 @@
 											<div class="form-box" id="signupBox" style="display:none;">
 												<span class="close-btn" onclick="closePopup()">✖</span>
 												<h2>Sign Up</h2>
-
+<!-- 
 												<div class="input-field"><input type="text" placeholder="Full Name">
 												</div>
 												<div class="input-field"><input type="email" placeholder="Email"></div>
 												<div class="input-field"><input type="password"
 														placeholder="Create Password"></div>
 
-												<button class="main-btn">Create Account</button>
+												<button class="main-btn">Create Account</button> -->
+
+<form id="signupForm" onsubmit="handleSignup(event)">
+
+  <div class="input-field">
+    <input type="text" id="name" name="name" placeholder="Full Name" required>
+  </div>
+
+  <div class="input-field">
+    <input type="email" id="email" name="email" placeholder="Email" required>
+  </div>
+
+  <div class="input-field">
+    <input type="password" id="password" name="password" placeholder="Create Password" required>
+  </div>
+
+  <button type="submit" class="main-btn">Create Account</button>
+
+</form>
 
 												<div class="separator">or sign up with</div>
 
@@ -532,12 +550,13 @@
 				<div class="col">
 					<div class="section_title_container text-center">
 						<!-- <h2 class="section_title">Welcome To Unicat E-Learning </h2> -->
-						<h2 style="font-size: 20px;" class="section_title"> Your Digital Campus for IT and Computer
-							Science Learning. </h2>
+						<h2 style="font-size: 20px;" class="section_title"> Your Digital Campus for Computer Science & Academic Success </h2>
+						
 						<div class="section_subtitle">
-							<p>Learn, practice, and master IT skills — anytime, anywhere.
-								From coding fundamentals to advanced computing — all in one place.
-							</p>
+<p style="font-size: 14px; color: #4a5568; line-height: 1.6; max-width: 680px; margin: 10px auto 0;">
+    Learn & practice, all subjects from Class 9th to 12th, BCA, MCA, B.Sc. IT, and all Computer Science courses — <strong style="color: #2c3e50; ">ANYTIME, ANYWHERE</strong>.<br>
+    From coding fundamentals and theory to advanced computing and project‑based learning <br>— <strong style="color: #2c3e50;">all in one place</strong>.
+</p>
 						</div>
 					</div>
 				</div>
@@ -672,9 +691,9 @@
 				<!-- Course -->
 				<div class="col-lg-4 course_col">
 					<div class="course">
-						<div class="course_image"><img style="height: 230px;" src="images/mean.jpeg" alt=""></div>
+						<div class="course_image"><img style="height: 230px;" src="images/fuul-stack-home-page.jpg" alt=""></div>
 						<div class="course_body">
-							<h3 class="course_title"><a href="course.html">Mean Stack Developer</a></h3>
+							<h3 class="course_title"><a href="course.html">Full Stack Developer</a></h3>
 							<!-- <div class="course_teacher">Ms. Lucius</div> -->
 							<div class="course_text">
 								<p>Build dynamic full-stack web apps with MongoDB, Express, Angular, and Node.js.</p>
@@ -767,12 +786,12 @@
 							<div class="counter_form_title">courses now</div>
 							<input type="text" class="counter_input" placeholder="Your Name:" required="required">
 							<input type="tel" class="counter_input" placeholder="Phone:" required="required">
-							<select name="counter_select" id="counter_select" class="counter_input counter_options">
+							<!-- <select name="counter_select" id="counter_select" class="counter_input counter_options">
 								<option>Choose Subject</option>
 								<option>Subject</option>
 								<option>Subject</option>
 								<option>Subject</option>
-							</select>
+							</select> -->
 							<textarea class="counter_input counter_text_input" placeholder="Message:"
 								required="required"></textarea>
 							<button type="submit" class="counter_form_button">submit now</button>
@@ -1037,6 +1056,8 @@
 		</div>
 	</div>
 
+	
+
 	<!-- Footer -->
 
 	<footer class="footer">
@@ -1175,3 +1196,17 @@
 </body>
 
 </html>
+
+<script id="m2js">
+function handleSignup(e) {
+  e.preventDefault();
+
+  const name = document.getElementById("name").value;
+  const email = document.getElementById("email").value;
+  const password = document.getElementById("password").value;
+
+  console.log(name, email, password);
+   document.getElementById("signupForm").reset();
+  document.getElementById("overlay").style.display = "none";
+}
+</script>
