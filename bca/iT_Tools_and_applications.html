@@ -247,7 +247,7 @@
 							<div class="breadcrumbs">
 								<ul>
 									<li><a href="index.html">Home</a></li>
-									<li><a href="/bca/bca_home_page.html">Courses</a></li>
+									<li><a href="./bca/bca_home_page.html">Courses</a></li>
 									<li>Course Details</li>
 								</ul>
 							</div>
@@ -311,7 +311,7 @@
 							L1.6 BCD & ASCII
 						</div>
 
-						<div class="lecture" onclick="loadNote('', prquestions, event)">
+						<div class="lecture" onclick="loadNote('', prQuestionsUnitOne, event)">
 							<strong style="color: darkred;">Previous Year Questions </strong>
 						</div>
 
@@ -339,6 +339,10 @@
 
 						<div class="lecture" onclick="loadNote('', ssd, event)">
 							L2.3 Secondary Storage
+						</div>
+
+						<div class="lecture" onclick="loadNote('', prQuestionsUnitOne, event)">
+							<strong style="color: darkred;">Previous Year Questions </strong>
 						</div>
 
 					</div>
@@ -370,8 +374,12 @@
 						<div class="lecture" onclick="loadNote('', dosOperatingSystemContent, event)">
 							L3.4 DOS commands
 						</div>
-											<div class="lecture" onclick="loadNote('', fileSystemContent, event)">
+						<div class="lecture" onclick="loadNote('', fileSystemContent, event)">
 							L3.5 File System
+						</div>
+
+						<div class="lecture" onclick="loadNote('', prQuestionsUnitThree, event)">
+							<strong style="color: darkred;">Previous Year Questions </strong>
 						</div>
 
 					</div>
@@ -389,11 +397,15 @@
 					<div class="lecture_list">
 
 						<div class="lecture" onclick="loadNote('', multimediaContent, event)">
-							L4.1  Multimedia
+							L4.1 Multimedia
 						</div>
 
 						<div class="lecture" onclick="loadNote('', wordProcessingContent, event)">
 							L4.2 Word Processing
+						</div>
+
+						<div class="lecture" onclick="loadNote('', prQuestionsUnitFour, event)">
+							<strong style="color: darkred;">Previous Year Questions </strong>
 						</div>
 
 					</div>
@@ -405,7 +417,7 @@
 				<div class="unit">
 
 					<div class="unit_title" onclick="toggleUnit(this)">
-						Unit 5 : Spreadsheet and Presentation Packages
+						Unit 5 : Spreadsheet and Presentation
 					</div>
 
 					<div class="lecture_list">
@@ -418,6 +430,10 @@
 							L5.2 Presentation Packages
 						</div>
 
+						<div class="lecture" onclick="loadNote('', prQuestionsUnitFive, event)">
+							<strong style="color: darkred;">Previous Year Questions </strong>
+						</div>
+
 					</div>
 
 				</div>
@@ -427,7 +443,7 @@
 
 			<!-- CONTENT -->
 
-			<div class="notes_content">
+			<div class="notes_content" id="mainContent">
 
 				<h4 id="notes_title">IT Tools and Applications</h4>
 
@@ -655,6 +671,12 @@
 			lectures.forEach(l => l.classList.remove("active"));
 
 			event.currentTarget.classList.add("active");
+
+			// Scroll content area to top after loading
+			document.getElementById('mainContent').scrollTo({
+				top: 0,
+				behavior: 'smooth'
+			});
 
 			closeSidebar();
 

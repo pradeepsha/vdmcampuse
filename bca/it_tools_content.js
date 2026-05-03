@@ -893,43 +893,6 @@ But when you "sleep" (computer powers off), <i>poof!</i>—everything vanishes, 
 <p><b>How they work (simply):</b> The computer processes the data and sends signals to these devices, which convert 0s and 1s back into something we can understand (pictures on screen, sound, or printed paper).</p>
 `
 
-const prquestions = `
-
-    <h4><strong>Previous Year Questions</strong></h4>
-    
-    <div class="question">
-        <div class="year">YEAR-2023</div>
-        <div class="q-title">
-            <strong>What is the difference between RAM, ROM, PROM, EPROM?</strong>
-        </div>
-    </div>
-
-    <div class="question">
-        <div class="year">YEAR-2026</div>
-        <div class="q-title">
-            <strong>What is chart of MS-Excel? Write any two charts of MS-Excel</strong>
-        </div>
-    </div>
-
-        <div class="question">
-        <div class="year">YEAR-2025</div>
-        <div class="q-title">
-            <strong>What is the difference between RAM, ROM, PROM, EPROM?</strong>
-        </div>
-    </div>
-
-    <div class="question">
-        <div class="year">YEAR-2024</div>
-        <div class="q-title">
-            <strong>What is chart of MS-Excel? Write any two charts of MS-Excel</strong>
-        </div>
-    </div>
-
-    <div style="clear: both;"></div>
-
-`
-
-
 
 /* unit 3 */
 
@@ -939,13 +902,13 @@ const hardwareSoftwareContent = `
 
 <p><b>What's the difference?</b> Think of a computer like your <b>body and brain</b>! <b>Hardware</b> = body parts you can touch. <b>Software</b> = brain instructions that tell the body what to do!</p>
 
-<h4>🔧 1. HARDWARE (Touchable Parts)</h4>
+<h4>🔧 1. HARDWARE </h4>
 
 <p><b>Simple Analogy:</b> Hardware is like your <b>body parts</b> — eyes, hands, legs. You can see and touch them!</p>
 
 <p><b>What's Hardware?</b> All the <b>physical parts</b> of a computer that you can touch. They make the computer work.</p>
 
-<p><b>Common Hardware Examples:</b></p>
+<p><b>Hardware Examples:</b></p>
 <ul>
 <li><b>Monitor:</b> Screen where you see everything (like eyes)</li>
 <li><b>Keyboard:</b> Type letters/numbers (like hands typing)</li>
@@ -974,19 +937,19 @@ const hardwareSoftwareContent = `
 <p><b>Types of Software:</b></p>
 <ul>
 <li><b>System Software:</b> Controls the computer itself
-  <ul>
+  <ol>
   <li><b>Operating System:</b> Windows 11, macOS, Android (like brain manager)</li>
   <li><b>Drivers:</b> Help hardware talk to OS (like translators)</li>
-  </ul>
+  </ol>
 </li>
 
 <li><b>Application Software:</b> Programs for your work
-  <ul>
+  <ol>
   <li><b>MS Word:</b> Typing documents</li>
   <li><b>Google Chrome:</b> Internet browsing</li>
   <li><b>Games:</b> PUBG, Minecraft</li>
   <li><b>Excel:</b> Calculations and charts</li>
-  </ul>
+  </ol>
 </li>
 </ul>
 
@@ -998,9 +961,9 @@ const hardwareSoftwareContent = `
 <li><b>Needs hardware</b> to run</li>
 </ul>
 
-<h4>🤝 HOW HARDWARE & SOFTWARE WORK TOGETHER</h4>
+<h4>HOW HARDWARE & SOFTWARE WORK TOGETHER</h4>
 
-<p><b>Perfect Teamwork!</b></p>
+<p><b>Perfect Teamwork  !</b></p>
 
 <ul>
 <li>Hardware = <b>Body</b> (muscles, bones)</li>
@@ -1014,7 +977,7 @@ const hardwareSoftwareContent = `
 </li>
 </ul>
 
-<h4>⚠️ Quick Comparison Table:</h4>
+<h4> Quick Comparison Table:</h4>
 <table style="border-collapse: collapse; width: 100%; margin: 10px 0;">
 <tr style="background: #4CAF50; color: white;">
 <th style="border: 1px solid #ddd; padding: 8px;">Feature</th>
@@ -1023,13 +986,13 @@ const hardwareSoftwareContent = `
 </tr>
 <tr>
 <td style="border: 1px solid #ddd; padding: 8px;"><b>Touch?</b></td>
-<td style="border: 1px solid #ddd; padding: 8px;">✅ Yes</td>
-<td style="border: 1px solid #ddd; padding: 8px;">❌ No</td>
+<td style="border: 1px solid #ddd; padding: 8px;">Yes</td>
+<td style="border: 1px solid #ddd; padding: 8px;">No</td>
 </tr>
 <tr style="background: #f2f2f2;">
 <td style="border: 1px solid #ddd; padding: 8px;"><b>Breaks?</b></td>
-<td style="border: 1px solid #ddd; padding: 8px;">⚠️ Physical damage</td>
-<td style="border: 1px solid #ddd; padding: 8px;">🐛 Bugs/viruses</td>
+<td style="border: 1px solid #ddd; padding: 8px;">Physical damage</td>
+<td style="border: 1px solid #ddd; padding: 8px;">Bugs/viruses</td>
 </tr>
 <tr>
 <td style="border: 1px solid #ddd; padding: 8px;"><b>Examples</b></td>
@@ -1038,20 +1001,20 @@ const hardwareSoftwareContent = `
 </tr>
 </table>
 
-<h4>🎯 Student Memory Trick:</h4>
+<h4> Student Memory Trick:</h4>
 <ul>
 <li><b>HARDware</b> = <b>HARD</b> things you can hold</li>
 <li><b>SOFTware</b> = <b>SOFT</b> programs you download</li>
 </ul>
 
-<h4>🚀 Why Both Matter:</h4>
+<h4> Why Both Matter:</h4>
 <ul>
 <li>No hardware = No computer (just empty box!)</li>
 <li>No software = Useless computer (like body without brain!)</li>
-<li>Together = Your phone, laptop, tablet! ✨</li>
+<li>Together = Your phone, laptop, tablet! </li>
 </ul>
 
-<h4>💡 Pro Tips for Students:</h4>
+<h4> Pro Tips for Students:</h4>
 <ul>
 <li>Save homework on <b>hardware</b> (hard drive)</li>
 <li>Type in <b>software</b> (MS Word)</li>
@@ -1067,7 +1030,7 @@ const typesOfSoftwareContent = `
 
 <p><b>What's Software?</b> Think of software like <b>recipe books</b> for your computer! Different recipes (types) tell it how to do different jobs. Here are the main types students need to know!</p>
 
-<h4>1️⃣ SYSTEM SOFTWARE (The Boss)</h4>
+<h4>1️⃣ SYSTEM SOFTWARE</h4>
 
 <p><b>Simple Analogy:</b> Like your <b>house manager</b> who controls lights, water, doors — makes sure everything works smoothly!</p>
 
@@ -1076,28 +1039,28 @@ const typesOfSoftwareContent = `
 <h5>Types of System Software:</h5>
 <ul>
 <li><b>Operating System (OS):</b> Windows 11, macOS, Android, Linux
-  <ul>
+  <ol>
   <li>Starts computer</li>
   <li>Manages files/folders</li>
   <li>Controls RAM, keyboard, mouse</li>
-  </ul>
+  </ol>
 </li>
 <li><b>Device Drivers:</b> Help hardware talk to OS
-  <ul>
+  <ol>
   <li>Printer driver = printer works</li>
   <li>Graphics driver = better games</li>
-  </ul>
+  </ol>
 </li>
 <li><b>Utility Software:</b> Helper tools
-  <ul>
+  <ol>
   <li>Antivirus (protects computer)</li>
   <li>Disk cleanup (frees space)</li>
   <li>Backup software</li>
-  </ul>
+  </ol>
 </li>
 </ul>
 
-<h4>2️⃣ APPLICATION SOFTWARE (Your Tools)</h4>
+<h4>2️⃣ APPLICATION SOFTWARE </h4>
 
 <p><b>Simple Analogy:</b> Like your <b>school bag tools</b> — pen, calculator, notebook. Each tool for different homework!</p>
 
@@ -1114,7 +1077,7 @@ const typesOfSoftwareContent = `
 <li><b>Photo Editors:</b> Photoshop, Canva (edit pictures)</li>
 </ul>
 
-<h4>3️⃣ PROGRAMMING SOFTWARE (For Coders)</h4>
+<h4>3️⃣ PROGRAMMING SOFTWARE </h4>
 
 <p><b>Simple Analogy:</b> Like <b>factory tools</b> that make other tools! Coders use these to create apps.</p>
 
@@ -1125,7 +1088,7 @@ const typesOfSoftwareContent = `
 <li><b>IDEs:</b> Visual Studio, PyCharm (all-in-one coding)</li>
 </ul>
 
-<h4>⚠️ Quick Comparison Table:</h4>
+<h4>Quick Comparison Table:</h4>
 <table style="border-collapse: collapse; width: 100%; margin: 20px 0;">
 <tr style="background: #2196F3; color: white;">
 <th style="border: 1px solid #ddd; padding: 12px;">Type</th>
@@ -1149,21 +1112,21 @@ const typesOfSoftwareContent = `
 </tr>
 </table>
 
-<h4>🎯 Student Memory Trick:</h4>
+<h4>Student Memory Trick:</h4>
 <ul>
 <li><b>System Software</b> = <b>S</b>uper <b>S</b>ervant (controls everything)</li>
 <li><b>Application Software</b> = <b>A</b>wesome <b>A</b>pps (your tools)</li>
 <li><b>Programming Software</b> = <b>P</b>rogrammer's <b>P</b>ower tools</li>
 </ul>
 
-<h4>🚀 Real-Life Examples:</h4>
+<h4>Real-Life Examples:</h4>
 <ul>
 <li><b>Your Phone:</b> Android (system) + WhatsApp (application)</li>
 <li><b>School Laptop:</b> Windows (system) + MS Word (application)</li>
 <li><b>Game Development:</b> Unity (application) + Visual Studio (programming)</li>
 </ul>
 
-<h4>💡 Pro Tips for Students:</h4>
+<h4>Pro Tips for Students:</h4>
 <ul>
 <li><b>Never delete System Software</b> (computer stops!)</li>
 <li><b>Update Applications</b> = new features, no viruses</li>
@@ -1171,7 +1134,7 @@ const typesOfSoftwareContent = `
 <li><b>Ctrl+Alt+Del</b> = see all running software!</li>
 </ul>
 
-<h4>✨ Perfect Team:</h4>
+<h4>Perfect Team:</h4>
 <p>Hardware + System Software + Application Software = Your complete computer! 🎉</p>
 </div>
 `
@@ -1309,37 +1272,37 @@ const operatingSystemContent = `
 </ul>
 
 <h4>2️⃣ COMMON OPERATING SYSTEMS</h4>
-<p><b>Popular OS for Students:</b></p>
+<p><b>Popular OPERATING SYSTEMS :</b></p>
 <ul>
 <li><b>Windows 11:</b> Most popular for laptops/PCs 💻
-  <ul>
+  <ol>
   <li>Great for MS Office, games</li>
   <li>Easy for beginners</li>
-  </ul>
+  </ol>
 </li>
 <li><b>macOS:</b> Apple computers 🍎
-  <ul>
+  <ol>
   <li>Smooth, beautiful design</li>
   <li>Perfect for creative work</li>
-  </ul>
+  </ol>
 </li>
 <li><b>Android:</b> Phones & tablets 📱
-  <ul>
+  <ol>
   <li>Google's mobile OS</li>
   <li>Touch-friendly</li>
-  </ul>
+  </ol>
 </li>
 <li><b>iOS:</b> iPhones/iPads 📲
-  <ul>
+  <ol>
   <li>Apple's mobile OS</li>
   <li>Super secure</li>
-  </ul>
+  </ol>
 </li>
 <li><b>Linux:</b> Free for advanced users 🐧
-  <ul>
+  <ol>
   <li>Programmers love it</li>
   <li>Very fast & secure</li>
-  </ul>
+  </ol>
 </li>
 </ul>
 
@@ -1384,33 +1347,32 @@ const operatingSystemContent = `
 <p><b>How You See It:</b></p>
 <ul>
 <li><b>GUI:</b> Windows, macOS (pictures, mouse)
-  <ul>
+  <ol>
   <li>Icons, Start menu, taskbar</li>
-  </ul>
+  </ol>
 </li>
 <li><b>Command Line:</b> Black screen typing
-  <ul>
+  <ol>
   <li>CMD, Terminal (fast for experts)</li>
-  </ul>
+  </ol>
 </li>
 </ul>
 
-<h4>🎯 STUDENT MEMORY TRICKS</h4>
+<h4>STUDENT MEMORY TRICKS</h4>
 <ul>
 <li><b>OS</b> = <b>O</b>verall <b>S</b>upervisor</li>
 <li><b>Windows</b> = <b>W</b>ork + <b>I</b>nternet + <b>N</b>otes + <b>D</b>ocuments + <b>O</b>ffice + <b>W</b>ebsites + <b>S</b>tudy</li>
 <li><b>Boot</b> = <b>B</b>egin <b>O</b>perating <b>O</b>S <b>T</b>oday</li>
 </ul>
 
-<h4>🚀 COOL OS FEATURES</h4>
+<h4>COOL OS FEATURES</h4>
 <ul>
 <li><b>Multi-tasking:</b> Homework + YouTube + Music together!</li>
 <li><b>File Search:</b> Find lost assignments fast</li>
 <li><b>Updates:</b> Makes computer faster/safer</li>
 <li><b>Recycle Bin:</b> Accidentally deleted? No problem!</li>
 </ul>
-
-<h4>💡 PRO TIPS FOR STUDENTS</h4>
+<h4>PRO TIPS FOR STUDENTS</h4>
 <ul>
 <li><b>Ctrl+Alt+Delete</b> = Task Manager (close frozen apps)</li>
 <li><b>Windows Key</b> = Quick Start menu</li>
@@ -1418,7 +1380,7 @@ const operatingSystemContent = `
 <li><b>Restart weekly</b> = Faster computer</li>
 </ul>
 
-<h4>✨ SUMMARY</h4>
+<h4>SUMMARY</h4>
 <p><b>Operating System = Your computer's best friend!</b> It runs in background so you can focus on studies, games, and fun! 🎉</p>
 </div>
 `
@@ -1426,16 +1388,16 @@ const operatingSystemContent = `
 
 const dosOperatingSystemContent = `
 <div class="dos-operating-system">
-<h3>💾 DOS OPERATING SYSTEM</h3>
+<h3>DOS OPERATING SYSTEM</h3>
 
 <p><b>What's DOS?</b> DOS stands for <b>Disk Operating System</b>. It's the <b>grandfather of modern Windows</b>! Think of it like typing commands on a <b>black screen</b> instead of clicking icons.</p>
 
-<h4>🕰️ DOS HISTORY</h4>
+<h4>DOS HISTORY</h4>
 <p><b>1981:</b> IBM asked Microsoft to make an OS for their first PC. Microsoft bought QDOS and called it <b>MS-DOS</b>.</p>
 <p><b>1980s-90s:</b> EVERY computer used DOS! Windows 95/98 ran ON TOP of DOS.</p>
 <p><b>Today:</b> Still used in old machines, embedded systems, and learning!</p>
 
-<h4>🎯 SIMPLE ANALOGY</h4>
+<h4>SIMPLE ANALOGY</h4>
 <p>DOS = <b>Old typewriter with no pictures</b>. You type exact commands to do everything!</p>
 
 <h4>1️⃣ WHY DOS IS IMPORTANT</h4>
@@ -1514,7 +1476,7 @@ const dosOperatingSystemContent = `
 </tr>
 </table>
 
-<h5>💾 DRIVE & SYSTEM COMMANDS</h5>
+<h5>DRIVE & SYSTEM COMMANDS</h5>
 <table style="border-collapse: collapse; width: 100%; margin: 15px 0;">
 <tr style="background: #FF9800; color: white;">
 <th style="border: 1px solid #ddd; padding: 10px;">Command</th>
@@ -1549,14 +1511,14 @@ const dosOperatingSystemContent = `
 </table>
 
 <h4>4️⃣ SUPER USEFUL COMMANDS</h4>
-<ul>
+<ol>
 <li><code>HELP</code> — Shows all commands</li>
 <li><code>CHKDSK</code> — Check disk errors</li>
 <li><code>TIME</code> — Show current time</li>
 <li><code>DATE</code> — Show current date</li>
 <li><code>VER</code> — Show DOS version</li>
 <li><code>EXIT</code> — Close DOS</li>
-</ul>
+</ol>
 
 <h4>5️⃣ STUDENT PRACTICE SEQUENCE</h4>
 <ol>
@@ -1569,7 +1531,7 @@ const dosOperatingSystemContent = `
 <li><code>CLS</code> (clean screen)</li>
 </ol>
 
-<h4>🎯 MEMORY TRICKS</h4>
+<h4>MEMORY TRICKS</h4>
 <ul>
 <li><code>DIR</code> = <b>D</b>isplay <b>IR</b> (files)</li>
 <li><code>CD</code> = <b>C</b>hange <b>D</b>irectory</li>
@@ -1578,7 +1540,7 @@ const dosOperatingSystemContent = `
 <li><code>CLS</code> = <b>CL</b>ean <b>S</b>creen</li>
 </ul>
 
-<h4>🚀 PRO TIPS</h4>
+<h4>PRO TIPS</h4>
 <ul>
 <li>Press <b>↑ arrow</b> = repeat last command</li>
 <li>Type first 3 letters + <b>TAB</b> = auto-complete</li>
@@ -1586,7 +1548,7 @@ const dosOperatingSystemContent = `
 <li><code>COMMAND /?</code> = shows help for any command</li>
 </ul>
 
-<h4>✨ WHY LEARN DOS?</h4>
+<h4>WHY LEARN DOS?</h4>
 <ul>
 <li><b>Exam questions</b> always ask DOS commands!</li>
 <li><b>Fast file management</b></li>
@@ -1605,7 +1567,7 @@ const fileSystemContent = `
 
 <p><b>What's a File System?</b> Think of it like a <b>giant library system</b> in your computer! It organizes all your files, photos, videos, and homework in folders, just like books on library shelves with a special numbering system.</p>
 
-<h4>🎯 SIMPLE LIBRARY ANALOGY</h4>
+<h4>SIMPLE LIBRARY ANALOGY</h4>
 <p>Your computer hard drive = <b>Library building</b></p>
 <ul>
 <li><b>Files</b> = Books (your documents, photos, videos)</li>
@@ -1622,9 +1584,9 @@ const fileSystemContent = `
 <li><b>Controls access</b> — who can read/write/delete</li>
 </ul>
 
-<h4>2️⃣ INSIDE A FILE SYSTEM (How It Works)</h4>
+<h4>2️⃣ INSIDE A FILE SYSTEM </h4>
 
-<h5>🧩 PHYSICAL LAYOUT</h5>
+<h5>PHYSICAL LAYOUT (How It Works)</h5>
 <table style="border-collapse: collapse; width: 100%; margin: 15px 0;">
 <tr style="background: #2196F3; color: white;">
 <th style="border: 1px solid #ddd; padding: 10px;">Part</th>
@@ -1653,7 +1615,7 @@ const fileSystemContent = `
 </tr>
 </table>
 
-<h4>3️⃣ FILE SYSTEM STRUCTURE (TREE)</h4>
+<h4>3️⃣ FILE SYSTEM STRUCTURE </h4>
 <pre style="background: #f4f4f4; padding: 15px; border-radius: 5px; overflow-x: auto;">
 C: (Root)
 ├── Documents
@@ -1667,7 +1629,8 @@ C: (Root)
     └── Study.mp3 ← FILE
 </pre>
 
-<h4>4️⃣ FILE METADATA (File Information Card)</h4>
+<h4>4️⃣ FILE METADATA </h4>
+<p>File Information Card</b>:</p>
 <p>Every file has a <b>secret info card</b>:</p>
 <ul>
 <li><b>Name:</b> homework.docx</li>
@@ -1737,21 +1700,21 @@ C: (Root)
 <li><b>Copy:</b> Duplicate to new location</li>
 </ul>
 
-<h4>🎯 STUDENT MEMORY TRICKS</h4>
+<h4>STUDENT MEMORY TRICKS</h4>
 <ul>
 <li><b>File System</b> = <b>F</b>older + <b>I</b>nfo + <b>L</b>ocation + <b>E</b>verything organized</li>
 <li><b>NTFS</b> = <b>N</b>ew <b>T</b>echnology <b>F</b>ile <b>S</b>ystem (Windows)</li>
 <li><b>FAT</b> = <b>F</b>iles <b>A</b>ll <b>T</b>ogether (USB)</li>
 </ul>
 
-<h4>🚀 REAL EXAMPLES</h4>
+<h4>REAL EXAMPLES</h4>
 <ul>
 <li><b>Your photo:</b> C:\Pictures\Trip.jpg (5MB, created May 2026)</li>
 <li><b>Homework:</b> D:\Study\Math\Ch1.docx (25KB, owner: Sabita)</li>
 <li><b>Music:</b> E:\Songs\Study.mp3 (4MB, NTFS, read-only)</li>
 </ul>
 
-<h4>💡 PRO TIPS</h4>
+<h4>PRO TIPS</h4>
 <ul>
 <li><b>Right-click file → Properties</b> = See metadata!</li>
 <li><b>Don't delete System32 folder</b> (file system crash!)</li>
@@ -1759,7 +1722,7 @@ C: (Root)
 <li><b>CHKDSK C:</b> = Fix file system errors</li>
 </ul>
 
-<h4>✨ SUMMARY</h4>
+<h4>SUMMARY</h4>
 <p><b>File System = Your computer's super librarian!</b> Organizes millions of files so you find homework instantly! 📚✨</p>
 </div>
 `
@@ -1963,4 +1926,479 @@ const presentation = `
 <li>Practice makes perfect 🚀</li>
 </ul>
 </div>
+`
+
+
+const prQuestionsUnitOne = `
+
+    <h4><strong>Previous Year Questions</strong></h4>
+   
+
+    <div class="question">
+        <div class="year">YEAR-2023</div>
+        <div class="q-title">
+            <strong>What are Macros in the MS-Word? What do they do ?</strong>
+        </div>
+    </div>
+
+    <div class="question">
+        <div class="year">YEAR-2026</div>
+        <div class="q-title">
+            <strong>Describe the overview of different versions of Windows.</strong>
+        </div>
+    </div>
+
+    <div class="question">
+        <div class="year">YEAR-2026</div>
+        <div class="q-title">
+            <strong>In what way Linux differ from Unix Operating system? Discuss the Linux features also.</strong>
+        </div>
+    </div>
+
+
+
+    <div class="question">
+        <div class="year">YEAR-2026</div>
+        <div class="q-title">
+            <strong>What is ROM? Why is it required in digital computer? 
+            Distinguish between PROM, EPROM and EEPROM.</strong>
+        </div>
+    </div>
+
+    <div class="question">
+        <div class="year">YEAR-2026</div>
+        <div class="q-title">
+            <strong>Discuss the different versions of Windows.</strong>
+        </div>
+    </div>
+
+    <div class="question">
+        <div class="year">YEAR-2026</div>
+        <div class="q-title">
+            <strong>List any three input as well as output devices of computer system in detail.</strong>
+        </div>
+    </div>
+
+
+    <div class="question">
+        <div class="year">YEAR-2024</div>
+        <div class="q-title">
+            <strong>What is compiler? Explain difference between Compiler and Interpreter ?</strong>
+        </div>
+    </div>
+
+
+    <div class="question">
+        <div class="year">YEAR-2020</div>
+        <div class="q-title">
+            <strong>What do you mean by number system and also define the radix/base of a particular number system? Also convert the following:<br></strong>
+            i. (3CA.B2) Hexadecimal = (?) Decimal<br>
+            ii. (1011011.011) Binary = (?) Hexadecimal<br>
+            iii. 2's complement of (111.10) Binary
+        </div>
+    </div>
+
+    <div class="question">
+        <div class="year">YEAR-2019</div>
+        <div class="q-title">
+            <strong>Convert the following:<br> </strong>
+            i. (1001.0010)₂ = (?)₁₀<br>
+            ii. (111111110010)₂ = (?)₁₆<br>
+            iii. Convert (56.72)₁₀ to BCD<br>
+            iv. (8B3F)₁₆ = (?)₂<br>
+            v. (76)₁₀ = (?)₂
+        </div>
+    </div>
+
+      <div class="question">
+          <div class="year">YEAR-2018</div>
+          <div class="q-title">
+              <strong>Convert the following:<br> </strong>
+              i. Convert 0.865 from Base 10 to Base 16.<br>
+              ii. Convert 34.4674 from Base 10 to Base 8.<br>
+              iii. Convert 4D.21 from Base 16 to Base 10.<br>
+              iv. Convert 25 from Base 10 to 2's complement.<br>
+              v. Convert this binary number 1110101100110 to octal.
+          </div>
+      </div>
+
+
+      <div class="question">
+          <div class="year">YEAR-2017</div>
+          <div class="q-title">
+              <strong>Convert the octal number 562.46 to the following:<br></strong>
+              i. &nbsp;BCD number.<br>
+              ii. Decimal number.<br>
+              iii. Binary number.<br>
+              iv. Hexadecimal number.<br>
+              v. &nbsp;2's complement.
+          </div>
+      </div>
+
+
+      <div class="question">
+          <div class="year">YEAR-2016</div>
+          <div class="q-title">
+              <strong>Convert the following as indicated by its base:<br></strong>
+              i. &nbsp;(D6C1)₁₆ = (?)₁₀<br>
+              ii. &nbsp;(.345)₈ = (?)₁₀<br>
+              iii. (2BA3)₁₆ = (?)₂<br>
+              iv. (0.865)₁₀ = (?)₁₆<br>
+              v. &nbsp;(267)₈ = (?)
+          </div>
+      </div>
+
+
+      <div class="question">
+          <div class="year">YEAR-2015</div>
+          <div class="q-title">
+              <strong>Convert the following as indicated by its radix/base:<br></strong>
+              i. &nbsp;(6DC)₁₆ = (?)₂<br>
+              ii. &nbsp;(7305)₈ = (?)₂<br>
+              iii. (1023)₁₀ = (?)₁₆<br>
+              iv. (16.625)₁₀ = (?)₂<br>
+              v. &nbsp;(1101010)₁₆ = (?)₈
+          </div>
+      </div>
+
+
+    <div class="question">
+        <div class="year">YEAR-2023</div>
+        <div class="q-title">
+            <strong>What do you mean by Binary coded decimal (BCD) and in what ways it differs from ASCII code? Explain in detail.</strong>
+        </div>
+    </div>
+
+    <div class="question">
+        <div class="year">YEAR-2020</div>
+        <div class="q-title">
+            <strong>What is chart of MS-Excel? Write any two charts of MS-Excel</strong>
+        </div>
+    </div>
+
+
+    <div class="question">
+        <div class="year">YEAR-2026</div>
+        <div class="q-title">
+            <strong>Write notes on any two of the following:<br> </strong>
+            a) Internal/External DOS Commands.<br>
+            b) Computer Characteristics.<br>
+            c) Overview of Linux Operating System.
+        </div>
+    </div>
+
+
+
+    <div class="question">
+        <div class="year">YEAR-2025</div>
+        <div class="q-title">
+            <strong>What is the difference between RAM, ROM, PROM, EPROM?</strong>
+        </div>
+    </div>
+
+    <div class="question">
+        <div class="year">YEAR-2023</div>
+        <div class="q-title">
+            <strong>What is chart of MS-Excel? Write any two charts of MS-Excel</strong>
+        </div>
+    </div>
+
+
+    <div class="question">
+        <div class="year">YEAR-2022</div>
+        <div class="q-title">
+            <strong> What is Computers ? What are the features and characteristics of the PC?</strong>
+        </div>
+    </div>
+
+
+   <div class="question">
+        <div class="year">YEAR-2022</div>
+        <div class="q-title">
+            <strong> 
+What are the Input Devices in the Computer System? Also differentiate between OMR and MICR.
+            </strong>
+        </div>
+    </div>
+
+    <div class="question">
+        <div class="year">YEAR-2024</div>
+        <div class="q-title">
+            <strong> Draw a flowchart to check, whether the given number is even or odd.</strong>
+        </div>
+    </div>
+    <div style="clear: both;"></div>
+
+`
+
+const prQuestionsUnitTwo = `
+
+    <h4><strong>Previous Year Questions</strong></h4>
+    
+    <div class="question">
+        <div class="year">YEAR-2023</div>
+        <div class="q-title">
+            <strong>What are Macros in the MS-Word? What do they do ?</strong>
+        </div>
+    </div>
+
+    <div class="question">
+        <div class="year">YEAR-2020</div>
+        <div class="q-title">
+            <strong>What is chart of MS-Excel? Write any two charts of MS-Excel</strong>
+        </div>
+    </div>
+
+    <div class="question">
+        <div class="year">YEAR-2017</div>
+        <div class="q-title">
+            <strong>(a) What is the difference between Primary and Secondary memory in Computer?</strong>
+        </div>
+    </div>
+
+    <div class="question">
+        <div class="year">YEAR-2017</div>
+        <div class="q-title">
+            <strong>(b) Write and describe any three input and output devices of Computer.</strong>
+        </div>
+    </div>
+
+
+    <div class="question">
+        <div class="year">YEAR-2025</div>
+        <div class="q-title">
+            <strong>What is the difference between RAM, ROM, PROM, EPROM?</strong>
+        </div>
+    </div>
+
+    <div class="question">
+        <div class="year">YEAR-2023</div>
+        <div class="q-title">
+            <strong>What is chart of MS-Excel? Write any two charts of MS-Excel</strong>
+        </div>
+    </div>
+
+
+    <div class="question">
+        <div class="year">YEAR-2022</div>
+        <div class="q-title">
+            <strong> What is Computers ? What are the features and characteristics of the PC?</strong>
+        </div>
+    </div>
+
+       <div class="question">
+        <div class="year">YEAR-2024</div>
+        <div class="q-title">
+            <strong> Draw a flowchart to check, whether the given number is even or odd.</strong>
+        </div>
+    </div>
+    <div style="clear: both;"></div>
+
+`
+const prQuestionsUnitThree = `
+
+    <h4><strong>Previous Year Questions</strong></h4>
+    
+    <div class="question">
+        <div class="year">YEAR-2023</div>
+        <div class="q-title">
+            <strong>
+             What is the difference between Application software and System Software ?
+            </strong>
+        </div>
+    </div>
+
+    <div class="question">
+        <div class="year">YEAR-2017</div>
+        <div class="q-title">
+            <strong>Discuss the file structure of DOS.</strong>
+        </div>
+    </div>
+
+    <div class="question">
+        <div class="year">YEAR-2017</div>
+        <div class="q-title">
+            <strong>What do you mean by Operating System? Describe the major functions of Operating System.</strong>
+        </div>
+    </div>
+
+    <div class="question">
+        <div class="year">YEAR-2026</div>
+        <div class="q-title">
+            <strong>What is the difference between External and Internal commands in DOS? List and explain with its syntax for three internal and three external DOS commands.</strong>
+        </div>
+    </div>
+
+    <div class="question">
+        <div class="year">YEAR-2020</div>
+        <div class="q-title">
+            <strong>What is chart of MS-Excel? Write any two charts of MS-Excel</strong>
+        </div>
+    </div>
+
+    <div class="question">
+        <div class="year">YEAR-2015</div>
+        <div class="q-title">
+            <strong>What is Linux and also explain the file system in Linux and in what ways Linux differ from DOS ?</strong>
+        </div>
+    </div>
+
+    <div class="question">
+        <div class="year">YEAR-2021</div>
+        <div class="q-title">
+            <strong> What do you mean by operating system (OS) and also discuss "OS Controls and coordinates the use of hardware among the different application software and users" in detail ?</strong>
+        </div>
+    </div>
+
+    <div class="question">
+        <div class="year">YEAR-2022</div>
+        <div class="q-title">
+            <strong>What are the internal and external DOS Commands? Also explain three commands for internal and three from external using appropriate syntax and examples ?</strong>
+        </div>
+    </div>
+
+    <div class="question">
+        <div class="year">YEAR-2026</div>
+        <div class="q-title">
+            <strong>What is an operating system? Discuss the functions and types of operating system. Also differentiate between single‑user and multi‑user operating system.</strong>
+        </div>
+    </div>
+
+    <div class="question">
+        <div class="year">YEAR-2026</div>
+        <div class="q-title">
+            <strong>What do you mean by DOS? Specify at least five internal as well as five external commands with their proper syntax and examples.</strong>
+        </div>
+    </div>
+
+
+   <div class="question">
+        <div class="year">YEAR-2026</div>
+        <div class="q-title">
+            <strong>Draw the block diagram of Computer System. Explain the function of each component of the Computer System.</strong>
+        </div>
+    </div>
+
+    <div class="question">
+        <div class="year">YEAR-2026</div>
+        <div class="q-title">
+            <strong>What is Operating System? Discuss the functions and types of Operating System.</strong>
+        </div>
+    </div>
+
+<div class="question">
+    <div class="year">YEAR-2017</div>
+    <div class="q-title">
+        <strong>In what way do Internal Commands differ from External Commands in DOS? Write any five internal as well as external commands with their appropriate syntax and examples.</strong>
+    </div>
+</div>
+
+
+
+    <div style="clear: both;"></div>
+
+`
+
+const prQuestionsUnitFour = `
+
+    <h4><strong>Previous Year Questions</strong></h4>
+    
+    <div class="question">
+        <div class="year">YEAR-2023</div>
+        <div class="q-title">
+            <strong>What do you mean by Multimedia? Explain the characteristics as well as elements of a multimedia system in details.?</strong>
+        </div>
+    </div>
+
+    <div class="question">
+        <div class="year">YEAR-2020</div>
+        <div class="q-title">
+            <strong>What is chart of MS-Excel? Write any two charts of MS-Excel</strong>
+        </div>
+    </div>
+
+    <div class="question">
+        <div class="year">YEAR-2026</div>
+        <div class="q-title">
+            <strong>7. (a) Describe how statistical functions work in worksheet of MS‑Excel?</strong>
+        </div>
+    </div>
+
+
+    <div class="question">
+        <div class="year">YEAR-2026</div>
+        <div class="q-title">
+            <strong>What do you mean by Multimedia? Discuss different phases of any multimedia project in detail.</strong>
+        </div>
+    </div>
+
+    <div class="question">
+        <div class="year">YEAR-2023</div>
+        <div class="q-title">
+            <strong>What are OMR and MICR ? Explain in detail</strong>
+        </div>
+    </div>
+
+     <div class="question">
+        <div class="year">YEAR-2026</div>
+        <div class="q-title">
+            <strong>What do you mean by multimedia? What are various components of multimedia? Explain each in detail.</strong>
+        </div>
+    </div>
+
+    <div class="question">
+        <div class="year">YEAR-2026</div>
+        <div class="q-title">
+            <strong>What is word processing? Explain the various features of word processing in detail.</strong>
+        </div>
+    </div>
+
+    <div class="question">
+        <div class="year">YEAR-2026</div>
+        <div class="q-title">
+            <strong>Describe how logical functions work in worksheet of MS-Excel.</strong>
+        </div>
+    </div>
+
+
+    <div class="question">
+        <div class="year">YEAR-2023</div>
+        <div class="q-title">
+            <strong>What is chart of MS-Excel? Write any two charts of MS-Excel</strong>
+        </div>
+    </div>
+
+
+    <div class="question">
+        <div class="year">YEAR-2022</div>
+        <div class="q-title">
+            <strong> What is Computers ? What are the features and characteristics of the PC?</strong>
+        </div>
+    </div>
+
+
+    <div style="clear: both;"></div>
+
+`
+const prQuestionsUnitFive = `
+
+    <h4><strong>Previous Year Questions</strong></h4>
+    
+    <div class="question">
+        <div class="year">YEAR-2023</div>
+        <div class="q-title">
+            <strong>What are Macros in the MS-Word? What do they do ?</strong>
+        </div>
+    </div>
+
+
+    <div class="question">
+        <div class="year">YEAR-2022</div>
+        <div class="q-title">
+            <strong> What is Computers ? What are the features and characteristics of the PC?</strong>
+        </div>
+    </div>
+
+    <div style="clear: both;"></div>
+
 `
