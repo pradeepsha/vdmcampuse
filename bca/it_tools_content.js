@@ -157,11 +157,11 @@ let introNote = `
 
 <!-- Trigger Button -->
 <a class="video-btn"  onclick="openVideo()">
-  Watch Lecture
+  Lecture-1
 </a>
 
 <a class="video-btn" onclick="openVideos('https://www.youtube.com/embed/pO5SX5QCbTw?si=3kbVPkSOsEmyMa38')">
-  Watch Lecture-2
+  Lecture-2
 </a>
 
 

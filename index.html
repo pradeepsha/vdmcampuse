@@ -2,11 +2,13 @@
 <html lang="en">
 
 <head>
-	<title>Unicat</title>
+
 	<meta charset="utf-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<meta name="description" content="Unicat project">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>SharadaIt | Your Digital Campus</title>
+	<link rel="icon" href="./images/favicon1.png" type="image/x-icon" />
 	<link rel="stylesheet" type="text/css" href="styles/bootstrap4/bootstrap.min.css">
 	<link href="plugins/font-awesome-4.7.0/css/font-awesome.min.css" rel="stylesheet" type="text/css">
 	<link rel="stylesheet" type="text/css" href="plugins/OwlCarousel2-2.2.1/owl.carousel.css">
@@ -282,7 +284,7 @@
 											<div class="form-box" id="signupBox" style="display:none;">
 												<span class="close-btn" onclick="closePopup()">✖</span>
 												<h2>Sign Up</h2>
-<!-- 
+												<!-- 
 												<div class="input-field"><input type="text" placeholder="Full Name">
 												</div>
 												<div class="input-field"><input type="email" placeholder="Email"></div>
@@ -291,23 +293,26 @@
 
 												<button class="main-btn">Create Account</button> -->
 
-<form id="signupForm" onsubmit="handleSignup(event)">
+												<form id="signupForm" onsubmit="handleSignup(event)">
 
-  <div class="input-field">
-    <input type="text" id="name" name="name" placeholder="Full Name" required>
-  </div>
+													<div class="input-field">
+														<input type="text" id="name" name="name" placeholder="Full Name"
+															required>
+													</div>
 
-  <div class="input-field">
-    <input type="email" id="email" name="email" placeholder="Email" required>
-  </div>
+													<div class="input-field">
+														<input type="email" id="email" name="email" placeholder="Email"
+															required>
+													</div>
 
-  <div class="input-field">
-    <input type="password" id="password" name="password" placeholder="Create Password" required>
-  </div>
+													<div class="input-field">
+														<input type="password" id="password" name="password"
+															placeholder="Create Password" required>
+													</div>
 
-  <button type="submit" class="main-btn">Create Account</button>
+													<button type="submit" class="main-btn">Create Account</button>
 
-</form>
+												</form>
 
 												<div class="separator">or sign up with</div>
 
@@ -389,10 +394,11 @@
 					</div>
 				</div>
 			</div>
+		</header>
 	</div>
 
 
-	</header>
+	
 
 	<!-- Menu  for mobile-->
 
@@ -550,13 +556,18 @@
 				<div class="col">
 					<div class="section_title_container text-center">
 						<!-- <h2 class="section_title">Welcome To Unicat E-Learning </h2> -->
-						<h2 style="font-size: 20px;" class="section_title"> Your Digital Campus for Computer Science & Academic Success </h2>
-						
+						<h2 style="font-size: 35px;text-shadow: 2px 2px 4px #00000047;" class="section_title"> Your
+							Digital Campus </h2>
+
 						<div class="section_subtitle">
-<p style="font-size: 14px; color: #4a5568; line-height: 1.6; max-width: 680px; margin: 10px auto 0;">
-    Learn & practice, all subjects from Class 9th to 12th, BCA, MCA, B.Sc. IT, and all Computer Science courses — <strong style="color: #2c3e50; ">ANYTIME, ANYWHERE</strong>.<br>
-    From coding fundamentals and theory to advanced computing and project‑based learning <br>— <strong style="color: #2c3e50;">all in one place</strong>.
-</p>
+							<p style="margin: 12px 0;
+    padding: 12px 15px;
+    font-size: 15px;
+    line-height: 1.8;
+    color: #2c3e50;
+    background: #ffffff;
+    border-radius: 10px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);">Your Digital Campus for Computer Science & Academic Success </p>
 						</div>
 					</div>
 				</div>
@@ -633,7 +644,7 @@
 			</div>
 			<div class="row courses_row">
 
-								<!-- Course -->
+				<!-- Course -->
 				<div class="col-lg-4 course_col">
 					<div class="course">
 						<div class="course_image"><img src="images/BCA-01.jpg" alt=""></div>
@@ -691,7 +702,8 @@
 				<!-- Course -->
 				<div class="col-lg-4 course_col">
 					<div class="course">
-						<div class="course_image"><img style="height: 230px;" src="images/fuul-stack-home-page.jpg" alt=""></div>
+						<div class="course_image"><img style="height: 230px;" src="images/fuul-stack-home-page.jpg"
+								alt=""></div>
 						<div class="course_body">
 							<h3 class="course_title"><a href="course.html">Full Stack Developer</a></h3>
 							<!-- <div class="course_teacher">Ms. Lucius</div> -->
@@ -720,7 +732,7 @@
 			</div>
 			<div class="row">
 				<div class="col">
-					<div class="courses_button trans_200"><a href="#">view all courses</a></div>
+					<div class="courses_button trans_200"><a href="courses.html">view all courses</a></div>
 				</div>
 			</div>
 		</div>
@@ -1056,7 +1068,7 @@
 		</div>
 	</div>
 
-	
+
 
 	<!-- Footer -->
 
@@ -1198,15 +1210,15 @@
 </html>
 
 <script id="m2js">
-function handleSignup(e) {
-  e.preventDefault();
+	function handleSignup(e) {
+		e.preventDefault();
 
-  const name = document.getElementById("name").value;
-  const email = document.getElementById("email").value;
-  const password = document.getElementById("password").value;
+		const name = document.getElementById("name").value;
+		const email = document.getElementById("email").value;
+		const password = document.getElementById("password").value;
 
-  console.log(name, email, password);
-   document.getElementById("signupForm").reset();
-  document.getElementById("overlay").style.display = "none";
-}
+		console.log(name, email, password);
+		document.getElementById("signupForm").reset();
+		document.getElementById("overlay").style.display = "none";
+	}
 </script>
