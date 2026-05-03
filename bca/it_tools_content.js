@@ -2383,6 +2383,21 @@ const prQuestionsUnitFour = `
 const prQuestionsUnitFive = `
 
     <h4><strong>Previous Year Questions</strong></h4>
+
+
+<div class="question">
+    <div class="q-title">
+        <strong>Convert the following as indicated by its radix/base:<br><br>
+        i. &nbsp;(6DC)₁₆ = (?)₂<br>
+        ii. &nbsp;(7305)₈ = (?)₂<br>
+        iii. (1023)₁₀ = (?)₁₆<br>
+        iv. (16.625)₁₀ = (?)₂<br>
+        v. &nbsp;(1101010)₁₆ = (?)₈</strong>
+    </div>
+    <div class="year" >YEAR‑2026</div>
+</div>
+
+
     
     <div class="question">
         <div class="year">YEAR-2023</div>
