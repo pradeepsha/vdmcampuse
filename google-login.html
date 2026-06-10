@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Login Popup</title>
+
+<script src="https://accounts.google.com/gsi/client" async defer></script>
+
+<style>
+body{
+    font-family:Arial,sans-serif;
+    background:#f4f4f4;
+}
+
+.overlaymb{
+    position:fixed;
+    inset:0;
+    background:rgba(0,0,0,.5);
+    display:flex;
+    justify-content:center;
+    align-items:center;
+}
+
+.container-mb{
+    width:350px;
+    background:#fff;
+    padding:25px;
+    border-radius:10px;
+    position:relative;
+    text-align:center;
+    box-shadow:0 5px 20px rgba(0,0,0,.2);
+}
+
+.input-field{
+    margin:10px 0;
+}
+
+.input-field input{
+    width:100%;
+    padding:12px;
+    border:1px solid #ddd;
+    border-radius:5px;
+    box-sizing:border-box;
+}
+
+.main-btn{
+    width:100%;
+    padding:12px;
+    border:none;
+    background:#0066ff;
+    color:#fff;
+    border-radius:5px;
+    cursor:pointer;
+    margin-top:10px;
+}
+
+.separator{
+    margin:15px 0;
+    color:#666;
+}
+
+.social-btn-mb{
+    width:100%;
+    padding:12px;
+    border:1px solid #ddd;
+    background:#fff;
+    border-radius:5px;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    gap:10px;
+    cursor:pointer;
+    margin-bottom:10px;
+}
+
+.close-btn-mb{
+    position:absolute;
+    top:10px;
+    right:15px;
+    font-size:25px;
+    cursor:pointer;
+}
+</style>
+</head>
+<body>
+
+<div id="overlaymb" class="overlaymb">
+    <div class="container-mb">
+
+        <span class="close-btn-mb" onclick="closePopupMb()">×</span>
+
+        <h2>Login</h2>
+
+        <div class="input-field">
+            <input type="email" placeholder="Email">
+        </div>
+
+        <div class="input-field">
+            <input type="password" placeholder="Password">
+        </div>
+
+        <button class="main-btn">Login</button>
+
+        <div class="separator">or continue with</div>
+
+        <!-- Google Login -->
+
+        <div id="g_id_onload"
+            data-client_id="987135736627-p4q1nga6rqthkgf9im4n1jk19da74rov.apps.googleusercontent.com"
+            data-callback="handleCredentialResponse">
+        </div>
+
+        <div class="g_id_signin"
+            data-type="standard"
+            data-size="large"
+            data-theme="outline"
+            data-text="signin_with"
+            data-shape="rectangular"
+            data-width="300">
+        </div>
+
+        <br>
+
+        <button class="social-btn-mb">
+            <img src="https://img.icons8.com/color/48/facebook-new.png" width="20">
+            Facebook
+        </button>
+
+        <button class="social-btn-mb">
+            <img src="https://img.icons8.com/ios-glyphs/30/github.png" width="20">
+            GitHub
+        </button>
+
+    </div>
+</div>
+
+<script>
+function closePopupMb(){
+    document.getElementById("overlaymb").style.display="none";
+}
+
+function handleCredentialResponse(response){
+
+    const data = JSON.parse(
+        atob(response.credential.split('.')[1])
+    );
+
+    alert("Welcome " + data.name);
+
+    localStorage.setItem("userName", data.name);
+    localStorage.setItem("userEmail", data.email);
+    localStorage.setItem("userPicture", data.picture);
+
+    console.log("Name:", data.name);
+    console.log("Email:", data.email);
+    console.log("Picture:", data.picture);
+}
+</script>
+
+</body>
+</html>
