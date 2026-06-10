@@ -491,10 +491,47 @@
                 data-auto_prompt="false"
                 data-callback="handleCredentialResponse">
             </div>
+            <div class="signin-wrapper">
+    <div class="g_id_signin"
+         data-type="standard"
+         data-size="large"
+         data-theme="outline"
+         data-text="signin_with"
+         data-shape="rectangular"
+         >
+    </div>
+</div>
 
-            <div class="g_id_signin" data-type="standard" data-size="large" data-theme="outline" data-text="signin_with"
+<style>
+    .signin-wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    margin-top: 20px;
+}
+
+/* Desktop */
+.g_id_signin {
+    max-width: 300px;
+}
+
+/* Mobile view */
+@media (max-width: 480px) {
+    .g_id_signin {
+        width: 100% !important;
+        max-width: 280px;
+    }
+
+    .signin-wrapper {
+        padding: 0 15px;
+    }
+}
+</style>
+
+            <!-- <div class="g_id_signin" data-type="standard" data-size="large" data-theme="outline" data-text="signin_with"
                 data-shape="rectangular" data-width="300">
-            </div>
+            </div> -->
 
             <!-- <button class="social-btn-mb"><img src="https://img.icons8.com/color/48/google-logo.png" width="20">
                 Google</button>
