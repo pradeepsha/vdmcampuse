@@ -1309,3 +1309,21 @@
         document.getElementById("overlay").style.display = "none";
     }
 </script>
+
+<script>
+function handleCredentialResponse(response) {
+
+    const token = response.credential;
+
+    const payload = JSON.parse(
+        atob(token.split('.')[1])
+    );
+
+    console.log(">>>>>>>>>",payload);
+
+    // alert("Welcome " + payload.name);
+
+    document.getElementById("name").innerHTML = payload.name;
+    document.getElementById("email").innerHTML = payload.email;
+}
+</script>
