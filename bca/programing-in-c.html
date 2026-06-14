@@ -1,0 +1,953 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<title>Course Details</title>
+	<base href="../">
+	<meta charset="utf-8">
+	<script src="bca/programing-in-c-containt.js"></script>
+
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="description" content="Unicat project">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" type="text/css" href="styles/bootstrap4/bootstrap.min.css">
+	<link href="plugins/font-awesome-4.7.0/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+	<link href="plugins/colorbox/colorbox.css" rel="stylesheet" type="text/css">
+	<link rel="stylesheet" type="text/css" href="plugins/OwlCarousel2-2.2.1/owl.carousel.css">
+	<link rel="stylesheet" type="text/css" href="plugins/OwlCarousel2-2.2.1/owl.theme.default.css">
+	<link rel="stylesheet" type="text/css" href="plugins/OwlCarousel2-2.2.1/animate.css">
+	<link rel="stylesheet" type="text/css" href="styles/courses.css">
+	<link rel="stylesheet" type="text/css" href="styles/course_responsive.css">
+	<link rel="stylesheet" type="text/css" href="bca\watch_lecture.css">
+	<link rel="stylesheet" type="text/css" href="styles/my_style.css">
+
+
+</head>
+
+
+<style>
+	body {
+		margin: 0;
+		font-family: Arial;
+		background: #f5f6fa;
+		/* STOP FULL PAGE SCROLL */
+		height: 100%;
+		/* overflow: hidden; */
+	}
+
+	.notes_sidebar {
+		overflow-y: auto;
+		/* Vertical scrollbar */
+		overflow-x: hidden;
+		/* Hide horizontal scrollbar */
+
+	}
+
+	/* MOBILE */
+
+	@media(max-width:991px) {
+
+		html,
+		body {
+			overflow: auto;
+			/* ✅ allow scroll on mobile */
+		}
+
+		.notes_content {
+			padding: 10px;
+			max-width: 100%;
+			height: auto;
+			overflow-y: visible;
+			height: calc(100vh - 120px);
+			/* adjust header */
+		}
+
+		.notes_layout {
+			flex-direction: column;
+			/* height: 100vh; */
+			height: auto;
+			margin-top: 0px;
+		}
+
+		.mobile_menu_btn {
+			display: inline-block;
+			margin-top: 26px;
+		}
+
+		.notes_sidebar {
+			position: fixed;
+			top: 0;
+			left: -270px;
+			height: 100%;
+			z-index: 1000;
+			transition: 0.3s;
+
+		}
+
+		.notes_sidebar.show {
+			left: 0;
+		}
+
+		.notes_right {
+			width: 100%;
+		}
+
+	}
+</style>
+
+<style>
+	.notes-table {
+		width: 100%;
+		border-collapse: collapse;
+		margin: 15px 0;
+		font-family: Arial, sans-serif;
+	}
+
+	.notes-table th {
+		background: #1e293b;
+		color: #fff;
+		padding: 12px;
+	}
+
+	.notes-table td {
+		border: 1px solid #d1d5db;
+		padding: 10px;
+	}
+
+	.notes-table tr:nth-child(even) {
+		background: #f8fafc;
+	}
+</style>
+
+<body>
+
+	<div class="super_container">
+
+		<!-- Header -->
+
+
+		<header class="header">
+
+			<!-- Top Bar -->
+			<div class="top_bar">
+				<div class="top_bar_container">
+					<div class="container">
+						<div class="row">
+							<div class="col">
+								<div class="top_bar_content d-flex flex-row align-items-center justify-content-start">
+									<ul class="top_bar_contact_list">
+										<li>
+											<div>Have any questions?</div>
+										</li>
+										<li>
+											<div>Talk to us at </div>
+										</li>
+										<li>
+											<i class="fa fa-phone" aria-hidden="true"></i>
+											<div>8181-050-321</div>
+										</li>
+										<li>
+											<i class="fa fa-whatsapp" aria-hidden="true"></i>
+											<div>798 - 749 - 0763</div>
+										</li>
+										<li>
+											<i class="fa fa-envelope-o" aria-hidden="true"></i>
+											<div>sharadait@gmail.com</div>
+										</li>
+									</ul>
+									<!-- <div class="top_bar_login ml-auto">
+										<div class="login_button"><a href="#">Register or Login</a></div>
+									</div> -->
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+
+			<!-- Header Content -->
+			<div class="header_container">
+				<div class="container">
+					<div class="row">
+						<div class="col">
+							<div class="header_content d-flex flex-row align-items-center justify-content-start">
+								<div class="logo_container">
+									<a class="navbar-brand" href="index.html">
+										<img src="images/sharada_it_final.png" alt="" style="width: 215px;">
+									</a>
+								</div>
+								<nav class="main_nav_contaner ml-auto">
+									<div class="hamburger menu_mm">
+										<i class="fa fa-bars menu_mm" aria-hidden="true"
+											onclick="openHambergurMenu()"></i>
+										<!-- <i class="fa fa-bars icon menu_mm" onclick="myFunction()"></i> -->
+									</div>
+									<ul class="main_nav">
+										<li class="active"><a href="#">Home</a></li>
+										<li><a href="./bca/bca_home_page.html">BCA</a></li>
+										<li class="dropdown">
+											<a href="">Courses </a>
+											<ul class="dropdown-menu">
+												<li><a href="full-stack-details.html">Full Stack Developer</a></li>
+												<li><a href="front-end-developer-detail.html">Front-End Developer</a>
+												</li>
+												<li><a href="html-css-js-details.html">HTML CSS JS</a></li>
+												<li><a href="c-details.html">C Language</a></li>
+												<li><a href="c-pluse-details.html">C++</a></li>
+												<li><a href="oracle-plsql-details.html"> Oracle & PL/SQL</a></li>
+												<li><a href="mysql-detail.html">MySQL</a></li>
+												<li><a href="mongodb-detail.html"> MongoDB</a></li>
+											</ul>
+										</li>
+
+										<!-- <li><a href="blog.html">Blog</a></li>
+										<li><a href="#">Page</a></li> -->
+										<li><a href="contact.html">Contact</a></li>
+										<li><a href="about.html">About</a></li>
+									</ul>
+									<!-- <div class="search_button"><i class="fa fa-search" aria-hidden="true"></i></div> -->
+
+									<!-- Hamburger -->
+
+									<!-- <div class="shopping_cart"><i class="fa fa-shopping-cart" aria-hidden="true"></i> -->
+							</div>
+
+							</nav>
+
+						</div>
+					</div>
+				</div>
+			</div>
+
+			<!-- Header Search Panel -->
+			<!-- <div class="header_search_container">
+				<div class="container">
+					<div class="row">
+						<div class="col">
+							<div class="header_search_content d-flex flex-row align-items-center justify-content-end">
+								<form action="#" class="header_search_form">
+									<input type="search" class="search_input" placeholder="Search" required="required">
+									<button
+										class="header_search_button d-flex flex-column align-items-center justify-content-center">
+										<i class="fa fa-search" aria-hidden="true"></i>
+									</button>
+								</form>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div> -->
+		</header>
+
+		<!-- Menu -->
+
+
+
+		<!-- Menu  for mobile-->
+
+		<!-- <div class="menu d-flex flex-column align-items-end justify-content-start text-right menu_mm trans_400">
+			<div class="menu_close_container">
+				<div class="menu_close">
+					<div></div>
+					<div></div>
+				</div>
+			</div>
+
+			<nav class="menu_nav">
+				<ul class="menu_mm">
+					<li class="menu_mm"><a href="index.html">Home</a></li>
+					<li class="menu_mm"><a href="bca_home_page.html">BCA</a></li>
+					<li class="menu_mm"><a href="#">About</a></li>
+					<li class="menu_mm"><a href="#">Courses</a></li>
+					<li class="menu_mm"><a href="contact.html">Contact</a></li>
+				</ul>
+			</nav>
+		</div> -->
+
+
+
+		<div class="top-m-nav">
+
+			<!-- Menu Links -->
+			<div id="m-drop-down">
+				<a href="index.html">Home</a>
+				<a href="bca/bca_home_page.html">BCA</a>
+				<a class="mobile_dropbtn">Courses</a>
+				<div class="mobile_dropdown">
+
+
+
+					<div class="mobile_dropdown-content">
+						<a href="full-stack-details.html">Full Stack Developer</a>
+
+						<a href="front-end-developer-detail.html">Front-End Developer</a>
+
+						<a href="html-css-js-details.html">HTML CSS JS</a>
+
+						<a href="c-details.html">C Language</a>
+
+						<a href="c-pluse-details.html">C++</a>
+
+						<a href="oracle-plsql-details.html">Oracle & PL/SQL</a>
+
+						<a href="mysql-detail.html">MySQL</a>
+
+						<a href="mongodb-detail.html">MongoDB</a>
+					</div>
+				</div>
+				<a href="about.html">About</a>
+			</div>
+
+		</div>
+
+
+		<!-- <div class="menu d-flex flex-column align-items-end justify-content-start text-right menu_mm trans_400">
+
+			<nav class="menu_nav">
+				<ul class="menu_mm">
+					<li class="menu_mm"><a href="index.html">Home</a></li>
+					<li class="menu_mm"><a href="#">About</a></li>
+					<li class="menu_mm"><a href="#">Courses</a></li>
+					<li class="menu_mm"><a href="#">Blog</a></li>
+					<li class="menu_mm"><a href="#">Page</a></li>
+					<li class="menu_mm"><a href="contact.html">Contact</a></li>
+				</ul>
+			</nav>
+		</div> -->
+
+		<!-- Home -->
+
+		<!-- <div class="home">
+			<div class="breadcrumbs_container">
+				<div class="container">
+					<div class="row">
+						<div class="col">
+							<div class="breadcrumbs">
+								<ul>
+									<li><a href="index.html">Home</a></li>
+									<li><a href="./bca/bca_home_page.html">Courses</a></li>
+									<li>Course Details</li>
+								</ul>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>  -->
+
+		<!-- Course -->
+
+		<div class="mobile_menu_btn" onclick="openSidebar()">
+			<i class="fa fa-bars"></i> Units
+		</div>
+
+		<div class="overlay" id="overlay" onclick="closeSidebar()"></div>
+
+
+		<div class="notes_layout">
+
+			<!-- SIDEBAR -->
+
+			<div class="notes_sidebar" id="sidebar">
+
+				<div class="notes_title">C Programming Tutorial</div>
+
+				<!-- UNIT 1 -->
+
+				<div class="unit">
+
+					<div class="unit_title" onclick="toggleUnit(this)">
+						Unit 1 : Introduction to C
+					</div>
+
+					<div class="lecture_list">
+
+						<div class="lecture active" onclick="loadNote('Introduction to C', introC, event)">
+							L1.1 Introduction of C
+						</div>
+
+
+						<div class="lecture" onclick="loadNote('', featuresOfC, event)">
+							L1.2 Features of C
+						</div>
+
+						<div class="lecture" onclick="loadNote('', flowCharts, event)">
+							L1.3 Flow Charts
+						</div>
+
+						<div class="lecture" onclick="loadNote('', variablesAndIdentifiers, event)">
+							L1.4 Variables & Identifier
+						</div>
+
+						<div class="lecture" onclick="loadNote('', dataTypes, event)">
+							L1.5 Data Types
+						</div>
+
+						<div class="lecture" onclick="loadNote('', operators, event)">
+							L1.6 Operators in C
+						</div>
+
+						<div class="lecture" onclick="loadNote('', constantsAndLiterals, event)">
+							L1.6 Constants & Literals
+						</div>
+
+
+
+					</div>
+
+				</div>
+
+				<!-- UNIT 2 -->
+
+				<div class="unit">
+
+					<div class="unit_title" onclick="toggleUnit(this)">
+						Unit 2 : Conditional Statements
+					</div>
+
+					<div class="lecture_list">
+
+						<div class="lecture" onclick="loadNote('', conditionalStatementsAndLoops, event)">
+							L2.1 Introduction
+						</div>
+
+						<div class="lecture" onclick="loadNote('', ifStatementContent, event)">
+							L2.2 if Statement
+						</div>
+
+						<div class="lecture" onclick="loadNote('', nestedIfStatementContent, event)">
+							L2.3 Nested If
+						</div>
+
+						<div class="lecture" onclick="loadNote('', ifElseStatementContent, event)">
+							L2.4 if-else Statement
+						</div>
+
+						<div class="lecture" onclick="loadNote('', switchCaseContent, event)">
+							L2.5 switch Case
+						</div>
+
+
+
+					</div>
+
+				</div>
+
+				<!-- UNIT 2.1 -->
+
+				<div class="unit">
+
+					<div class="unit_title" onclick="toggleUnit(this)">
+						Unit 2.1 : Loops in C
+					</div>
+
+					<div class="lecture_list">
+
+						<div class="lecture" onclick="loadNote('', loopsAndForLoopContent, event)">
+							L2.1.1 for Loop
+						</div>
+
+						<div class="lecture" onclick="loadNote('', whileLoopContent, event)">
+							L2.1.2 while Loop
+						</div>
+
+						<div class="lecture" onclick="loadNote('', doWhileLoopContent, event)">
+							L2.1.3 Do-While Loop
+						</div>
+
+						<div class="lecture" onclick="loadNote('', jumpStatementsIntro, event)">
+							L2.1.4 Jump Statements in C
+						</div>
+
+						<div class="lecture" onclick="loadNote('', breakAndContinueContent, event)">
+							L2.1.5 Break & Continue
+						</div>
+
+						<div class="lecture" onclick="loadNote('', gotoStatementContent, event)">
+							L2.1.6 goto Statement.
+						</div>
+
+
+
+					</div>
+
+				</div>
+
+				<!-- UNIT 3 -->
+
+				<div class="unit">
+
+					<div class="unit_title" onclick="toggleUnit(this)">
+						Unit 3 : Functions and Arrays
+					</div>
+
+					<div class="lecture_list">
+
+						<!-- Functions with Sub Unit -->
+						<div class="lecture">
+
+							<div onclick="toggleSubUnit(this)">
+								L4.1 Functions
+							</div>
+
+							<div class="sub_lecture_list">
+
+								<div class="sub_lecture" onclick="loadNote('',functionIntroduction, event)">
+									1. Introduction
+								</div>
+
+								<div class="sub_lecture" onclick="loadNote('',typesOfFunctionsContent, event)">
+									2. Types of Function
+								</div>
+
+								<div class="sub_lecture" onclick="loadNote('',callByValueContent, event)">
+									3. Call by Value
+								</div>
+
+								<div class="sub_lecture" onclick="loadNote('',callByReferenceContent, event)">
+									4. Call by Reference
+								</div>
+
+							</div>
+						</div>
+
+
+						<!-- Arrays -->
+						<div class="lecture">
+
+							<div onclick="toggleSubUnit(this)">
+								L5.3 Arrays
+							</div>
+
+							<div class="sub_lecture_list">
+
+								<div class="sub_lecture" onclick="loadNote('',arrayContent, event)">
+									Introduction to Arrays
+								</div>
+
+								<div class="sub_lecture" onclick="loadNote('',arrayOperationsContent, event)">
+									Operations in Array
+								</div>
+
+								<div class="sub_lecture" onclick="loadNote('',traversalCContent, event)">
+									Array Traversal
+								</div>
+
+								<div class="sub_lecture" onclick="loadNote('',insertionCContent, event)">
+									Array Insertion
+								</div>
+								<div class="sub_lecture" onclick="loadNote('',deletionCContent, event)">
+									Array Deletion
+								</div>
+								<div class="sub_lecture" onclick="loadNote('',searchingCContent, event)">
+									Array Searching 
+								</div>
+								<div class="sub_lecture" onclick="loadNote('',arrayCRUDContent, event)">
+									Array CRUD
+								</div>
+
+
+							</div>
+						</div>
+
+						<!-- Multidimensional Arrays -->
+						<div class="lecture" onclick="loadNote('',multidimensionalArraysContent, event)">
+							L3.4 Multidimensional Arrays
+						</div>
+
+						<div class="lecture" onclick="loadNote('',pointersContent, event)">
+							L3.5 Pointers 
+						</div>
+
+					</div>
+
+				</div>
+
+				<!-- UNIT 4 -->
+
+				<div class="unit">
+
+					<div class="unit_title" onclick="toggleUnit(this)">
+						Unit 4 : Structures & Unions
+					</div>
+
+					<div class="lecture_list">
+
+						<div class="lecture" onclick="loadNote('', structureContent, event)">
+							L4.1 Structures
+						</div>
+
+						<div class="lecture" onclick="loadNote('', unionContent, event)">
+							L4.2 Unions
+						</div>
+
+					</div>
+
+				</div>
+
+								<!-- UNIT 5 -->
+
+				<div class="unit">
+
+					<div class="unit_title" onclick="toggleUnit(this)">
+						Unit 5 : Structures & Unions
+					</div>
+
+					<div class="lecture_list">
+
+						<div class="lecture" onclick="loadNote('', fileHandlingContent, event)">
+							L5.1 File Processing
+						</div>
+
+					</div>
+
+				</div>
+
+			</div>
+
+
+			<!-- CONTENT -->
+
+			<div class="notes_content" id="mainContent">
+
+				<h4 id="notes_title">C Language</h4>
+
+				<div class="notes_text" id="notes_text">
+
+					<p>
+						<strong>C Language</strong> is a general-purpose programming language developed by
+						<strong>Dennis Ritchie</strong> in <strong>1972</strong> at Bell Laboratories.
+						It is one of the most popular and widely used programming languages in the world.
+					</p>
+
+					<p>
+						C is used to create operating systems, application software, embedded systems,
+						device drivers, and many other computer programs. It is known for its simplicity,
+						speed, and efficiency.
+					</p>
+
+					<p>
+						<strong>Easy Meaning:</strong> C is a programming language that helps programmers
+						write instructions for computers to perform different tasks and solve problems.
+					</p>
+
+					<p><strong>What Students Learn in C Language:</strong></p>
+
+					<ul>
+						<li>Basic concepts of programming.</li>
+						<li>Writing and executing C programs.</li>
+						<li>Using variables and data types.</li>
+						<li>Taking input and displaying output.</li>
+						<li>Using operators and expressions.</li>
+						<li>Decision-making statements and loops.</li>
+						<li>Functions, arrays, and strings.</li>
+						<li>Pointers, structures, and file handling.</li>
+					</ul>
+
+					<p><strong>Why C Language is Important:</strong></p>
+
+					<ul>
+						<li>It is easy to learn for beginners.</li>
+						<li>It provides fast program execution.</li>
+						<li>It is the foundation of many modern programming languages.</li>
+						<li>It helps in understanding computer programming concepts.</li>
+						<li>It is widely used in software and system development.</li>
+					</ul>
+
+					<p>
+						C is often called the <strong>"Mother of Programming Languages"</strong>
+						because many modern languages such as C++, Java, C#, and Python are influenced by it.
+					</p>
+
+					<p>
+						In conclusion, C Language is a powerful and efficient programming language that
+						helps students learn the fundamentals of programming and software development.
+					</p>
+
+				</div>
+
+			</div>
+
+
+			<!-- RIGHT SIDEBAR -->
+
+			<div class="notes_right">
+
+				<div class="ad_box">
+					<!-- <h4>BASIC TO ADVANCE ,hjj</h4> -->
+
+					<a class="navbar-brand" href="../index.html">
+						<img src="images/c-small.png" alt="" style="width: 215px; border-radius: 8px;">
+					</a>
+					<!-- <p>Google Ads Area</p> -->
+				</div>
+
+				<div class="ad_box">
+					<h4>Download Notes</h4>
+					<p>BCA PDF Download</p>
+				</div>
+
+				<div class="ad_box">
+					<h4>Useful Links</h4>
+					<p>Previous Year Papers</p>
+				</div>
+
+				<div class="ad_box">
+					<h4>Related Course</h4>
+					<p>Learn MySQL</p>
+				</div>
+
+			</div>
+
+		</div>
+
+		<!-- Newsletter -->
+
+
+		<!-- Footer -->
+
+
+
+		<footer class="footer">
+			<div class="footer_background" style="background-image:url(images/footer_background.png)"></div>
+			<div class="container">
+				<div class="row footer_row">
+					<div class="col">
+						<div class="footer_content">
+							<div class="row">
+
+								<div class="col-lg-3 footer_col">
+
+									<!-- Footer About -->
+									<div class="footer_section footer_about">
+										<div class="footer_logo_container">
+											<a href="#">
+												<div class="footer_logo_text">SHARADA-<span>IT</span></div>
+											</a>
+										</div>
+										<div class="footer_about_text">
+											<p>
+												Sharada-IT offers BCA, MCA, and BBA programs designed to launch your
+												career in technology and business ,
+												With hands-on training in MEAN & MERN Stack, AI, and AWS to make you
+												job-ready.
+											</p>
+										</div>
+										<div class="footer_social">
+											<ul>
+												<li><a href="#"><i class="fa fa-facebook" aria-hidden="true"></i></a>
+												</li>
+												<li><a href="#"><i class="fa fa-google-plus" aria-hidden="true"></i></a>
+												</li>
+												<li><a href="#"><i class="fa fa-instagram" aria-hidden="true"></i></a>
+												</li>
+												<li><a href="#"><i class="fa fa-twitter" aria-hidden="true"></i></a>
+												</li>
+											</ul>
+										</div>
+									</div>
+
+								</div>
+
+								<div class="col-lg-3 footer_col">
+
+									<!-- Footer Contact -->
+									<div class="footer_section footer_contact">
+										<div class="footer_title">Contact Us</div>
+										<div class="footer_contact_info">
+											<ul>
+												<li>Email: sharadait@gmail.com</li>
+												<li>Phone: +(91) 8181 050 321</li>
+												<li>40 Baria Sreet 133/2 Noida</li>
+											</ul>
+										</div>
+									</div>
+
+								</div>
+
+								<div class="col-lg-3 footer_col">
+
+									<!-- Footer links -->
+									<div class="footer_section footer_links">
+										<div class="footer_title">Contact Us</div>
+										<div class="footer_links_container">
+											<ul>
+												<li><a href="#">Home</a></li>
+												<li><a href="#">About</a></li>
+												<li><a href="#">Contact</a></li>
+												<li><a href="#">Features</a></li>
+												<li><a href="#">Courses</a></li>
+												<li><a href="#">Events</a></li>
+												<li><a href="#">Gallery</a></li>
+												<li><a href="#">FAQs</a></li>
+											</ul>
+										</div>
+									</div>
+
+								</div>
+
+								<div class="col-lg-3 footer_col clearfix">
+
+									<!-- Footer links -->
+									<div class="footer_section footer_mobile">
+										<div class="footer_title">Mobile</div>
+										<div class="footer_mobile_content">
+											<div class="footer_image"><a href="#"><img src="../images/mobile_1.png"
+														alt=""></a>
+											</div>
+											<div class="footer_image"><a href="#"><img src="../images/mobile_2.png"
+														alt=""></a>
+											</div>
+										</div>
+									</div>
+
+								</div>
+
+							</div>
+						</div>
+					</div>
+				</div>
+
+				<div class="row copyright_row">
+					<div class="col">
+						<div class="copyright d-flex flex-lg-row flex-column align-items-center justify-content-start">
+							<div class="cr_text">
+								<!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
+								Copyright &copy;
+								<script>document.write(new Date().getFullYear());</script> All rights reserved
+								<!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
+							</div>
+							<div class="ml-lg-auto cr_links">
+								<ul class="cr_list">
+									<li><a href="#">Copyright notification</a></li>
+									<li><a href="#">Terms of Use</a></li>
+									<li><a href="#">Privacy Policy</a></li>
+								</ul>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</footer>
+
+
+	</div>
+
+
+
+
+	<script>
+
+		/* NOTES DATA */
+
+		/* LOAD INTRO */
+
+		function openIntro(event) {
+
+			loadNote("Introduction to Computer", introNote, event);
+
+		}
+
+
+		/* LOAD NOTE */
+
+		function loadNote(title, text, event) {
+
+			document.getElementById("notes_title").innerHTML = title;
+			document.getElementById("notes_text").innerHTML = text;
+
+			let lectures = document.querySelectorAll(".lecture");
+
+			lectures.forEach(l => l.classList.remove("active"));
+
+			event.currentTarget.classList.add("active");
+
+			// Scroll content area to top after loading
+			document.getElementById('mainContent').scrollTo({
+				top: 0,
+				behavior: 'smooth'
+			});
+
+			closeSidebar();
+
+		}
+
+
+		/* TOGGLE UNIT */
+
+		function toggleUnit(unit) {
+
+			let list = unit.nextElementSibling;
+
+			list.style.display =
+				list.style.display === "block" ? "none" : "block";
+
+		}
+
+
+		/* MOBILE SIDEBAR */
+
+		function openSidebar() {
+
+			document.getElementById("sidebar").classList.add("show");
+			document.getElementById("overlay").style.display = "block";
+
+		}
+
+		function closeSidebar() {
+
+			document.getElementById("sidebar").classList.remove("show");
+			document.getElementById("overlay").style.display = "none";
+
+		}
+
+
+
+		function openVideo() {
+			const overlay = document.getElementById('videoOverlay');
+			const iframe = document.getElementById('popupVideo');
+
+			iframe.src = "https://www.youtube.com/embed/pO5SX5QCbTw?si=3kbVPkSOsEmyMa38";
+
+			overlay.style.display = "flex";
+		}
+
+		function openVideos(videoUrl) {
+			const overlay = document.getElementById('videoOverlay');
+			const iframe = document.getElementById('popupVideo');
+
+			iframe.src = videoUrl;
+
+			overlay.style.display = "flex";
+		}
+
+
+		function closeVideo() {
+			const overlay = document.getElementById('videoOverlay');
+			const iframe = document.getElementById('popupVideo');
+
+			overlay.style.display = "none";
+			iframe.src = "";
+		}
+
+		window.addEventListener("click", function (e) {
+			const overlay = document.getElementById('videoOverlay');
+			if (e.target === overlay) {
+				closeVideo();
+			}
+		});
+
+	</script>
+
+	<script src="js/jquery-3.2.1.min.js"></script>
+	<script src="styles/bootstrap4/popper.js"></script>
+	<script src="styles/bootstrap4/bootstrap.min.js"></script>
+	<script src="plugins/OwlCarousel2-2.2.1/owl.carousel.js"></script>
+	<script src="plugins/easing/easing.js"></script>
+	<script src="plugins/parallax-js-master/parallax.min.js"></script>
+	<script src="plugins/colorbox/jquery.colorbox-min.js"></script>
+	<script src="js/course.js"></script>
+	<script src="js/my.js"></script>
+</body>
+
+</html>

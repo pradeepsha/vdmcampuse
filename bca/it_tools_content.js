@@ -185,6 +185,8 @@ let introNote = `
 
 
 `;
+
+
 let characteristicsvg = `
 
 <h2>Characteristics of Computer</h2>
