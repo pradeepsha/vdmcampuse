@@ -13,14 +13,44 @@ dropbtn.addEventListener("click", function () {
 
 
 // open togel subunit 
-function toggleSubUnit(element) {
-	let list = element.nextElementSibling;
+// function toggleSubUnit(element) {
+// 	let list = element.nextElementSibling;
 
-	if (list.style.display === "block") {
-		list.style.display = "none";
-	} else {
-		list.style.display = "block";
-	}
+// 	if (list.style.display === "block") {
+// 		list.style.display = "none";
+// 	} else {
+// 		list.style.display = "block";
+// 	}
+// }
+
+function toggleUnit(element) {
+	let current = element.nextElementSibling;
+
+	document.querySelectorAll('.lecture_list').forEach(list => {
+		if (list !== current) {
+			list.style.display = 'none';
+		}
+	});
+
+	current.style.display =
+		window.getComputedStyle(current).display === 'none'
+			? 'block'
+			: 'none';
+}
+
+function toggleSubUnit(element) {
+	let current = element.nextElementSibling;
+
+	document.querySelectorAll('.sub_lecture_list').forEach(list => {
+		if (list !== current) {
+			list.style.display = 'none';
+		}
+	});
+
+	current.style.display =
+		window.getComputedStyle(current).display === 'none'
+			? 'block'
+			: 'none';
 }
 
 // end togel unit 

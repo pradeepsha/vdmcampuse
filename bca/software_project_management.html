@@ -1,0 +1,1063 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Course Details</title>
+    <base href="../">
+    <meta charset="utf-8">
+    <script src="bca/oracle.js"></script>
+
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="description" content="Unicat project">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" href="styles/bootstrap4/bootstrap.min.css">
+    <link href="plugins/font-awesome-4.7.0/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+    <link href="plugins/colorbox/colorbox.css" rel="stylesheet" type="text/css">
+    <link rel="stylesheet" type="text/css" href="plugins/OwlCarousel2-2.2.1/owl.carousel.css">
+    <link rel="stylesheet" type="text/css" href="plugins/OwlCarousel2-2.2.1/owl.theme.default.css">
+    <link rel="stylesheet" type="text/css" href="plugins/OwlCarousel2-2.2.1/animate.css">
+    <link rel="stylesheet" type="text/css" href="styles/courses.css">
+    <link rel="stylesheet" type="text/css" href="styles/course_responsive.css">
+    <link rel="stylesheet" type="text/css" href="bca\watch_lecture.css">
+    <link rel="stylesheet" type="text/css" href="styles/my_style.css">
+
+
+</head>
+
+
+<style>
+    body {
+        margin: 0;
+        font-family: Arial;
+        background: #f5f6fa;
+        /* STOP FULL PAGE SCROLL */
+        height: 100%;
+        /* overflow: hidden; */
+    }
+
+    .notes_sidebar {
+        overflow-y: auto;
+        /* Vertical scrollbar */
+        overflow-x: hidden;
+        /* Hide horizontal scrollbar */
+
+    }
+
+    /* MOBILE */
+
+    @media(max-width:991px) {
+
+        html,
+        body {
+            overflow: auto;
+            /* ✅ allow scroll on mobile */
+        }
+
+        .notes_content {
+            padding: 10px;
+            max-width: 100%;
+            height: auto;
+            overflow-y: visible;
+            height: calc(100vh - 120px);
+            /* adjust header */
+        }
+
+        .notes_layout {
+            flex-direction: column;
+            /* height: 100vh; */
+            height: auto;
+            margin-top: 0px;
+        }
+
+        .mobile_menu_btn {
+            display: inline-block;
+            margin-top: 26px;
+        }
+
+        .notes_sidebar {
+            position: fixed;
+            top: 0;
+            left: -270px;
+            height: 100%;
+            z-index: 1000;
+            transition: 0.3s;
+
+        }
+
+        .notes_sidebar.show {
+            left: 0;
+        }
+
+        .notes_right {
+            width: 100%;
+        }
+
+    }
+</style>
+
+<style>
+    .notes-table {
+        width: 100%;
+        border-collapse: collapse;
+        margin: 15px 0;
+        font-family: Arial, sans-serif;
+    }
+
+    .notes-table th {
+        background: #1e293b;
+        color: #fff;
+        padding: 12px;
+    }
+
+    .notes-table td {
+        border: 1px solid #d1d5db;
+        padding: 10px;
+    }
+
+    .notes-table tr:nth-child(even) {
+        background: #f8fafc;
+    }
+</style>
+
+<body>
+
+    <div class="super_container">
+
+        <!-- Header -->
+
+
+        <header class="header">
+
+            <!-- Top Bar -->
+            <div class="top_bar">
+                <div class="top_bar_container">
+                    <div class="container">
+                        <div class="row">
+                            <div class="col">
+                                <div class="top_bar_content d-flex flex-row align-items-center justify-content-start">
+                                    <ul class="top_bar_contact_list">
+                                        <li>
+                                            <div>Have any questions?</div>
+                                        </li>
+                                        <li>
+                                            <div>Talk to us at </div>
+                                        </li>
+                                        <li>
+                                            <i class="fa fa-phone" aria-hidden="true"></i>
+                                            <div>8181-050-321</div>
+                                        </li>
+                                        <li>
+                                            <i class="fa fa-whatsapp" aria-hidden="true"></i>
+                                            <div>798 - 749 - 0763</div>
+                                        </li>
+                                        <li>
+                                            <i class="fa fa-envelope-o" aria-hidden="true"></i>
+                                            <div>sharadait@gmail.com</div>
+                                        </li>
+                                    </ul>
+                                    <!-- <div class="top_bar_login ml-auto">
+										<div class="login_button"><a href="#">Register or Login</a></div>
+									</div> -->
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Header Content -->
+            <div class="header_container">
+                <div class="container">
+                    <div class="row">
+                        <div class="col">
+                            <div class="header_content d-flex flex-row align-items-center justify-content-start">
+                                <div class="logo_container">
+                                    <a class="navbar-brand" href="index.html">
+                                        <img src="images/sharada_it_final.png" alt="" style="width: 215px;">
+                                    </a>
+                                </div>
+                                <nav class="main_nav_contaner ml-auto">
+                                    <div class="hamburger menu_mm">
+                                        <i class="fa fa-bars menu_mm" aria-hidden="true"
+                                            onclick="openHambergurMenu()"></i>
+                                        <!-- <i class="fa fa-bars icon menu_mm" onclick="myFunction()"></i> -->
+                                    </div>
+                                    <ul class="main_nav">
+                                        <li class="active"><a href="#">Home</a></li>
+                                        <li><a href="./bca/bca_home_page.html">BCA</a></li>
+                                        <li class="dropdown">
+                                            <a href="">Courses </a>
+                                            <ul class="dropdown-menu">
+                                                <li><a href="full-stack-details.html">Full Stack Developer</a></li>
+                                                <li><a href="front-end-developer-detail.html">Front-End Developer</a>
+                                                </li>
+                                                <li><a href="html-css-js-details.html">HTML CSS JS</a></li>
+                                                <li><a href="c-details.html">C Language</a></li>
+                                                <li><a href="c-pluse-details.html">C++</a></li>
+                                                <li><a href="oracle-plsql-details.html"> Oracle & PL/SQL</a></li>
+                                                <li><a href="mysql-detail.html">MySQL</a></li>
+                                                <li><a href="mongodb-detail.html"> MongoDB</a></li>
+                                            </ul>
+                                        </li>
+
+                                        <!-- <li><a href="blog.html">Blog</a></li>
+										<li><a href="#">Page</a></li> -->
+                                        <li><a href="contact.html">Contact</a></li>
+                                        <li><a href="about.html">About</a></li>
+                                    </ul>
+                                    <!-- <div class="search_button"><i class="fa fa-search" aria-hidden="true"></i></div> -->
+
+                                    <!-- Hamburger -->
+
+                                    <!-- <div class="shopping_cart"><i class="fa fa-shopping-cart" aria-hidden="true"></i> -->
+                            </div>
+
+                            </nav>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </header>
+
+        <!-- Menu -->
+
+        <div class="top-m-nav">
+
+            <!-- Menu Links -->
+            <div id="m-drop-down">
+                <a href="index.html">Home</a>
+                <a href="bca/bca_home_page.html">BCA</a>
+                <a class="mobile_dropbtn">Courses</a>
+                <div class="mobile_dropdown">
+
+
+
+                    <div class="mobile_dropdown-content">
+                        <a href="full-stack-details.html">Full Stack Developer</a>
+
+                        <a href="front-end-developer-detail.html">Front-End Developer</a>
+
+                        <a href="html-css-js-details.html">HTML CSS JS</a>
+
+                        <a href="c-details.html">C Language</a>
+
+                        <a href="c-pluse-details.html">C++</a>
+
+                        <a href="oracle-plsql-details.html">Oracle & PL/SQL</a>
+
+                        <a href="mysql-detail.html">MySQL</a>
+
+                        <a href="mongodb-detail.html">MongoDB</a>
+                    </div>
+                </div>
+                <a href="about.html">About</a>
+            </div>
+
+        </div>
+
+
+        <!-- Course -->
+
+        <div class="mobile_menu_btn" onclick="openSidebar()">
+            <i class="fa fa-bars"></i> Units
+        </div>
+
+        <div class="overlay" id="overlay" onclick="closeSidebar()"></div>
+
+
+        <div class="notes_layout">
+
+            <!-- SIDEBAR -->
+
+            <div class="notes_sidebar" id="sidebar">
+
+                <div class="notes_title"> COMPUTER NETWORKS </div>
+<div class="unit">
+
+    <div class="unit_title" onclick="toggleUnit(this)">
+        Unit 1 : Introduction to Software Development Organization and Roles
+    </div>
+
+    <div class="lecture_list">
+
+        <div class="lecture" onclick="loadNote('', managementSpectrumContent , event)">
+            L1.1: The Management Spectrum (People, Process, Project, Product)
+        </div>
+
+        <div class="lecture" onclick="loadNote('', organizationalStructureContent , event)">
+            L1.2: Organizational Structure (Hierarchical, Flat, Matrix, Networked, T-Form)
+        </div>
+
+        <div class="lecture" onclick="loadNote('', jobRolesContent , event)">
+            L1.3: Job Roles in Software Development
+        </div>
+
+        <div class="lecture" onclick="loadNote('', projectManagementFactorsContent , event)">
+            L1.4: Factors Influencing Project Management
+        </div>
+
+        <div class="lecture" onclick="loadNote('', stakeholdersContent , event)">
+            L1.5: Stakeholders
+        </div>
+
+        <div class="lecture" onclick="loadNote('', projectCommunicationsContent , event)">
+            L1.6: Project Communications
+        </div>
+
+        <div class="lecture" onclick="loadNote('', developmentPhasesContent , event)">
+            L1.7: Project Development Phases
+        </div>
+
+        <div class="lecture" onclick="loadNote('', projectCharterContent , event)">
+            L1.8: Project Charter
+        </div>
+
+    </div>
+
+</div>
+
+<div class="unit">
+
+    <div class="unit_title" onclick="toggleUnit(this)">
+        Unit 2 : Project Planning and Budgeting
+    </div>
+
+    <div class="lecture_list">
+
+        <div class="lecture" onclick="loadNote('', projectPlanningTasksContent , event)">
+            L2.1: Tasks in Project Planning
+        </div>
+
+        <div class="lecture" onclick="loadNote('', wbsContent , event)">
+            L2.2: Work Breakdown Structure (WBS)
+        </div>
+
+        <div class="lecture" onclick="loadNote('', planningMethodsContent , event)">
+            L2.3: Planning Methods
+        </div>
+
+        <div class="lecture" onclick="loadNote('', lifecycleModelsContent , event)">
+            L2.4: Development Lifecycle Models
+        </div>
+
+        <div class="lecture" onclick="loadNote('', costEstimationContent , event)">
+            L2.5: Software Cost Estimation - Methods
+        </div>
+
+        <div class="lecture" onclick="loadNote('', coコモContent , event)">
+            L2.6: COCOMO (Constructive Cost Model)
+        </div>
+
+        <div class="lecture" onclick="loadNote('', budgetingContent , event)">
+            L2.7: Budgeting & Capital Budgeting
+        </div>
+
+        <div class="lecture" onclick="loadNote('', npvContent , event)">
+            L2.8: Net Present Value (NPV)
+        </div>
+
+        <div class="lecture" onclick="loadNote('', roiContent , event)">
+            L2.9: ROI (Rate of Return) & Payback Models
+        </div>
+
+    </div>
+
+</div>
+
+<div class="unit">
+
+    <div class="unit_title" onclick="toggleUnit(this)">
+        Unit 3 : Project Scheduling and Risk Management
+    </div>
+
+    <div class="lecture_list">
+
+        <div class="lecture" onclick="loadNote('', schedulingPertContent , event)">
+            L3.1: Scheduling Techniques - PERT
+        </div>
+
+        <div class="lecture" onclick="loadNote('', ganttChartContent , event)">
+            L3.2: Gantt Chart
+        </div>
+
+        <div class="lecture" onclick="loadNote('', criticalPathContent , event)">
+            L3.3: Critical Path
+        </div>
+
+        <div class="lecture" onclick="loadNote('', automatedToolsContent , event)">
+            L3.4: Automated Tools for Scheduling
+        </div>
+
+        <div class="lecture" onclick="loadNote('', riskManagementConceptContent , event)">
+            L3.5: Concept of Risk Management
+        </div>
+
+        <div class="lecture" onclick="loadNote('', riskActivitiesContent , event)">
+            L3.6: Risk Management Activities
+        </div>
+
+        <div class="lecture" onclick="loadNote('', riskCategoriesContent , event)">
+            L3.7: Risk Categories
+        </div>
+
+        <div class="lecture" onclick="loadNote('', riskIdentificationContent , event)">
+            L3.8: Aids for Risk Identification
+        </div>
+
+        <div class="lecture" onclick="loadNote('', riskComponentsContent , event)">
+            L3.9: Risk Components
+        </div>
+
+        <div class="lecture" onclick="loadNote('', riskPrioritizationContent , event)">
+            L3.10: Risk Prioritization
+        </div>
+
+    </div>
+
+</div>
+
+<div class="unit">
+
+    <div class="unit_title" onclick="toggleUnit(this)">
+        Unit 4 : Software Configuration Management
+    </div>
+
+    <div class="lecture_list">
+
+        <div class="lecture" onclick="loadNote('', baselineContent , event)">
+            L4.1: Baseline
+        </div>
+
+        <div class="lecture" onclick="loadNote('', sciContent , event)">
+            L4.2: Software Configuration Items (SCI)
+        </div>
+
+        <div class="lecture" onclick="loadNote('', scmProcessContent , event)">
+            L4.3: Software Configuration Management Process
+        </div>
+
+        <div class="lecture" onclick="loadNote('', identificationObjectsContent , event)">
+            L4.4: Identification of Objects in Software Configuration
+        </div>
+
+        <div class="lecture" onclick="loadNote('', versionControlContent , event)">
+            L4.5: Version Control
+        </div>
+
+        <div class="lecture" onclick="loadNote('', changeControlContent , event)">
+            L4.6: Change Control
+        </div>
+
+        <div class="lecture" onclick="loadNote('', configurationAuditContent , event)">
+            L4.7: Configuration Audit
+        </div>
+
+        <div class="lecture" onclick="loadNote('', statusReportingContent , event)">
+            L4.8: Status Reporting
+        </div>
+
+        <div class="lecture" onclick="loadNote('', scmGoalsContent , event)">
+            L4.9: Goals of SCM
+        </div>
+
+    </div>
+
+</div>
+
+<div class="unit">
+
+    <div class="unit_title" onclick="toggleUnit(this)">
+        Unit 5 : Project Closure and Software Quality Assurance
+    </div>
+
+    <div class="lecture_list">
+
+        <div class="lecture" onclick="loadNote('', sqaGoalsContent , event)">
+            L5.1: Goals of SQA
+        </div>
+
+        <div class="lecture" onclick="loadNote('', ftrContent , event)">
+            L5.2: FTR (Formal Technical Review)
+        </div>
+
+        <div class="lecture" onclick="loadNote('', standardsProceduresContent , event)">
+            L5.3: Standards and Procedures
+        </div>
+
+        <div class="lecture" onclick="loadNote('', sqaActivitiesContent , event)">
+            L5.4: SQA Activities
+        </div>
+
+        <div class="lecture" onclick="loadNote('', softwareQualitiesContent , event)">
+            L5.5: Software Qualities (Reliability, Maintainability, Transportability, Interoperability, Efficiency)
+        </div>
+
+        <div class="lecture" onclick="loadNote('', sqaPlanContent , event)">
+            L5.6: Creating a SQA Plan
+        </div>
+
+        <div class="lecture" onclick="loadNote('', projectClosureContent , event)">
+            L5.7: Project Closure Analysis
+        </div>
+
+        <div class="lecture" onclick="loadNote('', closureRoleContent , event)">
+            L5.8: Role of Closure Analysis
+        </div>
+
+        <div class="lecture" onclick="loadNote('', closureReportContent , event)">
+            L5.9: Closure Analysis Report
+        </div>
+
+    </div>
+
+</div>
+
+
+
+
+            </div>
+
+
+            <!-- CONTENT -->
+
+            <div class="notes_content" id="mainContent">
+
+                <h4 id="notes_title">Introduction to Oracle</h4>
+
+                <div class="notes_text" id="notes_text">
+
+                    <p>
+                        Good morning students!
+                        Today we will learn about Database Management System (DBMS) and Oracle Database, which are
+                        fundamental concepts in database technology.
+                    </p>
+
+                    <h3>What is a Database?</h3>
+
+                    <p>
+                        A database is an organized collection of related data that can be easily accessed, managed, and
+                        updated. It helps store large amounts of information in a structured manner.
+                    </p>
+
+                    <p><strong>Examples:</strong></p>
+                    <ul>
+                        <li>Student Management System</li>
+                        <li>Library Management System</li>
+                        <li>Banking System</li>
+                        <li>Hospital Management System</li>
+                        <li>Online Shopping Websites</li>
+                    </ul>
+
+                    <h3>Types of Databases</h3>
+
+                    <p>
+                        Databases are classified into different types based on their data model and structure:
+                    </p>
+
+                    <ul>
+                        <li><strong>Relational Database (RDBMS):</strong> Stores data in tables with rows and columns.
+                            Examples: Oracle, MySQL, SQL Server, PostgreSQL [web:2]</li>
+                        <li><strong>Non-Relational Database (NoSQL):</strong> Stores data in documents, graphs, or
+                            key-value pairs. Examples: MongoDB, Cassandra, Redis [web:2]</li>
+                        <li><strong>Object-Oriented Database:</strong> Stores data as objects, similar to object
+                            programming. Examples: Oracle (with object-relational features), db4o [web:2]</li>
+                        <li><strong>Cloud Database:</strong> Runs on cloud platforms. Examples: Oracle Cloud Database,
+                            Amazon RDS, Google Cloud SQL [web:2]</li>
+                        <li><strong>Centralized Database:</strong> Data stored at a single location accessed by multiple
+                            users</li>
+                        <li><strong>Distributed Database:</strong> Data stored across multiple physical locations</li>
+                        <li><strong>Hierarchical Database:</strong> Data organized in a tree-like structure with
+                            parent-child relationships</li>
+                        <li><strong>Network Database:</strong> Data organized in a graph structure allowing multiple
+                            relationships</li>
+                    </ul>
+
+                    <h3>What is DBMS?</h3>
+
+                    <p>
+                        DBMS (Database Management System) is software that allows users to create, store, retrieve,
+                        update, and manage data efficiently. It acts as an interface between users and databases.
+                    </p>
+
+                    <p>
+                        A DBMS ensures that data remains secure, consistent, and easily accessible whenever needed.
+                    </p>
+
+                    <h3>Features of DBMS</h3>
+
+                    <ul>
+                        <li>Data Storage and Retrieval</li>
+                        <li>Data Security</li>
+                        <li>Data Integrity</li>
+                        <li>Data Sharing</li>
+                        <li>Backup and Recovery</li>
+                        <li>Reduced Data Redundancy</li>
+                        <li>Multi-user Access</li>
+                    </ul>
+
+                    <h3>Need for DBMS</h3>
+
+                    <p>
+                        Before DBMS, data was stored in files. Managing large amounts of data using files was difficult
+                        because of:
+                    </p>
+
+                    <ul>
+                        <li>Data Redundancy (Duplicate Data)</li>
+                        <li>Data Inconsistency</li>
+                        <li>Difficulty in Data Retrieval</li>
+                        <li>Security Issues</li>
+                        <li>Limited Data Sharing</li>
+                    </ul>
+
+                    <p>
+                        DBMS solves these problems and provides efficient data management.
+                    </p>
+
+                    <h3>Introduction to Oracle Database</h3>
+
+                    <p>
+                        Oracle Database is one of the world's most popular Relational Database Management Systems
+                        (RDBMS). It is developed and maintained by Oracle Corporation [web:2][web:3].
+                    </p>
+
+                    <p>
+                        Oracle is widely used in banks, hospitals, government organizations, educational institutions,
+                        and large enterprises because of its reliability, security, and scalability [web:2].
+                    </p>
+
+                    <p>
+                        Oracle stores data in the form of tables consisting of rows and columns and supports SQL
+                        (Structured Query Language) for database operations [web:2][web:3].
+                    </p>
+
+                    <p>
+                        Oracle was the first database designed for the cloud and for enterprise grid computing
+                        [web:2][web:3].
+                    </p>
+
+                    <h3>History of Oracle</h3>
+
+                    <p>
+                        The history of Oracle began in 1977 when Larry Ellison, Bob Miner, and Ed Oates founded Software
+                        Development Laboratories (SDL) [web:2][web:3].
+                    </p>
+
+                    <ul>
+                        <li><strong>1977:</strong> Software Development Laboratories (SDL) was established by Larry
+                            Ellison, Bob Miner, and Ed Oates [web:2][web:3]</li>
+                        <li><strong>1979:</strong> Oracle Version 2 was released as the first commercial SQL-based
+                            database [web:2]</li>
+                        <li><strong>1982:</strong> SDL was renamed Oracle Corporation</li>
+                        <li><strong>1983:</strong> Oracle 3.0 was rewritten in C programming language (from Assembly)
+                            [web:1]</li>
+                        <li><strong>1985:</strong> Oracle introduced client-server architecture support</li>
+                        <li><strong>1997:</strong> Oracle 8 introduced object-relational features</li>
+                        <li><strong>1998:</strong> Oracle 8i and 9i introduced Internet-based computing ("i" = INTERNET)
+                            [web:2]</li>
+                        <li><strong>2003:</strong> Oracle 10g and 11g introduced grid computing features ("g" = GRID)
+                            [web:2]</li>
+                        <li><strong>2013:</strong> Oracle 12c introduced multi-tenant architecture ("c" = CLOUD) [web:2]
+                        </li>
+                        <li><strong>Present:</strong> Oracle continues to provide cloud-based and enterprise database
+                            solutions</li>
+                    </ul>
+
+                    <p>
+                        Oracle became the first company to bring databases to the Internet platform [web:1].
+                    </p>
+
+                    <h3>Founders of Oracle</h3>
+
+                    <ul>
+                        <li>Larry Ellison</li>
+                        <li>Bob Miner</li>
+                        <li>Ed Oates</li>
+                    </ul>
+
+                    <h3>Editions of Oracle Database</h3>
+
+                    <p>
+                        Oracle provides different editions to meet various business requirements [web:2][web:3].
+                    </p>
+
+                    <h4>1. Oracle Enterprise Edition (EE)</h4>
+
+                    <p>
+                        Designed for large organizations and enterprises. It provides advanced features such as
+                        security, performance tuning, data warehousing, and high availability [web:2][web:3].
+                    </p>
+
+                    <h4>2. Oracle Standard Edition (SE)</h4>
+
+                    <p>
+                        Suitable for medium-sized organizations. It provides essential database features at a lower cost
+                        than Enterprise Edition [web:2][web:3].
+                    </p>
+
+                    <h4>3. Oracle Standard Edition One (SEO)</h4>
+
+                    <p>
+                        Designed for single CPU servers. Specially priced for small businesses [web:3].
+                    </p>
+
+                    <h4>4. Oracle Express Edition (XE)</h4>
+
+                    <p>
+                        A free edition of Oracle Database intended for students, developers, and small applications. It
+                        is easy to install and learn. Includes basic DBA features and read-only replication
+                        [web:2][web:3].
+                    </p>
+
+                    <h4>5. Oracle Personal Edition (PE)</h4>
+
+                    <p>
+                        Designed for individual users and developers who need Oracle features on a single machine. For
+                        system development only [web:2].
+                    </p>
+
+                    <h4>6. Oracle Lite</h4>
+
+                    <p>
+                        A lightweight version designed for mobile and embedded applications.
+                    </p>
+
+                    <p>
+                        <strong>For Students:</strong> Start learning with Oracle XE (free edition) [web:3].
+                    </p>
+
+                    <h3>Key Oracle Features</h3>
+
+                    <ul>
+                        <li><strong>SQL-based RDBMS with PL/SQL:</strong> Procedural Language extensions to SQL with
+                            variables, loops, and conditions [web:2][web:3]</li>
+                        <li><strong>Parallel SQL Execution:</strong> For faster processing [web:2]</li>
+                        <li><strong>Online Backup & Recovery:</strong> Continuous data protection [web:2]</li>
+                        <li><strong>Automated Database Management:</strong> Self-managing capabilities [web:2]</li>
+                        <li><strong>Automatic Database Diagnostic Monitor:</strong> Performance monitoring [web:2]</li>
+                        <li><strong>Grid Architecture:</strong> Distributed computing support [web:2]</li>
+                        <li><strong>Active Data Guard:</strong> Real-time data replication [web:2]</li>
+                    </ul>
+
+                    <h3>Advantages of Oracle Database</h3>
+
+                    <ul>
+                        <li>High Performance</li>
+                        <li>Strong Security Features</li>
+                        <li>Scalability</li>
+                        <li>Reliability</li>
+                        <li>Backup and Recovery Support</li>
+                        <li>Multi-user Environment</li>
+                        <li>Cloud Integration</li>
+                    </ul>
+
+                    <h3>Applications of Oracle</h3>
+
+                    <ul>
+                        <li>Banking Systems</li>
+                        <li>Railway Reservation Systems</li>
+                        <li>E-commerce Websites</li>
+                        <li>Healthcare Systems</li>
+                        <li>Educational Institutions</li>
+                        <li>Government Organizations</li>
+                    </ul>
+
+                    <h3>Class Summary</h3>
+
+                    <p>
+                        In today's lecture, we learned about databases, types of databases (Relational, NoSQL,
+                        Object-Oriented, Cloud, Hierarchical, Network, Centralized, Distributed), DBMS, the need for
+                        DBMS, Oracle Database, the history of Oracle, Oracle founders, different Oracle editions (EE,
+                        SE, SEO, XE, PE, Lite), key Oracle features, and the advantages of Oracle. Oracle is one of the
+                        most powerful database systems used worldwide for managing large amounts of data securely and
+                        efficiently [web:2][web:3].
+                    </p>
+
+                </div>
+
+            </div>
+
+
+            <!-- RIGHT SIDEBAR -->
+
+            <div class="notes_right">
+
+                <div class="ad_box">
+                    <!-- <h4>BASIC TO ADVANCE ,hjj</h4> -->
+
+                    <a class="navbar-brand" href="../index.html">
+                        <img src="images/c-small.png" alt="" style="width: 215px; border-radius: 8px;">
+                    </a>
+                    <!-- <p>Google Ads Area</p> -->
+                </div>
+
+                <div class="ad_box">
+                    <h4>Download Notes</h4>
+                    <p>BCA PDF Download</p>
+                </div>
+
+                <div class="ad_box">
+                    <h4>Useful Links</h4>
+                    <p>Previous Year Papers</p>
+                </div>
+
+                <div class="ad_box">
+                    <h4>Related Course</h4>
+                    <p>Learn MySQL</p>
+                </div>
+
+            </div>
+
+        </div>
+
+        <!-- Newsletter -->
+
+
+        <!-- Footer -->
+
+
+
+        <footer class="footer">
+            <div class="footer_background" style="background-image:url(images/footer_background.png)"></div>
+            <div class="container">
+                <div class="row footer_row">
+                    <div class="col">
+                        <div class="footer_content">
+                            <div class="row">
+
+                                <div class="col-lg-3 footer_col">
+
+                                    <!-- Footer About -->
+                                    <div class="footer_section footer_about">
+                                        <div class="footer_logo_container">
+                                            <a href="#">
+                                                <div class="footer_logo_text">SHARADA-<span>IT</span></div>
+                                            </a>
+                                        </div>
+                                        <div class="footer_about_text">
+                                            <p>
+                                                Sharada-IT offers BCA, MCA, and BBA programs designed to launch your
+                                                career in technology and business ,
+                                                With hands-on training in MEAN & MERN Stack, AI, and AWS to make you
+                                                job-ready.
+                                            </p>
+                                        </div>
+                                        <div class="footer_social">
+                                            <ul>
+                                                <li><a href="#"><i class="fa fa-facebook" aria-hidden="true"></i></a>
+                                                </li>
+                                                <li><a href="#"><i class="fa fa-google-plus" aria-hidden="true"></i></a>
+                                                </li>
+                                                <li><a href="#"><i class="fa fa-instagram" aria-hidden="true"></i></a>
+                                                </li>
+                                                <li><a href="#"><i class="fa fa-twitter" aria-hidden="true"></i></a>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                    </div>
+
+                                </div>
+
+                                <div class="col-lg-3 footer_col">
+
+                                    <!-- Footer Contact -->
+                                    <div class="footer_section footer_contact">
+                                        <div class="footer_title">Contact Us</div>
+                                        <div class="footer_contact_info">
+                                            <ul>
+                                                <li>Email: sharadait@gmail.com</li>
+                                                <li>Phone: +(91) 8181 050 321</li>
+                                                <li>40 Baria Sreet 133/2 Noida</li>
+                                            </ul>
+                                        </div>
+                                    </div>
+
+                                </div>
+
+                                <div class="col-lg-3 footer_col">
+
+                                    <!-- Footer links -->
+                                    <div class="footer_section footer_links">
+                                        <div class="footer_title">Contact Us</div>
+                                        <div class="footer_links_container">
+                                            <ul>
+                                                <li><a href="#">Home</a></li>
+                                                <li><a href="#">About</a></li>
+                                                <li><a href="#">Contact</a></li>
+                                                <li><a href="#">Features</a></li>
+                                                <li><a href="#">Courses</a></li>
+                                                <li><a href="#">Events</a></li>
+                                                <li><a href="#">Gallery</a></li>
+                                                <li><a href="#">FAQs</a></li>
+                                            </ul>
+                                        </div>
+                                    </div>
+
+                                </div>
+
+                                <div class="col-lg-3 footer_col clearfix">
+
+                                    <!-- Footer links -->
+                                    <div class="footer_section footer_mobile">
+                                        <div class="footer_title">Mobile</div>
+                                        <div class="footer_mobile_content">
+                                            <div class="footer_image"><a href="#"><img src="../images/mobile_1.png"
+                                                        alt=""></a>
+                                            </div>
+                                            <div class="footer_image"><a href="#"><img src="../images/mobile_2.png"
+                                                        alt=""></a>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                </div>
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="row copyright_row">
+                    <div class="col">
+                        <div class="copyright d-flex flex-lg-row flex-column align-items-center justify-content-start">
+                            <div class="cr_text">
+                                <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
+                                Copyright &copy;
+                                <script>document.write(new Date().getFullYear());</script> All rights reserved
+                                <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
+                            </div>
+                            <div class="ml-lg-auto cr_links">
+                                <ul class="cr_list">
+                                    <li><a href="#">Copyright notification</a></li>
+                                    <li><a href="#">Terms of Use</a></li>
+                                    <li><a href="#">Privacy Policy</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </footer>
+
+
+    </div>
+
+
+
+
+    <script>
+
+        /* NOTES DATA */
+
+        /* LOAD INTRO */
+
+        function openIntro(event) {
+
+            loadNote("Introduction to Computer", introNote, event);
+
+        }
+
+
+        /* LOAD NOTE */
+
+        function loadNote(title, text, event) {
+
+            document.getElementById("notes_title").innerHTML = title;
+            document.getElementById("notes_text").innerHTML = text;
+
+            let lectures = document.querySelectorAll(".lecture");
+
+            lectures.forEach(l => l.classList.remove("active"));
+
+            event.currentTarget.classList.add("active");
+
+            // Scroll content area to top after loading
+            document.getElementById('mainContent').scrollTo({
+                top: 0,
+                behavior: 'smooth'
+            });
+
+            closeSidebar();
+
+        }
+
+
+        /* TOGGLE UNIT */
+
+        function toggleUnit(unit) {
+
+            let list = unit.nextElementSibling;
+
+            list.style.display =
+                list.style.display === "block" ? "none" : "block";
+
+        }
+
+
+        /* MOBILE SIDEBAR */
+
+        function openSidebar() {
+
+            document.getElementById("sidebar").classList.add("show");
+            document.getElementById("overlay").style.display = "block";
+
+        }
+
+        function closeSidebar() {
+
+            document.getElementById("sidebar").classList.remove("show");
+            document.getElementById("overlay").style.display = "none";
+
+        }
+
+
+
+        function openVideo() {
+            const overlay = document.getElementById('videoOverlay');
+            const iframe = document.getElementById('popupVideo');
+
+            iframe.src = "https://www.youtube.com/embed/pO5SX5QCbTw?si=3kbVPkSOsEmyMa38";
+
+            overlay.style.display = "flex";
+        }
+
+        function openVideos(videoUrl) {
+            const overlay = document.getElementById('videoOverlay');
+            const iframe = document.getElementById('popupVideo');
+
+            iframe.src = videoUrl;
+
+            overlay.style.display = "flex";
+        }
+
+
+        function closeVideo() {
+            const overlay = document.getElementById('videoOverlay');
+            const iframe = document.getElementById('popupVideo');
+
+            overlay.style.display = "none";
+            iframe.src = "";
+        }
+
+        window.addEventListener("click", function (e) {
+            const overlay = document.getElementById('videoOverlay');
+            if (e.target === overlay) {
+                closeVideo();
+            }
+        });
+
+    </script>
+
+    <script src="js/jquery-3.2.1.min.js"></script>
+    <script src="styles/bootstrap4/popper.js"></script>
+    <script src="styles/bootstrap4/bootstrap.min.js"></script>
+    <script src="plugins/OwlCarousel2-2.2.1/owl.carousel.js"></script>
+    <script src="plugins/easing/easing.js"></script>
+    <script src="plugins/parallax-js-master/parallax.min.js"></script>
+    <script src="plugins/colorbox/jquery.colorbox-min.js"></script>
+    <script src="js/course.js"></script>
+    <script src="js/my.js"></script>
+</body>
+
+</html>

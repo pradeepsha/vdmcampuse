@@ -5,7 +5,7 @@
     <title>Course Details</title>
     <base href="../">
     <meta charset="utf-8">
-    <script src="bca/computer_networks.js"></script>
+    <script src="bca/oracle.js"></script>
 
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="description" content="Unicat project">
@@ -272,483 +272,338 @@
 
             <div class="notes_sidebar" id="sidebar">
 
-                <div class="notes_title"> COMPUTER NETWORKS </div>
-
-
-                <!-- UNIT 1 -->
+                <div class="notes_title"> Advance Networks & Network Security </div>
 
                 <div class="unit">
 
                     <div class="unit_title" onclick="toggleUnit(this)">
-                        Unit 1 :Data Communication
+                        Unit 1 : Internetworking
                     </div>
 
                     <div class="lecture_list">
 
-                        <div class="lecture" onclick="loadNote('', dataCommunicationIntroContent, event)">
-                            L1.1 Data Communication
+                        <div class="lecture" onclick="loadNote('', internetworkingBasicsContent , event)">
+                            L1.1: Internetworking Basics
                         </div>
 
-                        <div class="lecture" onclick="loadNote('', digitalAnalogContent, event)">
-                            L1.2 Digital and Analog
+                        <div class="lecture" onclick="loadNote('', internetworkingModelsContent , event)">
+                            L1.2: Internetworking Models
                         </div>
 
-
-                        <div class="lecture" onclick="loadNote('', transmissionModesContent, event)">
-                            L1.3 Parallel & Serial Transmission
+                        <div class="lecture" onclick="loadNote('', ciscoThreeLayerContent , event)">
+                            L1.3: Cisco Three Hierarchical Model (Core, Distribution, Access Layer)
                         </div>
 
-
-                        <div class="lecture" onclick="loadNote('', synchronizationContent, event)">
-                            L1.4 Synchronous & Asynchronous Transmission
+                        <div class="lecture" onclick="loadNote('', bridgingSwitchingContent , event)">
+                            L1.4: Bridging / Switching
                         </div>
 
-                        <div class="lecture" onclick="loadNote('', communicationModesContent, event)">
-                            L1.5 Half & Full Duplex
+                        <div class="lecture" onclick="loadNote('', switchingServicesContent , event)">
+                            L1.5: Switching Services
                         </div>
 
-                        <div class="lecture" onclick="loadNote('', multiplexingContent, event)">
-                            L1.6 Multiplexing & Spreading
+                        <div class="lecture" onclick="loadNote('', spanningTreeContent , event)">
+                            L1.6: Spanning Tree Protocols
                         </div>
 
-                        <div class="lecture" onclick="loadNote('', encodingDecodingContent, event)">
-                            L1.7 Encoding and Decoding
+                        <div class="lecture" onclick="loadNote('', lanSwitchTypesContent , event)">
+                            L1.7: LAN Switch Types (Cut Through, Fragment Free, Store-and-forward)
                         </div>
 
-                        <div class="lecture" onclick="loadNote('', errorDetectionContent, event)">
-                            L1.8 Error Detection
+                        <div class="lecture" onclick="loadNote('', switchConfigContent , event)">
+                            L1.8: Configuration of Switches
                         </div>
 
-                        <div class="lecture" onclick="loadNote('', networkTopologyContent, event)">
-                            L1.9 Network Topologies
+                        <div class="lecture" onclick="loadNote('', vlanContent , event)">
+                            L1.9: Virtual LANs (VLAN)
                         </div>
 
-                        <div class="lecture" onclick="loadNote('', modulationContent, event)">
-                            L1.10 Modulation
+                        <div class="lecture" onclick="loadNote('', routingVlanContent , event)">
+                            L1.10: Routing and Configuration of VLAN
                         </div>
-
-                        <div class="lecture" onclick="loadNote('', osiModelContent, event)">
-                            L1.11 OSI Model
-                        </div>
-
-                        <div class="lecture" onclick="loadNote('', tcpipModelContent, event)">
-                            L1.12 TCP/IP Model
-                        </div>
-                    </div>
-
-                </div>
-
-                <!-- UNIT 2 -->
-
-                <div class="unit">
-
-                    <div class="unit_title" onclick="toggleUnit(this)">
-                        Unit 2 : Communication Channels
-                    </div>
-
-                    <div class="lecture_list">
-
-                        <div class="lecture" onclick="loadNote('', communicationChannelsIntroContent , event)">
-                            L2.1 Introduction
-                        </div>
-
-                        <div class="lecture" onclick="loadNote('', wiredTransmissionContent , event)">
-                            L2.2 Wired Transmission
-                        </div>
-
-                        <div class="lecture" onclick="loadNote('', transmissionTechniquesContent , event)">
-                            L2.3 Transmission Techniques
-                        </div>
-
-
-                        <div class="lecture" onclick="loadNote('', opticalFiberContent , event)">
-                            L2.4 Optical Fiber
-                        </div>
-
-
-                        <div class="lecture" onclick="loadNote('', wirelessTransmissionContent , event)">
-                            L2.5 Wireless Transmission
-                        </div>
-
-
-                        <div class="lecture" onclick="loadNote('', microwaveInfraredContent , event)">
-                            L2.6 Microwave and Infrared
-                        </div>
-
-
-                        <div class="lecture" onclick="loadNote('', laserRadioContent , event)">
-                            L2.7 Laser and Radio
-                        </div>
-
-                        <div class="lecture" onclick="loadNote('', satelliteVsatContent , event)">
-                            L2.8 Satellite and VSAT
-                        </div>
-
-
-                        <div class="lecture" onclick="loadNote('', networkConnectingDevicesContent , event)">
-                            L2.9 Connecting Devices
-                        </div>
-
-                        <div class="lecture" onclick="loadNote('', switchingContent , event)">
-                            L2.10 Switching
-                        </div>
-                    </div>
-
-                </div>
-
-                <!-- UNIT 3 -->
-
-                <div class="unit">
-
-                    <div class="unit_title" onclick="toggleUnit(this)">
-                        Unit 3 : Data Link Layer
-                    </div>
-
-                    <div class="lecture_list">
-
-                        <div class="lecture" onclick="loadNote('', dataLinkLayerIntroContent , event)">
-                            L3.1 Introduction
-                        </div>
-
-                        <div class="lecture" onclick="loadNote('', dataLinkLayerServicesContent , event)">
-                            L3.2 Network Services
-                        </div>
-
-                        <div class="lecture" onclick="loadNote('', framingContent , event)">
-                            L3.3 Framing
-                        </div>
-
-
-                        <div class="lecture" onclick="loadNote('', errorAndFlowControlContent , event)">
-                            L3.4 Error Control
-                        </div>
-
-
-                        <div class="lecture" onclick="loadNote('', hdlcSdlcContent , event)">
-                            L3.5 HDLC and SDLC
-                        </div>
-
-
-                        <div class="lecture" onclick="loadNote('', slipPppContent , event)">
-                            L3.6 SLIP and PPP
-                        </div>
-
-
-                        <div class="lecture" onclick="loadNote('', macSubLayerContent , event)">
-                            L3.7 MAC Sub Layer
-                        </div>
-
-                        <div class="lecture" onclick="loadNote('', multipleAccessProtocolsContent , event)">
-                            L3.8 Access Protocols
-                        </div>
-
-
-                        <div class="lecture" onclick="loadNote('', frameRelayContent , event)">
-                            L3.9 Frame Relay
-                        </div>
-
-                        <div class="lecture" onclick="loadNote('', atmContent , event)">
-                            L3.10 ATM
-                        </div>
-                    </div>
-
-                </div>
-
-                <!-- UNIT 4 -->
-
-                <div class="unit">
-
-                    <div class="unit_title" onclick="toggleUnit(this)">
-                        Unit 4 : LAN and WAN Network
-                    </div>
-
-                    <div class="lecture_list">
-
-                        <!-- Part 1: LAN Fundamentals -->
-                        <div class="lecture">
-
-                            <div onclick="toggleSubUnit(this)">
-                                L4.1 LAN Fundamentals
-                            </div>
-
-
-                            <div class="sub_lecture_list">
-
-                                <div class="sub_lecture" onclick="loadNote('',lanWanIntroContent, event)">
-                                    L1. Introduction
-                                </div>
-
-                                <div class="sub_lecture" onclick="loadNote('',lanConceptContent, event)">
-                                    L2. LAN
-                                </div>
-
-                                <div class="sub_lecture" onclick="loadNote('',lanTopologiesContent, event)">
-                                    L3. LAN Topologies
-                                </div>
-
-                                <div class="sub_lecture" onclick="loadNote('',lanProtocolsContent, event)">
-                                    L4.LAN Protocols
-                                </div>
-
-
-                                <div class="sub_lecture" onclick="loadNote('',wanConceptContent, event)">
-                                    L5. WAN
-                                </div>
-
-                            </div>
-                        </div>
-
-
-                        <!-- Part 2: LAN Technologies-->
-                        <div class="lecture">
-                            
-
-                            <div onclick="toggleSubUnit(this)">
-                                L4.2 LAN Technologies
-                            </div>
-
-                            <div class="sub_lecture_list">
-
-                                <div class="sub_lecture" onclick="loadNote('',ethernetContent, event)">
-                                    L1.Ethernet
-                                </div>
-                                <div class="sub_lecture" onclick="loadNote('',tokenRingContent, event)">
-                                    L2.Token Ring
-                                </div>
-
-                                <div class="sub_lecture" onclick="loadNote('',fddiContent, event)">
-                                    L3.FDDI
-                                </div>
-
-                            </div>
-                        </div>
-
-                        <!-- Part 3: Modern LANs -->
-
-                        <div class="lecture">
-
-                            <div onclick="toggleSubUnit(this)">
-                                L4.3 Modern LANs
-                            </div>
-
-                            <div class="sub_lecture_list">
-
-                                <div class="sub_lecture" onclick="loadNote('',vlanContent, event)">
-                                    L1.Virtual LAN
-                                </div>
-                                <div class="sub_lecture" onclick="loadNote('',wirelessLanContent, event)">
-                                    L2.Wireless LAN
-                                </div>
-
-                            </div>
-                        </div>
-
-                        <!-- Part 4: WAN and Network Layer-->
-                        <div class="lecture">
-
-                            <div onclick="toggleSubUnit(this)">
-                                L4.4 WAN & Network Layer
-                            </div>
-
-                            <div class="sub_lecture_list">
-
-                                <div class="sub_lecture" onclick="loadNote('',wanConceptContentDetail, event)">
-                                    L1.Wide Area Network
-                                </div>
-
-                                <div class="sub_lecture" onclick="loadNote('',networkLayerContent, event)">
-                                    L2.Network Layer
-                                </div>
-
-                                <div class="sub_lecture" onclick="loadNote('',addressingConceptContent, event)">
-                                    L3.Addressing Concepts
-                                </div>
-
-                                <div class="sub_lecture" onclick="loadNote('',routingConceptContent, event)">
-                                    L4.Routing Concepts
-                                </div>
-                            </div>
-                        </div>
-
-                        <!-- Part 5: Routing Protocols -->
-
-                        <div class="lecture">
-
-                            <div onclick="toggleSubUnit(this)">
-                                L4.5 Routing Protocols
-                            </div>
-
-                            <div class="sub_lecture_list">
-
-                                <div class="sub_lecture" onclick="loadNote('',staticRoutingContent, event)">
-                                    L1. Static Routing
-                                </div>
-
-                                <div class="sub_lecture" onclick="loadNote('',dynamicRoutingContent, event)">
-                                    L2. Dynamic Routing
-                                </div>
-
-                                <div class="sub_lecture" onclick="loadNote('',distanceVectorProtocolContent, event)">
-                                    L3. Distance Vector Routing
-                                </div>
-
-                                <div class="sub_lecture" onclick="loadNote('',linkStateProtocolContent, event)">
-                                    L4. Link State Routing
-                                </div>
-                                <div class="sub_lecture" onclick="loadNote('',ospfContent, event)">
-                                    L5. OSPF
-                                </div>
-                            </div>
-                        </div>
-
-                        <!--  Part 6: Internet Protocol Suite -->
-
-                        <div class="lecture">
-
-                            <div onclick="toggleSubUnit(this)">
-                                L4.6 Internet Protocol Suite
-                            </div>
-
-                            <div class="sub_lecture_list">
-
-                                <div class="sub_lecture" onclick="loadNote('',internetProtocolContent, event)">
-                                    L1. Internet Protocol (IP)
-                                </div>
-
-                                <div class="sub_lecture" onclick="loadNote('',ipAddressingContent, event)">
-                                    L2. IP Addressing
-                                </div>
-
-                                <div class="sub_lecture" onclick="loadNote('',ipRoutingContent, event)">
-                                    L3. IP Routing
-                                </div>
-
-                                <div class="sub_lecture" onclick="loadNote('',icmpContent, event)">
-                                    L4. ICMP
-                                </div>
-                                <div class="sub_lecture" onclick="loadNote('',arpContent, event)">
-                                    L5. ARP
-                                </div>
-                                <div class="sub_lecture" onclick="loadNote('',dhcpContent, event)">
-                                    L6. DHCP
-                                </div>
-
-
-                            </div>
-                        </div>
-
-
-                        <!-- Part 7: Transport Layer -->
-
-
-                        <div class="lecture">
-
-                            <div onclick="toggleSubUnit(this)">
-                                L4.7 Transport Layer
-                            </div>
-
-                            <div class="sub_lecture_list">
-
-                                <div class="sub_lecture" onclick="loadNote('',transportLayerIntroContent, event)">
-                                    L1. Introduction
-                                </div>
-
-                                <div class="sub_lecture" onclick="loadNote('',processToProcessDeliveryContent, event)">
-                                    L2. P-to-P Delivery
-                                </div>
-
-                                <div class="sub_lecture" onclick="loadNote('',udpContent, event)">
-                                    L3. UDP
-                                </div>
-
-                                <div class="sub_lecture" onclick="loadNote('',tcpContent, event)">
-                                    L4. TCP
-                                </div>
-                                <div class="sub_lecture" onclick="loadNote('',stcpContent, event)">
-                                    L5. SCTP
-                                </div>
-                                <div class="sub_lecture" onclick="loadNote('',congestionControlContent, event)">
-                                    L6. Congestion Control
-                                </div>
-
-                            </div>
-                        </div>
-
 
                     </div>
 
                 </div>
 
-                <!-- UNIT 5 -->
-
                 <div class="unit">
 
                     <div class="unit_title" onclick="toggleUnit(this)">
-                        Unit 5 : Application Layer
+                        Unit 2 : Cisco Basics, IOS & Network Management
                     </div>
 
                     <div class="lecture_list">
 
-                        <div class="lecture" onclick="loadNote('', applicationLayerIntroContent , event)">
-                            L5.1 Introduction
+                        <div class="lecture" onclick="loadNote('', ciscoBasicsContent , event)">
+                            L2.1: Cisco Basics
                         </div>
 
-                        <div class="lecture" onclick="loadNote('', clientServerModelContent , event)">
-                            L5.2 Client-Server Model
+                        <div class="lecture" onclick="loadNote('', iosBasicsContent , event)">
+                            L2.2: Cisco IOS Basics
                         </div>
 
-                        <div class="lecture" onclick="loadNote('', nfsContent , event)">
-                            L5.3 Network File System
+                        <div class="lecture" onclick="loadNote('', networkManagementContent , event)">
+                            L2.3: Basics Network Management
                         </div>
 
-
-                        <div class="lecture" onclick="loadNote('', remoteLoginContent , event)">
-                            L5.4 Remote Login
+                        <div class="lecture" onclick="loadNote('', flowControlContent , event)">
+                            L2.4: Flow Control and Three Basic Methods in Networking
                         </div>
 
-
-                        <div class="lecture" onclick="loadNote('', telnetContent , event)">
-                            L5.5 Telnet
+                        <div class="lecture" onclick="loadNote('', routingProtocolsContent , event)">
+                            L2.5: Routing Protocols and Configuration
                         </div>
 
-
-                        <div class="lecture" onclick="loadNote('', ftpContent , event)">
-                            L5.6 FTP
+                        <div class="lecture" onclick="loadNote('', accessListContent , event)">
+                            L2.6: Access List, Operation and Membership in Router
                         </div>
 
-
-                        <div class="lecture" onclick="loadNote('', emailSystemContent , event)">
-                            L5.7 Email System
+                        <div class="lecture" onclick="loadNote('', congestionProblemContent , event)">
+                            L2.7: Congestion Problem and Elements
                         </div>
 
-                        <div class="lecture" onclick="loadNote('', smtpContent , event)">
-                            L5.8 SMTP
+                        <div class="lecture" onclick="loadNote('', bootSequenceContent , event)">
+                            L2.8: Boot Sequence in Router
                         </div>
 
-
-                        <div class="lecture" onclick="loadNote('', popContent , event)">
-                            L5.9 POP
+                        <div class="lecture" onclick="loadNote('', registersConfigContent , event)">
+                            L2.9: Registers Configurations
                         </div>
 
-                        <div class="lecture" onclick="loadNote('', wwwContent , event)">
-                            L5.10 World Wide Web
+                        <div class="lecture" onclick="loadNote('', ciscoIosCommandsContent , event)">
+                            L2.10: Cisco IOS Commands
                         </div>
 
-
-                        <div class="lecture" onclick="loadNote('', dnsContent , event)">
-                            L5.11 Domain Name System
+                        <div class="lecture" onclick="loadNote('', iosBackupContent , event)">
+                            L2.11: Backup, Upgrade and Restore Cisco IOS Image
                         </div>
 
-                        <div class="lecture" onclick="loadNote('', httpContent , event)">
-                            L5.12 HTTP
+                        <div class="lecture" onclick="loadNote('', routerConfigContent , event)">
+                            L2.12: Configuration of Router
                         </div>
 
-                        <div class="lecture" onclick="loadNote('', htmlContent , event)">
-                            L5.13 HTML
-                        </div>
                     </div>
 
                 </div>
+
+                <div class="unit">
+
+                    <div class="unit_title" onclick="toggleUnit(this)">
+                        Unit 3 : Information Security Fundamentals
+                    </div>
+
+                    <div class="lecture_list">
+
+                        <div class="lecture" onclick="loadNote('', securityBackgroundContent , event)">
+                            L3.1: Information Security - Background
+                        </div>
+
+                        <div class="lecture" onclick="loadNote('', securityImportanceContent , event)">
+                            L3.2: Importance of Information Security
+                        </div>
+
+                        <div class="lecture" onclick="loadNote('', nationalInternationalScenarioContent , event)">
+                            L3.3: National & International Scenario
+                        </div>
+
+                        <div class="lecture" onclick="loadNote('', identificationAuthContent , event)">
+                            L3.4: Identification and Authentication
+                        </div>
+
+                        <div class="lecture" onclick="loadNote('', confidentialityContent , event)">
+                            L3.5: Confidentiality
+                        </div>
+
+                        <div class="lecture" onclick="loadNote('', privacyContent , event)">
+                            L3.6: Privacy
+                        </div>
+
+                        <div class="lecture" onclick="loadNote('', integrityContent , event)">
+                            L3.7: Integrity
+                        </div>
+
+                        <div class="lecture" onclick="loadNote('', nonRepudiationContent , event)">
+                            L3.8: Non-repudiation
+                        </div>
+
+                        <div class="lecture" onclick="loadNote('', availabilityContent , event)">
+                            L3.9: Availability
+                        </div>
+
+                        <div class="lecture" onclick="loadNote('', securityPreventionContent , event)">
+                            L3.10: Security - Prevention, Detection & Recovery
+                        </div>
+
+                        <div class="lecture" onclick="loadNote('', ecommerceSecurityContent , event)">
+                            L3.11: e-Commerce Security
+                        </div>
+
+                        <div class="lecture" onclick="loadNote('', securityThreatsContent , event)">
+                            L3.12: Security Threats - Weaknesses
+                        </div>
+
+                        <div class="lecture" onclick="loadNote('', bufferOverflowContent , event)">
+                            L3.13: Buffer Overflow Attacks
+                        </div>
+
+                        <div class="lecture" onclick="loadNote('', bruteForceContent , event)">
+                            L3.14: Brute Force Attacks
+                        </div>
+
+                        <div class="lecture" onclick="loadNote('', protocolAttacksContent , event)">
+                            L3.15: Protocol Attacks
+                        </div>
+
+                        <div class="lecture" onclick="loadNote('', crossSiteContent , event)">
+                            L3.16: Cross Site Attacks
+                        </div>
+
+                        <div class="lecture" onclick="loadNote('', spoofingContent , event)">
+                            L3.17: Spoofing
+                        </div>
+
+                        <div class="lecture" onclick="loadNote('', dosAttacksContent , event)">
+                            L3.18: Denial of Service (DoS) Attacks
+                        </div>
+
+                    </div>
+
+                </div>
+
+                <div class="unit">
+
+                    <div class="unit_title" onclick="toggleUnit(this)">
+                        Unit 4 : System & Network Security
+                    </div>
+
+                    <div class="lecture_list">
+
+                        <div class="lecture" onclick="loadNote('', osSecurityContent , event)">
+                            L4.1: Security Consideration in Operating System
+                        </div>
+
+                        <div class="lecture" onclick="loadNote('', securityBackupContent , event)">
+                            L4.2: Backup in System Security
+                        </div>
+
+                        <div class="lecture" onclick="loadNote('', internetProtocolsSecurityContent , event)">
+                            L4.3: Internet Protocols and Security
+                        </div>
+
+                        <div class="lecture" onclick="loadNote('', sslTlsContent , event)">
+                            L4.4: SSL/TLS
+                        </div>
+
+                        <div class="lecture" onclick="loadNote('', ipsecContent , event)">
+                            L4.5: IPSec
+                        </div>
+
+                        <div class="lecture" onclick="loadNote('', applicationSecurityContent , event)">
+                            L4.6: Application Security
+                        </div>
+
+                        <div class="lecture" onclick="loadNote('', webSecurityContent , event)">
+                            L4.7: Web Security
+                        </div>
+
+                        <div class="lecture" onclick="loadNote('', secureEmailsContent , event)">
+                            L4.8: Secure e-Mails
+                        </div>
+
+                        <div class="lecture" onclick="loadNote('', accessControlContent , event)">
+                            L4.9: Access Control - Physical and Logical
+                        </div>
+
+                    </div>
+
+                </div>
+
+                <div class="unit">
+
+                    <div class="unit_title" onclick="toggleUnit(this)">
+                        Unit 5 : Tools & Technologies
+                    </div>
+
+                    <div class="lecture_list">
+
+                        <div class="lecture" onclick="loadNote('', firewallsContent , event)">
+                            L5.1: Firewalls
+                        </div>
+
+                        <div class="lecture" onclick="loadNote('', idsContent , event)">
+                            L5.2: IDS (Intrusion Detection System)
+                        </div>
+
+                        <div class="lecture" onclick="loadNote('', antivirusContent , event)">
+                            L5.3: Antivirus
+                        </div>
+
+                        <div class="lecture" onclick="loadNote('', logAnalysisContent , event)">
+                            L5.4: Log Analysis
+                        </div>
+
+                        <div class="lecture" onclick="loadNote('', cryptographyContent , event)">
+                            L5.5: Cryptography
+                        </div>
+
+                        <div class="lecture" onclick="loadNote('', keyManagementContent , event)">
+                            L5.6: Key Management
+                        </div>
+
+                        <div class="lecture" onclick="loadNote('', hashingContent , event)">
+                            L5.7: Hashing
+                        </div>
+
+                        <div class="lecture" onclick="loadNote('', securityInfrastructureContent , event)">
+                            L5.8: Security Infrastructure
+                        </div>
+
+                        <div class="lecture" onclick="loadNote('', pkiContent , event)">
+                            L5.9: PKI (Public Key Infrastructure)
+                        </div>
+
+                        <div class="lecture" onclick="loadNote('', vpnContent , event)">
+                            L5.10: VPN (Virtual Private Network)
+                        </div>
+
+                        <div class="lecture" onclick="loadNote('', networkScannersContent , event)">
+                            L5.11: Network Scanners
+                        </div>
+
+                        <div class="lecture" onclick="loadNote('', digitalForensicsContent , event)">
+                            L5.12: Digital Forensics
+                        </div>
+
+                        <div class="lecture" onclick="loadNote('', securityAuditsContent , event)">
+                            L5.13: Security Audits
+                        </div>
+
+                        <div class="lecture" onclick="loadNote('', assetClassificationContent , event)">
+                            L5.14: Asset Classification and Risk Analysis
+                        </div>
+
+                        <div class="lecture" onclick="loadNote('', auditTrailsContent , event)">
+                            L5.15: Audit Trails
+                        </div>
+
+                        <div class="lecture" onclick="loadNote('', reportingContent , event)">
+                            L5.16: Reporting
+                        </div>
+
+                        <div class="lecture" onclick="loadNote('', securityManagementContent , event)">
+                            L5.17: Security Management
+                        </div>
+
+                        <div class="lecture" onclick="loadNote('', securityPoliciesContent , event)">
+                            L5.18: Security Policies, Procedures and International Standards
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+
 
             </div>
 
@@ -757,150 +612,255 @@
 
             <div class="notes_content" id="mainContent">
 
-                <h4 id="notes_title">Introduction to Computer Networks</h4>
+                <h4 id="notes_title">Introduction to Oracle</h4>
 
                 <div class="notes_text" id="notes_text">
 
                     <p>
-                        <strong>Computer Network</strong> is a collection of interconnected computers and devices
-                        that communicate with each other to share data, resources, and services. Networks enable
-                        activities such as browsing the internet, sending emails, sharing files, and accessing
-                        cloud services.
+                        Good morning students!
+                        Today we will learn about Database Management System (DBMS) and Oracle Database, which are
+                        fundamental concepts in database technology.
                     </p>
 
-                    <h4>Why Computer Networks Are Important</h4>
+                    <h3>What is a Database?</h3>
 
+                    <p>
+                        A database is an organized collection of related data that can be easily accessed, managed, and
+                        updated. It helps store large amounts of information in a structured manner.
+                    </p>
+
+                    <p><strong>Examples:</strong></p>
                     <ul>
-                        <li><strong>Resource Sharing:</strong> Printers, files, and applications can be shared among
-                            users.</li>
-                        <li><strong>Communication:</strong> Supports email, messaging, video conferencing, and social
-                            media.</li>
-                        <li><strong>Data Exchange:</strong> Allows fast transfer of information between devices.</li>
-                        <li><strong>Remote Access:</strong> Users can access resources from different locations.</li>
-                        <li><strong>Cost Efficiency:</strong> Shared resources reduce hardware and software costs.</li>
+                        <li>Student Management System</li>
+                        <li>Library Management System</li>
+                        <li>Banking System</li>
+                        <li>Hospital Management System</li>
+                        <li>Online Shopping Websites</li>
                     </ul>
 
-                    <h4>Basic Components of a Network</h4>
-
-                    <ul>
-                        <li><strong>Nodes:</strong> Devices connected to the network such as computers, smartphones, and
-                            servers.</li>
-                        <li><strong>Transmission Media:</strong> The path through which data travels such as cables,
-                            fiber optics, and wireless signals.</li>
-                        <li><strong>Network Interface Card (NIC):</strong> Hardware that enables a device to connect to
-                            a network.</li>
-                        <li><strong>Switches:</strong> Connect devices within a local network.</li>
-                        <li><strong>Routers:</strong> Connect different networks and direct data packets.</li>
-                        <li><strong>Servers:</strong> Provide services and resources to clients.</li>
-                        <li><strong>Clients:</strong> Devices that request services from servers.</li>
-                    </ul>
-
-                    <h4>Types of Networks</h4>
-
-                    <h4>1. Personal Area Network (PAN)</h4>
-                    <p>
-                        Covers a small area around an individual.
-                        Example: Bluetooth connection between a phone and earbuds.
-                    </p>
-
-                    <h4>2. Local Area Network (LAN)</h4>
-                    <p>
-                        Covers a limited geographic area such as a home, office, or school.
-                        Provides high-speed communication between devices.
-                    </p>
-
-                    <h4>3. Metropolitan Area Network (MAN)</h4>
-                    <p>
-                        Covers a city or metropolitan region and connects multiple LANs.
-                    </p>
-
-                    <h4>4. Wide Area Network (WAN)</h4>
-                    <p>
-                        Covers large geographical areas. The Internet is the largest WAN.
-                    </p>
-
-                    <h4>Network Topologies</h4>
+                    <h3>Types of Databases</h3>
 
                     <p>
-                        A topology describes how devices are arranged in a network.
+                        Databases are classified into different types based on their data model and structure:
                     </p>
 
                     <ul>
-                        <li><strong>Bus Topology:</strong> All devices share a single communication line.</li>
-                        <li><strong>Star Topology:</strong> All devices connect to a central switch or hub.</li>
-                        <li><strong>Ring Topology:</strong> Devices form a circular connection.</li>
-                        <li><strong>Mesh Topology:</strong> Every device is connected to multiple devices for
-                            reliability.</li>
+                        <li><strong>Relational Database (RDBMS):</strong> Stores data in tables with rows and columns.
+                            Examples: Oracle, MySQL, SQL Server, PostgreSQL [web:2]</li>
+                        <li><strong>Non-Relational Database (NoSQL):</strong> Stores data in documents, graphs, or
+                            key-value pairs. Examples: MongoDB, Cassandra, Redis [web:2]</li>
+                        <li><strong>Object-Oriented Database:</strong> Stores data as objects, similar to object
+                            programming. Examples: Oracle (with object-relational features), db4o [web:2]</li>
+                        <li><strong>Cloud Database:</strong> Runs on cloud platforms. Examples: Oracle Cloud Database,
+                            Amazon RDS, Google Cloud SQL [web:2]</li>
+                        <li><strong>Centralized Database:</strong> Data stored at a single location accessed by multiple
+                            users</li>
+                        <li><strong>Distributed Database:</strong> Data stored across multiple physical locations</li>
+                        <li><strong>Hierarchical Database:</strong> Data organized in a tree-like structure with
+                            parent-child relationships</li>
+                        <li><strong>Network Database:</strong> Data organized in a graph structure allowing multiple
+                            relationships</li>
                     </ul>
 
-                    <h4>Network Protocols</h4>
+                    <h3>What is DBMS?</h3>
 
                     <p>
-                        Protocols are rules that govern communication between devices.
+                        DBMS (Database Management System) is software that allows users to create, store, retrieve,
+                        update, and manage data efficiently. It acts as an interface between users and databases.
                     </p>
 
-                    <p><strong>Common Protocols:</strong></p>
-
-                    <ul>
-                        <li><strong>TCP (Transmission Control Protocol):</strong> Reliable data delivery.</li>
-                        <li><strong>IP (Internet Protocol):</strong> Addressing and routing of data packets.</li>
-                        <li><strong>HTTP/HTTPS:</strong> Used for web communication.</li>
-                        <li><strong>FTP:</strong> Used for file transfer.</li>
-                        <li><strong>SMTP:</strong> Used for email transmission.</li>
-                    </ul>
-
-                    <h4>The OSI Model</h4>
-
                     <p>
-                        The Open Systems Interconnection (OSI) Model consists of seven layers:
+                        A DBMS ensures that data remains secure, consistent, and easily accessible whenever needed.
                     </p>
 
-                    <ol>
-                        <li><strong>Physical Layer:</strong> Transmits raw bits.</li>
-                        <li><strong>Data Link Layer:</strong> Error detection and frame transmission.</li>
-                        <li><strong>Network Layer:</strong> Routing and logical addressing.</li>
-                        <li><strong>Transport Layer:</strong> End-to-end communication.</li>
-                        <li><strong>Session Layer:</strong> Establishes and manages sessions.</li>
-                        <li><strong>Presentation Layer:</strong> Data formatting and encryption.</li>
-                        <li><strong>Application Layer:</strong> User-facing network services.</li>
-                    </ol>
-
-                    <h4>Advantages of Computer Networks</h4>
+                    <h3>Features of DBMS</h3>
 
                     <ul>
-                        <li>Fast communication.</li>
-                        <li>Resource sharing.</li>
-                        <li>Centralized management.</li>
-                        <li>Improved collaboration.</li>
-                        <li>Scalability.</li>
+                        <li>Data Storage and Retrieval</li>
+                        <li>Data Security</li>
+                        <li>Data Integrity</li>
+                        <li>Data Sharing</li>
+                        <li>Backup and Recovery</li>
+                        <li>Reduced Data Redundancy</li>
+                        <li>Multi-user Access</li>
                     </ul>
 
-                    <h4>Disadvantages of Computer Networks</h4>
-
-                    <ul>
-                        <li>Security risks.</li>
-                        <li>Network failures can affect many users.</li>
-                        <li>Maintenance costs.</li>
-                        <li>Requires skilled administration.</li>
-                    </ul>
-
-                    <h4>Real-World Examples</h4>
-
-                    <ul>
-                        <li>The Internet.</li>
-                        <li>Corporate office networks.</li>
-                        <li>Banking networks.</li>
-                        <li>University campus networks.</li>
-                        <li>Mobile communication networks.</li>
-                    </ul>
-
-                    <h4>Summary</h4>
+                    <h3>Need for DBMS</h3>
 
                     <p>
-                        Computer networks connect devices to exchange information and share resources.
-                        Understanding network components, types, topologies, protocols, and the OSI model
-                        forms the foundation for studying networking technologies such as the Internet,
-                        cloud computing, and cybersecurity.
+                        Before DBMS, data was stored in files. Managing large amounts of data using files was difficult
+                        because of:
+                    </p>
+
+                    <ul>
+                        <li>Data Redundancy (Duplicate Data)</li>
+                        <li>Data Inconsistency</li>
+                        <li>Difficulty in Data Retrieval</li>
+                        <li>Security Issues</li>
+                        <li>Limited Data Sharing</li>
+                    </ul>
+
+                    <p>
+                        DBMS solves these problems and provides efficient data management.
+                    </p>
+
+                    <h3>Introduction to Oracle Database</h3>
+
+                    <p>
+                        Oracle Database is one of the world's most popular Relational Database Management Systems
+                        (RDBMS). It is developed and maintained by Oracle Corporation [web:2][web:3].
+                    </p>
+
+                    <p>
+                        Oracle is widely used in banks, hospitals, government organizations, educational institutions,
+                        and large enterprises because of its reliability, security, and scalability [web:2].
+                    </p>
+
+                    <p>
+                        Oracle stores data in the form of tables consisting of rows and columns and supports SQL
+                        (Structured Query Language) for database operations [web:2][web:3].
+                    </p>
+
+                    <p>
+                        Oracle was the first database designed for the cloud and for enterprise grid computing
+                        [web:2][web:3].
+                    </p>
+
+                    <h3>History of Oracle</h3>
+
+                    <p>
+                        The history of Oracle began in 1977 when Larry Ellison, Bob Miner, and Ed Oates founded Software
+                        Development Laboratories (SDL) [web:2][web:3].
+                    </p>
+
+                    <ul>
+                        <li><strong>1977:</strong> Software Development Laboratories (SDL) was established by Larry
+                            Ellison, Bob Miner, and Ed Oates [web:2][web:3]</li>
+                        <li><strong>1979:</strong> Oracle Version 2 was released as the first commercial SQL-based
+                            database [web:2]</li>
+                        <li><strong>1982:</strong> SDL was renamed Oracle Corporation</li>
+                        <li><strong>1983:</strong> Oracle 3.0 was rewritten in C programming language (from Assembly)
+                            [web:1]</li>
+                        <li><strong>1985:</strong> Oracle introduced client-server architecture support</li>
+                        <li><strong>1997:</strong> Oracle 8 introduced object-relational features</li>
+                        <li><strong>1998:</strong> Oracle 8i and 9i introduced Internet-based computing ("i" = INTERNET)
+                            [web:2]</li>
+                        <li><strong>2003:</strong> Oracle 10g and 11g introduced grid computing features ("g" = GRID)
+                            [web:2]</li>
+                        <li><strong>2013:</strong> Oracle 12c introduced multi-tenant architecture ("c" = CLOUD) [web:2]
+                        </li>
+                        <li><strong>Present:</strong> Oracle continues to provide cloud-based and enterprise database
+                            solutions</li>
+                    </ul>
+
+                    <p>
+                        Oracle became the first company to bring databases to the Internet platform [web:1].
+                    </p>
+
+                    <h3>Founders of Oracle</h3>
+
+                    <ul>
+                        <li>Larry Ellison</li>
+                        <li>Bob Miner</li>
+                        <li>Ed Oates</li>
+                    </ul>
+
+                    <h3>Editions of Oracle Database</h3>
+
+                    <p>
+                        Oracle provides different editions to meet various business requirements [web:2][web:3].
+                    </p>
+
+                    <h4>1. Oracle Enterprise Edition (EE)</h4>
+
+                    <p>
+                        Designed for large organizations and enterprises. It provides advanced features such as
+                        security, performance tuning, data warehousing, and high availability [web:2][web:3].
+                    </p>
+
+                    <h4>2. Oracle Standard Edition (SE)</h4>
+
+                    <p>
+                        Suitable for medium-sized organizations. It provides essential database features at a lower cost
+                        than Enterprise Edition [web:2][web:3].
+                    </p>
+
+                    <h4>3. Oracle Standard Edition One (SEO)</h4>
+
+                    <p>
+                        Designed for single CPU servers. Specially priced for small businesses [web:3].
+                    </p>
+
+                    <h4>4. Oracle Express Edition (XE)</h4>
+
+                    <p>
+                        A free edition of Oracle Database intended for students, developers, and small applications. It
+                        is easy to install and learn. Includes basic DBA features and read-only replication
+                        [web:2][web:3].
+                    </p>
+
+                    <h4>5. Oracle Personal Edition (PE)</h4>
+
+                    <p>
+                        Designed for individual users and developers who need Oracle features on a single machine. For
+                        system development only [web:2].
+                    </p>
+
+                    <h4>6. Oracle Lite</h4>
+
+                    <p>
+                        A lightweight version designed for mobile and embedded applications.
+                    </p>
+
+                    <p>
+                        <strong>For Students:</strong> Start learning with Oracle XE (free edition) [web:3].
+                    </p>
+
+                    <h3>Key Oracle Features</h3>
+
+                    <ul>
+                        <li><strong>SQL-based RDBMS with PL/SQL:</strong> Procedural Language extensions to SQL with
+                            variables, loops, and conditions [web:2][web:3]</li>
+                        <li><strong>Parallel SQL Execution:</strong> For faster processing [web:2]</li>
+                        <li><strong>Online Backup & Recovery:</strong> Continuous data protection [web:2]</li>
+                        <li><strong>Automated Database Management:</strong> Self-managing capabilities [web:2]</li>
+                        <li><strong>Automatic Database Diagnostic Monitor:</strong> Performance monitoring [web:2]</li>
+                        <li><strong>Grid Architecture:</strong> Distributed computing support [web:2]</li>
+                        <li><strong>Active Data Guard:</strong> Real-time data replication [web:2]</li>
+                    </ul>
+
+                    <h3>Advantages of Oracle Database</h3>
+
+                    <ul>
+                        <li>High Performance</li>
+                        <li>Strong Security Features</li>
+                        <li>Scalability</li>
+                        <li>Reliability</li>
+                        <li>Backup and Recovery Support</li>
+                        <li>Multi-user Environment</li>
+                        <li>Cloud Integration</li>
+                    </ul>
+
+                    <h3>Applications of Oracle</h3>
+
+                    <ul>
+                        <li>Banking Systems</li>
+                        <li>Railway Reservation Systems</li>
+                        <li>E-commerce Websites</li>
+                        <li>Healthcare Systems</li>
+                        <li>Educational Institutions</li>
+                        <li>Government Organizations</li>
+                    </ul>
+
+                    <h3>Class Summary</h3>
+
+                    <p>
+                        In today's lecture, we learned about databases, types of databases (Relational, NoSQL,
+                        Object-Oriented, Cloud, Hierarchical, Network, Centralized, Distributed), DBMS, the need for
+                        DBMS, Oracle Database, the history of Oracle, Oracle founders, different Oracle editions (EE,
+                        SE, SEO, XE, PE, Lite), key Oracle features, and the advantages of Oracle. Oracle is one of the
+                        most powerful database systems used worldwide for managing large amounts of data securely and
+                        efficiently [web:2][web:3].
                     </p>
 
                 </div>
