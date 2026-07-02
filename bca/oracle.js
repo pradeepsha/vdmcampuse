@@ -604,7 +604,7 @@ Everything is performed locally.
     <li>SQLite</li>
 </ul>
 
-<pre>
+<pre style="border: 1px solid #262323;border-radius: 11px;">
 +---------------------------+
 |       Computer            |
 |                           |
@@ -650,7 +650,7 @@ The client sends requests to the server.
 The server processes the request and returns the result.
 </p>
 
-<pre>
+<pre style="border: 1px solid #262323;border-radius: 11px;">
 +-----------+       SQL Query       +-------------+
 |  Client   | --------------------> |   Server    |
 | (User PC) |                       | (Database)  |
@@ -738,7 +738,7 @@ Similarly,
     <li>The Client displays the result to the user.</li>
 </ol>
 
-<pre>
+<pre style="border: 1px solid #262323;border-radius: 11px;">
 User
    │
    ▼
@@ -789,7 +789,7 @@ User
 In Three-Tier Architecture, an additional Application Server is placed between the Client and Database Server.
 </p>
 
-<pre>
+<pre style="border: 1px solid #262323;border-radius: 11px;">
 Client
    │
    ▼
@@ -1096,12 +1096,22 @@ Let's check if Oracle is installed correctly:
 <ul>
     <li>Open <strong>Command Prompt</strong> (Windows) or <strong>Terminal</strong> (Linux/macOS)</li>
     <li>Type: <code>sqlplus</code></li>
-    <li>Login with:
-        <pre>
-Username: system
-Password: [your administrative password]
-        </pre>
-    </li>
+<li>
+    Login with:
+    <div class="code-box">
+
+        <div class="code-title">
+            Login Credentials
+        </div>
+
+<pre><span class="comment">-- Enter the following credentials</span>
+
+<span class="keyword">Username</span> : system
+<span class="keyword">Password</span> : your administrative password
+</pre>
+
+    </div>
+</li>
     <li>If you see SQL> prompt, Oracle is working!</li>
 </ul>
 
@@ -1378,15 +1388,21 @@ When creating tables, each column must have a **data type** that defines what ki
 
 <h4>Example 1: CREATE Table (DDL)</h4>
 
-<pre>
-CREATE TABLE students (
-    student_id NUMBER(5) PRIMARY KEY,
-    student_name VARCHAR2(50) NOT NULL,
-    student_email VARCHAR2(100),
-    age NUMBER(3),
-    enrollment_date DATE
-);
-</pre>
+<div class="code-box">
+
+    <div class="code-title">
+        create_table.sql
+    </div>
+
+<pre><span class="keyword">CREATE TABLE</span> <span class="parameter">students</span> (
+    <span class="parameter">student_id</span> <span class="datatype">NUMBER</span>(<span class="number">5</span>) <span class="keyword">PRIMARY KEY</span>,
+    <span class="parameter">student_name</span> <span class="datatype">VARCHAR2</span>(<span class="number">50</span>) <span class="keyword">NOT NULL</span>,
+    <span class="parameter">student_email</span> <span class="datatype">VARCHAR2</span>(<span class="number">100</span>),
+    <span class="parameter">age</span> <span class="datatype">NUMBER</span>(<span class="number">3</span>),
+    <span class="parameter">enrollment_date</span> <span class="datatype">DATE</span>
+)<span class="symbol">;</span></pre>
+
+</div>
 
 <p>
 This creates a table named <strong>students</strong> with 5 columns .
@@ -1394,27 +1410,50 @@ This creates a table named <strong>students</strong> with 5 columns .
 
 <h4>Example 2: INSERT Data (DML)</h4>
 
-<pre>
-INSERT INTO students (student_id, student_name, student_email, age, enrollment_date)
-VALUES (1, 'Rahul Kumar', 'rahul@email.com', 20, '2024-01-15');
-</pre>
+<div class="code-box">
 
+    <div class="code-title">
+        insert_data.sql
+    </div>
+
+<pre><span class="keyword">INSERT INTO</span> <span class="parameter">students</span> (
+    <span class="parameter">student_id</span>,
+    <span class="parameter">student_name</span>,
+    <span class="parameter">student_email</span>,
+    <span class="parameter">age</span>,
+    <span class="parameter">enrollment_date</span>
+)
+<span class="keyword">VALUES</span> (
+    <span class="number">1</span>,
+    <span class="string">'Rahul Kumar'</span>,
+    <span class="string">'rahul@email.com'</span>,
+    <span class="number">20</span>,
+    <span class="string">'2024-01-15'</span>
+)<span class="symbol">;</span></pre>
+
+</div>
 <p>
 This adds one new row to the students table .
 </p>
 
 <h4>Example 3: SELECT Data (DML)</h4>
 
-<pre>
--- Select all columns
-SELECT * FROM students;
+<div class="code-box">
 
--- Select specific columns
-SELECT student_name, age FROM students;
+    <div class="code-title">
+        select_data.sql
+    </div>
 
--- Select with condition
-SELECT * FROM students WHERE age > 18;
-</pre>
+<pre><span class="comment">-- Select all columns</span>
+<span class="keyword">SELECT</span> <span class="symbol">*</span> <span class="keyword">FROM</span> <span class="parameter">students</span><span class="symbol">;</span>
+
+<span class="comment">-- Select specific columns</span>
+<span class="keyword">SELECT</span> <span class="parameter">student_name</span><span class="symbol">,</span> <span class="parameter">age</span> <span class="keyword">FROM</span> <span class="parameter">students</span><span class="symbol">;</span>
+
+<span class="comment">-- Select with condition</span>
+<span class="keyword">SELECT</span> <span class="symbol">*</span> <span class="keyword">FROM</span> <span class="parameter">students</span> <span class="keyword">WHERE</span> <span class="parameter">age</span> <span class="symbol">&gt;</span> <span class="number">18</span><span class="symbol">;</span></pre>
+
+</div>
 
 <p>
 This retrieves data from the students table .
@@ -1422,11 +1461,17 @@ This retrieves data from the students table .
 
 <h4>Example 4: UPDATE Data (DML)</h4>
 
-<pre>
-UPDATE students 
-SET age = 21 
-WHERE student_id = 1;
-</pre>
+<div class="code-box">
+
+    <div class="code-title">
+        update_data.sql
+    </div>
+
+<pre><span class="keyword">UPDATE</span> <span class="parameter">students</span>
+<span class="keyword">SET</span> <span class="parameter">age</span> <span class="symbol">=</span> <span class="number">21</span>
+<span class="keyword">WHERE</span> <span class="parameter">student_id</span> <span class="symbol">=</span> <span class="number">1</span><span class="symbol">;</span></pre>
+
+</div>
 
 <p>
 This modifies existing data in the table.
@@ -1434,10 +1479,16 @@ This modifies existing data in the table.
 
 <h4>Example 5: DELETE Data (DML)</h4>
 
-<pre>
-DELETE FROM students 
-WHERE student_id = 1;
-</pre>
+<div class="code-box">
+
+    <div class="code-title">
+        delete_data.sql
+    </div>
+
+<pre><span class="keyword">DELETE</span> <span class="keyword">FROM</span> <span class="parameter">students</span>
+<span class="keyword">WHERE</span> <span class="parameter">student_id</span> <span class="symbol">=</span> <span class="number">1</span><span class="symbol">;</span></pre>
+
+</div>
 
 <p>
 This removes a row from the table.
@@ -1445,13 +1496,19 @@ This removes a row from the table.
 
 <h4>Example 6: COMMIT and ROLLBACK (TCL)</h4>
 
-<pre>
--- Save changes permanently
-COMMIT;
+<div class="code-box">
 
--- Undo changes
-ROLLBACK;
-</pre>
+    <div class="code-title">
+        transaction_control.sql
+    </div>
+
+<pre><span class="comment">-- Save changes permanently</span>
+<span class="keyword">COMMIT</span><span class="symbol">;</span>
+
+<span class="comment">-- Undo changes</span>
+<span class="keyword">ROLLBACK</span><span class="symbol">;</span></pre>
+
+</div>
 
 <h3>Hands-on Practice: Create Your First Table</h3>
 
@@ -1461,45 +1518,110 @@ ROLLBACK;
 
 <h4>Task 1: Create Database</h4>
 
-<pre>
-CREATE DATABASE college_registration;
-</pre>
+<div class="code-box">
+
+    <div class="code-title">
+        create_database.sql
+    </div>
+
+<pre><span class="keyword">CREATE DATABASE</span> <span class="parameter">college_registration</span><span class="symbol">;</span></pre>
+
+</div>
 
 <h4>Task 2: Create Student Table</h4>
 
-<pre>
-CREATE TABLE Student (
-    student_id NUMBER(5) PRIMARY KEY,
-    student_name VARCHAR2(50) NOT NULL,
-    student_email VARCHAR2(100) UNIQUE,
-    mobile_number VARCHAR2(10),
-    department VARCHAR2(50),
-    enrollment_year NUMBER(4)
-);
-</pre>
+<div class="code-box">
+
+    <div class="code-title">
+        create_student_table.sql
+    </div>
+
+<pre><span class="keyword">CREATE TABLE</span> <span class="parameter">Student</span> (
+    <span class="parameter">student_id</span> <span class="datatype">NUMBER</span>(<span class="number">5</span>) <span class="keyword">PRIMARY KEY</span>,
+    <span class="parameter">student_name</span> <span class="datatype">VARCHAR2</span>(<span class="number">50</span>) <span class="keyword">NOT NULL</span>,
+    <span class="parameter">student_email</span> <span class="datatype">VARCHAR2</span>(<span class="number">100</span>) <span class="keyword">UNIQUE</span>,
+    <span class="parameter">mobile_number</span> <span class="datatype">VARCHAR2</span>(<span class="number">10</span>),
+    <span class="parameter">department</span> <span class="datatype">VARCHAR2</span>(<span class="number">50</span>),
+    <span class="parameter">enrollment_year</span> <span class="datatype">NUMBER</span>(<span class="number">4</span>)
+)<span class="symbol">;</span></pre>
+
+</div>
 
 <h4>Task 3: Insert Records</h4>
 
-<pre>
-INSERT INTO Student VALUES (1, 'Amit Sharma', 'amit@email.com', '9876543210', 'Computer Science', 2024);
-INSERT INTO Student VALUES (2, 'Priya Singh', 'priya@email.com', '9876543211', 'Mathematics', 2024);
-INSERT INTO Student VALUES (3, 'Rajesh Patel', 'rajesh@email.com', '9876543212', 'Physics', 2024);
-INSERT INTO Student VALUES (4, 'Sneha Gupta', 'sneha@email.com', '9876543213', 'Computer Science', 2024);
-INSERT INTO Student VALUES (5, 'Vikram Reddy', 'vikram@email.com', '9876543214', 'Chemistry', 2024);
-</pre>
+<div class="code-box">
+
+    <div class="code-title">
+        insert_student_data.sql
+    </div>
+
+<pre><span class="keyword">INSERT INTO</span> <span class="parameter">Student</span> <span class="keyword">VALUES</span> (
+    <span class="number">1</span>,
+    <span class="string">'Amit Sharma'</span>,
+    <span class="string">'amit@email.com'</span>,
+    <span class="string">'9876543210'</span>,
+    <span class="string">'Computer Science'</span>,
+    <span class="number">2024</span>
+)<span class="symbol">;</span>
+
+<span class="keyword">INSERT INTO</span> <span class="parameter">Student</span> <span class="keyword">VALUES</span> (
+    <span class="number">2</span>,
+    <span class="string">'Priya Singh'</span>,
+    <span class="string">'priya@email.com'</span>,
+    <span class="string">'9876543211'</span>,
+    <span class="string">'Mathematics'</span>,
+    <span class="number">2024</span>
+)<span class="symbol">;</span>
+
+<span class="keyword">INSERT INTO</span> <span class="parameter">Student</span> <span class="keyword">VALUES</span> (
+    <span class="number">3</span>,
+    <span class="string">'Rajesh Patel'</span>,
+    <span class="string">'rajesh@email.com'</span>,
+    <span class="string">'9876543212'</span>,
+    <span class="string">'Physics'</span>,
+    <span class="number">2024</span>
+)<span class="symbol">;</span>
+
+<span class="keyword">INSERT INTO</span> <span class="parameter">Student</span> <span class="keyword">VALUES</span> (
+    <span class="number">4</span>,
+    <span class="string">'Sneha Gupta'</span>,
+    <span class="string">'sneha@email.com'</span>,
+    <span class="string">'9876543213'</span>,
+    <span class="string">'Computer Science'</span>,
+    <span class="number">2024</span>
+)<span class="symbol">;</span>
+
+<span class="keyword">INSERT INTO</span> <span class="parameter">Student</span> <span class="keyword">VALUES</span> (
+    <span class="number">5</span>,
+    <span class="string">'Vikram Reddy'</span>,
+    <span class="string">'vikram@email.com'</span>,
+    <span class="string">'9876543214'</span>,
+    <span class="string">'Chemistry'</span>,
+    <span class="number">2024</span>
+)<span class="symbol">;</span></pre>
+
+</div>
 
 <h4>Task 4: Retrieve Data</h4>
 
-<pre>
--- Display all students
-SELECT * FROM Student;
+<div class="code-box">
 
--- Display students from Computer Science
-SELECT * FROM Student WHERE department = 'Computer Science';
+    <div class="code-title">
+        select_student_data.sql
+    </div>
 
--- Display student names and mobile numbers
-SELECT student_name, mobile_number FROM Student;
-</pre>
+<pre><span class="comment">-- Display all students</span>
+<span class="keyword">SELECT</span> <span class="symbol">*</span> <span class="keyword">FROM</span> <span class="parameter">Student</span><span class="symbol">;</span>
+
+<span class="comment">-- Display students from Computer Science</span>
+<span class="keyword">SELECT</span> <span class="symbol">*</span> <span class="keyword">FROM</span> <span class="parameter">Student</span>
+<span class="keyword">WHERE</span> <span class="parameter">department</span> <span class="symbol">=</span> <span class="string">'Computer Science'</span><span class="symbol">;</span>
+
+<span class="comment">-- Display student names and mobile numbers</span>
+<span class="keyword">SELECT</span> <span class="parameter">student_name</span><span class="symbol">,</span> <span class="parameter">mobile_number</span>
+<span class="keyword">FROM</span> <span class="parameter">Student</span><span class="symbol">;</span></pre>
+
+</div>
 
 <h3>SQL Features</h3>
 
@@ -1527,15 +1649,21 @@ You can run SQL commands using these tools:
 <p>
 <strong>Example: Using SQL*Plus</strong>
 </p>
-<pre>
-C:\> sqlplus
-Enter user-name: system
-Enter password: [your password]
+<div class="code-box">
 
-SQL&gt; SELECT * FROM students;
-SQL&gt; INSERT INTO students VALUES (...);
-SQL&gt; COMMIT;
-</pre>
+    <div class="code-title">
+        sqlplus_session.txt
+    </div>
+
+<pre><span class="parameter">C:\&gt;</span> <span class="function">sqlplus</span>
+<span class="parameter">Enter user-name:</span> <span class="string">system</span>
+<span class="parameter">Enter password:</span> <span class="string">[your password]</span>
+
+<span class="parameter">SQL&gt;</span> <span class="keyword">SELECT</span> <span class="symbol">*</span> <span class="keyword">FROM</span> <span class="parameter">students</span><span class="symbol">;</span>
+<span class="parameter">SQL&gt;</span> <span class="keyword">INSERT INTO</span> <span class="parameter">students</span> <span class="keyword">VALUES</span> <span class="symbol">(</span><span class="comment">...</span><span class="symbol">);</span>
+<span class="parameter">SQL&gt;</span> <span class="keyword">COMMIT</span><span class="symbol">;</span></pre>
+
+</div>
 
 <h3>Common SQL Errors</h3>
 
@@ -2616,35 +2744,47 @@ The remaining Candidate Keys become <strong>Alternate Keys</strong>.
 
 <p><strong>Method 1: Defining Primary Key while creating the table</strong></p>
 
-<pre>
-CREATE TABLE Student(
+<div class="code-box">
 
-StudentID NUMBER PRIMARY KEY,
+    <div class="code-title">
+        create_table.sql
+    </div>
 
-Name VARCHAR2(50),
+<pre><span class="keyword">CREATE TABLE</span> <span class="parameter">Student</span>(
 
-City VARCHAR2(30)
+<span class="parameter">StudentID</span> <span class="datatype">NUMBER</span> <span class="keyword">PRIMARY KEY</span>,
 
-);
-</pre>
+<span class="parameter">Name</span> <span class="datatype">VARCHAR2</span>(<span class="number">50</span>),
+
+<span class="parameter">City</span> <span class="datatype">VARCHAR2</span>(<span class="number">30</span>)
+
+)<span class="symbol">;</span></pre>
+
+</div>
 
 <p><strong>Method 2: Using CONSTRAINT</strong></p>
 
-<pre>
-CREATE TABLE Student(
+<div class="code-box">
 
-StudentID NUMBER,
+    <div class="code-title">
+        create_table_with_constraint.sql
+    </div>
 
-Name VARCHAR2(50),
+<pre><span class="keyword">CREATE TABLE</span> <span class="parameter">Student</span>(
 
-City VARCHAR2(30),
+<span class="parameter">StudentID</span> <span class="datatype">NUMBER</span>,
 
-CONSTRAINT PK_Student
-PRIMARY KEY(StudentID)
+<span class="parameter">Name</span> <span class="datatype">VARCHAR2</span>(<span class="number">50</span>),
 
-);
-</pre>
+<span class="parameter">City</span> <span class="datatype">VARCHAR2</span>(<span class="number">30</span>),
 
+<span class="keyword">CONSTRAINT</span> <span class="function">PK_Student</span>
+<span class="keyword">PRIMARY KEY</span>(<span class="parameter">StudentID</span>)
+
+)<span class="symbol">;</span></pre>
+
+</div>
+<br>
 <h4>What Happens if We Insert Duplicate Values?</h4>
 
 <p>
@@ -2674,10 +2814,16 @@ Suppose the Student table already contains:
 Now we try to insert:
 </p>
 
-<pre>
-INSERT INTO Student
-VALUES(101,'Rohit');
-</pre>
+<div class="code-box">
+
+    <div class="code-title">
+        insert_student.sql
+    </div>
+
+<pre><span class="keyword">INSERT INTO</span> <span class="parameter">Student</span>
+<span class="keyword">VALUES</span>(<span class="number">101</span>, <span class="string">'Rohit'</span>)<span class="symbol">;</span></pre>
+
+</div>
 
 <p>
 Oracle will display an error because the Primary Key value <strong>101</strong> already exists.
@@ -2686,10 +2832,16 @@ Duplicate values are not allowed.
 
 <h4>What Happens if We Insert NULL?</h4>
 
-<pre>
-INSERT INTO Student
-VALUES(NULL,'Rahul');
-</pre>
+<div class="code-box">
+
+    <div class="code-title">
+        insert_null_value.sql
+    </div>
+
+<pre><span class="keyword">INSERT INTO</span> <span class="parameter">Student</span>
+<span class="keyword">VALUES</span>(<span class="keyword">NULL</span>, <span class="string">'Rahul'</span>)<span class="symbol">;</span></pre>
+
+</div>
 
 <p>
 Oracle will again display an error because a Primary Key cannot contain NULL values.
@@ -2836,9 +2988,6 @@ Now the question is:
 The Candidate Keys that are <strong>not selected</strong> as the Primary Key are called <strong>Alternate Keys</strong>.
 
 </p>
-
-
-
 
 <h3>
 What We Will Cover
@@ -3083,20 +3232,25 @@ Characteristics of Alternate Key
 <h3>
 SQL Example
 </h3>
+<div class="code-box">
 
-<pre>
-CREATE TABLE Student(
+    <div class="code-title">
+        create_student_table.sql
+    </div>
 
-StudentID NUMBER PRIMARY KEY,
+<pre><span class="keyword">CREATE TABLE</span> <span class="parameter">Student</span>(
 
-RollNo VARCHAR2(20) UNIQUE,
+<span class="parameter">StudentID</span> <span class="datatype">NUMBER</span> <span class="keyword">PRIMARY KEY</span>,
 
-Email VARCHAR2(50) UNIQUE,
+<span class="parameter">RollNo</span> <span class="datatype">VARCHAR2</span>(<span class="number">20</span>) <span class="keyword">UNIQUE</span>,
 
-Name VARCHAR2(50)
+<span class="parameter">Email</span> <span class="datatype">VARCHAR2</span>(<span class="number">50</span>) <span class="keyword">UNIQUE</span>,
 
-);
-</pre>
+<span class="parameter">Name</span> <span class="datatype">VARCHAR2</span>(<span class="number">50</span>)
+
+)<span class="symbol">;</span></pre>
+
+</div>
 
 <p>
 
@@ -3544,19 +3698,25 @@ Therefore, <strong>StudentID + Date</strong> is a Composite Key.
 SQL Example
 </h3>
 
-<pre>
-CREATE TABLE Enrollment(
+<div class="code-box">
 
-StudentID NUMBER,
+    <div class="code-title">
+        create_enrollment_table.sql
+    </div>
 
-CourseID VARCHAR2(10),
+<pre><span class="keyword">CREATE TABLE</span> <span class="parameter">Enrollment</span>(
 
-EnrollmentDate DATE,
+<span class="parameter">StudentID</span> <span class="datatype">NUMBER</span>,
 
-PRIMARY KEY(StudentID, CourseID)
+<span class="parameter">CourseID</span> <span class="datatype">VARCHAR2</span>(<span class="number">10</span>),
 
-);
-</pre>
+<span class="parameter">EnrollmentDate</span> <span class="datatype">DATE</span>,
+
+<span class="keyword">PRIMARY KEY</span>(<span class="parameter">StudentID</span>, <span class="parameter">CourseID</span>)
+
+)<span class="symbol">;</span></pre>
+
+</div>
 
 <p>
 
@@ -3931,29 +4091,35 @@ Therefore, DeptID in the Student table is the <strong>Foreign Key</strong>.
 SQL Example
 </h3>
 
-<pre>
-CREATE TABLE Department(
+<div class="code-box">
 
-DeptID NUMBER PRIMARY KEY,
+    <div class="code-title">
+        create_department_student_tables.sql
+    </div>
 
-DeptName VARCHAR2(50)
+<pre><span class="keyword">CREATE TABLE</span> <span class="parameter">Department</span>(
 
-);
+<span class="parameter">DeptID</span> <span class="datatype">NUMBER</span> <span class="keyword">PRIMARY KEY</span>,
 
-CREATE TABLE Student(
+<span class="parameter">DeptName</span> <span class="datatype">VARCHAR2</span>(<span class="number">50</span>)
 
-StudentID NUMBER PRIMARY KEY,
+)<span class="symbol">;</span>
 
-Name VARCHAR2(50),
+<span class="keyword">CREATE TABLE</span> <span class="parameter">Student</span>(
 
-DeptID NUMBER,
+<span class="parameter">StudentID</span> <span class="datatype">NUMBER</span> <span class="keyword">PRIMARY KEY</span>,
 
-FOREIGN KEY (DeptID)
+<span class="parameter">Name</span> <span class="datatype">VARCHAR2</span>(<span class="number">50</span>),
 
-REFERENCES Department(DeptID)
+<span class="parameter">DeptID</span> <span class="datatype">NUMBER</span>,
 
-);
-</pre>
+<span class="keyword">FOREIGN KEY</span>(<span class="parameter">DeptID</span>)
+
+<span class="keyword">REFERENCES</span> <span class="parameter">Department</span>(<span class="parameter">DeptID</span>)
+
+)<span class="symbol">;</span></pre>
+
+</div>
 
 <h3>
 Example 2: Customer and Orders
@@ -4329,10 +4495,16 @@ Now suppose we try to insert:
 
 </p>
 
-<pre>
-INSERT INTO Student
-VALUES(104,'Ankit',40);
-</pre>
+<div class="code-box">
+
+    <div class="code-title">
+        insert_student.sql
+    </div>
+
+<pre><span class="keyword">INSERT INTO</span> <span class="parameter">Student</span>
+<span class="keyword">VALUES</span>(<span class="number">104</span>, <span class="string">'Ankit'</span>, <span class="number">40</span>)<span class="symbol">;</span></pre>
+
+</div>
 
 <p>
 
@@ -4742,35 +4914,47 @@ Therefore, Aadhaar Number should have a Unique Key.
 SQL Example 1
 </h3>
 
-<pre>
-CREATE TABLE Student(
+<div class="code-box">
 
-StudentID NUMBER PRIMARY KEY,
+    <div class="code-title">
+        create_student_table.sql
+    </div>
 
-Name VARCHAR2(50),
+<pre><span class="keyword">CREATE TABLE</span> <span class="parameter">Student</span>(
 
-Email VARCHAR2(100) UNIQUE
+<span class="parameter">StudentID</span> <span class="datatype">NUMBER</span> <span class="keyword">PRIMARY KEY</span>,
 
-);
-</pre>
+<span class="parameter">Name</span> <span class="datatype">VARCHAR2</span>(<span class="number">50</span>),
+
+<span class="parameter">Email</span> <span class="datatype">VARCHAR2</span>(<span class="number">100</span>) <span class="keyword">UNIQUE</span>
+
+)<span class="symbol">;</span></pre>
+
+</div>
 
 <h3>
 SQL Example 2
 </h3>
 
-<pre>
-CREATE TABLE Employee(
+<div class="code-box">
 
-EmpID NUMBER PRIMARY KEY,
+    <div class="code-title">
+        create_employee_table.sql
+    </div>
 
-EmpName VARCHAR2(50),
+<pre><span class="keyword">CREATE TABLE</span> <span class="parameter">Employee</span>(
 
-MobileNo VARCHAR2(15) UNIQUE,
+<span class="parameter">EmpID</span> <span class="datatype">NUMBER</span> <span class="keyword">PRIMARY KEY</span>,
 
-Email VARCHAR2(100) UNIQUE
+<span class="parameter">EmpName</span> <span class="datatype">VARCHAR2</span>(<span class="number">50</span>),
 
-);
-</pre>
+<span class="parameter">MobileNo</span> <span class="datatype">VARCHAR2</span>(<span class="number">15</span>) <span class="keyword">UNIQUE</span>,
+
+<span class="parameter">Email</span> <span class="datatype">VARCHAR2</span>(<span class="number">100</span>) <span class="keyword">UNIQUE</span>
+
+)<span class="symbol">;</span></pre>
+
+</div>
 
 <p>
 
@@ -4824,11 +5008,16 @@ Now we execute the following SQL statement:
 
 </p>
 
-<pre>
-INSERT INTO Student
-VALUES(102,'Amit','rahul@gmail.com');
-</pre>
+<div class="code-box">
 
+    <div class="code-title">
+        insert_student.sql
+    </div>
+
+<pre><span class="keyword">INSERT INTO</span> <span class="parameter">Student</span>
+<span class="keyword">VALUES</span>(<span class="number">102</span>, <span class="string">'Amit'</span>, <span class="string">'rahul@gmail.com'</span>)<span class="symbol">;</span></pre>
+
+</div>
 <p>
 
 Oracle will display an error because the Email value already exists.
@@ -4841,10 +5030,16 @@ Duplicate values are not allowed in a Unique Key.
 What Happens if NULL is Inserted?
 </h3>
 
-<pre>
-INSERT INTO Student
-VALUES(103,'Rohit',NULL);
-</pre>
+<div class="code-box">
+
+    <div class="code-title">
+        insert_student.sql
+    </div>
+
+<pre><span class="keyword">INSERT INTO</span> <span class="parameter">Student</span>
+<span class="keyword">VALUES</span>(<span class="number">103</span>, <span class="string">'Rohit'</span>, <span class="keyword">NULL</span>)<span class="symbol">;</span></pre>
+
+</div>
 
 <p>
 
@@ -5557,12 +5752,21 @@ The NOT NULL constraint ensures that a column cannot have an empty (NULL) value.
 
 <p><strong>Example:</strong></p>
 
-<pre>
-CREATE TABLE Student(
-StudentID NUMBER,
-Name VARCHAR2(50) NOT NULL
-);
-</pre>
+<div class="code-box">
+
+    <div class="code-title">
+        create_student_table.sql
+    </div>
+
+<pre><span class="keyword">CREATE TABLE</span> <span class="parameter">Student</span>(
+
+<span class="parameter">StudentID</span> <span class="datatype">NUMBER</span>,
+
+<span class="parameter">Name</span> <span class="datatype">VARCHAR2</span>(<span class="number">50</span>) <span class="keyword">NOT NULL</span>
+
+)<span class="symbol">;</span></pre>
+
+</div>
 
 <p>
 Now the Name column must contain a value.
@@ -5570,15 +5774,18 @@ Now the Name column must contain a value.
 
 <p><strong>Invalid:</strong></p>
 
-<pre>
-INSERT INTO Student VALUES(101,NULL);
-</pre>
+<div class="code-box">
 
-<p><strong>Result:</strong></p>
+    <div class="code-title">
+        insert_student.sql
+    </div>
 
-<p>
-Oracle will display an error because Name cannot be NULL.
-</p>
+<pre><span class="keyword">INSERT INTO</span> <span class="parameter">Student</span>
+<span class="keyword">VALUES</span>(<span class="number">101</span>, <span class="keyword">NULL</span>)<span class="symbol">;</span></pre>
+
+</div>
+
+<p><strong>Result:</strong> Oracle will display an error because Name cannot be NULL.</p>
 
 <hr>
 
@@ -5590,12 +5797,21 @@ The UNIQUE constraint ensures that every value in the column is different.
 
 <p><strong>Example:</strong></p>
 
-<pre>
-CREATE TABLE Student(
-StudentID NUMBER,
-Email VARCHAR2(100) UNIQUE
-);
-</pre>
+<div class="code-box">
+
+    <div class="code-title">
+        create_student_table.sql
+    </div>
+
+<pre><span class="keyword">CREATE TABLE</span> <span class="parameter">Student</span>(
+
+<span class="parameter">StudentID</span> <span class="datatype">NUMBER</span>,
+
+<span class="parameter">Email</span> <span class="datatype">VARCHAR2</span>(<span class="number">100</span>) <span class="keyword">UNIQUE</span>
+
+)<span class="symbol">;</span></pre>
+
+</div>
 
 <p>
 Two students cannot have the same Email ID.
@@ -5603,11 +5819,17 @@ Two students cannot have the same Email ID.
 
 <p><strong>Example:</strong></p>
 
-<pre>
-abc@gmail.com
-xyz@gmail.com
-abc@gmail.com ❌
-</pre>
+<div class="code-box">
+
+    <div class="code-title">
+        unique_constraint_example.txt
+    </div>
+
+<pre><span class="string">abc@gmail.com</span>
+<span class="string">xyz@gmail.com</span>
+<span class="string">abc@gmail.com</span> <span class="comment">❌ Duplicate Value (Not Allowed)</span></pre>
+
+</div>
 
 <hr>
 
@@ -5629,12 +5851,21 @@ A Primary Key:
 
 <p><strong>Example:</strong></p>
 
-<pre>
-CREATE TABLE Student(
-StudentID NUMBER PRIMARY KEY,
-Name VARCHAR2(50)
-);
-</pre>
+<div class="code-box">
+
+    <div class="code-title">
+        create_student_table.sql
+    </div>
+
+<pre><span class="keyword">CREATE TABLE</span> <span class="parameter">Student</span>(
+
+<span class="parameter">StudentID</span> <span class="datatype">NUMBER</span> <span class="keyword">PRIMARY KEY</span>,
+
+<span class="parameter">Name</span> <span class="datatype">VARCHAR2</span>(<span class="number">50</span>)
+
+)<span class="symbol">;</span></pre>
+
+</div>
 
 <p>
 
@@ -5694,23 +5925,46 @@ It ensures that a value exists in another table before inserting data.
 
 <p><strong>Example:</strong></p>
 
-<pre>
+<table class="notes-table">
 
-Department
+<tr>
+    <th colspan="2">Department</th>
+    <th colspan="3">Student</th>
+</tr>
 
-DeptID
-------
-10
-20
-30
+<tr>
+    <th>DeptID</th>
+    <th></th>
+    <th>StudentID</th>
+    <th>Name</th>
+    <th>DeptID</th>
+</tr>
 
-Student
+<tr>
+    <td>10</td>
+    <td></td>
+    <td>101</td>
+    <td>Rahul</td>
+    <td>10</td>
+</tr>
 
-StudentID
-Name
-DeptID
+<tr>
+    <td>20</td>
+    <td></td>
+    <td>102</td>
+    <td>Amit</td>
+    <td>20</td>
+</tr>
 
-</pre>
+<tr>
+    <td>30</td>
+    <td></td>
+    <td>103</td>
+    <td>Priya</td>
+    <td>30</td>
+</tr>
+
+</table>
 
 <p>
 
@@ -5721,20 +5975,35 @@ Oracle will not allow the insertion.
 
 </p>
 
-<pre>
-CREATE TABLE Department(
-DeptID NUMBER PRIMARY KEY,
-DeptName VARCHAR2(50)
-);
+<div class="code-box">
 
-CREATE TABLE Student(
-StudentID NUMBER PRIMARY KEY,
-Name VARCHAR2(50),
-DeptID NUMBER,
-FOREIGN KEY(DeptID)
-REFERENCES Department(DeptID)
-);
-</pre>
+    <div class="code-title">
+        create_department_student_tables.sql
+    </div>
+
+<pre><span class="keyword">CREATE TABLE</span> <span class="parameter">Department</span>(
+
+<span class="parameter">DeptID</span> <span class="datatype">NUMBER</span> <span class="keyword">PRIMARY KEY</span>,
+
+<span class="parameter">DeptName</span> <span class="datatype">VARCHAR2</span>(<span class="number">50</span>)
+
+)<span class="symbol">;</span>
+
+<span class="keyword">CREATE TABLE</span> <span class="parameter">Student</span>(
+
+<span class="parameter">StudentID</span> <span class="datatype">NUMBER</span> <span class="keyword">PRIMARY KEY</span>,
+
+<span class="parameter">Name</span> <span class="datatype">VARCHAR2</span>(<span class="number">50</span>),
+
+<span class="parameter">DeptID</span> <span class="datatype">NUMBER</span>,
+
+<span class="keyword">FOREIGN KEY</span>(<span class="parameter">DeptID</span>)
+
+<span class="keyword">REFERENCES</span> <span class="parameter">Department</span>(<span class="parameter">DeptID</span>)
+
+)<span class="symbol">;</span></pre>
+
+</div>
 
 <hr>
 
@@ -5746,11 +6015,19 @@ CHECK constraint allows only values that satisfy a specified condition.
 
 <p><strong>Example:</strong></p>
 
-<pre>
-CREATE TABLE Student(
-Age NUMBER CHECK(Age>=18)
-);
-</pre>
+<div class="code-box">
+
+    <div class="code-title">
+        create_student_table.sql
+    </div>
+
+<pre><span class="keyword">CREATE TABLE</span> <span class="parameter">Student</span>(
+
+<span class="parameter">Age</span> <span class="datatype">NUMBER</span> <span class="keyword">CHECK</span>(<span class="parameter">Age</span> <span class="symbol">&gt;=</span> <span class="number">18</span>)
+
+)<span class="symbol">;</span></pre>
+
+</div>
 
 <p>
 
@@ -5772,12 +6049,20 @@ DEFAULT automatically inserts a value if the user does not provide one.
 
 <p><strong>Example:</strong></p>
 
-<pre>
-CREATE TABLE Student(
-City VARCHAR2(30)
-DEFAULT 'Bhopal'
-);
-</pre>
+<div class="code-box">
+
+    <div class="code-title">
+        create_student_table.sql
+    </div>
+
+<pre><span class="keyword">CREATE TABLE</span> <span class="parameter">Student</span>(
+
+<span class="parameter">City</span> <span class="datatype">VARCHAR2</span>(<span class="number">30</span>)
+<span class="keyword">DEFAULT</span> <span class="string">'Bhopal'</span>
+
+)<span class="symbol">;</span></pre>
+
+</div>
 
 <p>
 
@@ -5799,24 +6084,28 @@ City = Bhopal
 
 <h3>Multiple Constraints Example</h3>
 
-<pre>
+<div class="code-box">
 
-CREATE TABLE Student(
+    <div class="code-title">
+        create_student_table.sql
+    </div>
 
-StudentID NUMBER PRIMARY KEY,
+<pre><span class="keyword">CREATE TABLE</span> <span class="parameter">Student</span>(
 
-Name VARCHAR2(50) NOT NULL,
+    <span class="parameter">StudentID</span> <span class="datatype">NUMBER</span> <span class="keyword">PRIMARY KEY</span>,
 
-Email VARCHAR2(100) UNIQUE,
+    <span class="parameter">Name</span> <span class="datatype">VARCHAR2</span>(<span class="number">50</span>) <span class="keyword">NOT NULL</span>,
 
-Age NUMBER CHECK(Age>=18),
+    <span class="parameter">Email</span> <span class="datatype">VARCHAR2</span>(<span class="number">100</span>) <span class="keyword">UNIQUE</span>,
 
-City VARCHAR2(30)
-DEFAULT 'Bhopal'
+    <span class="parameter">Age</span> <span class="datatype">NUMBER</span> <span class="keyword">CHECK</span>(<span class="parameter">Age</span> <span class="symbol">&gt;=</span> <span class="number">18</span>),
 
-);
+    <span class="parameter">City</span> <span class="datatype">VARCHAR2</span>(<span class="number">30</span>)
+    <span class="keyword">DEFAULT</span> <span class="string">'Bhopal'</span>
 
-</pre>
+)<span class="symbol">;</span></pre>
+
+</div>
 
 <h3>Advantages of SQL Constraints</h3>
 
@@ -8436,65 +8725,100 @@ Today we will learn about **DQL (Data Query Language)**, which consists of the *
     </tr>
 </table>
 
-<h3>Basic SELECT Syntax</h3>
-
 <h4>Syntax 1 – Select Specific Columns:</h4>
-<pre>
-SELECT column1, column2, column3
-FROM table_name;
-</pre>
+<div class="code-box">
 
+    <div class="code-title">
+        select_columns.sql
+    </div>
+
+<pre><span class="keyword">SELECT</span> <span class="parameter">column1</span><span class="symbol">,</span> <span class="parameter">column2</span><span class="symbol">,</span> <span class="parameter">column3</span>
+<span class="keyword">FROM</span> <span class="parameter">table_name</span><span class="symbol">;</span></pre>
+
+</div>
+<br>
 <h4>Syntax 2 – Select All Columns:</h4>
-<pre>
-SELECT *
-FROM table_name;
-</pre>
+<div class="code-box">
 
+    <div class="code-title">
+        select_all_columns.sql
+    </div>
+
+<pre><span class="keyword">SELECT</span> <span class="symbol">*</span>
+<span class="keyword">FROM</span> <span class="parameter">table_name</span><span class="symbol">;</span></pre>
+
+</div>
+<br>
 <h4>Syntax 3 – Select with Condition:</h4>
-<pre>
-SELECT column1, column2
-FROM table_name
-WHERE condition;
-</pre>
+<div class="code-box">
 
+    <div class="code-title">
+        select_with_where.sql
+    </div>
+
+<pre><span class="keyword">SELECT</span> <span class="parameter">column1</span><span class="symbol">,</span> <span class="parameter">column2</span>
+<span class="keyword">FROM</span> <span class="parameter">table_name</span>
+<span class="keyword">WHERE</span> <span class="parameter">condition</span><span class="symbol">;</span></pre>
+
+</div>
+<br>
 <h4>Syntax 4 – Select with Sorting:</h4>
-<pre>
-SELECT column1, column2
-FROM table_name
-ORDER BY column1 ASC;
-</pre>
+<div class="code-box">
 
+    <div class="code-title">
+        select_order_by.sql
+    </div>
+
+<pre><span class="keyword">SELECT</span> <span class="parameter">column1</span><span class="symbol">,</span> <span class="parameter">column2</span>
+<span class="keyword">FROM</span> <span class="parameter">table_name</span>
+<span class="keyword">ORDER BY</span> <span class="parameter">column1</span> <span class="keyword">ASC</span><span class="symbol">;</span></pre>
+
+</div>
+<br>
 <h3>1. SELECT All Columns (*)</h3>
 
-<h4>Example:</h4>
+<div class="code-box">
 
-<pre>
--- Create sample table
-CREATE TABLE students (
-    student_id NUMBER(5),
-    student_name VARCHAR2(50),
-    student_email VARCHAR2(100),
-    age NUMBER(3),
-    department VARCHAR2(50),
-    enrollment_date DATE
-);
+    <div class="code-title">
+        create_students_table.sql
+    </div>
 
--- Insert sample data
-INSERT ALL
-INTO students VALUES (1, 'Rahul Kumar', 'rahul@email.com', 20, 'Computer Science', '2024-01-15')
-INTO students VALUES (2, 'Priya Singh', 'priya@email.com', 21, 'Mathematics', '2024-01-16')
-INTO students VALUES (3, 'Amit Patel', 'amit@email.com', 22, 'Physics', '2024-01-17')
-INTO students VALUES (4, 'Sneha Gupta', 'sneha@email.com', 20, 'Chemistry', '2024-01-18')
-INTO students VALUES (5, 'Vikram Reddy', 'vikram@email.com', 21, 'Computer Science', '2024-01-19')
-SELECT 1;
+<pre><span class="comment">-- Create sample table</span>
+<span class="keyword">CREATE TABLE</span> <span class="parameter">students</span> (
+    <span class="parameter">student_id</span> <span class="datatype">NUMBER</span>(<span class="number">5</span>),
+    <span class="parameter">student_name</span> <span class="datatype">VARCHAR2</span>(<span class="number">50</span>),
+    <span class="parameter">student_email</span> <span class="datatype">VARCHAR2</span>(<span class="number">100</span>),
+    <span class="parameter">department</span> <span class="datatype">VARCHAR2</span>(<span class="number">50</span>)
+)<span class="symbol">;</span></pre>
 
-COMMIT;
+</div>
 
--- Select ALL columns from students table
-SELECT *
-FROM students;
-</pre>
+<br>
 
+<div class="code-box">
+
+    <div class="code-title">
+        insert_and_select_students.sql
+    </div>
+
+<pre><span class="comment">-- Insert sample data</span>
+<span class="keyword">INSERT ALL</span>
+<span class="keyword">INTO</span> <span class="parameter">students</span> <span class="keyword">VALUES</span> (<span class="number">1</span>, <span class="string">'Rahul Kumar'</span>, <span class="string">'rahul@email.com'</span>, <span class="string">'Computer Science'</span>)
+<span class="keyword">INTO</span> <span class="parameter">students</span> <span class="keyword">VALUES</span> (<span class="number">2</span>, <span class="string">'Priya Singh'</span>, <span class="string">'priya@email.com'</span>, <span class="string">'Mathematics'</span>)
+<span class="keyword">INTO</span> <span class="parameter">students</span> <span class="keyword">VALUES</span> (<span class="number">3</span>, <span class="string">'Amit Patel'</span>, <span class="string">'amit@email.com'</span>, <span class="string">'Physics'</span>)
+<span class="keyword">INTO</span> <span class="parameter">students</span> <span class="keyword">VALUES</span> (<span class="number">4</span>, <span class="string">'Sneha Gupta'</span>, <span class="string">'sneha@email.com'</span>, <span class="string">'Chemistry'</span>)
+<span class="keyword">INTO</span> <span class="parameter">students</span> <span class="keyword">VALUES</span> (<span class="number">5</span>, <span class="string">'Vikram Reddy'</span>, <span class="string">'vikram@email.com'</span>, <span class="string">'Computer Science'</span>)
+<span class="keyword">SELECT</span> <span class="number">1</span> <span class="keyword">FROM</span> <span class="parameter">DUAL</span><span class="symbol">;</span>
+
+<span class="keyword">COMMIT</span><span class="symbol">;</span>
+
+<span class="comment">-- Select ALL columns from students table</span>
+<span class="keyword">SELECT</span> <span class="symbol">*</span>
+<span class="keyword">FROM</span> <span class="parameter">students</span><span class="symbol">;</span></pre>
+
+</div>
+
+<br>
 <h4>Output:</h4>
 
 <table border="1" class="notes-table" cellpadding="10">
@@ -8502,49 +8826,37 @@ FROM students;
         <th>student_id</th>
         <th>student_name</th>
         <th>student_email</th>
-        <th>age</th>
         <th>department</th>
-        <th>enrollment_date</th>
     </tr>
     <tr>
         <td>1</td>
         <td>Rahul Kumar</td>
         <td>rahul@email.com</td>
-        <td>20</td>
         <td>Computer Science</td>
-        <td>2024-01-15</td>
     </tr>
     <tr>
         <td>2</td>
         <td>Priya Singh</td>
         <td>priya@email.com</td>
-        <td>21</td>
         <td>Mathematics</td>
-        <td>2024-01-16</td>
     </tr>
     <tr>
         <td>3</td>
         <td>Amit Patel</td>
         <td>amit@email.com</td>
-        <td>22</td>
         <td>Physics</td>
-        <td>2024-01-17</td>
     </tr>
     <tr>
         <td>4</td>
         <td>Sneha Gupta</td>
         <td>sneha@email.com</td>
-        <td>20</td>
         <td>Chemistry</td>
-        <td>2024-01-18</td>
     </tr>
     <tr>
         <td>5</td>
         <td>Vikram Reddy</td>
         <td>vikram@email.com</td>
-        <td>21</td>
         <td>Computer Science</td>
-        <td>2024-01-19</td>
     </tr>
 </table>
 
@@ -8559,14 +8871,18 @@ FROM students;
 
 <h3>2. SELECT Specific Columns</h3>
 
-<h4>Example:</h4>
+<div class="code-box">
 
-<pre>
--- Select only name and department
-SELECT student_name, department
-FROM students;
-</pre>
+    <div class="code-title">
+        select_name_department.sql
+    </div>
 
+<pre><span class="comment">-- Select only name and department</span>
+<span class="keyword">SELECT</span> <span class="parameter">student_name</span><span class="symbol">,</span> <span class="parameter">department</span>
+<span class="keyword">FROM</span> <span class="parameter">students</span><span class="symbol">;</span></pre>
+
+</div>
+<br>
 <h4>Output:</h4>
 
 <table border="1" class="notes-table" cellpadding="10">
@@ -8598,20 +8914,26 @@ FROM students;
 
 <h4>More Examples:</h4>
 
-<pre>
--- Select name and email
-SELECT student_name, student_email
-FROM students;
+<div class="code-box">
 
--- Select id, name, and age
-SELECT student_id, student_name, age
-FROM students;
+    <div class="code-title">
+        select_multiple_queries.sql
+    </div>
 
--- Select single column
-SELECT department
-FROM students;
-</pre>
+<pre><span class="comment">-- Select name and email</span>
+<span class="keyword">SELECT</span> <span class="parameter">student_name</span><span class="symbol">,</span> <span class="parameter">student_email</span>
+<span class="keyword">FROM</span> <span class="parameter">students</span><span class="symbol">;</span>
 
+<span class="comment">-- Select id, name, and age</span>
+<span class="keyword">SELECT</span> <span class="parameter">student_id</span><span class="symbol">,</span> <span class="parameter">student_name</span><span class="symbol">,</span> <span class="parameter">age</span>
+<span class="keyword">FROM</span> <span class="parameter">students</span><span class="symbol">;</span>
+
+<span class="comment">-- Select single column</span>
+<span class="keyword">SELECT</span> <span class="parameter">department</span>
+<span class="keyword">FROM</span> <span class="parameter">students</span><span class="symbol">;</span></pre>
+
+</div>
+<br>
 <h4>When to Select Specific Columns:</h4>
 <ul>
     <li>✅ Production queries (better performance)</li>
@@ -8626,21 +8948,33 @@ FROM students;
 <p>Filter rows based on conditions</p>
 
 <h4>Syntax:</h4>
-<pre>
-SELECT column1, column2
-FROM table_name
-WHERE condition;
-</pre>
+<div class="code-box">
 
+    <div class="code-title">
+        select_where.sql
+    </div>
+
+<pre><span class="keyword">SELECT</span> <span class="parameter">column1</span><span class="symbol">,</span> <span class="parameter">column2</span>
+<span class="keyword">FROM</span> <span class="parameter">table_name</span>
+<span class="keyword">WHERE</span> <span class="parameter">condition</span><span class="symbol">;</span></pre>
+
+</div>
+<br>
 <h4>Example 1 – Filter by Single Value:</h4>
 
-<pre>
--- Select students from Computer Science
-SELECT student_name, age, department
-FROM students
-WHERE department = 'Computer Science';
-</pre>
+<div class="code-box">
 
+    <div class="code-title">
+        select_where_example.sql
+    </div>
+
+<pre><span class="comment">-- Select students from Computer Science</span>
+<span class="keyword">SELECT</span> <span class="parameter">student_name</span><span class="symbol">,</span> <span class="parameter">age</span><span class="symbol">,</span> <span class="parameter">department</span>
+<span class="keyword">FROM</span> <span class="parameter">students</span>
+<span class="keyword">WHERE</span> <span class="parameter">department</span> <span class="symbol">=</span> <span class="string">'Computer Science'</span><span class="symbol">;</span></pre>
+
+</div>
+<br>
 <h4>Output:</h4>
 
 <table border="1" class="notes-table" cellpadding="10">
@@ -8663,13 +8997,19 @@ WHERE department = 'Computer Science';
 
 <h4>Example 2 – Filter by Number:</h4>
 
-<pre>
--- Select students older than 20
-SELECT student_name, age, department
-FROM students
-WHERE age > 20;
-</pre>
+<div class="code-box">
 
+    <div class="code-title">
+        select_where_age.sql
+    </div>
+
+<pre><span class="comment">-- Select students older than 20</span>
+<span class="keyword">SELECT</span> <span class="parameter">student_name</span><span class="symbol">,</span> <span class="parameter">age</span><span class="symbol">,</span> <span class="parameter">department</span>
+<span class="keyword">FROM</span> <span class="parameter">students</span>
+<span class="keyword">WHERE</span> <span class="parameter">age</span> <span class="symbol">&gt;</span> <span class="number">20</span><span class="symbol">;</span></pre>
+
+</div>
+<br>
 <h4>Output:</h4>
 
 <table border="1" class="notes-table" cellpadding="10">
@@ -8697,26 +9037,40 @@ WHERE age > 20;
 
 <h4>Example 3 – Filter with Multiple Conditions:</h4>
 
-<pre>
--- Students from CS and age 20
-SELECT student_name, age, department
-FROM students
-WHERE department = 'Computer Science' AND age = 20;
+<div class="code-box">
 
--- Students older than 20 OR from Mathematics
-SELECT student_name, age, department
-FROM students
-WHERE age > 20 OR department = 'Mathematics';
-</pre>
+    <div class="code-title">
+        select_logical_operators.sql
+    </div>
 
+<pre><span class="comment">-- Students from CS and age 20</span>
+<span class="keyword">SELECT</span> <span class="parameter">student_name</span><span class="symbol">,</span> <span class="parameter">age</span><span class="symbol">,</span> <span class="parameter">department</span>
+<span class="keyword">FROM</span> <span class="parameter">students</span>
+<span class="keyword">WHERE</span> <span class="parameter">department</span> <span class="symbol">=</span> <span class="string">'Computer Science'</span>
+<span class="keyword">AND</span> <span class="parameter">age</span> <span class="symbol">=</span> <span class="number">20</span><span class="symbol">;</span>
+
+<span class="comment">-- Students older than 20 OR from Mathematics</span>
+<span class="keyword">SELECT</span> <span class="parameter">student_name</span><span class="symbol">,</span> <span class="parameter">age</span><span class="symbol">,</span> <span class="parameter">department</span>
+<span class="keyword">FROM</span> <span class="parameter">students</span>
+<span class="keyword">WHERE</span> <span class="parameter">age</span> <span class="symbol">&gt;</span> <span class="number">20</span>
+<span class="keyword">OR</span> <span class="parameter">department</span> <span class="symbol">=</span> <span class="string">'Mathematics'</span><span class="symbol">;</span></pre>
+
+</div>
+<br>
 <h4>Example 4 – Filter with IN Operator:</h4>
 
-<pre>
--- Select students from specific departments
-SELECT student_name, department
-FROM students
-WHERE department IN ('Computer Science', 'Mathematics');
-</pre>
+<div class="code-box">
+
+    <div class="code-title">
+        select_in_clause.sql
+    </div>
+
+<pre><span class="comment">-- Select students from specific departments</span>
+<span class="keyword">SELECT</span> <span class="parameter">student_name</span><span class="symbol">,</span> <span class="parameter">department</span>
+<span class="keyword">FROM</span> <span class="parameter">students</span>
+<span class="keyword">WHERE</span> <span class="parameter">department</span> <span class="keyword">IN</span> (<span class="string">'Computer Science'</span><span class="symbol">,</span> <span class="string">'Mathematics'</span>)<span class="symbol">;</span></pre>
+
+</div>
 
 <table border="1" class="notes-table" cellpadding="10">
     <tr>
@@ -8739,12 +9093,18 @@ WHERE department IN ('Computer Science', 'Mathematics');
 
 <h4>Example 5 – Filter with BETWEEN Operator:</h4>
 
-<pre>
--- Select students with age between 20 and 21
-SELECT student_name, age
-FROM students
-WHERE age BETWEEN 20 AND 21;
-</pre>
+<div class="code-box">
+
+    <div class="code-title">
+        select_between.sql
+    </div>
+
+<pre><span class="comment">-- Select students with age between 20 and 21</span>
+<span class="keyword">SELECT</span> <span class="parameter">student_name</span><span class="symbol">,</span> <span class="parameter">age</span>
+<span class="keyword">FROM</span> <span class="parameter">students</span>
+<span class="keyword">WHERE</span> <span class="parameter">age</span> <span class="keyword">BETWEEN</span> <span class="number">20</span> <span class="keyword">AND</span> <span class="number">21</span><span class="symbol">;</span></pre>
+
+</div>
 
 <table border="1" class="notes-table" cellpadding="10">
     <tr>
@@ -8771,23 +9131,29 @@ WHERE age BETWEEN 20 AND 21;
 
 <h4>Example 6 – Filter with LIKE Operator:</h4>
 
-<pre>
--- Select names starting with 'R'
-SELECT student_name
-FROM students
-WHERE student_name LIKE 'R%';
+<div class="code-box">
 
--- Select names ending with 'a'
-SELECT student_name
-FROM students
-WHERE student_name LIKE '%a';
+    <div class="code-title">
+        select_like_operator.sql
+    </div>
 
--- Select names containing 'hi'
-SELECT student_name
-FROM students
-WHERE student_name LIKE '%hi%';
-</pre>
+<pre><span class="comment">-- Select names starting with 'R'</span>
+<span class="keyword">SELECT</span> <span class="parameter">student_name</span>
+<span class="keyword">FROM</span> <span class="parameter">students</span>
+<span class="keyword">WHERE</span> <span class="parameter">student_name</span> <span class="keyword">LIKE</span> <span class="string">'R%'</span><span class="symbol">;</span>
 
+<span class="comment">-- Select names ending with 'a'</span>
+<span class="keyword">SELECT</span> <span class="parameter">student_name</span>
+<span class="keyword">FROM</span> <span class="parameter">students</span>
+<span class="keyword">WHERE</span> <span class="parameter">student_name</span> <span class="keyword">LIKE</span> <span class="string">'%a'</span><span class="symbol">;</span>
+
+<span class="comment">-- Select names containing 'hi'</span>
+<span class="keyword">SELECT</span> <span class="parameter">student_name</span>
+<span class="keyword">FROM</span> <span class="parameter">students</span>
+<span class="keyword">WHERE</span> <span class="parameter">student_name</span> <span class="keyword">LIKE</span> <span class="string">'%hi%'</span><span class="symbol">;</span></pre>
+
+</div>
+<br>
 <h4>Output (LIKE 'R%'):</h4>
 
 <table border="1" class="notes-table" cellpadding="10">
@@ -8801,32 +9167,38 @@ WHERE student_name LIKE '%hi%';
 
 <h4>Example 7 – Filter with NULL:</h4>
 
-<pre>
--- Create table with NULL
-CREATE TABLE employees (
-    emp_id NUMBER(5),
-    emp_name VARCHAR2(50),
-    salary NUMBER(10),
-    department VARCHAR2(50)
-);
+<div class="code-box">
 
-INSERT INTO employees VALUES (1, 'Rahul', 50000, 'IT');
-INSERT INTO employees VALUES (2, 'Priya', NULL, 'IT');  -- NULL salary
-INSERT INTO employees VALUES (3, 'Amit', 55000, NULL);  -- NULL department
+    <div class="code-title">
+        null_not_null_example.sql
+    </div>
 
-COMMIT;
+<pre><span class="comment">-- Create table with NULL</span>
+<span class="keyword">CREATE TABLE</span> <span class="parameter">employees</span> (
+    <span class="parameter">emp_id</span> <span class="datatype">NUMBER</span>(<span class="number">5</span>),
+    <span class="parameter">emp_name</span> <span class="datatype">VARCHAR2</span>(<span class="number">50</span>),
+    <span class="parameter">salary</span> <span class="datatype">NUMBER</span>(<span class="number">10</span>),
+    <span class="parameter">department</span> <span class="datatype">VARCHAR2</span>(<span class="number">50</span>)
+)<span class="symbol">;</span>
 
--- Select employees with NULL salary
-SELECT emp_name, salary
-FROM employees
-WHERE salary IS NULL;
+<span class="keyword">INSERT INTO</span> <span class="parameter">employees</span> <span class="keyword">VALUES</span> (<span class="number">1</span>, <span class="string">'Rahul'</span>, <span class="number">50000</span>, <span class="string">'IT'</span>)<span class="symbol">;</span>
+<span class="keyword">INSERT INTO</span> <span class="parameter">employees</span> <span class="keyword">VALUES</span> (<span class="number">2</span>, <span class="string">'Priya'</span>, <span class="keyword">NULL</span>, <span class="string">'IT'</span>)<span class="symbol">;</span> <span class="comment">-- NULL salary</span>
+<span class="keyword">INSERT INTO</span> <span class="parameter">employees</span> <span class="keyword">VALUES</span> (<span class="number">3</span>, <span class="string">'Amit'</span>, <span class="number">55000</span>, <span class="keyword">NULL</span>)<span class="symbol">;</span> <span class="comment">-- NULL department</span>
 
--- Select employees with NOT NULL department
-SELECT emp_name, department
-FROM employees
-WHERE department IS NOT NULL;
-</pre>
+<span class="keyword">COMMIT</span><span class="symbol">;</span>
 
+<span class="comment">-- Select employees with NULL salary</span>
+<span class="keyword">SELECT</span> <span class="parameter">emp_name</span><span class="symbol">,</span> <span class="parameter">salary</span>
+<span class="keyword">FROM</span> <span class="parameter">employees</span>
+<span class="keyword">WHERE</span> <span class="parameter">salary</span> <span class="keyword">IS</span> <span class="keyword">NULL</span><span class="symbol">;</span>
+
+<span class="comment">-- Select employees with NOT NULL department</span>
+<span class="keyword">SELECT</span> <span class="parameter">emp_name</span><span class="symbol">,</span> <span class="parameter">department</span>
+<span class="keyword">FROM</span> <span class="parameter">employees</span>
+<span class="keyword">WHERE</span> <span class="parameter">department</span> <span class="keyword">IS</span> <span class="keyword">NOT</span> <span class="keyword">NULL</span><span class="symbol">;</span></pre>
+
+</div>
+<br>
 <h4>WHERE Operators Summary:</h4>
 
 <table border="1" class="notes-table" cellpadding="10">
@@ -8922,20 +9294,33 @@ WHERE department IS NOT NULL;
 <p>Sort results by one or more columns</p>
 
 <h4>Syntax:</h4>
-<pre>
-SELECT column1, column2
-FROM table_name
-ORDER BY column1 ASC;  -- ASC for ascending, DESC for descending
-</pre>
+<div class="code-box">
 
+    <div class="code-title">
+        order_by_example.sql
+    </div>
+
+<pre><span class="comment">-- ASC for ascending, DESC for descending</span>
+<span class="keyword">SELECT</span> <span class="parameter">column1</span><span class="symbol">,</span> <span class="parameter">column2</span>
+<span class="keyword">FROM</span> <span class="parameter">table_name</span>
+<span class="keyword">ORDER BY</span> <span class="parameter">column1</span> <span class="keyword">ASC</span><span class="symbol">;</span></pre>
+
+</div>
+<br>
 <h4>Example 1 – Sort by Single Column (Ascending):</h4>
 
-<pre>
--- Sort students by name (ascending)
-SELECT student_name, age, department
-FROM students
-ORDER BY student_name ASC;
-</pre>
+<div class="code-box">
+
+    <div class="code-title">
+        order_by_student_name.sql
+    </div>
+
+<pre><span class="comment">-- Sort students by name (ascending)</span>
+<span class="keyword">SELECT</span> <span class="parameter">student_name</span><span class="symbol">,</span> <span class="parameter">age</span><span class="symbol">,</span> <span class="parameter">department</span>
+<span class="keyword">FROM</span> <span class="parameter">students</span>
+<span class="keyword">ORDER BY</span> <span class="parameter">student_name</span> <span class="keyword">ASC</span><span class="symbol">;</span></pre>
+
+</div>
 
 <h4>Output:</h4>
 
@@ -8974,12 +9359,18 @@ ORDER BY student_name ASC;
 
 <h4>Example 2 – Sort by Single Column (Descending):</h4>
 
-<pre>
--- Sort students by age (descending - oldest first)
-SELECT student_name, age, department
-FROM students
-ORDER BY age DESC;
-</pre>
+<div class="code-box">
+
+    <div class="code-title">
+        order_by_age_desc.sql
+    </div>
+
+<pre><span class="comment">-- Sort students by age (descending - oldest first)</span>
+<span class="keyword">SELECT</span> <span class="parameter">student_name</span><span class="symbol">,</span> <span class="parameter">age</span><span class="symbol">,</span> <span class="parameter">department</span>
+<span class="keyword">FROM</span> <span class="parameter">students</span>
+<span class="keyword">ORDER BY</span> <span class="parameter">age</span> <span class="keyword">DESC</span><span class="symbol">;</span></pre>
+
+</div>
 
 <h4>Output:</h4>
 
@@ -9018,12 +9409,18 @@ ORDER BY age DESC;
 
 <h4>Example 3 – Sort by Multiple Columns:</h4>
 
-<pre>
--- Sort by department first, then by age within department
-SELECT student_name, age, department
-FROM students
-ORDER BY department ASC, age DESC;
-</pre>
+<div class="code-box">
+
+    <div class="code-title">
+        order_by_multiple_columns.sql
+    </div>
+
+<pre><span class="comment">-- Sort by department first, then by age within department</span>
+<span class="keyword">SELECT</span> <span class="parameter">student_name</span><span class="symbol">,</span> <span class="parameter">age</span><span class="symbol">,</span> <span class="parameter">department</span>
+<span class="keyword">FROM</span> <span class="parameter">students</span>
+<span class="keyword">ORDER BY</span> <span class="parameter">department</span> <span class="keyword">ASC</span><span class="symbol">,</span> <span class="parameter">age</span> <span class="keyword">DESC</span><span class="symbol">;</span></pre>
+
+</div>
 
 <h4>Output:</h4>
 
@@ -9091,18 +9488,30 @@ ORDER BY department ASC, age DESC;
 <p>Return only unique (different) values, removing duplicates</p>
 
 <h4>Syntax:</h4>
-<pre>
-SELECT DISTINCT column1
-FROM table_name;
-</pre>
+<div class="code-box">
+
+    <div class="code-title">
+        select_distinct.sql
+    </div>
+
+<pre><span class="keyword">SELECT</span> <span class="keyword">DISTINCT</span> <span class="parameter">column1</span>
+<span class="keyword">FROM</span> <span class="parameter">table_name</span><span class="symbol">;</span></pre>
+
+</div>
 
 <h4>Example:</h4>
 
-<pre>
--- Get all departments (with duplicates)
-SELECT department
-FROM students;
-</pre>
+<div class="code-box">
+
+    <div class="code-title">
+        select_departments_duplicates.sql
+    </div>
+
+<pre><span class="comment">-- Get all departments (with duplicates)</span>
+<span class="keyword">SELECT</span> <span class="parameter">department</span>
+<span class="keyword">FROM</span> <span class="parameter">students</span><span class="symbol">;</span></pre>
+
+</div>
 
 <h4>Output (with duplicates):</h4>
 
@@ -9127,11 +9536,17 @@ FROM students;
     </tr>
 </table>
 
-<pre>
--- Get unique departments (no duplicates)
-SELECT DISTINCT department
-FROM students;
-</pre>
+<div class="code-box">
+
+    <div class="code-title">
+        select_distinct_departments.sql
+    </div>
+
+<pre><span class="comment">-- Get unique departments (no duplicates)</span>
+<span class="keyword">SELECT</span> <span class="keyword">DISTINCT</span> <span class="parameter">department</span>
+<span class="keyword">FROM</span> <span class="parameter">students</span><span class="symbol">;</span></pre>
+
+</div>
 
 <h4>Output (DISTINCT):</h4>
 
@@ -9155,17 +9570,24 @@ FROM students;
 
 <h4>More DISTINCT Examples:</h4>
 
-<pre>
--- Count unique departments
-SELECT COUNT(DISTINCT department)
-FROM students;
--- Result: 4
+<div class="code-box">
 
--- Get unique age and department combinations
-SELECT DISTINCT age, department
-FROM students
-ORDER BY age;
+    <div class="code-title">
+        distinct-query.sql
+    </div>
+
+<pre><span class="comment">-- Count unique departments</span>
+<span class="keyword">SELECT</span> <span class="function">COUNT</span>(<span class="keyword">DISTINCT</span> department)
+<span class="keyword">FROM</span> students;
+<span class="comment">-- Result: 4</span>
+
+<span class="comment">-- Get unique age and department combinations</span>
+<span class="keyword">SELECT DISTINCT</span> age, department
+<span class="keyword">FROM</span> students
+<span class="keyword">ORDER BY</span> age;
 </pre>
+
+</div>
 
 <h4>Output (DISTINCT age, department):</h4>
 
@@ -9229,24 +9651,40 @@ ORDER BY age;
 
 <h4>Syntax for Aliases:</h4>
 
-<pre>
-SELECT column_name1 alias_name1,
-       column_name2 alias_name2,
-       column_name3 alias_name3
-FROM table_name table_alias;
+<div class="code-box">
+
+    <div class="code-title">
+        alias-example.sql
+    </div>
+
+<pre><span class="keyword">SELECT</span> column_name1 <span class="function">alias_name1</span>,
+       column_name2 <span class="function">alias_name2</span>,
+       column_name3 <span class="function">alias_name3</span>
+<span class="keyword">FROM</span> table_name <span class="function">table_alias</span>;
 </pre>
+
+</div>
+
+
 
 <h3>i) COLUMN LEVEL ALIAS</h3>
 
 <h4>Column Alias Example - Your Exact Example:</h4>
 
-<pre>
--- Your example from notes (CORRECT WAY)
-SELECT deptno X,
-       dname Y,
-       loc Z
-FROM dept D;
+<div class="code-box">
+
+    <div class="code-title">
+        alias-short-form.sql
+    </div>
+
+<pre><span class="comment">-- Your example from notes (CORRECT WAY)</span>
+<span class="keyword">SELECT</span> deptno <span class="alias">X</span>,
+       dname <span class="alias">Y</span>,
+       loc <span class="alias">Z</span>
+<span class="keyword">FROM</span> dept <span class="alias">D</span>;
 </pre>
+
+</div>
 
 <h4>In this query:</h4>
 <ul>
@@ -9261,24 +9699,38 @@ FROM dept D;
 <p>Change column names in output for better readability</p>
 
 <h4>Syntax:</h4>
-<pre>
-SELECT column1 AS alias1, column2 alias2
-FROM table_name;
+<div class="code-box">
+
+    <div class="code-title">
+        alias-basic.sql
+    </div>
+
+<pre><span class="keyword">SELECT</span> column1 <span class="keyword">AS</span> <span class="alias">alias1</span>, column2 <span class="alias">alias2</span>
+<span class="keyword">FROM</span> table_name;
 </pre>
+
+</div>
 
 <h4>Example:</h4>
 
-<pre>
--- Without aliases
-SELECT student_name, age, department
-FROM students;
+<div class="code-box">
 
--- With aliases
-SELECT student_name AS Name,
-       age AS Age,
-       department AS Department
-FROM students;
+    <div class="code-title">
+        alias-comparison.sql
+    </div>
+
+<pre><span class="comment">-- Without aliases</span>
+<span class="keyword">SELECT</span> student_name, age, department
+<span class="keyword">FROM</span> students;
+
+<span class="comment">-- With aliases</span>
+<span class="keyword">SELECT</span> student_name <span class="keyword">AS</span> <span class="alias">Name</span>,
+       age <span class="keyword">AS</span> <span class="alias">Age</span>,
+       department <span class="keyword">AS</span> <span class="alias">Department</span>
+<span class="keyword">FROM</span> students;
 </pre>
+
+</div>
 
 <h4>Output Comparison:</h4>
 
@@ -9295,34 +9747,48 @@ FROM students;
 
 <h4>More Alias Examples:</h4>
 
-<pre>
--- Alias with spaces (use quotes)
-SELECT student_name AS "Student Name",
-       student_email AS "Email Address"
-FROM students;
+<div class="code-box">
 
--- Alias for calculation
-SELECT student_name,
-       age AS "Student Age",
-       age + 1 AS "Next Year Age"
-FROM students;
+    <div class="code-title">
+        alias-advanced.sql
+    </div>
 
--- Alias without AS (works too)
-SELECT student_name Name,
-       age Age
-FROM students;
+<pre><span class="comment">-- Alias with spaces (use quotes)</span>
+<span class="keyword">SELECT</span> student_name <span class="keyword">AS</span> <span class="alias">"Student Name"</span>,
+       student_email <span class="keyword">AS</span> <span class="alias">"Email Address"</span>
+<span class="keyword">FROM</span> students;
+
+<span class="comment">-- Alias for calculation</span>
+<span class="keyword">SELECT</span> student_name,
+       age <span class="keyword">AS</span> <span class="alias">"Student Age"</span>,
+       age + 1 <span class="keyword">AS</span> <span class="alias">"Next Year Age"</span>
+<span class="keyword">FROM</span> students;
+
+<span class="comment">-- Alias without AS (works too)</span>
+<span class="keyword">SELECT</span> student_name <span class="alias">Name</span>,
+       age <span class="alias">Age</span>
+<span class="keyword">FROM</span> students;
 </pre>
+
+</div>
 
 <h3>Complete SELECT Examples</h3>
 
 <h4>Example 1 – Basic Query:</h4>
 
-<pre>
-SELECT student_name, department
-FROM students
-WHERE age > 20
-ORDER BY department ASC;
+<div class="code-box">
+
+    <div class="code-title">
+        where-orderby.sql
+    </div>
+
+<pre><span class="keyword">SELECT</span> student_name, department
+<span class="keyword">FROM</span> students
+<span class="keyword">WHERE</span> age &gt; 20
+<span class="keyword">ORDER BY</span> department <span class="keyword">ASC</span>;
 </pre>
+
+</div>
 
 <table border="1" class="notes-table" cellpadding="10">
     <tr>
@@ -9345,15 +9811,22 @@ ORDER BY department ASC;
 
 <h4>Example 2 – Complex Query:</h4>
 
-<pre>
-SELECT DISTINCT department,
-       COUNT(*) AS total_students,
-       AVG(age) AS average_age
-FROM students
-WHERE age BETWEEN 20 AND 22
-GROUP BY department
-ORDER BY total_students DESC;
+<div class="code-box">
+
+    <div class="code-title">
+        groupby-aggregate.sql
+    </div>
+
+<pre><span class="keyword">SELECT</span> <span class="keyword">DISTINCT</span> department,
+       <span class="function">COUNT</span>(*) <span class="keyword">AS</span> <span class="alias">total_students</span>,
+       <span class="function">AVG</span>(age) <span class="keyword">AS</span> <span class="alias">average_age</span>
+<span class="keyword">FROM</span> students
+<span class="keyword">WHERE</span> age <span class="keyword">BETWEEN</span> 20 <span class="keyword">AND</span> 22
+<span class="keyword">GROUP BY</span> department
+<span class="keyword">ORDER BY</span> total_students <span class="keyword">DESC</span>;
 </pre>
+
+</div>
 
 <h3>SELECT Best Practices</h3>
 
@@ -9492,21 +9965,29 @@ A **Transaction** is a logical unit of work that consists of one or more SQL sta
 
 <h4>Real-World Transaction Example:</h4>
 
-<pre>
--- Bank Money Transfer Transaction
--- Step 1: Deduct 10000 from Rahul's account
-UPDATE accounts
-SET balance = balance - 10000
-WHERE account_holder = 'Rahul';
+<div class="code-box">
 
--- Step 2: Add 10000 to Priya's account
-UPDATE accounts
-SET balance = balance + 10000
-WHERE account_holder = 'Priya';
+    <div class="code-title">
+        transaction-bank-transfer.sql
+    </div>
 
--- Step 3: Save both changes together
-COMMIT;
+<pre><span class="comment">-- Bank Money Transfer Transaction</span>
+
+<span class="comment">-- Step 1: Deduct 10000 from Rahul's account</span>
+<span class="keyword">UPDATE</span> accounts
+<span class="keyword">SET</span> balance = balance - 10000
+<span class="keyword">WHERE</span> account_holder = 'Rahul';
+
+<span class="comment">-- Step 2: Add 10000 to Priya's account</span>
+<span class="keyword">UPDATE</span> accounts
+<span class="keyword">SET</span> balance = balance + 10000
+<span class="keyword">WHERE</span> account_holder = 'Priya';
+
+<span class="comment">-- Step 3: Save both changes together</span>
+<span class="keyword">COMMIT</span>;
 </pre>
+
+</div>
 
 <p>
 <strong>Important:</strong> If Step 2 fails, Step 1 must also be undone (rollback) – money should not disappear!
@@ -9514,20 +9995,28 @@ COMMIT;
 
 <h3>Transaction Example in Student Database</h3>
 
-<pre>
--- Transaction: Enroll student in course
--- Step 1: Add enrollment record
-INSERT INTO enrollments (enrollment_id, student_id, course_id)
-VALUES (101, 1, 5);
+<div class="code-box">
 
--- Step 2: Update course seat count
-UPDATE courses
-SET seats_available = seats_available - 1
-WHERE course_id = 5;
+    <div class="code-title">
+        transaction-course-enrollment.sql
+    </div>
 
--- Step 3: Commit both changes
-COMMIT;
+<pre><span class="comment">-- Transaction: Enroll student in course</span>
+
+<span class="comment">-- Step 1: Add enrollment record</span>
+<span class="keyword">INSERT INTO</span> enrollments (enrollment_id, student_id, course_id)
+<span class="keyword">VALUES</span> (101, 1, 5);
+
+<span class="comment">-- Step 2: Update course seat count</span>
+<span class="keyword">UPDATE</span> courses
+<span class="keyword">SET</span> seats_available = seats_available - 1
+<span class="keyword">WHERE</span> course_id = 5;
+
+<span class="comment">-- Step 3: Commit both changes</span>
+<span class="keyword">COMMIT</span>;
 </pre>
+
+</div>
 
 <h3>TCL Commands Overview</h3>
 
@@ -9563,9 +10052,16 @@ COMMIT;
 <p>Permanently saves all changes made during the current transaction to the database</p>
 
 <h4>Syntax:</h4>
-<pre>
-COMMIT;
+<div class="code-box">
+
+    <div class="code-title">
+        commit.sql
+    </div>
+
+<pre><span class="keyword">COMMIT</span>;
 </pre>
+
+</div>
 
 <h4>When COMMIT is Needed:</h4>
 <table border="1" class="notes-table" cellpadding="10">
@@ -9603,49 +10099,63 @@ COMMIT;
 
 <h4>Basic COMMIT Example:</h4>
 
-<pre>
--- Step 1: Insert new student
-INSERT INTO students (student_id, student_name, student_email, age, department)
-VALUES (6, 'Neha Sharma', 'neha@email.com', 20, 'Chemistry');
+<div class="code-box">
 
--- Step 2: Check if inserted (visible in your session)
-SELECT * FROM students WHERE student_id = 6;
--- Shows the new student
+    <div class="code-title">
+        insert-check-commit.sql
+    </div>
 
--- Step 3: Commit to save permanently
-COMMIT;
+<pre><span class="comment">-- Step 1: Insert new student</span>
+<span class="keyword">INSERT INTO</span> students (student_id, student_name, student_email, age, department)
+<span class="keyword">VALUES</span> (6, 'Neha Sharma', 'neha@email.com', 20, 'Chemistry');
 
--- Step 4: Verify saved (visible to others too)
-SELECT * FROM students WHERE student_id = 6;
--- Student is now permanently saved
+<span class="comment">-- Step 2: Check if inserted (visible in your session)</span>
+<span class="keyword">SELECT</span> * <span class="keyword">FROM</span> students <span class="keyword">WHERE</span> student_id = 6;
+<span class="comment">-- Shows the new student</span>
+
+<span class="comment">-- Step 3: Commit to save permanently</span>
+<span class="keyword">COMMIT</span>;
+
+<span class="comment">-- Step 4: Verify saved (visible to others too)</span>
+<span class="keyword">SELECT</span> * <span class="keyword">FROM</span> students <span class="keyword">WHERE</span> student_id = 6;
+<span class="comment">-- Student is now permanently saved</span>
 </pre>
+
+</div>
 
 <h4>Complete Transaction with COMMIT:</h4>
 
-<pre>
--- Transaction: Add new student and enroll in course
+<div class="code-box">
 
--- Step 1: Insert student
-INSERT INTO students (student_id, student_name, student_email, age, department)
-VALUES (7, 'Karan Malhotra', 'karan@email.com', 21, 'Computer Science');
+    <div class="code-title">
+        transaction-full-flow.sql
+    </div>
 
--- Step 2: Insert enrollment
-INSERT INTO enrollments (enrollment_id, student_id, course_id)
-VALUES (102, 7, 1);
+<pre><span class="comment">-- Transaction: Add new student and enroll in course</span>
 
--- Step 3: Update course seats
-UPDATE courses
-SET seats_available = seats_available - 1
-WHERE course_id = 1;
+<span class="comment">-- Step 1: Insert student</span>
+<span class="keyword">INSERT INTO</span> students (student_id, student_name, student_email, age, department)
+<span class="keyword">VALUES</span> (7, 'Karan Malhotra', 'karan@email.com', 21, 'Computer Science');
 
--- Step 4: All successful – commit
-COMMIT;
+<span class="comment">-- Step 2: Insert enrollment</span>
+<span class="keyword">INSERT INTO</span> enrollments (enrollment_id, student_id, course_id)
+<span class="keyword">VALUES</span> (102, 7, 1);
 
--- Step 5: Verify all changes
-SELECT * FROM students WHERE student_id = 7;
-SELECT * FROM enrollments WHERE enrollment_id = 102;
-SELECT seats_available FROM courses WHERE course_id = 1;
+<span class="comment">-- Step 3: Update course seats</span>
+<span class="keyword">UPDATE</span> courses
+<span class="keyword">SET</span> seats_available = seats_available - 1
+<span class="keyword">WHERE</span> course_id = 1;
+
+<span class="comment">-- Step 4: All successful – commit</span>
+<span class="keyword">COMMIT</span>;
+
+<span class="comment">-- Step 5: Verify all changes</span>
+<span class="keyword">SELECT</span> * <span class="keyword">FROM</span> students <span class="keyword">WHERE</span> student_id = 7;
+<span class="keyword">SELECT</span> * <span class="keyword">FROM</span> enrollments <span class="keyword">WHERE</span> enrollment_id = 102;
+<span class="keyword">SELECT</span> seats_available <span class="keyword">FROM</span> courses <span class="keyword">WHERE</span> course_id = 1;
 </pre>
+
+</div>
 
 <h4>What Happens When You COMMIT:</h4>
 
@@ -9692,54 +10202,75 @@ SELECT seats_available FROM courses WHERE course_id = 1;
 <p>Undoes all changes made during the current transaction, reverting data to state before transaction started</p>
 
 <h4>Syntax:</h4>
-<pre>
-ROLLBACK;
+<div class="code-box">
+
+    <div class="code-title">
+        rollback.sql
+    </div>
+
+<pre><span class="keyword">ROLLBACK</span>;
 </pre>
+
+</div>
 
 <h4>Basic ROLLBACK Example:</h4>
 
-<pre>
--- Step 1: Insert student (but might be wrong)
-INSERT INTO students (student_id, student_name, student_email, age, department)
-VALUES (8, 'Wrong Student', 'wrong@email.com', 99, 'Unknown');
+<div class="code-box">
 
--- Step 2: Check insertion
-SELECT * FROM students WHERE student_id = 8;
--- Shows wrong student
+    <div class="code-title">
+        rollback-example.sql
+    </div>
 
--- Step 3: Decide to undo
-ROLLBACK;
+<pre><span class="comment">-- Step 1: Insert student (but might be wrong)</span>
+<span class="keyword">INSERT INTO</span> students (student_id, student_name, student_email, age, department)
+<span class="keyword">VALUES</span> (8, 'Wrong Student', 'wrong@email.com', 99, 'Unknown');
 
--- Step 4: Verify rollback
-SELECT * FROM students WHERE student_id = 8;
--- No row found (student deleted)
+<span class="comment">-- Step 2: Check insertion</span>
+<span class="keyword">SELECT</span> * <span class="keyword">FROM</span> students <span class="keyword">WHERE</span> student_id = 8;
+<span class="comment">-- Shows wrong student</span>
+
+<span class="comment">-- Step 3: Decide to undo</span>
+<span class="keyword">ROLLBACK</span>;
+
+<span class="comment">-- Step 4: Verify rollback</span>
+<span class="keyword">SELECT</span> * <span class="keyword">FROM</span> students <span class="keyword">WHERE</span> student_id = 8;
+<span class="comment">-- No row found (student deleted)</span>
 </pre>
+
+</div>
 
 <h4>Complete ROLLBACK Example:</h4>
 
-<pre>
--- Transaction: Update employee salary (potentially wrong)
+<div class="code-box">
 
--- Step 1: Check current salary
-SELECT emp_name, salary FROM employees WHERE emp_id = 1;
--- Current salary: 50000
+    <div class="code-title">
+        rollback-salary-update.sql
+    </div>
 
--- Step 2: Update salary
-UPDATE employees
-SET salary = 100000
-WHERE emp_id = 1;
+<pre><span class="comment">-- Transaction: Update employee salary (potentially wrong)</span>
 
--- Step 3: Check updated salary
-SELECT emp_name, salary FROM employees WHERE emp_id = 1;
--- Salary: 100000 (looks too high!)
+<span class="comment">-- Step 1: Check current salary</span>
+<span class="keyword">SELECT</span> emp_name, salary <span class="keyword">FROM</span> employees <span class="keyword">WHERE</span> emp_id = 1;
+<span class="comment">-- Current salary: 50000</span>
 
--- Step 4: Realize mistake
-ROLLBACK;
+<span class="comment">-- Step 2: Update salary</span>
+<span class="keyword">UPDATE</span> employees
+<span class="keyword">SET</span> salary = 100000
+<span class="keyword">WHERE</span> emp_id = 1;
 
--- Step 5: Verify rollback
-SELECT emp_name, salary FROM employees WHERE emp_id = 1;
--- Salary back to: 50000
+<span class="comment">-- Step 3: Check updated salary</span>
+<span class="keyword">SELECT</span> emp_name, salary <span class="keyword">FROM</span> employees <span class="keyword">WHERE</span> emp_id = 1;
+<span class="comment">-- Salary: 100000 (looks too high!)</span>
+
+<span class="comment">-- Step 4: Realize mistake</span>
+<span class="keyword">ROLLBACK</span>;
+
+<span class="comment">-- Step 5: Verify rollback</span>
+<span class="keyword">SELECT</span> emp_name, salary <span class="keyword">FROM</span> employees <span class="keyword">WHERE</span> emp_id = 1;
+<span class="comment">-- Salary back to: 50000</span>
 </pre>
+
+</div>
 
 <h4>ROLLBACK vs COMMIT Comparison:</h4>
 
@@ -9789,102 +10320,143 @@ SELECT emp_name, salary FROM employees WHERE emp_id = 1;
 
 <h4>Automatic ROLLBACK:</h4>
 
-<pre>
--- Transaction automatically rolls back if:
+<div class="code-box">
 
--- 1. System crash
--- 2. Database shutdown
--- 3. User disconnects without COMMIT
--- 4. Error in SQL statement
-UPDATE employees SET salary = 999999 WHERE emp_id = 999;
--- Error: emp_id 999 not found
--- Transaction automatically rolled back!
+    <div class="code-title">
+        auto-rollback.sql
+    </div>
+
+<pre><span class="comment">-- Transaction automatically rolls back if:</span>
+
+<span class="comment">-- 1. System crash</span>
+<span class="comment">-- 2. Database shutdown</span>
+<span class="comment">-- 3. User disconnects without COMMIT</span>
+<span class="comment">-- 4. Error in SQL statement</span>
+
+<span class="keyword">UPDATE</span> employees
+<span class="keyword">SET</span> salary = 999999
+<span class="keyword">WHERE</span> emp_id = 999;
+
+<span class="comment">-- Error: emp_id 999 not found</span>
+<span class="comment">-- Transaction automatically rolled back!</span>
 </pre>
+
+</div>
 
 <h3>3. SAVEPOINT – Mark Points Within Transaction</h3>
 
 <p><strong>SAVEPOINT</strong> marks a point within a transaction where you can rollback to later. Instead of rolling back entire transaction, you can rollback to specific savepoint</p>
 
 <h4>Syntax:</h4>
-<pre>
--- Create savepoint
-SAVEPOINT savepoint_name;
+<div class="code-box">
 
--- Rollback to savepoint
-ROLLBACK TO SAVEPOINT savepoint_name;
+    <div class="code-title">
+        savepoint-syntax.sql
+    </div>
+
+<pre><span class="comment">-- Create savepoint</span>
+<span class="keyword">SAVEPOINT</span> savepoint_name;
+
+<span class="comment">-- Rollback to savepoint</span>
+<span class="keyword">ROLLBACK TO SAVEPOINT</span> savepoint_name;
 </pre>
+
+</div>
 
 <h4>Basic SAVEPOINT Example:</h4>
 
-<pre>
--- Transaction with multiple steps
-INSERT INTO students (student_id, student_name, age, department)
-VALUES (9, 'Student A', 20, 'CS');
+<div class="code-box">
 
--- Mark savepoint after first insert
-SAVEPOINT sp_after_first;
+    <div class="code-title">
+        savepoint-example.sql
+    </div>
 
-INSERT INTO students (student_id, student_name, age, department)
-VALUES (10, 'Student B', 21, 'Math');
+<pre><span class="comment">-- Transaction with multiple steps</span>
 
--- Mark savepoint after second insert
-SAVEPOINT sp_after_second;
+<span class="keyword">INSERT INTO</span> students (student_id, student_name, age, department)
+<span class="keyword">VALUES</span> (9, 'Student A', 20, 'CS');
 
-INSERT INTO students (student_id, student_name, age, department)
-VALUES (11, 'Student C', 22, 'Physics');
+<span class="comment">-- Mark savepoint after first insert</span>
+<span class="keyword">SAVEPOINT</span> sp_after_first;
 
--- Check all inserts
-SELECT student_id, student_name FROM students WHERE student_id >= 9;
--- Shows: Student A, Student B, Student C
+<span class="keyword">INSERT INTO</span> students (student_id, student_name, age, department)
+<span class="keyword">VALUES</span> (10, 'Student B', 21, 'Math');
 
--- Oops! Student C is wrong, rollback to sp_after_second
-ROLLBACK TO SAVEPOINT sp_after_second;
+<span class="comment">-- Mark savepoint after second insert</span>
+<span class="keyword">SAVEPOINT</span> sp_after_second;
 
--- Verify Student C removed
-SELECT student_id, student_name FROM students WHERE student_id >= 9;
--- Shows: Student A, Student B (Student C removed)
+<span class="keyword">INSERT INTO</span> students (student_id, student_name, age, department)
+<span class="keyword">VALUES</span> (11, 'Student C', 22, 'Physics');
 
--- Commit remaining changes
-COMMIT;
+<span class="comment">-- Check all inserts</span>
+<span class="keyword">SELECT</span> student_id, student_name
+<span class="keyword">FROM</span> students
+<span class="keyword">WHERE</span> student_id &gt;= 9;
+<span class="comment">-- Shows: Student A, Student B, Student C</span>
+
+<span class="comment">-- Oops! Student C is wrong, rollback to sp_after_second</span>
+<span class="keyword">ROLLBACK TO SAVEPOINT</span> sp_after_second;
+
+<span class="comment">-- Verify Student C removed</span>
+<span class="keyword">SELECT</span> student_id, student_name
+<span class="keyword">FROM</span> students
+<span class="keyword">WHERE</span> student_id &gt;= 9;
+<span class="comment">-- Shows: Student A, Student B (Student C removed)</span>
+
+<span class="comment">-- Commit remaining changes</span>
+<span class="keyword">COMMIT</span>;
 </pre>
+
+</div>
 
 <h4>Complete SAVEPOINT Example – Bank Transaction:</h4>
 
-<pre>
--- Transaction: Transfer money between 3 accounts
+<div class="code-box">
 
--- Step 1: Deduct from Account A
-UPDATE accounts
-SET balance = balance - 5000
-WHERE account_id = 1;
+    <div class="code-title">
+        savepoint-bank-transfer.sql
+    </div>
 
-SAVEPOINT sp_account_a;
+<pre><span class="comment">-- Transaction: Transfer money between 3 accounts</span>
 
--- Step 2: Add to Account B
-UPDATE accounts
-SET balance = balance + 3000
-WHERE account_id = 2;
+<span class="comment">-- Step 1: Deduct from Account A</span>
+<span class="keyword">UPDATE</span> accounts
+<span class="keyword">SET</span> balance = balance - 5000
+<span class="keyword">WHERE</span> account_id = 1;
 
-SAVEPOINT sp_account_b;
+<span class="keyword">SAVEPOINT</span> sp_account_a;
 
--- Step 3: Add to Account C
-UPDATE accounts
-SET balance = balance + 2000
-WHERE account_id = 3;
+<span class="comment">-- Step 2: Add to Account B</span>
+<span class="keyword">UPDATE</span> accounts
+<span class="keyword">SET</span> balance = balance + 3000
+<span class="keyword">WHERE</span> account_id = 2;
 
--- Check all updates
-SELECT account_id, balance FROM accounts WHERE account_id <= 3;
+<span class="keyword">SAVEPOINT</span> sp_account_b;
 
--- Oops! Account C update was wrong
-ROLLBACK TO SAVEPOINT sp_account_b;
+<span class="comment">-- Step 3: Add to Account C</span>
+<span class="keyword">UPDATE</span> accounts
+<span class="keyword">SET</span> balance = balance + 2000
+<span class="keyword">WHERE</span> account_id = 3;
 
--- Verify Account C not updated
-SELECT account_id, balance FROM accounts WHERE account_id <= 3;
--- Account A and B updated, C original
+<span class="comment">-- Check all updates</span>
+<span class="keyword">SELECT</span> account_id, balance
+<span class="keyword">FROM</span> accounts
+<span class="keyword">WHERE</span> account_id &lt;= 3;
 
--- Commit remaining changes
-COMMIT;
+<span class="comment">-- Oops! Account C update was wrong</span>
+<span class="keyword">ROLLBACK TO SAVEPOINT</span> sp_account_b;
+
+<span class="comment">-- Verify Account C not updated</span>
+<span class="keyword">SELECT</span> account_id, balance
+<span class="keyword">FROM</span> accounts
+<span class="keyword">WHERE</span> account_id &lt;= 3;
+<span class="comment">-- Account A and B updated, C original</span>
+
+<span class="comment">-- Commit remaining changes</span>
+<span class="keyword">COMMIT</span>;
 </pre>
+
+</div>
 
 <h4>SAVEPOINT vs ROLLBACK Comparison:</h4>
 
@@ -9928,58 +10500,83 @@ COMMIT;
 
 <h3>Complete Transaction Example – End-to-End</h3>
 
-<pre>
--- ===== SCENARIO: Successful Transaction =====
+<div class="code-box">
 
--- Start transaction
-INSERT INTO students (student_id, student_name, department) VALUES (12, 'Test Student', 'CS');
-INSERT INTO enrollments (enrollment_id, student_id, course_id) VALUES (103, 12, 1);
-UPDATE courses SET seats_available = seats_available - 1 WHERE course_id = 1;
+    <div class="code-title">
+        transaction-scenarios.sql
+    </div>
 
--- All successful
-COMMIT;
+<pre><span class="comment">-- ===== SCENARIO: Successful Transaction =====</span>
 
--- Verify
-SELECT * FROM students WHERE student_id = 12;
-SELECT * FROM enrollments WHERE enrollment_id = 103;
+<span class="comment">-- Start transaction</span>
+<span class="keyword">INSERT INTO</span> students (student_id, student_name, department)
+<span class="keyword">VALUES</span> (12, 'Test Student', 'CS');
 
+<span class="keyword">INSERT INTO</span> enrollments (enrollment_id, student_id, course_id)
+<span class="keyword">VALUES</span> (103, 12, 1);
 
--- ===== SCENARIO: Transaction with Error =====
+<span class="keyword">UPDATE</span> courses
+<span class="keyword">SET</span> seats_available = seats_available - 1
+<span class="keyword">WHERE</span> course_id = 1;
 
--- Start transaction
-INSERT INTO students (student_id, student_name, department) VALUES (13, 'Test 2', 'Math');
-INSERT INTO enrollments (enrollment_id, student_id, course_id) VALUES (104, 13, 999);
--- Error: course_id 999 not found!
+<span class="comment">-- All successful</span>
+<span class="keyword">COMMIT</span>;
 
--- Rollback entire transaction
-ROLLBACK;
-
--- Verify nothing inserted
-SELECT * FROM students WHERE student_id = 13;
--- No row found
+<span class="comment">-- Verify</span>
+<span class="keyword">SELECT</span> * <span class="keyword">FROM</span> students <span class="keyword">WHERE</span> student_id = 12;
+<span class="keyword">SELECT</span> * <span class="keyword">FROM</span> enrollments <span class="keyword">WHERE</span> enrollment_id = 103;
 
 
--- ===== SCENARIO: Transaction with SAVEPOINT =====
+<span class="comment">-- ===== SCENARIO: Transaction with Error =====</span>
 
--- Start transaction
-INSERT INTO students (student_id, student_name, department) VALUES (14, 'Test 3', 'CS');
-SAVEPOINT sp_1;
+<span class="comment">-- Start transaction</span>
+<span class="keyword">INSERT INTO</span> students (student_id, student_name, department)
+<span class="keyword">VALUES</span> (13, 'Test 2', 'Math');
 
-INSERT INTO students (student_id, student_name, department) VALUES (15, 'Test 4', 'Math');
-SAVEPOINT sp_2;
+<span class="keyword">INSERT INTO</span> enrollments (enrollment_id, student_id, course_id)
+<span class="keyword">VALUES</span> (104, 13, 999);
 
-INSERT INTO students (student_id, student_name, department) VALUES (16, 'Wrong Student', 'Invalid');
--- Error: Invalid department!
+<span class="comment">-- Error: course_id 999 not found!</span>
 
--- Rollback to sp_2 (keep first 2 inserts)
-ROLLBACK TO SAVEPOINT sp_2;
+<span class="comment">-- Rollback entire transaction</span>
+<span class="keyword">ROLLBACK</span>;
 
--- Verify
-SELECT student_id, student_name FROM students WHERE student_id >= 14;
--- Shows: Test 3, Test 4 (Wrong Student removed)
+<span class="comment">-- Verify nothing inserted</span>
+<span class="keyword">SELECT</span> * <span class="keyword">FROM</span> students <span class="keyword">WHERE</span> student_id = 13;
+<span class="comment">-- No row found</span>
 
-COMMIT;
+
+<span class="comment">-- ===== SCENARIO: Transaction with SAVEPOINT =====</span>
+
+<span class="comment">-- Start transaction</span>
+<span class="keyword">INSERT INTO</span> students (student_id, student_name, department)
+<span class="keyword">VALUES</span> (14, 'Test 3', 'CS');
+
+<span class="keyword">SAVEPOINT</span> sp_1;
+
+<span class="keyword">INSERT INTO</span> students (student_id, student_name, department)
+<span class="keyword">VALUES</span> (15, 'Test 4', 'Math');
+
+<span class="keyword">SAVEPOINT</span> sp_2;
+
+<span class="keyword">INSERT INTO</span> students (student_id, student_name, department)
+<span class="keyword">VALUES</span> (16, 'Wrong Student', 'Invalid');
+
+<span class="comment">-- Error: Invalid department!</span>
+
+<span class="comment">-- Rollback to sp_2 (keep first 2 inserts)</span>
+<span class="keyword">ROLLBACK TO SAVEPOINT</span> sp_2;
+
+<span class="comment">-- Verify</span>
+<span class="keyword">SELECT</span> student_id, student_name
+<span class="keyword">FROM</span> students
+<span class="keyword">WHERE</span> student_id &gt;= 14;
+<span class="comment">-- Shows: Test 3, Test 4 (Wrong Student removed)</span>
+
+<span class="keyword">COMMIT</span>;
 </pre>
+
+</div>
 
 <h3>Transaction Properties – ACID</h3>
 
@@ -10191,7 +10788,6 @@ In Oracle, **numeric data types** are used to store:
 
 <h3>1. INT Data Type</h3>
 
-<h4>Meaning:</h4>
 <p><strong>INT</strong> stores whole numbers (integers) — no decimal or fractional part allowed.</p>
 
 <h4>In Oracle:</h4>
@@ -10222,22 +10818,39 @@ In Oracle, **numeric data types** are used to store:
 
 <h4>Examples with INT:</h4>
 
-<pre>
--- Create table with INT column
-CREATE TABLE test_int (
-    id INT
+<div class="code-box">
+
+    <div class="code-title">
+        int-datatype-example.sql
+    </div>
+
+<pre><span class="comment">-- Create table with INT column</span>
+<span class="keyword">CREATE TABLE</span> test_int (
+    id <span class="datatype">INT</span>
 );
 
--- Insert valid whole numbers
-INSERT INTO test_int VALUES (123);        -- ✅ valid
-INSERT INTO test_int VALUES (-99999);     -- ✅ valid (negative integer)
-INSERT INTO test_int VALUES (0);          -- ✅ valid
-INSERT INTO test_int VALUES (5000000);    -- ✅ valid
+<span class="comment">-- Insert valid whole numbers</span>
+<span class="keyword">INSERT INTO</span> test_int
+<span class="keyword">VALUES</span> (123);        <span class="comment">-- ✅ Valid</span>
 
--- Insert decimal (INVALID)
-INSERT INTO test_int VALUES (45.67);      -- ❌ error (fractional part not allowed)
-INSERT INTO test_int VALUES (99.99);      -- ❌ error
+<span class="keyword">INSERT INTO</span> test_int
+<span class="keyword">VALUES</span> (-99999);     <span class="comment">-- ✅ Valid (negative integer)</span>
+
+<span class="keyword">INSERT INTO</span> test_int
+<span class="keyword">VALUES</span> (0);          <span class="comment">-- ✅ Valid</span>
+
+<span class="keyword">INSERT INTO</span> test_int
+<span class="keyword">VALUES</span> (5000000);    <span class="comment">-- ✅ Valid</span>
+
+<span class="comment">-- Insert decimal (INVALID)</span>
+<span class="keyword">INSERT INTO</span> test_int
+<span class="keyword">VALUES</span> (45.67);      <span class="comment">-- ❌ Error (fractional part not allowed)</span>
+
+<span class="keyword">INSERT INTO</span> test_int
+<span class="keyword">VALUES</span> (99.99);      <span class="comment">-- ❌ Error</span>
 </pre>
+
+</div>
 
 <h4>Error Message for Decimal:</h4>
 
@@ -10286,13 +10899,10 @@ INSERT INTO test_int VALUES (99.99);      -- ❌ error
 
 <h3>2. NUMBER Data Type</h3>
 
-<h4>Meaning:</h4>
 <p>In Oracle, the **NUMBER** data type is used to store both integer and floating-point numbers. It is very flexible because you can control precision and scale.</p>
 
-<h4>Syntax:</h4>
-<pre>
-NUMBER[(precision, scale)]
-</pre>
+<h4>Syntax:</h4> <span class="datatype">NUMBER</span>(<span class="parameter">precision</span>, <span class="parameter">scale</span>)
+
 
 <table border="1" class="notes-table" cellpadding="10">
     <tr>
@@ -10371,29 +10981,45 @@ NUMBER[(precision, scale)]
 
 <h4>Visual Breakdown of NUMBER(8,2):</h4>
 
-<pre>
-Number: 123456.78
+<div class="code-box">
 
-Digits:  1  2  3  4  5  6  .  7  8
-         ↑  ↑  ↑  ↑  ↑  ↑     ↑  ↑
-         └─────────────────┘  └──┘
-         6 digits before     2 digits after
-         decimal point       decimal point
-         
-Total digits = 6 + 2 = 8 ✅
-Scale = 2 (digits after decimal) ✅
+    <div class="code-title">
+        number-precision-scale.txt
+    </div>
+
+<pre><span class="comment">-- Example: Understanding Precision and Scale</span>
+
+<span class="number">Number:</span> 123456.78
+
+<span class="comment">Digits:      1  2  3  4  5  6  .  7  8</span>
+<span class="comment">             ↑  ↑  ↑  ↑  ↑  ↑     ↑  ↑</span>
+<span class="comment">             └─────────────────┘  └──┘</span>
+<span class="comment">             6 digits before     2 digits after</span>
+<span class="comment">             decimal point       decimal point</span>
+
+<span class="comment">Total digits (Precision) = 6 + 2 = 8 ✅</span>
+<span class="comment">Scale = 2 (digits after decimal) ✅</span>
 </pre>
+
+</div>
 
 <h4>Complete Example – Creating Table with NUMBER:</h4>
 
-<pre>
-CREATE TABLE employees (
-    emp_id NUMBER(5),        -- up to 5 digits (integer)
-    name VARCHAR2(50),
-    salary NUMBER(8,2),      -- 8 digits total, 2 after decimal
-    bonus NUMBER(5,-2)       -- rounds to nearest 100
+<div class="code-box">
+
+    <div class="code-title">
+        create-employees-table.sql
+    </div>
+
+<pre><span class="keyword">CREATE TABLE</span> employees (
+    emp_id <span class="datatype">NUMBER</span>(5),        <span class="comment">-- Up to 5 digits (integer)</span>
+    name <span class="datatype">VARCHAR2</span>(50),
+    salary <span class="datatype">NUMBER</span>(8,2),      <span class="comment">-- 8 digits total, 2 after decimal</span>
+    bonus <span class="datatype">NUMBER</span>(5,-2)       <span class="comment">-- Rounds to nearest 100</span>
 );
 </pre>
+
+</div>
 
 <table border="1" class="notes-table" cellpadding="10">
     <tr>
@@ -10440,17 +11066,30 @@ CREATE TABLE employees (
 
 <h4>Inserting Data with NUMBER:</h4>
 
-<pre>
--- Insert valid values
-INSERT INTO employees VALUES (1, 'Rahul', 50000.00, 5000);
-INSERT INTO employees VALUES (2, 'Priya', 75000.50, 12500);
-INSERT INTO employees VALUES (3, 'Amit', 45999.99, 3456);
+<div class="code-box">
 
-COMMIT;
+    <div class="code-title">
+        insert-employees.sql
+    </div>
 
--- Check data
-SELECT * FROM employees;
+<pre><span class="comment">-- Insert valid values</span>
+
+<span class="keyword">INSERT INTO</span> employees
+<span class="keyword">VALUES</span> (1, 'Rahul', 50000.00, 5000);
+
+<span class="keyword">INSERT INTO</span> employees
+<span class="keyword">VALUES</span> (2, 'Priya', 75000.50, 12500);
+
+<span class="keyword">INSERT INTO</span> employees
+<span class="keyword">VALUES</span> (3, 'Amit', 45999.99, 3456);
+
+<span class="keyword">COMMIT</span>;
+
+<span class="comment">-- Check data</span>
+<span class="keyword">SELECT</span> * <span class="keyword">FROM</span> employees;
 </pre>
+
+</div>
 
 <h4>Output:</h4>
 
@@ -10489,15 +11128,26 @@ SELECT * FROM employees;
 
 <h4>1. Default (No Precision/Scale Specified):</h4>
 
-<pre>
--- NUMBER without (p,s)
-CREATE TABLE test_default (
-    value NUMBER
+<div class="code-box">
+
+    <div class="code-title">
+        number-default.sql
+    </div>
+
+<pre><span class="comment">-- NUMBER without (precision, scale)</span>
+
+<span class="keyword">CREATE TABLE</span> test_default (
+    value <span class="datatype">NUMBER</span>
 );
 
-INSERT INTO test_default VALUES (12345678901234567890123456789012345678); -- ✅ valid (38 digits)
-INSERT INTO test_default VALUES (99.999); -- ✅ valid
+<span class="keyword">INSERT INTO</span> test_default
+<span class="keyword">VALUES</span> (12345678901234567890123456789012345678); <span class="comment">-- ✅ Valid (up to 38 digits)</span>
+
+<span class="keyword">INSERT INTO</span> test_default
+<span class="keyword">VALUES</span> (99.999); <span class="comment">-- ✅ Valid</span>
 </pre>
+
+</div>
 
 <p>
 <strong>Default:</strong> If you don't specify (p, s), Oracle allows up to **38 digits** total.
@@ -10505,15 +11155,26 @@ INSERT INTO test_default VALUES (99.999); -- ✅ valid
 
 <h4>2. Scale Zero (Integers):</h4>
 
-<pre>
--- Integer with explicit scale 0
-CREATE TABLE test_integer (
-    count NUMBER(10, 0)
+<div class="code-box">
+
+    <div class="code-title">
+        number-integer.sql
+    </div>
+
+<pre><span class="comment">-- Integer with explicit scale 0</span>
+
+<span class="keyword">CREATE TABLE</span> test_integer (
+    count <span class="datatype">NUMBER</span>(10, 0)
 );
 
-INSERT INTO test_integer VALUES (1234567890);  -- ✅ valid (10 digits)
-INSERT INTO test_integer VALUES (123.45);      -- ❌ error (decimal not allowed)
+<span class="keyword">INSERT INTO</span> test_integer
+<span class="keyword">VALUES</span> (1234567890);  <span class="comment">-- ✅ Valid (10 digits)</span>
+
+<span class="keyword">INSERT INTO</span> test_integer
+<span class="keyword">VALUES</span> (123.45);      <span class="comment">-- ❌ Error (decimal not allowed)</span>
 </pre>
+
+</div>
 
 <h4>3. Performance Tip:</h4>
 
@@ -10586,33 +11247,57 @@ INSERT INTO test_integer VALUES (123.45);      -- ❌ error (decimal not allowed
 
 <h3>3. Negative Scale (ROUNDING)</h3>
 
-<h4>What is Negative Scale?</h4>
-
 <p>
 <strong>Negative scale</strong> means Oracle rounds the value to the **left of the decimal point**.
 </p>
 
-<pre>
-NUMBER(p, -s)
+<div class="code-box">
 
-s = -1 → Round to nearest 10
-s = -2 → Round to nearest 100
-s = -3 → Round to nearest 1000
+    <div class="code-title">
+        number-negative-scale.sql
+    </div>
+
+<pre><span class="comment">-- NUMBER with Negative Scale</span>
+
+<span class="datatype">NUMBER</span>(p, -s)
+
+    s = -1  <span class="comment">-- Round to nearest 10</span>
+    s = -2  <span class="comment">-- Round to nearest 100</span>
+    s = -3  <span class="comment">-- Round to nearest 1000</span>
 </pre>
+
+</div>
 
 <h4>Example – NUMBER(8, -2):</h4>
 
-<pre>
-CREATE TABLE test_rounding (
-    value NUMBER(8, -2)
+<div class="code-box">
+
+    <div class="code-title">
+        number-negative-scale-example.sql
+    </div>
+
+<pre><span class="comment">-- Create table with NUMBER(8, -2)</span>
+
+<span class="keyword">CREATE TABLE</span> test_rounding (
+    value <span class="datatype">NUMBER</span>(8, -2)
 );
 
--- Insert values
-INSERT INTO test_rounding VALUES (1234);    -- Stored as: 1200
-INSERT INTO test_rounding VALUES (5678);    -- Stored as: 5700
-INSERT INTO test_rounding VALUES (9949);    -- Stored as: 9900
-INSERT INTO test_rounding VALUES (9951);    -- Stored as: 10000
+<span class="comment">-- Insert values</span>
+
+<span class="keyword">INSERT INTO</span> test_rounding
+<span class="keyword">VALUES</span> (1234);    <span class="comment">-- Stored as: 1200</span>
+
+<span class="keyword">INSERT INTO</span> test_rounding
+<span class="keyword">VALUES</span> (5678);    <span class="comment">-- Stored as: 5700</span>
+
+<span class="keyword">INSERT INTO</span> test_rounding
+<span class="keyword">VALUES</span> (9949);    <span class="comment">-- Stored as: 9900</span>
+
+<span class="keyword">INSERT INTO</span> test_rounding
+<span class="keyword">VALUES</span> (9951);    <span class="comment">-- Stored as: 10000</span>
 </pre>
+
+</div>
 
 <h4>How Rounding Works:</h4>
 
@@ -10646,21 +11331,30 @@ INSERT INTO test_rounding VALUES (9951);    -- Stored as: 10000
 
 <h4>Visual Explanation of NUMBER(8, -2):</h4>
 
-<pre>
-Original Number: 5678
+<div class="code-box">
 
-Digits:  5  6  7  8
-         ↑  ↑  ↑  ↑
-         │  │  └──┬─ round here (scale = -2)
-         │  │     └─ nearest 100
-         │  └─────── tens digit (7)
-         └────────── hundreds digit (6)
+    <div class="code-title">
+        number-rounding-explanation.txt
+    </div>
 
-Round 5678 to nearest 100:
-- Look at tens digit: 7
-- 7 ≥ 5 → round UP
-- Result: 5700 ✅
+<pre><span class="comment">-- Example: NUMBER(8, -2) Rounding</span>
+
+<span class="number">Original Number:</span> 5678
+
+<span class="comment">Digits:  5  6  7  8</span>
+<span class="comment">         ↑  ↑  ↑  ↑</span>
+<span class="comment">         │  │  └──┬─ Round here (scale = -2)</span>
+<span class="comment">         │  │     └─ Nearest 100</span>
+<span class="comment">         │  └─────── Tens digit (7)</span>
+<span class="comment">         └────────── Hundreds digit (6)</span>
+
+<span class="comment">Round 5678 to nearest 100:</span>
+<span class="comment">    - Look at tens digit: 7</span>
+<span class="comment">    - 7 ≥ 5 → Round UP</span>
+<span class="comment">    - Result: 5700 ✅</span>
 </pre>
+
+</div>
 
 <h4>Key Points on Negative Scale:</h4>
 
@@ -10722,56 +11416,104 @@ Round 5678 to nearest 100:
     </tr>
 </table>
 
-<h3>Complete Practical Examples</h3>
-
 <h4>Example 1 – Using INT:</h4>
 
-<pre>
-CREATE TABLE products_int (
-    product_id INT,
-    quantity INT,
-    price INT
+<div class="code-box">
+
+    <div class="code-title">
+        int-datatype-products.sql
+    </div>
+
+<pre><span class="comment">-- Create table using INT data type</span>
+
+<span class="keyword">CREATE TABLE</span> products_int (
+    product_id <span class="datatype">INT</span>,
+    quantity <span class="datatype">INT</span>,
+    price <span class="datatype">INT</span>
 );
 
-INSERT INTO products_int VALUES (1, 100, 500);     -- ✅ valid
-INSERT INTO products_int VALUES (2, 250, 750);     -- ✅ valid
-INSERT INTO products_int VALUES (3, 123.45, 500);  -- ❌ error (quantity has decimal)
+<span class="comment">-- Insert valid values</span>
 
-COMMIT;
+<span class="keyword">INSERT INTO</span> products_int
+<span class="keyword">VALUES</span> (1, 100, 500);     <span class="comment">-- ✅ Valid</span>
+
+<span class="keyword">INSERT INTO</span> products_int
+<span class="keyword">VALUES</span> (2, 250, 750);     <span class="comment">-- ✅ Valid</span>
+
+<span class="keyword">INSERT INTO</span> products_int
+<span class="keyword">VALUES</span> (3, 123.45, 500);  <span class="comment">-- ❌ Error (quantity has decimal)</span>
+
+<span class="keyword">COMMIT</span>;
 </pre>
+
+</div>
 
 <h4>Example 2 – Using NUMBER(p,0) for Integers:</h4>
 
-<pre>
-CREATE TABLE products_number (
-    product_id NUMBER(10, 0),
-    quantity NUMBER(5, 0),
-    price NUMBER(8, 0)
+<div class="code-box">
+
+    <div class="code-title">
+        number-products.sql
+    </div>
+
+<pre><span class="comment">-- Create table using NUMBER data type</span>
+
+<span class="keyword">CREATE TABLE</span> products_number (
+    product_id <span class="datatype">NUMBER</span>(10, 0),
+    quantity <span class="datatype">NUMBER</span>(5, 0),
+    price <span class="datatype">NUMBER</span>(8, 0)
 );
 
-INSERT INTO products_number VALUES (1, 100, 500);     -- ✅ valid
-INSERT INTO products_number VALUES (2, 250, 750);     -- ✅ valid
-INSERT INTO products_number VALUES (3, 123, 500);     -- ✅ valid
+<span class="comment">-- Insert valid values</span>
+
+<span class="keyword">INSERT INTO</span> products_number
+<span class="keyword">VALUES</span> (1, 100, 500);     <span class="comment">-- ✅ Valid</span>
+
+<span class="keyword">INSERT INTO</span> products_number
+<span class="keyword">VALUES</span> (2, 250, 750);     <span class="comment">-- ✅ Valid</span>
+
+<span class="keyword">INSERT INTO</span> products_number
+<span class="keyword">VALUES</span> (3, 123, 500);     <span class="comment">-- ✅ Valid</span>
 </pre>
+
+</div>
 
 <h4>Example 3 – Using NUMBER(p,s) for Decimals:</h4>
 
-<pre>
-CREATE TABLE financial (
-    transaction_id NUMBER(10, 0),
-    amount NUMBER(15, 2),
-    tax NUMBER(10, 2),
-    total NUMBER(15, 2)
+<div class="code-box">
+
+    <div class="code-title">
+        financial-table.sql
+    </div>
+
+<pre><span class="comment">-- Create table for financial transactions</span>
+
+<span class="keyword">CREATE TABLE</span> financial (
+    transaction_id <span class="datatype">NUMBER</span>(10, 0),
+    amount <span class="datatype">NUMBER</span>(15, 2),
+    tax <span class="datatype">NUMBER</span>(10, 2),
+    total <span class="datatype">NUMBER</span>(15, 2)
 );
 
-INSERT INTO financial VALUES (1, 10000.00, 500.00, 10500.00);
-INSERT INTO financial VALUES (2, 25000.50, 1250.03, 26250.53);
-INSERT INTO financial VALUES (3, 9999.99, 499.99, 10499.98);
+<span class="comment">-- Insert sample records</span>
 
-COMMIT;
+<span class="keyword">INSERT INTO</span> financial
+<span class="keyword">VALUES</span> (1, 10000.00, 500.00, 10500.00);
 
-SELECT * FROM financial;
+<span class="keyword">INSERT INTO</span> financial
+<span class="keyword">VALUES</span> (2, 25000.50, 1250.03, 26250.53);
+
+<span class="keyword">INSERT INTO</span> financial
+<span class="keyword">VALUES</span> (3, 9999.99, 499.99, 10499.98);
+
+<span class="keyword">COMMIT</span>;
+
+<span class="comment">-- Display all records</span>
+
+<span class="keyword">SELECT</span> * <span class="keyword">FROM</span> financial;
 </pre>
+
+</div>
 
 <h4>Output:</h4>
 
@@ -10804,21 +11546,39 @@ SELECT * FROM financial;
 
 <h4>Example 4 – Using Negative Scale:</h4>
 
-<pre>
-CREATE TABLE approximate (
-    id NUMBER(5, 0),
-    population NUMBER(10, -3),  -- rounds to nearest 1000
-    revenue NUMBER(12, -2)       -- rounds to nearest 100
+<div class="code-box">
+
+    <div class="code-title">
+        approximate-values.sql
+    </div>
+
+<pre><span class="comment">-- Create table using NUMBER with negative scale</span>
+
+<span class="keyword">CREATE TABLE</span> approximate (
+    id <span class="datatype">NUMBER</span>(5, 0),
+    population <span class="datatype">NUMBER</span>(10, -3),  <span class="comment">-- Rounds to nearest 1000</span>
+    revenue <span class="datatype">NUMBER</span>(12, -2)       <span class="comment">-- Rounds to nearest 100</span>
 );
 
-INSERT INTO approximate VALUES (1, 1234567, 5678900);
-INSERT INTO approximate VALUES (2, 8945621, 1234567);
-INSERT INTO approximate VALUES (3, 5678912, 9999999);
+<span class="comment">-- Insert sample records</span>
 
-COMMIT;
+<span class="keyword">INSERT INTO</span> approximate
+<span class="keyword">VALUES</span> (1, 1234567, 5678900);
 
-SELECT * FROM approximate;
+<span class="keyword">INSERT INTO</span> approximate
+<span class="keyword">VALUES</span> (2, 8945621, 1234567);
+
+<span class="keyword">INSERT INTO</span> approximate
+<span class="keyword">VALUES</span> (3, 5678912, 9999999);
+
+<span class="keyword">COMMIT</span>;
+
+<span class="comment">-- Display all records</span>
+
+<span class="keyword">SELECT</span> * <span class="keyword">FROM</span> approximate;
 </pre>
+
+</div>
 
 <h4>Output (with rounding):</h4>
 
@@ -11009,9 +11769,8 @@ Today we will learn about **Character/String Data Types** in Oracle Database. Th
 
 <h4>String Representation:</h4>
 
-<pre>
 STRING CAN BE REPRESENTED WITH '<STRING>'
-</pre>
+
 
 <table border="1" class="notes-table" cellpadding="10">
     <tr>
@@ -11043,18 +11802,31 @@ STRING CAN BE REPRESENTED WITH '<STRING>'
 
 <h4>Examples in CREATE TABLE:</h4>
 
-<pre>
--- Correct usage
-CREATE TABLE employees (
-    ename CHAR(10)
+<div class="code-box">
+
+    <div class="code-title">
+        char-datatype-example.sql
+    </div>
+
+<pre><span class="comment">-- Correct usage</span>
+
+<span class="keyword">CREATE TABLE</span> employees (
+    ename <span class="datatype">CHAR</span>(10)
 );
 
-INSERT INTO employees VALUES ('SMITH');  -- ✅ ALLOWED
+<span class="keyword">INSERT INTO</span> employees
+<span class="keyword">VALUES</span> ('SMITH');  <span class="comment">-- ✅ Allowed</span>
 
--- Incorrect usage
-INSERT INTO employees VALUES (SMITH);    -- ❌ ERROR
-INSERT INTO employees VALUES (1021);     -- ❌ ERROR (number, not string)
+<span class="comment">-- Incorrect usage</span>
+
+<span class="keyword">INSERT INTO</span> employees
+<span class="keyword">VALUES</span> (SMITH);    <span class="comment">-- ❌ Error</span>
+
+<span class="keyword">INSERT INTO</span> employees
+<span class="keyword">VALUES</span> (1021);     <span class="comment">-- ❌ Error (number, not string)</span>
 </pre>
+
+</div>
 
 <h3>Two Types of Character/String Data Types</h3>
 
@@ -11148,24 +11920,33 @@ INSERT INTO employees VALUES (1021);     -- ❌ ERROR (number, not string)
 
 <h4>How CHAR Works (Memory Wastage):</h4>
 
-<pre>
-SNAME CHAR(10)
+<div class="code-box">
 
--- Example 1: 'HELLO' (5 characters)
+    <div class="code-title">
+        char-storage-example.txt
+    </div>
+
+<pre><span class="comment">-- CHAR(10) Storage Example</span>
+
+SNAME <span class="datatype">CHAR</span>(10)
+
+<span class="comment">-- Example 1: 'HELLO' (5 characters)</span>
 'H' 'E' 'L' 'L' 'O' ' ' ' ' ' ' ' ' ' '
  ↑   ↑   ↑   ↑   ↑   ↑   ↑   ↑   ↑   ↑
- 5 BYTES USED = 5 BYTES WASTED (padded with 5 spaces)
+<span class="comment"> 5 bytes used + 5 spaces added (fixed length = 10 bytes)</span>
 
--- Example 2: 'HEL' (3 characters)
+<span class="comment">-- Example 2: 'HEL' (3 characters)</span>
 'H' 'E' 'L' ' ' ' ' ' ' ' ' ' ' ' ' ' '
  ↑   ↑   ↑   ↑   ↑   ↑   ↑   ↑   ↑   ↑
- 3 BYTES USED = 7 BYTES WASTED (padded with 7 spaces)
+<span class="comment"> 3 bytes used + 7 spaces added (fixed length = 10 bytes)</span>
 
--- Example 3: 'HE' (2 characters)
+<span class="comment">-- Example 3: 'HE' (2 characters)</span>
 'H' 'E' ' ' ' ' ' ' ' ' ' ' ' ' ' ' ' '
  ↑   ↑   ↑   ↑   ↑   ↑   ↑   ↑   ↑   ↑
- 2 BYTES USED = 8 BYTES WASTED (padded with 8 spaces)
+<span class="comment"> 2 bytes used + 8 spaces added (fixed length = 10 bytes)</span>
 </pre>
+
+</div>
 
 <h4>Visual Representation:</h4>
 
@@ -11243,21 +12024,43 @@ SNAME CHAR(10)
 
 <h4>Complete Example with CHAR:</h4>
 
-<pre>
-CREATE TABLE test_char (
-    sname CHAR(10)
+<div class="code-box">
+
+    <div class="code-title">
+        char-storage-demo.sql
+    </div>
+
+<pre><span class="comment">-- Create table with CHAR(10)</span>
+
+<span class="keyword">CREATE TABLE</span> test_char (
+    sname <span class="datatype">CHAR</span>(10)
 );
 
-INSERT INTO test_char VALUES ('HELLO');   -- 5 bytes used, 5 bytes wasted
-INSERT INTO test_char VALUES ('HEL');     -- 3 bytes used, 7 bytes wasted
-INSERT INTO test_char VALUES ('HE');      -- 2 bytes used, 8 bytes wasted
-INSERT INTO test_char VALUES ('SMITH');   -- 6 bytes used, 4 bytes wasted
+<span class="comment">-- Insert sample values</span>
 
-COMMIT;
+<span class="keyword">INSERT INTO</span> test_char
+<span class="keyword">VALUES</span> ('HELLO');   <span class="comment">-- 5 characters + 5 spaces (stored as 10 characters)</span>
 
--- Check actual storage
-SELECT sname, LENGTH(sname) AS length, VSIZE(sname) AS bytes_used FROM test_char;
+<span class="keyword">INSERT INTO</span> test_char
+<span class="keyword">VALUES</span> ('HEL');     <span class="comment">-- 3 characters + 7 spaces (stored as 10 characters)</span>
+
+<span class="keyword">INSERT INTO</span> test_char
+<span class="keyword">VALUES</span> ('HE');      <span class="comment">-- 2 characters + 8 spaces (stored as 10 characters)</span>
+
+<span class="keyword">INSERT INTO</span> test_char
+<span class="keyword">VALUES</span> ('SMITH');   <span class="comment">-- 5 characters + 5 spaces (stored as 10 characters)</span>
+
+<span class="keyword">COMMIT</span>;
+
+<span class="comment">-- Check actual storage</span>
+
+<span class="keyword">SELECT</span> sname,
+       <span class="function">LENGTH</span>(sname) <span class="keyword">AS</span> <span class="alias">length</span>,
+       <span class="function">VSIZE</span>(sname) <span class="keyword">AS</span> <span class="alias">bytes_used</span>
+<span class="keyword">FROM</span> test_char;
 </pre>
+
+</div>
 
 <h4>Output:</h4>
 
@@ -11340,56 +12143,99 @@ SELECT sname, LENGTH(sname) AS length, VSIZE(sname) AS bytes_used FROM test_char
 
 <h4>How VARCHAR2 Works (Memory Savings):</h4>
 
-<pre>
-SNAME VARCHAR2(10)
+<div class="code-box">
 
--- Example 1: 'HELLO' (5 characters)
+    <div class="code-title">
+        varchar2-storage-example.txt
+    </div>
+
+<pre><span class="comment">-- VARCHAR2(10) Storage Example</span>
+
+SNAME <span class="datatype">VARCHAR2</span>(10)
+
+<span class="comment">-- Example 1: 'HELLO' (5 characters)</span>
 'H' 'E' 'L' 'L' 'O'
  ↑   ↑   ↑   ↑   ↑
- 5 BYTES USED = 0 BYTES WASTED
+<span class="comment"> 5 bytes used (stores only actual characters)</span>
 
--- Example 2: 'HEL' (3 characters)
+<span class="comment">-- Example 2: 'HEL' (3 characters)</span>
 'H' 'E' 'L'
  ↑   ↑   ↑
- 3 BYTES USED = 0 BYTES WASTED
+<span class="comment"> 3 bytes used (stores only actual characters)</span>
 
--- Example 3: 'HE' (2 characters)
+<span class="comment">-- Example 3: 'HE' (2 characters)</span>
 'H' 'E'
  ↑   ↑
- 2 BYTES USED = 0 BYTES WASTED
+<span class="comment"> 2 bytes used (stores only actual characters)</span>
 </pre>
+
+</div>
 
 <h4>Visual Comparison: CHAR vs VARCHAR2</h4>
 
-<pre>
-VARCHAR2(10) with 'HELLO':
+<div class="code-box">
+
+    <div class="code-title">
+        char-vs-varchar2-storage.txt
+    </div>
+
+<pre><span class="comment">-- VARCHAR2(10) vs CHAR(10) Storage Comparison</span>
+
+<span class="datatype">VARCHAR2</span>(10) <span class="comment">with 'HELLO'</span>
+
 Position: 1  2  3  4  5
 Char:     H  E  L  L  O
-Usage:    5 bytes used = 0 bytes wasted ✅
+<span class="comment">Usage: 5 bytes used (stores only actual characters) ✅</span>
 
-CHAR(10) with 'HELLO':
+
+<span class="datatype">CHAR</span>(10) <span class="comment">with 'HELLO'</span>
+
 Position: 1  2  3  4  5  6  7  8  9  10
 Char:     H  E  L  L  O  ␣  ␣  ␣  ␣  ␣
-Usage:    5 bytes used = 5 bytes wasted ❌
+<span class="comment">Usage: 5 characters + 5 padded spaces (stored as 10 characters) ⚠️</span>
 </pre>
+
+</div>
 
 <h4>Complete Example with VARCHAR2:</h4>
 
-<pre>
-CREATE TABLE test_varchar2 (
-    sname VARCHAR2(10)
+<div class="code-box">
+
+    <div class="code-title">
+        varchar2-storage-demo.sql
+    </div>
+
+<pre><span class="comment">-- Create table with VARCHAR2(10)</span>
+
+<span class="keyword">CREATE TABLE</span> test_varchar2 (
+    sname <span class="datatype">VARCHAR2</span>(10)
 );
 
-INSERT INTO test_varchar2 VALUES ('HELLO');   -- 5 bytes used, 0 bytes wasted
-INSERT INTO test_varchar2 VALUES ('HEL');     -- 3 bytes used, 0 bytes wasted
-INSERT INTO test_varchar2 VALUES ('HE');      -- 2 bytes used, 0 bytes wasted
-INSERT INTO test_varchar2 VALUES ('SMITH');   -- 6 bytes used, 0 bytes wasted
+<span class="comment">-- Insert sample values</span>
 
-COMMIT;
+<span class="keyword">INSERT INTO</span> test_varchar2
+<span class="keyword">VALUES</span> ('HELLO');   <span class="comment">-- Stores 5 characters only</span>
 
--- Check actual storage
-SELECT sname, LENGTH(sname) AS length, VSIZE(sname) AS bytes_used FROM test_varchar2;
+<span class="keyword">INSERT INTO</span> test_varchar2
+<span class="keyword">VALUES</span> ('HEL');     <span class="comment">-- Stores 3 characters only</span>
+
+<span class="keyword">INSERT INTO</span> test_varchar2
+<span class="keyword">VALUES</span> ('HE');      <span class="comment">-- Stores 2 characters only</span>
+
+<span class="keyword">INSERT INTO</span> test_varchar2
+<span class="keyword">VALUES</span> ('SMITH');   <span class="comment">-- Stores 5 characters only</span>
+
+<span class="keyword">COMMIT</span>;
+
+<span class="comment">-- Check actual storage</span>
+
+<span class="keyword">SELECT</span> sname,
+       <span class="function">LENGTH</span>(sname) <span class="keyword">AS</span> <span class="alias">length</span>,
+       <span class="function">VSIZE</span>(sname) <span class="keyword">AS</span> <span class="alias">bytes_used</span>
+<span class="keyword">FROM</span> test_varchar2;
 </pre>
+
+</div>
 
 <h4>Output:</h4>
 
@@ -11602,20 +12448,40 @@ SELECT sname, LENGTH(sname) AS length, VSIZE(sname) AS bytes_used FROM test_varc
 
 <h4>Example with NVARCHAR2 (Hindi Text):</h4>
 
-<pre>
-CREATE TABLE test_nvarchar2 (
-    name NVARCHAR2(50)
+<div class="code-box">
+
+    <div class="code-title">
+        nvarchar2-example.sql
+    </div>
+
+<pre><span class="comment">-- Create table with NVARCHAR2 data type</span>
+
+<span class="keyword">CREATE TABLE</span> test_nvarchar2 (
+    name <span class="datatype">NVARCHAR2</span>(50)
 );
 
-INSERT INTO test_nvarchar2 VALUES ('राहुल');      -- Hindi name
-INSERT INTO test_nvarchar2 VALUES ('priya');      -- English name
-INSERT INTO test_nvarchar2 VALUES ('李明');         -- Chinese name
-INSERT INTO test_nvarchar2 VALUES ('محمد');         -- Arabic name
+<span class="comment">-- Insert Unicode text (multiple languages)</span>
 
-COMMIT;
+<span class="keyword">INSERT INTO</span> test_nvarchar2
+<span class="keyword">VALUES</span> ('राहुल');      <span class="comment">-- Hindi</span>
 
-SELECT * FROM test_nvarchar2;
+<span class="keyword">INSERT INTO</span> test_nvarchar2
+<span class="keyword">VALUES</span> ('priya');      <span class="comment">-- English</span>
+
+<span class="keyword">INSERT INTO</span> test_nvarchar2
+<span class="keyword">VALUES</span> ('李明');         <span class="comment">-- Chinese</span>
+
+<span class="keyword">INSERT INTO</span> test_nvarchar2
+<span class="keyword">VALUES</span> ('محمد');         <span class="comment">-- Arabic</span>
+
+<span class="keyword">COMMIT</span>;
+
+<span class="comment">-- Display all records</span>
+
+<span class="keyword">SELECT</span> * <span class="keyword">FROM</span> test_nvarchar2;
 </pre>
+
+</div>
 
 <h4>Output:</h4>
 
@@ -12028,7 +12894,7 @@ Today we will learn about the **LONG Data Type** in Oracle Database. LONG is use
 <h3>Maximum Size: 2 GB</h3>
 
 <p>
->**LONG** can store up to **2 GB** of text data.
+**LONG** can store up to **2 GB** of text data.
 </p>
 
 <table border="1" class="notes-table" cellpadding="10">
@@ -12065,7 +12931,7 @@ Today we will learn about the **LONG Data Type** in Oracle Database. LONG is use
 </table>
 
 <p>
-><strong>Comparison with other data types:</strong>
+<strong>Comparison with other data types:</strong>
 </p>
 
 <table border="1" class="notes-table" cellpadding="10">
@@ -12094,33 +12960,50 @@ Today we will learn about the **LONG Data Type** in Oracle Database. LONG is use
 <h3>One LONG Column Per Table Rule</h3>
 
 <p>
->**IMPORTANT:** A table can have ONLY ONE LONG datatype column.
+**IMPORTANT:** A table can have ONLY ONE LONG datatype column.
 </p>
 
 <h4>Correct Example (One LONG Column):</h4>
 
-<pre>
--- ✅ VALID: Only ONE LONG column
-CREATE TABLE employees (
-    emp_id NUMBER(5),
-    emp_name VARCHAR2(50),
-    email VARCHAR2(100),
-    address LONG  -- Only one LONG column
+<div class="code-box">
+
+    <div class="code-title">
+        long-datatype-example.sql
+    </div>
+
+<pre><span class="comment">-- ✅ Valid: Only ONE LONG column</span>
+
+<span class="keyword">CREATE TABLE</span> employees (
+    emp_id <span class="datatype">NUMBER</span>(5),
+    emp_name <span class="datatype">VARCHAR2</span>(50),
+    email <span class="datatype">VARCHAR2</span>(100),
+    address <span class="datatype">LONG</span>  <span class="comment">-- Only one LONG column</span>
 );
 </pre>
+
+</div>
 
 <h4>Incorrect Example (Two LONG Columns):</h4>
 
-<pre>
--- ❌ INVALID: TWO LONG columns (not allowed)
-CREATE TABLE employees (
-    emp_id NUMBER(5),
-    emp_name VARCHAR2(50),
-    address LONG,        -- First LONG column
-    comments LONG        -- Second LONG column ❌ ERROR!
+<div class="code-box">
+
+    <div class="code-title">
+        long-invalid-example.sql
+    </div>
+
+<pre><span class="comment">-- ❌ Invalid: Two LONG columns (not allowed)</span>
+
+<span class="keyword">CREATE TABLE</span> employees (
+    emp_id <span class="datatype">NUMBER</span>(5),
+    emp_name <span class="datatype">VARCHAR2</span>(50),
+    address <span class="datatype">LONG</span>,      <span class="comment">-- First LONG column</span>
+    comments <span class="datatype">LONG</span>      <span class="comment">-- Second LONG column ❌ Error</span>
 );
--- Error: Only one LONG column allowed per table
+
+<span class="comment">-- Error: Only one LONG column is allowed per table</span>
 </pre>
+
+</div>
 
 <h4>Why Only One LONG Column?</h4>
 
@@ -12146,7 +13029,7 @@ CREATE TABLE employees (
 <h3>Unicode and Non-Unicode Support</h3>
 
 <p>
->**LONG** stores both **Unicode** (all national languages) AND **Non-Unicode** (English only) characters.
+**LONG** stores both **Unicode** (all national languages) AND **Non-Unicode** (English only) characters.
 </p>
 
 <table border="1" class="notes-table" cellpadding="10">
@@ -12186,41 +13069,58 @@ CREATE TABLE employees (
 
 <h4>Create Table with LONG:</h4>
 
-<pre>
--- Create table with LONG column for address
-CREATE TABLE employees (
-    emp_id NUMBER(5),
-    emp_name VARCHAR2(50),
-    email VARCHAR2(100),
-    address LONG  -- Store full address here
+<div class="code-box">
+
+    <div class="code-title">
+        long-address-table.sql
+    </div>
+
+<pre><span class="comment">-- Create table with LONG column for address</span>
+
+<span class="keyword">CREATE TABLE</span> employees (
+    emp_id <span class="datatype">NUMBER</span>(5),
+    emp_name <span class="datatype">VARCHAR2</span>(50),
+    email <span class="datatype">VARCHAR2</span>(100),
+    address <span class="datatype">LONG</span>  <span class="comment">-- Store full address here</span>
 );
 </pre>
 
+</div>
+
 <h4>Insert Long Address:**</h4>
 
-<pre>
--- Insert employee with long address
-INSERT INTO employees (emp_id, emp_name, email, address)
-VALUES (
+<div class="code-box">
+
+    <div class="code-title">
+        long-insert-example.sql
+    </div>
+
+<pre><span class="comment">-- Insert employee with long address</span>
+
+<span class="keyword">INSERT INTO</span> employees (emp_id, emp_name, email, address)
+<span class="keyword">VALUES</span> (
     1,
     'Mr. SMITH',
     'smith@email.com',
     'H. NO: 12-3/45-123, MADHAPUR, HYDERABAD - 500023'
 );
 
--- Insert another employee with very long address
-INSERT INTO employees (emp_id, emp_name, email, address)
-VALUES (
+<span class="comment">-- Insert another employee with very long address</span>
+
+<span class="keyword">INSERT INTO</span> employees (emp_id, emp_name, email, address)
+<span class="keyword">VALUES</span> (
     2,
     'Ms. Priya Sharma',
     'priya@email.com',
-    'House No. 45-6/78-901, Block A, Sector 12, 
-     Kavuli Street, Madhapur, Hyderabad, 
+    'House No. 45-6/78-901, Block A, Sector 12,
+     Kavuli Street, Madhapur, Hyderabad,
      Andhra Pradesh - 500023, India'
 );
 
-COMMIT;
+<span class="keyword">COMMIT</span>;
 </pre>
+
+</div>
 
 <h4>Output:**</h4>
 
@@ -12247,10 +13147,20 @@ COMMIT;
 
 <h4>Query LONG Column:**</h4>
 
-<pre>
--- Select full address
-SELECT emp_name, address FROM employees WHERE emp_id = 1;
+<div class="code-box">
+
+    <div class="code-title">
+        long-select-example.sql
+    </div>
+
+<pre><span class="comment">-- Select full address</span>
+
+<span class="keyword">SELECT</span> emp_name, address
+<span class="keyword">FROM</span> employees
+<span class="keyword">WHERE</span> emp_id = 1;
 </pre>
+
+</div>
 
 <h4>Output:**</h4>
 
@@ -12267,43 +13177,56 @@ SELECT emp_name, address FROM employees WHERE emp_id = 1;
 
 <h3>Example: Storing Multi-Language Text with LONG</h3>
 
-<pre>
--- Create table
-CREATE TABLE documents (
-    doc_id NUMBER(5),
-    doc_title VARCHAR2(100),
-    content LONG
+<div class="code-box">
+
+    <div class="code-title">
+        long-documents-example.sql
+    </div>
+
+<pre><span class="comment">-- Create table</span>
+
+<span class="keyword">CREATE TABLE</span> documents (
+    doc_id <span class="datatype">NUMBER</span>(5),
+    doc_title <span class="datatype">VARCHAR2</span>(100),
+    content <span class="datatype">LONG</span>
 );
 
--- Insert English text
-INSERT INTO documents (doc_id, doc_title, content)
-VALUES (
+<span class="comment">-- Insert English text</span>
+
+<span class="keyword">INSERT INTO</span> documents (doc_id, doc_title, content)
+<span class="keyword">VALUES</span> (
     1,
     'English Document',
     'Mr. SMITH lives at H. NO: 12-3/45-123, MADHAPUR, HYDERABAD - 500023'
 );
 
--- Insert Hindi text (Unicode)
-INSERT INTO documents (doc_id, doc_title, content)
-VALUES (
+<span class="comment">-- Insert Hindi text (Unicode)</span>
+
+<span class="keyword">INSERT INTO</span> documents (doc_id, doc_title, content)
+<span class="keyword">VALUES</span> (
     2,
     'हिंदी दस्तावेज़',
     'राहुल कुमार का घर: घर नं. 12-3/45-123, माधापुर, हैदराबाद - 500023'
 );
 
--- Insert Chinese text (Unicode)
-INSERT INTO documents (doc_id, doc_title, content)
-VALUES (
+<span class="comment">-- Insert Chinese text (Unicode)</span>
+
+<span class="keyword">INSERT INTO</span> documents (doc_id, doc_title, content)
+<span class="keyword">VALUES</span> (
     3,
     '中文文档',
     '李明住在: 门牌号 12-3/45-123, 马达普尔, 海得拉巴 - 500023'
 );
 
-COMMIT;
+<span class="keyword">COMMIT</span>;
 
--- View all documents
-SELECT doc_title, content FROM documents;
+<span class="comment">-- View all documents</span>
+
+<span class="keyword">SELECT</span> doc_title, content
+<span class="keyword">FROM</span> documents;
 </pre>
+
+</div>
 
 <h3>When to Use LONG</h3>
 
@@ -12365,7 +13288,7 @@ SELECT doc_title, content FROM documents;
 <h3>LIMITATION: LONG is Deprecated in Modern Oracle</h3>
 
 <p>
-><strong>IMPORTANT NOTE:** LONG data type is **deprecated** (limited support) in modern Oracle Database versions. Oracle recommends using **CLOB** (Character Large Object) instead.
+<strong>IMPORTANT NOTE:** LONG data type is **deprecated** (limited support) in modern Oracle Database versions. Oracle recommends using **CLOB** (Character Large Object) instead.
 </p>
 
 <table border="1" class="notes-table" cellpadding="10">
@@ -12448,31 +13371,41 @@ SELECT doc_title, content FROM documents;
 
 <h4>Recommended: Use CLOB Instead of LONG</h4>
 
-<pre>
--- ❌ OLD (Deprecated): Using LONG
-CREATE TABLE employees_old (
-    emp_id NUMBER(5),
-    emp_name VARCHAR2(50),
-    address LONG  -- Deprecated!
+<div class="code-box">
+
+    <div class="code-title">
+        long-vs-clob.sql
+    </div>
+
+<pre><span class="comment">-- ❌ OLD (Deprecated): Using LONG</span>
+
+<span class="keyword">CREATE TABLE</span> employees_old (
+    emp_id <span class="datatype">NUMBER</span>(5),
+    emp_name <span class="datatype">VARCHAR2</span>(50),
+    address <span class="datatype">LONG</span>  <span class="comment">-- Deprecated!</span>
 );
 
--- ✅ NEW (Recommended): Using CLOB
-CREATE TABLE employees_new (
-    emp_id NUMBER(5),
-    emp_name VARCHAR2(50),
-    address CLOB  -- Modern, recommended!
+<span class="comment">-- ✅ NEW (Recommended): Using CLOB</span>
+
+<span class="keyword">CREATE TABLE</span> employees_new (
+    emp_id <span class="datatype">NUMBER</span>(5),
+    emp_name <span class="datatype">VARCHAR2</span>(50),
+    address <span class="datatype">CLOB</span>  <span class="comment">-- Modern, recommended!</span>
 );
 
--- Insert data
-INSERT INTO employees_new (emp_id, emp_name, address)
-VALUES (
+<span class="comment">-- Insert data</span>
+
+<span class="keyword">INSERT INTO</span> employees_new (emp_id, emp_name, address)
+<span class="keyword">VALUES</span> (
     1,
     'Mr. SMITH',
     'H. NO: 12-3/45-123, MADHAPUR, HYDERABAD - 500023'
 );
 
-COMMIT;
+<span class="keyword">COMMIT</span>;
 </pre>
+
+</div>
 
 <h3>LONG vs Other String Data Types</h3>
 
@@ -12594,7 +13527,7 @@ In today's lecture, we learned about the **LONG Data Type** in Oracle:
 </ul>
 
 <p>
-><strong>IMPORTANT:</strong> LONG is deprecated. Use **CLOB** (Character Large Object) for very large text data in modern Oracle Database. CLOB supports up to 4 GB (or 128 TB) and allows multiple columns per table!
+<strong>IMPORTANT:</strong> LONG is deprecated. Use **CLOB** (Character Large Object) for very large text data in modern Oracle Database. CLOB supports up to 4 GB (or 128 TB) and allows multiple columns per table!
 </p>
 
 <p>
@@ -12611,7 +13544,7 @@ In today's lecture, we learned about the **LONG Data Type** in Oracle:
 </ul>
 
 <p>
-><strong>Next Topic:</strong> DATE and TIMESTAMP Data Types in Oracle
+<strong>Next Topic:</strong> DATE and TIMESTAMP Data Types in Oracle
 </p>
 
 `;
@@ -12698,21 +13631,33 @@ These data types are also called **"BINARY DATATYPES"** in Oracle.
 </table>
 
 <h4>RAW Example:</h4>
+<div class="code-box">
 
-<pre>
--- Create table with RAW column
-CREATE TABLE small_images (
-    id NUMBER(5),
-    image_name VARCHAR2(50),
-    image_data RAW(2000)  -- Store small image (max 2000 bytes)
+    <div class="code-title">
+        raw-datatype-example.sql
+    </div>
+
+<pre><span class="comment">-- Create table with RAW column</span>
+
+<span class="keyword">CREATE TABLE</span> small_images (
+    id <span class="datatype">NUMBER</span>(5),
+    image_name <span class="datatype">VARCHAR2</span>(50),
+    image_data <span class="datatype">RAW</span>(2000)  <span class="comment">-- Store small binary data (max 2000 bytes)</span>
 );
 
--- Insert small binary data
-INSERT INTO small_images (id, image_name, image_data)
-VALUES (1, 'icon.png', HEXTORAW('89504E470D0A1A0A'));  -- Binary as hex
+<span class="comment">-- Insert small binary data</span>
 
-COMMIT;
+<span class="keyword">INSERT INTO</span> small_images (id, image_name, image_data)
+<span class="keyword">VALUES</span> (
+    1,
+    'icon.png',
+    <span class="function">HEXTORAW</span>('89504E470D0A1A0A')  <span class="comment">-- Binary data in hexadecimal format</span>
+);
+
+<span class="keyword">COMMIT</span>;
 </pre>
+
+</div>
 
 <h4>ii) LONG RAW Data Type</h4>
 
@@ -12745,14 +13690,22 @@ COMMIT;
 
 <h4>LONG RAW Example (Deprecated):</h4>
 
-<pre>
--- ❌ OLD (Deprecated): Using LONG RAW
-CREATE TABLE large_files_old (
-    id NUMBER(5),
-    file_name VARCHAR2(100),
-    file_data LONG RAW  -- Deprecated! Use BLOB instead
+<div class="code-box">
+
+    <div class="code-title">
+        long-raw-example.sql
+    </div>
+
+<pre><span class="comment">-- ❌ OLD (Deprecated): Using LONG RAW</span>
+
+<span class="keyword">CREATE TABLE</span> large_files_old (
+    id <span class="datatype">NUMBER</span>(5),
+    file_name <span class="datatype">VARCHAR2</span>(100),
+    file_data <span class="datatype">LONG RAW</span>  <span class="comment">-- Deprecated! Use BLOB instead</span>
 );
 </pre>
+
+</div>
 
 <h3>2. LOB (Large Object) Data Types</h3>
 
@@ -12827,45 +13780,78 @@ CREATE TABLE large_files_old (
 </table>
 
 <h4>Syntax:</h4>
-<pre>
-description CLOB
+<div class="code-box">
+
+    <div class="code-title">
+        clob-syntax.sql
+    </div>
+
+<pre>description <span class="datatype">CLOB</span>
 </pre>
+
+</div>
 
 <h4>CLOB Example - Create Table:</h4>
 
-<pre>
--- Create table with CLOB column
-CREATE TABLE clob_example (
-    id NUMBER,
-    description CLOB
+<div class="code-box">
+
+    <div class="code-title">
+        clob-create-table.sql
+    </div>
+
+<pre><span class="comment">-- Create table with CLOB column</span>
+
+<span class="keyword">CREATE TABLE</span> clob_example (
+    id <span class="datatype">NUMBER</span>,
+    description <span class="datatype">CLOB</span>
 );
 </pre>
+
+</div>
 
 <h4>CLOB Example - Insert Long Text:</h4>
 
-<pre>
--- Insert long text description
-INSERT INTO clob_example (id, description)
-VALUES (
+<div class="code-box">
+
+    <div class="code-title">
+        clob-insert-example.sql
+    </div>
+
+<pre><span class="comment">-- Insert long text description</span>
+
+<span class="keyword">INSERT INTO</span> clob_example (id, description)
+<span class="keyword">VALUES</span> (
     1,
-    'This is a very long description that exceeds the VARCHAR2 limit of 4000 bytes. 
-     CLOB can store up to 4 GB of text data, which is perfect for storing 
+    'This is a very long description that exceeds the VARCHAR2 limit of 4000 bytes.
+     CLOB can store up to 4 GB of text data, which is perfect for storing
      long documents, articles, reviews, and detailed descriptions.
-     
+
      Mr. SMITH lives at H. NO: 12-3/45-123, MADHAPUR, HYDERABAD - 500023.
-     
+
      This document contains multiple paragraphs and can be extremely long.'
 );
 
-COMMIT;
+<span class="keyword">COMMIT</span>;
 </pre>
+
+</div>
 
 <h4>CLOB Example - Query Data:</h4>
 
-<pre>
--- Select CLOB data
-SELECT id, description FROM clob_example WHERE id = 1;
+<div class="code-box">
+
+    <div class="code-title">
+        clob-select-example.sql
+    </div>
+
+<pre><span class="comment">-- Select CLOB data</span>
+
+<span class="keyword">SELECT</span> id, description
+<span class="keyword">FROM</span> clob_example
+<span class="keyword">WHERE</span> id = 1;
 </pre>
+
+</div>
 
 <h3>NCLOB: National Character Large Object</h3>
 
@@ -12903,60 +13889,96 @@ SELECT id, description FROM clob_example WHERE id = 1;
 </table>
 
 <h4>Syntax:</h4>
-<pre>
-notes NCLOB
+
+<div class="code-box">
+
+    <div class="code-title">
+        nclob-syntax.sql
+    </div>
+
+<pre>notes <span class="datatype">NCLOB</span>
 </pre>
+
+</div>
 
 <h4>NCLOB Example - Create Table:</h4>
 
-<pre>
--- Create table with NCLOB column
-CREATE TABLE nclob_example (
-    id NUMBER,
-    notes NCLOB
+<div class="code-box">
+
+    <div class="code-title">
+        nclob-create-table.sql
+    </div>
+
+<pre><span class="comment">-- Create table with NCLOB column</span>
+
+<span class="keyword">CREATE TABLE</span> nclob_example (
+    id <span class="datatype">NUMBER</span>,
+    notes <span class="datatype">NCLOB</span>
 );
 </pre>
 
+</div>
+
 <h4>NCLOB Example - Insert Multi-Language Text:</h4>
 
-<pre>
--- Insert Hindi text (Unicode)
-INSERT INTO nclob_example (id, notes)
-VALUES (
+<div class="code-box">
+
+    <div class="code-title">
+        nclob-insert-example.sql
+    </div>
+
+<pre><span class="comment">-- Insert Hindi text (Unicode)</span>
+
+<span class="keyword">INSERT INTO</span> nclob_example (id, notes)
+<span class="keyword">VALUES</span> (
     1,
     'राहुल कुमार का घर: घर नं. 12-3/45-123, माधापुर, हैदराबाद - 500023'
 );
 
--- Insert Chinese text (Unicode)
-INSERT INTO nclob_example (id, notes)
-VALUES (
+<span class="comment">-- Insert Chinese text (Unicode)</span>
+
+<span class="keyword">INSERT INTO</span> nclob_example (id, notes)
+<span class="keyword">VALUES</span> (
     2,
     '李明住在: 门牌号 12-3/45-123, 马达普尔, 海得拉巴 - 500023'
 );
 
--- Insert Arabic text (Unicode)
-INSERT INTO nclob_example (id, notes)
-VALUES (
+<span class="comment">-- Insert Arabic text (Unicode)</span>
+
+<span class="keyword">INSERT INTO</span> nclob_example (id, notes)
+<span class="keyword">VALUES</span> (
     3,
     'محمد يسكن في: رقم المنزل 12-3/45-123, مدابور, هيدراباد - 500023'
 );
 
--- Insert English text
-INSERT INTO nclob_example (id, notes)
-VALUES (
+<span class="comment">-- Insert English text</span>
+
+<span class="keyword">INSERT INTO</span> nclob_example (id, notes)
+<span class="keyword">VALUES</span> (
     4,
     'Mr. SMITH lives at H. NO: 12-3/45-123, MADHAPUR, HYDERABAD - 500023'
 );
 
-COMMIT;
+<span class="keyword">COMMIT</span>;
 </pre>
+
+</div>
 
 <h4>NCLOB Example - Query Data:</h4>
 
-<pre>
--- Select all notes
-SELECT id, notes FROM nclob_example;
+<div class="code-box">
+
+    <div class="code-title">
+        nclob-select-example.sql
+    </div>
+
+<pre><span class="comment">-- Select all NCLOB data</span>
+
+<span class="keyword">SELECT</span> id, notes
+<span class="keyword">FROM</span> nclob_example;
 </pre>
+
+</div>
 
 <h3>BLOB: Binary Large Object</h3>
 
@@ -12991,52 +14013,80 @@ SELECT id, notes FROM nclob_example;
 
 <h4>BLOB Example - Create Table:</h4>
 
-<pre>
--- Create table with BLOB column
-CREATE TABLE blob_example (
-    id NUMBER PRIMARY KEY,
-    file_name VARCHAR2(100),
-    file_data BLOB
+<div class="code-box">
+
+    <div class="code-title">
+        blob-create-table.sql
+    </div>
+
+<pre><span class="comment">-- Create table with BLOB column</span>
+
+<span class="keyword">CREATE TABLE</span> blob_example (
+    id <span class="datatype">NUMBER</span> <span class="keyword">PRIMARY KEY</span>,
+    file_name <span class="datatype">VARCHAR2</span>(100),
+    file_data <span class="datatype">BLOB</span>
 );
 </pre>
+
+</div>
 
 <h4>BLOB Example - Insert Binary Data:</h4>
 
-<pre>
--- Insert image data (binary)
-INSERT INTO blob_example (id, file_name, file_data)
-VALUES (
+<div class="code-box">
+
+    <div class="code-title">
+        blob-insert-example.sql
+    </div>
+
+<pre><span class="comment">-- Insert image data (binary)</span>
+
+<span class="keyword">INSERT INTO</span> blob_example (id, file_name, file_data)
+<span class="keyword">VALUES</span> (
     1,
     'photo.jpg',
-    HEXTORAW('89504E470D0A1A0A89504E470D0A1A0A')  -- Binary as hex
+    <span class="function">HEXTORAW</span>('89504E470D0A1A0A89504E470D0A1A0A')  <span class="comment">-- Binary data in hexadecimal format</span>
 );
 
--- Insert audio data
-INSERT INTO blob_example (id, file_name, file_data)
-VALUES (
+<span class="comment">-- Insert audio data</span>
+
+<span class="keyword">INSERT INTO</span> blob_example (id, file_name, file_data)
+<span class="keyword">VALUES</span> (
     2,
     'song.mp3',
-    HEXTORAW('49443303000000000000')  -- MP3 binary header
+    <span class="function">HEXTORAW</span>('49443303000000000000')  <span class="comment">-- MP3 binary header</span>
 );
 
--- Insert video data
-INSERT INTO blob_example (id, file_name, file_data)
-VALUES (
+<span class="comment">-- Insert video data</span>
+
+<span class="keyword">INSERT INTO</span> blob_example (id, file_name, file_data)
+<span class="keyword">VALUES</span> (
     3,
     'video.mp4',
-    HEXTORAW('0000001C66546464')  -- MP4 binary header
+    <span class="function">HEXTORAW</span>('0000001C66546464')  <span class="comment">-- MP4 binary header</span>
 );
 
-COMMIT;
+<span class="keyword">COMMIT</span>;
 </pre>
+
+</div>
 
 <h4>BLOB Example - Query Data:</h4>
 
-<pre>
--- Select file information
-SELECT id, file_name, DBMS_LOB.GETLENGTH(file_data) AS file_size_bytes
-FROM blob_example;
+<div class="code-box">
+
+    <div class="code-title">
+        blob-select-example.sql
+    </div>
+
+<pre><span class="comment">-- Select file information</span>
+
+<span class="keyword">SELECT</span> id,
+       file_name,
+       <span class="function">DBMS_LOB.GETLENGTH</span>(file_data) <span class="keyword">AS</span> <span class="alias">file_size_bytes</span>
+<span class="keyword">FROM</span> blob_example;
 </pre>
+
+</div>
 
 <h3>Comparison Table - All Binary and LOB Data Types</h3>
 
@@ -13152,57 +14202,70 @@ FROM blob_example;
 
 <h3>Complete Example - Multi-File Storage System</h3>
 
-<pre>
--- Create table to store various file types
-CREATE TABLE file_storage (
-    file_id NUMBER PRIMARY KEY,
-    file_name VARCHAR2(100),
-    file_type VARCHAR2(50),
-    description CLOB,        -- For English text descriptions
-    notes NCLOB,              -- For multi-language notes
-    file_data BLOB            -- For binary file content
+<div class="code-box">
+
+    <div class="code-title">
+        file-storage-complete-example.sql
+    </div>
+
+<pre><span class="comment">-- Create table to store various file types</span>
+
+<span class="keyword">CREATE TABLE</span> file_storage (
+    file_id <span class="datatype">NUMBER</span> <span class="keyword">PRIMARY KEY</span>,
+    file_name <span class="datatype">VARCHAR2</span>(100),
+    file_type <span class="datatype">VARCHAR2</span>(50),
+    description <span class="datatype">CLOB</span>,        <span class="comment">-- For English text descriptions</span>
+    notes <span class="datatype">NCLOB</span>,              <span class="comment">-- For multi-language notes</span>
+    file_data <span class="datatype">BLOB</span>            <span class="comment">-- For binary file content</span>
 );
 
--- Insert record with English description
-INSERT INTO file_storage (file_id, file_name, file_type, description, notes, file_data)
-VALUES (
+<span class="comment">-- Insert record with English description</span>
+
+<span class="keyword">INSERT INTO</span> file_storage (file_id, file_name, file_type, description, notes, file_data)
+<span class="keyword">VALUES</span> (
     1,
     'contract.pdf',
     'PDF Document',
-    'This is a legal contract document between Mr. SMITH and the company. 
+    'This is a legal contract document between Mr. SMITH and the company.
      Address: H. NO: 12-3/45-123, MADHAPUR, HYDERABAD - 500023',
     'नियम और शर्तें: यह एक कानूनी अनुबंध दस्तावेज़ है',
-    HEXTORAW('255044462D312E34')  -- PDF binary header
+    <span class="function">HEXTORAW</span>('255044462D312E34')  <span class="comment">-- PDF binary header</span>
 );
 
--- Insert record with Chinese notes
-INSERT INTO file_storage (file_id, file_name, file_type, description, notes, file_data)
-VALUES (
+<span class="comment">-- Insert record with Chinese notes</span>
+
+<span class="keyword">INSERT INTO</span> file_storage (file_id, file_name, file_type, description, notes, file_data)
+<span class="keyword">VALUES</span> (
     2,
     'photo.jpg',
     'Image',
     'Family photo taken during vacation',
     '家庭照片，在度假时拍摄',
-    HEXTORAW('89504E47')  -- PNG binary header
+    <span class="function">HEXTORAW</span>('89504E47')  <span class="comment">-- PNG binary header</span>
 );
 
--- Insert record with audio file
-INSERT INTO file_storage (file_id, file_name, file_type, description, notes, file_data)
-VALUES (
+<span class="comment">-- Insert record with audio file</span>
+
+<span class="keyword">INSERT INTO</span> file_storage (file_id, file_name, file_type, description, notes, file_data)
+<span class="keyword">VALUES</span> (
     3,
     'presentation.mp3',
     'Audio',
     'Recorded presentation from meeting',
     '会议录音',
-    HEXTORAW('494433')  -- MP3 binary header
+    <span class="function">HEXTORAW</span>('494433')  <span class="comment">-- MP3 binary header</span>
 );
 
-COMMIT;
+<span class="keyword">COMMIT</span>;
 
--- View all files
-SELECT file_id, file_name, file_type, DBMS_LOB.GETLENGTH(file_data) AS size_bytes
-FROM file_storage;
+<span class="comment">-- View all files</span>
+
+<span class="keyword">SELECT</span> file_id, file_name, file_type,
+       <span class="function">DBMS_LOB.GETLENGTH</span>(file_data) <span class="keyword">AS</span> <span class="alias">size_bytes</span>
+<span class="keyword">FROM</span> file_storage;
 </pre>
+
+</div>
 
 <h3>When to Use Each Data Type</h3>
 
@@ -13307,7 +14370,7 @@ In today's lecture, we learned about **Binary and LOB Data Types** in Oracle:
 </ul>
 
 <p>
-><strong>IMPORTANT:</strong> Use **BLOB** instead of LONG RAW for binary data. Use **CLOB** or **NCLOB** instead of LONG for very large text. LOB types support up to 4 GB and are modern, recommended data types!
+<strong>IMPORTANT:</strong> Use **BLOB** instead of LONG RAW for binary data. Use **CLOB** or **NCLOB** instead of LONG for very large text. LOB types support up to 4 GB and are modern, recommended data types!
 </p>
 
 <p>
@@ -13324,7 +14387,7 @@ In today's lecture, we learned about **Binary and LOB Data Types** in Oracle:
 </ul>
 
 <p>
-><strong>Next Topic:</strong> DATE and TIMESTAMP Data Types in Oracle
+<strong>Next Topic:</strong> DATE and TIMESTAMP Data Types in Oracle
 </p>
 
 `;
@@ -13355,7 +14418,7 @@ Today we will learn about **DATE Data Types** in Oracle Database. DATE data type
 <h3>Introduction to DATE Data Types</h3>
 
 <p>
->**DATE data types** are used to store date and time information.
+**DATE data types** are used to store date and time information.
 </p>
 
 <table border="1" class="notes-table" cellpadding="10">
@@ -13382,7 +14445,7 @@ Today we will learn about **DATE Data Types** in Oracle Database. DATE data type
 <h3>Date Range in Oracle</h3>
 
 <p>
->The range of DATE datatype is from **'01-JAN-4712 BC'** to **'31-DEC-9999 AD'**.
+The range of DATE datatype is from **'01-JAN-4712 BC'** to **'31-DEC-9999 AD'**.
 </p>
 
 <table border="1" class="notes-table" cellpadding="10">
@@ -13445,14 +14508,30 @@ Today we will learn about **DATE Data Types** in Oracle Database. DATE data type
 
 <h4>Default Date Format:</h4>
 
-<pre>
-THE DEFAULT DATE FORMAT OF ORACLE IS: 'DD-MON-YY/YYYY HH:MI:SS'
+<div class="code-box">
 
-Example: 26-DEC-2022 10:41:23
-         ↑  ↑   ↑    ↑  ↑  ↑  ↑
-         │  │   │    │  │  │  │
-        Day Month Year  Hour Min Sec
+    <div class="code-title">
+        oracle-default-date-format.txt
+    </div>
+
+<pre><span class="comment">-- Oracle Default DATE Format</span>
+
+<span class="datatype">'DD-MON-YY/YYYY HH:MI:SS'</span>
+
+<span class="comment">Example:</span> 26-DEC-2022 10:41:23
+         ↑   ↑      ↑     ↑  ↑  ↑
+         │   │      │     │  │  │
+       Day Month   Year  Hour Min Sec
+
+<span class="comment">DD   = Day (01–31)</span>
+<span class="comment">MON  = Month (JAN, FEB, MAR, ...)</span>
+<span class="comment">YY/YYYY = Year (2-digit or 4-digit)</span>
+<span class="comment">HH   = Hour (01–12)</span>
+<span class="comment">MI   = Minutes (00–59)</span>
+<span class="comment">SS   = Seconds (00–59)</span>
 </pre>
+
+</div>
 
 <table border="1" class="notes-table" cellpadding="10">
     <tr>
@@ -13494,24 +14573,44 @@ Example: 26-DEC-2022 10:41:23
 
 <h4>DATE Example - Create Table:</h4>
 
-<pre>
--- Create table with DATE column
-CREATE TABLE transactions (
-    transaction_id NUMBER(5),
-    transaction_name VARCHAR2(50),
-    transaction_date DATE  -- Store date (time optional)
+<div class="code-box">
+
+    <div class="code-title">
+        date-create-table.sql
+    </div>
+
+<pre><span class="comment">-- Create table with DATE column</span>
+
+<span class="keyword">CREATE TABLE</span> transactions (
+    transaction_id <span class="datatype">NUMBER</span>(5),
+    transaction_name <span class="datatype">VARCHAR2</span>(50),
+    transaction_date <span class="datatype">DATE</span>  <span class="comment">-- Store date and time</span>
 );
 </pre>
 
+</div>
+
 <h4>DATE Example - Insert Date Only (Time Optional):</h4>
 
-<pre>
--- Insert date only (time NOT required)
-INSERT INTO transactions (transaction_id, transaction_name, transaction_date)
-VALUES (1, 'Payment', '26-DEC-2022');  -- ✅ ALLOWED
+<div class="code-box">
 
--- Time is automatically set to 00:00:00 AM
+    <div class="code-title">
+        date-insert-example.sql
+    </div>
+
+<pre><span class="comment">-- Insert date only (time not required)</span>
+
+<span class="keyword">INSERT INTO</span> transactions (transaction_id, transaction_name, transaction_date)
+<span class="keyword">VALUES</span> (
+    1,
+    'Payment',
+    '26-DEC-2022'  <span class="comment">-- ✅ Allowed</span>
+);
+
+<span class="comment">-- Time is automatically stored as 12:00:00 AM (00:00:00)</span>
 </pre>
+
+</div>
 
 <table border="1" class="notes-table" cellpadding="10">
     <tr>
@@ -13528,15 +14627,32 @@ VALUES (1, 'Payment', '26-DEC-2022');  -- ✅ ALLOWED
 
 <h4>DATE Example - Insert Date WITH Time:</h4>
 
-<pre>
--- Insert date WITH time
-INSERT INTO transactions (transaction_id, transaction_name, transaction_date)
-VALUES (2, 'Purchase', '26-DEC-2022 10:41:23');  -- ❌ ERROR (wrong format)
+<div class="code-box">
 
--- Correct format:
-INSERT INTO transactions (transaction_id, transaction_name, transaction_date)
-VALUES (2, 'Purchase', '26-DEC-2022 10:41:23');  -- ✅ ALLOWED (correct format)
+    <div class="code-title">
+        date-time-insert.sql
+    </div>
+
+<pre><span class="comment">-- Insert date with time (using default DATE format)</span>
+
+<span class="comment">-- ❌ Wrong: Missing AM/PM for 12-hour HH format</span>
+<span class="keyword">INSERT INTO</span> transactions (transaction_id, transaction_name, transaction_date)
+<span class="keyword">VALUES</span> (
+    2,
+    'Purchase',
+    '26-DEC-2022 10:41:23'
+);
+
+<span class="comment">-- ✅ Correct: Include AM/PM with HH:MI:SS</span>
+<span class="keyword">INSERT INTO</span> transactions (transaction_id, transaction_name, transaction_date)
+<span class="keyword">VALUES</span> (
+    2,
+    'Purchase',
+    '26-DEC-2022 10:41:23 AM'
+);
 </pre>
+
+</div>
 
 <h4>Important: DATE Insertion Rules</h4>
 
@@ -13565,20 +14681,36 @@ VALUES (2, 'Purchase', '26-DEC-2022 10:41:23');  -- ✅ ALLOWED (correct format)
 
 <h4>DATE Example - Insert with Default Time:</h4>
 
-<pre>
--- Insert only date (no time)
-INSERT INTO transactions (transaction_id, transaction_name, transaction_date)
-VALUES (1, 'Payment', '26-DEC-2022');
+<div class="code-box">
 
--- What Oracle stores internally:
--- Date: 26-DEC-2022
--- Time: 00:00:00 AM (default midnight)
+    <div class="code-title">
+        date-insert-default-time.sql
+    </div>
 
-COMMIT;
+<pre><span class="comment">-- Insert only date (no time)</span>
 
--- Verify
-SELECT transaction_id, transaction_name, transaction_date FROM transactions;
+<span class="keyword">INSERT INTO</span> transactions (transaction_id, transaction_name, transaction_date)
+<span class="keyword">VALUES</span> (
+    1,
+    'Payment',
+    '26-DEC-2022'
+);
+
+<span class="comment">-- What Oracle stores internally:</span>
+<span class="comment">-- Date: 26-DEC-2022</span>
+<span class="comment">-- Time: 00:00:00 (default midnight)</span>
+
+<span class="keyword">COMMIT</span>;
+
+<span class="comment">-- Verify</span>
+
+<span class="keyword">SELECT</span> transaction_id,
+       transaction_name,
+       transaction_date
+<span class="keyword">FROM</span> transactions;
 </pre>
+
+</div>
 
 <h4>Output:</h4>
 
@@ -13597,16 +14729,33 @@ SELECT transaction_id, transaction_name, transaction_date FROM transactions;
 
 <h4>DATE Example - Insert with Specific Time:</h4>
 
-<pre>
--- Insert date WITH specific time
-INSERT INTO transactions (transaction_id, transaction_name, transaction_date)
-VALUES (2, 'Purchase', '26-DEC-2022 10:41:23');
+<div class="code-box">
 
-COMMIT;
+    <div class="code-title">
+        date-time-insert.sql
+    </div>
 
--- Verify
-SELECT transaction_id, transaction_name, transaction_date FROM transactions;
+<pre><span class="comment">-- Insert date with specific time</span>
+
+<span class="keyword">INSERT INTO</span> transactions (transaction_id, transaction_name, transaction_date)
+<span class="keyword">VALUES</span> (
+    2,
+    'Purchase',
+    <span class="function">TO_DATE</span>('26-DEC-2022 10:41:23',
+            'DD-MON-YYYY HH24:MI:SS')
+);
+
+<span class="keyword">COMMIT</span>;
+
+<span class="comment">-- Verify</span>
+
+<span class="keyword">SELECT</span> transaction_id,
+       transaction_name,
+       transaction_date
+<span class="keyword">FROM</span> transactions;
 </pre>
+
+</div>
 
 <h4>Output:</h4>
 
@@ -13631,7 +14780,7 @@ SELECT transaction_id, transaction_name, transaction_date FROM transactions;
 <h4>Storage Size:</h4>
 
 <p>
->DATE allocates maximum size of **7 bytes**.
+DATE allocates maximum size of **7 bytes**.
 </p>
 
 <table border="1" class="notes-table" cellpadding="10">
@@ -13680,19 +14829,37 @@ SELECT transaction_id, transaction_name, transaction_date FROM transactions;
 <h3>SYSDATE Function</h3>
 
 <p>
->SYSDATE returns the **current date and time** from the database server.
+SYSDATE returns the **current date and time** from the database server.
 </p>
 
-<pre>
-SYSDATE → 26-DEC-2022 10:43:34
+<div class="code-box">
+
+    <div class="code-title">
+        sysdate-example.sql
+    </div>
+
+<pre><span class="comment">-- SYSDATE returns the current system date and time</span>
+
+<span class="function">SYSDATE</span> → 26-DEC-2022 10:43:34
 </pre>
+
+</div>
 
 <h4>SYSDATE Example:</h4>
 
-<pre>
--- Get current date and time
-SELECT SYSDATE FROM dual;
+<div class="code-box">
+
+    <div class="code-title">
+        sysdate-query.sql
+    </div>
+
+<pre><span class="comment">-- Get current date and time</span>
+
+<span class="keyword">SELECT</span> <span class="function">SYSDATE</span>
+<span class="keyword">FROM</span> dual;
 </pre>
+
+</div>
 
 <h4>Output:</h4>
 
@@ -13707,16 +14874,32 @@ SELECT SYSDATE FROM dual;
 
 <h4>SYSDATE in INSERT:</h4>
 
-<pre>
--- Insert transaction with current date/time
-INSERT INTO transactions (transaction_id, transaction_name, transaction_date)
-VALUES (3, 'Login', SYSDATE);
+<div class="code-box">
 
-COMMIT;
+    <div class="code-title">
+        sysdate-insert-example.sql
+    </div>
 
--- Verify
-SELECT transaction_id, transaction_name, transaction_date FROM transactions;
+<pre><span class="comment">-- Insert transaction with current date and time</span>
+
+<span class="keyword">INSERT INTO</span> transactions (transaction_id, transaction_name, transaction_date)
+<span class="keyword">VALUES</span> (
+    3,
+    'Login',
+    <span class="function">SYSDATE</span>
+);
+
+<span class="keyword">COMMIT</span>;
+
+<span class="comment">-- Verify</span>
+
+<span class="keyword">SELECT</span> transaction_id,
+       transaction_name,
+       transaction_date
+<span class="keyword">FROM</span> transactions;
 </pre>
+
+</div>
 
 <h4>Output:</h4>
 
@@ -13744,8 +14927,6 @@ SELECT transaction_id, transaction_name, transaction_date FROM transactions;
 </table>
 
 <h3>2. TIMESTAMP Data Type</h3>
-
-<h4>Characteristics:</h4>
 
 <table border="1" class="notes-table" cellpadding="10">
     <tr>
@@ -13776,14 +14957,32 @@ SELECT transaction_id, transaction_name, transaction_date FROM transactions;
 
 <h4>TIMESTAMP Format:</h4>
 
-<pre>
-'DD-MON-YY/YYYY HH:MI:SS.MS'
+<div class="code-box">
 
-Example: 26-DEC-2022 10:41:23.500
-         ↑  ↑   ↑    ↑  ↑  ↑  ↑  ↑
-         │  │   │    │  │  │  │  │
-        Day Month Year  Hour Min Sec Milli&#8209;second
+    <div class="code-title">
+        oracle-timestamp-format.txt
+    </div>
+
+<pre><span class="comment">-- Oracle TIMESTAMP Format</span>
+
+<span class="datatype">'DD-MON-YY/YYYY HH:MI:SS.FF'</span>
+
+<span class="comment">Example:</span> 26-DEC-2022 10:41:23.500
+         ↑   ↑      ↑     ↑  ↑  ↑   ↑
+         │   │      │     │  │  │   │
+       Day Month   Year  Hour Min Sec Fractional
+                                    Seconds (milliseconds)
+
+<span class="comment">DD     = Day (01–31)</span>
+<span class="comment">MON    = Month (JAN, FEB, MAR, ...)</span>
+<span class="comment">YY/YYYY = Year (2-digit or 4-digit)</span>
+<span class="comment">HH     = Hour (01–12)</span>
+<span class="comment">MI     = Minutes (00–59)</span>
+<span class="comment">SS     = Seconds (00–59)</span>
+<span class="comment">FF     = Fractional seconds (milliseconds/microseconds)</span>
 </pre>
+
+</div>
 
 <table border="1" class="notes-table" cellpadding="10">
     <tr>
@@ -13830,31 +15029,62 @@ Example: 26-DEC-2022 10:41:23.500
 
 <h4>TIMESTAMP Example - Create Table:</h4>
 
-<pre>
--- Create table with TIMESTAMP column
-CREATE TABLE events (
-    event_id NUMBER(5),
-    event_name VARCHAR2(50),
-    event_time TIMESTAMP  -- Store date + time + milliseconds
+<div class="code-box">
+
+    <div class="code-title">
+        timestamp-create-table.sql
+    </div>
+
+<pre><span class="comment">-- Create table with TIMESTAMP column</span>
+
+<span class="keyword">CREATE TABLE</span> events (
+    event_id <span class="datatype">NUMBER</span>(5),
+    event_name <span class="datatype">VARCHAR2</span>(50),
+    event_time <span class="datatype">TIMESTAMP</span>  <span class="comment">-- Store date, time, and fractional seconds</span>
 );
 </pre>
 
+</div>
+
 <h4>TIMESTAMP Example - Insert with Milliseconds:</h4>
 
-<pre>
--- Insert timestamp WITH milliseconds
-INSERT INTO events (event_id, event_name, event_time)
-VALUES (1, 'Event Start', '26-DEC-2022 10:41:23.500');
+<div class="code-box">
 
--- Insert timestamp WITHOUT milliseconds (defaults to .000)
-INSERT INTO events (event_id, event_name, event_time)
-VALUES (2, 'Event End', '26-DEC-2022 11:30:45');
+    <div class="code-title">
+        timestamp-insert-example.sql
+    </div>
 
-COMMIT;
+<pre><span class="comment">-- Insert timestamp with milliseconds</span>
 
--- Verify
-SELECT event_id, event_name, event_time FROM events;
+<span class="keyword">INSERT INTO</span> events (event_id, event_name, event_time)
+<span class="keyword">VALUES</span> (
+    1,
+    'Event Start',
+    <span class="function">TO_TIMESTAMP</span>('26-DEC-2022 10:41:23.500',
+                 'DD-MON-YYYY HH24:MI:SS.FF3')
+);
+
+<span class="comment">-- Insert timestamp without milliseconds (defaults to .000)</span>
+
+<span class="keyword">INSERT INTO</span> events (event_id, event_name, event_time)
+<span class="keyword">VALUES</span> (
+    2,
+    'Event End',
+    <span class="function">TO_TIMESTAMP</span>('26-DEC-2022 11:30:45',
+                 'DD-MON-YYYY HH24:MI:SS')
+);
+
+<span class="keyword">COMMIT</span>;
+
+<span class="comment">-- Verify</span>
+
+<span class="keyword">SELECT</span> event_id,
+       event_name,
+       event_time
+<span class="keyword">FROM</span> events;
 </pre>
+
+</div>
 
 <h4>Output:</h4>
 
@@ -13877,21 +15107,37 @@ SELECT event_id, event_name, event_time FROM events;
 </table>
 
 <p>
-><strong>Note:</strong> Event End shows .000 milliseconds (default when not specified).
+<strong>Note:</strong> Event End shows .000 milliseconds (default when not specified).
 </p>
 
 <h4>TIMESTAMP Example - Insert with SYSTIMESTAMP:</h4>
 
-<pre>
--- SYSTIMESTAMP returns current date, time, and milliseconds
-INSERT INTO events (event_id, event_name, event_time)
-VALUES (3, 'System Event', SYSTIMESTAMP);
+<div class="code-box">
 
-COMMIT;
+    <div class="code-title">
+        systimestamp-example.sql
+    </div>
 
--- Verify
-SELECT event_id, event_name, event_time FROM events;
+<pre><span class="comment">-- Insert current date, time, and fractional seconds</span>
+
+<span class="keyword">INSERT INTO</span> events (event_id, event_name, event_time)
+<span class="keyword">VALUES</span> (
+    3,
+    'System Event',
+    <span class="function">SYSTIMESTAMP</span>
+);
+
+<span class="keyword">COMMIT</span>;
+
+<span class="comment">-- Verify</span>
+
+<span class="keyword">SELECT</span> event_id,
+       event_name,
+       event_time
+<span class="keyword">FROM</span> events;
 </pre>
+
+</div>
 
 <h4>Output:</h4>
 
@@ -13919,13 +15165,13 @@ SELECT event_id, event_name, event_time FROM events;
 </table>
 
 <p>
-><strong>Note:</strong> SYSTIMESTAMP includes milliseconds (.345).
+<strong>Note:</strong> SYSTIMESTAMP includes milliseconds (.345).
 </p>
 
 <h4>Storage Size:</h4>
 
 <p>
->TIMESTAMP uses **11 bytes** (fixed memory).
+TIMESTAMP uses **11 bytes** (fixed memory).
 </p>
 
 <table border="1" class="notes-table" cellpadding="10">
@@ -14033,24 +15279,45 @@ SELECT event_id, event_name, event_time FROM events;
 
 <h3>Side-by-Side Example</h3>
 
-<pre>
--- Create table with both DATE and TIMESTAMP
-CREATE TABLE date_comparison (
-    id NUMBER(5),
-    description VARCHAR2(50),
-    date_col DATE,
-    timestamp_col TIMESTAMP
+<div class="code-box">
+
+    <div class="code-title">
+        date-vs-timestamp.sql
+    </div>
+
+<pre><span class="comment">-- Create table with both DATE and TIMESTAMP columns</span>
+
+<span class="keyword">CREATE TABLE</span> date_comparison (
+    id <span class="datatype">NUMBER</span>(5),
+    description <span class="datatype">VARCHAR2</span>(50),
+    date_col <span class="datatype">DATE</span>,
+    timestamp_col <span class="datatype">TIMESTAMP</span>
 );
 
--- Insert same date/time into both
-INSERT INTO date_comparison (id, description, date_col, timestamp_col)
-VALUES (1, 'Same Time', '26-DEC-2022 10:41:23', '26-DEC-2022 10:41:23.500');
+<span class="comment">-- Insert the same date and time into both columns</span>
 
-COMMIT;
+<span class="keyword">INSERT INTO</span> date_comparison (id, description, date_col, timestamp_col)
+<span class="keyword">VALUES</span> (
+    1,
+    'Same Time',
+    <span class="function">TO_DATE</span>('26-DEC-2022 10:41:23',
+            'DD-MON-YYYY HH24:MI:SS'),
+    <span class="function">TO_TIMESTAMP</span>('26-DEC-2022 10:41:23.500',
+                 'DD-MON-YYYY HH24:MI:SS.FF3')
+);
 
--- Compare
-SELECT id, description, date_col, timestamp_col FROM date_comparison;
+<span class="keyword">COMMIT</span>;
+
+<span class="comment">-- Compare DATE and TIMESTAMP values</span>
+
+<span class="keyword">SELECT</span> id,
+       description,
+       date_col,
+       timestamp_col
+<span class="keyword">FROM</span> date_comparison;
 </pre>
+
+</div>
 
 <h4>Output:</h4>
 
@@ -14070,43 +15337,87 @@ SELECT id, description, date_col, timestamp_col FROM date_comparison;
 </table>
 
 <p>
-><strong>Difference:</strong> TIMESTAMP shows .500 milliseconds, DATE does not!
+<strong>Difference:</strong> TIMESTAMP shows .500 milliseconds, DATE does not!
 </p>
 
 <h3>Complete Example - Transaction System</h3>
 
-<pre>
--- Create transaction table
-CREATE TABLE transaction_system (
-    transaction_id NUMBER(5) PRIMARY KEY,
-    transaction_type VARCHAR2(50),
-    transaction_date DATE,           -- For date only (time optional)
-    transaction_time TIMESTAMP,      -- For precise time with milliseconds
-    amount NUMBER(10,2)
+<div class="code-box">
+
+    <div class="code-title">
+        transaction-system-example.sql
+    </div>
+
+<pre><span class="comment">-- Create transaction table</span>
+
+<span class="keyword">CREATE TABLE</span> transaction_system (
+    transaction_id <span class="datatype">NUMBER</span>(5) <span class="keyword">PRIMARY KEY</span>,
+    transaction_type <span class="datatype">VARCHAR2</span>(50),
+    transaction_date <span class="datatype">DATE</span>,            <span class="comment">-- Store date and time</span>
+    transaction_time <span class="datatype">TIMESTAMP</span>,   <span class="comment">-- Store date, time, and fractional seconds</span>
+    amount <span class="datatype">NUMBER</span>(10,2)
 );
 
--- Insert transaction with DATE (time defaults to midnight)
-INSERT INTO transaction_system (transaction_id, transaction_type, transaction_date, amount)
-VALUES (1, 'Deposit', '26-DEC-2022', 5000.00);
+<span class="comment">-- Insert transaction with DATE (time defaults to 00:00:00)</span>
 
--- Insert transaction with DATE and specific time
-INSERT INTO transaction_system (transaction_id, transaction_type, transaction_date, amount)
-VALUES (2, 'Withdrawal', '26-DEC-2022 10:41:23', 1500.00);
+<span class="keyword">INSERT INTO</span> transaction_system
+(transaction_id, transaction_type, transaction_date, amount)
+<span class="keyword">VALUES</span> (
+    1,
+    'Deposit',
+    <span class="function">TO_DATE</span>('26-DEC-2022', 'DD-MON-YYYY'),
+    5000.00
+);
 
--- Insert transaction with TIMESTAMP (precise time)
-INSERT INTO transaction_system (transaction_id, transaction_type, transaction_time, amount)
-VALUES (3, 'Transfer', '26-DEC-2022 10:45:12.345', 2500.00);
+<span class="comment">-- Insert transaction with DATE and specific time</span>
 
--- Insert with SYSDATE and SYSTIMESTAMP
-INSERT INTO transaction_system (transaction_id, transaction_type, transaction_date, transaction_time, amount)
-VALUES (4, 'Payment', SYSDATE, SYSTIMESTAMP, 750.00);
+<span class="keyword">INSERT INTO</span> transaction_system
+(transaction_id, transaction_type, transaction_date, amount)
+<span class="keyword">VALUES</span> (
+    2,
+    'Withdrawal',
+    <span class="function">TO_DATE</span>('26-DEC-2022 10:41:23',
+            'DD-MON-YYYY HH24:MI:SS'),
+    1500.00
+);
 
-COMMIT;
+<span class="comment">-- Insert transaction with TIMESTAMP (precise time)</span>
 
--- View all transactions
-SELECT transaction_id, transaction_type, transaction_date, transaction_time, amount
-FROM transaction_system;
+<span class="keyword">INSERT INTO</span> transaction_system
+(transaction_id, transaction_type, transaction_time, amount)
+<span class="keyword">VALUES</span> (
+    3,
+    'Transfer',
+    <span class="function">TO_TIMESTAMP</span>('26-DEC-2022 10:45:12.345',
+                 'DD-MON-YYYY HH24:MI:SS.FF3'),
+    2500.00
+);
+
+<span class="comment">-- Insert current DATE and TIMESTAMP</span>
+
+<span class="keyword">INSERT INTO</span> transaction_system
+(transaction_id, transaction_type, transaction_date, transaction_time, amount)
+<span class="keyword">VALUES</span> (
+    4,
+    'Payment',
+    <span class="function">SYSDATE</span>,
+    <span class="function">SYSTIMESTAMP</span>,
+    750.00
+);
+
+<span class="keyword">COMMIT</span>;
+
+<span class="comment">-- View all transactions</span>
+
+<span class="keyword">SELECT</span> transaction_id,
+       transaction_type,
+       transaction_date,
+       transaction_time,
+       amount
+<span class="keyword">FROM</span> transaction_system;
 </pre>
+
+</div>
 
 <h4>Output:</h4>
 
@@ -14222,11 +15533,11 @@ In today's lecture, we learned about **DATE Data Types** in Oracle:
 </ul>
 
 <p>
-><strong>Remember:</strong> DATE stores seconds only (7 bytes). TIMESTAMP stores milliseconds (11 bytes). Use SYSDATE for DATE and SYSTIMESTAMP for TIMESTAMP!
+<strong>Remember:</strong> DATE stores seconds only (7 bytes). TIMESTAMP stores milliseconds (11 bytes). Use SYSDATE for DATE and SYSTIMESTAMP for TIMESTAMP!
 </p>
 
 <p>
-><strong>Homework:</strong>
+<strong>Homework:</strong>
 </p>
 <ul>
     <li>1. Create table with DATE column, insert date only (observe default time)</li>
@@ -14239,7 +15550,7 @@ In today's lecture, we learned about **DATE Data Types** in Oracle:
 </ul>
 
 <p>
-><strong>Next Topic:</strong> INTERVAL Data Types and Date Functions in Oracle
+<strong>Next Topic:</strong> INTERVAL Data Types and Date Functions in Oracle
 </p>
 
 `;
@@ -14317,14 +15628,11 @@ An operator is a special symbol that performs operations on values, variables, o
 </table>
 
 
-<h3>ASSIGNMENT OPERATOR (Detailed)</h3>
-
-
-<h4>Purpose:</h4>
+<h3>ASSIGNMENT OPERATOR </h3>
 
 
 <p>
->The ASSIGNMENT OPERATOR is used to assign a value to a variable or attribute.
+The ASSIGNMENT OPERATOR is used to assign a value to a variable or attribute.
 </p>
 
 
@@ -14354,37 +15662,40 @@ An operator is a special symbol that performs operations on values, variables, o
 
 <h4>Syntax:</h4>
 
+<div class="code-box">
 
-<pre>
-<ATTRIBUTE NAME> <ASSIGNMENT OPERATOR> <VALUE>
+    <div class="code-title">
+        attribute-assignment-syntax.txt
+    </div>
+
+<pre><span class="parameter">&lt;ATTRIBUTE_NAME&gt;</span> <span class="operator">:=</span> <span class="value">&lt;VALUE&gt;</span>
+    where 
+        value = column_name;
+
 </pre>
 
+</div>
 
-<pre>
-column_name = value;
-</pre>
-
-
-<table border="1" class="notes-table" cellpadding="10">
+<table border="1" class="notes-table">
     <tr>
         <th>Component</th>
         <th>Description</th>
         <th>Example</th>
     </tr>
     <tr>
-        <td><ATTRIBUTE NAME></td>
-        <td>Name of column</td>
-        <td>sal, age, empno</td>
+        <td>&lt;ATTRIBUTE_NAME&gt;</td>
+        <td>Name of the variable or attribute</td>
+        <td>salary, age, emp_name</td>
     </tr>
     <tr>
-        <td><ASSIGNMENT OPERATOR></td>
-        <td>Operator that assigns value</td>
-        <td>=</td>
+        <td>:=</td>
+        <td>Assignment operator used to assign a value</td>
+        <td>:=</td>
     </tr>
     <tr>
-        <td><VALUE></td>
-        <td>Value or expression to assign</td>
-        <td>40000, 25, 7788</td>
+        <td>&lt;VALUE&gt;</td>
+        <td>Value or expression to be assigned</td>
+        <td>50000, 25, 'Rahul', SYSDATE</td>
     </tr>
 </table>
 
@@ -14393,18 +15704,25 @@ column_name = value;
 
 
 <p>
->In SQL UPDATE statements, the equal sign = is used as assignment operator.
+In SQL UPDATE statements, the equal sign = is used as assignment operator.
 </p>
 
 
 <h4>UPDATE Syntax:</h4>
 
 
-<pre>
-UPDATE <table_name> 
-SET <column_name> = <value> 
-WHERE <condition>;
+<div class="code-box">
+
+    <div class="code-title">
+        update-syntax.sql
+    </div>
+
+<pre><span class="keyword">UPDATE</span> <span class="parameter">&lt;table_name&gt;</span>
+<span class="keyword">SET</span> <span class="parameter">&lt;column_name&gt;</span> <span class="operator">=</span> <span class="value">&lt;value&gt;</span>
+<span class="keyword">WHERE</span> <span class="parameter">&lt;condition&gt;</span>;
 </pre>
+
+</div>
 
 
 <table border="1" class="notes-table" cellpadding="10">
@@ -14434,12 +15752,20 @@ WHERE <condition>;
 <h4>UPDATE Example - Assign Salary:</h4>
 
 
-<pre>
--- Update salary for employee named SMITH
-UPDATE emp 
-SET sal = 40000 
-WHERE ename = 'SMITH';
+<div class="code-box">
+
+    <div class="code-title">
+        update-example.sql
+    </div>
+
+<pre><span class="comment">-- Update salary for employee named SMITH</span>
+
+<span class="keyword">UPDATE</span> emp
+<span class="keyword">SET</span> sal <span class="operator">=</span> 40000
+<span class="keyword">WHERE</span> ename <span class="operator">=</span> 'SMITH';
 </pre>
+
+</div>
 
 
 <table border="1" class="notes-table" cellpadding="10">
@@ -14504,14 +15830,22 @@ WHERE ename = 'SMITH';
 <h4>UPDATE Example - Multiple Columns:</h4>
 
 
-<pre>
--- Update multiple columns
-UPDATE emp 
-SET sal = 45000, 
-    deptno = 20,
-    job = 'MANAGER'
-WHERE empno = 7788;
+<div class="code-box">
+
+    <div class="code-title">
+        update-multiple-columns.sql
+    </div>
+
+<pre><span class="comment">-- Update multiple columns</span>
+
+<span class="keyword">UPDATE</span> emp
+<span class="keyword">SET</span> sal <span class="operator">=</span> 45000,
+    deptno <span class="operator">=</span> 20,
+    job <span class="operator">=</span> 'MANAGER'
+<span class="keyword">WHERE</span> empno <span class="operator">=</span> 7788;
 </pre>
+
+</div>
 
 
 <table border="1" class="notes-table" cellpadding="10">
@@ -14541,16 +15875,24 @@ WHERE empno = 7788;
 <h4>UPDATE Example - With Expression:</h4>
 
 
-<pre>
--- Increase salary by 10%
-UPDATE emp 
-SET sal = sal * 1.10 
-WHERE deptno = 20;
+<div class="code-box">
+
+    <div class="code-title">
+        update-expression.sql
+    </div>
+
+<pre><span class="comment">-- Increase salary by 10%</span>
+
+<span class="keyword">UPDATE</span> emp
+<span class="keyword">SET</span> sal <span class="operator">=</span> sal <span class="operator">*</span> 1.10
+<span class="keyword">WHERE</span> deptno <span class="operator">=</span> 20;
 </pre>
+
+</div>
 
 
 <p>
-><strong>Note:</strong> Right side can be expression (sal times 1.10)
+<strong>Note:</strong> Right side can be expression (sal times 1.10)
 </p>
 
 
@@ -14558,7 +15900,7 @@ WHERE deptno = 20;
 
 
 <p>
->In WHERE clause, = is used for equality comparison (not assignment).
+In WHERE clause, = is used for equality comparison (not assignment).
 </p>
 
 
@@ -14584,12 +15926,20 @@ WHERE deptno = 20;
 <h4>SELECT Example - Using = for Comparison:</h4>
 
 
-<pre>
--- Select employee with empno = 7788
-SELECT * 
-FROM emp 
-WHERE empno = 7788;
+<div class="code-box">
+
+    <div class="code-title">
+        select-employee.sql
+    </div>
+
+<pre><span class="comment">-- Select employee with empno = 7788</span>
+
+<span class="keyword">SELECT</span> <span class="operator">*</span>
+<span class="keyword">FROM</span> emp
+<span class="keyword">WHERE</span> empno <span class="operator">=</span> 7788;
 </pre>
+
+</div>
 
 
 <table border="1" class="notes-table" cellpadding="10">
@@ -14644,27 +15994,42 @@ WHERE empno = 7788;
 
 
 <p>
->In DELETE statement, = is also used for equality comparison in WHERE clause.
+In DELETE statement, = is also used for equality comparison in WHERE clause.
 </p>
 
 
 <h4>DELETE Syntax:</h4>
 
 
-<pre>
-DELETE FROM <table_name> 
-WHERE <condition>;
+<div class="code-box">
+
+    <div class="code-title">
+        delete-syntax.sql
+    </div>
+
+<pre><span class="keyword">DELETE FROM</span> <span class="parameter">&lt;table_name&gt;</span>
+<span class="keyword">WHERE</span> <span class="parameter">&lt;condition&gt;</span>;
 </pre>
+
+</div>
 
 
 <h4>DELETE Example - Delete by Department:</h4>
 
 
-<pre>
--- Delete employees from department 20
-DELETE FROM emp 
-WHERE deptno = 20;
+<div class="code-box">
+
+    <div class="code-title">
+        delete-example.sql
+    </div>
+
+<pre><span class="comment">-- Delete employees from department 20</span>
+
+<span class="keyword">DELETE FROM</span> emp
+<span class="keyword">WHERE</span> deptno <span class="operator">=</span> 20;
 </pre>
+
+</div>
 
 
 <table border="1" class="notes-table" cellpadding="10">
@@ -14736,7 +16101,7 @@ WHERE deptno = 20;
 
 
 <p>
-><strong>The same symbol (=) has different meanings based on context!</strong>
+<strong>The same symbol (=) has different meanings based on context!</strong>
 </p>
 
 
@@ -14765,20 +16130,30 @@ WHERE deptno = 20;
 <h4>Detailed Comparison:</h4>
 
 
-<pre>
--- Example showing both uses of =
+<div class="code-box">
+
+    <div class="code-title">
+        assignment-vs-comparison.sql
+    </div>
+
+<pre><span class="comment">-- Example showing both uses of =</span>
+
+<span class="keyword">UPDATE</span> emp
+<span class="comment">-- UPDATE table</span>
+
+<span class="keyword">SET</span> sal <span class="operator">=</span> 40000
+<span class="comment">-- '=' is ASSIGNMENT (assign 40000 to sal)</span>
+
+<span class="keyword">WHERE</span> empno <span class="operator">=</span> 7788;
+<span class="comment">-- '=' is COMPARISON (find rows where empno equals 7788)</span>
 
 
-UPDATE emp                        -- UPDATE table
-SET sal = 40000                  -- = is ASSIGNMENT (set sal to 40000)
-WHERE empno = 7788;              -- = is COMPARISON (where empno EQUALS 7788)
-
-
-
--- Breakdown:
-SET sal = 40000    → Assign value 40000 to column sal (ASSIGNMENT)
-WHERE empno = 7788 → Find rows where empno EQUALS 7788 (COMPARISON)
+<span class="comment">-- Breakdown:</span>
+<span class="comment">-- SET sal = 40000    → Assigns the value 40000 to the column 'sal'.</span>
+<span class="comment">-- WHERE empno = 7788 → Compares empno with 7788 and selects matching rows.</span>
 </pre>
+
+</div>
 
 
 <h3>Key Rules for Assignment Operator</h3>
@@ -14818,32 +16193,37 @@ WHERE empno = 7788 → Find rows where empno EQUALS 7788 (COMPARISON)
 </table>
 
 
-<h3>Complete Practical Examples</h3>
+<h4>Example 1 - UPDATE with WHERE:</h4>
 
 
-<h4>Example 1 - Complete UPDATE with WHERE:</h4>
+<div class="code-box">
+
+    <div class="code-title">
+        update-verification.sql
+    </div>
+
+<pre><span class="comment">-- Step 1: View current employee data</span>
+
+<span class="keyword">SELECT</span> empno, ename, sal, deptno
+<span class="keyword">FROM</span> emp
+<span class="keyword">WHERE</span> empno <span class="operator">=</span> 7788;
 
 
-<pre>
--- Step 1: View current data
-SELECT empno, ename, sal, deptno 
-FROM emp 
-WHERE empno = 7788;
+<span class="comment">-- Step 2: Update employee salary</span>
+
+<span class="keyword">UPDATE</span> emp
+<span class="keyword">SET</span> sal <span class="operator">=</span> 40000
+<span class="keyword">WHERE</span> ename <span class="operator">=</span> 'SMITH';
 
 
+<span class="comment">-- Step 3: Verify the updated data</span>
 
--- Step 2: Update salary (assignment)
-UPDATE emp 
-SET sal = 40000 
-WHERE ename = 'SMITH';
-
-
-
--- Step 3: Verify update
-SELECT empno, ename, sal, deptno 
-FROM emp 
-WHERE empno = 7788;
+<span class="keyword">SELECT</span> empno, ename, sal, deptno
+<span class="keyword">FROM</span> emp
+<span class="keyword">WHERE</span> empno <span class="operator">=</span> 7788;
 </pre>
+
+</div>
 
 
 <h4>Before UPDATE:</h4>
@@ -14885,32 +16265,40 @@ WHERE empno = 7788;
 
 
 <p>
-><strong>Assignment occurred:</strong> sal = 40000 (25000 to 40000)
+<strong>Assignment occurred:</strong> sal = 40000 (25000 to 40000)
 </p>
 
 
-<h4>Example 2 - Complete DELETE Operation:</h4>
+<h4>Example 2 - DELETE Operation:</h4>
 
 
-<pre>
--- Step 1: View employees in department 20
-SELECT empno, ename, sal, deptno 
-FROM emp 
-WHERE deptno = 20;
+<div class="code-box">
+
+    <div class="code-title">
+        delete-verification.sql
+    </div>
+
+<pre><span class="comment">-- Step 1: View employees in department 20</span>
+
+<span class="keyword">SELECT</span> empno, ename, sal, deptno
+<span class="keyword">FROM</span> emp
+<span class="keyword">WHERE</span> deptno <span class="operator">=</span> 20;
 
 
+<span class="comment">-- Step 2: Delete employees from department 20</span>
 
--- Step 2: Delete employees from department 20
-DELETE FROM emp 
-WHERE deptno = 20;
+<span class="keyword">DELETE FROM</span> emp
+<span class="keyword">WHERE</span> deptno <span class="operator">=</span> 20;
 
 
+<span class="comment">-- Step 3: Verify deletion</span>
 
--- Step 3: Verify deletion
-SELECT empno, ename, sal, deptno 
-FROM emp 
-WHERE deptno = 20;
+<span class="keyword">SELECT</span> empno, ename, sal, deptno
+<span class="keyword">FROM</span> emp
+<span class="keyword">WHERE</span> deptno <span class="operator">=</span> 20;
 </pre>
+
+</div>
 
 
 <h4>Before DELETE:</h4>
@@ -14951,7 +16339,7 @@ WHERE deptno = 20;
 
 
 <p>
-><strong>Note:</strong> Comparison occurred (deptno = 20), rows matching deleted
+<strong>Note:</strong> Comparison occurred (deptno = 20), rows matching deleted
 </p>
 
 
@@ -15025,12 +16413,12 @@ In today's lecture, we learned about Oracle Operators with focus on ASSIGNMENT O
 
 
 <p>
-><strong>Remember:</strong> In SQL UPDATE use = in SET clause for assignment. In WHERE clause, = is for comparison!
+<strong>Remember:</strong> In SQL UPDATE use = in SET clause for assignment. In WHERE clause, = is for comparison!
 </p>
 
 
 <p>
-><strong>Homework:</strong>
+<strong>Homework:</strong>
 </p>
 <ul>
     <li>1. Create UPDATE statement to change salary (use = in SET)</li>
@@ -15043,7 +16431,7 @@ In today's lecture, we learned about Oracle Operators with focus on ASSIGNMENT O
 
 
 <p>
-><strong>Next Topic:</strong> Arithmetic Operators in Oracle (+, -, *, /)
+<strong>Next Topic:</strong> Arithmetic Operators in Oracle (+, -, *, /)
 </p>
 
 
@@ -15056,7 +16444,7 @@ let oracleArithmeticOperatorsContent = `
 
 
 <p>
-Good morning students!
+Hi students!
 Today we will learn about ARITHMETIC OPERATORS in Oracle Database. Arithmetic operators are special symbols that perform mathematical operations on numbers, columns, and variables. Understanding arithmetic operators is essential for data calculations and transformations.
 </p>
 
@@ -15064,7 +16452,7 @@ Today we will learn about ARITHMETIC OPERATORS in Oracle Database. Arithmetic op
 <p>
 <strong>What We Will Cover:</strong>
 </p>
-<ul>
+<ol>
     <li>Introduction to Arithmetic Operators</li>
     <li>List of Arithmetic Operators in Oracle</li>
     <li>ADDITION OPERATOR (+)</li>
@@ -15075,14 +16463,14 @@ Today we will learn about ARITHMETIC OPERATORS in Oracle Database. Arithmetic op
     <li>Arithmetic Operators in SELECT Statement</li>
     <li>Arithmetic Operators in UPDATE Statement</li>
     <li>Complete practical examples</li>
-</ul>
+</ol>
 
 
 <h3>Introduction to Arithmetic Operators</h3>
 
 
 <p>
->Arithmetic operators perform **mathematical operations** on numeric values.
+Arithmetic operators perform **mathematical operations** on numeric values.
 </p>
 
 
@@ -15166,12 +16554,8 @@ Today we will learn about ARITHMETIC OPERATORS in Oracle Database. Arithmetic op
 
 <h3>1. ADDITION OPERATOR (+)</h3>
 
-
-<h4>Description:</h4>
-
-
 <p>
->The **+** operator adds two numeric values together.
+The **+** operator adds two numeric values together.
 </p>
 
 
@@ -15202,13 +16586,22 @@ Today we will learn about ARITHMETIC OPERATORS in Oracle Database. Arithmetic op
 <h4>Basic Addition Examples:</h4>
 
 
-<pre>
--- Simple addition
-SELECT 10 + 5 FROM dual;
+<div class="code-box">
 
+    <div class="code-title">
+        arithmetic-addition.sql
+    </div>
 
--- Output: 15
+<pre><span class="comment">-- Simple addition</span>
+
+<span class="keyword">SELECT</span> 10 <span class="operator">+</span> 5
+<span class="keyword">FROM</span> dual;
+
+<span class="comment">-- Output:</span>
+<span class="comment">-- 15</span>
 </pre>
+
+</div>
 
 
 <table border="1" class="notes-table" cellpadding="10">
@@ -15238,11 +16631,22 @@ SELECT 10 + 5 FROM dual;
 <h4>Addition with Columns - SELECT:</h4>
 
 
-<pre>
--- Add bonus to salary
-SELECT empno, ename, sal, sal + 5000 AS new_sal
-FROM emp;
+<div class="code-box">
+
+    <div class="code-title">
+        arithmetic-addition-example.sql
+    </div>
+
+<pre><span class="comment">-- Add bonus to salary</span>
+
+<span class="keyword">SELECT</span> empno,
+       ename,
+       sal,
+       sal <span class="operator">+</span> 5000 <span class="keyword">AS</span> new_sal
+<span class="keyword">FROM</span> emp;
 </pre>
+
+</div>
 
 
 <h4>Output Example:</h4>
@@ -15271,19 +16675,27 @@ FROM emp;
 
 
 <p>
-><strong>Calculation:</</strong> sal + 5000 (25000 + 5000 = 30000)
+<strong>Calculation:</</strong> sal + 5000 (25000 + 5000 = 30000)
 </p>
 
 
 <h4>Addition in UPDATE:</h4>
 
 
-<pre>
--- Increase salary by 5000
-UPDATE emp 
-SET sal = sal + 5000 
-WHERE empno = 7788;
+<div class="code-box">
+
+    <div class="code-title">
+        update-addition.sql
+    </div>
+
+<pre><span class="comment">-- Increase salary by 5000</span>
+
+<span class="keyword">UPDATE</span> emp
+<span class="keyword">SET</span> sal <span class="operator">=</span> sal <span class="operator">+</span> 5000
+<span class="keyword">WHERE</span> empno <span class="operator">=</span> 7788;
 </pre>
+
+</div>
 
 
 <table border="1" class="notes-table" cellpadding="10">
@@ -15302,12 +16714,8 @@ WHERE empno = 7788;
 
 <h3>2. SUBTRACTION OPERATOR (-)</h3>
 
-
-<h4>Description:</h4>
-
-
 <p>
->The **-** operator subtracts the second value from the first value.
+The **-** operator subtracts the second value from the first value.
 </p>
 
 
@@ -15338,13 +16746,22 @@ WHERE empno = 7788;
 <h4>Basic Subtraction Examples:</h4>
 
 
-<pre>
--- Simple subtraction
-SELECT 10 - 5 FROM dual;
+<div class="code-box">
 
+    <div class="code-title">
+        arithmetic-subtraction.sql
+    </div>
 
--- Output: 5
+<pre><span class="comment">-- Simple subtraction</span>
+
+<span class="keyword">SELECT</span> 10 <span class="operator">-</span> 5
+<span class="keyword">FROM</span> dual;
+
+<span class="comment">-- Output:</span>
+<span class="comment">-- 5</span>
 </pre>
+
+</div>
 
 
 <table border="1" class="notes-table" cellpadding="10">
@@ -15374,11 +16791,22 @@ SELECT 10 - 5 FROM dual;
 <h4>Subtraction with Columns - SELECT:</h4>
 
 
-<pre>
--- Calculate salary after deduction
-SELECT empno, ename, sal, sal - 3000 AS net_sal
-FROM emp;
+<div class="code-box">
+
+    <div class="code-title">
+        arithmetic-subtraction-example.sql
+    </div>
+
+<pre><span class="comment">-- Calculate salary after deduction</span>
+
+<span class="keyword">SELECT</span> empno,
+       ename,
+       sal,
+       sal <span class="operator">-</span> 3000 <span class="keyword">AS</span> net_sal
+<span class="keyword">FROM</span> emp;
 </pre>
+
+</div>
 
 
 <h4>Output Example:</h4>
@@ -15407,19 +16835,31 @@ FROM emp;
 
 
 <p>
-><strong>Calculation:</strong> sal - 3000 (30000 - 3000 = 27000)
+<strong>Calculation:</strong> sal - 3000 (30000 - 3000 = 27000)
 </p>
 
 
 <h4>Subtraction Between Columns:</h4>
 
 
-<pre>
--- Calculate difference between salary and commission
-SELECT empno, ename, sal, comm, sal - comm AS diff
-FROM emp
-WHERE comm IS NOT NULL;
+<div class="code-box">
+
+    <div class="code-title">
+        salary-commission-difference.sql
+    </div>
+
+<pre><span class="comment">-- Calculate the difference between salary and commission</span>
+
+<span class="keyword">SELECT</span> empno,
+       ename,
+       sal,
+       comm,
+       sal <span class="operator">-</span> comm <span class="keyword">AS</span> diff
+<span class="keyword">FROM</span> emp
+<span class="keyword">WHERE</span> comm <span class="keyword">IS NOT NULL</span>;
 </pre>
+
+</div>
 
 
 <h4>Output Example:</h4>
@@ -15444,18 +16884,15 @@ WHERE comm IS NOT NULL;
 
 
 <p>
-><strong>Calculation:</strong> sal - comm (30000 - 5000 = 25000)
+<strong>Calculation:</strong> sal - comm (30000 - 5000 = 25000)
 </p>
 
 
 <h3>3. MULTIPLICATION OPERATOR (*)</h3>
 
 
-<h4>Description:</h4>
-
-
 <p>
->The **\*** operator multiplies two numeric values.
+The **\*** operator multiplies two numeric values.
 </p>
 
 
@@ -15486,13 +16923,22 @@ WHERE comm IS NOT NULL;
 <h4>Basic Multiplication Examples:</h4>
 
 
-<pre>
--- Simple multiplication
-SELECT 10 * 5 FROM dual;
+<div class="code-box">
 
+    <div class="code-title">
+        arithmetic-multiplication.sql
+    </div>
 
--- Output: 50
+<pre><span class="comment">-- Simple multiplication</span>
+
+<span class="keyword">SELECT</span> 10 <span class="operator">*</span> 5
+<span class="keyword">FROM</span> dual;
+
+<span class="comment">-- Output:</span>
+<span class="comment">-- 50</span>
 </pre>
+
+</div>
 
 
 <table border="1" class="notes-table" cellpadding="10">
@@ -15522,11 +16968,22 @@ SELECT 10 * 5 FROM dual;
 <h4>Multiplication with Columns - SELECT:</h4>
 
 
-<pre>
--- Calculate annual salary (monthly sal * 12)
-SELECT empno, ename, sal, sal * 12 AS annual_sal
-FROM emp;
+<div class="code-box">
+
+    <div class="code-title">
+        annual-salary.sql
+    </div>
+
+<pre><span class="comment">-- Calculate annual salary (monthly salary × 12)</span>
+
+<span class="keyword">SELECT</span> empno,
+       ename,
+       sal,
+       sal <span class="operator">*</span> 12 <span class="keyword">AS</span> annual_sal
+<span class="keyword">FROM</span> emp;
 </pre>
+
+</div>
 
 
 <h4>Output Example:</h4>
@@ -15555,19 +17012,27 @@ FROM emp;
 
 
 <p>
-><strong>Calculation:</strong> sal * 12 (30000 * 12 = 360000)
+<strong>Calculation:</strong> sal * 12 (30000 * 12 = 360000)
 </p>
 
 
 <h4>Multiplication in UPDATE:</h4>
 
 
-<pre>
--- Increase salary by 10% (multiply by 1.10)
-UPDATE emp 
-SET sal = sal * 1.10 
-WHERE deptno = 20;
+<div class="code-box">
+
+    <div class="code-title">
+        update-salary-by-percentage.sql
+    </div>
+
+<pre><span class="comment">-- Increase salary by 10% (multiply by 1.10)</span>
+
+<span class="keyword">UPDATE</span> emp
+<span class="keyword">SET</span> sal <span class="operator">=</span> sal <span class="operator">*</span> 1.10
+<span class="keyword">WHERE</span> deptno <span class="operator">=</span> 20;
 </pre>
+
+</div>
 
 
 <table border="1" class="notes-table" cellpadding="10">
@@ -15585,18 +17050,15 @@ WHERE deptno = 20;
 
 
 <p>
-><strong>Calculation:</strong> sal * 1.10 (30000 * 1.10 = 33000)
+<strong>Calculation:</strong> sal * 1.10 (30000 * 1.10 = 33000)
 </p>
 
 
 <h3>4. DIVISION OPERATOR (/)</h3>
 
 
-<h4>Description:</h4>
-
-
 <p>
->The **/** operator divides the first value by the second value.
+The **/** operator divides the first value by the second value.
 </p>
 
 
@@ -15627,13 +17089,22 @@ WHERE deptno = 20;
 <h4>Basic Division Examples:</h4>
 
 
-<pre>
--- Simple division
-SELECT 10 / 5 FROM dual;
+<div class="code-box">
 
+    <div class="code-title">
+        arithmetic-division.sql
+    </div>
 
--- Output: 2
+<pre><span class="comment">-- Simple division</span>
+
+<span class="keyword">SELECT</span> 10 <span class="operator">/</span> 5
+<span class="keyword">FROM</span> dual;
+
+<span class="comment">-- Output:</span>
+<span class="comment">-- 2</span>
 </pre>
+
+</div>
 
 
 <table border="1" class="notes-table" cellpadding="10">
@@ -15661,18 +17132,29 @@ SELECT 10 / 5 FROM dual;
 
 
 <p>
-><strong>Note:</strong> Oracle returns decimal result for division
+<strong>Note:</strong> Oracle returns decimal result for division
 </p>
 
 
 <h4>Division with Columns - SELECT:</h4>
 
 
-<pre>
--- Calculate monthly salary from annual salary
-SELECT empno, ename, sal * 12 AS annual_sal, (sal * 12) / 12 AS monthly_sal
-FROM emp;
+<div class="code-box">
+
+    <div class="code-title">
+        monthly-salary.sql
+    </div>
+
+<pre><span class="comment">-- Calculate monthly salary from annual salary</span>
+
+<span class="keyword">SELECT</span> empno,
+       ename,
+       sal <span class="operator">*</span> 12 <span class="keyword">AS</span> annual_sal,
+       (sal <span class="operator">*</span> 12) <span class="operator">/</span> 12 <span class="keyword">AS</span> monthly_sal
+<span class="keyword">FROM</span> emp;
 </pre>
+
+</div>
 
 
 <h4>Output Example:</h4>
@@ -15695,19 +17177,30 @@ FROM emp;
 
 
 <p>
-><strong>Calculation:</strong> (sal * 12) / 12 (360000 / 12 = 30000)
+<strong>Calculation:</strong> (sal * 12) / 12 (360000 / 12 = 30000)
 </p>
 
 
 <h4>Division for Average Calculation:</h4>
 
 
-<pre>
--- Calculate average salary per employee in department
-SELECT deptno, SUM(sal) AS total_sal, COUNT(*) AS emp_count, SUM(sal) / COUNT(*) AS avg_sal
-FROM emp
-GROUP BY deptno;
+<div class="code-box">
+
+    <div class="code-title">
+        average-salary-by-department.sql
+    </div>
+
+<pre><span class="comment">-- Calculate average salary for each department</span>
+
+<span class="keyword">SELECT</span> deptno,
+       <span class="function">SUM</span>(sal) <span class="keyword">AS</span> total_sal,
+       <span class="function">COUNT</span>(<span class="operator">*</span>) <span class="keyword">AS</span> emp_count,
+       <span class="function">SUM</span>(sal) <span class="operator">/</span> <span class="function">COUNT</span>(<span class="operator">*</span>) <span class="keyword">AS</span> avg_sal
+<span class="keyword">FROM</span> emp
+<span class="keyword">GROUP BY</span> deptno;
 </pre>
+
+</div>
 
 
 <h4>Output Example:</h4>
@@ -15730,18 +17223,14 @@ GROUP BY deptno;
 
 
 <p>
-><strong>Calculation:</strong> total_sal / emp_count (135000 / 5 = 27000)
+<strong>Calculation:</strong> total_sal / emp_count (135000 / 5 = 27000)
 </p>
 
 
 <h3>5. MODULUS OPERATOR (MOD)</h3>
 
-
-<h4>Description:</h4>
-
-
 <p>
->The **MOD()** function returns the **remainder** of division.
+The **MOD()** function returns the **remainder** of division.
 </p>
 
 
@@ -15772,13 +17261,22 @@ GROUP BY deptno;
 <h4>Basic MOD Examples:</h4>
 
 
-<pre>
--- Get remainder of 10 divided by 3
-SELECT MOD(10, 3) FROM dual;
+<div class="code-box">
 
+    <div class="code-title">
+        modulus-function.sql
+    </div>
 
--- Output: 1
+<pre><span class="comment">-- Get the remainder of 10 divided by 3</span>
+
+<span class="keyword">SELECT</span> <span class="function">MOD</span>(10, 3)
+<span class="keyword">FROM</span> dual;
+
+<span class="comment">-- Output:</span>
+<span class="comment">-- 1</span>
 </pre>
+
+</div>
 
 
 <table border="1" class="notes-table" cellpadding="10">
@@ -15812,12 +17310,21 @@ SELECT MOD(10, 3) FROM dual;
 
 <h4>MOD for Even/Odd Check:</h4>
 
+<div class="code-box">
 
-<pre>
--- Check if employee number is even or odd
-SELECT empno, ename, MOD(empno, 2) AS even_odd
-FROM emp;
+    <div class="code-title">
+        modulus-even-odd.sql
+    </div>
+
+<pre><span class="comment">-- Check whether employee number is even or odd</span>
+
+<span class="keyword">SELECT</span> empno,
+       ename,
+       <span class="function">MOD</span>(empno, 2) <span class="keyword">AS</span> even_odd
+<span class="keyword">FROM</span> emp;
 </pre>
+
+</div>
 
 
 <h4>Output Example:</h4>
@@ -15852,18 +17359,28 @@ FROM emp;
 
 
 <p>
-><strong>Note:</strong> MOD = 0 means Even, MOD = 1 means Odd
+<strong>Note:</strong> MOD = 0 means Even, MOD = 1 means Odd
 </p>
 
 
 <h4>MOD for Grouping:</h4>
 
 
-<pre>
--- Assign employees to groups (1-4) based on empno
-SELECT empno, ename, MOD(empno - 1, 4) + 1 AS group_num
-FROM emp;
+<div class="code-box">
+
+    <div class="code-title">
+        employee-grouping.sql
+    </div>
+
+<pre><span class="comment">-- Assign employees to groups (1–4) based on employee number</span>
+
+<span class="keyword">SELECT</span> empno,
+       ename,
+       <span class="function">MOD</span>(empno <span class="operator">-</span> 1, 4) <span class="operator">+</span> 1 <span class="keyword">AS</span> group_num
+<span class="keyword">FROM</span> emp;
 </pre>
+
+</div>
 
 
 <h4>Output Example:</h4>
@@ -15901,21 +17418,29 @@ FROM emp;
 <h3>Arithmetic Operators in SELECT Statement</h3>
 
 
-<h4>Complete Example - Multiple Operations:</h4>
+<h4>Example - Multiple Operations:</h4>
 
 
-<pre>
--- Calculate salary with bonus, tax, and net salary
-SELECT empno, 
-       ename, 
-       sal AS base_sal,
-       sal + 5000 AS with_bonus,
-       sal * 1.10 AS with_10pct_bonus,
-       sal - 3000 AS after_deduction,
-       sal / 1000 AS sal_in_thousands,
-       MOD(empno, 10) AS empno_remainder
-FROM emp;
+<div class="code-box">
+
+    <div class="code-title">
+        arithmetic-operators-example.sql
+    </div>
+
+<pre><span class="comment">-- Calculate salary using different arithmetic operators</span>
+
+<span class="keyword">SELECT</span> empno,
+       ename,
+       sal <span class="keyword">AS</span> base_sal,
+       sal <span class="operator">+</span> 5000 <span class="keyword">AS</span> with_bonus,
+       sal <span class="operator">*</span> 1.10 <span class="keyword">AS</span> with_10pct_bonus,
+       sal <span class="operator">-</span> 3000 <span class="keyword">AS</span> after_deduction,
+       sal <span class="operator">/</span> 1000 <span class="keyword">AS</span> sal_in_thousands,
+       <span class="function">MOD</span>(empno, 10) <span class="keyword">AS</span> empno_remainder
+<span class="keyword">FROM</span> emp;
 </pre>
+
+</div>
 
 
 <h4>Output Example:</h4>
@@ -15944,20 +17469,28 @@ FROM emp;
 <h3>Arithmetic Operators in UPDATE Statement</h3>
 
 
-<h4>Complete Example - Multiple Updates:</h4>
+<h4>Multiple Updates:</h4>
 
 
-<pre>
--- Update salary with different calculations
-UPDATE emp 
-SET sal = sal * 1.10 + 1000,
-    comm = sal * 0.05
-WHERE deptno = 20;
+<div class="code-box">
+
+    <div class="code-title">
+        update-salary-calculation.sql
+    </div>
+
+<pre><span class="comment">-- Update salary and commission using arithmetic calculations</span>
+
+<span class="keyword">UPDATE</span> emp
+<span class="keyword">SET</span> sal <span class="operator">=</span> sal <span class="operator">*</span> 1.10 <span class="operator">+</span> 1000,
+    comm <span class="operator">=</span> sal <span class="operator">*</span> 0.05
+<span class="keyword">WHERE</span> deptno <span class="operator">=</span> 20;
 </pre>
+
+</div>
 
 
 <p>
-><strong>Note:</strong> Multiple arithmetic operations in one UPDATE
+<strong>Note:</strong> Multiple arithmetic operations in one UPDATE
 </p>
 
 
@@ -16016,7 +17549,7 @@ In today's lecture, we learned about ARITHMETIC OPERATORS in Oracle:
 </p>
 
 
-<ul>
+<ol>
     <li><strong>Addition (+):</strong> Adds values (10 + 5 = 15)</li>
     <li><strong>Subtraction (-):</strong> Subtracts (10 - 5 = 5)</li>
     <li><strong>Multiplication (*):</strong> Multiplies (10 * 5 = 50)</li>
@@ -16027,16 +17560,16 @@ In today's lecture, we learned about ARITHMETIC OPERATORS in Oracle:
     <li><strong>Division Result:</strong> Returns decimal (10 / 4 = 2.5)</li>
     <li><strong>NULL Handling:</strong> NULL operand returns NULL</li>
     <li><strong>Combined Operations:</strong> Use multiple operators (sal * 1.10 + 1000)</li>
-</ul>
+</ol>
 
 
 <p>
-><strong>Remember:</strong> + for addition, - for subtraction, * for multiplication, / for division, MOD() for remainder!
+<strong>Remember:</strong> + for addition, - for subtraction, * for multiplication, / for division, MOD() for remainder!
 </p>
 
 
 <p>
-><strong>Homework:</strong>
+<strong>Homework:</strong>
 </p>
 <ul>
     <li>1. Create SELECT with addition (sal + bonus)</li>
@@ -16049,11 +17582,6 @@ In today's lecture, we learned about ARITHMETIC OPERATORS in Oracle:
 </ul>
 
 
-<p>
-><strong>Next Topic:</strong> Comparison Operators in Oracle (=, <, >, <=, >=, !=)
-</p>
-
-
 `;
 
 let oracleRelationalOperatorsContent = `
@@ -16063,7 +17591,7 @@ let oracleRelationalOperatorsContent = `
 
 
 <p>
-Good morning students!
+Hello students!
 Today we will learn about RELATIONAL OPERATORS in Oracle Database. Relational operators (also called Comparison Operators) compare two values and return a boolean result (TRUE or FALSE). Understanding relational operators is essential for filtering data in WHERE clauses and conditions.
 </p>
 
@@ -16071,7 +17599,7 @@ Today we will learn about RELATIONAL OPERATORS in Oracle Database. Relational op
 <p>
 <strong>What We Will Cover:</strong>
 </p>
-<ul>
+<ol>
     <li>Introduction to Relational Operators</li>
     <li>List of Relational Operators in Oracle</li>
     <li>EQUAL OPERATOR (=)</li>
@@ -16083,7 +17611,7 @@ Today we will learn about RELATIONAL OPERATORS in Oracle Database. Relational op
     <li>Relational Operators in WHERE Clause</li>
     <li>Relational Operators in JOIN Conditions</li>
     <li>Complete practical examples</li>
-</ul>
+</ol>
 
 
 <h3>Introduction to Relational Operators</h3>
@@ -16183,10 +17711,6 @@ Relational operators compare two values and determine the relationship between t
 
 <h3>1. EQUAL OPERATOR (=)</h3>
 
-
-<h4>Description:</h4>
-
-
 <p>
 The = operator checks if two values are EQUAL.
 </p>
@@ -16219,13 +17743,23 @@ The = operator checks if two values are EQUAL.
 <h4>Basic Equal Examples:</h4>
 
 
-<pre>
--- Check if values are equal
-SELECT * FROM dual WHERE 10 = 10;
+<div class="code-box">
 
+    <div class="code-title">
+        comparison-operator-equal.sql
+    </div>
 
--- Output: Row returned (TRUE)
+<pre><span class="comment">-- Check if values are equal</span>
+
+<span class="keyword">SELECT</span> <span class="operator">*</span>
+<span class="keyword">FROM</span> dual
+<span class="keyword">WHERE</span> 10 <span class="operator">=</span> 10;
+
+<span class="comment">-- Output:</span>
+<span class="comment">-- Row returned (TRUE)</span>
 </pre>
+
+</div>
 
 
 <table border="1" class="notes-table" cellpadding="10">
@@ -16255,12 +17789,23 @@ SELECT * FROM dual WHERE 10 = 10;
 <h4>Equal Operator in WHERE - SELECT:</h4>
 
 
-<pre>
--- Select employee with empno = 7788
-SELECT empno, ename, sal, deptno
-FROM emp
-WHERE empno = 7788;
+<div class="code-box">
+
+    <div class="code-title">
+        comparison-equal-example.sql
+    </div>
+
+<pre><span class="comment">-- Select employee with empno = 7788</span>
+
+<span class="keyword">SELECT</span> empno,
+       ename,
+       sal,
+       deptno
+<span class="keyword">FROM</span> emp
+<span class="keyword">WHERE</span> empno <span class="operator">=</span> 7788;
 </pre>
+
+</div>
 
 
 <h4>Output Example:</h4>
@@ -16290,12 +17835,22 @@ Note: Returns row where empno EQUALS 7788
 <h4>Equal Operator with Strings:</h4>
 
 
-<pre>
--- Select employees named SMITH
-SELECT empno, ename, sal
-FROM emp
-WHERE ename = 'SMITH';
+<div class="code-box">
+
+    <div class="code-title">
+        comparison-equal-string.sql
+    </div>
+
+<pre><span class="comment">-- Select employees named SMITH</span>
+
+<span class="keyword">SELECT</span> empno,
+       ename,
+       sal
+<span class="keyword">FROM</span> emp
+<span class="keyword">WHERE</span> ename <span class="operator">=</span> 'SMITH';
 </pre>
+
+</div>
 
 
 <h4>Output Example:</h4>
@@ -16318,12 +17873,20 @@ WHERE ename = 'SMITH';
 <h4>Equal Operator in UPDATE:</h4>
 
 
-<pre>
--- Update salary for employee named SMITH
-UPDATE emp
-SET sal = 40000
-WHERE ename = 'SMITH';
+<div class="code-box">
+
+    <div class="code-title">
+        update-employee-smith.sql
+    </div>
+
+<pre><span class="comment">-- Update salary for employee named SMITH</span>
+
+<span class="keyword">UPDATE</span> emp
+<span class="keyword">SET</span> sal <span class="operator">=</span> 40000
+<span class="keyword">WHERE</span> ename <span class="operator">=</span> 'SMITH';
 </pre>
+
+</div>
 
 
 <p>
@@ -16332,9 +17895,6 @@ Note: = in SET clause is ASSIGNMENT, = in WHERE clause is COMPARISON
 
 
 <h3>2. NOT EQUAL OPERATORS (!=, <>)</h3>
-
-
-<h4>Description:</h4>
 
 
 <p>
@@ -16364,13 +17924,23 @@ The != and <> operators check if two values are NOT EQUAL. Both work the same in
 <h4>Basic Not Equal Examples:</h4>
 
 
-<pre>
--- Check if values are not equal
-SELECT * FROM dual WHERE 10 != 5;
+<div class="code-box">
 
+    <div class="code-title">
+        comparison-not-equal.sql
+    </div>
 
--- Output: Row returned (TRUE)
+<pre><span class="comment">-- Check if values are not equal</span>
+
+<span class="keyword">SELECT</span> <span class="operator">*</span>
+<span class="keyword">FROM</span> dual
+<span class="keyword">WHERE</span> 10 <span class="operator">!=</span> 5;
+
+<span class="comment">-- Output:</span>
+<span class="comment">-- Row returned (TRUE)</span>
 </pre>
+
+</div>
 
 
 <table border="1" class="notes-table" cellpadding="10">
@@ -16399,13 +17969,23 @@ SELECT * FROM dual WHERE 10 != 5;
 
 <h4>Not Equal Operator in WHERE:</h4>
 
+<div class="code-box">
 
-<pre>
--- Select employees NOT in department 20
-SELECT empno, ename, sal, deptno
-FROM emp
-WHERE deptno != 20;
+    <div class="code-title">
+        comparison-not-equal-example.sql
+    </div>
+
+<pre><span class="comment">-- Select employees NOT in department 20</span>
+
+<span class="keyword">SELECT</span> empno,
+       ename,
+       sal,
+       deptno
+<span class="keyword">FROM</span> emp
+<span class="keyword">WHERE</span> deptno <span class="operator">!=</span> 20;
 </pre>
+
+</div>
 
 
 <h4>Output Example:</h4>
@@ -16441,12 +18021,22 @@ Note: Returns rows where deptno is NOT EQUAL to 20
 <h4>Not Equal with Strings:</h4>
 
 
-<pre>
--- Select employees NOT named SMITH
-SELECT empno, ename, sal
-FROM emp
-WHERE ename != 'SMITH';
+<div class="code-box">
+
+    <div class="code-title">
+        comparison-not-equal-string.sql
+    </div>
+
+<pre><span class="comment">-- Select employees NOT named SMITH</span>
+
+<span class="keyword">SELECT</span> empno,
+       ename,
+       sal
+<span class="keyword">FROM</span> emp
+<span class="keyword">WHERE</span> ename <span class="operator">!=</span> 'SMITH';
 </pre>
+
+</div>
 
 
 <h4>Output Example:</h4>
@@ -16472,9 +18062,6 @@ WHERE ename != 'SMITH';
 
 
 <h3>3. GREATER THAN OPERATOR (>)</h3>
-
-
-<h4>Description:</h4>
 
 
 <p>
@@ -16509,13 +18096,23 @@ The > operator checks if the LEFT value is GREATER THAN the RIGHT value.
 <h4>Basic Greater Than Examples:</h4>
 
 
-<pre>
--- Check if left is greater than right
-SELECT * FROM dual WHERE 10 > 5;
+<div class="code-box">
 
+    <div class="code-title">
+        comparison-greater-than.sql
+    </div>
 
--- Output: Row returned (TRUE)
+<pre><span class="comment">-- Check if left value is greater than right value</span>
+
+<span class="keyword">SELECT</span> <span class="operator">*</span>
+<span class="keyword">FROM</span> dual
+<span class="keyword">WHERE</span> 10 <span class="operator">&gt;</span> 5;
+
+<span class="comment">-- Output:</span>
+<span class="comment">-- Row returned (TRUE)</span>
 </pre>
+
+</div>
 
 
 <table border="1" class="notes-table" cellpadding="10">
@@ -16545,12 +18142,23 @@ SELECT * FROM dual WHERE 10 > 5;
 <h4>Greater Than in WHERE - Salary Example:</h4>
 
 
-<pre>
--- Select employees with salary greater than 30000
-SELECT empno, ename, sal, deptno
-FROM emp
-WHERE sal > 30000;
+<div class="code-box">
+
+    <div class="code-title">
+        comparison-greater-than-example.sql
+    </div>
+
+<pre><span class="comment">-- Select employees with salary greater than 30000</span>
+
+<span class="keyword">SELECT</span> empno,
+       ename,
+       sal,
+       deptno
+<span class="keyword">FROM</span> emp
+<span class="keyword">WHERE</span> sal <span class="operator">&gt;</span> 30000;
 </pre>
+
+</div>
 
 
 <h4>Output Example:</h4>
@@ -16586,12 +18194,22 @@ Note: Returns rows where sal is GREATER THAN 30000
 <h4>Greater Than with Dates:</h4>
 
 
-<pre>
--- Select employees hired after 1982
-SELECT empno, ename, hiredate
-FROM emp
-WHERE hiredate > '31-DEC-1982';
+<div class="code-box">
+
+    <div class="code-title">
+        comparison-date-greater-than.sql
+    </div>
+
+<pre><span class="comment">-- Select employees hired after 1982</span>
+
+<span class="keyword">SELECT</span> empno,
+       ename,
+       hiredate
+<span class="keyword">FROM</span> emp
+<span class="keyword">WHERE</span> hiredate <span class="operator">&gt;</span> '31-DEC-1982';
 </pre>
+
+</div>
 
 
 <h4>Output Example:</h4>
@@ -16612,9 +18230,6 @@ WHERE hiredate > '31-DEC-1982';
 
 
 <h3>4. LESS THAN OPERATOR (<)</h3>
-
-
-<h4>Description:</h4>
 
 
 <p>
@@ -16649,13 +18264,23 @@ The < operator checks if the LEFT value is LESS THAN the RIGHT value.
 <h4>Basic Less Than Examples:</h4>
 
 
-<pre>
--- Check if left is less than right
-SELECT * FROM dual WHERE 5 < 10;
+<div class="code-box">
 
+    <div class="code-title">
+        comparison-less-than.sql
+    </div>
 
--- Output: Row returned (TRUE)
+<pre><span class="comment">-- Check if left value is less than right value</span>
+
+<span class="keyword">SELECT</span> <span class="operator">*</span>
+<span class="keyword">FROM</span> dual
+<span class="keyword">WHERE</span> 5 <span class="operator">&lt;</span> 10;
+
+<span class="comment">-- Output:</span>
+<span class="comment">-- Row returned (TRUE)</span>
 </pre>
+
+</div>
 
 
 <table border="1" class="notes-table" cellpadding="10">
@@ -16685,12 +18310,23 @@ SELECT * FROM dual WHERE 5 < 10;
 <h4>Less Than in WHERE - Salary Example:</h4>
 
 
-<pre>
--- Select employees with salary less than 30000
-SELECT empno, ename, sal, deptno
-FROM emp
-WHERE sal < 30000;
+<div class="code-box">
+
+    <div class="code-title">
+        comparison-less-than-example.sql
+    </div>
+
+<pre><span class="comment">-- Select employees with salary less than 30000</span>
+
+<span class="keyword">SELECT</span> empno,
+       ename,
+       sal,
+       deptno
+<span class="keyword">FROM</span> emp
+<span class="keyword">WHERE</span> sal <span class="operator">&lt;</span> 30000;
 </pre>
+
+</div>
 
 
 <h4>Output Example:</h4>
@@ -16726,12 +18362,23 @@ Note: Returns rows where sal is LESS THAN 30000
 <h4>Less Than for Department Filter:</h4>
 
 
-<pre>
--- Select employees in departments less than 20
-SELECT empno, ename, sal, deptno
-FROM emp
-WHERE deptno < 20;
+<div class="code-box">
+
+    <div class="code-title">
+        comparison-less-than-dept.sql
+    </div>
+
+<pre><span class="comment">-- Select employees in departments less than 20</span>
+
+<span class="keyword">SELECT</span> empno,
+       ename,
+       sal,
+       deptno
+<span class="keyword">FROM</span> emp
+<span class="keyword">WHERE</span> deptno <span class="operator">&lt;</span> 20;
 </pre>
+
+</div>
 
 
 <h4>Output Example:</h4>
@@ -16759,9 +18406,6 @@ Note: Returns rows where deptno is LESS THAN 20 (only dept 10)
 
 
 <h3>5. GREATER THAN OR EQUAL OPERATOR (>=)</h3>
-
-
-<h4>Description:</h4>
 
 
 <p>
@@ -16796,13 +18440,23 @@ The >= operator checks if the LEFT value is GREATER THAN OR EQUAL TO the RIGHT v
 <h4>Basic Greater or Equal Examples:</h4>
 
 
-<pre>
--- Check if left is greater or equal to right
-SELECT * FROM dual WHERE 10 >= 10;
+<div class="code-box">
 
+    <div class="code-title">
+        comparison-greater-equal.sql
+    </div>
 
--- Output: Row returned (TRUE)
+<pre><span class="comment">-- Check if left value is greater than or equal to right value</span>
+
+<span class="keyword">SELECT</span> <span class="operator">*</span>
+<span class="keyword">FROM</span> dual
+<span class="keyword">WHERE</span> 10 <span class="operator">&gt;=</span> 10;
+
+<span class="comment">-- Output:</span>
+<span class="comment">-- Row returned (TRUE)</span>
 </pre>
+
+</div>
 
 
 <table border="1" class="notes-table" cellpadding="10">
@@ -16828,12 +18482,23 @@ SELECT * FROM dual WHERE 10 >= 10;
 <h4>Greater or Equal in WHERE:</h4>
 
 
-<pre>
--- Select employees with salary >= 30000
-SELECT empno, ename, sal, deptno
-FROM emp
-WHERE sal >= 30000;
+<div class="code-box">
+
+    <div class="code-title">
+        comparison-greater-equal-example.sql
+    </div>
+
+<pre><span class="comment">-- Select employees with salary greater than or equal to 30000</span>
+
+<span class="keyword">SELECT</span> empno,
+       ename,
+       sal,
+       deptno
+<span class="keyword">FROM</span> emp
+<span class="keyword">WHERE</span> sal <span class="operator">&gt;=</span> 30000;
 </pre>
+
+</div>
 
 
 <h4>Output Example:</h4>
@@ -16869,9 +18534,6 @@ Note: Returns rows where sal is GREATER THAN OR EQUAL TO 30000 (includes 30000)
 <h3>6. LESS THAN OR EQUAL OPERATOR (<=)</h3>
 
 
-<h4>Description:</h4>
-
-
 <p>
 The <= operator checks if the LEFT value is LESS THAN OR EQUAL TO the RIGHT value.
 </p>
@@ -16904,13 +18566,23 @@ The <= operator checks if the LEFT value is LESS THAN OR EQUAL TO the RIGHT valu
 <h4>Basic Less or Equal Examples:</h4>
 
 
-<pre>
--- Check if left is less or equal to right
-SELECT * FROM dual WHERE 10 <= 10;
+<div class="code-box">
 
+    <div class="code-title">
+        comparison-less-equal.sql
+    </div>
 
--- Output: Row returned (TRUE)
+<pre><span class="comment">-- Check if left value is less than or equal to right value</span>
+
+<span class="keyword">SELECT</span> <span class="operator">*</span>
+<span class="keyword">FROM</span> dual
+<span class="keyword">WHERE</span> 10 <span class="operator">&lt;=</span> 10;
+
+<span class="comment">-- Output:</span>
+<span class="comment">-- Row returned (TRUE)</span>
 </pre>
+
+</div>
 
 
 <table border="1" class="notes-table" cellpadding="10">
@@ -16936,12 +18608,23 @@ SELECT * FROM dual WHERE 10 <= 10;
 <h4>Less or Equal in WHERE:</h4>
 
 
-<pre>
--- Select employees with salary <= 30000
-SELECT empno, ename, sal, deptno
-FROM emp
-WHERE sal <= 30000;
+<div class="code-box">
+
+    <div class="code-title">
+        comparison-less-equal-example.sql
+    </div>
+
+<pre><span class="comment">-- Select employees with salary less than or equal to 30000</span>
+
+<span class="keyword">SELECT</span> empno,
+       ename,
+       sal,
+       deptno
+<span class="keyword">FROM</span> emp
+<span class="keyword">WHERE</span> sal <span class="operator">&lt;=</span> 30000;
 </pre>
+
+</div>
 
 
 <h4>Output Example:</h4>
@@ -16980,13 +18663,25 @@ Note: Returns rows where sal is LESS THAN OR EQUAL TO 30000 (includes 30000)
 <h4>Complete Example - Multiple Operators:</h4>
 
 
-<pre>
--- Use multiple relational operators
-SELECT empno, ename, sal, deptno
-FROM emp
-WHERE sal >= 25000 AND sal <= 35000
-      AND deptno != 30;
+<div class="code-box">
+
+    <div class="code-title">
+        multiple-relational-operators.sql
+    </div>
+
+<pre><span class="comment">-- Use multiple relational operators</span>
+
+<span class="keyword">SELECT</span> empno,
+       ename,
+       sal,
+       deptno
+<span class="keyword">FROM</span> emp
+<span class="keyword">WHERE</span> sal <span class="operator">&gt;=</span> 25000
+  <span class="keyword">AND</span> sal <span class="operator">&lt;=</span> 35000
+  <span class="keyword">AND</span> deptno <span class="operator">!=</span> 30;
 </pre>
+
+</div>
 
 
 <h4>Output Example:</h4>
@@ -17025,12 +18720,25 @@ Note: sal is between 25000 and 35000, AND deptno is NOT 30
 <h4>JOIN with Equal Operator:</h4>
 
 
-<pre>
--- Join emp and dept tables using =
-SELECT e.empno, e.ename, e.sal, d.deptno, d.dname
-FROM emp e
-JOIN dept d ON e.deptno = d.deptno;
+<div class="code-box">
+
+    <div class="code-title">
+        join-emp-dept.sql
+    </div>
+
+<pre><span class="comment">-- Join emp and dept tables using equality operator</span>
+
+<span class="keyword">SELECT</span> e.empno,
+       e.ename,
+       e.sal,
+       d.deptno,
+       d.dname
+<span class="keyword">FROM</span> emp e
+<span class="keyword">JOIN</span> dept d
+<span class="keyword">ON</span> e.deptno <span class="operator">=</span> d.deptno;
 </pre>
+
+</div>
 
 
 <h4>Output Example:</h4>
@@ -17257,10 +18965,6 @@ Logical operators combine two or more conditions and return TRUE or FALSE based 
 
 <h3>1. AND OPERATOR</h3>
 
-
-<h4>Description:</h4>
-
-
 <p>
 The AND operator returns TRUE only if BOTH conditions are TRUE.
 </p>
@@ -17325,12 +19029,24 @@ The AND operator returns TRUE only if BOTH conditions are TRUE.
 <h4>AND in WHERE Clause - SELECT:</h4>
 
 
-<pre>
--- Select employees with salary > 30000 AND in department 10
-SELECT empno, ename, sal, deptno
-FROM emp
-WHERE sal > 30000 AND deptno = 10;
+<div class="code-box">
+
+    <div class="code-title">
+        and-condition-example.sql
+    </div>
+
+<pre><span class="comment">-- Select employees with salary > 30000 AND in department 10</span>
+
+<span class="keyword">SELECT</span> empno,
+       ename,
+       sal,
+       deptno
+<span class="keyword">FROM</span> emp
+<span class="keyword">WHERE</span> sal <span class="operator">&gt;</span> 30000
+  <span class="keyword">AND</span> deptno <span class="operator">=</span> 10;
 </pre>
+
+</div>
 
 
 <h4>Output Example:</h4>
@@ -17360,12 +19076,25 @@ Note: Both conditions must be TRUE (sal > 30000 AND deptno = 10)
 <h4>AND with Multiple Conditions:</h4>
 
 
-<pre>
--- Select employees with salary between 25000 and 35000 in department 20
-SELECT empno, ename, sal, deptno
-FROM emp
-WHERE sal >= 25000 AND sal <= 35000 AND deptno = 20;
+<div class="code-box">
+
+    <div class="code-title">
+        salary-range-dept-example.sql
+    </div>
+
+<pre><span class="comment">-- Select employees with salary between 25000 and 35000 in department 20</span>
+
+<span class="keyword">SELECT</span> empno,
+       ename,
+       sal,
+       deptno
+<span class="keyword">FROM</span> emp
+<span class="keyword">WHERE</span> sal <span class="operator">&gt;=</span> 25000
+  <span class="keyword">AND</span> sal <span class="operator">&lt;=</span> 35000
+  <span class="keyword">AND</span> deptno <span class="operator">=</span> 20;
 </pre>
+
+</div>
 
 
 <h4>Output Example:</h4>
@@ -17395,12 +19124,21 @@ Note: All THREE conditions must be TRUE
 <h4>AND in UPDATE:</h4>
 
 
-<pre>
--- Update salary for SMITH in department 20
-UPDATE emp
-SET sal = 40000
-WHERE ename = 'SMITH' AND deptno = 20;
+<div class="code-box">
+
+    <div class="code-title">
+        update-multiple-condition.sql
+    </div>
+
+<pre><span class="comment">-- Update salary for SMITH in department 20</span>
+
+<span class="keyword">UPDATE</span> emp
+<span class="keyword">SET</span> sal <span class="operator">=</span> 40000
+<span class="keyword">WHERE</span> ename <span class="operator">=</span> 'SMITH'
+  <span class="keyword">AND</span> deptno <span class="operator">=</span> 20;
 </pre>
+
+</div>
 
 
 <p>
@@ -17409,10 +19147,6 @@ Note: UPDATE only if BOTH conditions are TRUE
 
 
 <h3>2. OR OPERATOR</h3>
-
-
-<h4>Description:</h4>
-
 
 <p>
 The OR operator returns TRUE if AT LEAST ONE condition is TRUE.
@@ -17483,12 +19217,24 @@ The OR operator returns TRUE if AT LEAST ONE condition is TRUE.
 <h4>OR in WHERE Clause - SELECT:</h4>
 
 
-<pre>
--- Select employees with salary > 35000 OR in department 10
-SELECT empno, ename, sal, deptno
-FROM emp
-WHERE sal > 35000 OR deptno = 10;
+<div class="code-box">
+
+    <div class="code-title">
+        or-condition-example.sql
+    </div>
+
+<pre><span class="comment">-- Select employees with salary > 35000 OR in department 10</span>
+
+<span class="keyword">SELECT</span> empno,
+       ename,
+       sal,
+       deptno
+<span class="keyword">FROM</span> emp
+<span class="keyword">WHERE</span> sal <span class="operator">&gt;</span> 35000
+  <span class="keyword">OR</span> deptno <span class="operator">=</span> 10;
 </pre>
+
+</div>
 
 
 <h4>Output Example:</h4>
@@ -17524,12 +19270,23 @@ Note: Returns rows where EITHER condition is TRUE (sal > 35000 OR deptno = 10)
 <h4>OR with Names:</h4>
 
 
-<pre>
--- Select employees named SMITH or JONES
-SELECT empno, ename, sal
-FROM emp
-WHERE ename = 'SMITH' OR ename = 'JONES';
+<div class="code-box">
+
+    <div class="code-title">
+        or-condition-names.sql
+    </div>
+
+<pre><span class="comment">-- Select employees named SMITH or JONES</span>
+
+<span class="keyword">SELECT</span> empno,
+       ename,
+       sal
+<span class="keyword">FROM</span> emp
+<span class="keyword">WHERE</span> ename <span class="operator">=</span> 'SMITH'
+   <span class="keyword">OR</span> ename <span class="operator">=</span> 'JONES';
 </pre>
+
+</div>
 
 
 <h4>Output Example:</h4>
@@ -17556,13 +19313,21 @@ WHERE ename = 'SMITH' OR ename = 'JONES';
 
 <h4>OR in UPDATE:</h4>
 
+<div class="code-box">
 
-<pre>
--- Update salary for SMITH or JONES
-UPDATE emp
-SET sal = sal * 1.10
-WHERE ename = 'SMITH' OR ename = 'JONES';
+    <div class="code-title">
+        update-or-condition.sql
+    </div>
+
+<pre><span class="comment">-- Update salary for SMITH or JONES</span>
+
+<span class="keyword">UPDATE</span> emp
+<span class="keyword">SET</span> sal <span class="operator">=</span> sal <span class="operator">*</span> 1.10
+<span class="keyword">WHERE</span> ename <span class="operator">=</span> 'SMITH'
+   <span class="keyword">OR</span> ename <span class="operator">=</span> 'JONES';
 </pre>
+
+</div>
 
 
 <p>
@@ -17571,9 +19336,6 @@ Note: UPDATE if EITHER condition is TRUE
 
 
 <h3>3. NOT OPERATOR</h3>
-
-
-<h4>Description:</h4>
 
 
 <p>
@@ -17623,12 +19385,23 @@ The NOT operator reverses (negates) the condition. TRUE becomes FALSE, FALSE bec
 <h4>NOT in WHERE Clause - SELECT:</h4>
 
 
-<pre>
--- Select employees NOT in department 10
-SELECT empno, ename, sal, deptno
-FROM emp
-WHERE NOT deptno = 10;
+<div class="code-box">
+
+    <div class="code-title">
+        not-operator-example.sql
+    </div>
+
+<pre><span class="comment">-- Select employees NOT in department 10</span>
+
+<span class="keyword">SELECT</span> empno,
+       ename,
+       sal,
+       deptno
+<span class="keyword">FROM</span> emp
+<span class="keyword">WHERE</span> <span class="keyword">NOT</span> deptno <span class="operator">=</span> 10;
 </pre>
+
+</div>
 
 
 <h4>Output Example:</h4>
@@ -17664,16 +19437,23 @@ Note: Returns rows where deptno is NOT EQUAL to 10
 <h4>NOT Equivalent to Not Equal (!= or <>):</h4>
 
 
-<pre>
--- These two are equivalent:
+<div class="code-box">
 
--- Using NOT
-SELECT * FROM emp WHERE NOT deptno = 10;
+    <div class="code-title">
+        not-vs-not-equal.sql
+    </div>
 
--- Using not equal operator
-SELECT * FROM emp WHERE deptno != 10;
-SELECT * FROM emp WHERE deptno <> 10;
+<pre><span class="comment">-- These two are equivalent:</span>
+
+<span class="comment">-- Using NOT operator</span>
+<span class="keyword">SELECT</span> <span class="operator">*</span> <span class="keyword">FROM</span> emp <span class="keyword">WHERE</span> <span class="keyword">NOT</span> deptno <span class="operator">=</span> 10;
+
+<span class="comment">-- Using not equal operator</span>
+<span class="keyword">SELECT</span> <span class="operator">*</span> <span class="keyword">FROM</span> emp <span class="keyword">WHERE</span> deptno <span class="operator">!=</span> 10;
+<span class="keyword">SELECT</span> <span class="operator">*</span> <span class="keyword">FROM</span> emp <span class="keyword">WHERE</span> deptno <span class="operator">&lt;&gt;</span> 10;
 </pre>
+
+</div>
 
 
 <p>
@@ -17684,27 +19464,46 @@ Note: NOT condition1 is same as condition1 != value
 <h4>NOT with Multiple Conditions:</h4>
 
 
-<pre>
--- Select employees NOT (in department 10 AND salary > 30000)
-SELECT empno, ename, sal, deptno
-FROM emp
-WHERE NOT (deptno = 10 AND sal > 30000);
+<div class="code-box">
+
+    <div class="code-title">
+        not-with-and-condition.sql
+    </div>
+
+<pre><span class="comment">-- Select employees NOT (in department 10 AND salary &gt; 30000)</span>
+
+<span class="keyword">SELECT</span> empno,
+       ename,
+       sal,
+       deptno
+<span class="keyword">FROM</span> emp
+<span class="keyword">WHERE</span> <span class="keyword">NOT</span> (deptno <span class="operator">=</span> 10 <span class="keyword">AND</span> sal <span class="operator">&gt;</span> 30000);
 </pre>
+
+</div>
 
 
 <h3>Combining AND, OR, and NOT</h3>
 
 
-<h4>Complete Example - Complex WHERE:</h4>
+<div class="code-box">
 
+    <div class="code-title">
+        complex-logical-conditions.sql
+    </div>
 
-<pre>
--- Complex condition with AND, OR, NOT
-SELECT empno, ename, sal, deptno
-FROM emp
-WHERE (sal > 30000 AND deptno = 10) 
-      OR (sal < 25000 AND deptno != 20);
+<pre><span class="comment">-- Complex condition with AND, OR, NOT</span>
+
+<span class="keyword">SELECT</span> empno,
+       ename,
+       sal,
+       deptno
+<span class="keyword">FROM</span> emp
+<span class="keyword">WHERE</span> (sal <span class="operator">&gt;</span> 30000 <span class="keyword">AND</span> deptno <span class="operator">=</span> 10)
+   <span class="keyword">OR</span> (sal <span class="operator">&lt;</span> 25000 <span class="keyword">AND</span> deptno <span class="operator">!=</span> 20);
 </pre>
+
+</div>
 
 
 <h4>Output Example:</h4>
@@ -17739,19 +19538,34 @@ Note: First group (sal > 30000 AND deptno = 10) OR Second group (sal < 25000 AND
 
 <h4>Example with NOT:</h4>
 
+<div class="code-box">
 
-<pre>
--- NOT with AND
-SELECT empno, ename, sal, deptno
-FROM emp
-WHERE deptno != 10 AND sal > 25000;
+    <div class="code-title">
+        not-with-and-equivalent.sql
+    </div>
 
--- Equivalent to:
-SELECT empno, ename, sal, deptno
-FROM emp
-WHERE NOT deptno = 10 AND sal > 25000;
+<pre><span class="comment">-- NOT with AND</span>
+
+<span class="keyword">SELECT</span> empno,
+       ename,
+       sal,
+       deptno
+<span class="keyword">FROM</span> emp
+<span class="keyword">WHERE</span> deptno <span class="operator">!=</span> 10
+  <span class="keyword">AND</span> sal <span class="operator">&gt;</span> 25000;
+
+<span class="comment">-- Equivalent to:</span>
+
+<span class="keyword">SELECT</span> empno,
+       ename,
+       sal,
+       deptno
+<span class="keyword">FROM</span> emp
+<span class="keyword">WHERE</span> <span class="keyword">NOT</span> deptno <span class="operator">=</span> 10
+  <span class="keyword">AND</span> sal <span class="operator">&gt;</span> 25000;
 </pre>
 
+</div>
 
 <h3>Operator Precedence</h3>
 
@@ -17788,24 +19602,42 @@ Oracle evaluates operators in this order (highest to lowest):
 <h4>Precedence Example:</h4>
 
 
-<pre>
--- Without parentheses:
-WHERE sal > 30000 OR deptno = 10 AND sal < 35000
+<div class="code-box">
 
--- Oracle evaluates as:
-WHERE sal > 30000 OR (deptno = 10 AND sal < 35000)
+    <div class="code-title">
+        operator-precedence-and-or.sql
+    </div>
+
+<pre><span class="comment">-- Without parentheses:</span>
+
+<span class="keyword">WHERE</span> sal <span class="operator">&gt;</span> 30000 <span class="keyword">OR</span> deptno <span class="operator">=</span> 10 <span class="keyword">AND</span> sal <span class="operator">&lt;</span> 35000
+
+<span class="comment">-- Oracle evaluates as:</span>
+
+<span class="keyword">WHERE</span> sal <span class="operator">&gt;</span> 30000 <span class="keyword">OR</span> (deptno <span class="operator">=</span> 10 <span class="keyword">AND</span> sal <span class="operator">&lt;</span> 35000)
 </pre>
+
+</div>
 
 
 <h4>Using Parentheses for Clarity:</h4>
 
 
-<pre>
--- With parentheses (explicit):
-WHERE (sal > 30000 OR deptno = 10) AND sal < 35000
+<div class="code-box">
 
--- This evaluates differently!
+    <div class="code-title">
+        parentheses-override-precedence.sql
+    </div>
+
+<pre><span class="comment">-- With parentheses (explicit):</span>
+
+<span class="keyword">WHERE</span> (sal <span class="operator">&gt;</span> 30000 <span class="keyword">OR</span> deptno <span class="operator">=</span> 10)
+  <span class="keyword">AND</span> sal <span class="operator">&lt;</span> 35000
+
+<span class="comment">-- This evaluates differently!</span>
 </pre>
+
+</div>
 
 
 <p>
@@ -17816,16 +19648,24 @@ Note: Use parentheses to control evaluation order and make code clear
 <h3>Logical Operators in WHERE Clause</h3>
 
 
-<h4>Complete Example - Multiple Operators:</h4>
+<div class="code-box">
 
+    <div class="code-title">
+        high-salary-not-dept30.sql
+    </div>
 
-<pre>
--- Find high salary employees NOT in department 30
-SELECT empno, ename, sal, deptno
-FROM emp
-WHERE sal > 30000 AND deptno != 30;
+<pre><span class="comment">-- Find high salary employees NOT in department 30</span>
+
+<span class="keyword">SELECT</span> empno,
+       ename,
+       sal,
+       deptno
+<span class="keyword">FROM</span> emp
+<span class="keyword">WHERE</span> sal <span class="operator">&gt;</span> 30000
+  <span class="keyword">AND</span> deptno <span class="operator">!=</span> 30;
 </pre>
 
+</div>
 
 <h4>Output Example:</h4>
 
@@ -17852,23 +19692,46 @@ WHERE sal > 30000 AND deptno != 30;
 <h4>Example - Range with AND:</h4>
 
 
-<pre>
--- Salary between 25000 and 35000 (inclusive)
-SELECT empno, ename, sal
-FROM emp
-WHERE sal >= 25000 AND sal <= 35000;
+<div class="code-box">
+
+    <div class="code-title">
+        salary-between-range.sql
+    </div>
+
+<pre><span class="comment">-- Salary between 25000 and 35000 (inclusive)</span>
+
+<span class="keyword">SELECT</span> empno,
+       ename,
+       sal
+<span class="keyword">FROM</span> emp
+<span class="keyword">WHERE</span> sal <span class="operator">&gt;=</span> 25000
+  <span class="keyword">AND</span> sal <span class="operator">&lt;=</span> 35000;
 </pre>
+
+</div>
 
 
 <h4>Example - Multiple Values with OR:</h4>
 
 
-<pre>
--- Employees in department 10 OR 20
-SELECT empno, ename, sal, deptno
-FROM emp
-WHERE deptno = 10 OR deptno = 20;
+<div class="code-box">
+
+    <div class="code-title">
+        deptno-or-condition.sql
+    </div>
+
+<pre><span class="comment">-- Employees in department 10 OR 20</span>
+
+<span class="keyword">SELECT</span> empno,
+       ename,
+       sal,
+       deptno
+<span class="keyword">FROM</span> emp
+<span class="keyword">WHERE</span> deptno <span class="operator">=</span> 10
+   <span class="keyword">OR</span> deptno <span class="operator">=</span> 20;
 </pre>
+
+</div>
 
 
 <p>
@@ -17879,17 +19742,30 @@ Note: Equivalent to WHERE deptno IN (10, 20)
 <h4>Example - Exclude with NOT:</h4>
 
 
-<pre>
--- Employees NOT named SMITH
-SELECT empno, ename, sal
-FROM emp
-WHERE NOT ename = 'SMITH';
+<div class="code-box">
 
--- Equivalent to:
-SELECT empno, ename, sal
-FROM emp
-WHERE ename != 'SMITH';
+    <div class="code-title">
+        not-equal-name-equivalent.sql
+    </div>
+
+<pre><span class="comment">-- Employees NOT named SMITH</span>
+
+<span class="keyword">SELECT</span> empno,
+       ename,
+       sal
+<span class="keyword">FROM</span> emp
+<span class="keyword">WHERE</span> <span class="keyword">NOT</span> ename <span class="operator">=</span> 'SMITH';
+
+<span class="comment">-- Equivalent to:</span>
+
+<span class="keyword">SELECT</span> empno,
+       ename,
+       sal
+<span class="keyword">FROM</span> emp
+<span class="keyword">WHERE</span> ename <span class="operator">!=</span> 'SMITH';
 </pre>
+
+</div>
 
 
 <h3>Key Points Summary</h3>
@@ -17983,12 +19859,6 @@ Remember: AND for both true, OR for any true, NOT to reverse! Use parentheses fo
     <li>7. Test operator precedence (NOT, AND, OR)</li>
 </ul>
 
-
-<p>
-<strong>Next Topic:</strong> String Operators in Oracle (CONCATENATION ||)
-</p>
-
-
 `;
 
 let oracleSetOperatorsContent = `
@@ -17998,7 +19868,7 @@ let oracleSetOperatorsContent = `
 
 
 <p>
-Good morning students!
+Hi students!
 Today we will learn about SET OPERATORS in Oracle Database. Set operators combine the results of two or more SELECT queries into a single result set. They work vertically (combining rows) unlike JOINs which work horizontally (combining columns).
 </p>
 
@@ -18006,7 +19876,7 @@ Today we will learn about SET OPERATORS in Oracle Database. Set operators combin
 <p>
 <strong>What We Will Cover:</strong>
 </p>
-<ul>
+<ol>
     <li>Introduction to Set Operators</li>
     <li>List of Set Operators in Oracle</li>
     <li>UNION Operator</li>
@@ -18016,7 +19886,7 @@ Today we will learn about SET OPERATORS in Oracle Database. Set operators combin
     <li>Rules for Using Set Operators</li>
     <li>Set Operators with Examples</li>
     <li>Complete practical examples</li>
-</ul>
+</ol>
 
 
 <h3>Introduction to Set Operators</h3>
@@ -18101,9 +19971,6 @@ Note: Oracle uses MINUS instead of EXCEPT (used in SQL Server, PostgreSQL)
 <h3>1. UNION Operator</h3>
 
 
-<h4>Description:</h4>
-
-
 <p>
 UNION combines results from both queries and REMOVES duplicate rows.
 </p>
@@ -18136,22 +20003,39 @@ UNION combines results from both queries and REMOVES duplicate rows.
 <h4>UNION Syntax:</h4>
 
 
-<pre>
-SELECT column1, column2 FROM table1
-UNION
-SELECT column1, column2 FROM table2;
+<div class="code-box">
+
+    <div class="code-title">
+        union-example.sql
+    </div>
+
+<pre><span class="comment">-- Combine results from two tables using UNION</span>
+
+<span class="keyword">SELECT</span> column1, column2 <span class="keyword">FROM</span> table1
+<span class="keyword">UNION</span>
+<span class="keyword">SELECT</span> column1, column2 <span class="keyword">FROM</span> table2;
 </pre>
+
+</div>
 
 
 <h4>UNION Example - Combine Departments:</h4>
 
 
-<pre>
--- Get all distinct department numbers from emp and dept
-SELECT deptno FROM emp
-UNION
-SELECT deptno FROM dept;
+<div class="code-box">
+
+    <div class="code-title">
+        union-distinct-deptno.sql
+    </div>
+
+<pre><span class="comment">-- Get all distinct department numbers from emp and dept</span>
+
+<span class="keyword">SELECT</span> deptno <span class="keyword">FROM</span> emp
+<span class="keyword">UNION</span>
+<span class="keyword">SELECT</span> deptno <span class="keyword">FROM</span> dept;
 </pre>
+
+</div>
 
 
 <h4>Output Example:</h4>
@@ -18181,12 +20065,20 @@ Note: If deptno 10 exists in both tables, it appears only once (duplicates remov
 <h4>UNION Example - Employee Names:</h4>
 
 
-<pre>
--- Get all distinct employee names
-SELECT ename FROM emp WHERE deptno = 10
-UNION
-SELECT ename FROM emp WHERE deptno = 20;
+<div class="code-box">
+
+    <div class="code-title">
+        union-employee-names.sql
+    </div>
+
+<pre><span class="comment">-- Get all distinct employee names</span>
+
+<span class="keyword">SELECT</span> ename <span class="keyword">FROM</span> emp <span class="keyword">WHERE</span> deptno <span class="operator">=</span> 10
+<span class="keyword">UNION</span>
+<span class="keyword">SELECT</span> ename <span class="keyword">FROM</span> emp <span class="keyword">WHERE</span> deptno <span class="operator">=</span> 20;
 </pre>
+
+</div>
 
 
 <h4>Output Example:</h4>
@@ -18206,9 +20098,6 @@ SELECT ename FROM emp WHERE deptno = 20;
 
 
 <h3>2. UNION ALL Operator</h3>
-
-
-<h4>Description:</h4>
 
 
 <p>
@@ -18243,28 +20132,45 @@ UNION ALL combines results from both queries and INCLUDES all duplicate rows.
 <h4>UNION ALL Syntax:</h4>
 
 
-<pre>
-SELECT column1, column2 FROM table1
-UNION ALL
-SELECT column1, column2 FROM table2;
+<div class="code-box">
+
+    <div class="code-title">
+        union-all-example.sql
+    </div>
+
+<pre><span class="comment">-- Combine results from two tables using UNION ALL (includes duplicates)</span>
+
+<span class="keyword">SELECT</span> column1, column2 <span class="keyword">FROM</span> table1
+<span class="keyword">UNION ALL</span>
+<span class="keyword">SELECT</span> column1, column2 <span class="keyword">FROM</span> table2;
 </pre>
+
+</div>
 
 
 <h4>UNION ALL Example - Compare with UNION:</h4>
 
 
-<pre>
--- Using UNION (removes duplicates)
-SELECT deptno FROM emp
-UNION
-SELECT deptno FROM dept;
+<div class="code-box">
 
+    <div class="code-title">
+        union-vs-union-all.sql
+    </div>
 
--- Using UNION ALL (includes duplicates)
-SELECT deptno FROM emp
-UNION ALL
-SELECT deptno FROM dept;
+<pre><span class="comment">-- Using UNION (removes duplicates)</span>
+
+<span class="keyword">SELECT</span> deptno <span class="keyword">FROM</span> emp
+<span class="keyword">UNION</span>
+<span class="keyword">SELECT</span> deptno <span class="keyword">FROM</span> dept;
+
+<span class="comment">-- Using UNION ALL (includes duplicates)</span>
+
+<span class="keyword">SELECT</span> deptno <span class="keyword">FROM</span> emp
+<span class="keyword">UNION ALL</span>
+<span class="keyword">SELECT</span> deptno <span class="keyword">FROM</span> dept;
 </pre>
+
+</div>
 
 
 <h4>Output Comparison:</h4>
@@ -18310,18 +20216,23 @@ Note: UNION ALL includes duplicates, so more rows returned
 <h4>UNION ALL - Faster Performance:</h4>
 
 
-<pre>
--- UNION ALL is faster (no duplicate checking)
-SELECT empno, ename FROM emp WHERE deptno = 10
-UNION ALL
-SELECT empno, ename FROM emp WHERE deptno = 20;
+<div class="code-box">
+
+    <div class="code-title">
+        union-all-performance.sql
+    </div>
+
+<pre><span class="comment">-- UNION ALL is faster (no duplicate checking)</span>
+
+<span class="keyword">SELECT</span> empno, ename <span class="keyword">FROM</span> emp <span class="keyword">WHERE</span> deptno <span class="operator">=</span> 10
+<span class="keyword">UNION ALL</span>
+<span class="keyword">SELECT</span> empno, ename <span class="keyword">FROM</span> emp <span class="keyword">WHERE</span> deptno <span class="operator">=</span> 20;
 </pre>
+
+</div>
 
 
 <h3>3. INTERSECT Operator</h3>
-
-
-<h4>Description:</h4>
 
 
 <p>
@@ -18356,22 +20267,39 @@ INTERSECT returns only rows that appear in BOTH queries (common rows).
 <h4>INTERSECT Syntax:</h4>
 
 
-<pre>
-SELECT column1, column2 FROM table1
-INTERSECT
-SELECT column1, column2 FROM table2;
+<div class="code-box">
+
+    <div class="code-title">
+        intersect-example.sql
+    </div>
+
+<pre><span class="comment">-- Return only common rows from both tables</span>
+
+<span class="keyword">SELECT</span> column1, column2 <span class="keyword">FROM</span> table1
+<span class="keyword">INTERSECT</span>
+<span class="keyword">SELECT</span> column1, column2 <span class="keyword">FROM</span> table2;
 </pre>
+
+</div>
 
 
 <h4>INTERSECT Example - Common Departments:</h4>
 
 
-<pre>
--- Get department numbers common to both emp and dept
-SELECT deptno FROM emp
-INTERSECT
-SELECT deptno FROM dept;
+<div class="code-box">
+
+    <div class="code-title">
+        intersect-deptno-example.sql
+    </div>
+
+<pre><span class="comment">-- Get department numbers common to both emp and dept</span>
+
+<span class="keyword">SELECT</span> deptno <span class="keyword">FROM</span> emp
+<span class="keyword">INTERSECT</span>
+<span class="keyword">SELECT</span> deptno <span class="keyword">FROM</span> dept;
 </pre>
+
+</div>
 
 
 <h4>Output Example:</h4>
@@ -18401,12 +20329,20 @@ Note: Only deptnos that exist in BOTH tables are returned
 <h4>INTERSECT Example - Employee Names:</h4>
 
 
-<pre>
--- Get employee names in both department 10 and 20
-SELECT ename FROM emp WHERE deptno = 10
-INTERSECT
-SELECT ename FROM emp WHERE deptno = 20;
+<div class="code-box">
+
+    <div class="code-title">
+        intersect-employee-names.sql
+    </div>
+
+<pre><span class="comment">-- Get employee names in both department 10 and 20</span>
+
+<span class="keyword">SELECT</span> ename <span class="keyword">FROM</span> emp <span class="keyword">WHERE</span> deptno <span class="operator">=</span> 10
+<span class="keyword">INTERSECT</span>
+<span class="keyword">SELECT</span> ename <span class="keyword">FROM</span> emp <span class="keyword">WHERE</span> deptno <span class="operator">=</span> 20;
 </pre>
+
+</div>
 
 
 <h4>Output Example:</h4>
@@ -18428,9 +20364,6 @@ Note: No employee names are common to both departments
 
 
 <h3>4. MINUS Operator (Oracle's EXCEPT)</h3>
-
-
-<h4>Description:</h4>
 
 
 <p>
@@ -18470,22 +20403,39 @@ Note: Other databases use EXCEPT instead of MINUS
 <h4>MINUS Syntax:</h4>
 
 
-<pre>
-SELECT column1, column2 FROM table1
-MINUS
-SELECT column1, column2 FROM table2;
+<div class="code-box">
+
+    <div class="code-title">
+        minus-example.sql
+    </div>
+
+<pre><span class="comment">-- Return rows from table1 that are not in table2</span>
+
+<span class="keyword">SELECT</span> column1, column2 <span class="keyword">FROM</span> table1
+<span class="keyword">MINUS</span>
+<span class="keyword">SELECT</span> column1, column2 <span class="keyword">FROM</span> table2;
 </pre>
+
+</div>
 
 
 <h4>MINUS Example - Departments Without Employees:</h4>
 
 
-<pre>
--- Get department numbers in dept NOT in emp
-SELECT deptno FROM dept
-MINUS
-SELECT deptno FROM emp;
+<div class="code-box">
+
+    <div class="code-title">
+        minus-deptno-example.sql
+    </div>
+
+<pre><span class="comment">-- Get department numbers in dept NOT in emp</span>
+
+<span class="keyword">SELECT</span> deptno <span class="keyword">FROM</span> dept
+<span class="keyword">MINUS</span>
+<span class="keyword">SELECT</span> deptno <span class="keyword">FROM</span> emp;
 </pre>
+
+</div>
 
 
 <h4>Output Example:</h4>
@@ -18509,12 +20459,20 @@ Note: Dept 40 exists in dept table but has no employees in emp table
 <h4>MINUS Example - Employees in Specific Dept:</h4>
 
 
-<pre>
--- Get employees in department 10 NOT in department 20
-SELECT ename FROM emp WHERE deptno = 10
-MINUS
-SELECT ename FROM emp WHERE deptno = 20;
+<div class="code-box">
+
+    <div class="code-title">
+        minus-employee-names.sql
+    </div>
+
+<pre><span class="comment">-- Get employees in department 10 NOT in department 20</span>
+
+<span class="keyword">SELECT</span> ename <span class="keyword">FROM</span> emp <span class="keyword">WHERE</span> deptno <span class="operator">=</span> 10
+<span class="keyword">MINUS</span>
+<span class="keyword">SELECT</span> ename <span class="keyword">FROM</span> emp <span class="keyword">WHERE</span> deptno <span class="operator">=</span> 20;
 </pre>
+
+</div>
 
 
 <h4>Output Example:</h4>
@@ -18573,69 +20531,111 @@ Note: Returns names from dept 10 that are NOT in dept 20
 <h4>Rule 1 - Same Number of Columns:</h4>
 
 
-<pre>
--- CORRECT: Both have 2 columns
-SELECT empno, ename FROM emp WHERE deptno = 10
-UNION
-SELECT empno, ename FROM emp WHERE deptno = 20;
+<div class="code-box">
 
+    <div class="code-title">
+        union-column-mismatch-example.sql
+    </div>
 
--- WRONG: Different number of columns
-SELECT empno, ename FROM emp WHERE deptno = 10
-UNION
-SELECT empno FROM emp WHERE deptno = 20;
--- Error: Column count mismatch
+<pre><span class="comment">-- CORRECT: Both have 2 columns</span>
+
+<span class="keyword">SELECT</span> empno, ename <span class="keyword">FROM</span> emp <span class="keyword">WHERE</span> deptno <span class="operator">=</span> 10
+<span class="keyword">UNION</span>
+<span class="keyword">SELECT</span> empno, ename <span class="keyword">FROM</span> emp <span class="keyword">WHERE</span> deptno <span class="operator">=</span> 20;
+
+<span class="comment">-- WRONG: Different number of columns</span>
+
+<span class="keyword">SELECT</span> empno, ename <span class="keyword">FROM</span> emp <span class="keyword">WHERE</span> deptno <span class="operator">=</span> 10
+<span class="keyword">UNION</span>
+<span class="keyword">SELECT</span> empno <span class="keyword">FROM</span> emp <span class="keyword">WHERE</span> deptno <span class="operator">=</span> 20;
+
+<span class="comment">-- Error: Column count mismatch</span>
 </pre>
+
+</div>
 
 
 <h4>Rule 3 - Compatible Data Types:</h4>
 
 
-<pre>
--- CORRECT: Both are NUMBER
-SELECT deptno FROM emp
-UNION
-SELECT deptno FROM dept;
+<div class="code-box">
 
+    <div class="code-title">
+        union-data-type-mismatch.sql
+    </div>
 
--- WRONG: NUMBER vs VARCHAR2
-SELECT deptno FROM emp
-UNION
-SELECT dname FROM dept;
--- Error: Type mismatch
+<pre><span class="comment">-- CORRECT: Both are NUMBER</span>
+
+<span class="keyword">SELECT</span> deptno <span class="keyword">FROM</span> emp
+<span class="keyword">UNION</span>
+<span class="keyword">SELECT</span> deptno <span class="keyword">FROM</span> dept;
+
+<span class="comment">-- WRONG: NUMBER vs VARCHAR2</span>
+
+<span class="keyword">SELECT</span> deptno <span class="keyword">FROM</span> emp
+<span class="keyword">UNION</span>
+<span class="keyword">SELECT</span> dname <span class="keyword">FROM</span> dept;
+
+<span class="comment">-- Error: Type mismatch</span>
 </pre>
+
+</div>
 
 
 <h4>Rule 4 - Column Names from First Query:</h4>
 
 
-<pre>
-SELECT empno AS employee_id, ename AS name FROM emp WHERE deptno = 10
-UNION
-SELECT empno, ename FROM emp WHERE deptno = 20;
+<div class="code-box">
 
--- Result columns: employee_id, name (from FIRST query)
+    <div class="code-title">
+        union-column-alias-rule.sql
+    </div>
+
+<pre><span class="comment">-- Column aliases are taken from the FIRST SELECT</span>
+
+<span class="keyword">SELECT</span> empno <span class="keyword">AS</span> employee_id, ename <span class="keyword">AS</span> name
+<span class="keyword">FROM</span> emp
+<span class="keyword">WHERE</span> deptno <span class="operator">=</span> 10
+
+<span class="keyword">UNION</span>
+
+<span class="keyword">SELECT</span> empno, ename
+<span class="keyword">FROM</span> emp
+<span class="keyword">WHERE</span> deptno <span class="operator">=</span> 20;
+
+<span class="comment">-- Result columns: employee_id, name (from FIRST query)</span>
 </pre>
+
+</div>
 
 
 <h4>Rule 5 - ORDER BY After Last Query:</h4>
 
 
-<pre>
--- CORRECT
-SELECT empno, ename FROM emp WHERE deptno = 10
-UNION
-SELECT empno, ename FROM emp WHERE deptno = 20
-ORDER BY ename;
+<div class="code-box">
 
+    <div class="code-title">
+        union-order-by-rule.sql
+    </div>
 
--- WRONG
-SELECT empno, ename FROM emp WHERE deptno = 10
-ORDER BY ename
-UNION
-SELECT empno, ename FROM emp WHERE deptno = 20;
--- Error: ORDER BY only at end
+<pre><span class="comment">-- CORRECT</span>
+
+<span class="keyword">SELECT</span> empno, ename <span class="keyword">FROM</span> emp <span class="keyword">WHERE</span> deptno <span class="operator">=</span> 10
+<span class="keyword">UNION</span>
+<span class="keyword">SELECT</span> empno, ename <span class="keyword">FROM</span> emp <span class="keyword">WHERE</span> deptno <span class="operator">=</span> 20
+<span class="keyword">ORDER BY</span> ename;
+
+<span class="comment">-- WRONG</span>
+
+<span class="keyword">SELECT</span> empno, ename <span class="keyword">FROM</span> emp <span class="keyword">WHERE</span> deptno <span class="operator">=</span> 10
+<span class="keyword">ORDER BY</span> ename
+<span class="keyword">UNION</span>
+<span class="keyword">SELECT</span> empno, ename <span class="keyword">FROM</span> emp <span class="keyword">WHERE</span> deptno <span class="operator">=</span> 20;
+
+<span class="comment">-- Error: ORDER BY only at end</span>
 </pre>
+
+</div>
 
 
 <h3>Set Operators with Examples</h3>
@@ -18644,12 +20644,20 @@ SELECT empno, ename FROM emp WHERE deptno = 20;
 <h4>Example 1 - UNION:</h4>
 
 
-<pre>
--- Combine employees from dept 10 and 20 (no duplicates)
-SELECT empno, ename, sal FROM emp WHERE deptno = 10
-UNION
-SELECT empno, ename, sal FROM emp WHERE deptno = 20;
+<div class="code-box">
+
+    <div class="code-title">
+        union-dept10-dept20.sql
+    </div>
+
+<pre><span class="comment">-- Combine employees from dept 10 and 20 (no duplicates)</span>
+
+<span class="keyword">SELECT</span> empno, ename, sal <span class="keyword">FROM</span> emp <span class="keyword">WHERE</span> deptno <span class="operator">=</span> 10
+<span class="keyword">UNION</span>
+<span class="keyword">SELECT</span> empno, ename, sal <span class="keyword">FROM</span> emp <span class="keyword">WHERE</span> deptno <span class="operator">=</span> 20;
 </pre>
+
+</div>
 
 
 <h4>Output Example:</h4>
@@ -18677,34 +20685,58 @@ SELECT empno, ename, sal FROM emp WHERE deptno = 20;
 <h4>Example 2 - UNION ALL:</h4>
 
 
-<pre>
--- Combine all employees (including duplicates if any)
-SELECT empno, ename, sal FROM emp WHERE deptno = 10
-UNION ALL
-SELECT empno, ename, sal FROM emp WHERE deptno = 20;
+<div class="code-box">
+
+    <div class="code-title">
+        union-all-dept10-dept20.sql
+    </div>
+
+<pre><span class="comment">-- Combine all employees (including duplicates if any)</span>
+
+<span class="keyword">SELECT</span> empno, ename, sal <span class="keyword">FROM</span> emp <span class="keyword">WHERE</span> deptno <span class="operator">=</span> 10
+<span class="keyword">UNION ALL</span>
+<span class="keyword">SELECT</span> empno, ename, sal <span class="keyword">FROM</span> emp <span class="keyword">WHERE</span> deptno <span class="operator">=</span> 20;
 </pre>
+
+</div>
 
 
 <h4>Example 3 - INTERSECT:</h4>
 
 
-<pre>
--- Get employees with salary > 30000 in dept 10 AND dept 20
-SELECT ename FROM emp WHERE deptno = 10 AND sal > 30000
-INTERSECT
-SELECT ename FROM emp WHERE deptno = 20 AND sal > 30000;
+<div class="code-box">
+
+    <div class="code-title">
+        intersect-emp-salary-dept.sql
+    </div>
+
+<pre><span class="comment">-- Get employees with salary &gt; 30000 in dept 10 AND dept 20</span>
+
+<span class="keyword">SELECT</span> ename <span class="keyword">FROM</span> emp <span class="keyword">WHERE</span> deptno <span class="operator">=</span> 10 <span class="keyword">AND</span> sal <span class="operator">&gt;</span> 30000
+<span class="keyword">INTERSECT</span>
+<span class="keyword">SELECT</span> ename <span class="keyword">FROM</span> emp <span class="keyword">WHERE</span> deptno <span class="operator">=</span> 20 <span class="keyword">AND</span> sal <span class="operator">&gt;</span> 30000;
 </pre>
+
+</div>
 
 
 <h4>Example 4 - MINUS:</h4>
 
 
-<pre>
--- Get employees in dept 10 NOT in dept 20
-SELECT ename FROM emp WHERE deptno = 10
-MINUS
-SELECT ename FROM emp WHERE deptno = 20;
+<div class="code-box">
+
+    <div class="code-title">
+        minus-emp-dept10-not-dept20.sql
+    </div>
+
+<pre><span class="comment">-- Get employees in dept 10 NOT in dept 20</span>
+
+<span class="keyword">SELECT</span> ename <span class="keyword">FROM</span> emp <span class="keyword">WHERE</span> deptno <span class="operator">=</span> 10
+<span class="keyword">MINUS</span>
+<span class="keyword">SELECT</span> ename <span class="keyword">FROM</span> emp <span class="keyword">WHERE</span> deptno <span class="operator">=</span> 20;
 </pre>
+
+</div>
 
 
 <h3>Venn Diagram Visualization</h3>
@@ -18831,11 +20863,6 @@ Remember: UNION for distinct, UNION ALL for all rows (faster), INTERSECT for com
 </ul>
 
 
-<p>
-<strong>Next Topic:</strong> String Operators in Oracle (CONCATENATION ||)
-</p>
-
-
 `;
 
 let oracleSpecialOperatorsContent = `
@@ -18845,7 +20872,7 @@ let oracleSpecialOperatorsContent = `
 
 
 <p>
-Good morning students!
+Hi students!
 Today we will learn about SPECIAL OPERATORS in Oracle Database. Special operators handle unique operations like NULL testing, pattern matching, set membership, and existence checks. They extend Oracle's capabilities beyond basic arithmetic, relational, logical, and set operators.
 </p>
 
@@ -18853,7 +20880,7 @@ Today we will learn about SPECIAL OPERATORS in Oracle Database. Special operator
 <p>
 <strong>What We Will Cover:</strong>
 </p>
-<ul>
+<ol>
     <li>Introduction to Special Operators</li>
     <li>List of Special Operators in Oracle</li>
     <li>IS NULL Operator</li>
@@ -18865,7 +20892,7 @@ Today we will learn about SPECIAL OPERATORS in Oracle Database. Special operator
     <li>Concatenation Operator (||)</li>
     <li>SPECIAL OPERATORS in WHERE Clause</li>
     <li>Complete practical examples</li>
-</ul>
+</ol>
 
 
 <h3>Introduction to Special Operators</h3>
@@ -18911,56 +20938,48 @@ Special operators handle unique conditions that cannot be expressed with standar
 <table border="1" class="notes-table" cellpadding="10">
     <tr>
         <th>Operator</th>
-        <th>Name</th>
         <th>Description</th>
         <th>Example</th>
         <th>Returns</th>
     </tr>
     <tr>
         <td><strong>IS NULL</strong></td>
-        <td>Null Test</td>
         <td>Checks if value is NULL</td>
         <td>comm IS NULL</td>
         <td>TRUE or FALSE</td>
     </tr>
     <tr>
         <td><strong>IS NOT NULL</strong></td>
-        <td>Not Null Test</td>
         <td>Checks if value is NOT NULL</td>
         <td>comm IS NOT NULL</td>
         <td>TRUE or FALSE</td>
     </tr>
     <tr>
         <td><strong>LIKE</strong></td>
-        <td>Pattern Match</td>
         <td>Matches string pattern</td>
         <td>ename LIKE 'S%'</td>
         <td>TRUE or FALSE</td>
     </tr>
     <tr>
         <td><strong>BETWEEN</strong></td>
-        <td>Range Test</td>
         <td>Checks if value in range</td>
         <td>sal BETWEEN 25000 AND 35000</td>
         <td>TRUE or FALSE</td>
     </tr>
     <tr>
         <td><strong>IN</strong></td>
-        <td>Set Membership</td>
         <td>Checks if value in list</td>
         <td>deptno IN (10, 20)</td>
         <td>TRUE or FALSE</td>
     </tr>
     <tr>
         <td><strong>EXISTS</strong></td>
-        <td>Subquery Test</td>
         <td>Checks if subquery returns rows</td>
         <td>EXISTS (SELECT * FROM...)</td>
         <td>TRUE or FALSE</td>
     </tr>
     <tr>
         <td><strong>||</strong></td>
-        <td>Concatenation</td>
         <td>Combines strings</td>
         <td>ename || ' - ' || job</td>
         <td>STRING</td>
@@ -18969,9 +20988,6 @@ Special operators handle unique conditions that cannot be expressed with standar
 
 
 <h3>1. IS NULL Operator</h3>
-
-
-<h4>Description:</h4>
 
 
 <p>
@@ -19026,15 +21042,26 @@ IS NULL checks if a value is NULL (empty/missing).
 </table>
 
 
-<h4>IS NULL Example - Empty Commission:</h4>
+<h4>IS NULL Example :</h4>
 
 
-<pre>
--- Select employees with NULL commission
-SELECT empno, ename, sal, comm
-FROM emp
-WHERE comm IS NULL;
+<div class="code-box">
+
+    <div class="code-title">
+        is-null-example.sql
+    </div>
+
+<pre><span class="comment">-- Select employees with NULL commission</span>
+
+<span class="keyword">SELECT</span> empno,
+       ename,
+       sal,
+       comm
+<span class="keyword">FROM</span> emp
+<span class="keyword">WHERE</span> comm <span class="keyword">IS NULL</span>;
 </pre>
+
+</div>
 
 
 <h4>Output Example:</h4>
@@ -19070,18 +21097,22 @@ Note: Returns rows where comm has NO value (NULL)
 <h4>IS NULL in UPDATE:</h4>
 
 
-<pre>
--- Set default commission for employees with NULL commission
-UPDATE emp
-SET comm = 0
-WHERE comm IS NULL;
+<div class="code-box">
+
+    <div class="code-title">
+        update-is-null.sql
+    </div>
+
+<pre><span class="comment">-- Set default commission for employees with NULL commission</span>
+
+<span class="keyword">UPDATE</span> emp
+<span class="keyword">SET</span> comm <span class="operator">=</span> 0
+<span class="keyword">WHERE</span> comm <span class="keyword">IS NULL</span>;
 </pre>
 
+</div>
 
 <h3>2. IS NOT NULL Operator</h3>
-
-
-<h4>Description:</h4>
 
 
 <p>
@@ -19112,12 +21143,23 @@ IS NOT NULL checks if a value is NOT NULL (has a value).
 <h4>IS NOT NULL Example - With Commission:</h4>
 
 
-<pre>
--- Select employees WITH commission (not NULL)
-SELECT empno, ename, sal, comm
-FROM emp
-WHERE comm IS NOT NULL;
+<div class="code-box">
+
+    <div class="code-title">
+        is-not-null-example.sql
+    </div>
+
+<pre><span class="comment">-- Select employees WITH commission (not NULL)</span>
+
+<span class="keyword">SELECT</span> empno,
+       ename,
+       sal,
+       comm
+<span class="keyword">FROM</span> emp
+<span class="keyword">WHERE</span> comm <span class="keyword">IS NOT NULL</span>;
 </pre>
+
+</div>
 
 
 <h4>Output Example:</h4>
@@ -19153,21 +21195,29 @@ Note: Returns rows where comm HAS a value (not NULL)
 <h4>IS NOT NULL vs NOT NULL:</h4>
 
 
-<pre>
--- These are equivalent:
+<div class="code-box">
 
--- Using IS NOT NULL
-SELECT * FROM emp WHERE comm IS NOT NULL;
+    <div class="code-title">
+        is-not-null-vs-not-null.sql
+    </div>
 
--- NOT used in constraint (different context)
-CREATE TABLE test (comm NUMBER NOT NULL);
+<pre><span class="comment">-- These are different uses of NOT</span>
+
+<span class="comment">-- Using IS NOT NULL</span>
+<span class="keyword">SELECT</span> <span class="operator">*</span>
+<span class="keyword">FROM</span> emp
+<span class="keyword">WHERE</span> comm <span class="keyword">IS NOT NULL</span>;
+
+<span class="comment">-- NOT NULL used as a table constraint</span>
+<span class="keyword">CREATE TABLE</span> test (
+    comm <span class="keyword">NUMBER NOT NULL</span>
+);
 </pre>
+
+</div>
 
 
 <h3>3. LIKE Operator</h3>
-
-
-<h4>Description:</h4>
 
 
 <p>
@@ -19227,12 +21277,22 @@ LIKE matches string patterns using wildcard characters.
 <h4>LIKE Example - Names Starting with S:</h4>
 
 
-<pre>
--- Select employees named starting with 'S'
-SELECT empno, ename, sal
-FROM emp
-WHERE ename LIKE 'S%';
+<div class="code-box">
+
+    <div class="code-title">
+        like-starts-with.sql
+    </div>
+
+<pre><span class="comment">-- Select employees whose names start with 'S'</span>
+
+<span class="keyword">SELECT</span> empno,
+       ename,
+       sal
+<span class="keyword">FROM</span> emp
+<span class="keyword">WHERE</span> ename <span class="keyword">LIKE</span> 'S%';
 </pre>
+
+</div>
 
 
 <h4>Output Example:</h4>
@@ -19260,12 +21320,22 @@ Note: 'S%' means S followed by ANY characters (including zero)
 <h4>LIKE Example - Names Ending with S:</h4>
 
 
-<pre>
--- Select employees named ending with 'S'
-SELECT empno, ename, sal
-FROM emp
-WHERE ename LIKE '%S';
+<div class="code-box">
+
+    <div class="code-title">
+        like-ends-with.sql
+    </div>
+
+<pre><span class="comment">-- Select employees whose names end with 'S'</span>
+
+<span class="keyword">SELECT</span> empno,
+       ename,
+       sal
+<span class="keyword">FROM</span> emp
+<span class="keyword">WHERE</span> ename <span class="keyword">LIKE</span> '%S';
 </pre>
+
+</div>
 
 
 <h4>Output Example:</h4>
@@ -19293,23 +21363,43 @@ Note: '%S' means ANY characters followed by S
 <h4>LIKE Example - Names with S in Middle:</h4>
 
 
-<pre>
--- Select employees named containing 'S'
-SELECT empno, ename, sal
-FROM emp
-WHERE ename LIKE '%S%';
+<div class="code-box">
+
+    <div class="code-title">
+        like-contains.sql
+    </div>
+
+<pre><span class="comment">-- Select employees whose names contain 'S'</span>
+
+<span class="keyword">SELECT</span> empno,
+       ename,
+       sal
+<span class="keyword">FROM</span> emp
+<span class="keyword">WHERE</span> ename <span class="keyword">LIKE</span> '%S%';
 </pre>
+
+</div>
 
 
 <h4>LIKE Example - Exactly 5 Characters:</h4>
 
 
-<pre>
--- Select employees with 5-character names
-SELECT empno, ename, sal
-FROM emp
-WHERE ename LIKE '_____';
+<div class="code-box">
+
+    <div class="code-title">
+        like-five-character-names.sql
+    </div>
+
+<pre><span class="comment">-- Select employees with 5-character names</span>
+
+<span class="keyword">SELECT</span> empno,
+       ename,
+       sal
+<span class="keyword">FROM</span> emp
+<span class="keyword">WHERE</span> ename <span class="keyword">LIKE</span> '_____';
 </pre>
+
+</div>
 
 
 <h4>Output Example:</h4>
@@ -19342,18 +21432,25 @@ Note: '_____' means exactly 5 characters (5 underscores)
 <h4>LIKE with Escape Character:</h4>
 
 
-<pre>
--- Search for names starting with '%'
-SELECT empno, ename
-FROM emp
-WHERE ename LIKE '%\%%' ESCAPE '\';
+<div class="code-box">
+
+    <div class="code-title">
+        like-escape-percent.sql
+    </div>
+
+<pre><span class="comment">-- Search for names containing the '%' character</span>
+
+<span class="keyword">SELECT</span> empno,
+       ename
+<span class="keyword">FROM</span> emp
+<span class="keyword">WHERE</span> ename <span class="keyword">LIKE</span> '%\%%'
+<span class="keyword">ESCAPE</span> '\';
 </pre>
+
+</div>
 
 
 <h3>4. BETWEEN Operator</h3>
-
-
-<h4>Description:</h4>
 
 
 <p>
@@ -19388,12 +21485,22 @@ BETWEEN checks if a value is within a range (inclusive).
 <h4>BETWEEN Example - Salary Range:</h4>
 
 
-<pre>
--- Select employees with salary between 25000 and 35000
-SELECT empno, ename, sal
-FROM emp
-WHERE sal BETWEEN 25000 AND 35000;
+<div class="code-box">
+
+    <div class="code-title">
+        between-salary-example.sql
+    </div>
+
+<pre><span class="comment">-- Select employees with salary between 25000 and 35000</span>
+
+<span class="keyword">SELECT</span> empno,
+       ename,
+       sal
+<span class="keyword">FROM</span> emp
+<span class="keyword">WHERE</span> sal <span class="keyword">BETWEEN</span> 25000 <span class="keyword">AND</span> 35000;
 </pre>
+
+</div>
 
 
 <h4>Output Example:</h4>
@@ -19431,32 +21538,52 @@ Note: Includes 25000 AND 35000 (inclusive range)
 <h4>BETWEEN Equivalent:</h4>
 
 
-<pre>
--- These are equivalent:
+<div class="code-box">
 
--- Using BETWEEN
-SELECT * FROM emp WHERE sal BETWEEN 25000 AND 35000;
+    <div class="code-title">
+        between-vs-relational-operators.sql
+    </div>
 
--- Using >= and <=
-SELECT * FROM emp WHERE sal >= 25000 AND sal <= 35000;
+<pre><span class="comment">-- These are equivalent:</span>
+
+<span class="comment">-- Using BETWEEN</span>
+<span class="keyword">SELECT</span> <span class="operator">*</span>
+<span class="keyword">FROM</span> emp
+<span class="keyword">WHERE</span> sal <span class="keyword">BETWEEN</span> 25000 <span class="keyword">AND</span> 35000;
+
+<span class="comment">-- Using &gt;= and &lt;=</span>
+<span class="keyword">SELECT</span> <span class="operator">*</span>
+<span class="keyword">FROM</span> emp
+<span class="keyword">WHERE</span> sal <span class="operator">&gt;=</span> 25000
+  <span class="keyword">AND</span> sal <span class="operator">&lt;=</span> 35000;
 </pre>
+
+</div>
 
 
 <h4>BETWEEN with Dates:</h4>
 
 
-<pre>
--- Select employees hired between 1980 and 1982
-SELECT empno, ename, hiredate
-FROM emp
-WHERE hiredate BETWEEN '01-JAN-1980' AND '31-DEC-1982';
+<div class="code-box">
+
+    <div class="code-title">
+        between-date-example.sql
+    </div>
+
+<pre><span class="comment">-- Select employees hired between 1980 and 1982</span>
+
+<span class="keyword">SELECT</span> empno,
+       ename,
+       hiredate
+<span class="keyword">FROM</span> emp
+<span class="keyword">WHERE</span> hiredate <span class="keyword">BETWEEN</span> '01-JAN-1980'
+                     <span class="keyword">AND</span> '31-DEC-1982';
 </pre>
+
+</div>
 
 
 <h3>5. IN Operator</h3>
-
-
-<h4>Description:</h4>
 
 
 <p>
@@ -19491,12 +21618,23 @@ IN checks if a value is in a list of values.
 <h4>IN Example - Multiple Departments:</h4>
 
 
-<pre>
--- Select employees in department 10 OR 20
-SELECT empno, ename, sal, deptno
-FROM emp
-WHERE deptno IN (10, 20);
+<div class="code-box">
+
+    <div class="code-title">
+        in-operator-example.sql
+    </div>
+
+<pre><span class="comment">-- Select employees in department 10 OR 20</span>
+
+<span class="keyword">SELECT</span> empno,
+       ename,
+       sal,
+       deptno
+<span class="keyword">FROM</span> emp
+<span class="keyword">WHERE</span> deptno <span class="keyword">IN</span> (10, 20);
 </pre>
+
+</div>
 
 
 <h4>Output Example:</h4>
@@ -19532,35 +21670,58 @@ Note: Equivalent to WHERE deptno = 10 OR deptno = 20
 <h4>IN Equivalent:</h4>
 
 
-<pre>
--- These are equivalent:
+<div class="code-box">
 
--- Using IN
-SELECT * FROM emp WHERE deptno IN (10, 20, 30);
+    <div class="code-title">
+        in-vs-or.sql
+    </div>
 
--- Using OR
-SELECT * FROM emp WHERE deptno = 10 OR deptno = 20 OR deptno = 30;
+<pre><span class="comment">-- These are equivalent:</span>
+
+<span class="comment">-- Using IN</span>
+<span class="keyword">SELECT</span> <span class="operator">*</span>
+<span class="keyword">FROM</span> emp
+<span class="keyword">WHERE</span> deptno <span class="keyword">IN</span> (10, 20, 30);
+
+<span class="comment">-- Using OR</span>
+<span class="keyword">SELECT</span> <span class="operator">*</span>
+<span class="keyword">FROM</span> emp
+<span class="keyword">WHERE</span> deptno <span class="operator">=</span> 10
+   <span class="keyword">OR</span> deptno <span class="operator">=</span> 20
+   <span class="keyword">OR</span> deptno <span class="operator">=</span> 30;
 </pre>
+
+</div>
 
 
 <h4>IN with Subquery:</h4>
 
 
-<pre>
--- Select employees in departments with average salary > 30000
-SELECT empno, ename, sal, deptno
-FROM emp
-WHERE deptno IN (
-    SELECT deptno FROM emp GROUP BY deptno 
-    AVG(sal) > 30000
+<div class="code-box">
+
+    <div class="code-title">
+        in-subquery-example.sql
+    </div>
+
+<pre><span class="comment">-- Select employees in departments with average salary greater than 30000</span>
+
+<span class="keyword">SELECT</span> empno,
+       ename,
+       sal,
+       deptno
+<span class="keyword">FROM</span> emp
+<span class="keyword">WHERE</span> deptno <span class="keyword">IN</span> (
+    <span class="keyword">SELECT</span> deptno
+    <span class="keyword">FROM</span> emp
+    <span class="keyword">GROUP BY</span> deptno
+    <span class="keyword">HAVING</span> <span class="function">AVG</span>(sal) <span class="operator">&gt;</span> 30000
 );
 </pre>
 
+</div>
+
 
 <h3>6. EXISTS Operator</h3>
-
-
-<h4>Description:</h4>
 
 
 <p>
@@ -19591,20 +21752,29 @@ EXISTS checks if a subquery returns any rows.
 <h4>EXISTS Example - Check Department:</h4>
 
 
-<pre>
--- Select employees if department 10 exists
-SELECT empno, ename, sal
-FROM emp
-WHERE EXISTS (
-    SELECT * FROM dept WHERE deptno = 10
+<div class="code-box">
+
+    <div class="code-title">
+        exists-example.sql
+    </div>
+
+<pre><span class="comment">-- Select employees if department 10 exists</span>
+
+<span class="keyword">SELECT</span> empno,
+       ename,
+       sal
+<span class="keyword">FROM</span> emp
+<span class="keyword">WHERE</span> <span class="keyword">EXISTS</span> (
+    <span class="keyword">SELECT</span> <span class="operator">*</span>
+    <span class="keyword">FROM</span> dept
+    <span class="keyword">WHERE</span> deptno <span class="operator">=</span> 10
 );
 </pre>
 
+</div>
+
 
 <h3>7. Concatenation Operator (||)</h3>
-
-
-<h4>Description:</h4>
 
 
 <p>
@@ -19635,11 +21805,20 @@ WHERE EXISTS (
 <h4>Concatenation Example - Full Info:</h4>
 
 
-<pre>
--- Combine employee name and job
-SELECT empno, ename || ' - ' || job AS employee_info
-FROM emp;
+<div class="code-box">
+
+    <div class="code-title">
+        string-concatenation-example.sql
+    </div>
+
+<pre><span class="comment">-- Combine employee name and job</span>
+
+<span class="keyword">SELECT</span> empno,
+       ename <span class="operator">||</span> ' - ' <span class="operator">||</span> job <span class="keyword">AS</span> employee_info
+<span class="keyword">FROM</span> emp;
 </pre>
+
+</div>
 
 
 <h4>Output Example:</h4>
@@ -19664,12 +21843,21 @@ FROM emp;
 <h4>Concatenation Example - Salary Info:</h4>
 
 
-<pre>
--- Create salary description
-SELECT empno, ename, 
-       'Salary: ' || sal || ' for ' || ename AS sal_desc
-FROM emp;
+<div class="code-box">
+
+    <div class="code-title">
+        string-concatenation-salary-description.sql
+    </div>
+
+<pre><span class="comment">-- Create salary description</span>
+
+<span class="keyword">SELECT</span> empno,
+       ename,
+       'Salary: ' <span class="operator">||</span> sal <span class="operator">||</span> ' for ' <span class="operator">||</span> ename <span class="keyword">AS</span> sal_desc
+<span class="keyword">FROM</span> emp;
 </pre>
+
+</div>
 
 
 <h4>Output Example:</h4>
@@ -19695,15 +21883,27 @@ FROM emp;
 <h4>Complete Example - Multiple Operators:</h4>
 
 
-<pre>
--- Complex condition with special operators
-SELECT empno, ename, sal, comm, deptno
-FROM emp
-WHERE sal BETWEEN 25000 AND 35000
-      AND deptno IN (10, 20)
-      AND comm IS NULL
-      AND ename LIKE 'S%';
+<div class="code-box">
+
+    <div class="code-title">
+        special-operators-combined.sql
+    </div>
+
+<pre><span class="comment">-- Complex condition with special operators</span>
+
+<span class="keyword">SELECT</span> empno,
+       ename,
+       sal,
+       comm,
+       deptno
+<span class="keyword">FROM</span> emp
+<span class="keyword">WHERE</span> sal <span class="keyword">BETWEEN</span> 25000 <span class="keyword">AND</span> 35000
+  <span class="keyword">AND</span> deptno <span class="keyword">IN</span> (10, 20)
+  <span class="keyword">AND</span> comm <span class="keyword">IS NULL</span>
+  <span class="keyword">AND</span> ename <span class="keyword">LIKE</span> 'S%';
 </pre>
+
+</div>
 
 
 <h3>Key Points Summary</h3>
@@ -19796,12 +21996,6 @@ Remember: IS NULL for NULL test, LIKE for pattern, BETWEEN for range, IN for lis
     <li>6. Create SELECT with || concatenation (combine columns)</li>
     <li>7. Combine multiple special operators in one query</li>
 </ul>
-
-
-<p>
-<strong>Next Topic:</strong> Aggregate Functions in Oracle (SUM, AVG, COUNT, MAX, MIN)
-</p>
-
 
 `;
 
@@ -20543,7 +22737,7 @@ By the end of this chapter, you will be able to use Oracle Functions to manipula
 
 </p>
 
-`; 
+`;
 
 let oracleCharacterFunctionsContent = `
 
@@ -22906,11 +25100,20 @@ This block is <strong>Optional</strong>. If no variables or declarations are req
 
 <h4>Example</h4>
 
-<pre>
-DECLARE
-   v_name VARCHAR2(30);
-   v_salary NUMBER;
+<div class="code-box">
+
+    <div class="code-title">
+        declare-variables.sql
+    </div>
+
+<pre><span class="comment">-- Declare variables</span>
+
+<span class="keyword">DECLARE</span>
+    v_name   <span class="keyword">VARCHAR2</span>(30);
+    v_salary <span class="keyword">NUMBER</span>;
 </pre>
+
+</div>
 
 <hr>
 
@@ -22944,11 +25147,20 @@ The Execution Block is <strong>Mandatory</strong>. Every PL/SQL program must con
 
 <h4>Example</h4>
 
-<pre>
-BEGIN
-   DBMS_OUTPUT.PUT_LINE('Welcome to PL/SQL');
-END;
+<div class="code-box">
+
+    <div class="code-title">
+        begin-block.sql
+    </div>
+
+<pre><span class="comment">-- Executable section of a PL/SQL block</span>
+
+<span class="keyword">BEGIN</span>
+    <span class="keyword">DBMS_OUTPUT.PUT_LINE</span>('Welcome to PL/SQL');
+<span class="keyword">END</span>;
 </pre>
+
+</div>
 
 <hr>
 
@@ -22968,31 +25180,49 @@ This block is <strong>Optional</strong>. If no exception handling is required, t
 
 <h4>Example</h4>
 
-<pre>
-EXCEPTION
-   WHEN OTHERS THEN
-      DBMS_OUTPUT.PUT_LINE('An Error Occurred');
+<div class="code-box">
+
+    <div class="code-title">
+        exception-block.sql
+    </div>
+
+<pre><span class="comment">-- Exception handling section of a PL/SQL block</span>
+
+<span class="keyword">EXCEPTION</span>
+    <span class="keyword">WHEN</span> <span class="keyword">OTHERS</span> <span class="keyword">THEN</span>
+        <span class="keyword">DBMS_OUTPUT.PUT_LINE</span>('An Error Occurred');
 </pre>
+
+</div>
 
 <hr>
 
 <h3>Basic Structure of a PL/SQL Block</h3>
 
-<pre>
-DECLARE
-   -- Variable declarations (Optional)
+<div class="code-box">
 
-BEGIN
-   -- SQL Statements
-   -- PL/SQL Statements
-   -- Executable Code (Mandatory)
+    <div class="code-title">
+        plsql-block-structure.sql
+    </div>
 
-EXCEPTION
-   -- Exception Handling (Optional)
+<pre><span class="comment">-- Basic Structure of a PL/SQL Block</span>
 
-END;
+<span class="keyword">DECLARE</span>
+    <span class="comment">-- Variable declarations (Optional)</span>
+
+<span class="keyword">BEGIN</span>
+    <span class="comment">-- SQL Statements</span>
+    <span class="comment">-- PL/SQL Statements</span>
+    <span class="comment">-- Executable Code (Mandatory)</span>
+
+<span class="keyword">EXCEPTION</span>
+    <span class="comment">-- Exception Handling (Optional)</span>
+
+<span class="keyword">END</span>;
 /
 </pre>
+
+</div>
 
 <hr>
 
@@ -23034,20 +25264,29 @@ END;
 
 <h3>Complete Example of an Anonymous Block</h3>
 
-<pre>
-DECLARE
-   v_name VARCHAR2(20) := 'Rahul';
+<div class="code-box">
 
-BEGIN
-   DBMS_OUTPUT.PUT_LINE('Student Name : ' || v_name);
+    <div class="code-title">
+        plsql-simple-block.sql
+    </div>
 
-EXCEPTION
-   WHEN OTHERS THEN
-      DBMS_OUTPUT.PUT_LINE('Some Error Occurred');
+<pre><span class="comment">-- Simple PL/SQL block with variable declaration and exception handling</span>
 
-END;
+<span class="keyword">DECLARE</span>
+    v_name <span class="keyword">VARCHAR2</span>(20) <span class="operator">:=</span> 'Rahul';
+
+<span class="keyword">BEGIN</span>
+    <span class="keyword">DBMS_OUTPUT.PUT_LINE</span>('Student Name : ' <span class="operator">||</span> v_name);
+
+<span class="keyword">EXCEPTION</span>
+    <span class="keyword">WHEN</span> <span class="keyword">OTHERS</span> <span class="keyword">THEN</span>
+        <span class="keyword">DBMS_OUTPUT.PUT_LINE</span>('Some Error Occurred');
+
+<span class="keyword">END</span>;
 /
 </pre>
+
+</div>
 
 <hr>
 
@@ -23113,7 +25352,7 @@ END;
 
 <p>
 
-Good morning students!
+Hi students!
 
 In the previous lecture, we learned about Anonymous Blocks.
 
@@ -23161,32 +25400,44 @@ Each block executes independently and may contain its own variables, executable 
 
 <h3>Structure of a Nested Block</h3>
 
-<pre>
-DECLARE
-   -- Outer Block Declarations
+<div class="code-box">
 
-BEGIN
+    <div class="code-title">
+        plsql-nested-block.sql
+    </div>
 
-   -- Outer Block Statements
+<pre><span class="comment">-- Nested (Sub) PL/SQL Block</span>
 
-   DECLARE
-      -- Inner Block Declarations
-   BEGIN
-      -- Inner Block Statements
-   EXCEPTION
-      WHEN OTHERS THEN
-         -- Inner Exception Handling
-   END;
+<span class="keyword">DECLARE</span>
+    <span class="comment">-- Outer Block Declarations</span>
 
-   -- Outer Block Continues
+<span class="keyword">BEGIN</span>
 
-EXCEPTION
-   WHEN OTHERS THEN
-      -- Outer Exception Handling
-END;
+    <span class="comment">-- Outer Block Statements</span>
+
+    <span class="keyword">DECLARE</span>
+        <span class="comment">-- Inner Block Declarations</span>
+
+    <span class="keyword">BEGIN</span>
+        <span class="comment">-- Inner Block Statements</span>
+
+    <span class="keyword">EXCEPTION</span>
+        <span class="keyword">WHEN</span> <span class="keyword">OTHERS</span> <span class="keyword">THEN</span>
+            <span class="comment">-- Inner Exception Handling</span>
+
+    <span class="keyword">END</span>;
+
+    <span class="comment">-- Outer Block Continues</span>
+
+<span class="keyword">EXCEPTION</span>
+    <span class="keyword">WHEN</span> <span class="keyword">OTHERS</span> <span class="keyword">THEN</span>
+        <span class="comment">-- Outer Exception Handling</span>
+
+<span class="keyword">END</span>;
 /
 </pre>
 
+</div>
 <hr>
 
 <h3>Flow of Execution</h3>
@@ -23229,104 +25480,113 @@ END;
 
 <h3>Example : Using Sub Blocks for Multiple Exceptions</h3>
 
-<pre>
-DECLARE
-   v_name   employees.emp_name%TYPE;
-   v_salary NUMBER;
-   v_result NUMBER;
+<div class="code-box">
 
-BEGIN
+    <div class="code-title">
+        plsql-predefined-exceptions.sql
+    </div>
 
-   -- Sub Block 1 : NO_DATA_FOUND
+<pre><span class="comment">-- Handling Predefined Exceptions using Sub Blocks</span>
 
-   BEGIN
+<span class="keyword">DECLARE</span>
+    v_name   employees.emp_name<span class="operator">%TYPE</span>;
+    v_salary <span class="keyword">NUMBER</span>;
+    v_result <span class="keyword">NUMBER</span>;
 
-      SELECT emp_name
-      INTO v_name
-      FROM employees
-      WHERE emp_id = 999;
+<span class="keyword">BEGIN</span>
 
-      DBMS_OUTPUT.PUT_LINE(v_name);
+    <span class="comment">-- Sub Block 1 : NO_DATA_FOUND</span>
 
-   EXCEPTION
+    <span class="keyword">BEGIN</span>
 
-      WHEN NO_DATA_FOUND THEN
+        <span class="keyword">SELECT</span> emp_name
+        <span class="keyword">INTO</span> v_name
+        <span class="keyword">FROM</span> employees
+        <span class="keyword">WHERE</span> emp_id <span class="operator">=</span> 999;
 
-         DBMS_OUTPUT.PUT_LINE('NO_DATA_FOUND handled');
+        <span class="keyword">DBMS_OUTPUT.PUT_LINE</span>(v_name);
 
-   END;
+    <span class="keyword">EXCEPTION</span>
 
+        <span class="keyword">WHEN</span> NO_DATA_FOUND <span class="keyword">THEN</span>
 
-   -- Sub Block 2 : TOO_MANY_ROWS
+            <span class="keyword">DBMS_OUTPUT.PUT_LINE</span>('NO_DATA_FOUND handled');
 
-   BEGIN
-
-      SELECT emp_name
-      INTO v_name
-      FROM employees
-      WHERE dept_id = 10;
-
-      DBMS_OUTPUT.PUT_LINE(v_name);
-
-   EXCEPTION
-
-      WHEN TOO_MANY_ROWS THEN
-
-         DBMS_OUTPUT.PUT_LINE('TOO_MANY_ROWS handled');
-
-   END;
+    <span class="keyword">END</span>;
 
 
-   -- Sub Block 3 : ZERO_DIVIDE
+    <span class="comment">-- Sub Block 2 : TOO_MANY_ROWS</span>
 
-   BEGIN
+    <span class="keyword">BEGIN</span>
 
-      v_result := 100/0;
+        <span class="keyword">SELECT</span> emp_name
+        <span class="keyword">INTO</span> v_name
+        <span class="keyword">FROM</span> employees
+        <span class="keyword">WHERE</span> dept_id <span class="operator">=</span> 10;
 
-   EXCEPTION
+        <span class="keyword">DBMS_OUTPUT.PUT_LINE</span>(v_name);
 
-      WHEN ZERO_DIVIDE THEN
+    <span class="keyword">EXCEPTION</span>
 
-         DBMS_OUTPUT.PUT_LINE('ZERO_DIVIDE handled');
+        <span class="keyword">WHEN</span> TOO_MANY_ROWS <span class="keyword">THEN</span>
 
-   END;
+            <span class="keyword">DBMS_OUTPUT.PUT_LINE</span>('TOO_MANY_ROWS handled');
 
-
-   -- Sub Block 4 : INVALID_NUMBER
-
-   BEGIN
-
-      v_salary := TO_NUMBER('ABC123');
-
-   EXCEPTION
-
-      WHEN INVALID_NUMBER THEN
-
-         DBMS_OUTPUT.PUT_LINE('INVALID_NUMBER handled');
-
-   END;
+    <span class="keyword">END</span>;
 
 
-   -- Sub Block 5 : DUP_VAL_ON_INDEX
+    <span class="comment">-- Sub Block 3 : ZERO_DIVIDE</span>
 
-   BEGIN
+    <span class="keyword">BEGIN</span>
 
-      INSERT INTO employees(emp_id,emp_name,salary)
-      VALUES(101,'Pradeep',50000);
+        v_result <span class="operator">:=</span> 100 <span class="operator">/</span> 0;
 
-   EXCEPTION
+    <span class="keyword">EXCEPTION</span>
 
-      WHEN DUP_VAL_ON_INDEX THEN
+        <span class="keyword">WHEN</span> ZERO_DIVIDE <span class="keyword">THEN</span>
 
-         DBMS_OUTPUT.PUT_LINE('DUP_VAL_ON_INDEX handled');
+            <span class="keyword">DBMS_OUTPUT.PUT_LINE</span>('ZERO_DIVIDE handled');
 
-   END;
+    <span class="keyword">END</span>;
 
-   DBMS_OUTPUT.PUT_LINE('Program Completed Successfully');
 
-END;
+    <span class="comment">-- Sub Block 4 : INVALID_NUMBER</span>
+
+    <span class="keyword">BEGIN</span>
+
+        v_salary <span class="operator">:=</span> <span class="keyword">TO_NUMBER</span>('ABC123');
+
+    <span class="keyword">EXCEPTION</span>
+
+        <span class="keyword">WHEN</span> INVALID_NUMBER <span class="keyword">THEN</span>
+
+            <span class="keyword">DBMS_OUTPUT.PUT_LINE</span>('INVALID_NUMBER handled');
+
+    <span class="keyword">END</span>;
+
+
+    <span class="comment">-- Sub Block 5 : DUP_VAL_ON_INDEX</span>
+
+    <span class="keyword">BEGIN</span>
+
+        <span class="keyword">INSERT INTO</span> employees(emp_id, emp_name, salary)
+        <span class="keyword">VALUES</span>(101, 'Pradeep', 50000);
+
+    <span class="keyword">EXCEPTION</span>
+
+        <span class="keyword">WHEN</span> DUP_VAL_ON_INDEX <span class="keyword">THEN</span>
+
+            <span class="keyword">DBMS_OUTPUT.PUT_LINE</span>('DUP_VAL_ON_INDEX handled');
+
+    <span class="keyword">END</span>;
+
+    <span class="keyword">DBMS_OUTPUT.PUT_LINE</span>('Program Completed Successfully');
+
+<span class="keyword">END</span>;
 /
 </pre>
+
+</div>
 
 <hr>
 
@@ -28307,50 +30567,82 @@ It performs a task independently, such as printing a message or showing the curr
 <p><strong>Syntax:</strong></p>
 
 
-<pre>
-CREATE OR REPLACE PROCEDURE procedure_name
-IS
-   -- Declarations (optional)
-BEGIN
-   -- Executable statements
-EXCEPTION
-   -- Exception handling (optional)
-END procedure_name;
-/
-</pre>
+<div class="code-box">
+
+    <div class="code-title">
+        procedure_name.sql
+    </div>
+
+<pre><span class="keyword">CREATE OR REPLACE PROCEDURE</span> <span class="function">procedure_name</span>
+<span class="keyword">IS</span>
+   <span class="comment">-- Declarations (optional)</span>
+
+<span class="keyword">BEGIN</span>
+   <span class="comment">-- Executable statements</span>
+
+<span class="keyword">EXCEPTION</span>
+   <span class="comment">-- Exception handling (optional)</span>
+
+<span class="keyword">END</span> <span class="function">procedure_name</span><span class="symbol">;</span>
+<span class="symbol">/</span></pre>
+
+</div>
 
 
 <p><strong>Example:</strong></p>
 
 
-<pre>
-CREATE OR REPLACE PROCEDURE show_welcome_message
-IS
-BEGIN
-   DBMS_OUTPUT.PUT_LINE('Welcome to SharadaIT Training!');
-   DBMS_OUTPUT.PUT_LINE('Today''s Date is: ' || TO_CHAR(SYSDATE, 'DD-MON-YYYY'));
-END show_welcome_message;
-/
-</pre>
+<div class="code-box">
+
+    <div class="code-title">
+        show_welcome_message.sql
+    </div>
+
+<pre><span class="keyword">CREATE OR REPLACE PROCEDURE</span> <span class="function">show_welcome_message</span>
+<span class="keyword">IS</span>
+<span class="keyword">BEGIN</span>
+   <span class="package">DBMS_OUTPUT</span>.<span class="method">PUT_LINE</span>(<span class="string">'Welcome to SharadaIT Training!'</span>);
+   <span class="package">DBMS_OUTPUT</span>.<span class="method">PUT_LINE</span>(
+      <span class="string">'Today''s Date is: '</span> ||
+      <span class="function">TO_CHAR</span>(<span class="keyword">SYSDATE</span>, <span class="string">'DD-MON-YYYY'</span>)
+   );
+
+<span class="keyword">END</span> <span class="function">show_welcome_message</span>;
+<span class="symbol">/</span></pre>
+
+</div>
 
 
 <p><strong>How to Call:</strong></p>
 
 
-<pre>
-EXEC show_welcome_message;
-</pre>
+<div class="code-box">
+
+    <div class="code-title">
+        execute_procedure.sql
+    </div>
+
+<pre><span class="keyword">EXEC</span> <span class="function">show_welcome_message</span><span class="symbol">;</span></pre>
+
+</div>
 
 
-<p><strong>Or use an Anonymous Block:</strong></p>
+<p><strong>Or use an Anonymous Block:</strong>
+</p>
 
 
-<pre>
-BEGIN
-   show_welcome_message;
-END;
-/
-</pre>
+<div class="code-box">
+
+<div class="code-title">
+PL/SQL Example.sql
+</div>
+
+<pre><span class="keyword">BEGIN</span>
+   <span class="function">show_welcome_message</span><span class="symbol">;</span>
+<span class="keyword">END</span><span class="symbol">;</span>
+<span class="symbol">/</span></pre>
+
+</div>
 
 
 <hr>
@@ -28375,106 +30667,139 @@ Parameters allow us to send values into the procedure, get values out of it, or 
 </ul>
 
 
-<p><strong>Syntax:</strong></p>
+<div class="code-box">
 
+    <div class="code-title">
+        Syntax
+    </div>
 
-<pre>
-CREATE OR REPLACE PROCEDURE procedure_name(
-   parameter1 IN datatype,
-   parameter2 OUT datatype,
-   parameter3 IN OUT datatype
+<pre><span class="keyword">CREATE OR REPLACE PROCEDURE</span> <span class="function">procedure_name</span>(
+   <span class="parameter">parameter1</span> <span class="keyword">IN</span> <span class="datatype">datatype</span>,
+   <span class="parameter">parameter2</span> <span class="keyword">OUT</span> <span class="datatype">datatype</span>,
+   <span class="parameter">parameter3</span> <span class="keyword">IN OUT</span> <span class="datatype">datatype</span>
 )
-IS
-   -- Declarations
-BEGIN
-   -- Executable statements
-EXCEPTION
-   -- Exception handling
-END procedure_name;
-/
-</pre>
+<span class="keyword">IS</span>
+   <span class="comment">-- Declarations</span>
+<span class="keyword">BEGIN</span>
+   <span class="comment">-- Executable statements</span>
+<span class="keyword">EXCEPTION</span>
+   <span class="comment">-- Exception handling</span>
+<span class="keyword">END</span> <span class="function">procedure_name</span>;
+<span class="symbol">/</span></pre>
 
+</div>
+<hr>
 
-<p><strong>Example: A Simple Stored Procedure</strong></p>
+<div class="code-box">
 
+    <div class="code-title">
+        Example: A Simple Stored Procedure
+    </div>
 
-<pre>
-CREATE OR REPLACE PROCEDURE calculate_values(
-   p_num1   IN NUMBER,
-   p_square OUT NUMBER,
-   p_double IN OUT NUMBER
+<pre><span class="keyword">CREATE OR REPLACE PROCEDURE</span> <span class="function">calculate_values</span>(
+   <span class="parameter">p_num1</span>   <span class="keyword">IN</span> <span class="datatype">NUMBER</span>,
+   <span class="parameter">p_square</span> <span class="keyword">OUT</span> <span class="datatype">NUMBER</span>,
+   <span class="parameter">p_double</span> <span class="keyword">IN OUT</span> <span class="datatype">NUMBER</span>
 )
-IS
-BEGIN
-   p_square := p_num1 * p_num1;
-   p_double := p_double * 2;
-EXCEPTION
-   WHEN OTHERS THEN
-      DBMS_OUTPUT.PUT_LINE('An error occurred: ' || SQLERRM);
-END calculate_values;
-/
-</pre>
+<span class="keyword">IS</span>
+<span class="keyword">BEGIN</span>
+   <span class="parameter">p_square</span> := <span class="parameter">p_num1</span> * <span class="parameter">p_num1</span>;
+   <span class="parameter">p_double</span> := <span class="parameter">p_double</span> * <span class="number">2</span>;
+
+<span class="keyword">EXCEPTION</span>
+   <span class="keyword">WHEN</span> <span class="keyword">OTHERS</span> <span class="keyword">THEN</span>
+      <span class="package">DBMS_OUTPUT</span>.<span class="method">PUT_LINE</span>(<span class="string">'An error occurred: '</span> || <span class="function">SQLERRM</span>);
+
+<span class="keyword">END</span> <span class="function">calculate_values</span>;
+<span class="symbol">/</span></pre>
+
+</div>
 
 
-<p><strong>How to Call the Procedure:</strong></p>
+<h3>How to Call the Procedure:</h3>
+
+<div class="code-box">
+
+    <div class="code-title">
+        execute_procedure.sql
+    </div>
+
+<pre><span class="keyword">DECLARE</span>
+   <span class="parameter">v_num1</span>   <span class="datatype">NUMBER</span> := <span class="number">5</span>;
+   <span class="parameter">v_square</span> <span class="datatype">NUMBER</span>;
+   <span class="parameter">v_double</span> <span class="datatype">NUMBER</span> := <span class="number">10</span>;
+
+<span class="keyword">BEGIN</span>
+   <span class="function">calculate_values</span>(<span class="parameter">v_num1</span>, <span class="parameter">v_square</span>, <span class="parameter">v_double</span>);
+
+   <span class="package">DBMS_OUTPUT</span>.<span class="method">PUT_LINE</span>(<span class="string">'Number: '</span> || <span class="parameter">v_num1</span>);
+   <span class="package">DBMS_OUTPUT</span>.<span class="method">PUT_LINE</span>(<span class="string">'Square: '</span> || <span class="parameter">v_square</span>);
+   <span class="package">DBMS_OUTPUT</span>.<span class="method">PUT_LINE</span>(<span class="string">'Double: '</span> || <span class="parameter">v_double</span>);
+
+<span class="keyword">END</span>;
+<span class="symbol">/</span></pre>
+
+</div>
 
 
-<pre>
-DECLARE
-   v_num1   NUMBER := 5;
-   v_square NUMBER;
-   v_double NUMBER := 10;
-BEGIN
-   calculate_values(v_num1, v_square, v_double);
+<h3>Example: Get User ID by Username</h3>
 
-   DBMS_OUTPUT.PUT_LINE('Number: ' || v_num1);
-   DBMS_OUTPUT.PUT_LINE('Square: ' || v_square);
-   DBMS_OUTPUT.PUT_LINE('Double: ' || v_double);
-END;
-/
-</pre>
+<div class="code-box">
 
+    <div class="code-title">
+        get_user_id.sql
+    </div>
 
-<p><strong>Example: Get User ID by Username</strong></p>
-
-
-<pre>
-CREATE OR REPLACE PROCEDURE get_user_id (
-   p_username IN VARCHAR2,
-   p_user_id OUT NUMBER
+<pre><span class="keyword">CREATE OR REPLACE PROCEDURE</span> <span class="function">get_user_id</span> (
+   <span class="parameter">p_username</span> <span class="keyword">IN</span> <span class="datatype">VARCHAR2</span>,
+   <span class="parameter">p_user_id</span> <span class="keyword">OUT</span> <span class="datatype">NUMBER</span>
 )
-IS
-BEGIN
-   SELECT user_id
-   INTO p_user_id
-   FROM users
-   WHERE username = p_username;
+<span class="keyword">IS</span>
+<span class="keyword">BEGIN</span>
+   <span class="keyword">SELECT</span> <span class="parameter">user_id</span>
+   <span class="keyword">INTO</span> <span class="parameter">p_user_id</span>
+   <span class="keyword">FROM</span> <span class="parameter">users</span>
+   <span class="keyword">WHERE</span> <span class="parameter">username</span> = <span class="parameter">p_username</span>;
 
-EXCEPTION
-   WHEN NO_DATA_FOUND THEN
-      DBMS_OUTPUT.PUT_LINE('No user found with username: ' || p_username);
-      p_user_id := NULL;
-   WHEN OTHERS THEN
-      DBMS_OUTPUT.PUT_LINE('Error: ' || SQLERRM);
-      p_user_id := NULL;
-END;
-/
-</pre>
+<span class="keyword">EXCEPTION</span>
+   <span class="keyword">WHEN</span> <span class="exception">NO_DATA_FOUND</span> <span class="keyword">THEN</span>
+      <span class="package">DBMS_OUTPUT</span>.<span class="method">PUT_LINE</span>(<span class="string">'No user found '</span> || <span class="parameter">p_username</span>);
+      <span class="parameter">p_user_id</span> := <span class="keyword">NULL</span>;
+
+   <span class="keyword">WHEN</span> <span class="keyword">OTHERS</span> <span class="keyword">THEN</span>
+      <span class="package">DBMS_OUTPUT</span>.<span class="method">PUT_LINE</span>(<span class="string">'Error: '</span> || <span class="function">SQLERRM</span>);
+      <span class="parameter">p_user_id</span> := <span class="keyword">NULL</span>;
+
+<span class="keyword">END</span>;
+<span class="symbol">/</span></pre>
+
+</div>
 
 
-<p><strong>Call the Procedure:</strong></p>
+
+<h3>Call the Procedure:</h3>
 
 
-<pre>
-SET SERVEROUTPUT ON;
-DECLARE
-   v_user_id NUMBER;
-BEGIN
-   get_user_id('john_doe', v_user_id);
-   DBMS_OUTPUT.PUT_LINE('User ID: ' || v_user_id);
-END;
-/
-</pre>
+<div class="code-box">
+
+    <div class="code-title">
+       Call the Procedure:
+    </div>
+
+<pre><span class="keyword">SET</span> <span class="parameter">SERVEROUTPUT</span> <span class="keyword">ON</span>;
+
+<span class="keyword">DECLARE</span>
+   <span class="parameter">v_user_id</span> <span class="datatype">NUMBER</span>;
+
+<span class="keyword">BEGIN</span>
+   <span class="function">get_user_id</span>(<span class="string">'john_doe'</span>, <span class="parameter">v_user_id</span>);
+
+   <span class="package">DBMS_OUTPUT</span>.<span class="method">PUT_LINE</span>(<span class="string">'User ID: '</span> || <span class="parameter">v_user_id</span>);
+
+<span class="keyword">END</span>;
+<span class="symbol">/</span></pre>
+
+</div>
 
 
 <hr>
@@ -28498,9 +30823,15 @@ END;
 <h3>Dropping a Procedure</h3>
 
 
-<pre>
-DROP PROCEDURE proc_name;
-</pre>
+<div class="code-box">
+
+    <div class="code-title">
+        Dropping a Procedure
+    </div>
+
+<pre><span class="keyword">DROP PROCEDURE</span> <span class="function">proc_name</span><span class="symbol">;</span></pre>
+
+</div>
 
 
 <hr>
