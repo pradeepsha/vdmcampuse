@@ -14,6 +14,8 @@ In simple words, data communication allows computers, mobile phones, servers, an
 The main objective of data communication is to transfer information accurately, efficiently, and securely from one device to another. Modern communication systems such as the Internet, banking networks, mobile networks, and cloud computing rely heavily on data communication.
 </p>
 
+    <img src="bca_images/data_comm.png" alt="Data and Signals - Analog and Digital"  style="max-width: 100%; height: auto; border-radius: 6px;">
+
 <h4>Definition of Data Communication</h4>
 
 <p>
@@ -32,7 +34,10 @@ Data Communication is the exchange of digital or analog data between two or more
 </ul>
 
 <h4>Components of Data Communication</h4>
-
+<img src="bca_images/5-component.png" 
+     alt="5 Components of Data Communication Diagram" 
+   class="notes_img"
+     >
 <p>
 A successful data communication system consists of the following five basic components:
 </p>
@@ -134,168 +139,321 @@ Data Communication forms the foundation of modern computer networks. It enables 
 
 let digitalAnalogContent = `
 
-<h3>Digital and Analog Communication</h3>
+
+<h3>Data and Signals</h3>
 
 <p>
-Communication is the process of transferring information from one device to another. Based on the type of signal used for transmission, communication can be classified into two main types:
+    In a computer network, <strong>data</strong> is the information that needs to be transmitted from one device to another, while a <strong>signal</strong> is the electrical or electromagnetic representation of that data used during transmission.
+</p>
+
+<div class="image-box">
+    <img  class="notes_img" src="bca_images/digital_anolog.png" alt="Data and Signals - Analog and Digital" class="notes-img">
+
+    <p class="image-caption">
+        <strong>Figure:</strong> Analog Data and Digital Data with their corresponding signals.
+    </p>
+</div>
+
+
+
+
+<p>
+    As shown in the above figure, data can be classified into two main types:
+</p>
+
+<ol>
+    <li><strong>Analog Data</strong> – Continuous in nature.</li>
+    <li><strong>Digital Data</strong> – Discrete in nature and represented using binary values (0 and 1).</li>
+</ol>
+
+<h4>Analog Data</h4>
+
+<p>
+    Analog data consists of continuously changing values. It can take an infinite number of values within a specific range. Examples include human voice, temperature, air pressure, and sound waves. When analog data is transmitted, it is represented using an <strong>analog signal</strong>, which has a smooth sine-wave shape.
+</p>
+
+<h4>Digital Data</h4>
+
+<p>
+    Digital data consists of discrete values and is represented using binary digits (<strong>0</strong> and <strong>1</strong>). Computers and digital devices understand only binary data. During transmission, digital data is represented by a <strong>digital signal</strong>, which appears as a series of square pulses with high and low voltage levels.
+</p>
+
+<div class="note">
+    <strong>Observation from the Figure:</strong>
+    <ul>
+        <li>The left graph represents an <strong>Analog Signal</strong>, where the waveform changes continuously with time.</li>
+        <li>The right graph represents a <strong>Digital Signal</strong>, where the waveform changes between two voltage levels (0 and 1).</li>
+        <li>The horizontal axis (X-axis) represents <strong>Time</strong>.</li>
+        <li>The vertical axis (Y-axis) represents the <strong>Signal Value (Amplitude)</strong>.</li>
+    </ul>
+</div>
+
+<h3>Introduction to Transmission / Communication</h3>
+<p>
+    <strong>Transmission</strong> or <strong>Communication</strong> is the process of sending data, information, or messages from one device (called the <strong>sender</strong>) to another device (called the <strong>receiver</strong>) through a communication medium. Communication is one of the most important functions of a computer network because it enables devices to exchange information efficiently and accurately.
+</p>
+
+<p>
+    In a computer network, communication takes place using a set of predefined rules known as <strong>protocols</strong>. The data may travel through a wired medium such as twisted-pair cable or optical fiber, or through a wireless medium such as Wi-Fi, Bluetooth, or satellite communication.
+</p>
+
+<p>
+    The primary objective of data communication is to deliver information from the sender to the receiver with maximum accuracy, minimum delay, and high reliability.
+</p>
+
+<div class="note">
+    <strong>Definition:</strong> Data communication is the exchange of digital or analog data between two or more devices through a transmission medium using communication protocols.
+</div>
+
+<hr>
+
+<h3>Basic Components of Data Communication</h3>
+
+<p>
+    Every communication system consists of five essential components. Without these components, communication cannot be completed successfully.
+</p>
+
+<table class="notes-table">
+    <thead>
+        <tr>
+            <th>Component</th>
+            <th>Description</th>
+            <th>Example</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td><strong>Sender (Source)</strong></td>
+            <td>The device that creates and sends the message.</td>
+            <td>Computer, Mobile Phone</td>
+        </tr>
+        <tr>
+            <td><strong>Receiver (Destination)</strong></td>
+            <td>The device that receives the transmitted message.</td>
+            <td>Laptop, Printer, Server</td>
+        </tr>
+        <tr>
+            <td><strong>Message</strong></td>
+            <td>The information or data being transmitted.</td>
+            <td>Text, Image, Audio, Video</td>
+        </tr>
+        <tr>
+            <td><strong>Transmission Medium</strong></td>
+            <td>The physical or wireless path through which data travels.</td>
+            <td>Wi-Fi, Optical Fiber, Ethernet Cable</td>
+        </tr>
+        <tr>
+            <td><strong>Protocol</strong></td>
+            <td>The set of rules that controls communication.</td>
+            <td>TCP/IP, HTTP, FTP</td>
+        </tr>
+    </tbody>
+</table>
+
+<hr>
+
+<h3>Characteristics of Effective Data Communication</h3>
+
+<p>
+    For communication to be considered successful, it should satisfy the following characteristics:
 </p>
 
 <ul>
-    <li><strong>Digital Communication</strong></li>
-    <li><strong>Analog Communication</strong></li>
+    <li><strong>Delivery:</strong> Data should reach the correct destination.</li>
+
+    <li><strong>Accuracy:</strong> The received data should be free from errors.</li>
+
+    <li><strong>Timeliness:</strong> Data should arrive within the expected time.</li>
+
+    <li><strong>Reliability:</strong> Communication should remain consistent without data loss.</li>
+
+    <li><strong>Security:</strong> Data should be protected from unauthorized access.</li>
 </ul>
 
-<p>
-Both communication methods are widely used in computer networks and telecommunication systems. Understanding their characteristics, advantages, and differences is important for networking studies and examinations.
-</p>
+<div class="note">
+    <strong>Example:</strong> When you send a WhatsApp message, the message should reach the intended person (Delivery), without changes (Accuracy), instantly (Timeliness), every time (Reliability), and remain private (Security).
+</div>
 
-<h4>Digital Communication</h4>
+<hr>
 
-<p>
-Digital communication is a method of transmitting data using discrete signals represented by binary digits <strong>0 and 1</strong>. In digital communication, information is converted into binary form before transmission.
-</p>
+<h3>Types of Data Transmission / Communication</h3>
 
 <p>
-Modern computer systems and networks mainly use digital communication because digital signals are more reliable, secure, and resistant to noise.
+    Based on the type of signal used to carry information, data transmission is classified into two major categories.
 </p>
 
-<h4>Examples of Digital Communication</h4>
+<ol>
+    <li><strong>Analog Transmission</strong></li>
+    <li><strong>Digital Transmission</strong></li>
+</ol>
+
+<p>
+    Both transmission methods are widely used in communication systems. However, modern computer networks primarily use digital transmission because it provides better speed, reliability, and security.
+</p>
+
+<hr>
+
+<h3>Analog Signal</h3>
+
+<p>
+    An <strong>Analog Signal</strong> is a continuous signal whose amplitude changes smoothly over time. It can have an infinite number of values within a given range. Analog signals are naturally generated by many physical phenomena, such as sound, temperature, and light.
+</p>
+
+<p>
+    Since analog signals are continuous, they are more vulnerable to electrical noise and interference during transmission. As the transmission distance increases, the signal quality gradually decreases.
+</p>
+
+<h4>Characteristics of Analog Signals</h4>
+
+<ul>
+    <li>Continuous waveform.</li>
+
+    <li>Infinite number of values.</li>
+
+    <li>Usually represented by a sine wave.</li>
+
+    <li>Highly affected by noise and interference.</li>
+
+    <li>Signal quality decreases over long distances.</li>
+
+    <li>Difficult to store and process accurately.</li>
+</ul>
+
+<h4>Examples of Analog Signals</h4>
+
+<ul>
+    <li>Human voice</li>
+
+    <li>Traditional telephone system</li>
+
+    <li>AM/FM Radio</li>
+
+    <li>Analog Television</li>
+
+    <li>Microphone output</li>
+</ul>
+
+<div class="note">
+    <strong>Remember:</strong> Analog signals are continuous and can take any value between a minimum and maximum range.
+</div>
+
+<hr>
+
+<h3>Digital Signal</h3>
+
+<p>
+    A <strong>Digital Signal</strong> is a discrete signal that represents information using only two values: <strong>0 (LOW)</strong> and <strong>1 (HIGH)</strong>. Computers and modern communication devices understand and process information in binary form; therefore, digital signals are widely used in today's networking systems.
+</p>
+
+<p>
+    Digital signals are more resistant to noise and can be regenerated during transmission, making them ideal for long-distance communication.
+</p>
+
+<h4>Characteristics of Digital Signals</h4>
+
+<ul>
+    <li>Discrete signal.</li>
+
+    <li>Represents data using binary values (0 and 1).</li>
+
+    <li>Less affected by electrical noise.</li>
+
+    <li>Easy to store, process, compress, and encrypt.</li>
+
+    <li>Supports high-speed communication.</li>
+
+    <li>Provides greater accuracy and reliability.</li>
+</ul>
+
+<h4>Examples of Digital Signals</h4>
 
 <ul>
     <li>Computer Networks</li>
-    <li>Internet Communication</li>
+
+    <li>Internet</li>
+
+    <li>Wi-Fi Communication</li>
+
+    <li>USB Devices</li>
+
+    <li>CD/DVD Storage</li>
+
     <li>Digital Television</li>
-    <li>Mobile Networks (4G and 5G)</li>
-    <li>Email and Messaging Applications</li>
-    <li>Digital Audio and Video Streaming</li>
 </ul>
 
-<h4>Advantages of Digital Communication</h4>
-
-<ul>
-    <li>High accuracy in data transmission.</li>
-    <li>Less affected by noise and interference.</li>
-    <li>Easy error detection and correction.</li>
-    <li>Provides better security through encryption.</li>
-    <li>Data can be stored and processed easily.</li>
-    <li>Supports long-distance communication efficiently.</li>
-</ul>
-
-<h4>Disadvantages of Digital Communication</h4>
-
-<ul>
-    <li>Requires complex hardware and software.</li>
-    <li>Initial setup cost may be higher.</li>
-    <li>Needs analog-to-digital conversion for analog data.</li>
-</ul>
+<div class="note">
+    <strong>Remember:</strong> Digital signals use only two voltage levels (0 and 1), making them more reliable than analog signals.
+</div>
 
 <hr>
 
-<h4>Analog Communication</h4>
+<h3>Comparison Between Analog and Digital Signals</h3>
 
-<p>
-Analog communication is a method of transmitting information using continuous signals that vary in amplitude, frequency, or phase. Analog signals represent information through continuous waveforms.
-</p>
+<table class="notes-table">
+    <thead>
+        <tr>
+            <th>Basis</th>
+            <th>Analog Signal</th>
+            <th>Digital Signal</th>
+        </tr>
+    </thead>
 
-<p>
-Before the development of digital systems, most communication technologies used analog communication.
-</p>
+    <tbody>
+        <tr>
+            <td>Nature</td>
+            <td>Continuous</td>
+            <td>Discrete</td>
+        </tr>
 
-<h4>Examples of Analog Communication</h4>
+        <tr>
+            <td>Values</td>
+            <td>Infinite</td>
+            <td>Only 0 and 1</td>
+        </tr>
 
-<ul>
-    <li>Traditional Radio Broadcasting</li>
-    <li>Analog Telephone Systems</li>
-    <li>Analog Television Broadcasting</li>
-    <li>Microphone Voice Signals</li>
-    <li>Old Audio Recording Systems</li>
-</ul>
+        <tr>
+            <td>Waveform</td>
+            <td>Sine Wave</td>
+            <td>Square Wave</td>
+        </tr>
 
-<h4>Advantages of Analog Communication</h4>
+        <tr>
+            <td>Noise</td>
+            <td>Highly affected</td>
+            <td>Less affected</td>
+        </tr>
 
-<ul>
-    <li>Simple system design and implementation.</li>
-    <li>Suitable for transmitting natural voice signals.</li>
-    <li>Requires less bandwidth in some applications.</li>
-    <li>Easy signal generation and processing.</li>
-</ul>
+        <tr>
+            <td>Accuracy</td>
+            <td>Lower</td>
+            <td>Higher</td>
+        </tr>
 
-<h4>Disadvantages of Analog Communication</h4>
+        <tr>
+            <td>Transmission Quality</td>
+            <td>Decreases over distance</td>
+            <td>Can be regenerated</td>
+        </tr>
 
-<ul>
-    <li>Highly affected by noise and interference.</li>
-    <li>Lower transmission accuracy.</li>
-    <li>Difficult error detection and correction.</li>
-    <li>Signal quality decreases over long distances.</li>
-    <li>Less secure than digital communication.</li>
-</ul>
+        <tr>
+            <td>Storage</td>
+            <td>Difficult</td>
+            <td>Easy</td>
+        </tr>
 
-<hr>
-
-<h4>Difference Between Digital and Analog Communication</h4>
-
-<table class = "notes-table">
-
-<tr>
-    <th>Digital Communication</th>
-    <th>Analog Communication</th>
-</tr>
-
-<tr>
-    <td>Uses binary values (0 and 1).</td>
-    <td>Uses continuous signals.</td>
-</tr>
-
-<tr>
-    <td>Less affected by noise.</td>
-    <td>More affected by noise.</td>
-</tr>
-
-<tr>
-    <td>Provides high accuracy.</td>
-    <td>Provides lower accuracy.</td>
-</tr>
-
-<tr>
-    <td>Supports error detection and correction.</td>
-    <td>Error detection is difficult.</td>
-</tr>
-
-<tr>
-    <td>More secure communication.</td>
-    <td>Less secure communication.</td>
-</tr>
-
-<tr>
-    <td>Signal quality remains almost unchanged.</td>
-    <td>Signal quality degrades with distance.</td>
-</tr>
-
-<tr>
-    <td>Used in modern computer networks.</td>
-    <td>Used in traditional communication systems.</td>
-</tr>
-
+        <tr>
+            <td>Examples</td>
+            <td>Radio, Telephone</td>
+            <td>Computer, Internet, Wi-Fi</td>
+        </tr>
+    </tbody>
 </table>
 
-<h4>Real-Life Example</h4>
-
-<p>
-When you make a phone call using a modern smartphone and 4G/5G network, the communication is mostly digital. However, when people used old landline telephone systems, communication was primarily analog.
-</p>
-
-<h4>Summary</h4>
-
-<p>
-<strong>Digital Communication</strong> transmits data using binary digits (0 and 1), whereas <strong>Analog Communication</strong> transmits data using continuous signals. Digital communication offers higher accuracy, better security, and less noise interference compared to analog communication.
-</p>
-
-
-<p>
-Digital and Analog Communication are two fundamental methods of data transmission. Digital communication is widely used in modern networking systems because it provides reliable, secure, and accurate communication, while analog communication is mainly found in traditional communication technologies.
-</p>
-
-`;
+<div class="note">
+    <strong>Exam Tip:</strong>
+    Analog signals are continuous and represented by sine waves, whereas digital signals are discrete, represented by binary values (0 and 1), and are used in modern computer networks because they are faster, more reliable, and less affected by noise.
+</div>
+`
 
 let transmissionModesContent = `
 
@@ -2899,6 +3057,52 @@ The OSI model divides the network communication process into <strong>seven layer
 <p>
 The main purpose of the OSI model is to simplify network communication, improve interoperability between different systems, and make troubleshooting easier.
 </p>
+
+<h4>OSI Model Communication Example</h4>
+
+<div class="notes-image">
+    <img src="bca_images/osi-communication-example.png" alt="OSI Communication Example" class="img-fluid">
+    <p class="image-caption">
+        <strong>Figure:</strong> Philosopher–Translator–Secretary Architecture illustrating layered communication in the OSI Model.
+    </p>
+</div>
+
+<p>
+    The above figure explains how communication takes place between two users (Location A and Location B) using the layered approach of the OSI Model. Each layer communicates with its corresponding layer on the remote system through protocols, while the actual data travels down through the sender's layers, across the physical medium, and up through the receiver's layers.
+</p>
+
+<h5>Explanation of the Figure</h5>
+
+<ol>
+    <li>
+        <strong>Application Layer (Philosopher):</strong>
+        The philosopher creates the original message in his own language (e.g., "I like rabbits"). This represents the user or application generating data.
+    </li>
+
+    <li>
+        <strong>Presentation Layer (Translator):</strong>
+        The translator converts the message into a format that the receiver can understand (for example, translating English into Dutch). This layer is responsible for translation, encryption, and compression.
+    </li>
+
+    <li>
+        <strong>Session Layer (Secretary):</strong>
+        The secretary prepares the translated message for transmission, manages the communication session, and ensures that both parties remain connected throughout the conversation.
+    </li>
+
+    <li>
+        <strong>Lower Layers:</strong>
+        The Transport, Network, Data Link, and Physical layers deliver the message over the communication medium (telephone/network cable). At the receiving end, the same layers process the data in reverse order until it reaches the application.
+    </li>
+
+    <li>
+        <strong>Receiving Side:</strong>
+        The receiver's secretary accepts the data, the translator converts it back into the receiver's language, and finally the philosopher reads and understands the original message.
+    </li>
+</ol>
+
+<div class="note">
+    <strong>Key Point:</strong> In the OSI Model, each layer communicates logically with its corresponding layer on the remote device, but the actual data flows vertically through all layers before being transmitted across the network.
+</div>
 
 <hr>
 
@@ -21011,7 +21215,7 @@ HTTP (Hyper Text Transfer Protocol) is an Application Layer protocol used to tra
 `;
 let htmlContent = `
 
-<h3>HTML (Hyper Text Markup Language)</h3>
+<h3>HTML  (Hyper Text Markup Language)</h3>
 
 <p>
 HTML stands for Hyper Text Markup Language. It is the standard markup language used to create and structure web pages on the World Wide Web (WWW). Every website that we visit on the Internet uses HTML as its basic building block.

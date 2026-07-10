@@ -124,7 +124,7 @@ body.mobile_menu_btn {
 	padding: 30px;
 	height: 100vh;
 	/* adjust based on header */
-	height: calc(100vh - 180px);
+	height: calc(106vh - 180px);
 }
 
 /* LEFT SIDEBAR */
@@ -189,7 +189,7 @@ body.mobile_menu_btn {
 	padding: 30px;
 	border-radius: 8px;
 	border: 1px solid #eee;
-	max-width: 800px;
+	max-width: 890px;
 
 	/* max-height: 100vh; */
 	overflow-y: auto;

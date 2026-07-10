@@ -501,7 +501,7 @@
 
                         <!-- Part 2: LAN Technologies-->
                         <div class="lecture">
-                            
+
 
                             <div onclick="toggleSubUnit(this)">
                                 L4.2 LAN Technologies
@@ -756,6 +756,9 @@
             <!-- CONTENT -->
 
             <div class="notes_content" id="mainContent">
+                <button onclick="printCurrentNote()">
+                    🖨️ Print Current Note
+                </button>
 
                 <h4 id="notes_title">Introduction to Computer Networks</h4>
 
@@ -849,21 +852,84 @@
                         <li><strong>SMTP:</strong> Used for email transmission.</li>
                     </ul>
 
-                    <h4>The OSI Model</h4>
+                    <h4>Types of Network Models</h4>
 
                     <p>
-                        The Open Systems Interconnection (OSI) Model consists of seven layers:
+                        A <strong>network model</strong> is a conceptual framework that explains how data is transmitted
+                        between devices over a computer network. It divides the communication process into different
+                        layers, with each layer performing a specific function.
+                    </p>
+
+                    <p>
+                        There are two main types of network models:
                     </p>
 
                     <ol>
-                        <li><strong>Physical Layer:</strong> Transmits raw bits.</li>
-                        <li><strong>Data Link Layer:</strong> Error detection and frame transmission.</li>
-                        <li><strong>Network Layer:</strong> Routing and logical addressing.</li>
-                        <li><strong>Transport Layer:</strong> End-to-end communication.</li>
-                        <li><strong>Session Layer:</strong> Establishes and manages sessions.</li>
-                        <li><strong>Presentation Layer:</strong> Data formatting and encryption.</li>
-                        <li><strong>Application Layer:</strong> User-facing network services.</li>
+                        <li><strong>OSI (Open Systems Interconnection) Model</strong></li>
+                        <li><strong>TCP/IP (Transmission Control Protocol/Internet Protocol) Model</strong></li>
                     </ol>
+
+                    <hr>
+
+                    <h4>1. OSI (Open Systems Interconnection) Model</h4>
+
+                    <p>
+                        The <strong>OSI Model</strong> is a <strong>7-layer reference model</strong> developed by the
+                        <strong>International Organization for Standardization (ISO)</strong>. It provides a standard
+                        framework for understanding and designing computer network communication. Although it is mainly
+                        used for learning and troubleshooting, it forms the foundation of networking concepts.
+                    </p>
+
+                    <p>
+                        The seven layers of the OSI Model are:
+                    </p>
+
+                    <ol>
+                        <li><strong>Application Layer:</strong> Provides network services directly to end users, such as
+                            web browsing, email, and file transfer.</li>
+                        <li><strong>Presentation Layer:</strong> Formats, encrypts, decrypts, and compresses data.</li>
+                        <li><strong>Session Layer:</strong> Establishes, manages, and terminates communication sessions.
+                        </li>
+                        <li><strong>Transport Layer:</strong> Ensures reliable end-to-end data delivery and error
+                            recovery.</li>
+                        <li><strong>Network Layer:</strong> Performs routing and logical addressing using IP addresses.
+                        </li>
+                        <li><strong>Data Link Layer:</strong> Handles framing, MAC addressing, and error detection.</li>
+                        <li><strong>Physical Layer:</strong> Transmits raw bits through cables, fiber optics, or
+                            wireless media.</li>
+                    </ol>
+
+                    <hr>
+
+                    <h4>2. TCP/IP (Transmission Control Protocol/Internet Protocol) Model</h4>
+
+                    <p>
+                        The <strong>TCP/IP Model</strong> is the practical networking model used on the Internet. It
+                        consists of <strong>four layers</strong> and was developed for reliable communication between
+                        interconnected networks. Modern operating systems and Internet applications are based on this
+                        model.
+                    </p>
+
+                    <p>
+                        The four layers of the TCP/IP Model are:
+                    </p>
+
+                    <ol>
+                        <li><strong>Application Layer:</strong> Provides services such as HTTP, FTP, SMTP, DNS, and
+                            combines the OSI Application, Presentation, and Session layers.</li>
+                        <li><strong>Transport Layer:</strong> Ensures end-to-end communication using TCP or UDP
+                            protocols.</li>
+                        <li><strong>Internet Layer:</strong> Handles logical addressing and routing using the Internet
+                            Protocol (IP).</li>
+                        <li><strong>Network Access (Link) Layer:</strong> Manages data transmission over the physical
+                            network and combines the Physical and Data Link layers of the OSI model.</li>
+                    </ol>
+
+                    <p>
+                        <strong>Note:</strong> The OSI Model is mainly used as a reference model for learning and
+                        understanding networking concepts, whereas the TCP/IP Model is the practical model used in
+                        real-world computer networks and the Internet.
+                    </p>
 
                     <h4>Advantages of Computer Networks</h4>
 
@@ -1089,9 +1155,10 @@
 
 
         /* LOAD NOTE */
+        let currentNote = "";
 
         function loadNote(title, text, event) {
-
+            currentNote = text;
             document.getElementById("notes_title").innerHTML = title;
             document.getElementById("notes_text").innerHTML = text;
 
@@ -1111,6 +1178,257 @@
 
         }
 
+//         function printCurrentNote() {
+
+//             const note = document.getElementById("notes_text");
+
+//             if (!note) {
+//                 alert("notes_text element not found.");
+//                 return;
+//             }
+
+//             let content = note.innerHTML;
+
+//             if (!content.trim()) {
+//                 alert("No content to print.");
+//                 return;
+//             }
+
+//             // Base URL of current page
+//             const baseURL = window.location.href.substring(
+//                 0,
+//                 window.location.href.lastIndexOf("/") + 1
+//             );
+
+//             const printWindow = window.open("", "_blank", "width=1000,height=800");
+
+//             printWindow.document.write(`
+// <!DOCTYPE html>
+// <html>
+// <head>
+
+// <meta charset="UTF-8">
+// <meta name="viewport" content="width=device-width, initial-scale=1">
+
+// <base href="${baseURL}">
+
+// <title>Print Notes</title>
+
+// <link rel="stylesheet" href="styles/bootstrap4/bootstrap.min.css">
+// <link rel="stylesheet" href="plugins/font-awesome-4.7.0/css/font-awesome.min.css">
+// <link rel="stylesheet" href="plugins/colorbox/colorbox.css">
+// <link rel="stylesheet" href="plugins/OwlCarousel2-2.2.1/owl.carousel.css">
+// <link rel="stylesheet" href="plugins/OwlCarousel2-2.2.1/owl.theme.default.css">
+// <link rel="stylesheet" href="plugins/OwlCarousel2-2.2.1/animate.css">
+// <link rel="stylesheet" href="styles/courses.css">
+// <link rel="stylesheet" href="styles/course_responsive.css">
+// <link rel="stylesheet" href="bca/watch_lecture.css">
+// <link rel="stylesheet" href="styles/my_style.css">
+
+// <style>
+//     body{
+//         margin:30px;
+//         background:#fff;
+//     }
+
+//     img{
+//         max-width:100%;
+//         height:auto;
+//     }
+
+//     table{
+//         width:100%;
+//         border-collapse:collapse;
+//     }
+
+//     table,th,td{
+//         border:1px solid #000;
+//     }
+
+//     th,td{
+//         padding:8px;
+//     }
+
+//     @media print{
+//         .no-print{
+//             display:none !important;
+//         }
+//     }
+// </style>
+
+// </head>
+
+// <body>
+
+// ${content}
+
+// </body>
+// </html>
+// `);
+
+//             printWindow.document.close();
+
+//             printWindow.onload = function () {
+//                 printWindow.focus();
+
+//                 // Wait for images to finish loading
+//                 const images = printWindow.document.images;
+
+//                 let loaded = 0;
+
+//                 if (images.length === 0) {
+//                     printWindow.print();
+//                     printWindow.close();
+//                     return;
+//                 }
+
+//                 for (let img of images) {
+
+//                     if (img.complete) {
+//                         loaded++;
+//                     } else {
+//                         img.onload = img.onerror = function () {
+//                             loaded++;
+
+//                             if (loaded === images.length) {
+//                                 printWindow.print();
+//                                 printWindow.close();
+//                             }
+//                         };
+//                     }
+//                 }
+
+//                 if (loaded === images.length) {
+//                     printWindow.print();
+//                     printWindow.close();
+//                 }
+//             };
+//         }
+
+
+
+function printCurrentNote() {
+
+    const note = document.getElementById("notes_text");
+
+    if (!note) {
+        alert("notes_text element not found.");
+        return;
+    }
+
+    const content = note.innerHTML.trim();
+
+    if (!content) {
+        alert("No content to print.");
+        return;
+    }
+
+    // Copy all CSS from current page
+    const styles = Array.from(
+        document.querySelectorAll('link[rel="stylesheet"], style')
+    ).map(el => el.outerHTML).join("\n");
+
+    const printWindow = window.open("", "_blank");
+
+    printWindow.document.open();
+    printWindow.document.write(`
+<!DOCTYPE html>
+<html>
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<!-- Base URL so relative images work -->
+<base href="${document.baseURI}">
+
+<title>Print Notes</title>
+
+${styles}
+
+<style>
+body{
+    margin:20px;
+    background:#fff;
+}
+
+img{
+    max-width:100%;
+    height:auto;
+}
+
+table{
+    width:100%;
+    border-collapse:collapse;
+}
+
+table,th,td{
+    border:1px solid #000;
+}
+
+th,td{
+    padding:8px;
+}
+
+@media print{
+    .no-print{
+        display:none !important;
+    }
+
+    body{
+        margin:15mm;
+    }
+}
+</style>
+
+</head>
+
+<body>
+
+${content}
+
+</body>
+</html>
+`);
+
+    printWindow.document.close();
+
+    // Wait until everything loads
+    printWindow.onload = () => {
+
+        const imgs = printWindow.document.images;
+
+        if (imgs.length === 0) {
+            printWindow.focus();
+            printWindow.print();
+            printWindow.close();
+            return;
+        }
+
+        let loaded = 0;
+
+        function done() {
+            loaded++;
+            if (loaded === imgs.length) {
+                setTimeout(() => {
+                    printWindow.focus();
+                    printWindow.print();
+                    printWindow.close();
+                }, 500);
+            }
+        }
+
+        for (let img of imgs) {
+            if (img.complete) {
+                done();
+            } else {
+                img.onload = done;
+                img.onerror = done;
+            }
+        }
+    };
+
+}
 
         /* TOGGLE UNIT */
 

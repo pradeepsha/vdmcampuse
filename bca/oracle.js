@@ -25709,10 +25709,6 @@ let oraclePLSQLVariablesContent1 = `
 <h3>Variables in PL/SQL</h3>
 
 <p>
-Good morning students!
-</p>
-
-<p>
 In the previous lecture, we learned about PL/SQL Blocks. Today, we are going to learn one of the most important concepts in PL/SQL programming called <strong>Variables</strong>.
 </p>
 
@@ -25780,28 +25776,48 @@ Variables make PL/SQL programs dynamic because they allow us to store user input
 Before using a variable, it must be declared in the <strong>DECLARE</strong> section of the PL/SQL block.
 </p>
 
-<h4>Syntax</h4>
+<div class="code-box">
 
-<pre>
-DECLARE
-   variable_name datatype(size);
-BEGIN
-   -- Executable Statements
-END;
+    <div class="code-title">
+        plsql-declare-begin-syntax.sql
+    </div>
+
+<pre><span class="comment">-- Basic PL/SQL Block Syntax</span>
+
+<span class="keyword">DECLARE</span>
+    variable_name <span class="keyword">datatype</span>(size);
+
+<span class="keyword">BEGIN</span>
+    <span class="comment">-- Executable Statements</span>
+
+<span class="keyword">END</span>;
 /
 </pre>
+
+</div>
 
 <h4>Example</h4>
 
-<pre>
-DECLARE
-   A NUMBER(10);
-   B VARCHAR2(10);
-BEGIN
-   NULL;
-END;
+<div class="code-box">
+
+    <div class="code-title">
+        variable-declaration-example.sql
+    </div>
+
+<pre><span class="comment">-- Declare NUMBER and VARCHAR2 variables</span>
+
+<span class="keyword">DECLARE</span>
+    A <span class="keyword">NUMBER</span>(10);
+    B <span class="keyword">VARCHAR2</span>(10);
+
+<span class="keyword">BEGIN</span>
+    <span class="keyword">NULL</span>;
+
+<span class="keyword">END</span>;
 /
 </pre>
+
+</div>
 
 <table class="notes-table">
 
@@ -25833,18 +25849,34 @@ END;
 After declaring variables, we can store values using the <strong>Assignment Operator (:=)</strong>.
 </p>
 
-<h4>Syntax</h4>
+<div class="code-box">
 
-<pre>
-variable_name := value;
+    <div class="code-title">
+        assignment-operator-syntax.sql
+    </div>
+
+<pre><span class="comment">-- PL/SQL Assignment Operator Syntax</span>
+
+variable_name <span class="operator">:=</span> value;
 </pre>
+
+</div>
 
 <h4>Example</h4>
 
-<pre>
-A := 1021;
-B := 'SAI';
+<div class="code-box">
+
+    <div class="code-title">
+        assignment-operator-example.sql
+    </div>
+
+<pre><span class="comment">-- Assign values to variables</span>
+
+A <span class="operator">:=</span> 1021;
+B <span class="operator">:=</span> 'SAI';
 </pre>
+
+</div>
 
 <h3>Assignment Operator vs Comparison Operator</h3>
 
@@ -25877,37 +25909,57 @@ To display the value stored in a variable, Oracle provides the <strong>DBMS_OUTP
 
 <h4>Syntax</h4>
 
-<pre>
-DBMS_OUTPUT.PUT_LINE(variable_name);
+<div class="code-box">
 
-OR
+    <div class="code-title">
+        dbms-output-put-line-syntax.sql
+    </div>
 
-DBMS_OUTPUT.PUT_LINE('Message : ' || variable_name);
+<pre><span class="comment">-- Display the value of a variable</span>
+
+<span class="keyword">DBMS_OUTPUT.PUT_LINE</span>(variable_name);
+
+<span class="comment">-- OR</span>
+
+<span class="comment">-- Display a message with the variable value</span>
+
+<span class="keyword">DBMS_OUTPUT.PUT_LINE</span>('Message : ' <span class="operator">||</span> variable_name);
 </pre>
+
+</div>
 
 <hr>
 
 <h3>Example 1 : Printing Variables</h3>
 
-<pre>
-SET SERVEROUTPUT ON;
+<div class="code-box">
 
-DECLARE
-   A VARCHAR2(20);
-   B VARCHAR2(20);
+    <div class="code-title">
+        dbms-output-example.sql
+    </div>
 
-BEGIN
+<pre><span class="comment">-- Enable DBMS_OUTPUT</span>
 
-   A := 'HELLO';
-   B := 'WORLD';
+<span class="keyword">SET SERVEROUTPUT ON</span>;
 
-   DBMS_OUTPUT.PUT_LINE(A);
-   DBMS_OUTPUT.PUT_LINE(B);
-   DBMS_OUTPUT.PUT_LINE('WELCOME TO PL/SQL ' || A);
+<span class="keyword">DECLARE</span>
+    A <span class="keyword">VARCHAR2</span>(20);
+    B <span class="keyword">VARCHAR2</span>(20);
 
-END;
+<span class="keyword">BEGIN</span>
+
+    A <span class="operator">:=</span> 'HELLO';
+    B <span class="operator">:=</span> 'WORLD';
+
+    <span class="keyword">DBMS_OUTPUT.PUT_LINE</span>(A);
+    <span class="keyword">DBMS_OUTPUT.PUT_LINE</span>(B);
+    <span class="keyword">DBMS_OUTPUT.PUT_LINE</span>('WELCOME TO PL/SQL ' <span class="operator">||</span> A);
+
+<span class="keyword">END</span>;
 /
 </pre>
+
+</div>
 
 <h4>Output</h4>
 
@@ -25943,9 +25995,9 @@ The <strong>DBMS_OUTPUT.PUT_LINE()</strong> procedure sends output to the PL/SQL
 To display this output on the screen in SQL*Plus, we must enable the output using:
 </p>
 
-<pre>
+<p>
 SET SERVEROUTPUT ON;
-</pre>
+</p>
 
 <table class="notes-table">
 
@@ -25982,23 +26034,33 @@ SET SERVEROUTPUT ON;
 
 <h3>Example 2 : Printing Multiple Variables</h3>
 
-<pre>
-SET SERVEROUTPUT ON;
+<div class="code-box">
 
-DECLARE
+    <div class="code-title">
+        plsql-number-variable-example.sql
+    </div>
 
-   X NUMBER(10) := 100;
-   Y NUMBER(10);
+<pre><span class="comment">-- Display values of NUMBER variables</span>
 
-BEGIN
+<span class="keyword">SET SERVEROUTPUT ON</span>;
 
-   Y := 200;
+<span class="keyword">DECLARE</span>
+    X <span class="keyword">NUMBER</span>(10) <span class="operator">:=</span> 100;
+    Y <span class="keyword">NUMBER</span>(10);
 
-   DBMS_OUTPUT.PUT_LINE('VARIABLE VALUES ARE : ' || X || ', ' || Y);
+<span class="keyword">BEGIN</span>
 
-END;
+    Y <span class="operator">:=</span> 200;
+
+    <span class="keyword">DBMS_OUTPUT.PUT_LINE</span>(
+        'VARIABLE VALUES ARE : ' <span class="operator">||</span> X <span class="operator">||</span> ', ' <span class="operator">||</span> Y
+    );
+
+<span class="keyword">END</span>;
 /
 </pre>
+
+</div>
 
 <h4>Output</h4>
 
@@ -26022,27 +26084,36 @@ END;
 Oracle allows us to accept values from the user at runtime using the substitution variable <strong>&</strong>.
 </p>
 
-<pre>
-SET SERVEROUTPUT ON;
+<div class="code-box">
 
-DECLARE
+    <div class="code-title">
+        plsql-user-input-sum.sql
+    </div>
 
-   X NUMBER(2);
-   Y NUMBER(2);
-   Z NUMBER(10);
+<pre><span class="comment">-- Read two numbers from the user and display their sum</span>
 
-BEGIN
+<span class="keyword">SET SERVEROUTPUT ON</span>;
 
-   X := &X;
-   Y := &Y;
+<span class="keyword">DECLARE</span>
 
-   Z := X + Y;
+    X <span class="keyword">NUMBER</span>(2);
+    Y <span class="keyword">NUMBER</span>(2);
+    Z <span class="keyword">NUMBER</span>(10);
 
-   DBMS_OUTPUT.PUT_LINE('SUM = ' || Z);
+<span class="keyword">BEGIN</span>
 
-END;
+    X <span class="operator">:=</span> <span class="operator">&amp;</span>X;
+    Y <span class="operator">:=</span> <span class="operator">&amp;</span>Y;
+
+    Z <span class="operator">:=</span> X <span class="operator">+</span> Y;
+
+    <span class="keyword">DBMS_OUTPUT.PUT_LINE</span>('SUM = ' <span class="operator">||</span> Z);
+
+<span class="keyword">END</span>;
 /
 </pre>
+
+</div>
 
 <h4>Sample Input</h4>
 
@@ -26129,10 +26200,6 @@ let oraclePLSQLVariablesContent2 = `
 <h3>SELECT...INTO Statement in PL/SQL</h3>
 
 <p>
-Good morning students!
-</p>
-
-<p>
 In the previous lecture, we learned how to declare variables, assign values to them, and display their contents using <strong>DBMS_OUTPUT.PUT_LINE()</strong>.
 </p>
 
@@ -26209,12 +26276,25 @@ The <strong>SELECT...INTO</strong> statement always returns <strong>exactly one 
 
 <h3>Syntax</h3>
 
-<pre>
-SELECT column_name1, column_name2, ...
-INTO variable1, variable2, ...
-FROM table_name
-WHERE condition;
+<div class="code-box">
+
+    <div class="code-title">
+        select-into-syntax.sql
+    </div>
+
+<pre><span class="comment">-- SELECT INTO Syntax</span>
+
+<span class="keyword">SELECT</span> column_name1,
+       column_name2,
+       ...
+<span class="keyword">INTO</span> variable1,
+     variable2,
+     ...
+<span class="keyword">FROM</span> table_name
+<span class="keyword">WHERE</span> condition;
 </pre>
+
+</div>
 
 <hr>
 
@@ -26252,27 +26332,38 @@ WHERE condition;
 Write a PL/SQL program to display the Employee Name and Salary from the EMP table for the given Employee Number using the <strong>SELECT...INTO</strong> statement.
 </p>
 
-<pre>
-SET SERVEROUTPUT ON;
+<div class="code-box">
 
-DECLARE
+    <div class="code-title">
+        select-into-example.sql
+    </div>
 
-   V_ENAME VARCHAR2(10);
-   V_SAL   NUMBER(10);
+<pre><span class="comment">-- Fetch employee details using SELECT INTO</span>
 
-BEGIN
+<span class="keyword">SET SERVEROUTPUT ON</span>;
 
-   SELECT ENAME, SAL
-   INTO V_ENAME, V_SAL
-   FROM EMP
-   WHERE EMPNO = &EMPNO;
+<span class="keyword">DECLARE</span>
 
-   DBMS_OUTPUT.PUT_LINE('Employee Name : ' || V_ENAME);
-   DBMS_OUTPUT.PUT_LINE('Salary        : ' || V_SAL);
+    V_ENAME <span class="keyword">VARCHAR2</span>(10);
+    V_SAL   <span class="keyword">NUMBER</span>(10);
 
-END;
+<span class="keyword">BEGIN</span>
+
+    <span class="keyword">SELECT</span> ENAME,
+           SAL
+    <span class="keyword">INTO</span> V_ENAME,
+         V_SAL
+    <span class="keyword">FROM</span> EMP
+    <span class="keyword">WHERE</span> EMPNO <span class="operator">=</span> <span class="operator">&amp;</span>EMPNO;
+
+    <span class="keyword">DBMS_OUTPUT.PUT_LINE</span>('Employee Name : ' <span class="operator">||</span> V_ENAME);
+    <span class="keyword">DBMS_OUTPUT.PUT_LINE</span>('Salary        : ' <span class="operator">||</span> V_SAL);
+
+<span class="keyword">END</span>;
 /
 </pre>
+
+</div>
 
 <h3>Sample Input</h3>
 
@@ -26434,11 +26525,7 @@ let oraclePLSQLVariablesContent3 = `
 <h3>Variable Attributes (Anchor Notations) in PL/SQL</h3>
 
 <p>
-Good morning students!
-</p>
-
-<p>
-In the previous lecture, we learned how to declare variables by specifying their datatypes manually.
+    In the previous lecture, we learned how to declare variables by specifying their datatypes manually.
 </p>
 
 <p>
@@ -26453,11 +26540,21 @@ Today, we are going to learn about <strong>Variable Attributes</strong>, also kn
 Normally, while declaring a variable, we specify its datatype manually.
 </p>
 
-<pre>
-DECLARE
-   V_NAME VARCHAR2(30);
-   V_SAL  NUMBER(10);
+<div class="code-box">
+
+    <div class="code-title">
+        variable-declaration.sql
+    </div>
+
+<pre><span class="comment">-- Declare variables</span>
+
+<span class="keyword">DECLARE</span>
+
+    V_NAME <span class="keyword">VARCHAR2</span>(30);
+    V_SAL  <span class="keyword">NUMBER</span>(10);
 </pre>
+
+</div>
 
 <p>
 However, if the datatype of the corresponding database column changes in the future, we must also modify the datatype of the PL/SQL variable manually.
@@ -26568,28 +26665,46 @@ Instead of writing the datatype manually, Oracle automatically copies the dataty
 
 <h3>Syntax</h3>
 
-<pre>
+<div class="code-box">
+
+    <div class="code-title">
+        percent-type-syntax.sql
+    </div>
+
+<pre><span class="comment">-- %TYPE Attribute Syntax</span>
+
 variable_name
-table_name.column_name%TYPE;
+table_name.column_name<span class="operator">%TYPE</span>;
 </pre>
+
+</div>
 
 <hr>
 
 <h3>Example</h3>
 
-<pre>
-DECLARE
+<div class="code-box">
 
-   V_ENAME EMP.ENAME%TYPE;
-   V_SAL   EMP.SAL%TYPE;
+    <div class="code-title">
+        percent-type-example.sql
+    </div>
 
-BEGIN
+<pre><span class="comment">-- Declare variables using the %TYPE attribute</span>
 
-   NULL;
+<span class="keyword">DECLARE</span>
 
-END;
+    V_ENAME EMP.ENAME<span class="operator">%TYPE</span>;
+    V_SAL   EMP.SAL<span class="operator">%TYPE</span>;
+
+<span class="keyword">BEGIN</span>
+
+    <span class="keyword">NULL</span>;
+
+<span class="keyword">END</span>;
 /
 </pre>
+
+</div>
 
 <p>
 Here,
@@ -26607,27 +26722,38 @@ Here,
 
 <h3>Example 1 : Using %TYPE with SELECT...INTO</h3>
 
-<pre>
-SET SERVEROUTPUT ON;
+<div class="code-box">
 
-DECLARE
+    <div class="code-title">
+        percent-type-select-into-example.sql
+    </div>
 
-   V_ENAME EMP.ENAME%TYPE;
-   V_SAL   EMP.SAL%TYPE;
+<pre><span class="comment">-- Fetch employee details using %TYPE variables</span>
 
-BEGIN
+<span class="keyword">SET SERVEROUTPUT ON</span>;
 
-   SELECT ENAME, SAL
-   INTO V_ENAME, V_SAL
-   FROM EMP
-   WHERE EMPNO=&EMPNO;
+<span class="keyword">DECLARE</span>
 
-   DBMS_OUTPUT.PUT_LINE('Employee Name : ' || V_ENAME);
-   DBMS_OUTPUT.PUT_LINE('Salary : ' || V_SAL);
+    V_ENAME EMP.ENAME<span class="operator">%TYPE</span>;
+    V_SAL   EMP.SAL<span class="operator">%TYPE</span>;
 
-END;
+<span class="keyword">BEGIN</span>
+
+    <span class="keyword">SELECT</span> ENAME,
+           SAL
+    <span class="keyword">INTO</span> V_ENAME,
+         V_SAL
+    <span class="keyword">FROM</span> EMP
+    <span class="keyword">WHERE</span> EMPNO <span class="operator">=</span> <span class="operator">&amp;</span>EMPNO;
+
+    <span class="keyword">DBMS_OUTPUT.PUT_LINE</span>('Employee Name : ' <span class="operator">||</span> V_ENAME);
+    <span class="keyword">DBMS_OUTPUT.PUT_LINE</span>('Salary : ' <span class="operator">||</span> V_SAL);
+
+<span class="keyword">END</span>;
 /
 </pre>
+
+</div>
 
 <h3>Sample Output</h3>
 
@@ -26649,20 +26775,29 @@ END;
 
 <h3>Example 2 : Using %TYPE with INSERT</h3>
 
-<pre>
-DECLARE
+<div class="code-box">
 
-   V_EMP_ID EMPLOYEES.EMP_ID%TYPE := 200;
-   V_NAME   EMPLOYEES.EMP_NAME%TYPE := 'Ravi';
+    <div class="code-title">
+        percent-type-insert-example.sql
+    </div>
 
-BEGIN
+<pre><span class="comment">-- Insert a record using %TYPE variables</span>
 
-   INSERT INTO EMPLOYEES(EMP_ID, EMP_NAME)
-   VALUES(V_EMP_ID, V_NAME);
+<span class="keyword">DECLARE</span>
 
-END;
+    V_EMP_ID EMPLOYEES.EMP_ID<span class="operator">%TYPE</span> <span class="operator">:=</span> 200;
+    V_NAME   EMPLOYEES.EMP_NAME<span class="operator">%TYPE</span> <span class="operator">:=</span> 'Ravi';
+
+<span class="keyword">BEGIN</span>
+
+    <span class="keyword">INSERT INTO</span> EMPLOYEES (EMP_ID, EMP_NAME)
+    <span class="keyword">VALUES</span> (V_EMP_ID, V_NAME);
+
+<span class="keyword">END</span>;
 /
 </pre>
+
+</div>
 
 <p>
 In this example, both variables automatically inherit their datatypes from the EMPLOYEES table columns.
@@ -26744,10 +26879,6 @@ let oraclePLSQLVariablesContent4 = `
 <h3> Row Level Attribute (%ROWTYPE)</h3>
 
 <p>
-Good morning students!
-</p>
-
-<p>
 In the previous lecture, we learned about the <strong>%TYPE</strong> attribute, which is used to declare a variable having the same datatype as a single table column.
 </p>
 
@@ -26809,33 +26940,51 @@ If the structure of the table changes in the future (for example, a new column i
 
 <h3>Syntax</h3>
 
-<pre>
-DECLARE
+<div class="code-box">
 
-   variable_name table_name%ROWTYPE;
+    <div class="code-title">
+        rowtype-syntax.sql
+    </div>
 
-BEGIN
+<pre><span class="comment">-- %ROWTYPE Syntax</span>
 
-   ...
+<span class="keyword">DECLARE</span>
 
-END;
+    variable_name table_name<span class="operator">%ROWTYPE</span>;
+
+<span class="keyword">BEGIN</span>
+
+    <span class="comment">-- Executable Statements</span>
+
+<span class="keyword">END</span>;
 /
 </pre>
+
+</div>
 
 <h3>Example</h3>
 
-<pre>
-DECLARE
+<div class="code-box">
 
-   EMP_RECORD EMP%ROWTYPE;
+    <div class="code-title">
+        rowtype-declaration-example.sql
+    </div>
 
-BEGIN
+<pre><span class="comment">-- Declare a record using the %ROWTYPE attribute</span>
 
-   NULL;
+<span class="keyword">DECLARE</span>
 
-END;
+    EMP_RECORD EMP<span class="operator">%ROWTYPE</span>;
+
+<span class="keyword">BEGIN</span>
+
+    <span class="keyword">NULL</span>;
+
+<span class="keyword">END</span>;
 /
 </pre>
+
+</div>
 
 <p>
 Here, <strong>EMP_RECORD</strong> behaves like one complete row of the EMP table.
@@ -26845,14 +26994,23 @@ Here, <strong>EMP_RECORD</strong> behaves like one complete row of the EMP table
 
 <h3>Example Table</h3>
 
-<pre>
-CREATE TABLE employees
+<div class="code-box">
+
+    <div class="code-title">
+        create-employees-table.sql
+    </div>
+
+<pre><span class="comment">-- Create the EMPLOYEES table</span>
+
+<span class="keyword">CREATE TABLE</span> employees
 (
-    emp_id     NUMBER,
-    emp_name   VARCHAR2(50),
-    salary     NUMBER
+    emp_id   <span class="keyword">NUMBER</span>,
+    emp_name <span class="keyword">VARCHAR2</span>(50),
+    salary   <span class="keyword">NUMBER</span>
 );
 </pre>
+
+</div>
 
 <p>
 Now we can declare a single variable to represent one complete row of this table.
@@ -26862,27 +27020,36 @@ Now we can declare a single variable to represent one complete row of this table
 
 <h3>Example 1 : Using %ROWTYPE with SELECT</h3>
 
-<pre>
-SET SERVEROUTPUT ON;
+<div class="code-box">
 
-DECLARE
+    <div class="code-title">
+        rowtype-select-into-example.sql
+    </div>
 
-   EMP_RECORD EMPLOYEES%ROWTYPE;
+<pre><span class="comment">-- Fetch a complete row using %ROWTYPE</span>
 
-BEGIN
+<span class="keyword">SET SERVEROUTPUT ON</span>;
 
-   SELECT *
-   INTO EMP_RECORD
-   FROM EMPLOYEES
-   WHERE EMP_ID = 101;
+<span class="keyword">DECLARE</span>
 
-   DBMS_OUTPUT.PUT_LINE('Employee Name : ' || EMP_RECORD.EMP_NAME);
+    EMP_RECORD EMPLOYEES<span class="operator">%ROWTYPE</span>;
 
-   DBMS_OUTPUT.PUT_LINE('Salary : ' || EMP_RECORD.SALARY);
+<span class="keyword">BEGIN</span>
 
-END;
+    <span class="keyword">SELECT</span> <span class="operator">*</span>
+    <span class="keyword">INTO</span> EMP_RECORD
+    <span class="keyword">FROM</span> EMPLOYEES
+    <span class="keyword">WHERE</span> EMP_ID <span class="operator">=</span> 101;
+
+    <span class="keyword">DBMS_OUTPUT.PUT_LINE</span>('Employee Name : ' <span class="operator">||</span> EMP_RECORD.EMP_NAME);
+
+    <span class="keyword">DBMS_OUTPUT.PUT_LINE</span>('Salary : ' <span class="operator">||</span> EMP_RECORD.SALARY);
+
+<span class="keyword">END</span>;
 /
 </pre>
+
+</div>
 
 <h3>Output</h3>
 
@@ -26944,40 +27111,52 @@ END;
 
 <h3>Example 2 : Using %ROWTYPE in UPDATE</h3>
 
-<pre>
-SET SERVEROUTPUT ON;
+<div class="code-box">
 
-DECLARE
+    <div class="code-title">
+        rowtype-update-example.sql
+    </div>
 
-   EMP_RECORD EMPLOYEES%ROWTYPE;
+<pre><span class="comment">-- Fetch, update, and display employee details using %ROWTYPE</span>
 
-BEGIN
+<span class="keyword">SET SERVEROUTPUT ON</span>;
 
-   SELECT *
-   INTO EMP_RECORD
-   FROM EMPLOYEES
-   WHERE EMP_ID = 101;
+<span class="keyword">DECLARE</span>
 
-   DBMS_OUTPUT.PUT_LINE('Before Update : ' ||
-                        EMP_RECORD.EMP_NAME ||
-                        ' Salary : ' ||
-                        EMP_RECORD.SALARY);
+    EMP_RECORD EMPLOYEES<span class="operator">%ROWTYPE</span>;
 
-   EMP_RECORD.SALARY := EMP_RECORD.SALARY + 5000;
+<span class="keyword">BEGIN</span>
 
-   UPDATE EMPLOYEES
-   SET SALARY = EMP_RECORD.SALARY
-   WHERE EMP_ID = EMP_RECORD.EMP_ID;
+    <span class="keyword">SELECT</span> <span class="operator">*</span>
+    <span class="keyword">INTO</span> EMP_RECORD
+    <span class="keyword">FROM</span> EMPLOYEES
+    <span class="keyword">WHERE</span> EMP_ID <span class="operator">=</span> 101;
 
-   DBMS_OUTPUT.PUT_LINE('After Update : ' ||
-                        EMP_RECORD.EMP_NAME ||
-                        ' Salary : ' ||
-                        EMP_RECORD.SALARY);
+    <span class="keyword">DBMS_OUTPUT.PUT_LINE</span>(
+        'Before Update : ' <span class="operator">||</span>
+        EMP_RECORD.EMP_NAME <span class="operator">||</span>
+        ' Salary : ' <span class="operator">||</span>
+        EMP_RECORD.SALARY
+    );
 
-END;
+    EMP_RECORD.SALARY <span class="operator">:=</span> EMP_RECORD.SALARY <span class="operator">+</span> 5000;
+
+    <span class="keyword">UPDATE</span> EMPLOYEES
+    <span class="keyword">SET</span> SALARY <span class="operator">=</span> EMP_RECORD.SALARY
+    <span class="keyword">WHERE</span> EMP_ID <span class="operator">=</span> EMP_RECORD.EMP_ID;
+
+    <span class="keyword">DBMS_OUTPUT.PUT_LINE</span>(
+        'After Update : ' <span class="operator">||</span>
+        EMP_RECORD.EMP_NAME <span class="operator">||</span>
+        ' Salary : ' <span class="operator">||</span>
+        EMP_RECORD.SALARY
+    );
+
+<span class="keyword">END</span>;
 /
 </pre>
 
+</div>
 <h3>Sample Output</h3>
 
 <table class="notes-table">
@@ -27002,30 +27181,40 @@ END;
 Although <strong>%ROWTYPE</strong> represents the complete table, we can also fetch only selected columns into the required fields of the record variable.
 </p>
 
-<pre>
-SET SERVEROUTPUT ON;
+<div class="code-box">
 
-DECLARE
+    <div class="code-title">
+        rowtype-partial-select-example.sql
+    </div>
 
-   EMP_DETAIL EMPLOYEES%ROWTYPE;
+<pre><span class="comment">-- Fetch selected columns into a %ROWTYPE record</span>
 
-BEGIN
+<span class="keyword">SET SERVEROUTPUT ON</span>;
 
-   SELECT EMP_NAME,
-          SALARY
-   INTO
-          EMP_DETAIL.EMP_NAME,
-          EMP_DETAIL.SALARY
-   FROM EMPLOYEES
-   WHERE EMP_ID = &EMP_ID;
+<span class="keyword">DECLARE</span>
 
-   DBMS_OUTPUT.PUT_LINE(
-      EMP_DETAIL.EMP_NAME || ', ' ||
-      EMP_DETAIL.SALARY);
+    EMP_DETAIL EMPLOYEES<span class="operator">%ROWTYPE</span>;
 
-END;
+<span class="keyword">BEGIN</span>
+
+    <span class="keyword">SELECT</span> EMP_NAME,
+           SALARY
+    <span class="keyword">INTO</span>
+           EMP_DETAIL.EMP_NAME,
+           EMP_DETAIL.SALARY
+    <span class="keyword">FROM</span> EMPLOYEES
+    <span class="keyword">WHERE</span> EMP_ID <span class="operator">=</span> <span class="operator">&amp;</span>EMP_ID;
+
+    <span class="keyword">DBMS_OUTPUT.PUT_LINE</span>(
+        EMP_DETAIL.EMP_NAME <span class="operator">||</span> ', ' <span class="operator">||</span>
+        EMP_DETAIL.SALARY
+    );
+
+<span class="keyword">END</span>;
 /
 </pre>
+
+</div>
 
 <h3>Sample Output</h3>
 
@@ -27046,29 +27235,38 @@ END;
 <hr>
 
 <h3>Example 4 : %ROWTYPE with All Columns</h3>
+<div class="code-box">
 
-<pre>
-SET SERVEROUTPUT ON;
+    <div class="code-title">
+        rowtype-full-record-example.sql
+    </div>
 
-DECLARE
+<pre><span class="comment">-- Fetch an entire row into a %ROWTYPE record</span>
 
-   EMP_DETAIL EMPLOYEES%ROWTYPE;
+<span class="keyword">SET SERVEROUTPUT ON</span>;
 
-BEGIN
+<span class="keyword">DECLARE</span>
 
-   SELECT *
-   INTO EMP_DETAIL
-   FROM EMPLOYEES
-   WHERE EMP_ID = &EMP_ID;
+    EMP_DETAIL EMPLOYEES<span class="operator">%ROWTYPE</span>;
 
-   DBMS_OUTPUT.PUT_LINE(
-      EMP_DETAIL.EMP_ID || ', ' ||
-      EMP_DETAIL.EMP_NAME || ', ' ||
-      EMP_DETAIL.SALARY);
+<span class="keyword">BEGIN</span>
 
-END;
+    <span class="keyword">SELECT</span> <span class="operator">*</span>
+    <span class="keyword">INTO</span> EMP_DETAIL
+    <span class="keyword">FROM</span> EMPLOYEES
+    <span class="keyword">WHERE</span> EMP_ID <span class="operator">=</span> <span class="operator">&amp;</span>EMP_ID;
+
+    <span class="keyword">DBMS_OUTPUT.PUT_LINE</span>(
+        EMP_DETAIL.EMP_ID <span class="operator">||</span> ', ' <span class="operator">||</span>
+        EMP_DETAIL.EMP_NAME <span class="operator">||</span> ', ' <span class="operator">||</span>
+        EMP_DETAIL.SALARY
+    );
+
+<span class="keyword">END</span>;
 /
 </pre>
+
+</div>
 
 <h3>Sample Output</h3>
 
@@ -27248,10 +27446,6 @@ END;
 let oraclePLSQLControlStructuresContent = `
 
 <h3>Control Structures in PL/SQL</h3>
-
-<p>
-Good morning students!
-</p>
 
 <p>
 In the previous lectures, we learned about Variables, Variable Attributes, and PL/SQL Blocks.
@@ -27471,53 +27665,92 @@ It contains only the true block. The statements are executed only when the condi
 
 <p><strong>Syntax:</strong></p>
 
+<div class="code-box">
 
-<pre>
-IF condition THEN
-   -- statements to execute when condition is true
-END IF;
+    <div class="code-title">
+        if-statement-syntax.sql
+    </div>
+
+<pre><span class="keyword">IF</span> condition <span class="keyword">THEN</span>
+
+    <span class="comment">-- Statements to execute when the condition is TRUE</span>
+
+<span class="keyword">END IF</span>;
 </pre>
+
+</div>
 
 
 <p><strong>Example 1: Voting Eligibility using Simple IF</strong></p>
 
 
-<pre>
-DECLARE
-   v_age NUMBER := &v_age;
-BEGIN
-   IF v_age >= 18 THEN
-      DBMS_OUTPUT.PUT_LINE('Eligible to vote');
-   END IF;
+<div class="code-box">
 
-   IF v_age < 18 THEN
-      DBMS_OUTPUT.PUT_LINE('Not eligible to vote');
-   END IF;
-END;
+    <div class="code-title">
+        if-statement-example.sql
+    </div>
+
+<pre><span class="keyword">DECLARE</span>
+
+   v_age <span class="keyword">NUMBER</span> <span class="operator">:=</span> <span class="operator">&amp;</span>v_age;
+
+<span class="keyword">BEGIN</span>
+
+   <span class="keyword">IF</span> v_age <span class="operator">&gt;=</span> <span class="number">18</span> <span class="keyword">THEN</span>
+
+      <span class="keyword">DBMS_OUTPUT.PUT_LINE</span>(<span class="string">'Eligible to vote'</span>);
+
+   <span class="keyword">END IF</span>;
+
+   <span class="keyword">IF</span> v_age <span class="operator">&lt;</span> <span class="number">18</span> <span class="keyword">THEN</span>
+
+      <span class="keyword">DBMS_OUTPUT.PUT_LINE</span>(<span class="string">'Not eligible to vote'</span>);
+
+   <span class="keyword">END IF</span>;
+
+<span class="keyword">END</span>;
+/
 </pre>
+
+</div>
 
 
 <p><strong>Example 2: Fetch age from PERSONS table using Simple IF</strong></p>
 
+<div class="code-box">
 
-<pre>
-DECLARE
-   v_age NUMBER;
-BEGIN
-   SELECT age INTO v_age
-   FROM persons
-   WHERE person_id = &person_id;
+    <div class="code-title">
+        if-statement-with-select.sql
+    </div>
 
-   IF v_age >= 18 THEN
-      DBMS_OUTPUT.PUT_LINE('Eligible to vote');
-   END IF;
+<pre><span class="keyword">DECLARE</span>
 
-   IF v_age < 18 THEN
-      DBMS_OUTPUT.PUT_LINE('Not eligible to vote');
-   END IF;
-END;
+   v_age <span class="keyword">NUMBER</span>;
+
+<span class="keyword">BEGIN</span>
+
+   <span class="keyword">SELECT</span> age
+   <span class="keyword">INTO</span> v_age
+   <span class="keyword">FROM</span> persons
+   <span class="keyword">WHERE</span> person_id <span class="operator">=</span> <span class="operator">&amp;</span>person_id;
+
+   <span class="keyword">IF</span> v_age <span class="operator">&gt;=</span> <span class="number">18</span> <span class="keyword">THEN</span>
+
+      <span class="keyword">DBMS_OUTPUT.PUT_LINE</span>(<span class="string">'Eligible to vote'</span>);
+
+   <span class="keyword">END IF</span>;
+
+   <span class="keyword">IF</span> v_age <span class="operator">&lt;</span> <span class="number">18</span> <span class="keyword">THEN</span>
+
+      <span class="keyword">DBMS_OUTPUT.PUT_LINE</span>(<span class="string">'Not eligible to vote'</span>);
+
+   <span class="keyword">END IF</span>;
+
+<span class="keyword">END</span>;
+/
 </pre>
 
+</div>
 
 <hr>
 
@@ -27533,51 +27766,95 @@ It contains both a true block and a false block. One of the blocks is executed b
 <p><strong>Syntax:</strong></p>
 
 
-<pre>
-IF condition THEN
-   -- statements if condition is TRUE
-ELSE
-   -- statements if condition is FALSE
-END IF;
+<div class="code-box">
+
+    <div class="code-title">
+        if-else-statement-syntax.sql
+    </div>
+
+<pre><span class="keyword">IF</span> condition <span class="keyword">THEN</span>
+
+    <span class="comment">-- Statements to execute when the condition is TRUE</span>
+
+<span class="keyword">ELSE</span>
+
+    <span class="comment">-- Statements to execute when the condition is FALSE</span>
+
+<span class="keyword">END IF</span>;
 </pre>
+
+</div>
 
 
 <p><strong>Example 1: Voting Eligibility using IF...ELSE</strong></p>
 
 
-<pre>
-DECLARE
-   v_age NUMBER;
-BEGIN
-   v_age := &Enter_Age;
+<div class="code-box">
 
-   IF v_age >= 18 THEN
-      DBMS_OUTPUT.PUT_LINE('Eligible to vote');
-   ELSE
-      DBMS_OUTPUT.PUT_LINE('Not eligible to vote');
-   END IF;
-END;
+    <div class="code-title">
+        if-else-statement-example.sql
+    </div>
+
+<pre><span class="keyword">DECLARE</span>
+
+   v_age <span class="keyword">NUMBER</span>;
+
+<span class="keyword">BEGIN</span>
+
+   v_age <span class="operator">:=</span> <span class="operator">&amp;</span>Enter_Age;
+
+   <span class="keyword">IF</span> v_age <span class="operator">&gt;=</span> <span class="number">18</span> <span class="keyword">THEN</span>
+
+      <span class="keyword">DBMS_OUTPUT.PUT_LINE</span>(<span class="string">'Eligible to vote'</span>);
+
+   <span class="keyword">ELSE</span>
+
+      <span class="keyword">DBMS_OUTPUT.PUT_LINE</span>(<span class="string">'Not eligible to vote'</span>);
+
+   <span class="keyword">END IF</span>;
+
+<span class="keyword">END</span>;
+/
 </pre>
+
+</div>
 
 
 <p><strong>Example 2: Fetch age from PERSONS table using IF...ELSE</strong></p>
 
 
-<pre>
-DECLARE
-   v_age NUMBER;
-BEGIN
-   SELECT age INTO v_age
-   FROM persons
-   WHERE person_id = &person_id;
+<div class="code-box">
 
-   IF v_age >= 18 THEN
-      DBMS_OUTPUT.PUT_LINE('Eligible to vote');
-   ELSE
-      DBMS_OUTPUT.PUT_LINE('Not eligible to vote');
-   END IF;
-END;
+    <div class="code-title">
+        if-else-with-select.sql
+    </div>
+
+<pre><span class="keyword">DECLARE</span>
+
+   v_age <span class="keyword">NUMBER</span>;
+
+<span class="keyword">BEGIN</span>
+
+   <span class="keyword">SELECT</span> age
+   <span class="keyword">INTO</span> v_age
+   <span class="keyword">FROM</span> persons
+   <span class="keyword">WHERE</span> person_id <span class="operator">=</span> <span class="operator">&amp;</span>person_id;
+
+   <span class="keyword">IF</span> v_age <span class="operator">&gt;=</span> <span class="number">18</span> <span class="keyword">THEN</span>
+
+      <span class="keyword">DBMS_OUTPUT.PUT_LINE</span>(<span class="string">'Eligible to vote'</span>);
+
+   <span class="keyword">ELSE</span>
+
+      <span class="keyword">DBMS_OUTPUT.PUT_LINE</span>(<span class="string">'Not eligible to vote'</span>);
+
+   <span class="keyword">END IF</span>;
+
+<span class="keyword">END</span>;
+/
 </pre>
+
+</div>
 
 
 <hr>
@@ -27594,35 +27871,68 @@ A nested IF means putting one IF statement inside another IF or ELSE block. It i
 <p><strong>Syntax:</strong></p>
 
 
-<pre>
-IF condition1 THEN
-   IF condition2 THEN
-      -- statements when both condition1 and condition2 are TRUE
-   END IF;
-ELSE
-   -- statements when condition1 is FALSE
-END IF;
+<div class="code-box">
+
+    <div class="code-title">
+        nested-if-statement-syntax.sql
+    </div>
+
+<pre><span class="keyword">IF</span> condition1 <span class="keyword">THEN</span>
+
+    <span class="keyword">IF</span> condition2 <span class="keyword">THEN</span>
+
+        <span class="comment">-- Statements to execute when both condition1 and condition2 are TRUE</span>
+
+    <span class="keyword">END IF</span>;
+
+<span class="keyword">ELSE</span>
+
+    <span class="comment">-- Statements to execute when condition1 is FALSE</span>
+
+<span class="keyword">END IF</span>;
 </pre>
+
+</div>
 
 
 <p><strong>Example: Age-based voting eligibility using Nested IF</strong></p>
 
 
-<pre>
-DECLARE
-   v_age NUMBER := &Enter_Age;
-BEGIN
-   IF v_age >= 18 THEN
-      IF v_age >= 60 THEN
-         DBMS_OUTPUT.PUT_LINE('Senior Citizen - Eligible to vote');
-      ELSE
-         DBMS_OUTPUT.PUT_LINE('Adult - Eligible to vote');
-      END IF;
-   ELSE
-      DBMS_OUTPUT.PUT_LINE('Not eligible to vote');
-   END IF;
-END;
+<div class="code-box">
+
+    <div class="code-title">
+        nested-if-statement-example.sql
+    </div>
+
+<pre><span class="keyword">DECLARE</span>
+
+   v_age <span class="keyword">NUMBER</span> <span class="operator">:=</span> <span class="operator">&amp;</span>Enter_Age;
+
+<span class="keyword">BEGIN</span>
+
+   <span class="keyword">IF</span> v_age <span class="operator">&gt;=</span> <span class="number">18</span> <span class="keyword">THEN</span>
+
+      <span class="keyword">IF</span> v_age <span class="operator">&gt;=</span> <span class="number">60</span> <span class="keyword">THEN</span>
+
+         <span class="keyword">DBMS_OUTPUT.PUT_LINE</span>(<span class="string">'Senior Citizen - Eligible to vote'</span>);
+
+      <span class="keyword">ELSE</span>
+
+         <span class="keyword">DBMS_OUTPUT.PUT_LINE</span>(<span class="string">'Adult - Eligible to vote'</span>);
+
+      <span class="keyword">END IF</span>;
+
+   <span class="keyword">ELSE</span>
+
+      <span class="keyword">DBMS_OUTPUT.PUT_LINE</span>(<span class="string">'Not eligible to vote'</span>);
+
+   <span class="keyword">END IF</span>;
+
+<span class="keyword">END</span>;
+/
 </pre>
+
+</div>
 
 
 <hr>
@@ -27639,38 +27949,72 @@ This is used when you want to check multiple conditions one after another.
 <p><strong>Syntax:</strong></p>
 
 
-<pre>
-IF &lt;CONDITION&gt; THEN
-   -- statements
-ELSIF &lt;CONDITION&gt; THEN
-   -- statements
-ELSIF &lt;CONDITION&gt; THEN
-   -- statements
-ELSE
-   -- statements if none of the above are true
-END IF;
+<div class="code-box">
+
+    <div class="code-title">
+        elsif-statement-syntax.sql
+    </div>
+
+<pre><span class="keyword">IF</span> &lt;CONDITION&gt; <span class="keyword">THEN</span>
+
+    <span class="comment">-- Statements to execute when the first condition is TRUE</span>
+
+<span class="keyword">ELSIF</span> &lt;CONDITION&gt; <span class="keyword">THEN</span>
+
+    <span class="comment">-- Statements to execute when the second condition is TRUE</span>
+
+<span class="keyword">ELSIF</span> &lt;CONDITION&gt; <span class="keyword">THEN</span>
+
+    <span class="comment">-- Statements to execute when the third condition is TRUE</span>
+
+<span class="keyword">ELSE</span>
+
+    <span class="comment">-- Statements to execute when none of the above conditions are TRUE</span>
+
+<span class="keyword">END IF</span>;
 </pre>
+
+</div>
 
 
 <p><strong>Example: Voting Eligibility using IF...ELSIF...ELSE</strong></p>
 
 
-<pre>
-DECLARE
-   v_age NUMBER := &Enter_Age;
-BEGIN
-   IF v_age < 18 THEN
-      DBMS_OUTPUT.PUT_LINE('Not eligible to vote');
-   ELSIF v_age BETWEEN 18 AND 59 THEN
-      DBMS_OUTPUT.PUT_LINE('Adult - Eligible to vote');
-   ELSIF v_age >= 60 THEN
-      DBMS_OUTPUT.PUT_LINE('Senior Citizen - Eligible to vote');
-   ELSE
-      DBMS_OUTPUT.PUT_LINE('Invalid age');
-   END IF;
-END;
+<div class="code-box">
+
+    <div class="code-title">
+        elsif-statement-example.sql
+    </div>
+
+<pre><span class="keyword">DECLARE</span>
+
+   v_age <span class="keyword">NUMBER</span> <span class="operator">:=</span> <span class="operator">&amp;</span>Enter_Age;
+
+<span class="keyword">BEGIN</span>
+
+   <span class="keyword">IF</span> v_age <span class="operator">&lt;</span> <span class="number">18</span> <span class="keyword">THEN</span>
+
+      <span class="keyword">DBMS_OUTPUT.PUT_LINE</span>(<span class="string">'Not eligible to vote'</span>);
+
+   <span class="keyword">ELSIF</span> v_age <span class="keyword">BETWEEN</span> <span class="number">18</span> <span class="keyword">AND</span> <span class="number">59</span> <span class="keyword">THEN</span>
+
+      <span class="keyword">DBMS_OUTPUT.PUT_LINE</span>(<span class="string">'Adult - Eligible to vote'</span>);
+
+   <span class="keyword">ELSIF</span> v_age <span class="operator">&gt;=</span> <span class="number">60</span> <span class="keyword">THEN</span>
+
+      <span class="keyword">DBMS_OUTPUT.PUT_LINE</span>(<span class="string">'Senior Citizen - Eligible to vote'</span>);
+
+   <span class="keyword">ELSE</span>
+
+      <span class="keyword">DBMS_OUTPUT.PUT_LINE</span>(<span class="string">'Invalid age'</span>);
+
+   <span class="keyword">END IF</span>;
+
+<span class="keyword">END</span>;
+/
 </pre>
 
+</div>
 
 <hr>
 
@@ -27719,43 +28063,83 @@ The CASE statement is used when you compare one expression against multiple poss
 <p><strong>Syntax:</strong></p>
 
 
-<pre>
-CASE expression
-   WHEN value1 THEN
-      -- statements
-   WHEN value2 THEN
-      -- statements
-   WHEN value3 THEN
-      -- statements
-   ELSE
-      -- statements (optional, executes if no match)
-END CASE;
+<div class="code-box">
+
+    <div class="code-title">
+        case-statement-syntax.sql
+    </div>
+
+<pre><span class="keyword">CASE</span> expression
+
+   <span class="keyword">WHEN</span> value1 <span class="keyword">THEN</span>
+
+      <span class="comment">-- Statements to execute when expression = value1</span>
+
+   <span class="keyword">WHEN</span> value2 <span class="keyword">THEN</span>
+
+      <span class="comment">-- Statements to execute when expression = value2</span>
+
+   <span class="keyword">WHEN</span> value3 <span class="keyword">THEN</span>
+
+      <span class="comment">-- Statements to execute when expression = value3</span>
+
+   <span class="keyword">ELSE</span>
+
+      <span class="comment">-- Statements to execute when no value matches (optional)</span>
+
+<span class="keyword">END CASE</span>;
 </pre>
+
+</div>
 
 
 <p><strong>Example: Display Day Name Using CASE Statement</strong></p>
 
+<div class="code-box">
 
-<pre>
-DECLARE
-   v_day NUMBER := &ENTER_DAY;
-BEGIN
-   CASE v_day
-      WHEN 1 THEN
-         DBMS_OUTPUT.PUT_LINE('Monday');
-      WHEN 2 THEN
-         DBMS_OUTPUT.PUT_LINE('Tuesday');
-      WHEN 3 THEN
-         DBMS_OUTPUT.PUT_LINE('Wednesday');
-      WHEN 4 THEN
-         DBMS_OUTPUT.PUT_LINE('Thursday');
-      WHEN 5 THEN
-         DBMS_OUTPUT.PUT_LINE('Friday');
-      ELSE
-         DBMS_OUTPUT.PUT_LINE('Weekend');
-   END CASE;
-END;
+    <div class="code-title">
+        case-statement-example.sql
+    </div>
+
+<pre><span class="keyword">DECLARE</span>
+
+   v_day <span class="keyword">NUMBER</span> <span class="operator">:=</span> <span class="operator">&amp;</span>ENTER_DAY;
+
+<span class="keyword">BEGIN</span>
+
+   <span class="keyword">CASE</span> v_day
+
+      <span class="keyword">WHEN</span> <span class="number">1</span> <span class="keyword">THEN</span>
+
+         <span class="keyword">DBMS_OUTPUT.PUT_LINE</span>(<span class="string">'Monday'</span>);
+
+      <span class="keyword">WHEN</span> <span class="number">2</span> <span class="keyword">THEN</span>
+
+         <span class="keyword">DBMS_OUTPUT.PUT_LINE</span>(<span class="string">'Tuesday'</span>);
+
+      <span class="keyword">WHEN</span> <span class="number">3</span> <span class="keyword">THEN</span>
+
+         <span class="keyword">DBMS_OUTPUT.PUT_LINE</span>(<span class="string">'Wednesday'</span>);
+
+      <span class="keyword">WHEN</span> <span class="number">4</span> <span class="keyword">THEN</span>
+
+         <span class="keyword">DBMS_OUTPUT.PUT_LINE</span>(<span class="string">'Thursday'</span>);
+
+      <span class="keyword">WHEN</span> <span class="number">5</span> <span class="keyword">THEN</span>
+
+         <span class="keyword">DBMS_OUTPUT.PUT_LINE</span>(<span class="string">'Friday'</span>);
+
+      <span class="keyword">ELSE</span>
+
+         <span class="keyword">DBMS_OUTPUT.PUT_LINE</span>(<span class="string">'Weekend'</span>);
+
+   <span class="keyword">END CASE</span>;
+
+<span class="keyword">END</span>;
+/
 </pre>
+
+</div>
 
 
 <hr>
@@ -27776,28 +28160,66 @@ Below are some additional examples that you can use to explain the CASE statemen
 This example takes a month number as input and displays the corresponding month name.
 </p>
 
+<div class="code-box">
 
-<pre>
-DECLARE
-   v_month NUMBER := &ENTER_MONTH;
-BEGIN
-   CASE v_month
-      WHEN 1 THEN DBMS_OUTPUT.PUT_LINE('January');
-      WHEN 2 THEN DBMS_OUTPUT.PUT_LINE('February');
-      WHEN 3 THEN DBMS_OUTPUT.PUT_LINE('March');
-      WHEN 4 THEN DBMS_OUTPUT.PUT_LINE('April');
-      WHEN 5 THEN DBMS_OUTPUT.PUT_LINE('May');
-      WHEN 6 THEN DBMS_OUTPUT.PUT_LINE('June');
-      WHEN 7 THEN DBMS_OUTPUT.PUT_LINE('July');
-      WHEN 8 THEN DBMS_OUTPUT.PUT_LINE('August');
-      WHEN 9 THEN DBMS_OUTPUT.PUT_LINE('September');
-      WHEN 10 THEN DBMS_OUTPUT.PUT_LINE('October');
-      WHEN 11 THEN DBMS_OUTPUT.PUT_LINE('November');
-      WHEN 12 THEN DBMS_OUTPUT.PUT_LINE('December');
-      ELSE DBMS_OUTPUT.PUT_LINE('Invalid Month');
-   END CASE;
-END;
+    <div class="code-title">
+        case-statement-month-example.sql
+    </div>
+
+<pre><span class="keyword">DECLARE</span>
+
+   v_month <span class="keyword">NUMBER</span> <span class="operator">:=</span> <span class="operator">&amp;</span>ENTER_MONTH;
+
+<span class="keyword">BEGIN</span>
+
+   <span class="keyword">CASE</span> v_month
+
+      <span class="keyword">WHEN</span> <span class="number">1</span> <span class="keyword">THEN</span>
+         <span class="keyword">DBMS_OUTPUT.PUT_LINE</span>(<span class="string">'January'</span>);
+
+      <span class="keyword">WHEN</span> <span class="number">2</span> <span class="keyword">THEN</span>
+         <span class="keyword">DBMS_OUTPUT.PUT_LINE</span>(<span class="string">'February'</span>);
+
+      <span class="keyword">WHEN</span> <span class="number">3</span> <span class="keyword">THEN</span>
+         <span class="keyword">DBMS_OUTPUT.PUT_LINE</span>(<span class="string">'March'</span>);
+
+      <span class="keyword">WHEN</span> <span class="number">4</span> <span class="keyword">THEN</span>
+         <span class="keyword">DBMS_OUTPUT.PUT_LINE</span>(<span class="string">'April'</span>);
+
+      <span class="keyword">WHEN</span> <span class="number">5</span> <span class="keyword">THEN</span>
+         <span class="keyword">DBMS_OUTPUT.PUT_LINE</span>(<span class="string">'May'</span>);
+
+      <span class="keyword">WHEN</span> <span class="number">6</span> <span class="keyword">THEN</span>
+         <span class="keyword">DBMS_OUTPUT.PUT_LINE</span>(<span class="string">'June'</span>);
+
+      <span class="keyword">WHEN</span> <span class="number">7</span> <span class="keyword">THEN</span>
+         <span class="keyword">DBMS_OUTPUT.PUT_LINE</span>(<span class="string">'July'</span>);
+
+      <span class="keyword">WHEN</span> <span class="number">8</span> <span class="keyword">THEN</span>
+         <span class="keyword">DBMS_OUTPUT.PUT_LINE</span>(<span class="string">'August'</span>);
+
+      <span class="keyword">WHEN</span> <span class="number">9</span> <span class="keyword">THEN</span>
+         <span class="keyword">DBMS_OUTPUT.PUT_LINE</span>(<span class="string">'September'</span>);
+
+      <span class="keyword">WHEN</span> <span class="number">10</span> <span class="keyword">THEN</span>
+         <span class="keyword">DBMS_OUTPUT.PUT_LINE</span>(<span class="string">'October'</span>);
+
+      <span class="keyword">WHEN</span> <span class="number">11</span> <span class="keyword">THEN</span>
+         <span class="keyword">DBMS_OUTPUT.PUT_LINE</span>(<span class="string">'November'</span>);
+
+      <span class="keyword">WHEN</span> <span class="number">12</span> <span class="keyword">THEN</span>
+         <span class="keyword">DBMS_OUTPUT.PUT_LINE</span>(<span class="string">'December'</span>);
+
+      <span class="keyword">ELSE</span>
+         <span class="keyword">DBMS_OUTPUT.PUT_LINE</span>(<span class="string">'Invalid Month'</span>);
+
+   <span class="keyword">END CASE</span>;
+
+<span class="keyword">END</span>;
+/
 </pre>
+
+</div>
 
 
 <h3>Example 2: Display Grade</h3>
@@ -27808,20 +28230,45 @@ This example helps students understand how different values map to different out
 </p>
 
 
-<pre>
-DECLARE
-   v_grade CHAR(1) := '&ENTER_GRADE';
-BEGIN
-   CASE v_grade
-      WHEN 'A' THEN DBMS_OUTPUT.PUT_LINE('Excellent');
-      WHEN 'B' THEN DBMS_OUTPUT.PUT_LINE('Very Good');
-      WHEN 'C' THEN DBMS_OUTPUT.PUT_LINE('Good');
-      WHEN 'D' THEN DBMS_OUTPUT.PUT_LINE('Average');
-      WHEN 'F' THEN DBMS_OUTPUT.PUT_LINE('Fail');
-      ELSE DBMS_OUTPUT.PUT_LINE('Invalid Grade');
-   END CASE;
-END;
+<div class="code-box">
+
+    <div class="code-title">
+        case-statement-grade-example.sql
+    </div>
+
+<pre><span class="keyword">DECLARE</span>
+
+   v_grade <span class="keyword">CHAR</span>(<span class="number">1</span>) <span class="operator">:=</span> <span class="string">'&amp;ENTER_GRADE'</span>;
+
+<span class="keyword">BEGIN</span>
+
+   <span class="keyword">CASE</span> v_grade
+
+      <span class="keyword">WHEN</span> <span class="string">'A'</span> <span class="keyword">THEN</span>
+         <span class="keyword">DBMS_OUTPUT.PUT_LINE</span>(<span class="string">'Excellent'</span>);
+
+      <span class="keyword">WHEN</span> <span class="string">'B'</span> <span class="keyword">THEN</span>
+         <span class="keyword">DBMS_OUTPUT.PUT_LINE</span>(<span class="string">'Very Good'</span>);
+
+      <span class="keyword">WHEN</span> <span class="string">'C'</span> <span class="keyword">THEN</span>
+         <span class="keyword">DBMS_OUTPUT.PUT_LINE</span>(<span class="string">'Good'</span>);
+
+      <span class="keyword">WHEN</span> <span class="string">'D'</span> <span class="keyword">THEN</span>
+         <span class="keyword">DBMS_OUTPUT.PUT_LINE</span>(<span class="string">'Average'</span>);
+
+      <span class="keyword">WHEN</span> <span class="string">'F'</span> <span class="keyword">THEN</span>
+         <span class="keyword">DBMS_OUTPUT.PUT_LINE</span>(<span class="string">'Fail'</span>);
+
+      <span class="keyword">ELSE</span>
+         <span class="keyword">DBMS_OUTPUT.PUT_LINE</span>(<span class="string">'Invalid Grade'</span>);
+
+   <span class="keyword">END CASE</span>;
+
+<span class="keyword">END</span>;
+/
 </pre>
+
+</div>
 
 
 <h3>Example 3: Display Weekday or Holiday</h3>
@@ -27832,22 +28279,51 @@ This example is useful because students can easily relate it to daily life.
 </p>
 
 
-<pre>
-DECLARE
-   v_day NUMBER := &ENTER_DAY;
-BEGIN
-   CASE v_day
-      WHEN 1 THEN DBMS_OUTPUT.PUT_LINE('Sunday');
-      WHEN 2 THEN DBMS_OUTPUT.PUT_LINE('Monday');
-      WHEN 3 THEN DBMS_OUTPUT.PUT_LINE('Tuesday');
-      WHEN 4 THEN DBMS_OUTPUT.PUT_LINE('Wednesday');
-      WHEN 5 THEN DBMS_OUTPUT.PUT_LINE('Thursday');
-      WHEN 6 THEN DBMS_OUTPUT.PUT_LINE('Friday');
-      WHEN 7 THEN DBMS_OUTPUT.PUT_LINE('Saturday');
-      ELSE DBMS_OUTPUT.PUT_LINE('Invalid Day');
-   END CASE;
-END;
+<div class="code-box">
+
+    <div class="code-title">
+        case-statement-day-example.sql
+    </div>
+
+<pre><span class="keyword">DECLARE</span>
+
+   v_day <span class="keyword">NUMBER</span> <span class="operator">:=</span> <span class="operator">&amp;</span>ENTER_DAY;
+
+<span class="keyword">BEGIN</span>
+
+   <span class="keyword">CASE</span> v_day
+
+      <span class="keyword">WHEN</span> <span class="number">1</span> <span class="keyword">THEN</span>
+         <span class="keyword">DBMS_OUTPUT.PUT_LINE</span>(<span class="string">'Sunday'</span>);
+
+      <span class="keyword">WHEN</span> <span class="number">2</span> <span class="keyword">THEN</span>
+         <span class="keyword">DBMS_OUTPUT.PUT_LINE</span>(<span class="string">'Monday'</span>);
+
+      <span class="keyword">WHEN</span> <span class="number">3</span> <span class="keyword">THEN</span>
+         <span class="keyword">DBMS_OUTPUT.PUT_LINE</span>(<span class="string">'Tuesday'</span>);
+
+      <span class="keyword">WHEN</span> <span class="number">4</span> <span class="keyword">THEN</span>
+         <span class="keyword">DBMS_OUTPUT.PUT_LINE</span>(<span class="string">'Wednesday'</span>);
+
+      <span class="keyword">WHEN</span> <span class="number">5</span> <span class="keyword">THEN</span>
+         <span class="keyword">DBMS_OUTPUT.PUT_LINE</span>(<span class="string">'Thursday'</span>);
+
+      <span class="keyword">WHEN</span> <span class="number">6</span> <span class="keyword">THEN</span>
+         <span class="keyword">DBMS_OUTPUT.PUT_LINE</span>(<span class="string">'Friday'</span>);
+
+      <span class="keyword">WHEN</span> <span class="number">7</span> <span class="keyword">THEN</span>
+         <span class="keyword">DBMS_OUTPUT.PUT_LINE</span>(<span class="string">'Saturday'</span>);
+
+      <span class="keyword">ELSE</span>
+         <span class="keyword">DBMS_OUTPUT.PUT_LINE</span>(<span class="string">'Invalid Day'</span>);
+
+   <span class="keyword">END CASE</span>;
+
+<span class="keyword">END</span>;
+/
 </pre>
+
+</div>
 
 
 <h3>Example 4: Display Food Category</h3>
@@ -27858,19 +28334,42 @@ This example makes the lecture more interesting by using a simple real-life cate
 </p>
 
 
-<pre>
-DECLARE
-   v_choice NUMBER := &ENTER_CHOICE;
-BEGIN
-   CASE v_choice
-      WHEN 1 THEN DBMS_OUTPUT.PUT_LINE('Breakfast');
-      WHEN 2 THEN DBMS_OUTPUT.PUT_LINE('Lunch');
-      WHEN 3 THEN DBMS_OUTPUT.PUT_LINE('Dinner');
-      WHEN 4 THEN DBMS_OUTPUT.PUT_LINE('Snacks');
-      ELSE DBMS_OUTPUT.PUT_LINE('Invalid Choice');
-   END CASE;
-END;
+<div class="code-box">
+
+    <div class="code-title">
+        case-statement-menu-example.sql
+    </div>
+
+<pre><span class="keyword">DECLARE</span>
+
+   v_choice <span class="keyword">NUMBER</span> <span class="operator">:=</span> <span class="operator">&amp;</span>ENTER_CHOICE;
+
+<span class="keyword">BEGIN</span>
+
+   <span class="keyword">CASE</span> v_choice
+
+      <span class="keyword">WHEN</span> <span class="number">1</span> <span class="keyword">THEN</span>
+         <span class="keyword">DBMS_OUTPUT.PUT_LINE</span>(<span class="string">'Breakfast'</span>);
+
+      <span class="keyword">WHEN</span> <span class="number">2</span> <span class="keyword">THEN</span>
+         <span class="keyword">DBMS_OUTPUT.PUT_LINE</span>(<span class="string">'Lunch'</span>);
+
+      <span class="keyword">WHEN</span> <span class="number">3</span> <span class="keyword">THEN</span>
+         <span class="keyword">DBMS_OUTPUT.PUT_LINE</span>(<span class="string">'Dinner'</span>);
+
+      <span class="keyword">WHEN</span> <span class="number">4</span> <span class="keyword">THEN</span>
+         <span class="keyword">DBMS_OUTPUT.PUT_LINE</span>(<span class="string">'Snacks'</span>);
+
+      <span class="keyword">ELSE</span>
+         <span class="keyword">DBMS_OUTPUT.PUT_LINE</span>(<span class="string">'Invalid Choice'</span>);
+
+   <span class="keyword">END CASE</span>;
+
+<span class="keyword">END</span>;
+/
 </pre>
+
+</div>
 
 
 <h3>Example 5: Display Transport Type</h3>
@@ -27881,19 +28380,42 @@ This example can be used to explain how menus work in programs.
 </p>
 
 
-<pre>
-DECLARE
-   v_vehicle NUMBER := &ENTER_VEHICLE;
-BEGIN
-   CASE v_vehicle
-      WHEN 1 THEN DBMS_OUTPUT.PUT_LINE('Bicycle');
-      WHEN 2 THEN DBMS_OUTPUT.PUT_LINE('Bike');
-      WHEN 3 THEN DBMS_OUTPUT.PUT_LINE('Car');
-      WHEN 4 THEN DBMS_OUTPUT.PUT_LINE('Bus');
-      ELSE DBMS_OUTPUT.PUT_LINE('Unknown Vehicle');
-   END CASE;
-END;
+<div class="code-box">
+
+    <div class="code-title">
+        case-statement-vehicle-example.sql
+    </div>
+
+<pre><span class="keyword">DECLARE</span>
+
+   v_vehicle <span class="keyword">NUMBER</span> <span class="operator">:=</span> <span class="operator">&amp;</span>ENTER_VEHICLE;
+
+<span class="keyword">BEGIN</span>
+
+   <span class="keyword">CASE</span> v_vehicle
+
+      <span class="keyword">WHEN</span> <span class="number">1</span> <span class="keyword">THEN</span>
+         <span class="keyword">DBMS_OUTPUT.PUT_LINE</span>(<span class="string">'Bicycle'</span>);
+
+      <span class="keyword">WHEN</span> <span class="number">2</span> <span class="keyword">THEN</span>
+         <span class="keyword">DBMS_OUTPUT.PUT_LINE</span>(<span class="string">'Bike'</span>);
+
+      <span class="keyword">WHEN</span> <span class="number">3</span> <span class="keyword">THEN</span>
+         <span class="keyword">DBMS_OUTPUT.PUT_LINE</span>(<span class="string">'Car'</span>);
+
+      <span class="keyword">WHEN</span> <span class="number">4</span> <span class="keyword">THEN</span>
+         <span class="keyword">DBMS_OUTPUT.PUT_LINE</span>(<span class="string">'Bus'</span>);
+
+      <span class="keyword">ELSE</span>
+         <span class="keyword">DBMS_OUTPUT.PUT_LINE</span>(<span class="string">'Unknown Vehicle'</span>);
+
+   <span class="keyword">END CASE</span>;
+
+<span class="keyword">END</span>;
+/
 </pre>
+
+</div>
 
 
 <hr>
@@ -27929,11 +28451,11 @@ PL/SQL provides three important iteration control structures:
 </p>
 
 
-<ul>
+<ol>
 <li>Simple LOOP</li>
 <li>WHILE LOOP</li>
 <li>FOR LOOP</li>
-</ul>
+</ol>
 
 
 <hr>
@@ -27955,51 +28477,89 @@ It ensures at least one execution of the loop body.
 <p><strong>Syntax:</strong></p>
 
 
-<pre>
-LOOP
-   -- Statements to execute
-   EXIT WHEN condition;
-END LOOP;
+<div class="code-box">
+
+    <div class="code-title">
+        loop-statement-syntax.sql
+    </div>
+
+<pre><span class="keyword">LOOP</span>
+
+    <span class="comment">-- Statements to execute repeatedly</span>
+
+    <span class="keyword">EXIT WHEN</span> condition;
+
+<span class="keyword">END LOOP</span>;
 </pre>
+
+</div>
 
 
 <p><strong>Example 1: Print numbers from 1 to 5</strong></p>
 
 
-<pre>
-DECLARE
-   v_num NUMBER := 1;
-BEGIN
-   LOOP
-      DBMS_OUTPUT.PUT_LINE('Number: ' || v_num);
-      v_num := v_num + 1;
+<div class="code-box">
 
-      EXIT WHEN v_num > 5;
-   END LOOP;
-END;
+    <div class="code-title">
+        loop-statement-example.sql
+    </div>
+
+<pre><span class="keyword">DECLARE</span>
+
+   v_num <span class="keyword">NUMBER</span> <span class="operator">:=</span> <span class="number">1</span>;
+
+<span class="keyword">BEGIN</span>
+
+   <span class="keyword">LOOP</span>
+
+      <span class="keyword">DBMS_OUTPUT.PUT_LINE</span>(<span class="string">'Number: '</span> <span class="operator">||</span> v_num);
+
+      v_num <span class="operator">:=</span> v_num <span class="operator">+</span> <span class="number">1</span>;
+
+      <span class="keyword">EXIT WHEN</span> v_num <span class="operator">&gt;</span> <span class="number">5</span>;
+
+   <span class="keyword">END LOOP</span>;
+
+<span class="keyword">END</span>;
 /
 </pre>
+
+</div>
 
 
 <p><strong>Example 2: Factorial using Simple LOOP</strong></p>
 
 
-<pre>
-DECLARE
-   v_num NUMBER := 5;
-   v_fact NUMBER := 1;
-BEGIN
-   LOOP
-      v_fact := v_fact * v_num;
-      v_num := v_num - 1;
+<div class="code-box">
 
-      EXIT WHEN v_num = 0;
-   END LOOP;
+    <div class="code-title">
+        loop-factorial-example.sql
+    </div>
 
-   DBMS_OUTPUT.PUT_LINE('Factorial = ' || v_fact);
-END;
+<pre><span class="keyword">DECLARE</span>
+
+   v_num <span class="keyword">NUMBER</span> <span class="operator">:=</span> <span class="number">5</span>;
+   v_fact <span class="keyword">NUMBER</span> <span class="operator">:=</span> <span class="number">1</span>;
+
+<span class="keyword">BEGIN</span>
+
+   <span class="keyword">LOOP</span>
+
+      v_fact <span class="operator">:=</span> v_fact <span class="operator">*</span> v_num;
+
+      v_num <span class="operator">:=</span> v_num <span class="operator">-</span> <span class="number">1</span>;
+
+      <span class="keyword">EXIT WHEN</span> v_num <span class="operator">=</span> <span class="number">0</span>;
+
+   <span class="keyword">END LOOP</span>;
+
+   <span class="keyword">DBMS_OUTPUT.PUT_LINE</span>(<span class="string">'Factorial = '</span> <span class="operator">||</span> v_fact);
+
+<span class="keyword">END</span>;
 /
 </pre>
+
+</div>
 
 
 <hr>
@@ -28026,43 +28586,80 @@ It is best used when we do not know exactly how many times the loop will run, bu
 <p><strong>Syntax:</strong></p>
 
 
-<pre>
-WHILE condition LOOP
-   -- statements;
-END LOOP;
+<div class="code-box">
+
+    <div class="code-title">
+        while-loop-syntax.sql
+    </div>
+
+<pre><span class="keyword">WHILE</span> condition <span class="keyword">LOOP</span>
+
+    <span class="comment">-- Statements to execute repeatedly while the condition is TRUE</span>
+
+<span class="keyword">END LOOP</span>;
 </pre>
+
+</div>
 
 
 <p><strong>Example 1: Print numbers from 1 to 5</strong></p>
 
 
-<pre>
-DECLARE
-   v_num NUMBER := 1;
-BEGIN
-   WHILE v_num <= 5 LOOP
-      DBMS_OUTPUT.PUT_LINE('Number: ' || v_num);
-      v_num := v_num + 1;
-   END LOOP;
-END;
+<div class="code-box">
+
+    <div class="code-title">
+        while-loop-example.sql
+    </div>
+
+<pre><span class="keyword">DECLARE</span>
+
+   v_num <span class="keyword">NUMBER</span> <span class="operator">:=</span> <span class="number">1</span>;
+
+<span class="keyword">BEGIN</span>
+
+   <span class="keyword">WHILE</span> v_num <span class="operator">&lt;=</span> <span class="number">5</span> <span class="keyword">LOOP</span>
+
+      <span class="keyword">DBMS_OUTPUT.PUT_LINE</span>(<span class="string">'Number: '</span> <span class="operator">||</span> v_num);
+
+      v_num <span class="operator">:=</span> v_num <span class="operator">+</span> <span class="number">1</span>;
+
+   <span class="keyword">END LOOP</span>;
+
+<span class="keyword">END</span>;
 /
 </pre>
+
+</div>
 
 
 <p><strong>Example 2: Print even numbers from 2 to 10</strong></p>
 
 
-<pre>
-DECLARE
-   v_num NUMBER := 2;
-BEGIN
-   WHILE v_num <= 10 LOOP
-      DBMS_OUTPUT.PUT_LINE('Even Number: ' || v_num);
-      v_num := v_num + 2;
-   END LOOP;
-END;
+<div class="code-box">
+
+    <div class="code-title">
+        while-loop-even-numbers.sql
+    </div>
+
+<pre><span class="keyword">DECLARE</span>
+
+   v_num <span class="keyword">NUMBER</span> <span class="operator">:=</span> <span class="number">2</span>;
+
+<span class="keyword">BEGIN</span>
+
+   <span class="keyword">WHILE</span> v_num <span class="operator">&lt;=</span> <span class="number">10</span> <span class="keyword">LOOP</span>
+
+      <span class="keyword">DBMS_OUTPUT.PUT_LINE</span>(<span class="string">'Even Number: '</span> <span class="operator">||</span> v_num);
+
+      v_num <span class="operator">:=</span> v_num <span class="operator">+</span> <span class="number">2</span>;
+
+   <span class="keyword">END LOOP</span>;
+
+<span class="keyword">END</span>;
 /
 </pre>
+
+</div>
 
 
 <hr>
@@ -28084,37 +28681,72 @@ By default, it is incremented by 1. The counter variable is created implicitly, 
 <p><strong>Syntax:</strong></p>
 
 
-<pre>
-FOR counter_variable IN start_value..end_value LOOP
-   -- Statements
-END LOOP;
+<div class="code-box">
+
+    <div class="code-title">
+        for-loop-syntax.sql
+    </div>
+
+<pre><span class="keyword">FOR</span> counter_variable <span class="keyword">IN</span> start_value<span class="operator">..</span>end_value <span class="keyword">LOOP</span>
+
+    <span class="comment">-- Statements to execute for each iteration</span>
+
+<span class="keyword">END LOOP</span>;
 </pre>
+
+</div>
 
 
 <p><strong>Example 1: Print Student Roll Numbers from 1 to 5</strong></p>
 
 
-<pre>
-BEGIN
-   FOR v_rollno IN 1..5 LOOP
-      DBMS_OUTPUT.PUT_LINE('Student Roll No: ' || v_rollno);
-   END LOOP;
-END;
+<div class="code-box">
+
+    <div class="code-title">
+        for-loop-example.sql
+    </div>
+
+<pre><span class="keyword">BEGIN</span>
+
+   <span class="keyword">FOR</span> v_rollno <span class="keyword">IN</span> <span class="number">1</span><span class="operator">..</span><span class="number">5</span> <span class="keyword">LOOP</span>
+
+      <span class="keyword">DBMS_OUTPUT.PUT_LINE</span>(<span class="string">'Student Roll No: '</span> <span class="operator">||</span> v_rollno);
+
+   <span class="keyword">END LOOP</span>;
+
+<span class="keyword">END</span>;
 /
 </pre>
+
+</div>
 
 
 <p><strong>Example 2: Print table of 5</strong></p>
 
 
-<pre>
-BEGIN
-   FOR v_num IN 1..10 LOOP
-      DBMS_OUTPUT.PUT_LINE('5 x ' || v_num || ' = ' || (5 * v_num));
-   END LOOP;
-END;
+<div class="code-box">
+
+    <div class="code-title">
+        for-loop-multiplication-table.sql
+    </div>
+
+<pre><span class="keyword">BEGIN</span>
+
+   <span class="keyword">FOR</span> v_num <span class="keyword">IN</span> <span class="number">1</span><span class="operator">..</span><span class="number">10</span> <span class="keyword">LOOP</span>
+
+      <span class="keyword">DBMS_OUTPUT.PUT_LINE</span>(
+         <span class="string">'5 x '</span> <span class="operator">||</span> v_num
+         <span class="operator">||</span> <span class="string">' = '</span>
+         <span class="operator">||</span> (<span class="number">5</span> <span class="operator">*</span> v_num)
+      );
+
+   <span class="keyword">END LOOP</span>;
+
+<span class="keyword">END</span>;
 /
 </pre>
+
+</div>
 
 
 <hr>
@@ -28248,22 +28880,33 @@ The SELECT INTO statement is used to fetch a single row from a table and store i
 
 <p><strong>Example:</strong></p>
 
+<div class="code-box">
 
-<pre>
-DECLARE
-   v_name  VARCHAR2(50);
-   v_salary NUMBER;
-BEGIN
-   SELECT name, salary
-   INTO v_name, v_salary
-   FROM employees
-   WHERE emp_id = 101;
+    <div class="code-title">
+        select-into-example.sql
+    </div>
 
-   DBMS_OUTPUT.PUT_LINE('Name: ' || v_name);
-   DBMS_OUTPUT.PUT_LINE('Salary: ' || v_salary);
-END;
+<pre><span class="keyword">DECLARE</span>
+
+   v_name <span class="keyword">VARCHAR2</span>(<span class="number">50</span>);
+   v_salary <span class="keyword">NUMBER</span>;
+
+<span class="keyword">BEGIN</span>
+
+   <span class="keyword">SELECT</span> name, salary
+   <span class="keyword">INTO</span> v_name, v_salary
+   <span class="keyword">FROM</span> employees
+   <span class="keyword">WHERE</span> emp_id <span class="operator">=</span> <span class="number">101</span>;
+
+   <span class="keyword">DBMS_OUTPUT.PUT_LINE</span>(<span class="string">'Name: '</span> <span class="operator">||</span> v_name);
+
+   <span class="keyword">DBMS_OUTPUT.PUT_LINE</span>(<span class="string">'Salary: '</span> <span class="operator">||</span> v_salary);
+
+<span class="keyword">END</span>;
 /
 </pre>
+
+</div>
 
 
 <hr>
@@ -28280,15 +28923,24 @@ The INSERT statement is used to add a new row into a table from a PL/SQL block.
 <p><strong>Example:</strong></p>
 
 
-<pre>
-BEGIN
-   INSERT INTO students (student_id, student_name, age)
-   VALUES (1, 'Amit', 20);
+<div class="code-box">
 
-   DBMS_OUTPUT.PUT_LINE('Record inserted successfully');
-END;
+    <div class="code-title">
+        insert-student-record.sql
+    </div>
+
+<pre><span class="keyword">BEGIN</span>
+
+   <span class="keyword">INSERT</span> <span class="keyword">INTO</span> students (student_id, student_name, age)
+   <span class="keyword">VALUES</span> (<span class="number">1</span>, <span class="string">'Amit'</span>, <span class="number">20</span>);
+
+   <span class="keyword">DBMS_OUTPUT.PUT_LINE</span>(<span class="string">'Record inserted successfully'</span>);
+
+<span class="keyword">END</span>;
 /
 </pre>
+
+</div>
 
 
 <hr>
@@ -28305,16 +28957,25 @@ The UPDATE statement is used to modify existing records in a table.
 <p><strong>Example:</strong></p>
 
 
-<pre>
-BEGIN
-   UPDATE employees
-   SET salary = salary + 5000
-   WHERE emp_id = 101;
+<div class="code-box">
 
-   DBMS_OUTPUT.PUT_LINE('Salary updated successfully');
-END;
+    <div class="code-title">
+        update-employee-salary.sql
+    </div>
+
+<pre><span class="keyword">BEGIN</span>
+
+   <span class="keyword">UPDATE</span> employees
+   <span class="keyword">SET</span> salary <span class="operator">=</span> salary <span class="operator">+</span> <span class="number">5000</span>
+   <span class="keyword">WHERE</span> emp_id <span class="operator">=</span> <span class="number">101</span>;
+
+   <span class="keyword">DBMS_OUTPUT.PUT_LINE</span>(<span class="string">'Salary updated successfully'</span>);
+
+<span class="keyword">END</span>;
 /
 </pre>
+
+</div>
 
 
 <hr>
@@ -28331,15 +28992,24 @@ The DELETE statement is used to remove records from a table.
 <p><strong>Example:</strong></p>
 
 
-<pre>
-BEGIN
-   DELETE FROM students
-   WHERE student_id = 1;
+<div class="code-box">
 
-   DBMS_OUTPUT.PUT_LINE('Record deleted successfully');
-END;
+    <div class="code-title">
+        delete-student-record.sql
+    </div>
+
+<pre><span class="keyword">BEGIN</span>
+
+   <span class="keyword">DELETE</span> <span class="keyword">FROM</span> students
+   <span class="keyword">WHERE</span> student_id <span class="operator">=</span> <span class="number">1</span>;
+
+   <span class="keyword">DBMS_OUTPUT.PUT_LINE</span>(<span class="string">'Record deleted successfully'</span>);
+
+<span class="keyword">END</span>;
 /
 </pre>
+
+</div>
 
 
 <hr>
@@ -28356,16 +29026,25 @@ COMMIT is used to save changes permanently in the database, while ROLLBACK is us
 <p><strong>Example:</strong></p>
 
 
-<pre>
-BEGIN
-   UPDATE employees
-   SET salary = salary + 1000
-   WHERE emp_id = 102;
+<div class="code-box">
 
-   COMMIT;
-END;
+    <div class="code-title">
+        update-employee-salary-commit.sql
+    </div>
+
+<pre><span class="keyword">BEGIN</span>
+
+   <span class="keyword">UPDATE</span> employees
+   <span class="keyword">SET</span> salary <span class="operator">=</span> salary <span class="operator">+</span> <span class="number">1000</span>
+   <span class="keyword">WHERE</span> emp_id <span class="operator">=</span> <span class="number">102</span>;
+
+   <span class="keyword">COMMIT</span>;
+
+<span class="keyword">END</span>;
 /
 </pre>
+
+</div>
 
 
 <hr>
@@ -28455,102 +29134,169 @@ When using an explicit cursor, we follow four steps:
 <p><strong>Syntax:</strong></p>
 
 
-<pre>
-DECLARE
-   CURSOR cursor_name IS
-      SELECT columns FROM table_name WHERE condition;
+<div class="code-box">
+
+    <div class="code-title">
+        cursor-basic-syntax.sql
+    </div>
+
+<pre><span class="keyword">DECLARE</span>
+
+   <span class="keyword">CURSOR</span> cursor_name <span class="keyword">IS</span>
+      <span class="keyword">SELECT</span> columns <span class="keyword">FROM</span> table_name <span class="keyword">WHERE</span> condition;
 
    variable1 datatype;
    variable2 datatype;
-BEGIN
-   OPEN cursor_name;
 
-   LOOP
-      FETCH cursor_name INTO variable1, variable2;
-      EXIT WHEN cursor_name%NOTFOUND;
+<span class="keyword">BEGIN</span>
 
-      -- Process the fetched data here
-   END LOOP;
+   <span class="keyword">OPEN</span> cursor_name;
 
-   CLOSE cursor_name;
-END;
+   <span class="keyword">LOOP</span>
+
+      <span class="keyword">FETCH</span> cursor_name <span class="keyword">INTO</span> variable1, variable2;
+
+      <span class="keyword">EXIT WHEN</span> cursor_name<span class="operator">%NOTFOUND</span>;
+
+      <span class="comment">-- Process the fetched data here</span>
+
+   <span class="keyword">END LOOP</span>;
+
+   <span class="keyword">CLOSE</span> cursor_name;
+
+<span class="keyword">END</span>;
+/
 </pre>
+
+</div>
 
 
 <p><strong>Another Syntax Example:</strong></p>
 
 
-<pre>
-DECLARE
-   CURSOR cursor_name IS
-      SELECT column1, column2
-      FROM table_name
-      WHERE condition;
+<div class="code-box">
 
-   v_col1 table_name.column1%TYPE;
-   v_col2 table_name.column2%TYPE;
-BEGIN
-   OPEN cursor_name;
-   LOOP
-      FETCH cursor_name INTO v_col1, v_col2;
-      EXIT WHEN cursor_name%NOTFOUND;
+    <div class="code-title">
+        cursor-fetch-display-example.sql
+    </div>
 
-      DBMS_OUTPUT.PUT_LINE(v_col1 || ' - ' || v_col2);
-   END LOOP;
-   CLOSE cursor_name;
-END;
+<pre><span class="keyword">DECLARE</span>
+
+   <span class="keyword">CURSOR</span> cursor_name <span class="keyword">IS</span>
+      <span class="keyword">SELECT</span> column1, column2
+      <span class="keyword">FROM</span> table_name
+      <span class="keyword">WHERE</span> condition;
+
+   v_col1 table_name.column1<span class="operator">%TYPE</span>;
+   v_col2 table_name.column2<span class="operator">%TYPE</span>;
+
+<span class="keyword">BEGIN</span>
+
+   <span class="keyword">OPEN</span> cursor_name;
+
+   <span class="keyword">LOOP</span>
+
+      <span class="keyword">FETCH</span> cursor_name <span class="keyword">INTO</span> v_col1, v_col2;
+
+      <span class="keyword">EXIT WHEN</span> cursor_name<span class="operator">%NOTFOUND</span>;
+
+      <span class="keyword">DBMS_OUTPUT.PUT_LINE</span>(v_col1 <span class="operator">||</span> <span class="string">' - '</span> <span class="operator">||</span> v_col2);
+
+   <span class="keyword">END LOOP</span>;
+
+   <span class="keyword">CLOSE</span> cursor_name;
+
+<span class="keyword">END</span>;
 /
 </pre>
+
+</div>
 
 
 <h3>Example 1: Display Student Details Using Explicit Cursor</h3>
+<div class="code-box">
 
+    <div class="code-title">
+        cursor-student-example.sql
+    </div>
 
-<pre>
-DECLARE
-   CURSOR student_cur IS
-      SELECT roll_no, name FROM students;
+<pre><span class="keyword">DECLARE</span>
 
-   v_rollno students.roll_no%TYPE;
-   v_name   students.name%TYPE;
-BEGIN
-   OPEN student_cur;
-   LOOP
-      FETCH student_cur INTO v_rollno, v_name;
-      EXIT WHEN student_cur%NOTFOUND;
+   <span class="keyword">CURSOR</span> student_cur <span class="keyword">IS</span>
+      <span class="keyword">SELECT</span> roll_no, name <span class="keyword">FROM</span> students;
 
-      DBMS_OUTPUT.PUT_LINE('Roll No: ' || v_rollno || ', Name: ' || v_name);
-   END LOOP;
-   CLOSE student_cur;
-END;
+   v_rollno students.roll_no<span class="operator">%TYPE</span>;
+   v_name   students.name<span class="operator">%TYPE</span>;
+
+<span class="keyword">BEGIN</span>
+
+   <span class="keyword">OPEN</span> student_cur;
+
+   <span class="keyword">LOOP</span>
+
+      <span class="keyword">FETCH</span> student_cur <span class="keyword">INTO</span> v_rollno, v_name;
+
+      <span class="keyword">EXIT WHEN</span> student_cur<span class="operator">%NOTFOUND</span>;
+
+      <span class="keyword">DBMS_OUTPUT.PUT_LINE</span>(
+         <span class="string">'Roll No: '</span> <span class="operator">||</span> v_rollno <span class="operator">||</span>
+         <span class="string">', Name: '</span> <span class="operator">||</span> v_name
+      );
+
+   <span class="keyword">END LOOP</span>;
+
+   <span class="keyword">CLOSE</span> student_cur;
+
+<span class="keyword">END</span>;
 /
 </pre>
+
+</div>
 
 
 <h3>Example 2: Display Employees from a Department</h3>
 
 
-<pre>
-DECLARE
-   CURSOR emp_cur IS
-      SELECT emp_id, emp_name
-      FROM employees
-      WHERE dept_id = 10;
+<div class="code-box">
 
-   v_empid employees.emp_id%TYPE;
-   v_empname employees.emp_name%TYPE;
-BEGIN
-   OPEN emp_cur;
-   LOOP
-      FETCH emp_cur INTO v_empid, v_empname;
-      EXIT WHEN emp_cur%NOTFOUND;
+    <div class="code-title">
+        cursor-employee-by-department.sql
+    </div>
 
-      DBMS_OUTPUT.PUT_LINE('Employee ID: ' || v_empid || ', Name: ' || v_empname);
-   END LOOP;
-   CLOSE emp_cur;
-END;
+<pre><span class="keyword">DECLARE</span>
+
+   <span class="keyword">CURSOR</span> emp_cur <span class="keyword">IS</span>
+      <span class="keyword">SELECT</span> emp_id, emp_name
+      <span class="keyword">FROM</span> employees
+      <span class="keyword">WHERE</span> dept_id <span class="operator">=</span> <span class="number">10</span>;
+
+   v_empid employees.emp_id<span class="operator">%TYPE</span>;
+   v_empname employees.emp_name<span class="operator">%TYPE</span>;
+
+<span class="keyword">BEGIN</span>
+
+   <span class="keyword">OPEN</span> emp_cur;
+
+   <span class="keyword">LOOP</span>
+
+      <span class="keyword">FETCH</span> emp_cur <span class="keyword">INTO</span> v_empid, v_empname;
+
+      <span class="keyword">EXIT WHEN</span> emp_cur<span class="operator">%NOTFOUND</span>;
+
+      <span class="keyword">DBMS_OUTPUT.PUT_LINE</span>(
+         <span class="string">'Employee ID: '</span> <span class="operator">||</span> v_empid <span class="operator">||</span>
+         <span class="string">', Name: '</span> <span class="operator">||</span> v_empname
+      );
+
+   <span class="keyword">END LOOP</span>;
+
+   <span class="keyword">CLOSE</span> emp_cur;
+
+<span class="keyword">END</span>;
 /
 </pre>
+
+</div>
 
 
 <hr>
@@ -28575,40 +29321,58 @@ Every explicit cursor in PL/SQL has four important attributes to check the statu
 <p><strong>Example: Demonstrating Cursor Attributes</strong></p>
 
 
-<pre>
-DECLARE
-   CURSOR student_cur IS
-      SELECT roll_no, name FROM students;
+<div class="code-box">
 
-   v_rollno students.roll_no%TYPE;
-   v_name   students.name%TYPE;
-BEGIN
-   DBMS_OUTPUT.PUT_LINE('Before OPEN: Is cursor open? ' ||
-      CASE WHEN student_cur%ISOPEN THEN 'YES' ELSE 'NO' END);
+    <div class="code-title">
+        cursor-attributes-example.sql
+    </div>
 
-   OPEN student_cur;
+<pre><span class="keyword">DECLARE</span>
 
-   DBMS_OUTPUT.PUT_LINE('After OPEN: Is cursor open? ' ||
-      CASE WHEN student_cur%ISOPEN THEN 'YES' ELSE 'NO' END);
+   <span class="keyword">CURSOR</span> student_cur <span class="keyword">IS</span>
+      <span class="keyword">SELECT</span> roll_no, name <span class="keyword">FROM</span> students;
 
-   LOOP
-      FETCH student_cur INTO v_rollno, v_name;
+   v_rollno students.roll_no<span class="operator">%TYPE</span>;
+   v_name   students.name<span class="operator">%TYPE</span>;
 
-      IF student_cur%FOUND THEN
-         DBMS_OUTPUT.PUT_LINE('Row #: ' || student_cur%ROWCOUNT ||
-                              ' -> Roll No = ' || v_rollno || ', Name = ' || v_name);
-      END IF;
+<span class="keyword">BEGIN</span>
 
-      EXIT WHEN student_cur%NOTFOUND;
-   END LOOP;
+   <span class="keyword">DBMS_OUTPUT.PUT_LINE</span>(<span class="string">'Before OPEN: Is cursor open? '</span> <span class="operator">||</span>
+      <span class="keyword">CASE</span> <span class="keyword">WHEN</span> student_cur<span class="operator">%ISOPEN</span> <span class="keyword">THEN</span> <span class="string">'YES'</span> <span class="keyword">ELSE</span> <span class="string">'NO'</span> <span class="keyword">END</span>);
 
-   CLOSE student_cur;
+   <span class="keyword">OPEN</span> student_cur;
 
-   DBMS_OUTPUT.PUT_LINE('After CLOSE: Is cursor open? ' ||
-      CASE WHEN student_cur%ISOPEN THEN 'YES' ELSE 'NO' END);
-END;
+   <span class="keyword">DBMS_OUTPUT.PUT_LINE</span>(<span class="string">'After OPEN: Is cursor open? '</span> <span class="operator">||</span>
+      <span class="keyword">CASE</span> <span class="keyword">WHEN</span> student_cur<span class="operator">%ISOPEN</span> <span class="keyword">THEN</span> <span class="string">'YES'</span> <span class="keyword">ELSE</span> <span class="string">'NO'</span> <span class="keyword">END</span>);
+
+   <span class="keyword">LOOP</span>
+
+      <span class="keyword">FETCH</span> student_cur <span class="keyword">INTO</span> v_rollno, v_name;
+
+      <span class="keyword">IF</span> student_cur<span class="operator">%FOUND</span> <span class="keyword">THEN</span>
+
+         <span class="keyword">DBMS_OUTPUT.PUT_LINE</span>(
+            <span class="string">'Row #: '</span> <span class="operator">||</span> student_cur<span class="operator">%ROWCOUNT</span> <span class="operator">||</span>
+            <span class="string">' -> Roll No = '</span> <span class="operator">||</span> v_rollno <span class="operator">||</span>
+            <span class="string">', Name = '</span> <span class="operator">||</span> v_name
+         );
+
+      <span class="keyword">END IF</span>;
+
+      <span class="keyword">EXIT WHEN</span> student_cur<span class="operator">%NOTFOUND</span>;
+
+   <span class="keyword">END LOOP</span>;
+
+   <span class="keyword">CLOSE</span> student_cur;
+
+   <span class="keyword">DBMS_OUTPUT.PUT_LINE</span>(<span class="string">'After CLOSE: Is cursor open? '</span> <span class="operator">||</span>
+      <span class="keyword">CASE</span> <span class="keyword">WHEN</span> student_cur<span class="operator">%ISOPEN</span> <span class="keyword">THEN</span> <span class="string">'YES'</span> <span class="keyword">ELSE</span> <span class="string">'NO'</span> <span class="keyword">END</span>);
+
+<span class="keyword">END</span>;
 /
 </pre>
+
+</div>
 
 
 <hr>
@@ -28653,37 +29417,62 @@ No need to open, fetch, or close an implicit cursor.
 <p><strong>Example: Using Implicit Cursor with SELECT INTO</strong></p>
 
 
-<pre>
-DECLARE
-   v_name employees.emp_name%TYPE;
-BEGIN
-   SELECT emp_name
-   INTO v_name
-   FROM employees
-   WHERE emp_id = 101;
+<div class="code-box">
 
-   DBMS_OUTPUT.PUT_LINE('Employee Name: ' || v_name);
-EXCEPTION
-   WHEN NO_DATA_FOUND THEN
-      DBMS_OUTPUT.PUT_LINE('No employee found.');
-END;
+    <div class="code-title">
+        exception-no-data-found.sql
+    </div>
+
+<pre><span class="keyword">DECLARE</span>
+
+   v_name employees.emp_name<span class="operator">%TYPE</span>;
+
+<span class="keyword">BEGIN</span>
+
+   <span class="keyword">SELECT</span> emp_name
+   <span class="keyword">INTO</span> v_name
+   <span class="keyword">FROM</span> employees
+   <span class="keyword">WHERE</span> emp_id <span class="operator">=</span> <span class="number">101</span>;
+
+   <span class="keyword">DBMS_OUTPUT.PUT_LINE</span>(<span class="string">'Employee Name: '</span> <span class="operator">||</span> v_name);
+
+<span class="keyword">EXCEPTION</span>
+
+   <span class="keyword">WHEN</span> NO_DATA_FOUND <span class="keyword">THEN</span>
+
+      <span class="keyword">DBMS_OUTPUT.PUT_LINE</span>(<span class="string">'No employee found.'</span>);
+
+<span class="keyword">END</span>;
 /
 </pre>
+
+</div>
 
 
 <p><strong>Example: Using Implicit Cursor with UPDATE</strong></p>
 
 
-<pre>
-BEGIN
-   UPDATE employees
-   SET salary = salary + 1000
-   WHERE emp_id = 101;
+<div class="code-box">
 
-   DBMS_OUTPUT.PUT_LINE('Rows affected: ' || SQL%ROWCOUNT);
-END;
+    <div class="code-title">
+        sql%rowcount-example.sql
+    </div>
+
+<pre><span class="keyword">BEGIN</span>
+
+   <span class="keyword">UPDATE</span> employees
+   <span class="keyword">SET</span> salary <span class="operator">=</span> salary <span class="operator">+</span> <span class="number">1000</span>
+   <span class="keyword">WHERE</span> emp_id <span class="operator">=</span> <span class="number">101</span>;
+
+   <span class="keyword">DBMS_OUTPUT.PUT_LINE</span>(
+      <span class="string">'Rows affected: '</span> <span class="operator">||</span> <span class="keyword">SQL</span><span class="operator">%ROWCOUNT</span>
+   );
+
+<span class="keyword">END</span>;
 /
 </pre>
+
+</div>
 
 
 <hr>
@@ -28766,19 +29555,34 @@ That means only one exception is raised per block execution.
 <p><strong>Syntax:</strong></p>
 
 
-<pre>
-DECLARE
-   -- Declarations (variables, cursors, etc.)
-BEGIN
-   -- Main executable statements
+<div class="code-box">
 
-EXCEPTION
-   WHEN exception_name THEN
-      -- Actions to handle the error
-   WHEN OTHERS THEN
-      -- Handle all other errors
-END;
+    <div class="code-title">
+        plsql-block-structure.sql
+    </div>
+
+<pre><span class="keyword">DECLARE</span>
+
+   <span class="comment">-- Declarations (variables, cursors, etc.)</span>
+
+<span class="keyword">BEGIN</span>
+
+   <span class="comment">-- Main executable statements</span>
+
+<span class="keyword">EXCEPTION</span>
+
+   <span class="keyword">WHEN</span> exception_name <span class="keyword">THEN</span>
+
+      <span class="comment">-- Actions to handle the error</span>
+
+   <span class="keyword">WHEN</span> OTHERS <span class="keyword">THEN</span>
+
+      <span class="comment">-- Handle all other errors</span>
+
+<span class="keyword">END</span>;
 </pre>
+
+</div>
 
 
 <hr>
@@ -28792,11 +29596,11 @@ PL/SQL exceptions are mainly of three types:
 </p>
 
 
-<ul>
+<ol>
 <li>Predefined Exceptions</li>
 <li>User-Defined Exceptions</li>
 <li>WHEN OTHERS Clause</li>
-</ul>
+</ol>
 
 
 <hr>
@@ -28822,58 +29626,71 @@ Predefined exceptions are built-in exceptions already defined by Oracle.
 <p><strong>Example:</strong></p>
 
 
-<pre>
-DECLARE
-   v_name   employees.emp_name%TYPE;
-   v_salary NUMBER;
-   v_result NUMBER;
-BEGIN
-   -- 1 NO_DATA_FOUND (employee does not exist)
-   SELECT emp_name INTO v_name
-   FROM employees
-   WHERE emp_id = 999;
+<div class="code-box">
 
-   DBMS_OUTPUT.PUT_LINE('Employee Name: ' || v_name);
+    <div class="code-title">
+        plsql-exception-handling-demo.sql
+    </div>
 
-   -- 2 TOO_MANY_ROWS (multiple employees in same dept)
-   SELECT emp_name INTO v_name
-   FROM employees
-   WHERE dept_id = 10;
+<pre><span class="keyword">DECLARE</span>
 
-   DBMS_OUTPUT.PUT_LINE('Employee from Dept 10: ' || v_name);
+   v_name   employees.emp_name<span class="operator">%TYPE</span>;
+   v_salary <span class="keyword">NUMBER</span>;
+   v_result <span class="keyword">NUMBER</span>;
 
-   -- 3 ZERO_DIVIDE (division by zero)
-   v_result := 100 / 0;
-   DBMS_OUTPUT.PUT_LINE('Division Result: ' || v_result);
+<span class="keyword">BEGIN</span>
 
-   -- 4 INVALID_NUMBER (wrong conversion)
-   v_salary := TO_NUMBER('ABC123');
-   DBMS_OUTPUT.PUT_LINE('Converted Salary: ' || v_salary);
+   <span class="comment">-- 1 NO_DATA_FOUND (employee does not exist)</span>
+   <span class="keyword">SELECT</span> emp_name <span class="keyword">INTO</span> v_name
+   <span class="keyword">FROM</span> employees
+   <span class="keyword">WHERE</span> emp_id <span class="operator">=</span> <span class="number">999</span>;
 
-   -- 5 DUP_VAL_ON_INDEX (duplicate emp_id insert)
-   INSERT INTO employees(emp_id, emp_name, salary)
-   VALUES (101, 'Pradeep', 50000);
+   <span class="keyword">DBMS_OUTPUT.PUT_LINE</span>(<span class="string">'Employee Name: '</span> <span class="operator">||</span> v_name);
 
-EXCEPTION
-   WHEN NO_DATA_FOUND THEN
-      DBMS_OUTPUT.PUT_LINE('Error: No employee found (NO_DATA_FOUND).');
+   <span class="comment">-- 2 TOO_MANY_ROWS (multiple employees in same dept)</span>
+   <span class="keyword">SELECT</span> emp_name <span class="keyword">INTO</span> v_name
+   <span class="keyword">FROM</span> employees
+   <span class="keyword">WHERE</span> dept_id <span class="operator">=</span> <span class="number">10</span>;
 
-   WHEN TOO_MANY_ROWS THEN
-      DBMS_OUTPUT.PUT_LINE('Error: More than one row found (TOO_MANY_ROWS).');
+   <span class="keyword">DBMS_OUTPUT.PUT_LINE</span>(<span class="string">'Employee from Dept 10: '</span> <span class="operator">||</span> v_name);
 
-   WHEN ZERO_DIVIDE THEN
-      DBMS_OUTPUT.PUT_LINE('Error: Division by zero not allowed (ZERO_DIVIDE).');
+   <span class="comment">-- 3 ZERO_DIVIDE (division by zero)</span>
+   v_result <span class="operator">:=</span> <span class="number">100</span> <span class="operator">/</span> <span class="number">0</span>;
+   <span class="keyword">DBMS_OUTPUT.PUT_LINE</span>(<span class="string">'Division Result: '</span> <span class="operator">||</span> v_result);
 
-   WHEN INVALID_NUMBER THEN
-      DBMS_OUTPUT.PUT_LINE('Error: Invalid number conversion (INVALID_NUMBER).');
+   <span class="comment">-- 4 INVALID_NUMBER (wrong conversion)</span>
+   v_salary <span class="operator">:=</span> <span class="keyword">TO_NUMBER</span>(<span class="string">'ABC123'</span>);
+   <span class="keyword">DBMS_OUTPUT.PUT_LINE</span>(<span class="string">'Converted Salary: '</span> <span class="operator">||</span> v_salary);
 
-   WHEN DUP_VAL_ON_INDEX THEN
-      DBMS_OUTPUT.PUT_LINE('Error: Duplicate value in unique column (DUP_VAL_ON_INDEX).');
+   <span class="comment">-- 5 DUP_VAL_ON_INDEX (duplicate emp_id insert)</span>
+   <span class="keyword">INSERT</span> <span class="keyword">INTO</span> employees(emp_id, emp_name, salary)
+   <span class="keyword">VALUES</span> (<span class="number">101</span>, <span class="string">'Pradeep'</span>, <span class="number">50000</span>);
 
-   WHEN OTHERS THEN
-      DBMS_OUTPUT.PUT_LINE('Some other error occurred: ' || SQLERRM);
-END;
+<span class="keyword">EXCEPTION</span>
+
+   <span class="keyword">WHEN</span> NO_DATA_FOUND <span class="keyword">THEN</span>
+      <span class="keyword">DBMS_OUTPUT.PUT_LINE</span>(<span class="string">'Error: No employee found (NO_DATA_FOUND).'</span>);
+
+   <span class="keyword">WHEN</span> TOO_MANY_ROWS <span class="keyword">THEN</span>
+      <span class="keyword">DBMS_OUTPUT.PUT_LINE</span>(<span class="string">'Error: More than one row found (TOO_MANY_ROWS).'</span>);
+
+   <span class="keyword">WHEN</span> ZERO_DIVIDE <span class="keyword">THEN</span>
+      <span class="keyword">DBMS_OUTPUT.PUT_LINE</span>(<span class="string">'Error: Division by zero not allowed (ZERO_DIVIDE).'</span>);
+
+   <span class="keyword">WHEN</span> INVALID_NUMBER <span class="keyword">THEN</span>
+      <span class="keyword">DBMS_OUTPUT.PUT_LINE</span>(<span class="string">'Error: Invalid number conversion (INVALID_NUMBER).'</span>);
+
+   <span class="keyword">WHEN</span> DUP_VAL_ON_INDEX <span class="keyword">THEN</span>
+      <span class="keyword">DBMS_OUTPUT.PUT_LINE</span>(<span class="string">'Error: Duplicate value in unique column (DUP_VAL_ON_INDEX).'</span>);
+
+   <span class="keyword">WHEN</span> OTHERS <span class="keyword">THEN</span>
+      <span class="keyword">DBMS_OUTPUT.PUT_LINE</span>(<span class="string">'Some other error occurred: '</span> <span class="operator">||</span> SQLERRM);
+
+<span class="keyword">END</span>;
+/
 </pre>
+
+</div>
 
 
 <hr>
@@ -28891,26 +29708,39 @@ They are raised manually using the RAISE statement.
 <p><strong>Example:</strong></p>
 
 
-<pre>
-DECLARE
-   e_low_salary EXCEPTION;
-   v_salary employees.salary%TYPE;
-BEGIN
-   SELECT salary INTO v_salary
-   FROM employees
-   WHERE emp_id = 101;
+<div class="code-box">
 
-   IF v_salary < 3000 THEN
-      RAISE e_low_salary;
-   END IF;
+    <div class="code-title">
+        plsql-custom-exception-example.sql
+    </div>
 
-   DBMS_OUTPUT.PUT_LINE('Employee Salary: ' || v_salary);
+<pre><span class="keyword">DECLARE</span>
 
-EXCEPTION
-   WHEN e_low_salary THEN
-      DBMS_OUTPUT.PUT_LINE('Error: Salary is too low!');
-END;
+   e_low_salary <span class="keyword">EXCEPTION</span>;
+   v_salary employees.salary<span class="operator">%TYPE</span>;
+
+<span class="keyword">BEGIN</span>
+
+   <span class="keyword">SELECT</span> salary <span class="keyword">INTO</span> v_salary
+   <span class="keyword">FROM</span> employees
+   <span class="keyword">WHERE</span> emp_id <span class="operator">=</span> <span class="number">101</span>;
+
+   <span class="keyword">IF</span> v_salary <span class="operator">&lt;</span> <span class="number">3000</span> <span class="keyword">THEN</span>
+      <span class="keyword">RAISE</span> e_low_salary;
+   <span class="keyword">END IF</span>;
+
+   <span class="keyword">DBMS_OUTPUT.PUT_LINE</span>(<span class="string">'Employee Salary: '</span> <span class="operator">||</span> v_salary);
+
+<span class="keyword">EXCEPTION</span>
+
+   <span class="keyword">WHEN</span> e_low_salary <span class="keyword">THEN</span>
+      <span class="keyword">DBMS_OUTPUT.PUT_LINE</span>(<span class="string">'Error: Salary is too low!'</span>);
+
+<span class="keyword">END</span>;
+/
 </pre>
+
+</div>
 
 
 <hr>
@@ -28933,15 +29763,30 @@ It is useful as a backup error handler when no specific exception matches.
 <p><strong>Example:</strong></p>
 
 
-<pre>
-BEGIN
-   -- some statements
-   NULL;
-EXCEPTION
-   WHEN OTHERS THEN
-      DBMS_OUTPUT.PUT_LINE('Unexpected error occurred: ' || SQLERRM);
-END;
+<div class="code-box">
+
+    <div class="code-title">
+        exception-handling-null-block.sql
+    </div>
+
+<pre><span class="keyword">BEGIN</span>
+
+   <span class="comment">-- some statements</span>
+   <span class="keyword">NULL</span>;
+
+<span class="keyword">EXCEPTION</span>
+
+   <span class="keyword">WHEN</span> OTHERS <span class="keyword">THEN</span>
+
+      <span class="keyword">DBMS_OUTPUT.PUT_LINE</span>(
+         <span class="string">'Unexpected error occurred: '</span> <span class="operator">||</span> SQLERRM
+      );
+
+<span class="keyword">END</span>;
+/
 </pre>
+
+</div>
 
 
 <hr>
@@ -29035,13 +29880,24 @@ After COMMIT, the changes cannot be undone using ROLLBACK.
 <p><strong>Example:</strong></p>
 
 
-<pre>
-BEGIN
-   INSERT INTO students (id, name) VALUES (101, 'Amit');
-   COMMIT;
-END;
+<div class="code-box">
+
+    <div class="code-title">
+        insert-student-commit.sql
+    </div>
+
+<pre><span class="keyword">BEGIN</span>
+
+   <span class="keyword">INSERT</span> <span class="keyword">INTO</span> students (id, name)
+   <span class="keyword">VALUES</span> (<span class="number">101</span>, <span class="string">'Amit'</span>);
+
+   <span class="keyword">COMMIT</span>;
+
+<span class="keyword">END</span>;
 /
 </pre>
+
+</div>
 
 
 <hr>
@@ -29059,16 +29915,25 @@ It restores the database to the last committed state.
 <p><strong>Example:</strong></p>
 
 
-<pre>
-BEGIN
-   UPDATE students
-   SET name = 'Ravi'
-   WHERE id = 101;
+<div class="code-box">
 
-   ROLLBACK;
-END;
+    <div class="code-title">
+        update-student-rollback.sql
+    </div>
+
+<pre><span class="keyword">BEGIN</span>
+
+   <span class="keyword">UPDATE</span> students
+   <span class="keyword">SET</span> name <span class="operator">=</span> <span class="string">'Ravi'</span>
+   <span class="keyword">WHERE</span> id <span class="operator">=</span> <span class="number">101</span>;
+
+   <span class="keyword">ROLLBACK</span>;
+
+<span class="keyword">END</span>;
 /
 </pre>
+
+</div>
 
 
 <hr>
@@ -29086,20 +29951,32 @@ If needed, we can rollback only up to that point instead of undoing the entire t
 <p><strong>Example:</strong></p>
 
 
-<pre>
-BEGIN
-   INSERT INTO students (id, name) VALUES (102, 'Bob');
-   SAVEPOINT sp1;
+<div class="code-box">
 
-   UPDATE students
-   SET name = 'Robert'
-   WHERE id = 102;
+    <div class="code-title">
+        savepoint-rollback-example.sql
+    </div>
 
-   ROLLBACK TO sp1;
-   COMMIT;
-END;
+<pre><span class="keyword">BEGIN</span>
+
+   <span class="keyword">INSERT</span> <span class="keyword">INTO</span> students (id, name)
+   <span class="keyword">VALUES</span> (<span class="number">102</span>, <span class="string">'Bob'</span>);
+
+   <span class="keyword">SAVEPOINT</span> sp1;
+
+   <span class="keyword">UPDATE</span> students
+   <span class="keyword">SET</span> name <span class="operator">=</span> <span class="string">'Robert'</span>
+   <span class="keyword">WHERE</span> id <span class="operator">=</span> <span class="number">102</span>;
+
+   <span class="keyword">ROLLBACK</span> <span class="keyword">TO</span> sp1;
+
+   <span class="keyword">COMMIT</span>;
+
+<span class="keyword">END</span>;
 /
 </pre>
+
+</div>
 
 
 <hr>
@@ -29108,21 +29985,37 @@ END;
 <h3>Example: Transaction with Error Handling</h3>
 
 
-<pre>
-BEGIN
-   INSERT INTO students (id, name) VALUES (102, 'Bob');
+<div class="code-box">
 
-   -- Simulate error
-   RAISE_APPLICATION_ERROR(-20001, 'Something went wrong');
+    <div class="code-title">
+        transaction-error-handling.sql
+    </div>
 
-   COMMIT;
-EXCEPTION
-   WHEN OTHERS THEN
-      ROLLBACK;
-      DBMS_OUTPUT.PUT_LINE('Transaction rolled back due to error: ' || SQLERRM);
-END;
+<pre><span class="keyword">BEGIN</span>
+
+   <span class="keyword">INSERT</span> <span class="keyword">INTO</span> students (id, name)
+   <span class="keyword">VALUES</span> (<span class="number">102</span>, <span class="string">'Bob'</span>);
+
+   <span class="comment">-- Simulate error</span>
+   <span class="keyword">RAISE_APPLICATION_ERROR</span>(<span class="operator">-20001</span>, <span class="string">'Something went wrong'</span>);
+
+   <span class="keyword">COMMIT</span>;
+
+<span class="keyword">EXCEPTION</span>
+
+   <span class="keyword">WHEN</span> OTHERS <span class="keyword">THEN</span>
+
+      <span class="keyword">ROLLBACK</span>;
+
+      <span class="keyword">DBMS_OUTPUT.PUT_LINE</span>(
+         <span class="string">'Transaction rolled back due to error: '</span> <span class="operator">||</span> SQLERRM
+      );
+
+<span class="keyword">END</span>;
 /
 </pre>
+
+</div>
 
 
 <hr>
@@ -29162,8 +30055,6 @@ let oracleLocksContent = `
 <h3>Locks in Oracle</h3>
 
 <p>
-
-Good morning students!
 
 Today we are going to learn an important Oracle Database concept called <strong>Locks</strong>.
 
@@ -29293,11 +30184,18 @@ Oracle locks only the affected rows, allowing other users to work on different r
 
 <h4>Example</h4>
 
-<pre>
-UPDATE employees
-SET salary = 5000
-WHERE emp_id = 101;
+<div class="code-box">
+
+    <div class="code-title">
+        update-employee-basic.sql
+    </div>
+
+<pre><span class="keyword">UPDATE</span> employees
+<span class="keyword">SET</span> salary <span class="operator">=</span> <span class="number">5000</span>
+<span class="keyword">WHERE</span> emp_id <span class="operator">=</span> <span class="number">101</span>;
 </pre>
+
+</div>
 
 <h4>Explanation</h4>
 
@@ -29331,17 +30229,31 @@ It is generally used when performing maintenance or preventing all users from mo
 
 <h4>Syntax</h4>
 
-<pre>
-LOCK TABLE table_name
-IN EXCLUSIVE MODE;
+<div class="code-box">
+
+    <div class="code-title">
+        lock-table-exclusive-mode.sql
+    </div>
+
+<pre><span class="keyword">LOCK</span> <span class="keyword">TABLE</span> table_name
+<span class="keyword">IN</span> <span class="keyword">EXCLUSIVE</span> <span class="keyword">MODE</span>;
 </pre>
+
+</div>
 
 <h4>Example</h4>
 
-<pre>
-LOCK TABLE employees
-IN EXCLUSIVE MODE;
+<div class="code-box">
+
+    <div class="code-title">
+        lock-employees-table-exclusive.sql
+    </div>
+
+<pre><span class="keyword">LOCK</span> <span class="keyword">TABLE</span> employees
+<span class="keyword">IN</span> <span class="keyword">EXCLUSIVE</span> <span class="keyword">MODE</span>;
 </pre>
+
+</div>
 
 <h4>Explanation</h4>
 
@@ -29373,18 +30285,25 @@ This prevents other users from making structural changes to the same object simu
 
 <h4>Examples</h4>
 
-<pre>
-CREATE TABLE student
+<div class="code-box">
+
+    <div class="code-title">
+        ddl-create-alter-drop.sql
+    </div>
+
+<pre><span class="keyword">CREATE</span> <span class="keyword">TABLE</span> student
 (
-   id NUMBER,
-   name VARCHAR2(50)
+   id <span class="keyword">NUMBER</span>,
+   name <span class="keyword">VARCHAR2</span>(<span class="number">50</span>)
 );
 
-ALTER TABLE employees
-ADD email VARCHAR2(100);
+<span class="keyword">ALTER</span> <span class="keyword">TABLE</span> employees
+<span class="keyword">ADD</span> email <span class="keyword">VARCHAR2</span>(<span class="number">100</span>);
 
-DROP TABLE student;
+<span class="keyword">DROP</span> <span class="keyword">TABLE</span> student;
 </pre>
+
+</div>
 
 <h4>Explanation</h4>
 
@@ -29510,8 +30429,6 @@ let oracleConcurrencyControlContent = `
 <h3>Concurrency Control in Oracle</h3>
 
 <p>
-
-Good morning students!
 
 Today we are going to learn one of the most important concepts in Oracle Database called <strong>Concurrency Control</strong>.
 
@@ -29711,11 +30628,18 @@ Oracle prevents this by using row-level locking.
 
 <h3>Example 2 : Automatic Row Lock</h3>
 
-<pre>
-UPDATE employees
-SET salary = 60000
-WHERE emp_id = 101;
+<div class="code-box">
+
+    <div class="code-title">
+        update-employee-salary-fixed.sql
+    </div>
+
+<pre><span class="keyword">UPDATE</span> employees
+<span class="keyword">SET</span> salary <span class="operator">=</span> <span class="number">60000</span>
+<span class="keyword">WHERE</span> emp_id <span class="operator">=</span> <span class="number">101</span>;
 </pre>
+
+</div>
 
 <p>
 
@@ -29874,8 +30798,6 @@ let oracleTriggersContent = `
 
 <p>
 
-Good morning students!
-
 Today we are going to learn an important database object in Oracle PL/SQL called <strong>Trigger</strong>.
 
 A <strong>Trigger</strong> is a special type of stored PL/SQL program that automatically executes (fires) whenever a specified event occurs in the database.
@@ -30006,29 +30928,39 @@ This saves time and avoids mistakes.
 
 <h3>General Syntax of a Trigger</h3>
 
-<pre>
-CREATE OR REPLACE TRIGGER trigger_name
+<div class="code-box">
 
-BEFORE | AFTER
+    <div class="code-title">
+        trigger-basic-syntax.sql
+    </div>
 
-INSERT OR UPDATE OR DELETE
+<pre><span class="keyword">CREATE OR REPLACE TRIGGER</span> trigger_name
 
-ON table_name
+<span class="keyword">BEFORE</span> <span class="operator">|</span> <span class="keyword">AFTER</span>
 
-FOR EACH ROW
+<span class="keyword">INSERT</span> <span class="operator">OR</span> <span class="keyword">UPDATE</span> <span class="operator">OR</span> <span class="keyword">DELETE</span>
 
-DECLARE
-   -- Variable declarations (Optional)
+<span class="keyword">ON</span> table_name
 
-BEGIN
-   -- Trigger Logic
+<span class="keyword">FOR EACH ROW</span>
 
-EXCEPTION
-   -- Exception Handling (Optional)
+<span class="keyword">DECLARE</span>
 
-END;
+   <span class="comment">-- Variable declarations (Optional)</span>
+
+<span class="keyword">BEGIN</span>
+
+   <span class="comment">-- Trigger Logic</span>
+
+<span class="keyword">EXCEPTION</span>
+
+   <span class="comment">-- Exception Handling (Optional)</span>
+
+<span class="keyword">END</span>;
 /
 </pre>
+
+</div>
 
 <hr>
 
@@ -30135,14 +31067,21 @@ END;
 
 <h4>Step 1 : Create Table</h4>
 
-<pre>
-CREATE TABLE students
+<div class="code-box">
+
+    <div class="code-title">
+        create-students-table.sql
+    </div>
+
+<pre><span class="keyword">CREATE</span> <span class="keyword">TABLE</span> students
 (
-    id NUMBER PRIMARY KEY,
-    name VARCHAR2(50),
-    created_date DATE
+    id <span class="keyword">NUMBER</span> <span class="keyword">PRIMARY KEY</span>,
+    name <span class="keyword">VARCHAR2</span>(<span class="number">50</span>),
+    created_date <span class="keyword">DATE</span>
 );
 </pre>
+
+</div>
 
 <p>
 
@@ -30160,37 +31099,51 @@ Whenever a new student is inserted, Oracle automatically stores the current syst
 
 </p>
 
-<pre>
-CREATE OR REPLACE TRIGGER trg_students_before_insert
+<div class="code-box">
 
-BEFORE INSERT
+    <div class="code-title">
+        trg-students-before-insert.sql
+    </div>
 
-ON students
+<pre><span class="keyword">CREATE OR REPLACE TRIGGER</span> trg_students_before_insert
 
-FOR EACH ROW
+<span class="keyword">BEFORE</span> <span class="keyword">INSERT</span>
 
-BEGIN
+<span class="keyword">ON</span> students
 
-   :NEW.created_date := SYSDATE;
+<span class="keyword">FOR EACH ROW</span>
 
-END;
+<span class="keyword">BEGIN</span>
+
+   :NEW.created_date <span class="operator">:=</span> <span class="keyword">SYSDATE</span>;
+
+<span class="keyword">END</span>;
 /
 </pre>
+
+</div>
 
 <hr>
 
 <h4>Step 3 : Insert Data</h4>
 
-<pre>
-INSERT INTO students(id, name)
-VALUES (1, 'Amit');
+<div class="code-box">
 
-INSERT INTO students(id, name)
-VALUES (2, 'Priya');
+    <div class="code-title">
+        insert-multiple-students.sql
+    </div>
 
-INSERT INTO students(id, name)
-VALUES (3, 'Rahul');
+<pre><span class="keyword">INSERT</span> <span class="keyword">INTO</span> students(id, name)
+<span class="keyword">VALUES</span> (<span class="number">1</span>, <span class="string">'Amit'</span>);
+
+<span class="keyword">INSERT</span> <span class="keyword">INTO</span> students(id, name)
+<span class="keyword">VALUES</span> (<span class="number">2</span>, <span class="string">'Priya'</span>);
+
+<span class="keyword">INSERT</span> <span class="keyword">INTO</span> students(id, name)
+<span class="keyword">VALUES</span> (<span class="number">3</span>, <span class="string">'Rahul'</span>);
 </pre>
+
+</div>
 
 <p>
 
@@ -30204,10 +31157,17 @@ The trigger automatically stores the current date.
 
 <h4>Step 4 : Verify Data</h4>
 
-<pre>
-SELECT *
-FROM students;
+<div class="code-box">
+
+    <div class="code-title">
+        select-all-students.sql
+    </div>
+
+<pre><span class="keyword">SELECT</span> <span class="operator">*</span>
+<span class="keyword">FROM</span> students;
 </pre>
+
+</div>
 
 <table class="notes-table">
 
@@ -30272,9 +31232,9 @@ Represents the new salary value after an UPDATE or INSERT.
 
 </p>
 
-<pre>
+<p>
 :OLD.salary
-</pre>
+</p>
 
 <p>
 
@@ -30342,14 +31302,1366 @@ Represents the old salary before the UPDATE operation.
 
 
 
+const plsqlFunctionsContent = `
+<h3>FUNCTIONS in PL/SQL</h3>
+
+<p>
+A function in PL/SQL is a named block of code that performs a specific task and always returns exactly one value.
+</p>
+
+<p>
+We use functions when we want to calculate something or get a result back from the database.
+</p>
+
+<p>
+For example, a function can be used to find an employee salary, calculate tax, or return total marks.
+</p>
+
+<h3>Why Do We Use Functions?</h3>
+
+<ul>
+    <li>To perform a specific task.</li>
+    <li>To return one value as a result.</li>
+    <li>To reuse code again and again.</li>
+    <li>To use the function inside PL/SQL blocks and SQL queries.</li>
+</ul>
+
+<h3>Function vs Procedure</h3>
+
+<ul>
+    <li><strong>Procedure</strong> → performs an action and may use OUT parameters to return values.</li>
+    <li><strong>Function</strong> → performs an action and always returns one value using the RETURN keyword.</li>
+</ul>
+
+<h3>Syntax of Function</h3>
+
+<div class="code-box">
+
+    <div class="code-title">
+        function-syntax.sql
+    </div>
+
+<pre><span class="comment">-- Function Syntax in PL/SQL</span>
+
+<span class="keyword">CREATE OR REPLACE FUNCTION</span> function_name
+(
+    parameter1 <span class="keyword">IN</span> datatype,
+    parameter2 <span class="keyword">IN</span> datatype
+)
+<span class="keyword">RETURN</span> return_datatype
+<span class="keyword">IS</span>
+
+    <span class="comment">-- Declarations (optional)</span>
+
+<span class="keyword">BEGIN</span>
+
+    <span class="comment">-- Executable statements</span>
+
+    <span class="keyword">RETURN</span> value;   <span class="comment">-- must return one value</span>
+
+<span class="keyword">EXCEPTION</span>
+
+    <span class="comment">-- Exception handling (optional)</span>
+
+<span class="keyword">END</span> function_name;
+/
+</pre>
+
+</div>
+
+<h3>Important Points About Functions</h3>
+
+<ul>
+    <li>A function must return exactly one value.</li>
+    <li>The RETURN keyword is compulsory.</li>
+    <li>A function may accept input parameters.</li>
+    <li>A function is useful when the result is needed for further processing.</li>
+</ul>
+
+<h3>Example: Function to Get Employee Salary by EMP_ID</h3>
+
+<div class="code-box">
+
+    <div class="code-title">
+        get-employee-salary-function.sql
+    </div>
+
+<pre><span class="comment">-- Function to get employee salary by employee ID</span>
+
+<span class="keyword">CREATE OR REPLACE FUNCTION</span> get_emp_salary(
+    p_empid <span class="keyword">IN</span> <span class="keyword">NUMBER</span>
+)
+<span class="keyword">RETURN</span> <span class="keyword">NUMBER</span>
+<span class="keyword">IS</span>
+
+    v_salary employee.salary<span class="operator">%TYPE</span>;
+
+<span class="keyword">BEGIN</span>
+
+    <span class="keyword">SELECT</span> salary
+    <span class="keyword">INTO</span> v_salary
+    <span class="keyword">FROM</span> employee
+    <span class="keyword">WHERE</span> emp_id <span class="operator">=</span> p_empid;
+
+    <span class="keyword">RETURN</span> v_salary;
+
+<span class="keyword">EXCEPTION</span>
+    <span class="keyword">WHEN</span> NO_DATA_FOUND <span class="keyword">THEN</span>
+        <span class="keyword">RETURN</span> <span class="keyword">NULL</span>;
+
+<span class="keyword">END</span>;
+/
+</pre>
+
+</div>
+<h3>How to Call a Function</h3>
+
+<div class="code-box">
+
+    <div class="code-title">
+        function-call-example.sql
+    </div>
+
+<pre><span class="comment">-- Calling a PL/SQL function and displaying result</span>
+
+<span class="keyword">SET SERVEROUTPUT ON</span>;
+
+<span class="keyword">DECLARE</span>
+
+    v_sal <span class="keyword">NUMBER</span>;
+
+<span class="keyword">BEGIN</span>
+
+    v_sal <span class="operator">:=</span> get_emp_salary(101);
+
+    <span class="keyword">DBMS_OUTPUT.PUT_LINE</span>('Salary = ' <span class="operator">||</span> v_sal);
+
+<span class="keyword">END</span>;
+/
+</pre>
+
+</div>
+
+<h3>Real-Life Examples of Functions</h3>
+
+<ul>
+    <li>Calculate total marks of a student.</li>
+    <li>Find tax amount.</li>
+    <li>Return employee salary.</li>
+    <li>Return age from date of birth.</li>
+    <li>Return discount amount.</li>
+</ul>
+
+<h3>Difference Between Function and Procedure in PL/SQL</h3>
+
+<table class="notes-table">
+<tr>
+    <th>Function</th>
+    <th>Procedure</th>
+</tr>
+<tr>
+    <td>A function always returns exactly one value.</td>
+    <td>A procedure does not return a value directly.</td>
+</tr>
+<tr>
+    <td>It uses the RETURN keyword.</td>
+    <td>It may use OUT or IN OUT parameters to send values back.</td>
+</tr>
+<tr>
+    <td>It can be used in SQL statements.</td>
+    <td>It cannot generally be used directly in SQL statements.</td>
+</tr>
+<tr>
+    <td>It is mainly used for calculations and value returning.</td>
+    <td>It is mainly used to perform actions or tasks.</td>
+</tr>
+<tr>
+    <td>RETURN statement is compulsory.</td>
+    <td>RETURN statement is not compulsory.</td>
+</tr>
+<tr>
+    <td>A function must return a value of a specified datatype.</td>
+    <td>A procedure may or may not return values through parameters.</td>
+</tr>
+<tr>
+    <td>Functions can be called from another function or procedure.</td>
+    <td>Procedures are called to execute a task.</td>
+</tr>
+<tr>
+    <td>Example: get_salary, calculate_tax</td>
+    <td>Example: insert_student, show_message</td>
+</tr>
+</table>
+
+<h3>Short Exam Answer</h3>
+
+<p>
+A function is a named PL/SQL block that always returns one value, while a procedure is a named PL/SQL block that performs a task and does not return a value directly. A function uses the RETURN keyword, but a procedure usually uses OUT or IN OUT parameters if it needs to send values back.
+</p>
+`;
+
+const plsqlPackagesContent = `
+<h3>PACKAGES in PL/SQL</h3>
+
+<p>
+A package in PL/SQL is a collection of logically related procedures, functions, variables, cursors, and exceptions.
+</p>
+
+<p>
+Think of a package as a folder that keeps all related PL/SQL objects together in one place.
+It helps in modular programming, code reusability, and better performance.
+</p>
+
+<h3>Advantages of Using Packages</h3>
+
+<ul>
+    <li><strong>Modularity</strong> – Organizes related code together.</li>
+    <li><strong>Encapsulation</strong> – Hides internal details from users.</li>
+    <li><strong>Performance</strong> – Loaded once into memory.</li>
+    <li><strong>Easier Maintenance</strong> – Modify one procedure without affecting others.</li>
+    <li><strong>Security</strong> – Control access through the specification.</li>
+</ul>
+
+<h3>Structure of a Package</h3>
+
+<p>
+A package has two parts:
+</p>
+
+<ol>
+    <li><strong>Package Specification</strong> (Header Part)  
+    <br>It declares what is available to the outside world.
+    <br>It contains the declarations of procedures, functions, variables, etc. but not the code.</li>
+
+    <li><strong>Package Body</strong> (Implementation Part)  
+    <br>It contains the actual code of the declared procedures and functions.</li>
+</ol>
+
+<h3>Syntax</h3>
+
+<p><strong>Package Specification:</strong></p>
+
+<div class="code-box">
+
+    <div class="code-title">
+        package-specification.sql
+    </div>
+
+<pre><span class="comment">-- Package Specification Syntax in PL/SQL</span>
+
+<span class="keyword">CREATE OR REPLACE PACKAGE</span> package_name
+<span class="keyword">IS</span>
+
+    <span class="comment">-- Declaration part</span>
+
+    <span class="keyword">PROCEDURE</span> procedure_name(parameters);
+
+    <span class="keyword">FUNCTION</span> function_name(parameters)
+        <span class="keyword">RETURN</span> datatype;
+
+    <span class="comment">-- Variables, cursors, exceptions can also be declared here</span>
+
+<span class="keyword">END</span> package_name;
+/
+</pre>
+
+</div>
+
+<p><strong>Package Body:</strong></p>
+
+<div class="code-box">
+
+    <div class="code-title">
+        package-body.sql
+    </div>
+
+<pre><span class="comment">-- Package Body Syntax in PL/SQL</span>
+
+<span class="keyword">CREATE OR REPLACE PACKAGE BODY</span> package_name
+<span class="keyword">IS</span>
+
+    <span class="comment">-- Procedure definition</span>
+
+    <span class="keyword">PROCEDURE</span> procedure_name(parameters)
+    <span class="keyword">IS</span>
+    <span class="keyword">BEGIN</span>
+        <span class="comment">-- code</span>
+    <span class="keyword">END</span>;
+
+    <span class="comment">-- Function definition</span>
+
+    <span class="keyword">FUNCTION</span> function_name(parameters)
+    <span class="keyword">RETURN</span> datatype
+    <span class="keyword">IS</span>
+    <span class="keyword">BEGIN</span>
+        <span class="comment">-- code</span>
+        <span class="keyword">RETURN</span> value;
+    <span class="keyword">END</span>;
+
+<span class="keyword">END</span> package_name;
+/
+</pre>
+
+</div>
+
+<p>
+You can keep both the specification and body in one .sql file.
+The slash (/) after each END statement is necessary because it tells Oracle to compile that PL/SQL unit.
+</p>
+
+<h3>Example: Math Package</h3>
+
+<p><strong>1. Package Specification</strong></p>
+
+<div class="code-box">
+
+    <div class="code-title">
+        math-package-specification.sql
+    </div>
+
+<pre><span class="comment">-- Package Specification: math_pkg</span>
+
+<span class="keyword">CREATE OR REPLACE PACKAGE</span> math_pkg
+<span class="keyword">IS</span>
+
+    <span class="keyword">PROCEDURE</span> add_numbers(p_num1 <span class="keyword">NUMBER</span>, p_num2 <span class="keyword">NUMBER</span>);
+
+    <span class="keyword">PROCEDURE</span> subtract_numbers(p_num1 <span class="keyword">NUMBER</span>, p_num2 <span class="keyword">NUMBER</span>);
+
+    <span class="keyword">FUNCTION</span> square_number(p_num <span class="keyword">NUMBER</span>)
+        <span class="keyword">RETURN</span> <span class="keyword">NUMBER</span>;
+
+<span class="keyword">END</span> math_pkg;
+/
+</pre>
+
+</div>
+
+<p><strong>2. Package Body</strong></p>
+
+<div class="code-box">
+
+    <div class="code-title">
+        math-package-body.sql
+    </div>
+
+<pre><span class="comment">-- Package Body: math_pkg implementation</span>
+
+<span class="keyword">CREATE OR REPLACE PACKAGE BODY</span> math_pkg
+<span class="keyword">IS</span>
+
+    <span class="comment">-- Add Numbers Procedure</span>
+
+    <span class="keyword">PROCEDURE</span> add_numbers(p_num1 <span class="keyword">NUMBER</span>, p_num2 <span class="keyword">NUMBER</span>)
+    <span class="keyword">IS</span>
+        v_result <span class="keyword">NUMBER</span>;
+    <span class="keyword">BEGIN</span>
+        v_result <span class="operator">:=</span> p_num1 <span class="operator">+</span> p_num2;
+        <span class="keyword">DBMS_OUTPUT.PUT_LINE</span>('Addition Result: ' <span class="operator">||</span> v_result);
+    <span class="keyword">END</span> add_numbers;
+
+    <span class="comment">-- Subtract Numbers Procedure</span>
+
+    <span class="keyword">PROCEDURE</span> subtract_numbers(p_num1 <span class="keyword">NUMBER</span>, p_num2 <span class="keyword">NUMBER</span>)
+    <span class="keyword">IS</span>
+        v_result <span class="keyword">NUMBER</span>;
+    <span class="keyword">BEGIN</span>
+        v_result <span class="operator">:=</span> p_num1 <span class="operator">-</span> p_num2;
+        <span class="keyword">DBMS_OUTPUT.PUT_LINE</span>('Subtraction Result: ' <span class="operator">||</span> v_result);
+    <span class="keyword">END</span> subtract_numbers;
+
+    <span class="comment">-- Square Function</span>
+
+    <span class="keyword">FUNCTION</span> square_number(p_num <span class="keyword">NUMBER</span>)
+        <span class="keyword">RETURN</span> <span class="keyword">NUMBER</span>
+    <span class="keyword">IS</span>
+        v_result <span class="keyword">NUMBER</span>;
+    <span class="keyword">BEGIN</span>
+        v_result <span class="operator">:=</span> p_num <span class="operator">*</span> p_num;
+        <span class="keyword">RETURN</span> v_result;
+    <span class="keyword">END</span> square_number;
+
+<span class="keyword">END</span> math_pkg;
+/
+</pre>
+
+</div>
+
+<h3>Execute Package</h3>
+
+<div class="code-box">
+
+    <div class="code-title">
+        math-package-call-example.sql
+    </div>
+
+<pre><span class="comment">-- Calling procedures and function from a package</span>
+
+<span class="keyword">BEGIN</span>
+
+    math_pkg.add_numbers(10, 5);
+    math_pkg.subtract_numbers(10, 5);
+
+    <span class="keyword">DBMS_OUTPUT.PUT_LINE</span>(
+        'Square of 6: ' <span class="operator">||</span> math_pkg.square_number(6)
+    );
+
+<span class="keyword">END</span>;
+/
+</pre>
+
+</div>
+
+<h3>Output</h3>
+
+<div class="code-box">
+
+    <div class="code-title">
+        package-output-result.sql
+    </div>
+
+<pre><span class="comment">-- Output of math_pkg package procedures and function</span>
+
+Addition Result: 15
+Subtraction Result: 5
+Square of 6: 36
+</pre>
+
+</div>
+
+
+<h3>Example 1: Student Package</h3>
+
+<p>
+This package contains procedures and functions related to student records, such as displaying a student name and calculating total marks.
+</p>
+
+<p><strong>Package Specification:</strong></p>
+
+<div class="code-box">
+
+    <div class="code-title">
+        student-package-specification.sql
+    </div>
+
+<pre><span class="comment">-- Package Specification: student_pkg</span>
+
+<span class="keyword">CREATE OR REPLACE PACKAGE</span> student_pkg
+<span class="keyword">IS</span>
+
+    <span class="keyword">PROCEDURE</span> show_student(p_rollno <span class="keyword">NUMBER</span>);
+
+    <span class="keyword">FUNCTION</span> total_marks(p_mark1 <span class="keyword">NUMBER</span>,
+                         p_mark2 <span class="keyword">NUMBER</span>,
+                         p_mark3 <span class="keyword">NUMBER</span>)
+        <span class="keyword">RETURN</span> <span class="keyword">NUMBER</span>;
+
+<span class="keyword">END</span> student_pkg;
+/
+</pre>
+
+</div>
+
+<p><strong>Package Body:</strong></p>
+
+<div class="code-box">
+
+    <div class="code-title">
+        student-package-body.sql
+    </div>
+
+<pre><span class="comment">-- Package Body: student_pkg implementation</span>
+
+<span class="keyword">CREATE OR REPLACE PACKAGE BODY</span> student_pkg
+<span class="keyword">IS</span>
+
+    <span class="comment">-- Procedure: show_student</span>
+
+    <span class="keyword">PROCEDURE</span> show_student(p_rollno <span class="keyword">NUMBER</span>)
+    <span class="keyword">IS</span>
+    <span class="keyword">BEGIN</span>
+        <span class="keyword">DBMS_OUTPUT.PUT_LINE</span>(
+            'Student Roll No: ' <span class="operator">||</span> p_rollno
+        );
+    <span class="keyword">END</span> show_student;
+
+    <span class="comment">-- Function: total_marks</span>
+
+    <span class="keyword">FUNCTION</span> total_marks(
+        p_mark1 <span class="keyword">NUMBER</span>,
+        p_mark2 <span class="keyword">NUMBER</span>,
+        p_mark3 <span class="keyword">NUMBER</span>
+    )
+    <span class="keyword">RETURN</span> <span class="keyword">NUMBER</span>
+    <span class="keyword">IS</span>
+
+        v_total <span class="keyword">NUMBER</span>;
+
+    <span class="keyword">BEGIN</span>
+
+        v_total <span class="operator">:=</span> p_mark1 <span class="operator">+</span> p_mark2 <span class="operator">+</span> p_mark3;
+
+        <span class="keyword">RETURN</span> v_total;
+
+    <span class="keyword">END</span> total_marks;
+
+<span class="keyword">END</span> student_pkg;
+/
+</pre>
+
+</div>
+
+<p><strong>How to Call:</strong></p>
+
+<div class="code-box">
+
+    <div class="code-title">
+        student-package-call-example.sql
+    </div>
+
+<pre><span class="comment">-- Calling procedures and function from student_pkg</span>
+
+<span class="keyword">BEGIN</span>
+
+    student_pkg.show_student(101);
+
+    <span class="keyword">DBMS_OUTPUT.PUT_LINE</span>(
+        'Total Marks: ' <span class="operator">||</span>
+        student_pkg.total_marks(80, 75, 90)
+    );
+
+<span class="keyword">END</span>;
+/
+</pre>
+
+</div>
+
+<p><strong>Output:</strong></p>
+
+<div class="code-box">
+
+    <div class="code-title">
+        student-package-output.sql
+    </div>
+
+<pre><span class="comment">-- Output of student_pkg package execution</span>
+
+Student Roll No: 101
+Total Marks: 245
+</pre>
+
+</div>
+
+<h3>Example 2: Employee Package</h3>
+
+<p>
+This package contains employee-related operations like displaying employee information and calculating annual salary.
+</p>
+
+<p><strong>Package Specification:</strong></p>
+
+<div class="code-box">
+
+    <div class="code-title">
+        employee-package-specification.sql
+    </div>
+
+<pre><span class="comment">-- Package Specification: employee_pkg</span>
+
+<span class="keyword">CREATE OR REPLACE PACKAGE</span> employee_pkg
+<span class="keyword">IS</span>
+
+    <span class="comment">-- Procedure to display employee details</span>
+
+    <span class="keyword">PROCEDURE</span> show_employee(p_empid <span class="keyword">NUMBER</span>);
+
+    <span class="comment">-- Function to calculate annual salary</span>
+
+    <span class="keyword">FUNCTION</span> annual_salary(p_monthly_salary <span class="keyword">NUMBER</span>)
+        <span class="keyword">RETURN</span> <span class="keyword">NUMBER</span>;
+
+<span class="keyword">END</span> employee_pkg;
+/
+</pre>
+
+</div>
+
+<p><strong>Package Body:</strong></p>
+
+<div class="code-box">
+
+    <div class="code-title">
+        employee-package-body.sql
+    </div>
+
+<pre><span class="comment">-- Package Body: employee_pkg implementation</span>
+
+<span class="keyword">CREATE OR REPLACE PACKAGE BODY</span> employee_pkg
+<span class="keyword">IS</span>
+
+    <span class="comment">-- Procedure: show_employee</span>
+
+    <span class="keyword">PROCEDURE</span> show_employee(p_empid <span class="keyword">NUMBER</span>)
+    <span class="keyword">IS</span>
+    <span class="keyword">BEGIN</span>
+        <span class="keyword">DBMS_OUTPUT.PUT_LINE</span>(
+            'Employee ID: ' <span class="operator">||</span> p_empid
+        );
+    <span class="keyword">END</span> show_employee;
+
+    <span class="comment">-- Function: annual_salary</span>
+
+    <span class="keyword">FUNCTION</span> annual_salary(p_monthly_salary <span class="keyword">NUMBER</span>)
+        <span class="keyword">RETURN</span> <span class="keyword">NUMBER</span>
+    <span class="keyword">IS</span>
+
+        v_annual <span class="keyword">NUMBER</span>;
+
+    <span class="keyword">BEGIN</span>
+
+        v_annual <span class="operator">:=</span> p_monthly_salary <span class="operator">*</span> 12;
+
+        <span class="keyword">RETURN</span> v_annual;
+
+    <span class="keyword">END</span> annual_salary;
+
+<span class="keyword">END</span> employee_pkg;
+/
+</pre>
+
+</div>
+
+<p><strong>How to Call:</strong></p>
+
+<div class="code-box">
+
+    <div class="code-title">
+        employee-package-call-example.sql
+    </div>
+
+<pre><span class="comment">-- Calling procedures and function from employee_pkg</span>
+
+<span class="keyword">BEGIN</span>
+
+    employee_pkg.show_employee(1001);
+
+    <span class="keyword">DBMS_OUTPUT.PUT_LINE</span>(
+        'Annual Salary: ' <span class="operator">||</span>
+        employee_pkg.annual_salary(25000)
+    );
+
+<span class="keyword">END</span>;
+/
+</pre>
+
+</div>
+
+<p><strong>Output:</strong></p>
+
+<div class="code-box">
+
+    <div class="code-title">
+        employee-package-output.sql
+    </div>
+
+<pre><span class="comment">-- Output of employee_pkg package execution</span>
+
+Employee ID: 1001
+Annual Salary: 300000
+</pre>
+
+</div>
+
+<h3>Simple Class Explanation</h3>
+
+<ul>
+    <li>A package groups related procedures and functions together.</li>
+    <li>It helps organize code in a better way.</li>
+    <li>It improves reusability and makes maintenance easy.</li>
+    <li>We can call package members using package_name.member_name.</li>
+</ul>
+
+<h3>Class Summary</h3>
+
+<ul>
+    <li>A package groups related PL/SQL objects together.</li>
+    <li>It has two parts: specification and body.</li>
+    <li>The specification shows what is public.</li>
+    <li>The body contains the actual implementation.</li>
+    <li>Packages improve modularity, security, reusability, and performance.</li>
+</ul>
+`;
+
+
+const procedureOverloadingContent = `
+<h3>PROCEDURE OVERLOADING in PL/SQL</h3>
+
+<p>
+Procedure overloading means creating multiple procedures with the same name but different parameter lists in the same scope.
+It allows one procedure name to be used for different tasks based on the input parameters.
+</p>
+
+<h3>Meaning of Procedure Overloading</h3>
+
+<p>
+In procedure overloading, the procedure name remains the same, but Oracle identifies each version by checking the number, data type, or order of parameters.
+This helps make the code more readable and easier to maintain.
+</p>
+
+<h3>Rules for Procedure Overloading</h3>
+
+<ul>
+    <li>Procedures must have the same name.</li>
+    <li>They must differ by number of parameters.</li>
+    <li>They must differ by data types of parameters.</li>
+    <li>They may differ by the order of parameters.</li>
+    <li>They may also differ by parameter mode such as IN, OUT, or IN OUT.</li>
+    <li>Overloaded procedures should be declared in a package.</li>
+    <li>Overloading is not used in an anonymous block.</li>
+</ul>
+
+<h3>Why Use Procedure Overloading?</h3>
+
+<ul>
+    <li>It avoids using many different procedure names for similar tasks.</li>
+    <li>It improves code readability.</li>
+    <li>It makes programs flexible.</li>
+    <li>It supports different forms of the same operation.</li>
+</ul>
+
+<h3>Example: Area Package</h3>
+
+<p><strong>Package Specification:</strong></p>
+
+<div class="code-box">
+
+    <div class="code-title">
+        area-package-specification.sql
+    </div>
+
+<pre><span class="comment">-- Package Specification: area_pkg (Overloading example)</span>
+
+<span class="keyword">CREATE OR REPLACE PACKAGE</span> area_pkg
+<span class="keyword">IS</span>
+
+    <span class="comment">-- Circle area</span>
+    <span class="keyword">PROCEDURE</span> calculate_area(radius <span class="keyword">NUMBER</span>);
+
+    <span class="comment">-- Rectangle area</span>
+    <span class="keyword">PROCEDURE</span> calculate_area(length <span class="keyword">NUMBER</span>,
+                              width  <span class="keyword">NUMBER</span>);
+
+    <span class="comment">-- Triangle or other shape area</span>
+    <span class="keyword">PROCEDURE</span> calculate_area(base   <span class="keyword">NUMBER</span>,
+                              height <span class="keyword">NUMBER</span>,
+                              shape  <span class="keyword">VARCHAR2</span>);
+
+<span class="keyword">END</span> area_pkg;
+/
+</pre>
+
+</div>
+
+<p><strong>Package Body:</strong></p>
+
+<div class="code-box">
+
+    <div class="code-title">
+        area-package-body.sql
+    </div>
+
+<pre><span class="comment">-- Package Body: area_pkg (Procedure Overloading Implementation)</span>
+
+<span class="keyword">CREATE OR REPLACE PACKAGE BODY</span> area_pkg
+<span class="keyword">IS</span>
+
+    <span class="comment">-- Area of Circle: π * r^2</span>
+
+    <span class="keyword">PROCEDURE</span> calculate_area(radius <span class="keyword">NUMBER</span>)
+    <span class="keyword">IS</span>
+        area <span class="keyword">NUMBER</span>;
+    <span class="keyword">BEGIN</span>
+        area <span class="operator">:=</span> 3.14 <span class="operator">*</span> radius <span class="operator">*</span> radius;
+        <span class="keyword">DBMS_OUTPUT.PUT_LINE</span>('Area of Circle: ' <span class="operator">||</span> area);
+    <span class="keyword">END</span>;
+
+    <span class="comment">-- Area of Rectangle: length * width</span>
+
+    <span class="keyword">PROCEDURE</span> calculate_area(length <span class="keyword">NUMBER</span>, width <span class="keyword">NUMBER</span>)
+    <span class="keyword">IS</span>
+        area <span class="keyword">NUMBER</span>;
+    <span class="keyword">BEGIN</span>
+        area <span class="operator">:=</span> length <span class="operator">*</span> width;
+        <span class="keyword">DBMS_OUTPUT.PUT_LINE</span>('Area of Rectangle: ' <span class="operator">||</span> area);
+    <span class="keyword">END</span>;
+
+    <span class="comment">-- Area of Triangle: 0.5 * base * height</span>
+
+    <span class="keyword">PROCEDURE</span> calculate_area(base <span class="keyword">NUMBER</span>, height <span class="keyword">NUMBER</span>, shape <span class="keyword">VARCHAR2</span>)
+    <span class="keyword">IS</span>
+        area <span class="keyword">NUMBER</span>;
+    <span class="keyword">BEGIN</span>
+
+        <span class="keyword">IF</span> <span class="keyword">LOWER</span>(shape) <span class="operator">=</span> 'triangle' <span class="keyword">THEN</span>
+            area <span class="operator">:=</span> 0.5 <span class="operator">*</span> base <span class="operator">*</span> height;
+            <span class="keyword">DBMS_OUTPUT.PUT_LINE</span>('Area of Triangle: ' <span class="operator">||</span> area);
+        <span class="keyword">ELSE</span>
+            <span class="keyword">DBMS_OUTPUT.PUT_LINE</span>('Invalid shape');
+        <span class="keyword">END IF</span>;
+
+    <span class="keyword">END</span>;
+
+<span class="keyword">END</span> area_pkg;
+/
+</pre>
+
+</div>
+
+<h3>Call the Procedures</h3>
+
+<div class="code-box">
+
+    <div class="code-title">
+        area-package-call-example.sql
+    </div>
+
+<pre><span class="comment">-- Calling overloaded procedures from area_pkg</span>
+
+<span class="keyword">SET SERVEROUTPUT ON</span>;
+
+<span class="keyword">BEGIN</span>
+
+    area_pkg.calculate_area(5);
+
+    area_pkg.calculate_area(10, 4);
+
+    area_pkg.calculate_area(6, 3, 'triangle');
+
+<span class="keyword">END</span>;
+/
+</pre>
+
+</div>
+
+<h3>Output</h3>
+
+<div class="code-box">
+
+    <div class="code-title">
+        area-package-output.sql
+    </div>
+
+<pre><span class="comment">-- Output of area_pkg procedure calls</span>
+
+Area of Circle: 78.5
+Area of Rectangle: 40
+Area of Triangle: 9
+</pre>
+
+</div>
+
+<h3>How Oracle Chooses the Correct Procedure</h3>
+
+<ul>
+    <li><strong>calculate_area(5)</strong> calls the one-parameter version.</li>
+    <li><strong>calculate_area(10, 4)</strong> calls the two-parameter version.</li>
+    <li><strong>calculate_area(6, 3, 'triangle')</strong> calls the three-parameter version.</li>
+</ul>
+
+<h3>Important Note</h3>
+
+<p>
+In Oracle PL/SQL, procedure overloading is supported inside packages.
+If only the return type is different, Oracle does not treat it as valid overloading.
+The parameter list must be different.
+</p>
+
+<h3>Difference Between Function and Procedure Overloading</h3>
+
+<table class="notes-table">
+<tr>
+    <th>Function Overloading</th>
+    <th>Procedure Overloading</th>
+</tr>
+<tr>
+    <td>Multiple functions have the same name but different parameter lists.</td>
+    <td>Multiple procedures have the same name but different parameter lists.</td>
+</tr>
+<tr>
+    <td>Each function must return a value.</td>
+    <td>A procedure does not return a value directly.</td>
+</tr>
+<tr>
+    <td>RETURN keyword is mandatory.</td>
+    <td>RETURN keyword is not mandatory.</td>
+</tr>
+<tr>
+    <td>It is used when similar calculations or results are needed.</td>
+    <td>It is used when similar actions or tasks are needed.</td>
+</tr>
+<tr>
+    <td>It can be overloaded only inside packages or object types.</td>
+    <td>It is also overloaded inside packages.</td>
+</tr>
+<tr>
+    <td>Example: add_numbers, calculate_area</td>
+    <td>Example: show_message, calculate_area</td>
+</tr>
+</table>
+
+<h3>Short Exam Answer</h3>
+
+<p>
+Function overloading means creating multiple functions with the same name but different parameter lists, and each function returns a value. Procedure overloading means creating multiple procedures with the same name but different parameter lists, but procedures do not return values directly.
+</p>
+
+<h3>Easy Way to Remember</h3>
+
+<ul>
+    <li><strong>Function overloading</strong> = same name + different parameters + returns value.</li>
+    <li><strong>Procedure overloading</strong> = same name + different parameters + does not return value directly.</li>
+</ul>
+
+
+<h3> Summary</h3>
+
+<ul>
+    <li>Procedure overloading means same procedure name, different parameters.</li>
+    <li>It is used to handle similar tasks in different ways.</li>
+    <li>Oracle selects the correct procedure based on the arguments passed.</li>
+    <li>It is useful for flexible and readable code.</li>
+    <li>Overloaded procedures are usually written inside packages.</li>
+</ul>
+`;
+
+const functionOverloadingContent = `
+<h3>FUNCTION OVERLOADING in PL/SQL</h3>
+
+<p>
+Function overloading means defining multiple functions with the same name but different parameter lists.
+The functions may differ in the number of parameters, the data type of parameters, or the order of parameters.
+</p>
+
+<p>
+It is a useful feature in PL/SQL because it allows us to use the same function name for similar tasks.
+This makes the code easier to read, understand, and remember.
+</p>
+
+<h3>Meaning of Overloading</h3>
+
+<p>
+Suppose we have one function name <strong>add_numbers</strong>.
+We can create multiple versions of it:
+</p>
+
+<ul>
+    <li>One function that adds two numbers.</li>
+    <li>One function that adds three numbers.</li>
+    <li>One function that joins two strings.</li>
+</ul>
+
+<p>
+Even though the function name is the same, Oracle chooses the correct function based on the parameters passed.
+</p>
+
+<h3>Rules for Overloading in Oracle</h3>
+
+<ul>
+    <li>The parameter list must be different.</li>
+    <li>Functions may differ in number of parameters.</li>
+    <li>Functions may differ in data type of parameters.</li>
+    <li>Functions may differ in order of parameters.</li>
+    <li>Return type is not considered for overloading.</li>
+    <li>If only the return type is different, Oracle will treat it as a conflict.</li>
+    <li>Overloading is allowed inside packages or object types.</li>
+    <li>Overloading is not allowed for standalone functions in the same way.</li>
+</ul>
+
+<h3>Why Use Function Overloading?</h3>
+
+<ul>
+    <li>It improves code readability.</li>
+    <li>It reduces the need for different function names.</li>
+    <li>It supports the same operation for different input types.</li>
+    <li>It helps in building flexible and reusable code.</li>
+</ul>
+
+<h3>Example of Function Overloading in a Package</h3>
+
+<p><strong>Package Specification:</strong></p>
+
+<div class="code-box">
+
+    <div class="code-title">
+        math-utils-package-specification.sql
+    </div>
+
+<pre><span class="comment">-- Package Specification: math_utils (Function Overloading Example)</span>
+
+<span class="keyword">CREATE OR REPLACE PACKAGE</span> math_utils
+<span class="keyword">AS</span>
+
+    <span class="comment">-- Add two numbers</span>
+    <span class="keyword">FUNCTION</span> add_numbers(a <span class="keyword">NUMBER</span>, b <span class="keyword">NUMBER</span>)
+        <span class="keyword">RETURN</span> <span class="keyword">NUMBER</span>;
+
+    <span class="comment">-- Add three numbers</span>
+    <span class="keyword">FUNCTION</span> add_numbers(a <span class="keyword">NUMBER</span>, b <span class="keyword">NUMBER</span>, c <span class="keyword">NUMBER</span>)
+        <span class="keyword">RETURN</span> <span class="keyword">NUMBER</span>;
+
+    <span class="comment">-- Concatenate two strings</span>
+    <span class="keyword">FUNCTION</span> add_numbers(a <span class="keyword">VARCHAR2</span>, b <span class="keyword">VARCHAR2</span>)
+        <span class="keyword">RETURN</span> <span class="keyword">VARCHAR2</span>;
+
+<span class="keyword">END</span> math_utils;
+/
+</pre>
+
+</div>
+
+<p><strong>Package Body:</strong></p>
+
+<div class="code-box">
+
+    <div class="code-title">
+        math-utils-package-body.sql
+    </div>
+
+<pre><span class="comment">-- Package Body: math_utils (Function Overloading Implementation)</span>
+
+<span class="keyword">CREATE OR REPLACE PACKAGE BODY</span> math_utils
+<span class="keyword">AS</span>
+
+    <span class="comment">-- Add two numbers</span>
+
+    <span class="keyword">FUNCTION</span> add_numbers(a <span class="keyword">NUMBER</span>, b <span class="keyword">NUMBER</span>)
+        <span class="keyword">RETURN</span> <span class="keyword">NUMBER</span>
+    <span class="keyword">IS</span>
+    <span class="keyword">BEGIN</span>
+        <span class="keyword">RETURN</span> a <span class="operator">+</span> b;
+    <span class="keyword">END</span>;
+
+    <span class="comment">-- Add three numbers</span>
+
+    <span class="keyword">FUNCTION</span> add_numbers(
+        a <span class="keyword">NUMBER</span>,
+        b <span class="keyword">NUMBER</span>,
+        c <span class="keyword">NUMBER</span>
+    )
+    <span class="keyword">RETURN</span> <span class="keyword">NUMBER</span>
+    <span class="keyword">IS</span>
+    <span class="keyword">BEGIN</span>
+        <span class="keyword">RETURN</span> a <span class="operator">+</span> b <span class="operator">+</span> c;
+    <span class="keyword">END</span>;
+
+    <span class="comment">-- Concatenate two strings</span>
+
+    <span class="keyword">FUNCTION</span> add_numbers(
+        a <span class="keyword">VARCHAR2</span>,
+        b <span class="keyword">VARCHAR2</span>
+    )
+    <span class="keyword">RETURN</span> <span class="keyword">VARCHAR2</span>
+    <span class="keyword">IS</span>
+    <span class="keyword">BEGIN</span>
+        <span class="keyword">RETURN</span> a <span class="operator">||</span> b;
+    <span class="keyword">END</span>;
+
+<span class="keyword">END</span> math_utils;
+/
+</pre>
+
+</div>
+
+<h3>Usage Example</h3>
+
+<div class="code-box">
+
+    <div class="code-title">
+        math-utils-package-output.sql
+    </div>
+
+<pre><span class="comment">-- Output of math_utils package overloaded functions</span>
+
+<span class="keyword">BEGIN</span>
+
+    <span class="keyword">DBMS_OUTPUT.PUT_LINE</span>(math_utils.add_numbers(2, 3));
+    <span class="keyword">DBMS_OUTPUT.PUT_LINE</span>(math_utils.add_numbers(1, 2, 3));
+    <span class="keyword">DBMS_OUTPUT.PUT_LINE</span>(math_utils.add_numbers('Hi ', 'there'));
+
+<span class="keyword">END</span>;
+/
+</pre>
+
+</div>
+
+<h3>Output</h3>
+
+<div class="code-box">
+
+    <div class="code-title">
+        math-utils-output-result.sql
+    </div>
+
+<pre><span class="comment">-- Output of overloaded functions in math_utils package</span>
+
+5
+6
+Hi there
+</pre>
+
+</div>
+
+<h3>Explanation of the Example</h3>
+
+<ul>
+    <li><strong>add_numbers(2, 3)</strong> calls the two-number version.</li>
+    <li><strong>add_numbers(1, 2, 3)</strong> calls the three-number version.</li>
+    <li><strong>add_numbers('Hi ', 'there')</strong> calls the string version.</li>
+</ul>
+
+<h3>Important Point</h3>
+
+<p>
+In Oracle PL/SQL, function overloading is supported inside packages or object types.
+It is not normally used for standalone functions in the same way.
+Oracle decides which function to call by checking the parameter list.
+</p>
+
+<h3>Difference from Normal Function</h3>
+
+<ul>
+    <li>A normal function has only one definition.</li>
+    <li>An overloaded function has multiple definitions with the same name.</li>
+    <li>The compiler selects the correct version based on the arguments passed.</li>
+</ul>
 
 
 
+<h3>Example 1: Display Area</h3>
 
+<p>
+In this example, the same function name <strong>calculate_area</strong> is used for different shapes.
+The function behaves differently based on the number of parameters passed.
+</p>
 
+<p><strong>Package Specification:</strong></p>
 
+<div class="code-box">
 
+    <div class="code-title">
+        shape-utils-package-specification.sql
+    </div>
 
+<pre><span class="comment">-- Package Specification: shape_utils (Function Overloading)</span>
+
+<span class="keyword">CREATE OR REPLACE PACKAGE</span> shape_utils
+<span class="keyword">AS</span>
+
+    <span class="comment">-- Area of Circle</span>
+    <span class="keyword">FUNCTION</span> calculate_area(radius <span class="keyword">NUMBER</span>)
+        <span class="keyword">RETURN</span> <span class="keyword">NUMBER</span>;
+
+    <span class="comment">-- Area of Rectangle</span>
+    <span class="keyword">FUNCTION</span> calculate_area(length <span class="keyword">NUMBER</span>,
+                           width  <span class="keyword">NUMBER</span>)
+        <span class="keyword">RETURN</span> <span class="keyword">NUMBER</span>;
+
+<span class="keyword">END</span> shape_utils;
+/
+</pre>
+
+</div>
+
+<p><strong>Package Body:</strong></p>
+
+<div class="code-box">
+
+    <div class="code-title">
+        shape-utils-package-body.sql
+    </div>
+
+<pre><span class="comment">-- Package Body: shape_utils (Function Overloading Implementation)</span>
+
+<span class="keyword">CREATE OR REPLACE PACKAGE BODY</span> shape_utils
+<span class="keyword">AS</span>
+
+    <span class="comment">-- Area of Circle</span>
+
+    <span class="keyword">FUNCTION</span> calculate_area(radius <span class="keyword">NUMBER</span>)
+        <span class="keyword">RETURN</span> <span class="keyword">NUMBER</span>
+    <span class="keyword">IS</span>
+    <span class="keyword">BEGIN</span>
+        <span class="keyword">RETURN</span> 3.14 <span class="operator">*</span> radius <span class="operator">*</span> radius;
+    <span class="keyword">END</span>;
+
+    <span class="comment">-- Area of Rectangle</span>
+
+    <span class="keyword">FUNCTION</span> calculate_area(length <span class="keyword">NUMBER</span>, width <span class="keyword">NUMBER</span>)
+        <span class="keyword">RETURN</span> <span class="keyword">NUMBER</span>
+    <span class="keyword">IS</span>
+    <span class="keyword">BEGIN</span>
+        <span class="keyword">RETURN</span> length <span class="operator">*</span> width;
+    <span class="keyword">END</span>;
+
+<span class="keyword">END</span> shape_utils;
+/
+</pre>
+
+</div>
+
+<p><strong>Usage Example:</strong></p>
+
+<div class="code-box">
+
+    <div class="code-title">
+        shape-utils-package-call.sql
+    </div>
+
+<pre><span class="comment">-- Calling overloaded functions from shape_utils package</span>
+
+<span class="keyword">BEGIN</span>
+
+    <span class="keyword">DBMS_OUTPUT.PUT_LINE</span>(
+        'Circle Area: ' <span class="operator">||</span> shape_utils.calculate_area(5)
+    );
+
+    <span class="keyword">DBMS_OUTPUT.PUT_LINE</span>(
+        'Rectangle Area: ' <span class="operator">||</span> shape_utils.calculate_area(10, 4)
+    );
+
+<span class="keyword">END</span>;
+/
+</pre>
+
+</div>
+
+<p><strong>Output:</strong></p>
+
+<div class="code-box">
+
+    <div class="code-title">
+        shape-utils-output-result.sql
+    </div>
+
+<pre><span class="comment">-- Output of shape_utils package function calls</span>
+
+Circle Area: 78.5
+Rectangle Area: 40
+</pre>
+
+</div>
+
+<h3>Example 2: Display Information</h3>
+
+<p>
+In this example, the same function name <strong>display_info</strong> is used with different parameter types.
+One version displays a student name, and another displays a student name with age.
+</p>
+
+<p><strong>Package Specification:</strong></p>
+
+<div class="code-box">
+
+    <div class="code-title">
+        info-package-specification.sql
+    </div>
+
+<pre><span class="comment">-- Package Specification: info_pkg (Function Overloading Example)</span>
+
+<span class="keyword">CREATE OR REPLACE PACKAGE</span> info_pkg
+<span class="keyword">AS</span>
+
+    <span class="comment">-- Display name</span>
+    <span class="keyword">FUNCTION</span> display_info(name <span class="keyword">VARCHAR2</span>)
+        <span class="keyword">RETURN</span> <span class="keyword">VARCHAR2</span>;
+
+    <span class="comment">-- Display name with age</span>
+    <span class="keyword">FUNCTION</span> display_info(name <span class="keyword">VARCHAR2</span>,
+                         age  <span class="keyword">NUMBER</span>)
+        <span class="keyword">RETURN</span> <span class="keyword">VARCHAR2</span>;
+
+<span class="keyword">END</span> info_pkg;
+/
+</pre>
+
+</div>
+
+<p><strong>Package Body:</strong></p>
+
+<div class="code-box">
+
+    <div class="code-title">
+        info-package-body.sql
+    </div>
+
+<pre><span class="comment">-- Package Body: info_pkg (Function Overloading Implementation)</span>
+
+<span class="keyword">CREATE OR REPLACE PACKAGE BODY</span> info_pkg
+<span class="keyword">AS</span>
+
+    <span class="comment">-- Function: display_info (Name only)</span>
+
+    <span class="keyword">FUNCTION</span> display_info(name <span class="keyword">VARCHAR2</span>)
+        <span class="keyword">RETURN</span> <span class="keyword">VARCHAR2</span>
+    <span class="keyword">IS</span>
+    <span class="keyword">BEGIN</span>
+        <span class="keyword">RETURN</span> 'Name: ' <span class="operator">||</span> name;
+    <span class="keyword">END</span>;
+
+    <span class="comment">-- Function: display_info (Name + Age)</span>
+
+    <span class="keyword">FUNCTION</span> display_info(
+        name <span class="keyword">VARCHAR2</span>,
+        age  <span class="keyword">NUMBER</span>
+    )
+    <span class="keyword">RETURN</span> <span class="keyword">VARCHAR2</span>
+    <span class="keyword">IS</span>
+    <span class="keyword">BEGIN</span>
+        <span class="keyword">RETURN</span> 'Name: ' <span class="operator">||</span> name <span class="operator">||</span> ', Age: ' <span class="operator">||</span> age;
+    <span class="keyword">END</span>;
+
+<span class="keyword">END</span> info_pkg;
+/
+</pre>
+
+</div>
+
+<p><strong>Usage Example:</strong></p>
+
+<div class="code-box">
+
+    <div class="code-title">
+        info-package-output.sql
+    </div>
+
+<pre><span class="comment">-- Calling overloaded functions from info_pkg</span>
+
+<span class="keyword">BEGIN</span>
+
+    <span class="keyword">DBMS_OUTPUT.PUT_LINE</span>(info_pkg.display_info('Amit'));
+    <span class="keyword">DBMS_OUTPUT.PUT_LINE</span>(info_pkg.display_info('Ravi', 21));
+
+<span class="keyword">END</span>;
+/
+
+<span class="comment">-- Output</span>
+
+Name: Amit
+Name: Ravi, Age: 21
+</pre>
+
+</div>
+
+<h3> Summary</h3>
+
+<ul>
+    <li>Function overloading means same function name, different parameters.</li>
+    <li>Parameter number, type, or order must be different.</li>
+    <li>Return type alone cannot be used to overload a function.</li>
+    <li>It is supported in packages and object types.</li>
+    <li>It improves flexibility and reusability of code.</li>
+</ul>
+`;
 
 let oraclePLSQLSubBlockAndStoredProcedureContent = `
 
@@ -30851,3 +33163,1657 @@ Parameters allow us to send values into the procedure, get values out of it, or 
 
 `;
 
+
+let databaseRecoveryContent = `
+
+<h2>Database Recovery in Oracle</h2>
+
+<p>
+<b>Database Recovery</b> is the process of restoring the Oracle database after a failure such as a system crash, hardware failure, accidental data deletion, or media corruption.
+The main goal of recovery is to bring the database back to a consistent state with minimum data loss.
+</p>
+
+<h3>Why is Database Recovery Important?</h3>
+
+<p>
+Databases store valuable business information. If data is lost due to unexpected failures, it can affect business operations.
+Oracle provides powerful recovery mechanisms to restore data and ensure database availability.
+</p>
+
+<h3>Common Causes of Database Failure</h3>
+
+<ul>
+    <li>System or server crash</li>
+    <li>Power failure</li>
+    <li>Hardware failure (Disk crash)</li>
+    <li>Accidental deletion of data</li>
+    <li>Corrupted data files</li>
+    <li>Human errors</li>
+</ul>
+
+<h3>Types of Database Recovery</h3>
+
+<h4>1. Instance Recovery</h4>
+
+<p>
+Instance Recovery occurs automatically when the Oracle database crashes unexpectedly.
+Oracle uses the <b>Redo Log Files</b> to recover all committed transactions and roll back incomplete transactions.
+No manual intervention is required.
+</p>
+
+<b>Example:</b>
+
+<p>
+Suppose the database server suddenly loses power while users are performing transactions.
+When the database starts again, Oracle automatically performs Instance Recovery.
+</p>
+
+<hr>
+
+<h4>2. Media Recovery</h4>
+
+<p>
+Media Recovery is required when database files are damaged or lost due to disk failure or corruption.
+Oracle restores the damaged files from backup and applies archived redo logs to recover the latest data.
+</p>
+
+<b>Example:</b>
+
+<p>
+A hard disk containing a data file becomes corrupted.
+The DBA restores the data file from backup and applies archive logs to recover recent changes.
+</p>
+
+<hr>
+
+<h4>3. Complete Recovery</h4>
+
+<p>
+Complete Recovery restores the database to the most recent committed transaction without losing any committed data.
+It requires all necessary archived redo logs.
+</p>
+
+<b>Example:</b>
+
+<p>
+A backup taken last night is restored, and all archive logs are applied until the current time.
+No committed transactions are lost.
+</p>
+
+<hr>
+
+<h4>4. Incomplete Recovery</h4>
+
+<p>
+Incomplete Recovery restores the database to a specific point in time.
+It is used when recent changes should not be recovered, such as after accidental deletion of important data.
+</p>
+
+<b>Example:</b>
+
+<p>
+A table is accidentally deleted at 2:00 PM.
+The DBA performs recovery up to 1:55 PM to restore the database before the mistake occurred.
+</p>
+
+<h3>Files Used During Recovery</h3>
+
+<table class="notes-table">
+<tr>
+<th>File</th>
+<th>Purpose</th>
+</tr>
+
+<tr>
+<td>Data Files</td>
+<td>Store actual database data.</td>
+</tr>
+
+<tr>
+<td>Control Files</td>
+<td>Contain information about the database structure.</td>
+</tr>
+
+<tr>
+<td>Redo Log Files</td>
+<td>Record every change made to the database.</td>
+</tr>
+
+<tr>
+<td>Archived Redo Log Files</td>
+<td>Store old redo logs required for media recovery.</td>
+</tr>
+</table>
+
+<h3>Recovery Process</h3>
+
+<ol>
+<li>Identify the type of failure.</li>
+<li>Restore damaged files from backup if necessary.</li>
+<li>Apply Redo Logs or Archive Logs.</li>
+<li>Recover committed transactions.</li>
+<li>Open the database for normal use.</li>
+</ol>
+
+<h3>Advantages of Database Recovery</h3>
+
+<ul>
+<li>Prevents permanent data loss.</li>
+<li>Restores database consistency.</li>
+<li>Minimizes system downtime.</li>
+<li>Protects business-critical information.</li>
+<li>Ensures database reliability and availability.</li>
+</ul>
+
+<h3>Summary</h3>
+
+<p>
+Oracle Database Recovery is a mechanism used to restore the database after failures.
+Recovery may be automatic (Instance Recovery) or manual (Media Recovery).
+By using backups, redo logs, and archived redo logs, Oracle ensures that the database can be recovered with minimum data loss and maximum reliability.
+</p>
+
+`;
+
+
+let transactionRecoveryContent = `
+
+<h3> Transaction Recovery </h3>
+<p>
+<b>Transaction Recovery</b> is the process of restoring individual transactions to maintain database consistency after a failure.
+Oracle ensures that all <b>committed transactions are saved</b> and all <b>uncommitted transactions are rolled back</b>.
+This follows the <b>ACID (Atomicity, Consistency, Isolation, Durability)</b> properties of transactions.
+</p>
+
+<h3>Why is Transaction Recovery Needed?</h3>
+
+<p>
+During transaction execution, failures such as power outages, system crashes, or application errors may occur.
+Transaction Recovery ensures that the database remains in a consistent state by recovering completed transactions and undoing incomplete ones.
+</p>
+
+<h3>How Transaction Recovery Works</h3>
+
+<ol>
+    <li>A transaction begins.</li>
+    <li>Oracle records every change in the <b>Redo Log Buffer</b>.</li>
+    <li>If the transaction is committed, Oracle permanently saves the changes.</li>
+    <li>If a failure occurs before the commit, Oracle rolls back the transaction using <b>Undo Data</b>.</li>
+    <li>After database restart, Oracle automatically performs transaction recovery.</li>
+</ol>
+
+<h3>Example</h3>
+
+<p>
+Suppose a bank account contains ₹10,000.
+A transaction transfers ₹2,000 to another account.
+</p>
+
+<table class="notes-table">
+<tr>
+<th>Step</th>
+<th>Status</th>
+</tr>
+
+<tr>
+<td>Transaction Starts</td>
+<td>Balance = ₹10,000</td>
+</tr>
+
+<tr>
+<td>Amount Deducted</td>
+<td>Balance = ₹8,000</td>
+</tr>
+
+<tr>
+<td>System Crash Before Commit</td>
+<td>Transaction Incomplete</td>
+</tr>
+
+<tr>
+<td>Recovery</td>
+<td>Oracle Restores Balance to ₹10,000</td>
+</tr>
+</table>
+
+<p>
+Since the transaction was not committed, Oracle rolls back all changes and restores the original data.
+</p>
+
+<h3>Committed Transaction</h3>
+
+<p>
+If the transaction is successfully committed before a failure, Oracle uses the Redo Log Files to ensure that the committed changes are permanently stored.
+These changes are never lost during recovery.
+</p>
+
+<h3>Uncommitted Transaction</h3>
+
+<p>
+If the transaction has not been committed when a failure occurs, Oracle automatically rolls back all changes using Undo Data.
+This prevents partial updates and maintains database consistency.
+</p>
+
+<h3>Components Used in Transaction Recovery</h3>
+
+<table class="notes-table">
+<tr>
+<th>Component</th>
+<th>Purpose</th>
+</tr>
+
+<tr>
+<td>Redo Log</td>
+<td>Stores all changes made by transactions.</td>
+</tr>
+
+<tr>
+<td>Undo Data</td>
+<td>Restores original data during rollback.</td>
+</tr>
+
+<tr>
+<td>Commit</td>
+<td>Permanently saves transaction changes.</td>
+</tr>
+
+<tr>
+<td>Rollback</td>
+<td>Cancels incomplete transactions.</td>
+</tr>
+</table>
+
+<h3>Advantages of Transaction Recovery</h3>
+
+<ul>
+    <li>Maintains database consistency.</li>
+    <li>Prevents partial updates.</li>
+    <li>Automatically restores failed transactions.</li>
+    <li>Protects committed data from loss.</li>
+    <li>Ensures reliable transaction processing.</li>
+</ul>
+
+<h3>Summary</h3>
+
+<p>
+Transaction Recovery is an automatic Oracle mechanism that ensures committed transactions are preserved while uncommitted transactions are rolled back.
+It uses Redo Logs and Undo Data to maintain data integrity and database consistency after failures.
+</p>
+
+`;
+
+
+let systemRecoveryContent = `
+
+<h3>System Recovery</h3>
+
+<p>
+<b>System Recovery</b> is the process of restoring the Oracle database after a system failure, such as a power outage, operating system crash, or database instance failure.
+Its main objective is to recover the database to a consistent state without losing committed transactions.
+</p>
+
+<h3>Why is System Recovery Needed?</h3>
+
+<p>
+Unexpected system failures can interrupt database operations and leave some transactions incomplete.
+System Recovery automatically restores the database by applying committed changes and rolling back incomplete transactions.
+</p>
+
+<h3>How System Recovery Works</h3>
+
+<ol>
+    <li>A system failure occurs while transactions are running.</li>
+    <li>The Oracle instance shuts down unexpectedly.</li>
+    <li>When the database starts again, Oracle automatically begins System Recovery.</li>
+    <li>Committed transactions are recovered using <b>Redo Log Files</b>.</li>
+    <li>Uncommitted transactions are rolled back using <b>Undo Data</b>.</li>
+    <li>The database is returned to a consistent state and becomes available for users.</li>
+</ol>
+
+<h3>Example</h3>
+
+<p>
+Suppose several users are updating employee salary records when a sudden power failure shuts down the database server.
+After the database is restarted, Oracle automatically recovers all committed salary updates and removes incomplete updates.
+</p>
+
+<table class="notes-table">
+<tr>
+<th>Event</th>
+<th>Result</th>
+</tr>
+
+<tr>
+<td>Power Failure</td>
+<td>Database stops unexpectedly.</td>
+</tr>
+
+<tr>
+<td>Database Restart</td>
+<td>Oracle starts System Recovery.</td>
+</tr>
+
+<tr>
+<td>Committed Transactions</td>
+<td>Recovered using Redo Logs.</td>
+</tr>
+
+<tr>
+<td>Uncommitted Transactions</td>
+<td>Rolled back using Undo Data.</td>
+</tr>
+</table>
+
+<h3>Components Used in System Recovery</h3>
+
+<table class="notes-table">
+<tr>
+<th>Component</th>
+<th>Purpose</th>
+</tr>
+
+<tr>
+<td>Redo Log Files</td>
+<td>Recover committed transactions.</td>
+</tr>
+
+<tr>
+<td>Undo Data</td>
+<td>Rollback incomplete transactions.</td>
+</tr>
+
+<tr>
+<td>Control Files</td>
+<td>Maintain database structure information.</td>
+</tr>
+
+<tr>
+<td>Data Files</td>
+<td>Store the actual database data.</td>
+</tr>
+</table>
+
+<h3>Advantages of System Recovery</h3>
+
+<ul>
+    <li>Automatically restores the database after a crash.</li>
+    <li>Protects committed transactions from data loss.</li>
+    <li>Removes incomplete transactions.</li>
+    <li>Maintains database consistency and integrity.</li>
+    <li>Minimizes system downtime.</li>
+</ul>
+
+<h3>Summary</h3>
+
+<p>
+System Recovery is an automatic Oracle recovery process that occurs after an unexpected system failure. It uses Redo Log Files to recover committed transactions and Undo Data to roll back incomplete transactions, ensuring that the database remains consistent and reliable.
+</p>
+
+`;
+
+let exportImportContent = `
+
+<h3>Exporting and Importing Data and Dump Files</h3>
+
+<p>
+<b>Export</b> and <b>Import</b> are Oracle utilities used to back up, transfer, and restore database objects and data.
+The exported data is stored in a <b>Dump File (.dmp)</b>, which can later be imported into the same or another Oracle database.
+</p>
+
+<h3>What is Export?</h3>
+
+<p>
+<b>Export</b> is the process of copying database objects and their data from an Oracle database into a dump file.
+This dump file serves as a backup and can be used to migrate data between databases.
+</p>
+
+<h3>What is Import?</h3>
+
+<p>
+<b>Import</b> is the process of restoring database objects and data from a dump file into an Oracle database.
+It recreates tables, indexes, views, and other objects along with their data.
+</p>
+
+<h3>What is a Dump File?</h3>
+
+<p>
+A <b>Dump File (.dmp)</b> is a binary file created during the export process.
+It contains database objects and their data and is commonly used for backup, migration, and recovery purposes.
+</p>
+
+<h3>Why Use Export and Import?</h3>
+
+<ul>
+    <li>Create database backups.</li>
+    <li>Transfer data between different servers.</li>
+    <li>Migrate data to a newer Oracle version.</li>
+    <li>Restore accidentally deleted objects.</li>
+    <li>Move selected schemas or tables.</li>
+</ul>
+
+<h3>Export Process</h3>
+
+<ol>
+    <li>Select the database objects to export.</li>
+    <li>Oracle reads the selected data.</li>
+    <li>A dump file (.dmp) is created.</li>
+    <li>The dump file can be stored as a backup or transferred to another system.</li>
+</ol>
+
+<h3>Import Process</h3>
+
+<ol>
+    <li>Select the required dump file.</li>
+    <li>Oracle reads the dump file.</li>
+    <li>Database objects are recreated.</li>
+    <li>Data is inserted into the database.</li>
+</ol>
+
+<h3>Example</h3>
+
+<p>
+Suppose a company wants to move the <b>HR</b> schema from one Oracle server to another.
+The DBA exports the HR schema into a dump file named <b>hr_backup.dmp</b>.
+Later, the dump file is imported into the new Oracle database, recreating all tables and data.
+</p>
+
+<table class="notes-table">
+<tr>
+<th>Operation</th>
+<th>Description</th>
+</tr>
+
+<tr>
+<td>Export</td>
+<td>Creates a dump file containing database objects and data.</td>
+</tr>
+
+<tr>
+<td>Transfer</td>
+<td>Copies the dump file to another system.</td>
+</tr>
+
+<tr>
+<td>Import</td>
+<td>Restores the objects and data into the target database.</td>
+</tr>
+</table>
+
+<h3>Advantages of Export and Import</h3>
+
+<ul>
+    <li>Provides an easy backup solution.</li>
+    <li>Simplifies database migration.</li>
+    <li>Allows selective backup and restore.</li>
+    <li>Supports data transfer between Oracle databases.</li>
+    <li>Helps recover lost database objects.</li>
+</ul>
+
+<h3>Summary</h3>
+
+<p>
+Export and Import are Oracle utilities used to back up, transfer, and restore database objects. The exported data is stored in a dump file (.dmp), which can later be imported into another Oracle database. These utilities are widely used for backup, migration, and database recovery.
+</p>
+
+`;
+
+let sqlBackupRecoveryContent = `
+
+<h3>SQL Support for Backup and Recovery</h3>
+
+<p>
+Oracle provides several SQL commands that help manage backup and recovery operations.
+These commands allow Database Administrators (DBAs) to place tablespaces in backup mode, switch log files, archive redo logs, and recover the database after failures.
+</p>
+
+<h3>Why SQL Support is Important?</h3>
+
+<p>
+Backup and recovery are essential for protecting database data.
+Using SQL commands, DBAs can safely create backups, recover lost data, and maintain database consistency with minimal downtime.
+</p>
+
+<h3>Common SQL Commands Used for Backup and Recovery</h3>
+
+<table class="notes-table">
+<tr>
+<th>Command</th>
+<th>Purpose</th>
+</tr>
+
+<tr>
+<td>ALTER DATABASE BACKUP CONTROLFILE</td>
+<td>Creates a backup of the control file.</td>
+</tr>
+
+<tr>
+<td>ALTER TABLESPACE ... BEGIN BACKUP</td>
+<td>Puts a tablespace into backup mode.</td>
+</tr>
+
+<tr>
+<td>ALTER TABLESPACE ... END BACKUP</td>
+<td>Ends backup mode for the tablespace.</td>
+</tr>
+
+<tr>
+<td>ALTER SYSTEM SWITCH LOGFILE</td>
+<td>Forces Oracle to switch to the next redo log file.</td>
+</tr>
+
+<tr>
+<td>RECOVER DATABASE</td>
+<td>Recovers the entire database after a failure.</td>
+</tr>
+
+<tr>
+<td>RECOVER TABLESPACE</td>
+<td>Recovers a specific tablespace.</td>
+</tr>
+
+<tr>
+<td>RECOVER DATAFILE</td>
+<td>Recovers a damaged data file.</td>
+</tr>
+</table>
+
+<h3>Example Commands</h3>
+
+<pre>
+-- Put a tablespace into backup mode
+ALTER TABLESPACE users BEGIN BACKUP;
+
+-- End backup mode
+ALTER TABLESPACE users END BACKUP;
+
+-- Switch to the next redo log
+ALTER SYSTEM SWITCH LOGFILE;
+
+-- Recover the entire database
+RECOVER DATABASE;
+</pre>
+
+<h3>How Backup and Recovery Works</h3>
+
+<ol>
+    <li>Create a database backup.</li>
+    <li>If a failure occurs, restore the required files from the backup.</li>
+    <li>Apply Redo Log Files or Archive Log Files.</li>
+    <li>Use SQL recovery commands to recover the database.</li>
+    <li>Open the database for normal use.</li>
+</ol>
+
+<h3>Advantages of SQL Support for Backup and Recovery</h3>
+
+<ul>
+    <li>Protects database against data loss.</li>
+    <li>Supports complete and partial database recovery.</li>
+    <li>Maintains database consistency.</li>
+    <li>Reduces downtime after failures.</li>
+    <li>Provides better control over backup operations.</li>
+</ul>
+
+<h3>Summary</h3>
+
+<p>
+Oracle provides several SQL commands to support backup and recovery operations. These commands help create backups, manage redo logs, and recover databases, tablespaces, or data files after failures, ensuring data integrity and database availability.
+</p>
+
+`;
+
+let hardwareProtectionContent = `
+
+<h3>Hardware Protection and Redundancy</h3>
+
+<p>
+<b>Hardware Protection</b> means protecting the physical components of a database system, such as hard disks, servers, power supply, and network devices, from failures.
+<b>Redundancy</b> means keeping duplicate (extra) hardware or copies of data so that if one component fails, another can continue the work without losing data.
+</p>
+
+<h3>Why is Hardware Protection Important?</h3>
+
+<p>
+Hardware failures can happen at any time due to power outages, disk crashes, overheating, or equipment damage.
+If the hardware is not protected, important database data may be lost and business operations may stop.
+Hardware protection helps keep the database safe and available.
+</p>
+
+<h3>What is Redundancy?</h3>
+
+<p>
+Redundancy is the practice of having backup hardware or duplicate data.
+If one device fails, another device immediately takes over, reducing downtime and preventing data loss.
+</p>
+
+<h3>Methods of Hardware Protection</h3>
+
+<table class="notes-table">
+<tr>
+<th>Method</th>
+<th>Description</th>
+</tr>
+
+<tr>
+<td>RAID (Redundant Array of Independent Disks)</td>
+<td>Stores data across multiple hard disks so that data remains available even if one disk fails.</td>
+</tr>
+
+<tr>
+<td>UPS (Uninterruptible Power Supply)</td>
+<td>Provides temporary power during electricity failures, allowing the database to shut down safely.</td>
+</tr>
+
+<tr>
+<td>Backup Power Generator</td>
+<td>Supplies power for long power outages.</td>
+</tr>
+
+<tr>
+<td>Spare Server</td>
+<td>A backup server that can replace the main server if it fails.</td>
+</tr>
+
+<tr>
+<td>Network Redundancy</td>
+<td>Uses multiple network connections to avoid communication failures.</td>
+</tr>
+</table>
+
+<h3>Example</h3>
+
+<p>
+Suppose an Oracle database stores the records of a bank.
+The database uses RAID with multiple hard disks.
+If one hard disk suddenly fails, the remaining disks continue working, and users can still access their accounts without interruption.
+The failed disk can later be replaced without losing any data.
+</p>
+
+<h3>Benefits of Redundancy</h3>
+
+<ul>
+    <li>Prevents data loss due to hardware failure.</li>
+    <li>Reduces database downtime.</li>
+    <li>Improves system reliability.</li>
+    <li>Ensures continuous database availability.</li>
+    <li>Makes disaster recovery easier.</li>
+</ul>
+
+<h3>Real-Life Example</h3>
+
+<p>
+Think of a classroom with two projectors.
+If one projector suddenly stops working during the lecture, the teacher can immediately use the second projector.
+Similarly, database systems keep extra hardware so that work continues even when one component fails.
+</p>
+
+<h3>Summary</h3>
+
+<p>
+Hardware Protection keeps database hardware safe from failures, while Redundancy provides backup hardware or duplicate data to ensure continuous operation.
+Together, they help prevent data loss, reduce downtime, and improve the reliability of Oracle database systems.
+</p>
+
+`;
+
+let transactionLogsContent = `
+
+<h3>Transaction Logs</h3>
+
+<p>
+A <b>Transaction Log</b> is a special file that records every change made to the database.
+Whenever a transaction inserts, updates, or deletes data, Oracle first stores the details in the transaction log before saving the changes permanently.
+Transaction logs play an important role in backup, recovery, and maintaining database consistency.
+</p>
+
+<h3>Why are Transaction Logs Important?</h3>
+
+<p>
+If the database crashes due to a power failure, system error, or hardware failure, transaction logs help Oracle recover the database.
+They ensure that committed transactions are restored and incomplete transactions are rolled back.
+</p>
+
+<h3>Information Stored in Transaction Logs</h3>
+
+<table class="notes-table">
+<tr>
+<th>Information</th>
+<th>Description</th>
+</tr>
+
+<tr>
+<td>INSERT</td>
+<td>Records newly inserted rows.</td>
+</tr>
+
+<tr>
+<td>UPDATE</td>
+<td>Records changes made to existing data.</td>
+</tr>
+
+<tr>
+<td>DELETE</td>
+<td>Records deleted rows.</td>
+</tr>
+
+<tr>
+<td>COMMIT</td>
+<td>Records transactions that are permanently saved.</td>
+</tr>
+
+<tr>
+<td>ROLLBACK</td>
+<td>Records transactions that are cancelled.</td>
+</tr>
+</table>
+
+<h3>How Transaction Logs Work</h3>
+
+<ol>
+    <li>A user starts a transaction.</li>
+    <li>The user inserts, updates, or deletes data.</li>
+    <li>Oracle records every change in the Transaction Log (Redo Log).</li>
+    <li>If the transaction is committed, the changes become permanent.</li>
+    <li>If the transaction fails, Oracle uses the log and undo data to restore the database to a consistent state.</li>
+</ol>
+
+<h3>Example</h3>
+
+<p>
+Suppose a bank customer transfers ₹5,000 from Account A to Account B.
+Before updating the account balances, Oracle records the transaction in the transaction log.
+If the system crashes before the transaction is completed, Oracle uses the transaction log during recovery to restore the database correctly.
+</p>
+
+<table class="notes-table">
+<tr>
+<th>Step</th>
+<th>Status</th>
+</tr>
+
+<tr>
+<td>Transaction Starts</td>
+<td>Log entry is created.</td>
+</tr>
+
+<tr>
+<td>Amount Updated</td>
+<td>Changes are recorded in the log.</td>
+</tr>
+
+<tr>
+<td>COMMIT</td>
+<td>Transaction is permanently saved.</td>
+</tr>
+
+<tr>
+<td>System Crash Before COMMIT</td>
+<td>Oracle rolls back the transaction.</td>
+</tr>
+</table>
+
+<h3>Advantages of Transaction Logs</h3>
+
+<ul>
+    <li>Helps recover the database after failures.</li>
+    <li>Protects committed transactions from data loss.</li>
+    <li>Supports rollback of incomplete transactions.</li>
+    <li>Maintains database consistency and integrity.</li>
+    <li>Improves the reliability of the database system.</li>
+</ul>
+
+<h3>Summary</h3>
+
+<p>
+A Transaction Log records every database change made during a transaction.
+It is an essential part of Oracle's recovery system, helping restore committed transactions and undo incomplete ones after a failure, ensuring that the database remains accurate and consistent.
+</p>
+
+`;
+
+let importanceOfBackupsContent = `
+
+<h3>Importance of Backups</h3>
+
+<p>
+A <b>Backup</b> is a copy of database data that is stored in a safe location.
+Backups are used to restore the database if the original data is lost, damaged, or accidentally deleted.
+Creating regular backups is one of the most important practices for protecting valuable information.
+</p>
+
+<h3>Why are Backups Important?</h3>
+
+<p>
+Databases may be affected by hardware failures, software errors, accidental deletion, virus attacks, or natural disasters.
+Without a backup, recovering lost data may be impossible.
+Regular backups help restore the database quickly and reduce downtime.
+</p>
+
+<h3>Common Causes of Data Loss</h3>
+
+<table class="notes-table">
+<tr>
+<th>Cause</th>
+<th>Description</th>
+</tr>
+
+<tr>
+<td>Hardware Failure</td>
+<td>Hard disk or server failure may damage database files.</td>
+</tr>
+
+<tr>
+<td>Human Error</td>
+<td>Accidental deletion or modification of important data.</td>
+</tr>
+
+<tr>
+<td>Software Failure</td>
+<td>Database or operating system crashes can affect stored data.</td>
+</tr>
+
+<tr>
+<td>Virus or Malware</td>
+<td>Malicious software can corrupt or delete data.</td>
+</tr>
+
+<tr>
+<td>Natural Disaster</td>
+<td>Fire, flood, or earthquake can destroy database systems.</td>
+</tr>
+</table>
+
+<h3>Benefits of Backups</h3>
+
+<ul>
+    <li>Protects important data from permanent loss.</li>
+    <li>Allows quick recovery after a failure.</li>
+    <li>Reduces database downtime.</li>
+    <li>Supports disaster recovery.</li>
+    <li>Provides peace of mind by keeping a safe copy of data.</li>
+</ul>
+
+<h3>Example</h3>
+
+<p>
+Suppose a company's employee database is stored on a server.
+One day, the server's hard disk crashes and all database files become inaccessible.
+Since the company performs daily backups, the Database Administrator (DBA) restores the latest backup, and the database becomes available again with minimal data loss.
+</p>
+
+<table class="notes-table">
+<tr>
+<th>Situation</th>
+<th>Result</th>
+</tr>
+
+<tr>
+<td>Database Works Normally</td>
+<td>Regular backups are created.</td>
+</tr>
+
+<tr>
+<td>Hard Disk Failure</td>
+<td>Database files are lost.</td>
+</tr>
+
+<tr>
+<td>Restore Backup</td>
+<td>Database is recovered successfully.</td>
+</tr>
+</table>
+
+<h3>Best Practices for Backups</h3>
+
+<ul>
+    <li>Create backups regularly.</li>
+    <li>Store backup files in a secure location.</li>
+    <li>Keep multiple backup copies.</li>
+    <li>Test backups periodically to ensure they can be restored.</li>
+    <li>Maintain both onsite and offsite backups whenever possible.</li>
+</ul>
+
+<h3>Summary</h3>
+
+<p>
+Backups are essential for protecting database data from loss caused by hardware failures, software errors, human mistakes, or disasters.
+Regular backups allow quick recovery, reduce downtime, and ensure that important information can be restored whenever needed.
+</p>
+
+`;
+
+let integritySecurityIntroContent = `
+
+<h3>General Considerations</h3>
+
+<p>
+<b>Integrity</b> and <b>Security</b> are two important aspects of database management.
+Integrity ensures that the data stored in the database is accurate, valid, and consistent, while Security protects the database from unauthorized access, misuse, and data theft.
+A well-designed database should maintain both integrity and security to ensure reliable and safe data management.
+</p>
+
+<h3>Why are Integrity and Security Important?</h3>
+
+<p>
+Organizations store valuable information such as customer details, employee records, financial data, and business transactions in databases.
+If the data becomes incorrect or falls into the wrong hands, it can lead to financial loss, legal issues, and loss of customer trust.
+Therefore, maintaining data integrity and database security is essential.
+</p>
+
+<h3>General Considerations</h3>
+
+<table class="notes-table">
+<tr>
+<th>Consideration</th>
+<th>Description</th>
+</tr>
+
+<tr>
+<td>Data Accuracy</td>
+<td>Ensure that only correct and valid data is stored in the database.</td>
+</tr>
+
+<tr>
+<td>Data Consistency</td>
+<td>Maintain the same data across all related tables without conflicts.</td>
+</tr>
+
+<tr>
+<td>Access Control</td>
+<td>Allow only authorized users to access or modify the database.</td>
+</tr>
+
+<tr>
+<td>Authentication</td>
+<td>Verify the identity of users before granting access.</td>
+</tr>
+
+<tr>
+<td>Authorization</td>
+<td>Provide users with only the permissions they need.</td>
+</tr>
+
+<tr>
+<td>Regular Backup</td>
+<td>Create backups to protect data from accidental loss.</td>
+</tr>
+
+<tr>
+<td>Audit and Monitoring</td>
+<td>Track database activities to detect unauthorized actions.</td>
+</tr>
+</table>
+
+<h3>Example</h3>
+
+<p>
+Suppose a university database stores student records.
+Only administrators are allowed to update student information, while students can only view their own records.
+The database also validates student IDs before saving them and keeps regular backups to prevent data loss.
+This ensures both data integrity and database security.
+</p>
+
+<h3>Best Practices</h3>
+
+<ul>
+<li>Use strong passwords for database accounts.</li>
+<li>Grant users only the required privileges.</li>
+<li>Validate data before storing it.</li>
+<li>Take regular database backups.</li>
+<li>Monitor database activities regularly.</li>
+<li>Keep the database software updated.</li>
+</ul>
+
+<h3>Summary</h3>
+
+<p>
+Integrity ensures that database information remains accurate and consistent, while Security protects the database from unauthorized access and threats.
+By following proper security measures and maintaining data integrity, organizations can ensure that their databases remain reliable, safe, and available.
+</p>
+
+`;
+
+let controlsContent = `
+
+<h3>Controls</h3>
+
+<p>
+<b>Controls</b> are rules, policies, and security measures used to protect a database from unauthorized access, accidental errors, and data loss.
+They help maintain the <b>integrity</b>, <b>security</b>, and <b>reliability</b> of the database by ensuring that only authorized users can perform specific operations.
+</p>
+
+<h3>Why are Controls Important?</h3>
+
+<p>
+A database stores valuable information such as customer records, employee details, financial transactions, and business data.
+Without proper controls, unauthorized users may access, modify, or delete important information.
+Controls help keep the database safe, accurate, and available.
+</p>
+
+<h3>Types of Database Controls</h3>
+
+<table class="notes-table">
+<tr>
+<th>Control</th>
+<th>Description</th>
+</tr>
+
+<tr>
+<td>Access Control</td>
+<td>Allows only authorized users to access the database.</td>
+</tr>
+
+<tr>
+<td>Authentication</td>
+<td>Verifies the identity of users using usernames and passwords.</td>
+</tr>
+
+<tr>
+<td>Authorization</td>
+<td>Determines what actions a user is allowed to perform.</td>
+</tr>
+
+<tr>
+<td>Input Validation</td>
+<td>Checks that entered data is correct and valid before storing it.</td>
+</tr>
+
+<tr>
+<td>Backup Control</td>
+<td>Creates regular backups to protect against data loss.</td>
+</tr>
+
+<tr>
+<td>Audit Control</td>
+<td>Records user activities for monitoring and security purposes.</td>
+</tr>
+
+<tr>
+<td>Recovery Control</td>
+<td>Restores the database after failures or data loss.</td>
+</tr>
+</table>
+
+<h3>Example</h3>
+
+<p>
+Suppose a company's employee database is used by different staff members.
+Employees can view their own information, managers can update employee records, and only the Database Administrator (DBA) can delete records or create new user accounts.
+These restrictions are examples of database controls.
+</p>
+
+<h3>Benefits of Controls</h3>
+
+<ul>
+<li>Protects sensitive database information.</li>
+<li>Prevents unauthorized access and data modification.</li>
+<li>Maintains data accuracy and consistency.</li>
+<li>Reduces the risk of data loss.</li>
+<li>Improves database reliability and security.</li>
+</ul>
+
+<h3>Real-Life Example</h3>
+
+<p>
+Think of a bank locker.
+Only the locker owner with the correct key and identity verification can access the locker.
+Similarly, database controls ensure that only authorized users can access or modify database information.
+</p>
+
+<h3>Summary</h3>
+
+<p>
+Controls are security measures that protect a database from unauthorized access, accidental errors, and data loss.
+They help maintain data integrity, ensure database security, and allow only authorized users to perform specific tasks, making the database safe and reliable.
+</p>
+
+`;
+
+let auditTrailContent = `
+
+<h3>Audit Trail</h3>
+
+<p>
+An <b>Audit Trail</b> is a record of all important activities performed in a database.
+It keeps track of <b>who</b> performed an action, <b>what</b> action was performed, <b>when</b> it was performed, and sometimes <b>from where</b> the action was performed.
+Audit trails help monitor database activities and improve security.
+</p>
+
+<h3>Why is an Audit Trail Important?</h3>
+
+<p>
+An audit trail helps Database Administrators (DBAs) monitor user activities and detect unauthorized access or suspicious actions.
+It also helps investigate problems, identify mistakes, and ensure that users follow security policies.
+</p>
+
+<h3>Information Stored in an Audit Trail</h3>
+
+<table class="notes-table">
+<tr>
+<th>Information</th>
+<th>Description</th>
+</tr>
+
+<tr>
+<td>User Name</td>
+<td>Identifies the user who performed the action.</td>
+</tr>
+
+<tr>
+<td>Date and Time</td>
+<td>Records when the action was performed.</td>
+</tr>
+
+<tr>
+<td>Operation</td>
+<td>Shows the action performed, such as SELECT, INSERT, UPDATE, DELETE, or LOGIN.</td>
+</tr>
+
+<tr>
+<td>Object Name</td>
+<td>Specifies the table, view, or other database object involved.</td>
+</tr>
+
+<tr>
+<td>Status</td>
+<td>Indicates whether the operation was successful or failed.</td>
+</tr>
+</table>
+
+<h3>Example</h3>
+
+<p>
+Suppose a user updates an employee's salary in the <b>EMPLOYEE</b> table.
+The audit trail records the user's name, the UPDATE operation, the table name, the date and time of the change, and whether the operation was successful.
+If an incorrect update occurs, the DBA can check the audit trail to find out who made the change.
+</p>
+
+<table class="notes-table">
+<tr>
+<th>User</th>
+<th>Operation</th>
+<th>Object</th>
+<th>Date & Time</th>
+<th>Status</th>
+</tr>
+
+<tr>
+<td>HR_ADMIN</td>
+<td>UPDATE</td>
+<td>EMPLOYEE</td>
+<td>10-Jul-2026 10:30 AM</td>
+<td>Success</td>
+</tr>
+</table>
+
+<h3>Advantages of Audit Trail</h3>
+
+<ul>
+<li>Monitors user activities.</li>
+<li>Detects unauthorized access.</li>
+<li>Helps investigate security incidents.</li>
+<li>Maintains accountability for database changes.</li>
+<li>Supports compliance with security and audit requirements.</li>
+</ul>
+
+<h3>Real-Life Example</h3>
+
+<p>
+Think of a visitor register at the entrance of a school or office.
+Every visitor writes their name, entry time, and purpose of the visit.
+Similarly, an audit trail records every important database activity, making it easy to track who performed each action.
+</p>
+
+<h3>Summary</h3>
+
+<p>
+An Audit Trail is a detailed record of database activities.
+It helps monitor users, improve database security, detect unauthorized actions, and maintain accountability by recording who performed each operation and when it occurred.
+</p>
+
+`;
+
+let dataEncryptionContent = `
+
+<h3>Data Encryption</h3>
+
+<p>
+<b>Data Encryption</b> is the process of converting readable data (called <b>Plain Text</b>) into an unreadable form (called <b>Cipher Text</b>) using an encryption algorithm and a secret key.
+Only authorized users with the correct decryption key can convert the encrypted data back into its original form.
+Encryption protects sensitive information from unauthorized access.
+</p>
+
+<h3>Why is Data Encryption Important?</h3>
+
+<p>
+Databases often store sensitive information such as passwords, bank account details, customer records, and personal information.
+If an unauthorized person gains access to the database, encrypted data cannot be understood without the correct decryption key.
+This helps protect data from theft and misuse.
+</p>
+
+<h3>How Data Encryption Works</h3>
+
+<ol>
+<li>Original data (Plain Text) is entered.</li>
+<li>An encryption algorithm and secret key convert it into Cipher Text.</li>
+<li>The encrypted data is stored or transmitted securely.</li>
+<li>An authorized user uses the correct decryption key to convert the Cipher Text back into Plain Text.</li>
+</ol>
+
+<h3>Example</h3>
+
+<p>
+Suppose a user's password is <b>Welcome123</b>.
+Instead of storing the password in its original form, Oracle stores it in an encrypted format.
+Even if someone accesses the database, they cannot read the actual password without the correct decryption key.
+</p>
+
+<table class="notes-table">
+<tr>
+<th>Stage</th>
+<th>Example</th>
+</tr>
+
+<tr>
+<td>Plain Text</td>
+<td>Welcome123</td>
+</tr>
+
+<tr>
+<td>Encrypted (Cipher Text)</td>
+<td>8F5A9D3B72XQ...</td>
+</tr>
+
+<tr>
+<td>Decrypted Text</td>
+<td>Welcome123</td>
+</tr>
+</table>
+
+<h3>Types of Encryption</h3>
+
+<table class="notes-table">
+<tr>
+<th>Type</th>
+<th>Description</th>
+</tr>
+
+<tr>
+<td>Symmetric Encryption</td>
+<td>Uses the same key for both encryption and decryption.</td>
+</tr>
+
+<tr>
+<td>Asymmetric Encryption</td>
+<td>Uses a public key for encryption and a private key for decryption.</td>
+</tr>
+</table>
+
+<h3>Advantages of Data Encryption</h3>
+
+<ul>
+<li>Protects sensitive information from unauthorized access.</li>
+<li>Improves database security.</li>
+<li>Maintains data confidentiality.</li>
+<li>Reduces the risk of data theft.</li>
+<li>Helps organizations meet security and compliance requirements.</li>
+</ul>
+
+<h3>Real-Life Example</h3>
+
+<p>
+Think of sending an important letter inside a locked box.
+Only the person with the correct key can open the box and read the letter.
+Similarly, encrypted data can only be read by users who have the correct decryption key.
+</p>
+
+<h3>Summary</h3>
+
+<p>
+Data Encryption is a security technique that converts readable data into an unreadable format to protect it from unauthorized access.
+Only users with the correct decryption key can access the original information, making encryption one of the most effective methods for securing database data.
+</p>
+
+`;
+
+let integrityRulesContent = `
+
+<h3>Integrity Rules</h3>
+
+<p>
+<b>Integrity Rules</b> are a set of rules that ensure the data stored in a database is accurate, valid, and consistent.
+These rules prevent invalid or duplicate data from being entered and maintain relationships between different tables.
+In Oracle, integrity rules are implemented using <b>constraints</b>.
+</p>
+
+<h3>Why are Integrity Rules Important?</h3>
+
+<p>
+Without integrity rules, users may enter incorrect or duplicate data, leading to inconsistent and unreliable information.
+Integrity rules help maintain data quality and ensure that the database always contains valid information.
+</p>
+
+<h3>Types of Integrity Rules</h3>
+
+<table class="notes-table">
+<tr>
+<th>Integrity Rule</th>
+<th>Description</th>
+</tr>
+
+<tr>
+<td>Entity Integrity</td>
+<td>Ensures that every row has a unique Primary Key and that the Primary Key cannot contain NULL values.</td>
+</tr>
+
+<tr>
+<td>Referential Integrity</td>
+<td>Ensures that a Foreign Key always refers to an existing Primary Key in another table.</td>
+</tr>
+
+<tr>
+<td>Domain Integrity</td>
+<td>Ensures that data entered into a column follows the defined data type, range, and format.</td>
+</tr>
+
+<tr>
+<td>User-Defined Integrity</td>
+<td>Allows organizations to create custom business rules according to their requirements.</td>
+</tr>
+</table>
+
+<h3>Example</h3>
+
+<p>
+Suppose there are two tables: <b>DEPARTMENT</b> and <b>EMPLOYEE</b>.
+Each employee belongs to a department.
+The <b>Department_ID</b> in the EMPLOYEE table is a Foreign Key that must match an existing <b>Department_ID</b> in the DEPARTMENT table.
+If a user enters a Department_ID that does not exist, Oracle rejects the operation to maintain referential integrity.
+</p>
+
+<table class="notes-table">
+<tr>
+<th>Department_ID</th>
+<th>Department Name</th>
+</tr>
+
+<tr>
+<td>101</td>
+<td>HR</td>
+</tr>
+
+<tr>
+<td>102</td>
+<td>Finance</td>
+</tr>
+</table>
+
+<p>
+If a user tries to insert an employee with <b>Department_ID = 999</b>, Oracle will not allow it because that department does not exist.
+</p>
+
+<h3>Advantages of Integrity Rules</h3>
+
+<ul>
+<li>Maintains accurate and consistent data.</li>
+<li>Prevents duplicate and invalid records.</li>
+<li>Protects relationships between tables.</li>
+<li>Improves database reliability.</li>
+<li>Supports efficient and error-free data management.</li>
+</ul>
+
+<h3>Real-Life Example</h3>
+
+<p>
+Think of a university where every student must have a valid Student ID.
+A student cannot enroll in a course unless the Student ID exists in the university records.
+Similarly, integrity rules ensure that only valid and related data is stored in the database.
+</p>
+
+<h3>Summary</h3>
+
+<p>
+Integrity Rules help maintain the accuracy, consistency, and validity of database data.
+They prevent invalid entries, protect relationships between tables, and ensure that the database stores reliable information using constraints such as Primary Keys, Foreign Keys, and data validation rules.
+</p>
+
+`;
+
+let grantingRevokingPrivilegesContent = `
+
+<h3>Granting and Revoking Privileges</h3>
+
+<p>
+In Oracle, <b>Privileges</b> are permissions that allow users to perform specific actions on the database.
+The <b>GRANT</b> command is used to give privileges to users, while the <b>REVOKE</b> command is used to remove previously granted privileges.
+These commands help maintain database security by ensuring that users have only the permissions they need.
+</p>
+
+<h3>Why are Privileges Important?</h3>
+
+<p>
+Not every user should have full access to the database.
+For example, some users may only need to view data, while others may need to insert, update, or delete records.
+Granting only the required privileges helps protect sensitive information and prevents unauthorized changes.
+</p>
+
+<h3>Types of Privileges</h3>
+
+<table class="notes-table">
+<tr>
+<th>Privilege Type</th>
+<th>Description</th>
+</tr>
+
+<tr>
+<td>System Privilege</td>
+<td>Allows users to perform database-level operations such as creating tables or creating users.</td>
+</tr>
+
+<tr>
+<td>Object Privilege</td>
+<td>Allows users to perform actions on specific database objects such as tables, views, or procedures.</td>
+</tr>
+</table>
+
+<h3>GRANT Command</h3>
+
+<p>
+The <b>GRANT</b> command is used to give one or more privileges to a user or role.
+</p>
+
+<h4>Syntax</h4>
+
+<pre>
+GRANT privilege_name
+ON object_name
+TO user_name;
+</pre>
+
+<h4>Example</h4>
+
+<pre>
+GRANT SELECT
+ON employee
+TO student1;
+</pre>
+
+<p>
+The above command allows <b>student1</b> to view data from the <b>employee</b> table.
+</p>
+
+<h3>REVOKE Command</h3>
+
+<p>
+The <b>REVOKE</b> command is used to remove previously granted privileges from a user or role.
+</p>
+
+<h4>Syntax</h4>
+
+<pre>
+REVOKE privilege_name
+ON object_name
+FROM user_name;
+</pre>
+
+<h4>Example</h4>
+
+<pre>
+REVOKE SELECT
+ON employee
+FROM student1;
+</pre>
+
+<p>
+The above command removes the SELECT permission from <b>student1</b> on the <b>employee</b> table.
+</p>
+
+<h3>Common Object Privileges</h3>
+
+<table class="notes-table">
+<tr>
+<th>Privilege</th>
+<th>Purpose</th>
+</tr>
+
+<tr>
+<td>SELECT</td>
+<td>Allows viewing data from a table.</td>
+</tr>
+
+<tr>
+<td>INSERT</td>
+<td>Allows adding new records.</td>
+</tr>
+
+<tr>
+<td>UPDATE</td>
+<td>Allows modifying existing records.</td>
+</tr>
+
+<tr>
+<td>DELETE</td>
+<td>Allows removing records.</td>
+</tr>
+
+<tr>
+<td>REFERENCES</td>
+<td>Allows creating foreign key references.</td>
+</tr>
+
+<tr>
+<td>EXECUTE</td>
+<td>Allows executing procedures and functions.</td>
+</tr>
+</table>
+
+<h3>Advantages of Granting and Revoking Privileges</h3>
+
+<ul>
+<li>Protects sensitive database information.</li>
+<li>Prevents unauthorized access and modifications.</li>
+<li>Allows users to perform only authorized tasks.</li>
+<li>Improves database security and control.</li>
+<li>Supports effective user management.</li>
+</ul>
+
+<h3>Real-Life Example</h3>
+
+<p>
+Think of a school library.
+Students are allowed to read books, but only the librarian can add or remove books from the library.
+Similarly, Oracle grants different privileges to different users based on their responsibilities.
+</p>
+
+<h3>Summary</h3>
+
+<p>
+The <b>GRANT</b> command is used to give privileges to users, while the <b>REVOKE</b> command removes those privileges.
+By assigning only the necessary permissions, Oracle helps protect the database and ensures that users perform only authorized operations.
+</p>
+
+`;
+
+let sqlSupportToolsContent = `
+
+<h3>SQL Support Tools</h3>
+
+<p>
+<b>SQL Support Tools</b> are software applications provided by Oracle that help users write, execute, test, and manage SQL and PL/SQL statements.
+These tools make it easier for Database Administrators (DBAs), developers, and students to create database objects, manage data, and perform administrative tasks.
+</p>
+
+<h3>Why are SQL Support Tools Important?</h3>
+
+<p>
+Writing SQL commands directly is not enough to manage a database efficiently.
+SQL support tools provide user-friendly interfaces, debugging features, query execution, and database management capabilities, making database operations faster and easier.
+</p>
+
+<h3>Common SQL Support Tools</h3>
+
+<table class="notes-table">
+<tr>
+<th>Tool</th>
+<th>Description</th>
+</tr>
+
+<tr>
+<td>SQL*Plus</td>
+<td>A command-line tool used to execute SQL and PL/SQL commands and perform database administration tasks.</td>
+</tr>
+
+<tr>
+<td>Oracle SQL Developer</td>
+<td>A graphical tool used to write SQL queries, develop PL/SQL programs, and manage Oracle databases.</td>
+</tr>
+
+<tr>
+<td>Enterprise Manager</td>
+<td>A web-based tool used to monitor, manage, and administer Oracle databases.</td>
+</tr>
+
+<tr>
+<td>RMAN (Recovery Manager)</td>
+<td>A tool used to create backups and recover Oracle databases.</td>
+</tr>
+
+<tr>
+<td>Data Pump (expdp/impdp)</td>
+<td>Used to export and import database objects and data using dump files.</td>
+</tr>
+</table>
+
+<h3>Example</h3>
+
+<p>
+Suppose a developer wants to create a new table and insert employee records.
+The developer opens Oracle SQL Developer, connects to the database, writes the SQL commands, and executes them.
+Similarly, a DBA uses RMAN to create database backups and recover data if a failure occurs.
+</p>
+
+<h3>Advantages of SQL Support Tools</h3>
+
+<ul>
+<li>Provide an easy way to execute SQL and PL/SQL commands.</li>
+<li>Simplify database administration tasks.</li>
+<li>Support debugging and error checking.</li>
+<li>Help create backups and perform database recovery.</li>
+<li>Improve productivity with graphical interfaces and automation.</li>
+</ul>
+
+<h3>Real-Life Example</h3>
+
+<p>
+Think of SQL as driving a car and SQL Support Tools as the car's dashboard.
+The dashboard provides controls, indicators, and information that make driving easier and safer.
+Similarly, SQL support tools provide features that make working with databases more efficient.
+</p>
+
+<h3>Summary</h3>
+
+<p>
+SQL Support Tools are applications that help users create, manage, and maintain Oracle databases.
+Tools such as SQL*Plus, Oracle SQL Developer, Enterprise Manager, RMAN, and Data Pump simplify SQL execution, database administration, backup, and recovery tasks.
+</p>
+
+`;
