@@ -1,3 +1,332 @@
+const programmingLanguageHistory = `
+<h3>History of Programming Languages</h3>
+
+<p>
+Programming languages have evolved over time to make writing software easier, faster, and more efficient.
+The history of programming languages is generally divided into different generations based on their level of abstraction and ease of use.
+</p>
+
+<!-- ==================== First Generation ==================== -->
+<div class="note-section">
+    <h3>1. First Generation Language (1GL) - Machine Language (1940s - 1950s)</h3>
+
+    <p>
+        <strong>Machine Language</strong> was the first programming language used by computers.
+        It is the only language that a computer's CPU can understand directly.
+        All instructions are written in the form of binary digits (0 and 1).
+    </p>
+
+    <h4>Example</h4>
+
+<pre class ="notes_text_pre"><code>
+10110000 01100001
+11001010 00010011
+</code></pre>
+
+    <h4>Characteristics</h4>
+
+    <ul>
+        <li>Written entirely in binary numbers (0 and 1).</li>
+        <li>Executed directly by the CPU.</li>
+        <li>No translator (compiler or interpreter) is required.</li>
+        <li>Machine dependent.</li>
+        <li>Very difficult for humans to read and write.</li>
+    </ul>
+
+<h4>Advantages and Disadvantages of Machine Language</h4>
+
+<table class="notes-table">
+    <tr>
+        <th>Advantages</th>
+        <th>Disadvantages</th>
+    </tr>
+
+    <tr>
+        <td>Machine Language provides the fastest execution speed.</td>
+        <td>Machine Language is very difficult to understand and write.</td>
+    </tr>
+
+    <tr>
+        <td>It does not require any translator such as a compiler or interpreter.</td>
+        <td>Writing programs in Machine Language is time-consuming.</td>
+    </tr>
+
+    <tr>
+        <td>It uses computer hardware and memory efficiently.</td>
+        <td>It is more prone to errors because instructions are written in binary code.</td>
+    </tr>
+
+    <tr>
+        <td>Programs execute directly on the CPU.</td>
+        <td>Programs written for one computer architecture cannot be used on different computers.</td>
+    </tr>
+
+</table>
+</div>
+
+<!-- ==================== Second Generation ==================== -->
+<div class="note-section">
+    <h3>2. Second Generation Language (2GL) - Assembly Language (1950s)</h3>
+
+    <p>
+        Assembly Language was developed to make programming easier than Machine Language.
+        Instead of writing binary numbers, programmers use mnemonic instructions such as
+        <strong>MOV</strong>, <strong>ADD</strong>, <strong>SUB</strong>, and <strong>JMP</strong>.
+        An <strong>Assembler</strong> converts Assembly Language into Machine Language.
+    </p>
+
+    <h4>Example</h4>
+
+<table class="notes-table">
+    <thead>
+        <tr>
+            <th>Assembly Instruction</th>
+            <th>Student-Friendly Explanation</th>
+        </tr>
+    </thead>
+
+    <tbody>
+        <tr>
+            <td><code>MOV AX, 10</code></td>
+            <td>
+                <strong>MOV</strong> means <strong>"Move"</strong>. This instruction stores the value
+                <strong>10</strong> inside the <strong>AX</strong> register (a small memory location inside the CPU).
+            </td>
+        </tr>
+
+        <tr>
+            <td><code>MOV BX, 20</code></td>
+            <td>
+                This instruction stores the value <strong>20</strong> inside the
+                <strong>BX</strong> register. Now the CPU has two values:
+                <strong>AX = 10</strong> and <strong>BX = 20</strong>.
+            </td>
+        </tr>
+
+        <tr>
+            <td><code>ADD AX, BX</code></td>
+            <td>
+                <strong>ADD</strong> means <strong>"Addition"</strong>. This instruction adds the value
+                stored in <strong>BX (20)</strong> to the value stored in
+                <strong>AX (10)</strong>. The result <strong>30</strong> is stored back in the
+                <strong>AX</strong> register.
+            </td>
+        </tr>
+    </tbody>
+</table>
+
+<p><strong>Final Result:</strong></p>
+
+<ul>
+    <li>AX = 30</li>
+    <li>BX = 20 (remains unchanged)</li>
+</ul>
+
+<p><strong>Simple Analogy:</strong></p>
+
+<p>
+Think of <strong>AX</strong> and <strong>BX</strong> as two boxes.
+First, put <strong>10</strong> in the AX box and <strong>20</strong> in the BX box.
+Then, the <strong>ADD AX, BX</strong> instruction adds both numbers (10 + 20 = 30) and stores the answer back in the AX box.
+</p>
+
+    <p>
+        Assembly language provides direct access to the computer's hardware. Programmers can manipulate
+        CPU registers, memory locations, and input/output devices with fine-grained control.
+    </p>
+
+    <h4>Applications</h4>
+
+    <ul>
+        <li>Device Drivers</li>
+        <li>Operating System Development</li>
+        <li>Embedded Systems</li>
+        <li>Microcontroller Programming</li>
+    </ul>
+
+<h4>Advantages and Disadvantages of Assembly Language</h4>
+
+<table class="notes-table">
+    <tr>
+        <th>Advantages</th>
+        <th>Disadvantages</th>
+    </tr>
+
+    <tr>
+        <td>Easier to understand than Machine Language.</td>
+        <td>Machine dependent (works only on a specific processor).</td>
+    </tr>
+
+    <tr>
+        <td>Provides faster execution than High-Level Languages.</td>
+        <td>Difficult to learn and write.</td>
+    </tr>
+
+    <tr>
+        <td>Provides direct control over computer hardware.</td>
+        <td>Requires an assembler to convert the program into machine code.</td>
+    </tr>
+
+    <tr>
+        <td>Uses memory efficiently and produces optimized programs.</td>
+        <td>Program development and debugging take more time.</td>
+    </tr>
+
+</table>
+</div>
+
+<!-- ==================== Third Generation ==================== -->
+<div class="note-section">
+    <h3>3. Third Generation Language (3GL) - High-Level Languages (1950s - 1970s)</h3>
+
+    <p>
+        Third Generation Languages (3GL) are also known as <strong>High-Level Languages</strong>.
+        These languages are designed to be easy for humans to read, write, and understand.
+        They are independent of computer hardware and use English-like syntax.
+    </p>
+
+    <p>
+        High-level languages introduced important programming concepts such as:
+    </p>
+
+    <ul>
+        <li>Variables</li>
+        <li>Data Types</li>
+        <li>Conditional Statements (if-else)</li>
+        <li>Loops</li>
+        <li>Functions</li>
+        <li>Arrays</li>
+    </ul>
+
+    <p>
+        A <strong>Compiler</strong> or <strong>Interpreter</strong> translates High-Level Language
+        into Machine Language.
+    </p>
+
+    <h4>Popular High-Level Languages</h4>
+
+    <table class="notes-table">
+        <thead>
+            <tr>
+                <th>Language</th>
+                <th>Year</th>
+                <th>Description</th>
+            </tr>
+        </thead>
+
+        <tbody>
+            <tr>
+                <td><strong>FORTRAN</strong></td>
+                <td>1957</td>
+                <td>Formula Translation. Designed for scientific and engineering calculations. Introduced variables and loops.</td>
+            </tr>
+
+            <tr>
+                <td><strong>ALGOL</strong></td>
+                <td>1958 / 1960</td>
+                <td>Algorithmic Language. Influenced many modern programming languages.</td>
+            </tr>
+
+            <tr>
+                <td><strong>COBOL</strong></td>
+                <td>1959</td>
+                <td>Common Business-Oriented Language. Used for banking and business applications.</td>
+            </tr>
+
+            <tr>
+                <td><strong>BASIC</strong></td>
+                <td>1964</td>
+                <td>Beginner's All-purpose Symbolic Instruction Code. Designed for students and beginners.</td>
+            </tr>
+
+            <tr>
+                <td><strong>C</strong></td>
+                <td>1972</td>
+                <td>Developed at Bell Labs. Widely used for system programming, operating systems, and application software.</td>
+            </tr>
+        </tbody>
+    </table>
+
+<h4>Advantages and Disadvantages of High-Level Language</h4>
+
+<table class="notes-table">
+    <tr>
+        <th>Advantages</th>
+        <th>Disadvantages</th>
+    </tr>
+
+    <tr>
+        <td>High-Level Language is easy to read, write, and understand.</td>
+        <td>High-Level Language is slower than Machine Language and Assembly Language.</td>
+    </tr>
+
+    <tr>
+        <td>It is machine independent and can run on different computer systems.</td>
+        <td>It requires a Compiler or Interpreter to convert the program into Machine Language.</td>
+    </tr>
+
+    <tr>
+        <td>It makes debugging, testing, and maintenance easier.</td>
+        <td>It provides less direct control over computer hardware.</td>
+    </tr>
+
+    <tr>
+        <td>It reduces development time and increases programmer productivity.</td>
+        <td>It generally uses more memory than Machine Language.</td>
+    </tr>
+
+    <tr>
+        <td>Programs are portable and can run on different operating systems with little or no modification.</td>
+        <td>Some programs may execute slower because of the translation process.</td>
+    </tr>
+
+</table>
+</div>
+
+<!-- ==================== Summary ==================== -->
+<div class="note-section">
+    <h3>Summary</h3>
+
+    <table class="notes-table">
+        <thead>
+            <tr>
+                <th>Generation</th>
+                <th>Language</th>
+                <th>Translator</th>
+                <th>Easy to Learn</th>
+                <th>Machine Dependent</th>
+            </tr>
+        </thead>
+
+        <tbody>
+            <tr>
+                <td>1GL</td>
+                <td>Machine Language</td>
+                <td>Not Required</td>
+                <td>❌</td>
+                <td>✅</td>
+            </tr>
+
+            <tr>
+                <td>2GL</td>
+                <td>Assembly Language</td>
+                <td>Assembler</td>
+                <td>Medium</td>
+                <td>✅</td>
+            </tr>
+
+            <tr>
+                <td>3GL</td>
+                <td>High-Level Language</td>
+                <td>Compiler / Interpreter</td>
+                <td>✅</td>
+                <td>❌</td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+`;
+
 let introC = `
 
 <h3>Introduction to C Language</h3>
@@ -30,12 +359,67 @@ A programming language is a set of instructions used to communicate with a compu
 <h4>Features of C Language</h4>
 
 <ul>
-    <li><b>Simple</b> – Easy syntax and fewer keywords.</li>
-    <li><b>Structured Programming</b> – Programs can be divided into functions.</li>
-    <li><b>Efficient</b> – Fast execution and memory management.</li>
-    <li><b>Portable</b> – Can run on different platforms.</li>
-    <li><b>Rich Library</b> – Provides many built-in functions.</li>
-    <li><b>Middle-Level Language</b> – Combines low-level and high-level features.</li>
+
+<li>
+<b>Simple Language</b><br>
+C has a simple syntax and a small number of keywords, making it easy for beginners to learn and understand.
+</li>
+
+<li>
+<b>Structured Programming Language</b><br>
+C allows programs to be divided into smaller functions. This makes programs easier to write, test, and maintain.
+</li>
+
+<li>
+<b>Middle-Level Language</b><br>
+C combines the features of both low-level and high-level languages. It can interact with hardware while also supporting high-level programming concepts.
+</li>
+
+<li>
+<b>Portable Language</b><br>
+Programs written in C can run on different operating systems with little or no modification.
+</li>
+
+<li>
+<b>Fast Execution</b><br>
+C programs execute very quickly because they are compiled directly into machine code.
+</li>
+
+<li>
+<b>Efficient Memory Management</b><br>
+C provides direct access to memory through pointers, allowing efficient use of system resources.
+</li>
+
+<li>
+<b>Rich Library Functions</b><br>
+C provides many built-in functions through header files such as stdio.h, string.h, and math.h.
+</li>
+
+<li>
+<b>Modular Programming</b><br>
+Large programs can be divided into smaller modules or functions, making code reusable and organized.
+</li>
+
+<li>
+<b>Supports Pointers</b><br>
+Pointers allow direct access to memory locations and are useful for advanced programming techniques.
+</li>
+
+<li>
+<b>Dynamic Memory Allocation</b><br>
+Memory can be allocated and released during program execution using functions like malloc() and free().
+</li>
+
+<li>
+<b>Case Sensitive</b><br>
+C treats uppercase and lowercase letters differently. For example, "A" and "a" are considered different.
+</li>
+
+<li>
+<b>Extensible Language</b><br>
+Programmers can create their own functions and add them to existing programs.
+</li>
+
 </ul>
 
 <h3>History of C Language</h3>
@@ -51,13 +435,13 @@ C was created to develop the <strong>UNIX Operating System</strong>. Before C, p
 <h4>Evolution of C Language</h4>
 
 <ul>
-    <li><strong>1960 – ALGOL</strong> – Early high-level programming language.</li>
-    <li><strong>1967 – BCPL</strong> – Developed by Martin Richards.</li>
+    <li><strong>1960 – ALGOL</strong>  – ALGOL stands for Algorithmic Language. Early high-level programming language.</li>
+    <li><strong>1967 – BCPL</strong> –(Basic Combined Programming Language) Developed by Martin Richards.</li>
     <li><strong>1970 – B Language</strong> – Developed by Ken Thompson.</li>
     <li><strong>1972 – C Language</strong> – Developed by Dennis Ritchie.</li>
     <li><strong>1978 – K&R C</strong> – First C language book published.</li>
-    <li><strong>1989 – ANSI C (C89)</strong> – Standardized by ANSI.</li>
-    <li><strong>1990 – ISO C (C90)</strong> – Adopted by ISO.</li>
+    <li><strong>1989 – ANSI C (C89)</strong> –  Standardized by ANSI(American National Standards Institute).</li>
+    <li><strong>1990 – ISO C (C90)</strong> – Adopted by ISO (International Organization for Standardization).</li>
     <li><strong>1999 – C99</strong> – Added many modern features.</li>
     <li><strong>2011 – C11</strong> – Introduced multithreading support.</li>
     <li><strong>2018 – C18</strong> – Minor improvements and fixes.</li>
@@ -136,114 +520,327 @@ int main()
 
 `;
 
-let featuresOfC = `
+const computerHardwareSoftwareExplanation = `
 
-<h3>Features of C Language</h3>
+<h3>Computer Hardware and Software</h3>
+    <img class="notes_img" src="bca_images/computer-hardware-software.png" alt="Computer Hardware and Software Classification">
 
+    
 <p>
-C is one of the most popular programming languages because it is simple, efficient, and powerful. It provides many features that make programming easier and faster.
+A <strong>Computer</strong> is an electronic device that accepts data, processes it, stores it, and produces meaningful information.
+Every computer consists of two main components:
 </p>
 
-<h4>Main Features of C Language</h4>
-
 <ul>
-
-<li>
-<b>Simple Language</b><br>
-C has a simple syntax and a small number of keywords, making it easy for beginners to learn and understand.
-</li>
-
-<li>
-<b>Structured Programming Language</b><br>
-C allows programs to be divided into smaller functions. This makes programs easier to write, test, and maintain.
-</li>
-
-<li>
-<b>Middle-Level Language</b><br>
-C combines the features of both low-level and high-level languages. It can interact with hardware while also supporting high-level programming concepts.
-</li>
-
-<li>
-<b>Portable Language</b><br>
-Programs written in C can run on different operating systems with little or no modification.
-</li>
-
-<li>
-<b>Fast Execution</b><br>
-C programs execute very quickly because they are compiled directly into machine code.
-</li>
-
-<li>
-<b>Efficient Memory Management</b><br>
-C provides direct access to memory through pointers, allowing efficient use of system resources.
-</li>
-
-<li>
-<b>Rich Library Functions</b><br>
-C provides many built-in functions through header files such as stdio.h, string.h, and math.h.
-</li>
-
-<li>
-<b>Modular Programming</b><br>
-Large programs can be divided into smaller modules or functions, making code reusable and organized.
-</li>
-
-<li>
-<b>Supports Pointers</b><br>
-Pointers allow direct access to memory locations and are useful for advanced programming techniques.
-</li>
-
-<li>
-<b>Dynamic Memory Allocation</b><br>
-Memory can be allocated and released during program execution using functions like malloc() and free().
-</li>
-
-<li>
-<b>Case Sensitive</b><br>
-C treats uppercase and lowercase letters differently. For example, "A" and "a" are considered different.
-</li>
-
-<li>
-<b>Extensible Language</b><br>
-Programmers can create their own functions and add them to existing programs.
-</li>
-
+    <li><strong>Hardware</strong></li>
+    <li><strong>Software</strong></li>
 </ul>
 
-<h4>Advantages of C Language</h4>
+<hr>
+
+<h3>Hardware</h3>
+
+<p>
+<strong>Hardware</strong> refers to the physical parts of a computer that can be seen and touched.
+These components work together to perform various tasks.
+</p>
+
+<h4>Examples of Hardware</h4>
+
+<table class="notes-table">
+    <tr>
+        <th>Hardware Device</th>
+        <th>Purpose</th>
+    </tr>
+
+    <tr>
+        <td>Monitor</td>
+        <td>Displays the output on the screen.</td>
+    </tr>
+
+    <tr>
+        <td>Keyboard</td>
+        <td>Used to enter text, numbers, and commands into the computer.</td>
+    </tr>
+
+    <tr>
+        <td>Mouse</td>
+        <td>Used to point, click, select, and navigate on the screen.</td>
+    </tr>
+
+    <tr>
+        <td>CPU (System Unit)</td>
+        <td>Processes data and controls all computer operations.</td>
+    </tr>
+
+    <tr>
+        <td>Printer</td>
+        <td>Produces a hard copy of documents and images.</td>
+    </tr>
+
+    <tr>
+        <td>Scanner</td>
+        <td>Converts printed documents and images into digital form.</td>
+    </tr>
+
+    <tr>
+        <td>Camera</td>
+        <td>Captures photos and videos for the computer.</td>
+    </tr>
+</table>
+
+<h4>Simple Example</h4>
+
+<p>
+Think of the computer as a human body. The monitor, keyboard, mouse, and CPU are like the body's hands, eyes, and brain. These physical parts are called <strong>Hardware</strong>.
+</p>
+
+<hr>
+
+<h3>Software</h3>
+
+<p>
+<strong>Software</strong> is a collection of programs and instructions that tell the hardware what to do.
+Unlike hardware, software cannot be touched physically.
+</p>
+
+<p>
+Software is divided into two main categories:
+</p>
 
 <ul>
-<li>Easy to learn and use.</li>
-<li>Provides fast program execution.</li>
-<li>Supports structured programming.</li>
-<li>Used for system and application software development.</li>
-<li>Foundation for learning advanced programming languages.</li>
-<li>Widely used in operating systems and embedded systems.</li>
+    <li>Application Software</li>
+    <li>System Software</li>
 </ul>
 
-<h4>Applications of C Language</h4>
+<hr>
+
+<h3>Application Software</h3>
+
+<p>
+Application Software is designed to help users perform specific tasks such as writing documents, browsing the internet, editing photos, watching videos, and making online payments.
+</p>
+
+<h4>Types of Application Software</h4>
+
+<h4>1. Desktop Application</h4>
+
+<p>
+Desktop applications are installed on a computer and usually have an <strong>.exe</strong> file in Windows.
+</p>
+
+<h4>Examples</h4>
 
 <ul>
-<li>Operating Systems (Linux, UNIX, Windows)</li>
-<li>Embedded Systems</li>
-<li>Database Management Systems</li>
-<li>Compilers and Interpreters</li>
-<li>Device Drivers</li>
-<li>Network Programming</li>
-<li>Game Development</li>
+    <li>MS Word</li>
+    <li>Photoshop</li>
+    <li>Google Chrome</li>
+    <li>VLC Media Player</li>
+    <li>Visual Studio Code</li>
 </ul>
 
-<h4>Important Interview Questions</h4>
+<h4>2. Web Application</h4>
 
-<ol>
-<li>What are the main features of C language?</li>
-<li>Why is C called a middle-level language?</li>
-<li>What is meant by portability in C?</li>
-<li>What are pointers in C?</li>
-<li>Why is C considered a fast programming language?</li>
-<li>What is modular programming in C?</li>
-</ol>
+<p>
+Web applications run inside a web browser and generally require an internet connection.
+</p>
 
+<h4>Examples</h4>
+
+<ul>
+    <li>Gmail</li>
+    <li>Facebook</li>
+    <li>WhatsApp Web</li>
+    <li>Google Docs</li>
+    <li>YouTube</li>
+</ul>
+
+<h4>3. Mobile Application</h4>
+
+<p>
+Mobile applications are designed for smartphones and tablets. They are downloaded from the Google Play Store or Apple App Store.
+</p>
+
+<h4>Examples</h4>
+
+<ul>
+    <li>WhatsApp</li>
+    <li>Instagram</li>
+    <li>PhonePe</li>
+    <li>Google Maps</li>
+    <li>Paytm</li>
+</ul>
+
+<hr>
+
+<h3>System Software</h3>
+
+<p>
+System Software manages and controls the entire computer system. It acts as a bridge between the hardware and application software.
+</p>
+
+<p>
+System Software is divided into:
+</p>
+
+<ul>
+    <li>Operating System</li>
+    <li>Device Drivers</li>
+</ul>
+
+<hr>
+
+<h3>Operating System (OS)</h3>
+
+<p>
+An Operating System is the most important software in a computer. It controls all hardware devices and allows users to interact with the computer.
+</p>
+
+<h4>Examples</h4>
+
+<ul>
+    <li>Windows</li>
+    <li>Linux</li>
+    <li>macOS</li>
+    <li>Android</li>
+    <li>iOS</li>
+</ul>
+
+<h4>Main Functions</h4>
+
+<ul>
+    <li>Starts the computer.</li>
+    <li>Manages memory.</li>
+    <li>Controls hardware devices.</li>
+    <li>Runs application software.</li>
+    <li>Provides a user-friendly interface.</li>
+</ul>
+
+<hr>
+
+<h3>Device Drivers</h3>
+
+<p>
+A Device Driver is a special software that enables the operating system to communicate with hardware devices.
+Without the correct driver, the hardware may not function properly.
+</p>
+
+<h4>Examples</h4>
+
+<ul>
+    <li>Printer Driver</li>
+    <li>Graphics Driver</li>
+    <li>Audio Driver</li>
+    <li>Wi-Fi Driver</li>
+    <li>Bluetooth Driver</li>
+    <li>Keyboard Driver</li>
+    <li>Mouse Driver</li>
+    <li>Scanner Driver</li>
+    <li>Webcam Driver</li>
+</ul>
+
+<hr>
+
+<h3>Difference Between Hardware and Software</h3>
+
+<table class="notes-table">
+<thead>
+<tr>
+<th>Hardware</th>
+<th>Software</th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+<td>Physical components of a computer.</td>
+<td>Programs and instructions.</td>
+</tr>
+
+<tr>
+<td>Can be seen and touched.</td>
+<td>Cannot be seen or touched.</td>
+</tr>
+
+<tr>
+<td>Manufactured.</td>
+<td>Developed by programmers.</td>
+</tr>
+
+<tr>
+<td>Examples: Keyboard, Mouse, Monitor, CPU.</td>
+<td>Examples: Windows, MS Word, Chrome, Photoshop.</td>
+</tr>
+</tbody>
+</table>
+
+<hr>
+
+<h3>Quick Revision</h3>
+
+<table class="notes-table">
+<thead>
+<tr>
+<th>Topic</th>
+<th>Description</th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+<td>Hardware</td>
+<td>Physical parts of the computer.</td>
+</tr>
+
+<tr>
+<td>Software</td>
+<td>Programs that make the hardware work.</td>
+</tr>
+
+<tr>
+<td>Application Software</td>
+<td>Helps users perform specific tasks.</td>
+</tr>
+
+<tr>
+<td>Desktop Application</td>
+<td>Installed on a computer.</td>
+</tr>
+
+<tr>
+<td>Web Application</td>
+<td>Runs inside a web browser.</td>
+</tr>
+
+<tr>
+<td>Mobile Application</td>
+<td>Runs on smartphones.</td>
+</tr>
+
+<tr>
+<td>Operating System</td>
+<td>Controls and manages the computer.</td>
+</tr>
+
+<tr>
+<td>Device Driver</td>
+<td>Allows communication between hardware and the operating system.</td>
+</tr>
+</tbody>
+</table>
+
+<hr>
+
+<h3>Remember</h3>
+
+<p>
+✔ Hardware = Physical parts of the computer.<br>
+✔ Software = Programs that control the hardware.<br>
+✔ Application Software helps users complete their daily work.<br>
+✔ System Software manages the entire computer system.<br>
+✔ Operating System is the heart of System Software.<br>
+✔ Device Drivers help hardware communicate with the operating system.
+</p>
 `;
 
 
@@ -273,137 +870,221 @@ Flowcharts help programmers understand, analyze, and design programs before writ
 <h4>Common Flowchart Symbols</h4>
 
 <table class="notes-table">
-<tr>
-<th>Symbol</th>
-<th>Name</th>
-<th>Purpose</th>
-</tr>
+    <tr>
+        <th>Symbol</th>
+        <th>Name</th>
+        <th>Purpose</th>
+    </tr>
 
-<tr>
-<td>Oval</td>
-<td>Terminal</td>
-<td>Represents Start or End of a program</td>
-</tr>
+    <tr>
+        <td>⬭</td>
+        <td>Terminal (Oval)</td>
+        <td>Represents the <strong>Start</strong> or <strong>End</strong> of a program.</td>
+    </tr>
 
-<tr>
-<td>Rectangle</td>
-<td>Process</td>
-<td>Represents calculations or instructions</td>
-</tr>
+    <tr>
+        <td>▭</td>
+        <td>Process (Rectangle)</td>
+        <td>Represents calculations, processing, or instructions.</td>
+    </tr>
 
-<tr>
-<td>Parallelogram</td>
-<td>Input / Output</td>
-<td>Used for input and output operations</td>
-</tr>
+    <tr>
+        <td>▱</td>
+        <td>Input / Output (Parallelogram)</td>
+        <td>Used for input and output operations.</td>
+    </tr>
 
-<tr>
-<td>Diamond</td>
-<td>Decision</td>
-<td>Represents conditions (Yes/No)</td>
-</tr>
+    <tr>
+        <td>◇</td>
+        <td>Decision (Diamond)</td>
+        <td>Represents a condition or decision (Yes/No).</td>
+    </tr>
 
-<tr>
-<td>Arrow</td>
-<td>Flow Line</td>
-<td>Shows the direction of flow</td>
-</tr>
+    <tr>
+        <td>➜</td>
+        <td>Flow Line (Arrow)</td>
+        <td>Shows the direction of program flow.</td>
+    </tr>
 
 </table>
 
 <h4>Flowchart: Print "Hello World"</h4>
 
-<pre>
-  Start
-    |
-    v
-Print "Hello World"
-    |
-    v
-   End
-</pre>
+<div style="text-align:center; margin:20px 0;">
+<svg width="350" height="350" xmlns="http://www.w3.org/2000/svg">
 
-<h4>Flowchart: Add Two Numbers</h4>
+    <!-- START -->
+    <ellipse cx="175" cy="35" rx="70" ry="25"
+             fill="#e8f5e9" stroke="#2e7d32" stroke-width="2"/>
+    <text x="175" y="41"
+          text-anchor="middle"
+          font-size="18"
+          font-family="Arial"
+          font-weight="bold">
+        START
+    </text>
 
-<pre>
-   Start
-      |
-      v
-Input A, B
-      |
-      v
-Sum = A + B
-      |
-      v
-Print Sum
-      |
-      v
-    End
-</pre>
+    <!-- Arrow -->
+    <line x1="175" y1="60" x2="175" y2="100"
+          stroke="#000" stroke-width="2"/>
+    <polygon points="170,98 180,98 175,108" fill="#000"/>
 
-<h4>Flowchart: Check Even or Odd</h4>
+    <!-- Process -->
+    <rect x="85" y="110" width="180" height="60"
+          fill="#e3f2fd" stroke="#1565c0" stroke-width="2"/>
+    <text x="175" y="145"
+          text-anchor="middle"
+          font-size="16"
+          font-family="Arial">
+        Print "Hello World"
+    </text>
 
-<pre>
-      Start
-         |
-         v
-    Input Number
-         |
-         v
-     Number % 2
-         |
-      +--+--+
-      |     |
-    Yes     No
-      |     |
-      v     v
- Print  Print
- Even   Odd
-      \   /
-       \ /
-        v
-       End
-</pre>
+    <!-- Arrow -->
+    <line x1="175" y1="170" x2="175" y2="215"
+          stroke="#000" stroke-width="2"/>
+    <polygon points="170,213 180,213 175,223" fill="#000"/>
+
+    <!-- END -->
+    <ellipse cx="175" cy="255" rx="70" ry="25"
+             fill="#ffebee" stroke="#c62828" stroke-width="2"/>
+    <text x="175" y="261"
+          text-anchor="middle"
+          font-size="18"
+          font-family="Arial"
+          font-weight="bold">
+        END
+    </text>
+
+</svg>
+</div>
+
+<h3>Flowchart: Add Two Numbers</h3>
+
+<div style="text-align:center; margin:20px 0;">
+<svg width="420" height="520" xmlns="http://www.w3.org/2000/svg">
+
+    <!-- START -->
+    <ellipse cx="210" cy="35" rx="70" ry="25"
+             fill="#e8f5e9" stroke="#2e7d32" stroke-width="2"/>
+    <text x="210" y="41"
+          text-anchor="middle"
+          font-size="18"
+          font-family="Arial"
+          font-weight="bold">
+        START
+    </text>
+
+    <!-- Arrow -->
+    <line x1="210" y1="60" x2="210" y2="90"
+          stroke="#000" stroke-width="2"/>
+    <polygon points="205,88 215,88 210,98" fill="#000"/>
+
+    <!-- Input -->
+    <polygon points="110,100 290,100 310,150 130,150"
+             fill="#fff8e1"
+             stroke="#f9a825"
+             stroke-width="2"/>
+    <text x="210" y="130"
+          text-anchor="middle"
+          font-size="16"
+          font-family="Arial">
+        Input A, B
+    </text>
+
+    <!-- Arrow -->
+    <line x1="210" y1="150" x2="210" y2="180"
+          stroke="#000" stroke-width="2"/>
+    <polygon points="205,178 215,178 210,188" fill="#000"/>
+
+    <!-- Process -->
+    <rect x="120" y="190" width="180" height="60"
+          fill="#e3f2fd"
+          stroke="#1565c0"
+          stroke-width="2"/>
+    <text x="210" y="225"
+          text-anchor="middle"
+          font-size="16"
+          font-family="Arial">
+        Sum = A + B
+    </text>
+
+    <!-- Arrow -->
+    <line x1="210" y1="250" x2="210" y2="280"
+          stroke="#000" stroke-width="2"/>
+    <polygon points="205,278 215,278 210,288" fill="#000"/>
+
+    <!-- Output -->
+    <polygon points="110,290 290,290 310,340 130,340"
+             fill="#fff8e1"
+             stroke="#f9a825"
+             stroke-width="2"/>
+    <text x="210" y="320"
+          text-anchor="middle"
+          font-size="16"
+          font-family="Arial">
+        Display Sum
+    </text>
+
+    <!-- Arrow -->
+    <line x1="210" y1="340" x2="210" y2="380"
+          stroke="#000" stroke-width="2"/>
+    <polygon points="205,378 215,378 210,388" fill="#000"/>
+
+    <!-- END -->
+    <ellipse cx="210" cy="425" rx="70" ry="25"
+             fill="#ffebee"
+             stroke="#c62828"
+             stroke-width="2"/>
+    <text x="210" y="431"
+          text-anchor="middle"
+          font-size="18"
+          font-family="Arial"
+          font-weight="bold">
+        END
+    </text>
+
+</svg>
+</div>
+
+<h3>Flowchart: Check Even or Odd</h3>
+
+    <img class="notes_img" src="bca_images/check-odd-even.png" alt="Data and Signals - Analog and Digital" >
+
 
 <h4>Algorithm vs Flowchart</h4>
 
 <table class="notes-table">
-<tr>
-<th>Algorithm</th>
-<th>Flowchart</th>
-</tr>
+    <tr>
+        <th>Algorithm</th>
+        <th>Flowchart</th>
+    </tr>
 
-<tr>
-<td>Written in steps</td>
-<td>Represented graphically</td>
-</tr>
+    <tr>
+        <td>A step-by-step written procedure to solve a problem is called an <strong>Algorithm</strong>.</td>
+        <td>A graphical representation of an algorithm using standard symbols is called a <strong>Flowchart</strong>.</td>
+    </tr>
 
-<tr>
-<td>Easy to write</td>
-<td>Easy to understand visually</td>
-</tr>
+    <tr>
+        <td>An algorithm is written in simple English or pseudocode.</td>
+        <td>A flowchart is drawn using symbols and arrows.</td>
+    </tr>
 
-<tr>
-<td>Uses text</td>
-<td>Uses symbols and arrows</td>
-</tr>
+    <tr>
+        <td>An algorithm is easy to write and modify.</td>
+        <td>A flowchart is easy to understand because it shows the program flow visually.</td>
+    </tr>
 
-<tr>
-<td>Takes less space</td>
-<td>Takes more space</td>
-</tr>
+    <tr>
+        <td>An algorithm does not use graphical symbols.</td>
+        <td>A flowchart uses symbols such as Oval, Rectangle, Diamond, and Parallelogram.</td>
+    </tr>
+
+    <tr>
+        <td>An algorithm is mainly used for planning the logic of a program.</td>
+        <td>A flowchart is mainly used for explaining the logic of a program visually.</td>
+    </tr>
 
 </table>
-
-<h4>Important Interview Questions</h4>
-
-<ul>
-<li>What is a flowchart?</li>
-<li>Why are flowcharts used?</li>
-<li>What is the purpose of the diamond symbol?</li>
-<li>Which symbol represents input/output?</li>
-<li>What is the difference between an algorithm and a flowchart?</li>
-</ul>
 
 `;
 

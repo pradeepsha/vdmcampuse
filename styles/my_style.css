@@ -360,8 +360,92 @@ pre {
 	color: #C586C0;
 }
 
-/* pre tag style */
+/* note table */
+	.notes-table {
+		width: 100%;
+		border-collapse: collapse;
+		margin: 15px 0;
+		font-family: Arial, sans-serif;
+	}
 
+	.notes-table th {
+		background: #1e293b;
+		color: #fff;
+		padding: 12px;
+	}
+
+	.notes-table td {
+		border: 1px solid #d1d5db;
+		padding: 10px;
+	}
+
+	.notes-table tr:nth-child(even) {
+		background: #f8fafc;
+	}
+
+
+	/* note side bar */
+
+	.notes_sidebar {
+		overflow-y: auto;
+		/* Vertical scrollbar */
+		overflow-x: hidden;
+		/* Hide horizontal scrollbar */
+
+	}
+
+	/* MOBILE */
+
+	@media(max-width:991px) {
+
+		html,
+		body {
+			overflow: auto;
+			/* ✅ allow scroll on mobile */
+		}
+
+		.notes_content {
+			padding: 10px;
+			max-width: 100%;
+			height: auto;
+			overflow-y: visible;
+			height: calc(100vh - 120px);
+			/* adjust header */
+		}
+
+		.notes_layout {
+			flex-direction: column;
+			/* height: 100vh; */
+			height: auto;
+			margin-top: 0px;
+		}
+
+		.mobile_menu_btn {
+			display: inline-block;
+			margin-top: 26px;
+		}
+
+		.notes_sidebar {
+			position: fixed;
+			top: 0;
+			left: -270px;
+			height: 100%;
+			z-index: 1000;
+			transition: 0.3s;
+
+		}
+
+		.notes_sidebar.show {
+			left: 0;
+		}
+
+		.notes_right {
+			width: 100%;
+		}
+
+	}
+
+/* pre tag style */
 
 .notes_text_pre{
     position: relative;
@@ -385,7 +469,32 @@ pre {
 }
 .notes_img{
 	max-width: 100%; height: auto; display: 
-     block; margin: 20px auto; border-radius: 10px; 
+     block; margin: 10px auto; border-radius: 10px; 
      box-shadow: 0 4px 12px rgba(0,0,0,0.15);
 }
 
+
+/* modern print button design*/
+.btn-ghost {
+	margin-bottom: 10px;
+	float: right;
+    background: transparent;
+    color: #17a2b8;
+    border: 2px solid #e0e0e0;
+    font-family: system-ui, sans-serif;
+    font-size: 15px;
+    font-weight: 500;
+    padding: 2px 11px;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+.btn-ghost:hover {
+    background-color: #f3f4f6; /* Very light gray background appears */
+    color: #1f2937; /* Darker text on hover */
+}
+
+.btn-ghost:active {
+    background-color: #e5e7eb;
+}

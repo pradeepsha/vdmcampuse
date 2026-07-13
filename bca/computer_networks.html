@@ -25,7 +25,7 @@
 </head>
 
 
-<style>
+<!-- <style>
     body {
         margin: 0;
         font-family: Arial;
@@ -117,7 +117,7 @@
     .notes-table tr:nth-child(even) {
         background: #f8fafc;
     }
-</style>
+</style> -->
 
 <body>
 
@@ -756,8 +756,8 @@
             <!-- CONTENT -->
 
             <div class="notes_content" id="mainContent">
-                <button onclick="printCurrentNote()">
-                    🖨️ Print Current Note
+                <button onclick="printCurrentNote()" class="btn-ghost">
+                    🖨️ Print
                 </button>
 
                 <h4 id="notes_title">Introduction to Computer Networks</h4>
@@ -1178,257 +1178,134 @@
 
         }
 
-//         function printCurrentNote() {
+        //         function printCurrentNote() {
 
-//             const note = document.getElementById("notes_text");
+        //             const note = document.getElementById("notes_text");
 
-//             if (!note) {
-//                 alert("notes_text element not found.");
-//                 return;
-//             }
+        //             if (!note) {
+        //                 alert("notes_text element not found.");
+        //                 return;
+        //             }
 
-//             let content = note.innerHTML;
+        //             let content = note.innerHTML;
 
-//             if (!content.trim()) {
-//                 alert("No content to print.");
-//                 return;
-//             }
+        //             if (!content.trim()) {
+        //                 alert("No content to print.");
+        //                 return;
+        //             }
 
-//             // Base URL of current page
-//             const baseURL = window.location.href.substring(
-//                 0,
-//                 window.location.href.lastIndexOf("/") + 1
-//             );
+        //             // Base URL of current page
+        //             const baseURL = window.location.href.substring(
+        //                 0,
+        //                 window.location.href.lastIndexOf("/") + 1
+        //             );
 
-//             const printWindow = window.open("", "_blank", "width=1000,height=800");
+        //             const printWindow = window.open("", "_blank", "width=1000,height=800");
 
-//             printWindow.document.write(`
-// <!DOCTYPE html>
-// <html>
-// <head>
+        //             printWindow.document.write(`
+        // <!DOCTYPE html>
+        // <html>
+        // <head>
 
-// <meta charset="UTF-8">
-// <meta name="viewport" content="width=device-width, initial-scale=1">
+        // <meta charset="UTF-8">
+        // <meta name="viewport" content="width=device-width, initial-scale=1">
 
-// <base href="${baseURL}">
+        // <base href="${baseURL}">
 
-// <title>Print Notes</title>
+        // <title>Print Notes</title>
 
-// <link rel="stylesheet" href="styles/bootstrap4/bootstrap.min.css">
-// <link rel="stylesheet" href="plugins/font-awesome-4.7.0/css/font-awesome.min.css">
-// <link rel="stylesheet" href="plugins/colorbox/colorbox.css">
-// <link rel="stylesheet" href="plugins/OwlCarousel2-2.2.1/owl.carousel.css">
-// <link rel="stylesheet" href="plugins/OwlCarousel2-2.2.1/owl.theme.default.css">
-// <link rel="stylesheet" href="plugins/OwlCarousel2-2.2.1/animate.css">
-// <link rel="stylesheet" href="styles/courses.css">
-// <link rel="stylesheet" href="styles/course_responsive.css">
-// <link rel="stylesheet" href="bca/watch_lecture.css">
-// <link rel="stylesheet" href="styles/my_style.css">
+        // <link rel="stylesheet" href="styles/bootstrap4/bootstrap.min.css">
+        // <link rel="stylesheet" href="plugins/font-awesome-4.7.0/css/font-awesome.min.css">
+        // <link rel="stylesheet" href="plugins/colorbox/colorbox.css">
+        // <link rel="stylesheet" href="plugins/OwlCarousel2-2.2.1/owl.carousel.css">
+        // <link rel="stylesheet" href="plugins/OwlCarousel2-2.2.1/owl.theme.default.css">
+        // <link rel="stylesheet" href="plugins/OwlCarousel2-2.2.1/animate.css">
+        // <link rel="stylesheet" href="styles/courses.css">
+        // <link rel="stylesheet" href="styles/course_responsive.css">
+        // <link rel="stylesheet" href="bca/watch_lecture.css">
+        // <link rel="stylesheet" href="styles/my_style.css">
 
-// <style>
-//     body{
-//         margin:30px;
-//         background:#fff;
-//     }
+        // <style>
+        //     body{
+        //         margin:30px;
+        //         background:#fff;
+        //     }
 
-//     img{
-//         max-width:100%;
-//         height:auto;
-//     }
+        //     img{
+        //         max-width:100%;
+        //         height:auto;
+        //     }
 
-//     table{
-//         width:100%;
-//         border-collapse:collapse;
-//     }
+        //     table{
+        //         width:100%;
+        //         border-collapse:collapse;
+        //     }
 
-//     table,th,td{
-//         border:1px solid #000;
-//     }
+        //     table,th,td{
+        //         border:1px solid #000;
+        //     }
 
-//     th,td{
-//         padding:8px;
-//     }
+        //     th,td{
+        //         padding:8px;
+        //     }
 
-//     @media print{
-//         .no-print{
-//             display:none !important;
-//         }
-//     }
-// </style>
+        //     @media print{
+        //         .no-print{
+        //             display:none !important;
+        //         }
+        //     }
+        // </style>
 
-// </head>
+        // </head>
 
-// <body>
+        // <body>
 
-// ${content}
+        // ${content}
 
-// </body>
-// </html>
-// `);
+        // </body>
+        // </html>
+        // `);
 
-//             printWindow.document.close();
+        //             printWindow.document.close();
 
-//             printWindow.onload = function () {
-//                 printWindow.focus();
+        //             printWindow.onload = function () {
+        //                 printWindow.focus();
 
-//                 // Wait for images to finish loading
-//                 const images = printWindow.document.images;
+        //                 // Wait for images to finish loading
+        //                 const images = printWindow.document.images;
 
-//                 let loaded = 0;
+        //                 let loaded = 0;
 
-//                 if (images.length === 0) {
-//                     printWindow.print();
-//                     printWindow.close();
-//                     return;
-//                 }
+        //                 if (images.length === 0) {
+        //                     printWindow.print();
+        //                     printWindow.close();
+        //                     return;
+        //                 }
 
-//                 for (let img of images) {
+        //                 for (let img of images) {
 
-//                     if (img.complete) {
-//                         loaded++;
-//                     } else {
-//                         img.onload = img.onerror = function () {
-//                             loaded++;
+        //                     if (img.complete) {
+        //                         loaded++;
+        //                     } else {
+        //                         img.onload = img.onerror = function () {
+        //                             loaded++;
 
-//                             if (loaded === images.length) {
-//                                 printWindow.print();
-//                                 printWindow.close();
-//                             }
-//                         };
-//                     }
-//                 }
+        //                             if (loaded === images.length) {
+        //                                 printWindow.print();
+        //                                 printWindow.close();
+        //                             }
+        //                         };
+        //                     }
+        //                 }
 
-//                 if (loaded === images.length) {
-//                     printWindow.print();
-//                     printWindow.close();
-//                 }
-//             };
-//         }
+        //                 if (loaded === images.length) {
+        //                     printWindow.print();
+        //                     printWindow.close();
+        //                 }
+        //             };
+        //         }
 
 
-
-function printCurrentNote() {
-
-    const note = document.getElementById("notes_text");
-
-    if (!note) {
-        alert("notes_text element not found.");
-        return;
-    }
-
-    const content = note.innerHTML.trim();
-
-    if (!content) {
-        alert("No content to print.");
-        return;
-    }
-
-    // Copy all CSS from current page
-    const styles = Array.from(
-        document.querySelectorAll('link[rel="stylesheet"], style')
-    ).map(el => el.outerHTML).join("\n");
-
-    const printWindow = window.open("", "_blank");
-
-    printWindow.document.open();
-    printWindow.document.write(`
-<!DOCTYPE html>
-<html>
-<head>
-
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-
-<!-- Base URL so relative images work -->
-<base href="${document.baseURI}">
-
-<title>Print Notes</title>
-
-${styles}
-
-<style>
-body{
-    margin:20px;
-    background:#fff;
-}
-
-img{
-    max-width:100%;
-    height:auto;
-}
-
-table{
-    width:100%;
-    border-collapse:collapse;
-}
-
-table,th,td{
-    border:1px solid #000;
-}
-
-th,td{
-    padding:8px;
-}
-
-@media print{
-    .no-print{
-        display:none !important;
-    }
-
-    body{
-        margin:15mm;
-    }
-}
-</style>
-
-</head>
-
-<body>
-
-${content}
-
-</body>
-</html>
-`);
-
-    printWindow.document.close();
-
-    // Wait until everything loads
-    printWindow.onload = () => {
-
-        const imgs = printWindow.document.images;
-
-        if (imgs.length === 0) {
-            printWindow.focus();
-            printWindow.print();
-            printWindow.close();
-            return;
-        }
-
-        let loaded = 0;
-
-        function done() {
-            loaded++;
-            if (loaded === imgs.length) {
-                setTimeout(() => {
-                    printWindow.focus();
-                    printWindow.print();
-                    printWindow.close();
-                }, 500);
-            }
-        }
-
-        for (let img of imgs) {
-            if (img.complete) {
-                done();
-            } else {
-                img.onload = done;
-                img.onerror = done;
-            }
-        }
-    };
-
-}
 
         /* TOGGLE UNIT */
 

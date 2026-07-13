@@ -1,5 +1,5 @@
 let dbmsOracleIntroductionContent = `
-
+<h3>Introduction </h3>
 <p>
 Good morning students!
 Today we will learn about Database Management System (DBMS) and Oracle Database, which are fundamental concepts in database technology.
@@ -604,7 +604,7 @@ Everything is performed locally.
     <li>SQLite</li>
 </ul>
 
-<pre style="border: 1px solid #262323;border-radius: 11px;">
+<pre class="notes_text_pre">
 +---------------------------+
 |       Computer            |
 |                           |
@@ -650,7 +650,7 @@ The client sends requests to the server.
 The server processes the request and returns the result.
 </p>
 
-<pre style="border: 1px solid #262323;border-radius: 11px;">
+<pre class="notes_text_pre">
 +-----------+       SQL Query       +-------------+
 |  Client   | --------------------> |   Server    |
 | (User PC) |                       | (Database)  |
@@ -789,7 +789,7 @@ User
 In Three-Tier Architecture, an additional Application Server is placed between the Client and Database Server.
 </p>
 
-<pre style="border: 1px solid #262323;border-radius: 11px;">
+<pre class="notes_text_pre">
 Client
    │
    ▼
@@ -830,7 +830,7 @@ Client asks for data → Server processes the request → Database stores the da
 
 let oracleInstallationGuideContent = `
 
-<h2>Oracle Database Installation </h2>
+<h3>Oracle Database Installation </h3>
 
 <p>
 Good morning students!

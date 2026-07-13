@@ -25,100 +25,6 @@
 </head>
 
 
-<style>
-    body {
-        margin: 0;
-        font-family: Arial;
-        background: #f5f6fa;
-        /* STOP FULL PAGE SCROLL */
-        height: 100%;
-        /* overflow: hidden; */
-    }
-
-    .notes_sidebar {
-        overflow-y: auto;
-        /* Vertical scrollbar */
-        overflow-x: hidden;
-        /* Hide horizontal scrollbar */
-
-    }
-
-    /* MOBILE */
-
-    @media(max-width:991px) {
-
-        html,
-        body {
-            overflow: auto;
-            /* ✅ allow scroll on mobile */
-        }
-
-        .notes_content {
-            padding: 10px;
-            max-width: 100%;
-            height: auto;
-            overflow-y: visible;
-            height: calc(100vh - 120px);
-            /* adjust header */
-        }
-
-        .notes_layout {
-            flex-direction: column;
-            /* height: 100vh; */
-            height: auto;
-            margin-top: 0px;
-        }
-
-        .mobile_menu_btn {
-            display: inline-block;
-            margin-top: 26px;
-        }
-
-        .notes_sidebar {
-            position: fixed;
-            top: 0;
-            left: -270px;
-            height: 100%;
-            z-index: 1000;
-            transition: 0.3s;
-
-        }
-
-        .notes_sidebar.show {
-            left: 0;
-        }
-
-        .notes_right {
-            width: 100%;
-        }
-
-    }
-</style>
-
-<style>
-    .notes-table {
-        width: 100%;
-        border-collapse: collapse;
-        margin: 15px 0;
-        font-family: Arial, sans-serif;
-    }
-
-    .notes-table th {
-        background: #1e293b;
-        color: #fff;
-        padding: 12px;
-    }
-
-    .notes-table td {
-        border: 1px solid #d1d5db;
-        padding: 10px;
-    }
-
-    .notes-table tr:nth-child(even) {
-        background: #f8fafc;
-    }
-</style>
-
 <body>
 
     <div class="super_container">
@@ -766,6 +672,9 @@
             <!-- CONTENT -->
 
             <div class="notes_content" id="mainContent">
+                <button onclick="printCurrentNote()" class="btn-ghost">
+                    🖨️ Print
+                </button>
 
                 <h4 id="notes_title">Introduction to Oracle</h4>
 
