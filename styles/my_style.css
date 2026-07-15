@@ -352,13 +352,32 @@ pre {
 
 .datatype {
 	color: #4EC9B0;
-	/* Teal (VS Code style) */
 	font-weight: bold;
 }
 
 .symbol {
 	color: #C586C0;
 }
+.preprocessor{
+    color:#C586C0;      /* #include */
+    font-weight:bold;
+}
+.c-header{
+    color:#CE9178;      /* <stdio.h> */
+	font-weight: bold; 
+}
+
+/* .preprocessor { color: #d73a49; font-weight: bold; }
+.header       { color: #032f62; }
+.keyword      { color: #d73a49; font-weight: bold; }
+.datatype     { color: #005cc5; font-weight: bold; }
+.function     { color: #6f42c1; font-weight: bold; }
+.string       { color: #22863a; }
+.number       { color: #005cc5; }
+.symbol       { color: #24292e; }
+.parameter    { color: #e36209; font-weight: 600; }
+.comment      { color: #6a737d; font-style: italic; } */
+
 
 /* note table */
 	.notes-table {

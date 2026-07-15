@@ -478,24 +478,411 @@ C was created to develop the <strong>UNIX Operating System</strong>. Before C, p
 
 <h4>Basic Structure of a C Program</h4>
 
-<pre>
-#include &lt;stdio.h&gt;
+<h3>C Program: Hello World</h3>
 
-int main()
-{
-    printf("Hello World");
-    return 0;
-}
+<div class="definition-box">
+    <p>
+        This is the first and most basic C program. Its purpose is to display the message
+        <strong>"Hello World"</strong> on the screen.
+    </p>
+</div>
+
+<div class="code-box">
+    <div class="code-title">hello_world.c</div>
+
+<pre><span class="preprocessor">#include</span> <span class="header">&lt;stdio.h&gt;</span>
+
+<span class="datatype">int</span> <span class="function">main</span><span class="symbol">()</span>
+<span class="symbol">{</span>
+    <span class="function">printf</span><span class="symbol">(</span><span class="string">"Hello World"</span><span class="symbol">);</span>
+    <span class="keyword">return</span> <span class="number">0</span><span class="symbol">;</span>
+<span class="symbol">}</span>
 </pre>
+</div>
 
-<h4>Explanation</h4>
+<h3>Program Output</h3>
+
+<div class="code-box">
+    <div class="code-title">Output</div>
+<pre>Hello World</pre>
+</div>
+
+<h3>Line-by-Line Explanation</h3>
+
+<h4>1. #include &lt;stdio.h&gt;</h4>
+
+<div class="notes-box">
+    <p>
+        The <strong>#include</strong> statement is a preprocessor directive that tells the compiler
+        to include the Standard Input Output header file (<strong>stdio.h</strong>) in the program.
+    </p>
+
+    <h4>What is a Preprocessor?</h4>
+
+<p>
+    A <strong>Preprocessor</strong> is a software program that processes the source code
+    <strong>before the actual compilation starts</strong>. It performs tasks such as including
+    header files, expanding macros, and processing conditional compilation directives.
+</p>
+
+<p>
+    The preprocessor executes all <strong>preprocessor directives</strong>, which always begin
+    with the <strong>#</strong> symbol.
+</p>
+
+<p>
+    For example:
+</p>
+
+<div class="code-box">
+    <div class="code-title">Example</div>
+<pre><span class="preprocessor">#include</span> <span class="header">&lt;stdio.h&gt;</span></pre>
+</div>
+
+<p>
+    In the above statement, the preprocessor reads the contents of the
+    <strong>stdio.h</strong> header file and inserts it into the program before the compiler
+    starts compiling the source code.
+</p>
+
+<h4>Common Preprocessor Directives</h4>
+
+<table class="notes-table">
+    <tr>
+        <th>Directive</th>
+        <th>Purpose</th>
+    </tr>
+    <tr>
+        <td>#include</td>
+        <td>Includes a header file into the program.</td>
+    </tr>
+    <tr>
+        <td>#define</td>
+        <td>Defines constants or macros.</td>
+    </tr>
+    <tr>
+        <td>#undef</td>
+        <td>Removes a previously defined macro.</td>
+    </tr>
+    <tr>
+        <td>#ifdef</td>
+        <td>Checks whether a macro is defined.</td>
+    </tr>
+    <tr>
+        <td>#ifndef</td>
+        <td>Checks whether a macro is not defined.</td>
+    </tr>
+    <tr>
+        <td>#if</td>
+        <td>Compiles code only if a condition is true.</td>
+    </tr>
+    <tr>
+        <td>#elif</td>
+        <td>Specifies another condition if the previous one is false.</td>
+    </tr>
+    <tr>
+        <td>#else</td>
+        <td>Executes code when previous conditions are false.</td>
+    </tr>
+    <tr>
+        <td>#endif</td>
+        <td>Marks the end of a conditional preprocessor block.</td>
+    </tr>
+</table>
+
+<h4>Features of the Preprocessor</h4>
 
 <ul>
-    <li><b>#include &lt;stdio.h&gt;</b> : Includes standard input/output functions.</li>
-    <li><b>main()</b> : Starting point of program execution.</li>
-    <li><b>printf()</b> : Displays output on the screen.</li>
-    <li><b>return 0;</b> : Indicates successful program termination.</li>
+    <li>Works before the compiler starts compiling the program.</li>
+    <li>Processes all statements beginning with the <strong>#</strong> symbol.</li>
+    <li>Includes header files into the source code.</li>
+    <li>Defines constants and macros.</li>
+    <li>Supports conditional compilation.</li>
+    <li>Makes programs easier to maintain and reuse.</li>
 </ul>
+
+<h4>Program Execution Process</h4>
+
+<div class="code-box">
+    <div class="code-title">Compilation Process</div>
+<pre>
+Source Code (.c)
+      ↓
+Preprocessor
+      ↓
+Compiler
+      ↓
+Assembler
+      ↓
+Linker
+      ↓
+Executable File (.exe)
+</pre>
+</div>
+
+<div class="definition-box">
+    <strong>Definition:</strong><br>
+    A <strong>Preprocessor</strong> is a program that processes the source code before compilation by executing all preprocessor directives (statements beginning with <strong>#</strong>), such as including header files, defining macros, and performing conditional compilation.
+</div>
+
+
+    <h4>What is a Header File?</h4>
+
+<p>
+    A <strong>Header File</strong> is a file that contains the <strong>declarations (prototypes)</strong> of predefined functions, macros, constants, and other definitions that can be used in a C program.
+</p>
+
+<p>
+    Instead of writing these functions ourselves, we simply include the required header file using the <strong>#include</strong> directive.
+</p>
+
+<p>
+    The <strong>stdio.h</strong> header file (Standard Input Output Header File) provides declarations for input and output functions used to communicate with the user through the keyboard and monitor.
+</p>
+
+<p>
+    This header file contains predefined functions such as:
+</p>
+
+<ul>
+    <li><strong>printf()</strong> - Displays output on the screen.</li>
+    <li><strong>scanf()</strong> - Takes input from the keyboard.</li>
+    <li><strong>getchar()</strong> - Reads a single character from the keyboard.</li>
+    <li><strong>putchar()</strong> - Displays a single character on the screen.</li>
+    <li><strong>gets()</strong> - Reads a string from the keyboard (deprecated).</li>
+    <li><strong>puts()</strong> - Displays a string on the screen.</li>
+</ul>
+
+<p>
+    Without including <strong>stdio.h</strong>, the compiler will not recognize functions like
+    <strong>printf()</strong> and <strong>scanf()</strong>, resulting in compilation errors or warnings.
+</p>
+
+<h4>Some Common Header Files in C</h4>
+
+<table class="notes-table">
+    <tr>
+        <th>Header File</th>
+        <th>Purpose</th>
+        <th>Common Functions</th>
+    </tr>
+    <tr>
+        <td>stdio.h</td>
+        <td>Standard Input and Output</td>
+        <td>printf(), scanf(), getchar(), putchar()</td>
+    </tr>
+    <tr>
+        <td>string.h</td>
+        <td>String Handling</td>
+        <td>strlen(), strcpy(), strcat(), strcmp()</td>
+    </tr>
+    <tr>
+        <td>math.h</td>
+        <td>Mathematical Operations</td>
+        <td>sqrt(), pow(), sin(), cos()</td>
+    </tr>
+    <tr>
+        <td>stdlib.h</td>
+        <td>General Utility Functions</td>
+        <td>malloc(), free(), rand(), exit()</td>
+    </tr>
+    <tr>
+        <td>ctype.h</td>
+        <td>Character Handling</td>
+        <td>isalpha(), isdigit(), toupper(), tolower()</td>
+    </tr>
+    <tr>
+        <td>time.h</td>
+        <td>Date and Time Functions</td>
+        <td>time(), clock(), difftime()</td>
+    </tr>
+</table>
+
+    <p>
+        This header file contains predefined functions such as:
+    </p>
+
+    <ul>
+        <li><strong>printf()</strong> - Display output on the screen</li>
+        <li><strong>scanf()</strong> - Take input from the user</li>
+        <li><strong>getchar()</strong> - Read a character</li>
+        <li><strong>putchar()</strong> - Display a character</li>
+    </ul>
+
+    <p>
+        Without including <strong>stdio.h</strong>, the compiler will not recognize the
+        <strong>printf()</strong> function.
+    </p>
+</div>
+
+<h4>2. int main()</h4>
+
+<div class="notes-box">
+    <p>
+        The <strong>main()</strong> function is the starting point of every C program.
+        Program execution always begins from this function.
+    </p>
+
+    <p><strong>int</strong> indicates that the function will return an integer value.</p>
+
+    <p><strong>main</strong> is a special function name recognized by the compiler.</p>
+
+    <p>
+        The parentheses <strong>()</strong> indicate that this is a function.
+        Since nothing is written inside the parentheses, the function does not receive any arguments.
+    </p>
+</div>
+
+<h4>3. Opening Curly Brace {</h4>
+
+<div class="notes-box">
+    <p>
+        The opening curly brace <strong>{</strong> marks the beginning of the main function body.
+        All statements belonging to the function are written inside these braces.
+    </p>
+</div>
+
+<h4>4. printf("Hello World");</h4>
+
+<div class="notes-box">
+    <p>
+        The <strong>printf()</strong> function is used to display output on the screen.
+    </p>
+
+    <p>
+        The text written inside double quotation marks is called a
+        <strong>string literal</strong>.
+    </p>
+
+    <p>
+        Whatever is written inside the quotation marks will be displayed exactly on the screen.
+    </p>
+
+    <p>
+        Therefore:
+    </p>
+
+    <div class="code-box">
+        <div class="code-title">Example</div>
+<pre>printf("Hello World");</pre>
+    </div>
+
+    <p>Displays:</p>
+
+    <div class="code-box">
+        <div class="code-title">Output</div>
+<pre>Hello World</pre>
+    </div>
+</div>
+
+<h4>5. return 0;</h4>
+
+<div class="notes-box">
+    <p>
+        The <strong>return</strong> statement terminates the execution of the main function.
+    </p>
+
+    <p>
+        Returning <strong>0</strong> indicates that the program executed successfully
+        without any errors.
+    </p>
+
+    <p>
+        The operating system receives this value after program completion.
+    </p>
+</div>
+
+<h4>6. Closing Curly Brace }</h4>
+
+<div class="notes-box">
+    <p>
+        The closing curly brace <strong>}</strong> marks the end of the main function.
+    </p>
+</div>
+
+<h3>Meaning of Each Symbol</h3>
+
+<table class="notes-table">
+    <tr>
+        <th>Symbol</th>
+        <th>Name</th>
+        <th>Purpose</th>
+    </tr>
+    <tr>
+        <td>#</td>
+        <td>Hash Symbol</td>
+        <td>Used with preprocessor directives</td>
+    </tr>
+    <tr>
+        <td>&lt; &gt;</td>
+        <td>Angle Brackets</td>
+        <td>Used to include standard header files</td>
+    </tr>
+    <tr>
+        <td>()</td>
+        <td>Parentheses</td>
+        <td>Used for function declaration and function calls</td>
+    </tr>
+    <tr>
+        <td>{}</td>
+        <td>Curly Braces</td>
+        <td>Define the beginning and end of a code block</td>
+    </tr>
+    <tr>
+        <td>" "</td>
+        <td>Double Quotes</td>
+        <td>Used to represent strings</td>
+    </tr>
+    <tr>
+        <td>;</td>
+        <td>Semicolon</td>
+        <td>Marks the end of a statement</td>
+    </tr>
+</table>
+
+<h3>Program Execution Flow</h3>
+
+<div class="code-box">
+    <div class="code-title">Execution Flow</div>
+<pre>
+Program Starts
+      ↓
+#include &lt;stdio.h&gt;
+      ↓
+main() Function Starts
+      ↓
+printf("Hello World");
+      ↓
+Output Displayed
+      ↓
+return 0;
+      ↓
+Program Ends
+</pre>
+</div>
+
+<h3>Important Points</h3>
+
+<ul>
+    <li>Every C program starts execution from the <strong>main()</strong> function.</li>
+    <li><strong>stdio.h</strong> is required for input and output functions.</li>
+    <li><strong>printf()</strong> is used to display output.</li>
+    <li>Every statement in C ends with a semicolon (<strong>;</strong>).</li>
+    <li>Curly braces define the body of a function.</li>
+    <li><strong>return 0;</strong> indicates successful program execution.</li>
+</ul>
+
+<h3>Viva Questions</h3>
+
+<ol>
+    <li>What is the purpose of #include &lt;stdio.h&gt;?</li>
+    <li>What is the role of the main() function?</li>
+    <li>Why is printf() used?</li>
+    <li>What is a header file?</li>
+    <li>Why do we use return 0?</li>
+    <li>What happens if a semicolon is omitted?</li>
+    <li>Can a C program run without main()?</li>
+</ol>
 
 <h4>Important Points</h4>
 
