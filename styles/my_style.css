@@ -348,6 +348,7 @@ pre {
 
 .function {
 	color: #DCDCAA;
+	font-weight: bold;
 }
 
 .datatype {
@@ -356,13 +357,15 @@ pre {
 }
 
 .symbol {
+	font-weight: bold;
 	color: #C586C0;
+	
 }
 .preprocessor{
     color:#C586C0;      /* #include */
     font-weight:bold;
 }
-.c-header{
+.header-file{
     color:#CE9178;      /* <stdio.h> */
 	font-weight: bold; 
 }

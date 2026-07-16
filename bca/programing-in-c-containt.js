@@ -490,7 +490,7 @@ C was created to develop the <strong>UNIX Operating System</strong>. Before C, p
 <div class="code-box">
     <div class="code-title">hello_world.c</div>
 
-<pre><span class="preprocessor">#include</span> <span class="header">&lt;stdio.h&gt;</span>
+<pre><span class="preprocessor">#include</span> <span class="header-file">&lt;stdio.h&gt;</span>
 
 <span class="datatype">int</span> <span class="function">main</span><span class="symbol">()</span>
 <span class="symbol">{</span>
@@ -536,7 +536,7 @@ C was created to develop the <strong>UNIX Operating System</strong>. Before C, p
 
 <div class="code-box">
     <div class="code-title">Example</div>
-<pre><span class="preprocessor">#include</span> <span class="header">&lt;stdio.h&gt;</span></pre>
+<pre><span class="preprocessor">#include</span> <span class="header-file">&lt;stdio.h&gt;</span></pre>
 </div>
 
 <p>
@@ -545,7 +545,7 @@ C was created to develop the <strong>UNIX Operating System</strong>. Before C, p
     starts compiling the source code.
 </p>
 
-<h4>Common Preprocessor Directives</h4>
+<h4>Preprocessor Directives</h4>
 
 <table class="notes-table">
     <tr>
@@ -601,31 +601,6 @@ C was created to develop the <strong>UNIX Operating System</strong>. Before C, p
     <li>Makes programs easier to maintain and reuse.</li>
 </ul>
 
-<h4>Program Execution Process</h4>
-
-<div class="code-box">
-    <div class="code-title">Compilation Process</div>
-<pre>
-Source Code (.c)
-      ↓
-Preprocessor
-      ↓
-Compiler
-      ↓
-Assembler
-      ↓
-Linker
-      ↓
-Executable File (.exe)
-</pre>
-</div>
-
-<div class="definition-box">
-    <strong>Definition:</strong><br>
-    A <strong>Preprocessor</strong> is a program that processes the source code before compilation by executing all preprocessor directives (statements beginning with <strong>#</strong>), such as including header files, defining macros, and performing conditional compilation.
-</div>
-
-
     <h4>What is a Header File?</h4>
 
 <p>
@@ -658,7 +633,7 @@ Executable File (.exe)
     <strong>printf()</strong> and <strong>scanf()</strong>, resulting in compilation errors or warnings.
 </p>
 
-<h4>Some Common Header Files in C</h4>
+<h4>Header Files in C</h4>
 
 <table class="notes-table">
     <tr>
@@ -840,26 +815,262 @@ Executable File (.exe)
     </tr>
 </table>
 
-<h3>Program Execution Flow</h3>
+<h4>Program Execution Process</h4>
+
+<p>
+Whenever we write a C program, the computer cannot understand it directly because it is written in a human-readable language. Before the program can run, it passes through several stages. This complete procedure is called the <strong>Program Execution Process</strong>.
+</p>
 
 <div class="code-box">
-    <div class="code-title">Execution Flow</div>
+    <div class="code-title">Compilation Process</div>
 <pre>
-Program Starts
+Source Code (.c)
       ↓
-#include &lt;stdio.h&gt;
+Preprocessor
       ↓
-main() Function Starts
+Compiler
       ↓
-printf("Hello World");
+Assembler
       ↓
-Output Displayed
+Linker
       ↓
-return 0;
-      ↓
-Program Ends
+Executable File (.exe)
 </pre>
 </div>
+
+<h4>Step 1: Source Code (.c)</h4>
+
+<p>
+The source code is the C program written by the programmer. It is saved with the <strong>.c</strong> extension.
+</p>
+
+<p><strong>Example:</strong> <code>hello.c</code></p>
+
+<p>
+At this stage, the program contains C statements that are easy for humans to read, but the computer cannot execute them directly.
+</p>
+
+<hr>
+
+<h4>Step 2: Preprocessor</h4>
+
+<p>
+The <strong>Preprocessor</strong> is the first stage of compilation. It processes all preprocessor directives before the actual compilation begins.
+</p>
+
+<p>It performs the following tasks:</p>
+
+<ul>
+<li>Processes <code>#include</code> directives by inserting the contents of header files.</li>
+<li>Expands macros created using <code>#define</code>.</li>
+<li>Removes comments from the program.</li>
+<li>Handles conditional compilation such as <code>#ifdef</code> and <code>#ifndef</code>.</li>
+</ul>
+
+<p><strong>Example:</strong></p>
+
+<div class="code-box">
+    <div class="code-title">Before Processing</div>
+
+<pre><span class="preprocessor">#include</span> <span class="header-file">&lt;stdio.h&gt;</span>
+
+<span class="datatype">int</span> <span class="function">main</span><span class="symbol">()</span>
+<span class="symbol">{</span>
+    <span class="function">printf</span><span class="symbol">(</span><span class="string">"Hello World"</span><span class="symbol">);</span>
+    <span class="keyword">return</span> <span class="number">0</span><span class="symbol">;</span>
+<span class="symbol">}</span>
+</pre>
+</div>
+
+<p>
+After preprocessing, the contents of the <strong>stdio.h</strong> header file are inserted into the program automatically.
+</p>
+
+<hr>
+
+<h4>Step 3: Compiler</h4>
+
+<p>
+The <strong>Compiler</strong> is a software program that converts the preprocessed C program into Assembly Language. 
+It also checks the program for syntax errors.
+</p>
+
+<p>The compiler performs:</p>
+
+<ul>
+<li>Syntax checking</li>
+<li>Type checking</li>
+<li>Error detection</li>
+<li>Code optimization</li>
+<li>Conversion of C code into Assembly Language</li>
+</ul>
+
+<p>
+If there are syntax errors, the compilation stops here until they are corrected.
+</p>
+
+<hr>
+
+<h4>Step 4: Assembler</h4>
+
+<p>
+
+An <strong>Assembler</strong> is a type of computer program that converts assembly language code into machine language code that can be directly executed by a computer's processor.
+</p>
+
+<p>
+The generated file is called an <strong>Object File</strong>, usually having the extension <strong>.obj</strong> or <strong>.o</strong>.
+</p>
+
+<p>
+Machine code consists of binary instructions (0s and 1s) that the processor understands.
+</p>
+
+<p>
+    The object file (.o or .obj) contains only the machine code generated from your program. It does not contain the machine code of the required library functions (such as printf() and scanf()).
+    The Linker adds the machine code for these library functions and creates the final executable file.
+</p>
+
+<hr>
+
+<h4>Step 5: Linker</h4>
+
+<p>
+The <strong>Linker</strong> combines the object file with the required library files.
+</p>
+
+<p>
+For example, the <code>printf()</code> function is stored inside the C Standard Library, not inside your program. The linker finds its definition and connects it with your program.
+</p>
+
+<p>The linker performs:</p>
+
+<ul>
+<li>Combines object files.</li>
+<li>Links library functions.</li>
+<li>Resolves external references.</li>
+<li>Creates the final executable file.</li>
+</ul>
+
+<hr>
+
+<h4>Step 6: Executable File (.exe)</h4>
+
+<p>
+After successful linking, an executable file (<strong>.exe</strong> in Windows) is created.
+</p>
+
+<p>
+This is the final program that the operating system can load into memory and execute.
+</p>
+
+<p><strong>Example:</strong></p>
+
+<pre>
+hello.exe
+</pre>
+
+<p>
+When you double-click this file or run it from the command prompt, the program starts executing.
+</p>
+
+<hr>
+
+<h4>Complete Flow</h4>
+
+<div class="code-box">
+<div class="code-title">Program Execution Flow</div>
+<pre>
+Programmer
+      │
+      ▼
+Writes C Program (.c)
+      │
+      ▼
+Preprocessor
+(Removes comments,
+expands macros,
+includes header files)
+      │
+      ▼
+Compiler
+(Checks errors and
+converts C code to Assembly)
+      │
+      ▼
+Assembler
+(Converts Assembly
+to Machine Code)
+      │
+      ▼
+Linker
+(Adds required libraries)
+      │
+      ▼
+Executable File (.exe)
+      │
+      ▼
+Program Runs
+</pre>
+</div>
+
+<h4>Summary</h4>
+
+<table class="notes-table">
+<tr>
+<th>Stage</th>
+<th>Purpose</th>
+<th>Output</th>
+</tr>
+
+<tr>
+<td>Source Code</td>
+<td>Program written by the programmer</td>
+<td>.c file</td>
+</tr>
+
+<tr>
+<td>Preprocessor</td>
+<td>Processes directives and header files</td>
+<td>Expanded source code</td>
+</tr>
+
+<tr>
+<td>Compiler</td>
+<td>Checks syntax and converts C to Assembly</td>
+<td>Assembly code (.asm)</td>
+</tr>
+
+<tr>
+<td>Assembler</td>
+<td>Converts Assembly to Machine Code</td>
+<td>Object file (.obj/.o)</td>
+</tr>
+
+<tr>
+<td>Linker</td>
+<td>Combines object files and libraries</td>
+<td>Executable file (.exe)</td>
+</tr>
+
+<tr>
+<td>Execution</td>
+<td>Operating System loads and runs the program</td>
+<td>Program Output</td>
+</tr>
+</table>
+
+<h4>Remember</h4>
+
+<ul>
+<li>Source Code → Written by the programmer.</li>
+<li>Preprocessor → Processes <code>#include</code>, <code>#define</code>, and removes comments.</li>
+<li>Compiler → Converts C code into Assembly Language.</li>
+<li>Assembler → Converts Assembly Language into Machine Code.</li>
+<li>Linker → Connects object files and library functions.</li>
+<li>Executable File → Final program that the computer can execute.</li>
+</ul>
+
 
 <h3>Important Points</h3>
 
@@ -871,18 +1082,6 @@ Program Ends
     <li>Curly braces define the body of a function.</li>
     <li><strong>return 0;</strong> indicates successful program execution.</li>
 </ul>
-
-<h3>Viva Questions</h3>
-
-<ol>
-    <li>What is the purpose of #include &lt;stdio.h&gt;?</li>
-    <li>What is the role of the main() function?</li>
-    <li>Why is printf() used?</li>
-    <li>What is a header file?</li>
-    <li>Why do we use return 0?</li>
-    <li>What happens if a semicolon is omitted?</li>
-    <li>Can a C program run without main()?</li>
-</ol>
 
 <h4>Important Points</h4>
 
@@ -897,9 +1096,15 @@ Program Ends
 <h4>Important Interview Questions</h4>
 
 <ul>
+    <li>What is the purpose of #include &lt;stdio.h&gt;?</li>
+    <li>What is the role of the main() function?</li>
+    <li>Why is printf() used?</li>
+    <li>What is a header file?</li>
+    <li>Why do we use return 0?</li>
+    <li>What happens if a semicolon is omitted?</li>
+    <li>Can a C program run without main()?</li>
     <li>Who developed the C language?</li>
     <li>When was C language developed?</li>
-    <li>Why was C language developed?</li>
     <li>Who is known as the Father of C Language?</li>
     <li>Which language was the predecessor of C?</li>
     <li>What is the full form of BCPL?</li>
@@ -1477,7 +1682,7 @@ Flowcharts help programmers understand, analyze, and design programs before writ
 
 let variablesAndIdentifiers = `
 
-<h3>Variables and Identifiers in C Language</h3>
+<h3>Variables and Identifiers</h3>
 
 <p>
 Variables and identifiers are basic concepts in C programming. They help programmers store data and give meaningful names to different elements in a program.
@@ -1495,7 +1700,7 @@ In simple words, identifiers are names given by the programmer to different prog
 
 <h4>Examples of Identifiers</h4>
 
-<pre>
+<pre class="notes_text_pre">
 age
 salary
 studentName
@@ -1514,24 +1719,69 @@ marks
 <li>C is case-sensitive, so Total and total are different.</li>
 </ul>
 
-<h4>Valid Identifiers</h4>
+<h4>Examples</h4>
 
-<pre>
-age
-student_name
-totalMarks
-_salary
-num1
-</pre>
+<table class="notes-table">
+    <tr>
+        <th>Identifier</th>
+        <th>Valid / Invalid</th>
+        <th>Reason</th>
+    </tr>
 
-<h4>Invalid Identifiers</h4>
+    <tr>
+        <td><code>age</code></td>
+        <td>✅ Valid</td>
+        <td>Starts with a letter and follows all identifier rules.</td>
+    </tr>
 
-<pre>
-1age        // Starts with a digit
-student name // Contains space
-float       // Keyword
-total-marks // Special character (-)
-</pre>
+    <tr>
+        <td><code>student_name</code></td>
+        <td>✅ Valid</td>
+        <td>Uses an underscore (<code>_</code>), which is allowed.</td>
+    </tr>
+
+    <tr>
+        <td><code>totalMarks</code></td>
+        <td>✅ Valid</td>
+        <td>Uses letters and follows the camelCase naming convention.</td>
+    </tr>
+
+    <tr>
+        <td><code>_salary</code></td>
+        <td>✅ Valid</td>
+        <td>Starts with an underscore, which is permitted.</td>
+    </tr>
+
+    <tr>
+        <td><code>num1</code></td>
+        <td>✅ Valid</td>
+        <td>Starts with a letter and contains digits after it.</td>
+    </tr>
+
+    <tr>
+        <td><code>1age</code></td>
+        <td>❌ Invalid</td>
+        <td>Identifiers cannot begin with a digit.</td>
+    </tr>
+
+    <tr>
+        <td><code>student name</code></td>
+        <td>❌ Invalid</td>
+        <td>Spaces are not allowed in identifiers.</td>
+    </tr>
+
+    <tr>
+        <td><code>float</code></td>
+        <td>❌ Invalid</td>
+        <td><code>float</code> is a reserved keyword in C.</td>
+    </tr>
+
+    <tr>
+        <td><code>total-marks</code></td>
+        <td>❌ Invalid</td>
+        <td>The hyphen (<code>-</code>) is not allowed in identifiers.</td>
+    </tr>
+</table>
 
 <h4>What is a Variable?</h4>
 
@@ -1541,50 +1791,89 @@ A <strong>variable</strong> is a named memory location used to store data. The v
 
 <h4>Syntax of Variable Declaration</h4>
 
+<div class="code-box">
+    <div class="code-title">Syntax</div>
 <pre>
 data_type variable_name;
 </pre>
+</div>
+
+<p>
+A <strong>variable declaration</strong> tells the compiler that a variable with a specific name and data type will be used in the program.
+</p>
+
+<table class="notes-table">
+    <tr>
+        <th>Part</th>
+        <th>Description</th>
+        <th>Example</th>
+    </tr>
+
+    <tr>
+        <td><code>data_type</code></td>
+        <td>Specifies the type of data the variable can store.</td>
+        <td><code>int</code>, <code>float</code>, <code>char</code>, <code>double</code></td>
+    </tr>
+
+    <tr>
+        <td><code>variable_name</code></td>
+        <td>The name given to the variable. It must follow the identifier rules.</td>
+        <td><code>age</code>, <code>salary</code>, <code>marks</code></td>
+    </tr>
+
+    <tr>
+        <td><code>;</code> (Semicolon)</td>
+        <td>Marks the end of the declaration statement.</td>
+        <td><code>int age;</code></td>
+    </tr>
+</table>
 
 <h4>Examples</h4>
 
+<div class="code-box">
+    <div class="code-title">Variable Declarations</div>
 <pre>
 int age;
 float salary;
 char grade;
+double percentage;
 </pre>
+</div>
 
-<h4>Variable Initialization</h4>
+<table class="notes-table">
+    <tr>
+        <th>Declaration</th>
+        <th>Meaning</th>
+    </tr>
 
-<p>
-Assigning a value to a variable at the time of declaration is called initialization.
-</p>
+    <tr>
+        <td><code>int age;</code></td>
+        <td>Declares an integer variable named <strong>age</strong>.</td>
+    </tr>
 
-<pre>
-int age = 20;
-float salary = 25000.50;
-char grade = 'A';
-</pre>
+    <tr>
+        <td><code>float salary;</code></td>
+        <td>Declares a floating-point variable named <strong>salary</strong>.</td>
+    </tr>
 
-<h4>Example Program</h4>
+    <tr>
+        <td><code>char grade;</code></td>
+        <td>Declares a character variable named <strong>grade</strong>.</td>
+    </tr>
 
-<pre>
-#include &lt;stdio.h&gt;
+    <tr>
+        <td><code>double percentage;</code></td>
+        <td>Declares a double-precision floating-point variable named <strong>percentage</strong>.</td>
+    </tr>
+</table>
 
-int main()
-{
-    int age = 21;
+<h4>Remember</h4>
 
-    printf("Age = %d", age);
-
-    return 0;
-}
-</pre>
-
-<h4>Output</h4>
-
-<pre>
-Age = 21
-</pre>
+<ul>
+    <li><strong>Data Type</strong> → Defines what kind of value the variable can store.</li>
+    <li><strong>Variable Name</strong> → Identifies the variable in the program.</li>
+    <li><strong>Semicolon (;)</strong> → Ends the declaration statement.</li>
+</ul>
 
 <h4>Difference Between Identifier and Variable</h4>
 
