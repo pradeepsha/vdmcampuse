@@ -1075,22 +1075,14 @@ Program Runs
 <h3>Important Points</h3>
 
 <ul>
-    <li>Every C program starts execution from the <strong>main()</strong> function.</li>
-    <li><strong>stdio.h</strong> is required for input and output functions.</li>
-    <li><strong>printf()</strong> is used to display output.</li>
-    <li>Every statement in C ends with a semicolon (<strong>;</strong>).</li>
-    <li>Curly braces define the body of a function.</li>
-    <li><strong>return 0;</strong> indicates successful program execution.</li>
-</ul>
-
-<h4>Important Points</h4>
-
-<ul>
     <li>C is a case-sensitive language.</li>
     <li>Every statement ends with a semicolon (;).</li>
     <li>The main() function is the entry point of a C program.</li>
     <li>C programs are compiled before execution.</li>
     <li>C supports functions, arrays, pointers, structures, and file handling.</li>
+    <li>Every C program starts execution from the <strong>main()</strong> function.</li>
+    <li><strong>stdio.h</strong> is required for input and output functions.</li>
+    <li><strong>printf()</strong> is used to display output.</li>
 </ul>
 
 <h4>Important Interview Questions</h4>
@@ -1459,7 +1451,7 @@ Flowcharts help programmers understand, analyze, and design programs before writ
 <li>Provides proper documentation of the program.</li>
 </ul>
 
-<h4>Common Flowchart Symbols</h4>
+<h4>Flowchart Symbols</h4>
 
 <table class="notes-table">
     <tr>
@@ -1960,24 +1952,22 @@ In simple words, a data type tells the computer what type of data is being store
 Suppose a program stores age, salary, and grade. The computer needs to know whether the value is a number, decimal value, or character. Data types help the computer understand this information.
 </p>
 
-<pre>
+<div class="code-box">
+
+    <div class="code-title">
+        <span>Example</span>
+    </div>
+
+<pre><code>
 int age = 20;
 float salary = 25000.50;
 char grade = 'A';
-</pre>
+</code></pre>
+
+</div>
 
 <h4>Classification of Data Types in C</h4>
-
-<p>
-Data types in C are mainly divided into four categories:
-</p>
-
-<ul>
-<li><strong>Basic (Primary) Data Types</strong></li>
-<li><strong>Derived Data Types</strong></li>
-<li><strong>User-Defined Data Types</strong></li>
-<li><strong>Void Data Type</strong></li>
-</ul>
+<img src="bca_images/data-type.png" alt="data type" class="notes_img" >
 
 <h4>1. Basic (Primary) Data Types</h4>
 
@@ -2024,49 +2014,365 @@ Basic data types are the fundamental data types provided by C language.
 The <strong>int</strong> data type is used to store whole numbers without decimal points.
 </p>
 
-<pre>
-int age = 20;
-int marks = 85;
-</pre>
+<div class="code-box">
 
-<p><strong>Output:</strong></p>
+    <div class="code-title">
+        <span>Program: Integer Data Type</span>
+    </div>
 
-<pre>
-20
-85
-</pre>
+<pre><code><span class="preprocessor">#include</span> <span class="header-file">&lt;stdio.h&gt;</span>
 
-<h4>Float Data Type (float)</h4>
+<span class="datatype">int</span> <span class="function">main</span><span class="symbol">()</span>
+<span class="symbol">{</span>
+    <span class="comment">// Integer variables</span>
+    <span class="datatype">int</span> age <span class="symbol">=</span> 20<span class="symbol">;</span>
+    <span class="datatype">int</span> marks <span class="symbol">=</span> 95<span class="symbol">;</span>
+    <span class="datatype">int</span> temperature <span class="symbol">=</span> -5<span class="symbol">;</span>
 
-<p>
-The <strong>float</strong> data type is used to store decimal numbers.
-</p>
+    <span class="comment">// Display values</span>
+    <span class="function">printf</span><span class="symbol">(</span><span class="string">"Age = %d"</span><span class="symbol">,</span> age<span class="symbol">);</span>
+    <span class="function">printf</span><span class="symbol">(</span><span class="string">"Marks = %d"</span><span class="symbol">,</span> marks<span class="symbol">);</span>
+    <span class="function">printf</span><span class="symbol">(</span><span class="string">"Temperature = %d"</span><span class="symbol">,</span> temperature<span class="symbol">);</span>
 
-<pre>
-float percentage = 85.5;
-float price = 199.99;
-</pre>
+    <span class="keyword">return</span> 0<span class="symbol">;</span>
+<span class="symbol">}</span></code></pre>
 
-<h4>Double Data Type (double)</h4>
+</div>
 
-<p>
-The <strong>double</strong> data type stores decimal numbers with greater precision than float.
-</p>
 
-<pre>
-double salary = 25000.56789;
-</pre>
-
-<h4>Character Data Type (char)</h4>
+<h3>Float Data Type (<span class="keyword">float</span>)</h3>
 
 <p>
-The <strong>char</strong> data type is used to store a single character enclosed within single quotes.
+    The <span class="keyword">float</span> data type is used to store <b>decimal (floating-point)</b> numbers.
+    It is commonly used when a value contains digits after the decimal point.
 </p>
 
-<pre>
-char grade = 'A';
-char gender = 'M';
-</pre>
+<p><b>Examples of Float Values:</b></p>
+
+<div class="code-box">
+
+    <div class="code-title">
+        <span>Float Values</span>
+    </div>
+
+<pre><code>
+10.5
+-25.75
+0.0
+99.99
+3.1416
+</code></pre>
+
+</div>
+
+<p><b>Program: Float Data Type</b></p>
+
+<div class="code-box">
+
+    <div class="code-title">
+        <span>Program: Float Data Type</span>
+    </div>
+
+<pre><code><span class="preprocessor">#include</span> <span class="header-file">&lt;stdio.h&gt;</span>
+
+<span class="datatype">int</span> <span class="function">main</span><span class="symbol">()</span>
+<span class="symbol">{</span>
+    <span class="comment">// Float variables</span>
+    <span class="datatype">float</span> price <span class="symbol">=</span> 250.75<span class="symbol">;</span>
+    <span class="datatype">float</span> height <span class="symbol">=</span> 5.8<span class="symbol">;</span>
+    <span class="datatype">float</span> temperature <span class="symbol">=</span> -12.5<span class="symbol">;</span>
+
+    <span class="comment">// Display values</span>
+    <span class="function">printf</span><span class="symbol">(</span><span class="string">"Price = %.2f"</span><span class="symbol">,</span> price<span class="symbol">);</span>
+    <span class="function">printf</span><span class="symbol">(</span><span class="string">"Height = %.1f"</span><span class="symbol">,</span> height<span class="symbol">);</span>
+    <span class="function">printf</span><span class="symbol">(</span><span class="string">"Temperature = %.1f"</span><span class="symbol">,</span> temperature<span class="symbol">);</span>
+
+    <span class="keyword">return</span> 0<span class="symbol">;</span>
+<span class="symbol">}</span></code></pre>
+
+</div>
+
+<h4>Output</h4>
+
+<div class="code-box">
+
+    <div class="code-title">
+        <span>Output</span>
+    </div>
+
+<pre><code>
+Price = 250.75
+Height = 5.8
+Temperature = -12.5
+</code></pre>
+
+</div>
+
+<h4>Key Points</h4>
+
+<table class="notes-table">
+    <tr>
+        <th>Property</th>
+        <th>Description</th>
+    </tr>
+    <tr>
+        <td>Keyword</td>
+        <td><code>float</code></td>
+    </tr>
+    <tr>
+        <td>Stores</td>
+        <td>Decimal (Floating-point) Numbers</td>
+    </tr>
+    <tr>
+        <td>Decimal Values</td>
+        <td>✔ Allowed</td>
+    </tr>
+    <tr>
+        <td>Positive Values</td>
+        <td>✔ Allowed</td>
+    </tr>
+    <tr>
+        <td>Negative Values</td>
+        <td>✔ Allowed</td>
+    </tr>
+    <tr>
+        <td>Default Size</td>
+        <td>Usually 4 Bytes (Compiler Dependent)</td>
+    </tr>
+    <tr>
+        <td>Precision</td>
+        <td>Approximately 6–7 Decimal Digits</td>
+    </tr>
+    <tr>
+        <td>Format Specifier</td>
+        <td><code>%f</code></td>
+    </tr>
+</table>
+
+<p>
+    <b>Note:</b> The <code>float</code> data type is suitable for storing decimal numbers with moderate precision. For higher precision, use the <code>double</code> data type.
+</p>
+
+<h3>Double Data Type (<span class="keyword">double</span>)</h3>
+
+<p>
+    The <span class="keyword">double</span> data type is used to store <b>decimal (floating-point)</b> numbers with
+    <b>higher precision</b> than the <span class="keyword">float</span> data type.
+    It is commonly used in scientific calculations and applications where greater accuracy is required.
+</p>
+
+<p><b>Examples of Double Values:</b></p>
+
+<div class="code-box">
+
+    <div class="code-title">
+        <span>Double Values</span>
+    </div>
+
+<pre><code>
+3.1415926535
+25000.987654
+-45.678912
+0.000001
+123456.789123
+</code></pre>
+
+</div>
+
+<div class="code-box">
+
+    <div class="code-title">
+        <span>Program: Double Data Type</span>
+    </div>
+
+<pre><code><span class="preprocessor">#include</span> <span class="header-file">&lt;stdio.h&gt;</span>
+
+<span class="datatype">int</span> <span class="function">main</span><span class="symbol">()</span>
+<span class="symbol">{</span>
+    <span class="comment">// Double variables</span>
+    <span class="datatype">double</span> pi <span class="symbol">=</span> 3.1415926535<span class="symbol">;</span>
+    <span class="datatype">double</span> salary <span class="symbol">=</span> 25000.987654<span class="symbol">;</span>
+    <span class="datatype">double</span> temperature <span class="symbol">=</span> -45.678912<span class="symbol">;</span>
+
+    <span class="comment">// Display values</span>
+    <span class="function">printf</span><span class="symbol">(</span><span class="string">"Pi = %lf"</span><span class="symbol">,</span> pi<span class="symbol">);</span>
+    <span class="function">printf</span><span class="symbol">(</span><span class="string">"Salary = %lf"</span><span class="symbol">,</span> salary<span class="symbol">);</span>
+    <span class="function">printf</span><span class="symbol">(</span><span class="string">"Temperature = %lf"</span><span class="symbol">,</span> temperature<span class="symbol">);</span>
+
+    <span class="keyword">return</span> 0<span class="symbol">;</span>
+<span class="symbol">}</span></code></pre>
+
+</div>
+
+<h4>Output</h4>
+
+<div class="code-box">
+
+    <div class="code-title">
+        <span>Output</span>
+    </div>
+
+<pre><code>
+Pi = 3.141593
+Salary = 25000.987654
+Temperature = -45.678912
+</code></pre>
+
+</div>
+
+<h4>Key Points</h4>
+
+<table class="notes-table">
+    <tr>
+        <th>Property</th>
+        <th>Description</th>
+    </tr>
+    <tr>
+        <td>Keyword</td>
+        <td><code>double</code></td>
+    </tr>
+    <tr>
+        <td>Stores</td>
+        <td>Decimal (Floating-point) Numbers</td>
+    </tr>
+    <tr>
+        <td>Decimal Values</td>
+        <td>✔ Allowed</td>
+    </tr>
+    <tr>
+        <td>Positive Values</td>
+        <td>✔ Allowed</td>
+    </tr>
+    <tr>
+        <td>Negative Values</td>
+        <td>✔ Allowed</td>
+    </tr>
+    <tr>
+        <td>Default Size</td>
+        <td>Usually 8 Bytes (Compiler Dependent)</td>
+    </tr>
+    <tr>
+        <td>Precision</td>
+        <td>Approximately 15–16 Decimal Digits</td>
+    </tr>
+    <tr>
+        <td>Format Specifier</td>
+        <td><code>%lf</code></td>
+    </tr>
+</table>
+
+<p>
+    <b>Note:</b> The <code>double</code> data type provides higher precision than <code>float</code>. It is preferred when calculations require more accurate decimal values.
+</p>
+
+<h3>Character Data Type (<span class="keyword">char</span>)</h3>
+
+<p>
+    The <span class="keyword">char</span> data type is used to store a <b>single character</b>, such as a letter, digit,
+    or special symbol. A character value must always be enclosed in <b>single quotes (' ')</b>.
+</p>
+
+<p><b>Examples of Character Values:</b></p>
+
+<div class="code-box">
+
+    <div class="code-title">
+        <span>Character Values</span>
+    </div>
+
+<pre><code>
+'A'
+'Z'
+'a'
+'5'
+'#'
+</code></pre>
+
+</div>
+
+<p><b>Program: Character Data Type</b></p>
+
+<div class="code-box">
+
+    <div class="code-title">
+        <span>Program: Character Data Type</span>
+    </div>
+
+<pre><code><span class="preprocessor">#include</span> <span class="header-file">&lt;stdio.h&gt;</span>
+
+<span class="datatype">int</span> <span class="function">main</span><span class="symbol">()</span>
+<span class="symbol">{</span>
+    <span class="comment">// Character variables</span>
+    <span class="datatype">char</span> grade <span class="symbol">=</span> <span class="string">'A'</span><span class="symbol">;</span>
+    <span class="datatype">char</span> gender <span class="symbol">=</span> <span class="string">'M'</span><span class="symbol">;</span>
+    <span class="datatype">char</span> symbol <span class="symbol">=</span> <span class="string">'#'</span><span class="symbol">;</span>
+
+    <span class="comment">// Display values</span>
+    <span class="function">printf</span><span class="symbol">(</span><span class="string">"Grade = %c"</span><span class="symbol">,</span> grade<span class="symbol">);</span>
+    <span class="function">printf</span><span class="symbol">(</span><span class="string">"Gender = %c"</span><span class="symbol">,</span> gender<span class="symbol">);</span>
+    <span class="function">printf</span><span class="symbol">(</span><span class="string">"Symbol = %c"</span><span class="symbol">,</span> symbol<span class="symbol">);</span>
+
+    <span class="keyword">return</span> 0<span class="symbol">;</span>
+<span class="symbol">}</span></code></pre>
+
+</div>
+
+<h4>Output</h4>
+
+<div class="code-box">
+
+    <div class="code-title">
+        <span>Output</span>
+    </div>
+
+<pre><code>
+Grade = A
+Gender = M
+Symbol = #
+</code></pre>
+
+</div>
+
+<h4>Key Points</h4>
+
+<table class="notes-table">
+    <tr>
+        <th>Property</th>
+        <th>Description</th>
+    </tr>
+    <tr>
+        <td>Keyword</td>
+        <td><code>char</code></td>
+    </tr>
+    <tr>
+        <td>Stores</td>
+        <td>A Single Character</td>
+    </tr>
+    <tr>
+        <td>Value Enclosed In</td>
+        <td>Single Quotes (<code>' '</code>)</td>
+    </tr>
+    <tr>
+        <td>Examples</td>
+        <td><code>'A'</code>, <code>'5'</code>, <code>'#'</code></td>
+    </tr>
+    <tr>
+        <td>Default Size</td>
+        <td>1 Byte</td>
+    </tr>
+    <tr>
+        <td>ASCII Support</td>
+        <td>Stores ASCII character values internally</td>
+    </tr>
+    <tr>
+        <td>Format Specifier</td>
+        <td><code>%c</code></td>
+    </tr>
+</table>
+
+<p>
+    <b>Note:</b> The <code>char</code> data type can store only <b>one character at a time</b>. To store multiple characters or words, use a <code>char</code> array (string).
+</p>
 
 <h4>2. Derived Data Types</h4>
 
@@ -2080,12 +2386,6 @@ Derived data types are created from basic data types.
 <li>Function</li>
 </ul>
 
-<p><strong>Example:</strong></p>
-
-<pre>
-int marks[5];
-int *ptr;
-</pre>
 
 <h4>3. User-Defined Data Types</h4>
 
@@ -2100,111 +2400,353 @@ These data types are created by the programmer according to the program requirem
 <li>typedef</li>
 </ul>
 
-<p><strong>Example:</strong></p>
 
-<pre>
-struct Student
-{
-    int id;
-    char name[20];
-};
-</pre>
-
-<h4>4. Void Data Type</h4>
+<h3>Void Data Type (<span class="keyword">void</span>)</h3>
 
 <p>
-The <strong>void</strong> data type means "no value" or "nothing".
-It is commonly used in functions that do not return any value.
+    The <span class="keyword">void</span> data type represents the <b>absence of a value</b>. It means that no data is
+    returned or stored. The <span class="keyword">void</span> data type is mainly used with functions and pointers.
 </p>
 
-<pre>
-void display()
-{
-    printf("Welcome");
-}
-</pre>
+<p><b>Common Uses of <code>void</code>:</b></p>
+
+<ul>
+    <li>A function that does not return any value.</li>
+    <li>A function that does not accept any arguments.</li>
+    <li>A generic pointer (<code>void *</code>) that can point to any data type.</li>
+</ul>
+
+<p><b>Program: Function Returning No Value</b></p>
+
+<div class="code-box">
+
+    <div class="code-title">
+        <span>Program: Void Data Type</span>
+    </div>
+
+<pre><code><span class="preprocessor">#include</span> <span class="header-file">&lt;stdio.h&gt;</span>
+
+<span class="datatype">void</span> <span class="function">displayMessage</span><span class="symbol">()</span>
+<span class="symbol">{</span>
+    <span class="function">printf</span><span class="symbol">(</span><span class="string">"Welcome to C Programming!"</span><span class="symbol">);</span>
+<span class="symbol">}</span>
+
+<span class="datatype">int</span> <span class="function">main</span><span class="symbol">()</span>
+<span class="symbol">{</span>
+    <span class="function">displayMessage</span><span class="symbol">();</span>
+
+    <span class="keyword">return</span> 0<span class="symbol">;</span>
+<span class="symbol">}</span></code></pre>
+
+</div>
+
+<h4>Output</h4>
+
+<div class="code-box">
+
+    <div class="code-title">
+        <span>Output</span>
+    </div>
+
+<pre><code>
+Welcome to C Programming!
+</code></pre>
+
+</div>
+
+<h4>Key Points</h4>
+
+<table class="notes-table">
+    <tr>
+        <th>Property</th>
+        <th>Description</th>
+    </tr>
+    <tr>
+        <td>Keyword</td>
+        <td><code>void</code></td>
+    </tr>
+    <tr>
+        <td>Represents</td>
+        <td>No Value / Empty Data Type</td>
+    </tr>
+    <tr>
+        <td>Used With</td>
+        <td>Functions and Pointers</td>
+    </tr>
+    <tr>
+        <td>Return Value</td>
+        <td>Does Not Return Any Value</td>
+    </tr>
+    <tr>
+        <td>Function Parameters</td>
+        <td><code>void</code> indicates that a function takes no arguments.</td>
+    </tr>
+    <tr>
+        <td>Void Pointer</td>
+        <td><code>void *</code> can store the address of any data type.</td>
+    </tr>
+</table>
+
+<p>
+    <b>Note:</b> The <code>void</code> data type does not store any value. It is mainly used when a function does not return a value or when creating a generic pointer (<code>void *</code>).
+</p>
+
 
 <h4>Type Modifiers in C</h4>
 
 <p>
-Type modifiers are used to modify the size or range of basic data types.
+Type modifiers are special keywords that are used to <b>modify the size, range, or sign</b> of basic data types. They allow a program to store larger values, smaller values, or only positive values, depending on the requirement.
 </p>
 
+<p>The four type modifiers available in C are:</p>
+
 <ul>
-<li>short</li>
-<li>long</li>
-<li>signed</li>
-<li>unsigned</li>
+    <li><b>short</b></li>
+    <li><b>long</b></li>
+    <li><b>signed</b></li>
+    <li><b>unsigned</b></li>
 </ul>
 
-<p><strong>Examples:</strong></p>
-
-<pre>
-short int a;
-long int b;
-unsigned int c;
-signed int d;
-</pre>
-
-<h4>Size of Common Data Types</h4>
+<h4>Type Modifiers with Data Types</h4>
 
 <table class="notes-table">
-<tr>
-<th>Data Type</th>
-<th>Size (Approx.)</th>
-</tr>
-
-<tr>
-<td>char</td>
-<td>1 Byte</td>
-</tr>
-
-<tr>
-<td>int</td>
-<td>4 Bytes</td>
-</tr>
-
-<tr>
-<td>float</td>
-<td>4 Bytes</td>
-</tr>
-
-<tr>
-<td>double</td>
-<td>8 Bytes</td>
-</tr>
-
+    <tr>
+        <th>Modifier</th>
+        <th>Common Data Type</th>
+        <th>Example</th>
+        <th>Description</th>
+    </tr>
+    <tr>
+        <td><code>short</code></td>
+        <td>int</td>
+        <td><code>short int age;</code></td>
+        <td>Stores small integer values.</td>
+    </tr>
+    <tr>
+        <td><code>long</code></td>
+        <td>int, double</td>
+        <td><code>long int population;</code></td>
+        <td>Stores larger values than the normal data type.</td>
+    </tr>
+    <tr>
+        <td><code>signed</code></td>
+        <td>int, char</td>
+        <td><code>signed int temperature;</code></td>
+        <td>Stores both positive and negative values.</td>
+    </tr>
+    <tr>
+        <td><code>unsigned</code></td>
+        <td>int, char</td>
+        <td><code>unsigned int marks;</code></td>
+        <td>Stores only non-negative (positive) values.</td>
+    </tr>
 </table>
 
-<h4>Program Using Different Data Types</h4>
+<p>
+<b>Note:</b> Type modifiers cannot be used with every data type. They are mainly used with
+<code>int</code>, <code>char</code>, and <code>double</code> (only <code>long double</code>).
+</p>
 
-<pre>
-#include &lt;stdio.h&gt;
+<hr>
 
-int main()
-{
-    int age = 20;
-    float marks = 85.5;
-    double salary = 25000.75;
-    char grade = 'A';
+<h4>1. <span class="keyword">short</span> Modifier</h4>
 
-    printf("Age = %d\\n", age);
-    printf("Marks = %.2f\\n", marks);
-    printf("Salary = %lf\\n", salary);
-    printf("Grade = %c\\n", grade);
+<p>
+The <b>short</b> modifier is used when the values to be stored are small. It uses less memory than a normal <code>int</code> on most systems.
+</p>
 
-    return 0;
-}
-</pre>
+
+
+<h4>Example</h4>
+
+<div class="code-box">
+
+    <div class="code-title">
+        <span> short Modifier</span>
+    </div>
+
+<pre><code><span class="preprocessor">#include</span> <span class="header-file">&lt;stdio.h&gt;</span>
+
+<span class="datatype">int</span> <span class="function">main</span><span class="symbol">()</span>
+<span class="symbol">{</span>
+    <span class="comment">// Short integer variable</span>
+    <span class="datatype">short int</span> students <span class="symbol">=</span> 60<span class="symbol">;</span>
+
+    <span class="comment">// Display the value</span>
+    <span class="function">printf</span><span class="symbol">(</span><span class="string">"Number of Students = %hd"</span><span class="symbol">,</span> students<span class="symbol">);</span>
+
+    <span class="keyword">return</span> 0<span class="symbol">;</span>
+<span class="symbol">}</span></code></pre>
+
+</div>
 
 <h4>Output</h4>
 
-<pre>
-Age = 20
-Marks = 85.50
-Salary = 25000.750000
-Grade = A
-</pre>
+<div class="code-box">
+
+    <div class="code-title">
+        <span>Output</span>
+    </div>
+
+<pre><code>
+Number of Students = 60
+</code></pre>
+
+</div>
+
+<p>
+<b>Explanation:</b> Here, <code>short int</code> is used because the number of students is small. It is a good choice for storing small integer values and can save memory compared to a normal <code>int</code> on some systems.
+</p>
+
+
+<hr>
+
+<h4>2. <span class="keyword">long</span> Modifier</h4>
+
+<p>
+The <b>long</b> modifier is used when very large values need to be stored.
+</p>
+
+<h4>Example</h4>
+
+<p>
+The <b>long</b> modifier is used to store very large integer values. It provides a larger range than a normal <code>int</code>.
+</p>
+
+<div class="code-box">
+
+    <div class="code-title">
+        <span> long Modifier</span>
+    </div>
+
+<pre><code><span class="preprocessor">#include</span> <span class="header-file">&lt;stdio.h&gt;</span>
+
+<span class="datatype">int</span> <span class="function">main</span><span class="symbol">()</span>
+<span class="symbol">{</span>
+    <span class="comment">// Long integer variable</span>
+    <span class="datatype">long int</span> population <span class="symbol">=</span> 1420000000<span class="symbol">;</span>
+
+    <span class="comment">// Display the value</span>
+    <span class="function">printf</span><span class="symbol">(</span><span class="string">"Population = %ld"</span><span class="symbol">,</span> population<span class="symbol">);</span>
+
+    <span class="keyword">return</span> 0<span class="symbol">;</span>
+<span class="symbol">}</span></code></pre>
+
+</div>
+
+<h4>Output</h4>
+
+<div class="code-box">
+
+    <div class="code-title">
+        <span>Output</span>
+    </div>
+
+<pre><code>
+Population = 1420000000
+</code></pre>
+
+</div>
+
+<p>
+<b>Explanation:</b> Here, <code>long int</code> is used because the population of a country is a very large number. A <code>long int</code> can store larger integer values than a normal <code>int</code>, making it suitable for values such as population, distance, and large financial records.
+</p>
+
+<hr>
+
+<h4>3. <span class="keyword">signed</span> Modifier</h4>
+
+<p>
+The <b>signed</b> modifier allows a variable to store both <b>positive</b> and <b>negative</b> values.
+</p>
+
+<p><b>Example:</b></p>
+
+<p>
+Temperature can be above or below zero. Therefore, a signed integer is suitable.
+</p>
+
+<div class="code-box">
+<div class="code-title">
+<span>Example</span>
+</div>
+
+<pre><code>signed int temperature = -15;</code></pre>
+
+</div>
+
+<hr>
+
+<h4>4. <span class="keyword">unsigned</span> Modifier</h4>
+
+<p>
+The <b>unsigned</b> modifier allows only <b>zero and positive</b> values. Since negative values are not stored, the maximum positive range becomes larger.
+</p>
+
+<p><b>Example:</b></p>
+
+<p>
+The number of students in a class can never be negative. Therefore, <code>unsigned int</code> is a good choice.
+</p>
+
+<div class="code-box">
+<div class="code-title">
+<span>Example</span>
+</div>
+
+<pre><code>unsigned int students = 75;</code></pre>
+
+</div>
+
+<p>
+<b>Remember:</b> Choose the modifier based on the type of data you want to store. This helps in using memory efficiently and storing values correctly.
+</p>
+
+
+
+
+<h4>Program Using Different Data Types</h4>
+
+<div class="code-box">
+
+    <div class="code-title">
+        <span>Program: Format Specifiers Example</span>
+    </div>
+
+<pre><code><span class="preprocessor">#include</span> <span class="header-file">&lt;stdio.h&gt;</span>
+
+<span class="datatype">int</span> <span class="function">main</span><span class="symbol">()</span>
+<span class="symbol">{</span>
+    <span class="datatype">int</span> age <span class="symbol">=</span> <span class="number">20</span><span class="symbol">;</span>
+    <span class="datatype">float</span> marks <span class="symbol">=</span> <span class="number">85.5</span><span class="symbol">;</span>
+    <span class="datatype">double</span> salary <span class="symbol">=</span> <span class="number">25000.75</span><span class="symbol">;</span>
+    <span class="datatype">char</span> grade <span class="symbol">=</span> <span class="character">'A'</span><span class="symbol">;</span>
+
+    <span class="comment">// Display values using different format specifiers</span>
+    <span class="function">printf</span><span class="symbol">(</span><span class="string">"Age = %d\\n"</span><span class="symbol">,</span> age<span class="symbol">);</span>
+    <span class="function">printf</span><span class="symbol">(</span><span class="string">"Marks = %.2f\\n"</span><span class="symbol">,</span> marks<span class="symbol">);</span>
+    <span class="function">printf</span><span class="symbol">(</span><span class="string">"Salary = %lf\\n"</span><span class="symbol">,</span> salary<span class="symbol">);</span>
+    <span class="function">printf</span><span class="symbol">(</span><span class="string">"Grade = %c\\n"</span><span class="symbol">,</span> grade<span class="symbol">);</span>
+
+    <span class="keyword">return</span> <span class="number">0</span><span class="symbol">;</span>
+<span class="symbol">}</span></code></pre>
+
+</div>
+
+<h4>Output</h4>
+
+<div class="code-box">
+
+    <div class="code-title">
+        <span>Output</span>
+    </div>
+
+<pre><code>Age = <span class="number">20</span>
+Marks = <span class="number">85.50</span>
+Salary = <span class="number">25000.750000</span>
+Grade = <span class="character">A</span></code></pre>
+
+</div>
 
 <h4>Important Points to Remember</h4>
 
@@ -2233,6 +2775,228 @@ Grade = A
 
 `;
 
+const modifiers = `
+<h3>Modifiers in Programming</h3>
+
+<p>
+A <b>modifier</b> is a keyword that changes the behavior, properties, or accessibility of a data type, variable, method, or class.
+Modifiers do not create anything new. Instead, they modify the existing feature.
+</p>
+
+<p>
+There are two main types of modifiers used in programming:
+</p>
+
+<table class="notes-table">
+<tr>
+<th>Modifier Type</th>
+<th>Purpose</th>
+<th>Examples</th>
+</tr>
+
+<tr>
+<td><b>Type Modifiers</b></td>
+<td>Modify the size, range, or storage of a data type.</td>
+<td>short, long, signed, unsigned</td>
+</tr>
+
+<tr>
+<td><b>Access Modifiers</b></td>
+<td>Control who can access variables, methods, or classes.</td>
+<td>public, private, protected</td>
+</tr>
+</table>
+
+<div class="note">
+<b>Note:</b> Different programming languages support different modifiers. For example, C mainly uses <b>Type Modifiers</b>, while languages like Java and C++ use both <b>Type Modifiers</b> and <b>Access Modifiers</b>.
+</div>
+
+<hr>
+
+<h3>1. Type Modifiers</h3>
+
+<p>
+Type modifiers are keywords that modify the size, range, or sign of basic data types.
+They help the programmer use memory efficiently and store larger or smaller values when needed.
+</p>
+
+<h4>Common Type Modifiers in C</h4>
+
+<table class="notes-table">
+<tr>
+<th>Modifier</th>
+<th>Purpose</th>
+<th>Example</th>
+</tr>
+
+<tr>
+<td><b>short</b></td>
+<td>Stores smaller integer values and uses less memory.</td>
+<td>short age = 20;</td>
+</tr>
+
+<tr>
+<td><b>long</b></td>
+<td>Stores larger integer values.</td>
+<td>long population = 1400000000;</td>
+</tr>
+
+<tr>
+<td><b>signed</b></td>
+<td>Stores both positive and negative values.</td>
+<td>signed int temperature = -15;</td>
+</tr>
+
+<tr>
+<td><b>unsigned</b></td>
+<td>Stores only positive values, allowing a larger positive range.</td>
+<td>unsigned int marks = 100;</td>
+</tr>
+
+</table>
+
+<h4>Example</h4>
+
+<p>
+Suppose you are storing the age of a student. The value will never be very large,
+so you can use <b>short</b>. But if you want to store the population of a country,
+you need <b>long</b> because the number is much bigger.
+</p>
+
+<div class="code-box">
+
+    <div class="code-title">
+        <span>Program: Type Modifiers Example</span>
+    </div>
+
+<pre><code><span class="comment">// Type modifier variables</span>
+<span class="datatype">short</span> age <span class="symbol">=</span> <span class="number">20</span><span class="symbol">;</span>
+<span class="datatype">long</span> population <span class="symbol">=</span> <span class="number">1400000000</span><span class="symbol">;</span>
+<span class="datatype">signed int</span> temperature <span class="symbol">=</span> <span class="number">-5</span><span class="symbol">;</span>
+<span class="datatype">unsigned int</span> marks <span class="symbol">=</span> <span class="number">95</span><span class="symbol">;</span></code></pre>
+
+</div>
+
+<div class="note">
+<b>Remember:</b> Type modifiers change the characteristics of a data type, such as its size or value range.
+</div>
+
+<hr>
+
+<h3>2. Access Modifiers</h3>
+
+<p>
+Access modifiers control the visibility or accessibility of variables, methods, and classes.
+They decide <b>who can access a particular member</b> of a class.
+</p>
+
+<p>
+Access modifiers are mainly used in Object-Oriented Programming (OOP) languages such as
+<b>Java</b> and <b>C++</b>. They are <b>not available in the C programming language</b>.
+</p>
+
+<h4>Common Access Modifiers</h4>
+
+<table class="notes-table">
+<tr>
+<th>Access Modifier</th>
+<th>Meaning</th>
+</tr>
+
+<tr>
+<td><b>public</b></td>
+<td>Accessible from anywhere in the program.</td>
+</tr>
+
+<tr>
+<td><b>private</b></td>
+<td>Accessible only within the same class.</td>
+</tr>
+
+<tr>
+<td><b>protected</b></td>
+<td>Accessible within the same class and its child classes.</td>
+</tr>
+
+</table>
+
+<h4>Example</h4>
+
+<p>
+Imagine a school:
+</p>
+
+<ul>
+<li><b>Public</b> → School playground (everyone can enter).</li>
+<li><b>Protected</b> → Staff room (only teachers and authorized people).</li>
+<li><b>Private</b> → Principal's personal office (only the principal).</li>
+</ul>
+
+<div class="code-box">
+
+    <div class="code-title">
+        <span>Program: Access Modifiers Example</span>
+    </div>
+
+<pre><code><span class="comment">// Java Example</span>
+
+<span class="keyword">public</span> <span class="keyword">class</span> Student <span class="symbol">{</span>
+
+    <span class="keyword">public</span> <span class="datatype">String</span> name<span class="symbol">;</span>      <span class="comment">// Accessible everywhere</span>
+
+    <span class="keyword">private</span> <span class="datatype">int</span> marks<span class="symbol">;</span>       <span class="comment">// Accessible only inside Student class</span>
+
+    <span class="keyword">protected</span> <span class="datatype">int</span> rollNo<span class="symbol">;</span>    <span class="comment">// Accessible in Student and child classes</span>
+
+<span class="symbol">}</span></code></pre>
+
+</div>
+
+<div class="note">
+<b>Important:</b>
+<ul>
+<li>C Programming → Uses <b>Type Modifiers</b> only.</li>
+<li>Java & C++ → Use both <b>Type Modifiers</b> and <b>Access Modifiers</b>.</li>
+</ul>
+</div>
+
+<h3>Difference Between Type Modifiers and Access Modifiers</h3>
+
+<table class="notes-table">
+<tr>
+<th>Type Modifiers</th>
+<th>Access Modifiers</th>
+</tr>
+
+<tr>
+<td>Modify the size or range of a data type.</td>
+<td>Control the accessibility of class members.</td>
+</tr>
+
+<tr>
+<td>Used with data types.</td>
+<td>Used with classes, methods, and variables.</td>
+</tr>
+
+<tr>
+<td>Available in C, C++, and Java.</td>
+<td>Mainly used in Object-Oriented languages like Java and C++.</td>
+</tr>
+
+<tr>
+<td>Examples: short, long, signed, unsigned</td>
+<td>Examples: public, private, protected</td>
+</tr>
+
+</table>
+
+<div class="note">
+<b>Exam Tip:</b><br>
+<b>Type Modifiers</b> change the properties of a data type, whereas
+<b>Access Modifiers</b> control who can access data or methods in a program.
+</div>
+`;
+
 let operators = `
 
 <h3>Operators in C Language</h3>
@@ -2246,10 +3010,17 @@ Operators are used to perform calculations, comparisons, logical operations, and
 Example:
 </p>
 
-<pre>
-int a = 10, b = 5;
-int sum = a + b;
-</pre>
+<div class="code-box">
+
+    <div class="code-title">
+        <span> Example</span>
+    </div>
+
+<pre><code><span class="datatype">int</span> a <span class="symbol">=</span> <span class="number">10</span><span class="symbol">,</span> b <span class="symbol">=</span> <span class="number">5</span><span class="symbol">;</span>
+
+<span class="datatype">int</span> sum <span class="symbol">=</span> a <span class="symbol">+</span> b<span class="symbol">;</span></code></pre>
+
+</div>
 
 <p>
 Here, <strong>+</strong> is an operator used for addition.
@@ -2323,22 +3094,28 @@ Arithmetic operators are used to perform mathematical calculations.
 
 <h4>Program Example</h4>
 
-<pre>
-#include <stdio.h>
+<div class="code-box">
 
-int main()
-{
-    int a = 10, b = 3;
+    <div class="code-title">
+        <span>Program: Arithmetic Operators</span>
+    </div>
 
-    printf("Addition = %d\\n", a+b);
-    printf("Subtraction = %d\\n", a-b);
-    printf("Multiplication = %d\\n", a*b);
-    printf("Division = %d\\n", a/b);
-    printf("Modulus = %d\\n", a%b);
+<pre><code><span class="preprocessor">#include</span> <span class="header-file">&lt;stdio.h&gt;</span>
 
-    return 0;
-}
-</pre>
+<span class="datatype">int</span> <span class="function">main</span><span class="symbol">()</span>
+<span class="symbol">{</span>
+    <span class="datatype">int</span> a <span class="symbol">=</span> <span class="number">10</span><span class="symbol">,</span> b <span class="symbol">=</span> <span class="number">3</span><span class="symbol">;</span>
+
+    <span class="function">printf</span><span class="symbol">(</span><span class="string">"Addition = %d\\n"</span><span class="symbol">,</span> a <span class="symbol">+</span> b<span class="symbol">);</span>
+    <span class="function">printf</span><span class="symbol">(</span><span class="string">"Subtraction = %d\\n"</span><span class="symbol">,</span> a <span class="symbol">-</span> b<span class="symbol">);</span>
+    <span class="function">printf</span><span class="symbol">(</span><span class="string">"Multiplication = %d\\n"</span><span class="symbol">,</span> a <span class="symbol">*</span> b<span class="symbol">);</span>
+    <span class="function">printf</span><span class="symbol">(</span><span class="string">"Division = %d\\n"</span><span class="symbol">,</span> a <span class="symbol">/</span> b<span class="symbol">);</span>
+    <span class="function">printf</span><span class="symbol">(</span><span class="string">"Modulus = %d\\n"</span><span class="symbol">,</span> a <span class="symbol">%</span> b<span class="symbol">);</span>
+
+    <span class="keyword">return</span> <span class="number">0</span><span class="symbol">;</span>
+<span class="symbol">}</span></code></pre>
+
+</div>
 
 <hr>
 
@@ -2402,13 +3179,40 @@ Relational operators compare two values and return either True (1) or False (0).
 
 <h4>Example</h4>
 
-<pre>
-int a = 10, b = 20;
+<div class="code-box">
 
-printf("%d", a == b);
-printf("%d", a != b);
-printf("%d", a < b);
-</pre>
+    <div class="code-title">
+        <span>Program: Relational Operators</span>
+    </div>
+
+<pre><code><span class="preprocessor">#include</span> <span class="header-file">&lt;stdio.h&gt;</span>
+
+<span class="datatype">int</span> <span class="function">main</span><span class="symbol">()</span>
+<span class="symbol">{</span>
+    <span class="datatype">int</span> a <span class="symbol">=</span> <span class="number">10</span><span class="symbol">,</span> b <span class="symbol">=</span> <span class="number">20</span><span class="symbol">;</span>
+
+    <span class="comment">// Equal to (==)</span>
+    <span class="function">printf</span><span class="symbol">(</span><span class="string">"a == b : %d\\n"</span><span class="symbol">,</span> a <span class="symbol">==</span> b<span class="symbol">);</span>
+
+    <span class="comment">// Not equal to (!=)</span>
+    <span class="function">printf</span><span class="symbol">(</span><span class="string">"a != b : %d\\n"</span><span class="symbol">,</span> a <span class="symbol">!=</span> b<span class="symbol">);</span>
+
+    <span class="comment">// Less than (<)</span>
+    <span class="function">printf</span><span class="symbol">(</span><span class="string">"a < b : %d\\n"</span><span class="symbol">,</span> a <span class="symbol">&lt;</span> b<span class="symbol">);</span>
+
+    <span class="comment">// Greater than (>)</span>
+    <span class="function">printf</span><span class="symbol">(</span><span class="string">"a > b : %d\\n"</span><span class="symbol">,</span> a <span class="symbol">&gt;</span> b<span class="symbol">);</span>
+
+    <span class="comment">// Less than or equal to (<=)</span>
+    <span class="function">printf</span><span class="symbol">(</span><span class="string">"a <= b : %d\\n"</span><span class="symbol">,</span> a <span class="symbol">&lt;=</span> b<span class="symbol">);</span>
+
+    <span class="comment">// Greater than or equal to (>=)</span>
+    <span class="function">printf</span><span class="symbol">(</span><span class="string">"a >= b : %d\\n"</span><span class="symbol">,</span> a <span class="symbol">&gt;=</span> b<span class="symbol">);</span>
+
+    <span class="keyword">return</span> <span class="number">0</span><span class="symbol">;</span>
+<span class="symbol">}</span></code></pre>
+
+</div>
 
 <hr>
 
@@ -2447,15 +3251,31 @@ Logical operators are used to combine two or more conditions.
 
 <h4>Example</h4>
 
-<pre>
-int age = 20;
+<div class="code-box">
 
-(age >= 18 && age <= 60)
+    <div class="code-title">
+        <span>Program: Logical Operators</span>
+    </div>
 
-(age < 18 || age > 60)
+<pre><code><span class="preprocessor">#include</span> <span class="header-file">&lt;stdio.h&gt;</span>
 
-!(age == 20)
-</pre>
+<span class="datatype">int</span> <span class="function">main</span><span class="symbol">()</span>
+<span class="symbol">{</span>
+    <span class="datatype">int</span> age <span class="symbol">=</span> <span class="number">20</span><span class="symbol">;</span>
+
+    <span class="comment">// Logical AND (&&)</span>
+    <span class="function">printf</span><span class="symbol">(</span><span class="string">"age >= 18 && age <= 60 : %d\\n"</span><span class="symbol">,</span> age <span class="symbol">&gt;=</span> <span class="number">18</span> <span class="symbol">&amp;&amp;</span> age <span class="symbol">&lt;=</span> <span class="number">60</span><span class="symbol">);</span>
+
+    <span class="comment">// Logical OR (||)</span>
+    <span class="function">printf</span><span class="symbol">(</span><span class="string">"age < 18 || age > 60 : %d\\n"</span><span class="symbol">,</span> age <span class="symbol">&lt;</span> <span class="number">18</span> <span class="symbol">||</span> age <span class="symbol">&gt;</span> <span class="number">60</span><span class="symbol">);</span>
+
+    <span class="comment">// Logical NOT (!)</span>
+    <span class="function">printf</span><span class="symbol">(</span><span class="string">"!(age == 20) : %d\\n"</span><span class="symbol">,</span> <span class="symbol">!(</span>age <span class="symbol">==</span> <span class="number">20</span><span class="symbol">));</span>
+
+    <span class="keyword">return</span> <span class="number">0</span><span class="symbol">;</span>
+<span class="symbol">}</span></code></pre>
+
+</div>
 
 <hr>
 
@@ -2541,15 +3361,30 @@ These operators increase or decrease a variable value by 1.
 
 <h4>Example</h4>
 
-<pre>
-int a = 5;
+<div class="code-box">
 
-a++;
-printf("%d", a);
+    <div class="code-title">
+        <span>Program: Increment and Decrement Operators</span>
+    </div>
 
-a--;
-printf("%d", a);
-</pre>
+<pre><code><span class="preprocessor">#include</span> <span class="header-file">&lt;stdio.h&gt;</span>
+
+<span class="datatype">int</span> <span class="function">main</span><span class="symbol">()</span>
+<span class="symbol">{</span>
+    <span class="datatype">int</span> a <span class="symbol">=</span> <span class="number">5</span><span class="symbol">;</span>
+
+    <span class="comment">// Increment operator (++): Increases the value by 1</span>
+    a<span class="symbol">++;</span>
+    <span class="function">printf</span><span class="symbol">(</span><span class="string">"After Increment = %d\\n"</span><span class="symbol">,</span> a<span class="symbol">);</span>
+
+    <span class="comment">// Decrement operator (--): Decreases the value by 1</span>
+    a<span class="symbol">--;</span>
+    <span class="function">printf</span><span class="symbol">(</span><span class="string">"After Decrement = %d\\n"</span><span class="symbol">,</span> a<span class="symbol">);</span>
+
+    <span class="keyword">return</span> <span class="number">0</span><span class="symbol">;</span>
+<span class="symbol">}</span></code></pre>
+
+</div>
 
 <hr>
 
@@ -2599,10 +3434,40 @@ Bitwise operators work directly on binary values (bits).
 
 <h4>Example</h4>
 
-<pre>
-5 & 3 = 1
-5 | 3 = 7
-</pre>
+<div class="code-box">
+
+    <div class="code-title">
+        <span>Program: Bitwise Operators</span>
+    </div>
+
+<pre><code><span class="preprocessor">#include</span> <span class="header-file">&lt;stdio.h&gt;</span>
+
+<span class="datatype">int</span> <span class="function">main</span><span class="symbol">()</span>
+<span class="symbol">{</span>
+    <span class="datatype">int</span> a <span class="symbol">=</span> <span class="number">5</span><span class="symbol">,</span> b <span class="symbol">=</span> <span class="number">3</span><span class="symbol">;</span>
+
+    <span class="comment">// Bitwise AND (&)</span>
+    <span class="function">printf</span><span class="symbol">(</span><span class="string">"a & b = %d\\n"</span><span class="symbol">,</span> a <span class="symbol">&amp;</span> b<span class="symbol">);</span>
+
+    <span class="comment">// Bitwise OR (|)</span>
+    <span class="function">printf</span><span class="symbol">(</span><span class="string">"a | b = %d\\n"</span><span class="symbol">,</span> a <span class="symbol">|</span> b<span class="symbol">);</span>
+
+    <span class="comment">// Bitwise XOR (^)</span>
+    <span class="function">printf</span><span class="symbol">(</span><span class="string">"a ^ b = %d\\n"</span><span class="symbol">,</span> a <span class="symbol">^</span> b<span class="symbol">);</span>
+
+    <span class="comment">// Bitwise NOT (~)</span>
+    <span class="function">printf</span><span class="symbol">(</span><span class="string">"~a = %d\\n"</span><span class="symbol">,</span> <span class="symbol">~</span>a<span class="symbol">);</span>
+
+    <span class="comment">// Left Shift (<<)</span>
+    <span class="function">printf</span><span class="symbol">(</span><span class="string">"a << 1 = %d\\n"</span><span class="symbol">,</span> a <span class="symbol">&lt;&lt;</span> <span class="number">1</span><span class="symbol">);</span>
+
+    <span class="comment">// Right Shift (>>)</span>
+    <span class="function">printf</span><span class="symbol">(</span><span class="string">"a >> 1 = %d\\n"</span><span class="symbol">,</span> a <span class="symbol">&gt;&gt;</span> <span class="number">1</span><span class="symbol">);</span>
+
+    <span class="keyword">return</span> <span class="number">0</span><span class="symbol">;</span>
+<span class="symbol">}</span></code></pre>
+
+</div>
 
 <hr>
 
@@ -2612,18 +3477,39 @@ Bitwise operators work directly on binary values (bits).
 The conditional operator is a short form of if-else.
 </p>
 
-<pre>
-condition ? true_statement : false_statement;
-</pre>
+<div class="code-box">
+
+    <div class="code-title">
+        <span>Syntax: Ternary Operator</span>
+    </div>
+
+<pre><code>condition <span class="symbol">?</span> true_statement <span class="symbol">:</span> false_statement<span class="symbol">;</span></code></pre>
+
+</div>
 
 <h4>Example</h4>
 
-<pre>
-int a = 10, b = 20;
+<div class="code-box">
 
-(a > b) ? printf("A is Greater")
-        : printf("B is Greater");
-</pre>
+    <div class="code-title">
+        <span>Program: Ternary Operator</span>
+    </div>
+
+<pre><code><span class="preprocessor">#include</span> <span class="header-file">&lt;stdio.h&gt;</span>
+
+<span class="datatype">int</span> <span class="function">main</span><span class="symbol">()</span>
+<span class="symbol">{</span>
+    <span class="datatype">int</span> a <span class="symbol">=</span> <span class="number">10</span><span class="symbol">,</span> b <span class="symbol">=</span> <span class="number">20</span><span class="symbol">;</span>
+
+    <span class="comment">// Check which number is greater using the ternary operator</span>
+    <span class="symbol">(</span>a <span class="symbol">&gt;</span> b<span class="symbol">)</span>
+        <span class="symbol">?</span> <span class="function">printf</span><span class="symbol">(</span><span class="string">"A is Greater"</span><span class="symbol">)</span>
+        <span class="symbol">:</span> <span class="function">printf</span><span class="symbol">(</span><span class="string">"B is Greater"</span><span class="symbol">);</span>
+
+    <span class="keyword">return</span> <span class="number">0</span><span class="symbol">;</span>
+<span class="symbol">}</span></code></pre>
+
+</div>
 
 <hr>
 
@@ -2654,11 +3540,25 @@ int a = 10, b = 20;
 
 <h4>Example</h4>
 
-<pre>
-int a;
+<div class="code-box">
 
-printf("%d", sizeof(a));
-</pre>
+    <div class="code-title">
+        <span>Program: sizeof Operator</span>
+    </div>
+
+<pre><code><span class="preprocessor">#include</span> <span class="header-file">&lt;stdio.h&gt;</span>
+
+<span class="datatype">int</span> <span class="function">main</span><span class="symbol">()</span>
+<span class="symbol">{</span>
+    <span class="datatype">int</span> a<span class="symbol">;</span>
+
+    <span class="comment">// Display the size of integer variable in bytes</span>
+    <span class="function">printf</span><span class="symbol">(</span><span class="string">"Size of int = %zu bytes"</span><span class="symbol">,</span> <span class="keyword">sizeof</span><span class="symbol">(</span>a<span class="symbol">));</span>
+
+    <span class="keyword">return</span> <span class="number">0</span><span class="symbol">;</span>
+<span class="symbol">}</span></code></pre>
+
+</div>
 
 <hr>
 
@@ -2690,6 +3590,740 @@ printf("%d", sizeof(a));
 
 `;
 
+const formatSpecifiers = `
+<h3>Format Specifiers in C</h3>
+
+<p>
+A <b>Format Specifier</b> is a special code that begins with the <b>%</b> symbol.
+It tells the <b>printf()</b> function how to display a value on the screen and tells the
+<b>scanf()</b> function what type of input should be accepted from the keyboard.
+</p>
+
+<p>
+In simple words, a format specifier tells the compiler <b>what type of data</b> is being printed or entered.
+Without the correct format specifier, the output may be incorrect or the program may not work as expected.
+</p>
+
+<h4>Common Format Specifiers</h4>
+
+<table class="notes-table">
+<tr>
+<th>Format Specifier</th>
+<th>Data Type</th>
+<th>Description</th>
+<th>Example</th>
+</tr>
+
+<tr>
+<td><b>%d</b></td>
+<td>int</td>
+<td>Displays or reads a signed integer value.</td>
+<td>25</td>
+</tr>
+
+<tr>
+<td><b>%f</b></td>
+<td>float</td>
+<td>Displays or reads a floating-point (decimal) value.</td>
+<td>12.50</td>
+</tr>
+
+<tr>
+<td><b>%lf</b></td>
+<td>double</td>
+<td>Used with double values (especially in scanf()).</td>
+<td>123.456</td>
+</tr>
+
+<tr>
+<td><b>%c</b></td>
+<td>char</td>
+<td>Displays or reads a single character.</td>
+<td>A</td>
+</tr>
+
+<tr>
+<td><b>%s</b></td>
+<td>char array (String)</td>
+<td>Displays or reads a string.</td>
+<td>Hello</td>
+</tr>
+
+<tr>
+<td><b>%u</b></td>
+<td>unsigned int</td>
+<td>Displays an unsigned integer.</td>
+<td>250</td>
+</tr>
+
+<tr>
+<td><b>%ld</b></td>
+<td>long int</td>
+<td>Displays or reads a long integer.</td>
+<td>123456789</td>
+</tr>
+
+<tr>
+<td><b>%lld</b></td>
+<td>long long int</td>
+<td>Displays or reads a long long integer.</td>
+<td>9876543210</td>
+</tr>
+
+<tr>
+<td><b>%x</b></td>
+<td>int</td>
+<td>Displays a number in hexadecimal (base 16) format.</td>
+<td>1A</td>
+</tr>
+
+<tr>
+<td><b>%o</b></td>
+<td>int</td>
+<td>Displays a number in octal (base 8) format.</td>
+<td>32</td>
+</tr>
+
+</table>
+
+<h3>Detailed Explanation of Each Format Specifier</h3>
+
+<h4>1. %d (Integer)</h4>
+
+<p>
+The <b>%d</b> format specifier is used to print or read an <b>int</b> (integer) value.
+An integer is a whole number that does not contain any decimal point.
+</p>
+
+<p>
+Use <b>%d</b> whenever your variable is declared as <b>int</b>.
+</p>
+
+<h4>Example</h4>
+
+<div class="code-box">
+
+    <div class="code-title">
+        <span>Program: %d Format Specifier</span>
+    </div>
+
+<pre><code><span class="preprocessor">#include</span> <span class="header-file">&lt;stdio.h&gt;</span>
+
+<span class="datatype">int</span> <span class="function">main</span><span class="symbol">()</span>
+<span class="symbol">{</span>
+    <span class="datatype">int</span> age <span class="symbol">=</span> <span class="number">20</span><span class="symbol">;</span>
+
+    <span class="function">printf</span><span class="symbol">(</span><span class="string">"%d"</span><span class="symbol">,</span> age<span class="symbol">);</span>
+
+    <span class="keyword">return</span> <span class="number">0</span><span class="symbol">;</span>
+<span class="symbol">}</span></code></pre>
+
+</div>
+
+<h4>Output</h4>
+
+<div class="code-box">
+
+    <div class="code-title">
+        <span>Output</span>
+    </div>
+
+<pre><code><span class="number">20</span></code></pre>
+
+</div>
+
+<div class="note">
+<b>Student Note:</b>
+Use <b>%d</b> only for integer values such as age, roll number, salary (without decimals), marks, etc.
+</div>
+
+<hr>
+
+<h4>2. %f (Float)</h4>
+
+<p>
+The <b>%f</b> format specifier is used to print or read a <b>float</b> value.
+A float stores numbers that contain a decimal point.
+</p>
+
+<p>
+By default, <b>printf()</b> displays six digits after the decimal point.
+</p>
+
+<h4>Example</h4>
+
+<div class="code-box">
+
+    <div class="code-title">
+        <span>Program: %f Format Specifier</span>
+    </div>
+
+<pre><code><span class="preprocessor">#include</span> <span class="header-file">&lt;stdio.h&gt;</span>
+
+<span class="datatype">int</span> <span class="function">main</span><span class="symbol">()</span>
+<span class="symbol">{</span>
+    <span class="datatype">float</span> marks <span class="symbol">=</span> <span class="number">85.5</span><span class="symbol">;</span>
+
+    <span class="function">printf</span><span class="symbol">(</span><span class="string">"%f"</span><span class="symbol">,</span> marks<span class="symbol">);</span>
+
+    <span class="keyword">return</span> <span class="number">0</span><span class="symbol">;</span>
+<span class="symbol">}</span></code></pre>
+
+</div>
+
+<h4>Output</h4>
+
+<div class="code-box">
+
+    <div class="code-title">
+        <span>Output</span>
+    </div>
+
+<pre><code><span class="number">85.500000</span></code></pre>
+
+</div>
+
+<p>
+You can control the number of decimal places.
+</p>
+
+<h4>Example</h4>
+
+<div class="code-box">
+
+    <div class="code-title">
+        <span>Program: Display Float with 2 Decimal Places</span>
+    </div>
+
+<pre><code><span class="preprocessor">#include</span> <span class="header-file">&lt;stdio.h&gt;</span>
+
+<span class="datatype">int</span> <span class="function">main</span><span class="symbol">()</span>
+<span class="symbol">{</span>
+    <span class="datatype">float</span> marks <span class="symbol">=</span> <span class="number">85.5</span><span class="symbol">;</span>
+
+    <span class="function">printf</span><span class="symbol">(</span><span class="string">"%.2f"</span><span class="symbol">,</span> marks<span class="symbol">);</span>
+
+    <span class="keyword">return</span> <span class="number">0</span><span class="symbol">;</span>
+<span class="symbol">}</span></code></pre>
+
+</div>
+
+<h4>Output</h4>
+
+<div class="code-box">
+
+    <div class="code-title">
+        <span>Output</span>
+    </div>
+
+<pre><code><span class="number">85.50</span></code></pre>
+
+</div>
+
+<div class="note">
+<b>Student Note:</b>
+Use <b>%f</b> for decimal values like height, weight, percentage, temperature, etc.
+</div>
+
+<hr>
+
+<h4>3. %lf (Double)</h4>
+
+<p>
+The <b>%lf</b> format specifier is mainly used with the <b>double</b> data type.
+A double stores decimal values with much higher precision than float.
+</p>
+
+<h4>Example</h4>
+
+<div class="code-box">
+
+    <div class="code-title">
+        <span>Program: %lf Format Specifier</span>
+    </div>
+
+<pre><code><span class="preprocessor">#include</span> <span class="header-file">&lt;stdio.h&gt;</span>
+
+<span class="datatype">int</span> <span class="function">main</span><span class="symbol">()</span>
+<span class="symbol">{</span>
+    <span class="datatype">double</span> pi <span class="symbol">=</span> <span class="number">3.1415926535</span><span class="symbol">;</span>
+
+    <span class="function">printf</span><span class="symbol">(</span><span class="string">"%lf"</span><span class="symbol">,</span> pi<span class="symbol">);</span>
+
+    <span class="keyword">return</span> <span class="number">0</span><span class="symbol">;</span>
+<span class="symbol">}</span></code></pre>
+
+</div>
+
+<h4>Output</h4>
+
+<div class="code-box">
+
+    <div class="code-title">
+        <span>Output</span>
+    </div>
+
+<pre><code><span class="number">3.141593</span></code></pre>
+
+</div>
+
+<div class="note">
+<b>Remember:</b>
+
+<ul>
+<li>In <b>scanf()</b>, use <b>%lf</b> for double variables.</li>
+<li>In modern C, <b>printf()</b> also accepts <b>%f</b> for double values.</li>
+</ul>
+
+</div>
+
+<hr>
+
+<h4>4. %c (Character)</h4>
+
+<p>
+The <b>%c</b> format specifier is used to print or read a single character.
+A character is enclosed within single quotes.
+</p>
+
+<h4>Example</h4>
+
+<div class="code-box">
+
+    <div class="code-title">
+        <span>Program: %c Format Specifier</span>
+    </div>
+
+<pre><code><span class="preprocessor">#include</span> <span class="header-file">&lt;stdio.h&gt;</span>
+
+<span class="datatype">int</span> <span class="function">main</span><span class="symbol">()</span>
+<span class="symbol">{</span>
+    <span class="datatype">char</span> grade <span class="symbol">=</span> <span class="character">'A'</span><span class="symbol">;</span>
+
+    <span class="function">printf</span><span class="symbol">(</span><span class="string">"%c"</span><span class="symbol">,</span> grade<span class="symbol">);</span>
+
+    <span class="keyword">return</span> <span class="number">0</span><span class="symbol">;</span>
+<span class="symbol">}</span></code></pre>
+
+</div>
+
+<h4>Output</h4>
+
+<div class="code-box">
+
+    <div class="code-title">
+        <span>Output</span>
+    </div>
+
+<pre><code><span class="character">A</span></code></pre>
+
+</div>
+
+<div class="note">
+<b>Student Note:</b>
+Use <b>%c</b> for a single letter, digit, or symbol such as A, B, 5, @, #, etc.
+</div>
+
+<hr>
+
+<h4>5. %s (String)</h4>
+
+<p>
+The <b>%s</b> format specifier is used to print or read a string.
+A string is a collection of characters stored in a character array.
+</p>
+
+<h4>Example</h4>
+
+<div class="code-box">
+
+    <div class="code-title">
+        <span>Program: %s Format Specifier</span>
+    </div>
+
+<pre><code><span class="preprocessor">#include</span> <span class="header-file">&lt;stdio.h&gt;</span>
+
+<span class="datatype">int</span> <span class="function">main</span><span class="symbol">()</span>
+<span class="symbol">{</span>
+    <span class="datatype">char</span> name<span class="symbol">[] =</span> <span class="string">"Pradeep"</span><span class="symbol">;</span>
+
+    <span class="function">printf</span><span class="symbol">(</span><span class="string">"%s"</span><span class="symbol">,</span> name<span class="symbol">);</span>
+
+    <span class="keyword">return</span> <span class="number">0</span><span class="symbol">;</span>
+<span class="symbol">}</span></code></pre>
+
+</div>
+
+<h4>Output</h4>
+
+<div class="code-box">
+
+    <div class="code-title">
+        <span>Output</span>
+    </div>
+
+<pre><code><span class="string">Pradeep</span></code></pre>
+
+</div>
+
+<div class="note">
+<b>Student Note:</b>
+Use <b>%s</b> whenever you want to print or read a complete word or sentence.
+</div>
+
+<hr>
+
+<h4>6. %u (Unsigned Integer)</h4>
+
+<p>
+The <b>%u</b> format specifier is used for <b>unsigned int</b>.
+Unsigned integers can store only positive values and zero.
+</p>
+
+<h4>Example</h4>
+
+<div class="code-box">
+
+    <div class="code-title">
+        <span>Program: %u Format Specifier</span>
+    </div>
+
+<pre><code><span class="preprocessor">#include</span> <span class="header-file">&lt;stdio.h&gt;</span>
+
+<span class="datatype">int</span> <span class="function">main</span><span class="symbol">()</span>
+<span class="symbol">{</span>
+    <span class="datatype">unsigned int</span> population <span class="symbol">=</span> <span class="number">500</span><span class="symbol">;</span>
+
+    <span class="function">printf</span><span class="symbol">(</span><span class="string">"%u"</span><span class="symbol">,</span> population<span class="symbol">);</span>
+
+    <span class="keyword">return</span> <span class="number">0</span><span class="symbol">;</span>
+<span class="symbol">}</span></code></pre>
+
+</div>
+
+<h4>Output</h4>
+
+<div class="code-box">
+
+    <div class="code-title">
+        <span>Output</span>
+    </div>
+
+<pre><code><span class="number">500</span></code></pre>
+
+</div>
+
+<div class="note">
+<b>Student Note:</b>
+Since unsigned integers cannot store negative numbers, they can represent larger positive values than signed integers.
+</div>
+
+<hr>
+
+<h4>7. %ld (Long Integer)</h4>
+
+<p>
+The <b>%ld</b> format specifier is used with the <b>long int</b> data type.
+It stores larger integer values than a normal int.
+</p>
+
+<h4>Example</h4>
+
+<div class="code-box">
+
+    <div class="code-title">
+        <span>Program: %ld Format Specifier</span>
+    </div>
+
+<pre><code><span class="preprocessor">#include</span> <span class="header-file">&lt;stdio.h&gt;</span>
+
+<span class="datatype">int</span> <span class="function">main</span><span class="symbol">()</span>
+<span class="symbol">{</span>
+    <span class="datatype">long int</span> distance <span class="symbol">=</span> <span class="number">123456789</span><span class="symbol">;</span>
+
+    <span class="function">printf</span><span class="symbol">(</span><span class="string">"%ld"</span><span class="symbol">,</span> distance<span class="symbol">);</span>
+
+    <span class="keyword">return</span> <span class="number">0</span><span class="symbol">;</span>
+<span class="symbol">}</span></code></pre>
+
+</div>
+
+<h4>Output</h4>
+
+<div class="code-box">
+
+    <div class="code-title">
+        <span>Output</span>
+    </div>
+
+<pre><code><span class="number">123456789</span></code></pre>
+
+</div>
+
+<div class="note">
+<b>Student Note:</b>
+Use <b>%ld</b> when the value is too large to fit into a normal integer.
+</div>
+
+<hr>
+
+<h4>8. %lld (Long Long Integer)</h4>
+
+<p>
+The <b>%lld</b> format specifier is used with the <b>long long int</b> data type.
+It stores very large integer values.
+</p>
+
+<h4>Example</h4>
+
+<div class="code-box">
+
+    <div class="code-title">
+        <span>Program: %lld Format Specifier</span>
+    </div>
+
+<pre><code><span class="preprocessor">#include</span> <span class="header-file">&lt;stdio.h&gt;</span>
+
+<span class="datatype">int</span> <span class="function">main</span><span class="symbol">()</span>
+<span class="symbol">{</span>
+    <span class="datatype">long long int</span> stars <span class="symbol">=</span> <span class="number">9876543210</span><span class="symbol">;</span>
+
+    <span class="function">printf</span><span class="symbol">(</span><span class="string">"%lld"</span><span class="symbol">,</span> stars<span class="symbol">);</span>
+
+    <span class="keyword">return</span> <span class="number">0</span><span class="symbol">;</span>
+<span class="symbol">}</span></code></pre>
+
+</div>
+
+<h4>Output</h4>
+
+<div class="code-box">
+
+    <div class="code-title">
+        <span>Output</span>
+    </div>
+
+<pre><code><span class="number">9876543210</span></code></pre>
+
+</div>
+
+<div class="note">
+<b>Student Note:</b>
+Use <b>%lld</b> when working with very large numbers such as population, bank records, or scientific calculations.
+</div>
+
+<hr>
+
+<h4>9. %x (Hexadecimal)</h4>
+
+<p>
+The <b>%x</b> format specifier displays an integer in <b>Hexadecimal (Base 16)</b>.
+Hexadecimal numbers use digits from 0-9 and letters A-F.
+</p>
+
+<h4>Example</h4>
+
+<div class="code-box">
+
+    <div class="code-title">
+        <span>Program: %x Format Specifier</span>
+    </div>
+
+<pre><code><span class="preprocessor">#include</span> <span class="header-file">&lt;stdio.h&gt;</span>
+
+<span class="datatype">int</span> <span class="function">main</span><span class="symbol">()</span>
+<span class="symbol">{</span>
+    <span class="datatype">int</span> num <span class="symbol">=</span> <span class="number">26</span><span class="symbol">;</span>
+
+    <span class="function">printf</span><span class="symbol">(</span><span class="string">"%x"</span><span class="symbol">,</span> num<span class="symbol">);</span>
+
+    <span class="keyword">return</span> <span class="number">0</span><span class="symbol">;</span>
+<span class="symbol">}</span></code></pre>
+
+</div>
+
+<h4>Output</h4>
+
+<div class="code-box">
+
+    <div class="code-title">
+        <span>Output</span>
+    </div>
+
+<pre><code><span class="number">1a</span></code></pre>
+
+</div>
+
+<div class="note">
+<b>Student Note:</b>
+Hexadecimal numbers are commonly used in memory addresses, colors, and low-level programming.
+</div>
+
+<hr>
+
+<h4>10. %o (Octal)</h4>
+
+<p>
+The <b>%o</b> format specifier displays an integer in <b>Octal (Base 8)</b>.
+Octal numbers contain digits from 0 to 7 only.
+</p>
+
+<h4>Example</h4>
+
+<div class="code-box">
+
+    <div class="code-title">
+        <span>Program: %o Format Specifier</span>
+    </div>
+
+<pre><code><span class="preprocessor">#include</span> <span class="header-file">&lt;stdio.h&gt;</span>
+
+<span class="datatype">int</span> <span class="function">main</span><span class="symbol">()</span>
+<span class="symbol">{</span>
+    <span class="datatype">int</span> num <span class="symbol">=</span> <span class="number">26</span><span class="symbol">;</span>
+
+    <span class="function">printf</span><span class="symbol">(</span><span class="string">"%o"</span><span class="symbol">,</span> num<span class="symbol">);</span>
+
+    <span class="keyword">return</span> <span class="number">0</span><span class="symbol">;</span>
+<span class="symbol">}</span></code></pre>
+
+</div>
+
+<h4>Output</h4>
+
+<div class="code-box">
+
+    <div class="code-title">
+        <span>Output</span>
+    </div>
+
+<pre><code><span class="number">32</span></code></pre>
+
+</div>
+
+<div class="note">
+<b>Student Note:</b>
+Octal numbers are mainly used in operating systems and permission settings.
+</div>
+
+<h3>Complete Example</h3>
+
+<div class="code-box">
+
+    <div class="code-title">
+        <span>Program: Using Different Format Specifiers</span>
+    </div>
+
+<pre><code><span class="preprocessor">#include</span> <span class="header-file">&lt;stdio.h&gt;</span>
+
+<span class="datatype">int</span> <span class="function">main</span><span class="symbol">()</span>
+<span class="symbol">{</span>
+    <span class="datatype">int</span> age <span class="symbol">=</span> <span class="number">20</span><span class="symbol">;</span>
+    <span class="datatype">float</span> marks <span class="symbol">=</span> <span class="number">85.5</span><span class="symbol">;</span>
+    <span class="datatype">double</span> pi <span class="symbol">=</span> <span class="number">3.14159</span><span class="symbol">;</span>
+    <span class="datatype">char</span> grade <span class="symbol">=</span> <span class="character">'A'</span><span class="symbol">;</span>
+    <span class="datatype">char</span> name<span class="symbol">[] =</span> <span class="string">"Pradeep"</span><span class="symbol">;</span>
+
+    <span class="function">printf</span><span class="symbol">(</span><span class="string">"Age = %d\\n"</span><span class="symbol">,</span> age<span class="symbol">);</span>
+    <span class="function">printf</span><span class="symbol">(</span><span class="string">"Marks = %.2f\\n"</span><span class="symbol">,</span> marks<span class="symbol">);</span>
+    <span class="function">printf</span><span class="symbol">(</span><span class="string">"Pi = %lf\\n"</span><span class="symbol">,</span> pi<span class="symbol">);</span>
+    <span class="function">printf</span><span class="symbol">(</span><span class="string">"Grade = %c\\n"</span><span class="symbol">,</span> grade<span class="symbol">);</span>
+    <span class="function">printf</span><span class="symbol">(</span><span class="string">"Name = %s\\n"</span><span class="symbol">,</span> name<span class="symbol">);</span>
+
+    <span class="keyword">return</span> <span class="number">0</span><span class="symbol">;</span>
+<span class="symbol">}</span></code></pre>
+
+</div>
+
+<h4>Output</h4>
+
+<div class="code-box">
+
+    <div class="code-title">
+        <span>Output</span>
+    </div>
+
+<pre><code>Age = <span class="number">20</span>
+Marks = <span class="number">85.50</span>
+Pi = <span class="number">3.141590</span>
+Grade = <span class="character">A</span>
+Name = <span class="string">Pradeep</span></code></pre>
+
+</div>
+
+<h3>Summary</h3>
+
+<table class="notes-table">
+<tr>
+<th>Specifier</th>
+<th>Used For</th>
+</tr>
+
+<tr>
+<td>%d</td>
+<td>Integer (int)</td>
+</tr>
+
+<tr>
+<td>%f</td>
+<td>Float (decimal number)</td>
+</tr>
+
+<tr>
+<td>%lf</td>
+<td>Double</td>
+</tr>
+
+<tr>
+<td>%c</td>
+<td>Single Character</td>
+</tr>
+
+<tr>
+<td>%s</td>
+<td>String</td>
+</tr>
+
+<tr>
+<td>%u</td>
+<td>Unsigned Integer</td>
+</tr>
+
+<tr>
+<td>%ld</td>
+<td>Long Integer</td>
+</tr>
+
+<tr>
+<td>%lld</td>
+<td>Long Long Integer</td>
+</tr>
+
+<tr>
+<td>%x</td>
+<td>Hexadecimal Number</td>
+</tr>
+
+<tr>
+<td>%o</td>
+<td>Octal Number</td>
+</tr>
+
+</table>
+
+<div class="note">
+<b>Remember:</b>
+
+<ul>
+<li>A format specifier always starts with the <b>%</b> symbol.</li>
+<li>Always use the correct format specifier for the corresponding data type.</li>
+<li>Using the wrong format specifier may produce incorrect output or undefined behavior.</li>
+<li><b>Type Modifiers</b> (short, long, signed, unsigned) change the size or range of a data type.</li>
+<li><b>Format Specifiers</b> (%d, %f, %c, %s, etc.) tell <code>printf()</code> and <code>scanf()</code> how to print or read that data.</li>
+</ul>
+</div>
+`;
+
 let constantsAndLiterals = `
 
 <h3>Constants and Literals in C Language</h3>
@@ -2714,9 +4348,36 @@ In simple words, a constant is a fixed value that never changes.
 
 <h4>Example</h4>
 
-<pre>
-const int age = 18;
-</pre>
+<div class="code-box">
+
+    <div class="code-title">
+        <span>Program: const Keyword</span>
+    </div>
+
+<pre><code><span class="preprocessor">#include</span> <span class="header-file">&lt;stdio.h&gt;</span>
+
+<span class="datatype">int</span> <span class="function">main</span><span class="symbol">()</span>
+<span class="symbol">{</span>
+    <span class="keyword">const</span> <span class="datatype">int</span> age <span class="symbol">=</span> <span class="number">18</span><span class="symbol">;</span>
+
+    <span class="function">printf</span><span class="symbol">(</span><span class="string">"Age = %d"</span><span class="symbol">,</span> age<span class="symbol">);</span>
+
+    <span class="keyword">return</span> <span class="number">0</span><span class="symbol">;</span>
+<span class="symbol">}</span></code></pre>
+
+</div>
+
+<h4>Output</h4>
+
+<div class="code-box">
+
+    <div class="code-title">
+        <span>Output</span>
+    </div>
+
+<pre><code>Age = <span class="number">18</span></code></pre>
+
+</div>
 
 <p>
 Here, the value of <strong>age</strong> cannot be changed because it is declared as a constant.
@@ -2746,7 +4407,9 @@ Here, the value of <strong>age</strong> cannot be changed because it is declared
 <h3>1. Integer Constants</h3>
 
 <p>
-Integer constants contain whole numbers without decimal points.
+An <b>Integer Constant</b> is a fixed whole number written directly in a C program.
+It does <b>not</b> contain a decimal point. Integer constants can be <b>positive</b>,
+<b>negative</b>, or <b>zero</b>.
 </p>
 
 <table class="notes-table">
@@ -2757,25 +4420,68 @@ Integer constants contain whole numbers without decimal points.
 
 <tr>
 <td>10</td>
-<td>Positive Integer</td>
+<td>Positive Integer Constant</td>
 </tr>
 
 <tr>
 <td>-50</td>
-<td>Negative Integer</td>
+<td>Negative Integer Constant</td>
 </tr>
 
 <tr>
 <td>0</td>
-<td>Zero</td>
+<td>Zero Constant</td>
 </tr>
 </table>
 
+<div class="note">
+<b>Remember:</b>
+<ul>
+<li>An <b>Integer Constant</b> is a fixed numeric value written directly in the program.</li>
+<li>In the statement <code>int marks = 90;</code>, <b>marks</b> is a variable, while <b>90</b> is an integer constant (literal).</li>
+<li>Do not confuse an <b>Integer Constant</b> with a <b>Constant Variable</b>. A constant variable is declared using the <code>const</code> keyword (for example, <code>const int age = 18;</code>).</li>
+</ul>
+</div>
+
 <h4>Example</h4>
 
-<pre>
-int marks = 90;
-</pre>
+<div class="code-box">
+
+    <div class="code-title">
+        <span>Program: Integer Constants</span>
+    </div>
+
+<pre><code><span class="preprocessor">#include</span> <span class="header-file">&lt;stdio.h&gt;</span>
+
+<span class="datatype">int</span> <span class="function">main</span><span class="symbol">()</span>
+<span class="symbol">{</span>
+    <span class="comment">// Integer constants</span>
+    <span class="datatype">int</span> marks <span class="symbol">=</span> <span class="number">90</span><span class="symbol">;</span>
+    <span class="datatype">int</span> temperature <span class="symbol">=</span> <span class="number">-50</span><span class="symbol">;</span>
+    <span class="datatype">int</span> count <span class="symbol">=</span> <span class="number">0</span><span class="symbol">;</span>
+
+    <span class="function">printf</span><span class="symbol">(</span><span class="string">"Marks = %d\\n"</span><span class="symbol">,</span> marks<span class="symbol">);</span>
+    <span class="function">printf</span><span class="symbol">(</span><span class="string">"Temperature = %d\\n"</span><span class="symbol">,</span> temperature<span class="symbol">);</span>
+    <span class="function">printf</span><span class="symbol">(</span><span class="string">"Count = %d\\n"</span><span class="symbol">,</span> count<span class="symbol">);</span>
+
+    <span class="keyword">return</span> <span class="number">0</span><span class="symbol">;</span>
+<span class="symbol">}</span></code></pre>
+
+</div>
+
+<h4>Output</h4>
+
+<div class="code-box">
+
+    <div class="code-title">
+        <span>Output</span>
+    </div>
+
+<pre><code>Marks = <span class="number">90</span>
+Temperature = <span class="number">-50</span>
+Count = <span class="number">0</span></code></pre>
+
+</div>
 
 <hr>
 
@@ -2809,9 +4515,43 @@ Floating point constants contain decimal values.
 
 <h4>Example</h4>
 
-<pre>
-float price = 99.99;
-</pre>
+<div class="code-box">
+
+    <div class="code-title">
+        <span>Program: Floating-Point Constants</span>
+    </div>
+
+<pre><code><span class="preprocessor">#include</span> <span class="header-file">&lt;stdio.h&gt;</span>
+
+<span class="datatype">int</span> <span class="function">main</span><span class="symbol">()</span>
+<span class="symbol">{</span>
+    <span class="comment">// Floating-point constants</span>
+    <span class="datatype">float</span> price <span class="symbol">=</span> <span class="number">99.99</span><span class="symbol">;</span>
+    <span class="datatype">float</span> temperature <span class="symbol">=</span> <span class="number">-12.5</span><span class="symbol">;</span>
+    <span class="datatype">float</span> discount <span class="symbol">=</span> <span class="number">0.0</span><span class="symbol">;</span>
+
+    <span class="function">printf</span><span class="symbol">(</span><span class="string">"Price = %.2f\\n"</span><span class="symbol">,</span> price<span class="symbol">);</span>
+    <span class="function">printf</span><span class="symbol">(</span><span class="string">"Temperature = %.1f\\n"</span><span class="symbol">,</span> temperature<span class="symbol">);</span>
+    <span class="function">printf</span><span class="symbol">(</span><span class="string">"Discount = %.1f\\n"</span><span class="symbol">,</span> discount<span class="symbol">);</span>
+
+    <span class="keyword">return</span> <span class="number">0</span><span class="symbol">;</span>
+<span class="symbol">}</span></code></pre>
+
+</div>
+
+<h4>Output</h4>
+
+<div class="code-box">
+
+    <div class="code-title">
+        <span>Output</span>
+    </div>
+
+<pre><code>Price = <span class="number">99.99</span>
+Temperature = <span class="number">-12.5</span>
+Discount = <span class="number">0.0</span></code></pre>
+
+</div>
 
 <hr>
 
@@ -2845,9 +4585,43 @@ A character constant contains a single character enclosed in single quotes.
 
 <h4>Example</h4>
 
-<pre>
-char grade = 'A';
-</pre>
+<div class="code-box">
+
+    <div class="code-title">
+        <span>Program: Character Constants</span>
+    </div>
+
+<pre><code><span class="preprocessor">#include</span> <span class="header-file">&lt;stdio.h&gt;</span>
+
+<span class="datatype">int</span> <span class="function">main</span><span class="symbol">()</span>
+<span class="symbol">{</span>
+    <span class="comment">// Character constants</span>
+    <span class="datatype">char</span> grade <span class="symbol">=</span> <span class="character">'A'</span><span class="symbol">;</span>
+    <span class="datatype">char</span> section <span class="symbol">=</span> <span class="character">'B'</span><span class="symbol">;</span>
+    <span class="datatype">char</span> digit <span class="symbol">=</span> <span class="character">'5'</span><span class="symbol">;</span>
+
+    <span class="function">printf</span><span class="symbol">(</span><span class="string">"Grade = %c\\n"</span><span class="symbol">,</span> grade<span class="symbol">);</span>
+    <span class="function">printf</span><span class="symbol">(</span><span class="string">"Section = %c\\n"</span><span class="symbol">,</span> section<span class="symbol">);</span>
+    <span class="function">printf</span><span class="symbol">(</span><span class="string">"Digit = %c\\n"</span><span class="symbol">,</span> digit<span class="symbol">);</span>
+
+    <span class="keyword">return</span> <span class="number">0</span><span class="symbol">;</span>
+<span class="symbol">}</span></code></pre>
+
+</div>
+
+<h4>Output</h4>
+
+<div class="code-box">
+
+    <div class="code-title">
+        <span>Output</span>
+    </div>
+
+<pre><code>Grade = <span class="character">A</span>
+Section = <span class="character">B</span>
+Digit = <span class="character">5</span></code></pre>
+
+</div>
 
 <hr>
 
@@ -2881,9 +4655,43 @@ A string constant is a group of characters enclosed within double quotes.
 
 <h4>Example</h4>
 
-<pre>
-char name[] = "Pradeep";
-</pre>
+<div class="code-box">
+
+    <div class="code-title">
+        <span>Program: String Constants</span>
+    </div>
+
+<pre><code><span class="preprocessor">#include</span> <span class="header-file">&lt;stdio.h&gt;</span>
+
+<span class="datatype">int</span> <span class="function">main</span><span class="symbol">()</span>
+<span class="symbol">{</span>
+    <span class="comment">// String constants</span>
+    <span class="datatype">char</span> name<span class="symbol">[] =</span> <span class="string">"Pradeep"</span><span class="symbol">;</span>
+    <span class="datatype">char</span> city<span class="symbol">[] =</span> <span class="string">"Delhi"</span><span class="symbol">;</span>
+    <span class="datatype">char</span> course<span class="symbol">[] =</span> <span class="string">"BCA"</span><span class="symbol">;</span>
+
+    <span class="function">printf</span><span class="symbol">(</span><span class="string">"Name = %s\\n"</span><span class="symbol">,</span> name<span class="symbol">);</span>
+    <span class="function">printf</span><span class="symbol">(</span><span class="string">"City = %s\\n"</span><span class="symbol">,</span> city<span class="symbol">);</span>
+    <span class="function">printf</span><span class="symbol">(</span><span class="string">"Course = %s\\n"</span><span class="symbol">,</span> course<span class="symbol">);</span>
+
+    <span class="keyword">return</span> <span class="number">0</span><span class="symbol">;</span>
+<span class="symbol">}</span></code></pre>
+
+</div>
+
+<h4>Output</h4>
+
+<div class="code-box">
+
+    <div class="code-title">
+        <span>Output</span>
+    </div>
+
+<pre><code>Name = <span class="string">Pradeep</span>
+City = <span class="string">Delhi</span>
+Course = <span class="string">BCA</span></code></pre>
+
+</div>
 
 <hr>
 
@@ -2900,9 +4708,43 @@ In simple words, literals are fixed values written directly in the source code.
 
 <h4>Example</h4>
 
-<pre>
-int age = 20;
-</pre>
+<div class="code-box">
+
+    <div class="code-title">
+        <span>Program: Variables</span>
+    </div>
+
+<pre><code><span class="preprocessor">#include</span> <span class="header-file">&lt;stdio.h&gt;</span>
+
+<span class="datatype">int</span> <span class="function">main</span><span class="symbol">()</span>
+<span class="symbol">{</span>
+    <span class="comment">// Variable declaration and initialization</span>
+    <span class="datatype">int</span> age <span class="symbol">=</span> <span class="number">20</span><span class="symbol">;</span>
+
+    <span class="function">printf</span><span class="symbol">(</span><span class="string">"Age = %d\\n"</span><span class="symbol">,</span> age<span class="symbol">);</span>
+
+    <span class="comment">// Change the value of the variable</span>
+    age <span class="symbol">=</span> <span class="number">25</span><span class="symbol">;</span>
+
+    <span class="function">printf</span><span class="symbol">(</span><span class="string">"Updated Age = %d\\n"</span><span class="symbol">,</span> age<span class="symbol">);</span>
+
+    <span class="keyword">return</span> <span class="number">0</span><span class="symbol">;</span>
+<span class="symbol">}</span></code></pre>
+
+</div>
+
+<h4>Output</h4>
+
+<div class="code-box">
+
+    <div class="code-title">
+        <span>Output</span>
+    </div>
+
+<pre><code>Age = <span class="number">20</span>
+Updated Age = <span class="number">25</span></code></pre>
+
+</div>
 
 <p>
 Here:
@@ -2917,44 +4759,104 @@ Here:
 
 <h3>Types of Literals</h3>
 
-<h4>Integer Literal</h4>
+<h4>1. Integer Literal</h4>
 
-<pre>
-int num = 100;
-</pre>
+<div class="code-box">
+
+    <div class="code-title">
+        <span>Program: Integer Literal</span>
+    </div>
+
+<pre><code><span class="preprocessor">#include</span> <span class="header-file">&lt;stdio.h&gt;</span>
+
+<span class="datatype">int</span> <span class="function">main</span><span class="symbol">()</span>
+<span class="symbol">{</span>
+    <span class="datatype">int</span> num <span class="symbol">=</span> <span class="number">100</span><span class="symbol">;</span>
+
+    <span class="function">printf</span><span class="symbol">(</span><span class="string">"Number = %d\\n"</span><span class="symbol">,</span> num<span class="symbol">);</span>
+
+    <span class="keyword">return</span> <span class="number">0</span><span class="symbol">;</span>
+<span class="symbol">}</span></code></pre>
+
+</div>
 
 <p>
-100 is an integer literal.
+In the statement <code>int num = 100;</code>, <b>100</b> is an <b>integer literal</b>.
 </p>
 
-<h4>Floating Literal</h4>
+<h4>2. Floating-Point Literal</h4>
 
-<pre>
-float pi = 3.14;
-</pre>
+<div class="code-box">
+
+    <div class="code-title">
+        <span>Program: Floating-Point Literal</span>
+    </div>
+
+<pre><code><span class="preprocessor">#include</span> <span class="header-file">&lt;stdio.h&gt;</span>
+
+<span class="datatype">int</span> <span class="function">main</span><span class="symbol">()</span>
+<span class="symbol">{</span>
+    <span class="datatype">float</span> pi <span class="symbol">=</span> <span class="number">3.14</span><span class="symbol">;</span>
+
+    <span class="function">printf</span><span class="symbol">(</span><span class="string">"Pi = %.2f\\n"</span><span class="symbol">,</span> pi<span class="symbol">);</span>
+
+    <span class="keyword">return</span> <span class="number">0</span><span class="symbol">;</span>
+<span class="symbol">}</span></code></pre>
+
+</div>
 
 <p>
-3.14 is a floating-point literal.
+In the statement <code>float pi = 3.14;</code>, <b>3.14</b> is a <b>floating-point literal</b>.
 </p>
 
-<h4>Character Literal</h4>
+<h4>3. Character Literal</h4>
 
-<pre>
-char ch = 'A';
-</pre>
+<div class="code-box">
+
+    <div class="code-title">
+        <span>Program: Character Literal</span>
+    </div>
+
+<pre><code><span class="preprocessor">#include</span> <span class="header-file">&lt;stdio.h&gt;</span>
+
+<span class="datatype">int</span> <span class="function">main</span><span class="symbol">()</span>
+<span class="symbol">{</span>
+    <span class="datatype">char</span> ch <span class="symbol">=</span> <span class="character">'A'</span><span class="symbol">;</span>
+
+    <span class="function">printf</span><span class="symbol">(</span><span class="string">"Character = %c\\n"</span><span class="symbol">,</span> ch<span class="symbol">);</span>
+
+    <span class="keyword">return</span> <span class="number">0</span><span class="symbol">;</span>
+<span class="symbol">}</span></code></pre>
+
+</div>
 
 <p>
-'A' is a character literal.
+In the statement <code>char ch = 'A';</code>, <b>'A'</b> is a <b>character literal</b>.
 </p>
 
-<h4>String Literal</h4>
+<h4>4. String Literal</h4>
 
-<pre>
-char city[] = "Delhi";
-</pre>
+<div class="code-box">
+
+    <div class="code-title">
+        <span>Program: String Literal</span>
+    </div>
+
+<pre><code><span class="preprocessor">#include</span> <span class="header-file">&lt;stdio.h&gt;</span>
+
+<span class="datatype">int</span> <span class="function">main</span><span class="symbol">()</span>
+<span class="symbol">{</span>
+    <span class="datatype">char</span> city<span class="symbol">[] =</span> <span class="string">"Delhi"</span><span class="symbol">;</span>
+
+    <span class="function">printf</span><span class="symbol">(</span><span class="string">"City = %s\\n"</span><span class="symbol">,</span> city<span class="symbol">);</span>
+
+    <span class="keyword">return</span> <span class="number">0</span><span class="symbol">;</span>
+<span class="symbol">}</span></code></pre>
+
+</div>
 
 <p>
-"Delhi" is a string literal.
+In the statement <code>char city[] = "Delhi";</code>, <b>"Delhi"</b> is a <b>string literal</b>.
 </p>
 
 <hr>
@@ -2992,34 +4894,51 @@ char city[] = "Delhi";
 
 <h3>Program Example</h3>
 
-<pre>
-#include &lt;stdio.h&gt;
+<div class="code-box">
 
-int main()
-{
-    const int age = 18;
+    <div class="code-title">
+        <span>Program: Constants in C</span>
+    </div>
 
-    int marks = 90;
-    float pi = 3.14;
-    char grade = 'A';
+<pre><code><span class="preprocessor">#include</span> <span class="header-file">&lt;stdio.h&gt;</span>
 
-    printf("Age = %d\\n", age);
-    printf("Marks = %d\\n", marks);
-    printf("Pi = %.2f\\n", pi);
-    printf("Grade = %c\\n", grade);
+<span class="datatype">int</span> <span class="function">main</span><span class="symbol">()</span>
+<span class="symbol">{</span>
+    <span class="comment">// Constant variable</span>
+    <span class="keyword">const</span> <span class="datatype">int</span> age <span class="symbol">=</span> <span class="number">18</span><span class="symbol">;</span>
 
-    return 0;
-}
-</pre>
+    <span class="comment">// Variables initialized with constants (literals)</span>
+    <span class="datatype">int</span> marks <span class="symbol">=</span> <span class="number">90</span><span class="symbol">;</span>
+    <span class="datatype">float</span> pi <span class="symbol">=</span> <span class="number">3.14</span><span class="symbol">;</span>
+    <span class="datatype">char</span> grade <span class="symbol">=</span> <span class="character">'A'</span><span class="symbol">;</span>
+
+    <span class="function">printf</span><span class="symbol">(</span><span class="string">"Age = %d\\n"</span><span class="symbol">,</span> age<span class="symbol">);</span>
+    <span class="function">printf</span><span class="symbol">(</span><span class="string">"Marks = %d\\n"</span><span class="symbol">,</span> marks<span class="symbol">);</span>
+    <span class="function">printf</span><span class="symbol">(</span><span class="string">"Pi = %.2f\\n"</span><span class="symbol">,</span> pi<span class="symbol">);</span>
+    <span class="function">printf</span><span class="symbol">(</span><span class="string">"Grade = %c\\n"</span><span class="symbol">,</span> grade<span class="symbol">);</span>
+
+    <span class="comment">// age = 20;  // Error: Cannot modify a constant variable</span>
+
+    <span class="keyword">return</span> <span class="number">0</span><span class="symbol">;</span>
+<span class="symbol">}</span></code></pre>
+
+</div>
 
 <h4>Output</h4>
 
-<pre>
-Age = 18
-Marks = 90
-Pi = 3.14
-Grade = A
-</pre>
+<div class="code-box">
+
+    <div class="code-title">
+        <span>Output</span>
+    </div>
+
+<pre><code>Age = <span class="number">18</span>
+Marks = <span class="number">90</span>
+Pi = <span class="number">3.14</span>
+Grade = <span class="character">A</span></code></pre>
+
+</div>
+
 
 <hr>
 
@@ -3051,7 +4970,7 @@ Grade = A
 
 let conditionalStatementsAndLoops = `
 
-<h3>Conditional Statements and Loops in C Language</h3>
+<h3>Conditional Statements</h3>
 
 <p>
 In C programming, <strong>Conditional Statements</strong> and <strong>Loops</strong> are important control structures that help us control the flow of a program.
@@ -3140,14 +5059,20 @@ If the condition is true, the statements inside the if block are executed.
 If the condition is false, the statements inside the if block are skipped.
 </p>
 
-<h4>Syntax of if Statement</h4>
+<h4>Syntax</h4>
 
-<pre>
-if(condition)
-{
-    // statements
-}
-</pre>
+<div class="code-box">
+
+    <div class="code-title">
+        <span>Syntax: if Statement</span>
+    </div>
+
+<pre><code><span class="keyword">if</span> <span class="symbol">(</span>condition<span class="symbol">)</span>
+<span class="symbol">{</span>
+    <span class="comment">// Statements to execute if the condition is true</span>
+<span class="symbol">}</span></code></pre>
+
+</div>
 
 <h4>Flow of Execution</h4>
 
@@ -3160,27 +5085,39 @@ if(condition)
 
 <h4>Example 1: Check Eligibility for Voting</h4>
 
-<pre>
-#include &lt;stdio.h&gt;
+<div class="code-box">
 
-int main()
-{
-    int age = 20;
+    <div class="code-title">
+        <span>Program: if Statement</span>
+    </div>
 
-    if(age >= 18)
-    {
-        printf("You are eligible to vote.");
-    }
+<pre><code><span class="preprocessor">#include</span> <span class="header-file">&lt;stdio.h&gt;</span>
 
-    return 0;
-}
-</pre>
+<span class="datatype">int</span> <span class="function">main</span><span class="symbol">()</span>
+<span class="symbol">{</span>
+    <span class="datatype">int</span> age <span class="symbol">=</span> <span class="number">20</span><span class="symbol">;</span>
+
+    <span class="keyword">if</span> <span class="symbol">(</span>age <span class="symbol">&gt;=</span> <span class="number">18</span><span class="symbol">)</span>
+    <span class="symbol">{</span>
+        <span class="function">printf</span><span class="symbol">(</span><span class="string">"You are eligible to vote.\\n"</span><span class="symbol">);</span>
+    <span class="symbol">}</span>
+
+    <span class="keyword">return</span> <span class="number">0</span><span class="symbol">;</span>
+<span class="symbol">}</span></code></pre>
+
+</div>
 
 <h4>Output</h4>
 
-<pre>
-You are eligible to vote.
-</pre>
+<div class="code-box">
+
+    <div class="code-title">
+        <span>Output</span>
+    </div>
+
+<pre><code>You are eligible to vote.</code></pre>
+
+</div>
 
 <p>
 Since age is 20 and the condition (age >= 18) is true, the message is displayed.
@@ -3190,53 +5127,77 @@ Since age is 20 and the condition (age >= 18) is true, the message is displayed.
 
 <h4>Example 2: Check Positive Number</h4>
 
-<pre>
-#include &lt;stdio.h&gt;
+<div class="code-box">
 
-int main()
-{
-    int num = 10;
+    <div class="code-title">
+        <span>Program: if Statement</span>
+    </div>
 
-    if(num > 0)
-    {
-        printf("Positive Number");
-    }
+<pre><code><span class="preprocessor">#include</span> <span class="header-file">&lt;stdio.h&gt;</span>
 
-    return 0;
-}
-</pre>
+<span class="datatype">int</span> <span class="function">main</span><span class="symbol">()</span>
+<span class="symbol">{</span>
+    <span class="datatype">int</span> num <span class="symbol">=</span> <span class="number">10</span><span class="symbol">;</span>
+
+    <span class="keyword">if</span> <span class="symbol">(</span>num <span class="symbol">&gt;</span> <span class="number">0</span><span class="symbol">)</span>
+    <span class="symbol">{</span>
+        <span class="function">printf</span><span class="symbol">(</span><span class="string">"Positive Number\\n"</span><span class="symbol">);</span>
+    <span class="symbol">}</span>
+
+    <span class="keyword">return</span> <span class="number">0</span><span class="symbol">;</span>
+<span class="symbol">}</span></code></pre>
+
+</div>
 
 <h4>Output</h4>
 
-<pre>
-Positive Number
-</pre>
+<div class="code-box">
+
+    <div class="code-title">
+        <span>Output</span>
+    </div>
+
+<pre><code>Positive Number</code></pre>
+
+</div>
 
 <hr>
 
 <h4>Example 3: Check Pass or Not</h4>
 
-<pre>
-#include &lt;stdio.h&gt;
+<div class="code-box">
 
-int main()
-{
-    int marks = 45;
+    <div class="code-title">
+        <span>Program: if Statement</span>
+    </div>
 
-    if(marks >= 40)
-    {
-        printf("Pass");
-    }
+<pre><code><span class="preprocessor">#include</span> <span class="header-file">&lt;stdio.h&gt;</span>
 
-    return 0;
-}
-</pre>
+<span class="datatype">int</span> <span class="function">main</span><span class="symbol">()</span>
+<span class="symbol">{</span>
+    <span class="datatype">int</span> marks <span class="symbol">=</span> <span class="number">45</span><span class="symbol">;</span>
+
+    <span class="keyword">if</span> <span class="symbol">(</span>marks <span class="symbol">&gt;=</span> <span class="number">40</span><span class="symbol">)</span>
+    <span class="symbol">{</span>
+        <span class="function">printf</span><span class="symbol">(</span><span class="string">"Pass\\n"</span><span class="symbol">);</span>
+    <span class="symbol">}</span>
+
+    <span class="keyword">return</span> <span class="number">0</span><span class="symbol">;</span>
+<span class="symbol">}</span></code></pre>
+
+</div>
 
 <h4>Output</h4>
 
-<pre>
-Pass
-</pre>
+<div class="code-box">
+
+    <div class="code-title">
+        <span>Output</span>
+    </div>
+
+<pre><code>Pass</code></pre>
+
+</div>
 
 <hr>
 
