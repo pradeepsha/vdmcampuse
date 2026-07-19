@@ -4324,6 +4324,324 @@ Name = <span class="string">Pradeep</span></code></pre>
 </div>
 `;
 
+const cTypeConversion = `
+<h3>C Type Conversion</h3>
+
+<p>
+Type Conversion in C is the process of converting one data type into another data type.
+It is useful when we want to perform operations on different types of data.
+</p>
+
+<p>
+For example, if we add an <b>int</b> and a <b>float</b>, C automatically converts the integer
+to a float before performing the calculation.
+</p>
+
+<h3>Types of Type Conversion</h3>
+
+<table class="notes-table">
+<tr>
+<th>Type</th>
+<th>Description</th>
+</tr>
+
+<tr>
+<td>Implicit Type Conversion</td>
+<td>Conversion performed automatically by the C compiler.</td>
+</tr>
+
+<tr>
+<td>Explicit Type Conversion (Type Casting)</td>
+<td>Conversion performed manually by the programmer using a type cast.</td>
+</tr>
+
+</table>
+
+<hr>
+
+<h3>1. Implicit Type Conversion (Automatic Conversion)</h3>
+
+<p>
+In Implicit Type Conversion, the compiler automatically converts one data type into another.
+Generally, the smaller data type is converted into the larger data type to avoid data loss.
+</p>
+
+<h4>Example 1: Integer Converted to Float</h4>
+
+<div class="code-box">
+
+    <div class="code-title">Example: Integer Converted to Float</div>
+
+<pre>
+<span class="preprocessor">#include</span> <span class="header-file">&lt;stdio.h&gt;</span>
+
+<span class="datatype">int</span> <span class="function">main</span><span class="symbol">()</span>
+<span class="symbol">{</span>
+    <span class="datatype">int</span> a <span class="symbol">=</span> 10<span class="symbol">;</span>
+    <span class="datatype">float</span> b <span class="symbol">=</span> 2.5<span class="symbol">;</span>
+
+    <span class="datatype">float</span> result <span class="symbol">=</span> a <span class="symbol">+</span> b<span class="symbol">;</span>
+
+    <span class="function">printf</span><span class="symbol">(</span><span class="header-file">"Result = %f"</span><span class="symbol">,</span> result<span class="symbol">);</span>
+
+    <span class="keyword">return</span> 0<span class="symbol">;</span>
+<span class="symbol">}</span>
+</pre>
+
+</div>
+
+<h4>Output</h4>
+
+<div class="code-box">
+
+    <div class="code-title">Output</div>
+
+<pre>
+Result = 12.500000
+</pre>
+
+</div>
+
+<h4>Explanation</h4>
+
+<ul>
+<li><b>a</b> is an integer.</li>
+<li><b>b</b> is a float.</li>
+<li>Before addition, the compiler converts <b>a</b> from int to float.</li>
+<li>The result becomes a floating-point value.</li>
+</ul>
+
+<hr>
+
+<h4>Example 2: Character Converted to Integer</h4>
+
+<div class="code-box">
+
+    <div class="code-title">Example: Character Converted to Integer</div>
+
+<pre>
+<span class="preprocessor">#include</span> <span class="header-file">&lt;stdio.h&gt;</span>
+
+<span class="datatype">int</span> <span class="function">main</span><span class="symbol">()</span>
+<span class="symbol">{</span>
+    <span class="datatype">char</span> ch <span class="symbol">=</span> <span class="header-file">'A'</span><span class="symbol">;</span>
+
+    <span class="function">printf</span><span class="symbol">(</span><span class="header-file">"%d"</span><span class="symbol">,</span> ch<span class="symbol">);</span>
+
+    <span class="keyword">return</span> 0<span class="symbol">;</span>
+<span class="symbol">}</span>
+</pre>
+
+</div>
+
+<h4>Output</h4>
+
+<div class="code-box">
+
+    <div class="code-title">Output</div>
+
+<pre>
+65
+</pre>
+
+</div>
+
+<h4>Explanation</h4>
+
+<p>
+The character <b>'A'</b> has the ASCII value <b>65</b>.
+The compiler automatically converts the character into its integer ASCII value.
+</p>
+
+<hr>
+
+<h3>2. Explicit Type Conversion (Type Casting)</h3>
+
+<p>
+In Explicit Type Conversion, the programmer manually converts one data type into another
+using the type cast operator.
+</p>
+
+<p><b>Syntax</b></p>
+
+<div class="code-box">
+
+    <div class="code-title">Syntax of Type Casting</div>
+
+<pre>
+<span class="symbol">(</span><span class="datatype">data_type</span><span class="symbol">)</span> expression
+</pre>
+
+</div>
+
+<hr>
+
+<h4>Example 1: Integer Division Using Type Casting</h4>
+
+<div class="code-box">
+
+    <div class="code-title">Example: Integer Division Using Type Casting</div>
+
+<pre>
+<span class="preprocessor">#include</span> <span class="header-file">&lt;stdio.h&gt;</span>
+
+<span class="datatype">int</span> <span class="function">main</span><span class="symbol">()</span>
+<span class="symbol">{</span>
+    <span class="datatype">int</span> a <span class="symbol">=</span> 10<span class="symbol">;</span>
+    <span class="datatype">int</span> b <span class="symbol">=</span> 3<span class="symbol">;</span>
+
+    <span class="datatype">float</span> result <span class="symbol">=</span> <span class="symbol">(</span><span class="datatype">float</span><span class="symbol">)</span>a <span class="symbol">/</span> b<span class="symbol">;</span>
+
+    <span class="function">printf</span><span class="symbol">(</span><span class="header-file">"Result = %f"</span><span class="symbol">,</span> result<span class="symbol">);</span>
+
+    <span class="keyword">return</span> 0<span class="symbol">;</span>
+<span class="symbol">}</span>
+</pre>
+
+</div>
+
+<h4>Output</h4>
+
+<div class="code-box">
+
+    <div class="code-title">Output</div>
+
+<pre>
+Result = 3.333333
+</pre>
+
+</div>
+
+<h4>Explanation</h4>
+
+<ul>
+<li>Without type casting, <b>10 / 3</b> performs integer division.</li>
+<li>Integer division removes the decimal part.</li>
+<li>After converting <b>a</b> into float, floating-point division is performed.</li>
+</ul>
+
+<hr>
+
+<h4>Example 2: Float Converted to Integer</h4>
+
+<div class="code-box">
+
+    <div class="code-title">Example: Float Converted to Integer</div>
+
+<pre>
+<span class="preprocessor">#include</span> <span class="header-file">&lt;stdio.h&gt;</span>
+
+<span class="datatype">int</span> <span class="function">main</span><span class="symbol">()</span>
+<span class="symbol">{</span>
+    <span class="datatype">float</span> num <span class="symbol">=</span> 9.85<span class="symbol">;</span>
+
+    <span class="datatype">int</span> value <span class="symbol">=</span> <span class="symbol">(</span><span class="datatype">int</span><span class="symbol">)</span>num<span class="symbol">;</span>
+
+    <span class="function">printf</span><span class="symbol">(</span><span class="header-file">"%d"</span><span class="symbol">,</span> value<span class="symbol">);</span>
+
+    <span class="keyword">return</span> 0<span class="symbol">;</span>
+<span class="symbol">}</span>
+</pre>
+
+</div>
+
+<h4>Output</h4>
+
+<div class="code-box">
+
+    <div class="code-title">Output</div>
+
+<pre>
+9
+</pre>
+
+</div>
+
+<h4>Explanation</h4>
+
+<p>
+The decimal part (.85) is removed after converting the float into an integer.
+Only the whole number (9) is stored.
+</p>
+
+<hr>
+
+<h3>Why Type Conversion is Needed?</h3>
+
+<ul>
+<li>To perform calculations between different data types.</li>
+<li>To avoid compiler warnings.</li>
+<li>To improve program accuracy.</li>
+<li>To control the result of arithmetic operations.</li>
+<li>To convert data into the required format.</li>
+</ul>
+
+<hr>
+
+<h3>Important Notes</h3>
+
+<table class="notes-table">
+
+<tr>
+<th>Point</th>
+<th>Description</th>
+</tr>
+
+<tr>
+<td>Implicit Conversion</td>
+<td>Done automatically by the compiler.</td>
+</tr>
+
+<tr>
+<td>Explicit Conversion</td>
+<td>Done manually using type casting.</td>
+</tr>
+
+<tr>
+<td>Data Loss</td>
+<td>Converting from float to int removes the decimal part.</td>
+</tr>
+
+<tr>
+<td>Safe Conversion</td>
+<td>Converting from a smaller type to a larger type is generally safe.</td>
+</tr>
+
+<tr>
+<td>Programmer Control</td>
+<td>Type casting gives the programmer full control over conversion.</td>
+</tr>
+
+</table>
+
+<hr>
+
+<h3>Real-Life Analogy</h3>
+
+<p>
+Suppose you have <b>₹10</b> (integer) and <b>₹2.50</b> (float).
+When you add them, the answer becomes <b>₹12.50</b>.
+Similarly, C converts the integer into a float so that the decimal value is preserved.
+</p>
+
+<hr>
+
+<h3>Summary</h3>
+
+<ul>
+<li>Type Conversion means converting one data type into another.</li>
+<li>C supports two types of conversion:
+    <ul>
+        <li>Implicit Type Conversion</li>
+        <li>Explicit Type Conversion (Type Casting)</li>
+    </ul>
+</li>
+<li>Implicit conversion is performed automatically by the compiler.</li>
+<li>Explicit conversion is performed manually by the programmer.</li>
+<li>Type casting is useful for obtaining accurate calculation results.</li>
+</ul>
+`;
+
 let constantsAndLiterals = `
 
 <h3>Constants and Literals in C Language</h3>
@@ -5380,16 +5698,23 @@ For example, if a student's marks are 40 or above, the program displays <strong>
 
 <h4>Syntax of if-else Statement</h4>
 
-<pre>
-if(condition)
-{
-    // Executes when condition is true
-}
-else
-{
-    // Executes when condition is false
-}
-</pre>
+<div class="code-box">
+
+    <div class="code-title">
+        <span>Syntax: if-else Statement</span>
+    </div>
+
+<pre><code><span class="keyword">if</span> <span class="symbol">(</span>condition<span class="symbol">)</span>
+<span class="symbol">{</span>
+    <span class="comment">// Executes when condition is true</span>
+<span class="symbol">}</span>
+<span class="keyword">else</span>
+<span class="symbol">{</span>
+    <span class="comment">// Executes when condition is false</span>
+<span class="symbol">}</span>
+</code></pre>
+
+</div>
 
 <hr>
 
@@ -5405,48 +5730,42 @@ else
 <hr>
 
 <h4>Flowchart of if-else Statement</h4>
-
-<pre>
-        Condition
-            |
-      ----------------
-      |              |
-    True          False
-      |              |
-   if Block      else Block
-      |              |
-      ----------------
-             |
-           End
-</pre>
+<img src="bca_images/if-else.png" alt="flow chart if else" class="notes_img">
 
 <hr>
 
 <h4>Example 1: Check Pass or Fail</h4>
 
-<pre>
-#include &lt;stdio.h&gt;
+<div class="code-box">
 
-int main()
-{
-    int marks = 35;
+    <div class="code-title">
+        <span>Program: if-else Statement</span>
+    </div>
 
-    if(marks >= 40)
-    {
-        printf("Pass");
-    }
-    else
-    {
-        printf("Fail");
-    }
+<pre><code><span class="preprocessor">#include</span> <span class="header-file">&lt;stdio.h&gt;</span>
 
-    return 0;
-}
-</pre>
+<span class="datatype">int</span> <span class="function">main</span><span class="symbol">()</span>
+<span class="symbol">{</span>
+    <span class="datatype">int</span> marks <span class="symbol">=</span> <span class="number">35</span><span class="symbol">;</span>
+
+    <span class="keyword">if</span> <span class="symbol">(</span>marks <span class="symbol">&gt;=</span> <span class="number">40</span><span class="symbol">)</span>
+    <span class="symbol">{</span>
+        <span class="function">printf</span><span class="symbol">(</span><span class="string">"Pass"</span><span class="symbol">);</span>
+    <span class="symbol">}</span>
+    <span class="keyword">else</span>
+    <span class="symbol">{</span>
+        <span class="function">printf</span><span class="symbol">(</span><span class="string">"Fail"</span><span class="symbol">);</span>
+    <span class="symbol">}</span>
+
+    <span class="keyword">return</span> <span class="number">0</span><span class="symbol">;</span>
+<span class="symbol">}</span>
+</code></pre>
+
+</div>
 
 <h4>Output</h4>
 
-<pre>
+<pre class="notes_text_pre">
 Fail
 </pre>
 
@@ -5458,29 +5777,36 @@ Since marks are less than 40, the condition becomes false and the else block exe
 
 <h4>Example 2: Check Voting Eligibility</h4>
 
-<pre>
-#include &lt;stdio.h&gt;
+<div class="code-box">
 
-int main()
-{
-    int age = 17;
+    <div class="code-title">
+        <span>Program: Voting Eligibility using if-else Statement</span>
+    </div>
 
-    if(age >= 18)
-    {
-        printf("Eligible for Voting");
-    }
-    else
-    {
-        printf("Not Eligible for Voting");
-    }
+<pre><code><span class="preprocessor">#include</span> <span class="header-file">&lt;stdio.h&gt;</span>
 
-    return 0;
-}
-</pre>
+<span class="datatype">int</span> <span class="function">main</span><span class="symbol">()</span>
+<span class="symbol">{</span>
+    <span class="datatype">int</span> age <span class="symbol">=</span> <span class="number">17</span><span class="symbol">;</span>
+
+    <span class="keyword">if</span> <span class="symbol">(</span>age <span class="symbol">&gt;=</span> <span class="number">18</span><span class="symbol">)</span>
+    <span class="symbol">{</span>
+        <span class="function">printf</span><span class="symbol">(</span><span class="string">"Eligible for Voting"</span><span class="symbol">);</span>
+    <span class="symbol">}</span>
+    <span class="keyword">else</span>
+    <span class="symbol">{</span>
+        <span class="function">printf</span><span class="symbol">(</span><span class="string">"Not Eligible for Voting"</span><span class="symbol">);</span>
+    <span class="symbol">}</span>
+
+    <span class="keyword">return</span> <span class="number">0</span><span class="symbol">;</span>
+<span class="symbol">}</span>
+</code></pre>
+
+</div>
 
 <h4>Output</h4>
 
-<pre>
+<pre class="notes_text_pre">
 Not Eligible for Voting
 </pre>
 
@@ -5488,32 +5814,38 @@ Not Eligible for Voting
 
 <h4>Example 3: Check Positive or Negative Number</h4>
 
-<pre>
-#include &lt;stdio.h&gt;
+<div class="code-box">
 
-int main()
-{
-    int num = -5;
+    <div class="code-title">
+        <span>Program: Check Positive or Negative Number</span>
+    </div>
 
-    if(num >= 0)
-    {
-        printf("Positive Number");
-    }
-    else
-    {
-        printf("Negative Number");
-    }
+<pre><code><span class="preprocessor">#include</span> <span class="header-file">&lt;stdio.h&gt;</span>
 
-    return 0;
-}
-</pre>
+<span class="datatype">int</span> <span class="function">main</span><span class="symbol">()</span>
+<span class="symbol">{</span>
+    <span class="datatype">int</span> num <span class="symbol">=</span> <span class="symbol">-</span><span class="number">5</span><span class="symbol">;</span>
+
+    <span class="keyword">if</span> <span class="symbol">(</span>num <span class="symbol">&gt;=</span> <span class="number">0</span><span class="symbol">)</span>
+    <span class="symbol">{</span>
+        <span class="function">printf</span><span class="symbol">(</span><span class="string">"Positive Number"</span><span class="symbol">);</span>
+    <span class="symbol">}</span>
+    <span class="keyword">else</span>
+    <span class="symbol">{</span>
+        <span class="function">printf</span><span class="symbol">(</span><span class="string">"Negative Number"</span><span class="symbol">);</span>
+    <span class="symbol">}</span>
+
+    <span class="keyword">return</span> <span class="number">0</span><span class="symbol">;</span>
+<span class="symbol">}</span>
+</code></pre>
+
+</div>
 
 <h4>Output</h4>
 
-<pre>
+<pre class="notes_text_pre">
 Negative Number
 </pre>
-
 <hr>
 
 <h4>Real-Life Examples of if-else Statement</h4>
@@ -5737,15 +6069,23 @@ For example, before allowing a student to sit in an examination, the program may
 
 <h4>Syntax of Nested if Statement</h4>
 
-<pre>
-if(condition1)
+<div class="code-box">
+
+    <div class="code-title">
+        <span class="code-icon"></span>
+        <span>Syntax </span>
+    </div>
+
+<pre><span class="keyword">if</span>(condition1)
 {
-    if(condition2)
+    <span class="keyword">if</span>(condition2)
     {
-        // statements
+        <span class="comment">// statements</span>
     }
 }
 </pre>
+
+</div>
 
 <hr>
 
@@ -5760,53 +6100,51 @@ if(condition1)
 
 <hr>
 
-<h4>Flowchart of Nested if Statement</h4>
 
-<pre>
-        Condition 1
-             |
-      ----------------
-      |              |
-    True          False
-      |
-   Condition 2
-      |
-   ----------
-   |        |
- True     False
-   |
-Statements
-</pre>
+<img src="bca_images/nested-if.png" 
+     alt="Flowchart of Nested if Statement" 
+   class="notes_img"
+     >
 
 <hr>
 
-<h4>Example 1: Student Eligible for Exam</h4>
+<h4>Example: Student Eligible for Exam</h4>
 
+<div class="code-box">
+    <div class="code-title">
+        <span class="code-text">eligibal.c</span>
+    </div>
 <pre>
-#include &lt;stdio.h&gt;
-
-int main()
+<span class="header-file">#include &lt;stdio.h&gt;</span>
+<span class="datatype">int</span> <span class="function">main</span>()
 {
-    int registered = 1;
-    int attendance = 80;
-
-    if(registered == 1)
+    <span class="datatype">int</span> registered = <span class="number">1</span>;
+    <span class="datatype">int</span> attendance = <span class="number">80</span>;
+    <span class="keyword">if</span>(registered == <span class="number">1</span>)
     {
-        if(attendance >= 75)
+        <span class="keyword">if</span>(attendance &gt;= <span class="number">75</span>)
         {
-            printf("Eligible for Exam");
+            <span class="function">printf</span>(<span class="string">"Eligible for Exam"</span>);
         }
     }
 
-    return 0;
+    <span class="keyword">return</span> <span class="number">0</span>;
 }
 </pre>
 
+</div>
+
 <h4>Output</h4>
 
-<pre>
-Eligible for Exam
-</pre>
+<div class="code-box output-box">
+    <div class="code-title">
+        <span class="code-dot red"></span>
+        <span class="code-dot yellow"></span>
+        <span class="code-dot green"></span>
+        <span class="code-text">Output</span>
+    </div>
+<pre><code>Eligible for Exam</code></pre>
+</div>
 
 <p>
 Since the student is registered and attendance is greater than 75%, the message is displayed.
@@ -5816,25 +6154,32 @@ Since the student is registered and attendance is greater than 75%, the message 
 
 <h4>Example 2: Driving License Eligibility</h4>
 
-<pre>
-#include &lt;stdio.h&gt;
+<div class="code-box">
 
-int main()
-{
-    int age = 20;
-    int testPassed = 1;
+    <div class="code-title">
+        <span>Program: Nested if Statement</span>
+    </div>
 
-    if(age >= 18)
-    {
-        if(testPassed == 1)
-        {
-            printf("License Approved");
-        }
-    }
+<pre><code><span class="preprocessor">#include</span> <span class="header-file">&lt;stdio.h&gt;</span>
 
-    return 0;
-}
-</pre>
+<span class="datatype">int</span> <span class="function">main</span><span class="symbol">()</span>
+<span class="symbol">{</span>
+    <span class="datatype">int</span> age <span class="symbol">=</span> <span class="number">20</span><span class="symbol">;</span>
+    <span class="datatype">int</span> testPassed <span class="symbol">=</span> <span class="number">1</span><span class="symbol">;</span>
+
+    <span class="keyword">if</span> <span class="symbol">(</span>age <span class="symbol">&gt;=</span> <span class="number">18</span><span class="symbol">)</span>
+    <span class="symbol">{</span>
+        <span class="keyword">if</span> <span class="symbol">(</span>testPassed <span class="symbol">==</span> <span class="number">1</span><span class="symbol">)</span>
+        <span class="symbol">{</span>
+            <span class="function">printf</span><span class="symbol">(</span><span class="string">"License Approved"</span><span class="symbol">);</span>
+        <span class="symbol">}</span>
+    <span class="symbol">}</span>
+
+    <span class="keyword">return</span> <span class="number">0</span><span class="symbol">;</span>
+<span class="symbol">}</span>
+</code></pre>
+
+</div>
 
 <h4>Output</h4>
 
@@ -5846,25 +6191,32 @@ License Approved
 
 <h4>Example 3: Employee Bonus</h4>
 
-<pre>
-#include &lt;stdio.h&gt;
+<div class="code-box">
 
-int main()
-{
-    int experience = 5;
-    int performance = 90;
+    <div class="code-title">
+        <span>Program: Employee Bonus Approval</span>
+    </div>
 
-    if(experience >= 3)
-    {
-        if(performance >= 80)
-        {
-            printf("Bonus Approved");
-        }
-    }
+<pre><code><span class="preprocessor">#include</span> <span class="header-file">&lt;stdio.h&gt;</span>
 
-    return 0;
-}
-</pre>
+<span class="datatype">int</span> <span class="function">main</span><span class="symbol">()</span>
+<span class="symbol">{</span>
+    <span class="datatype">int</span> experience <span class="symbol">=</span> <span class="number">5</span><span class="symbol">;</span>
+    <span class="datatype">int</span> performance <span class="symbol">=</span> <span class="number">90</span><span class="symbol">;</span>
+
+    <span class="keyword">if</span> <span class="symbol">(</span>experience <span class="symbol">&gt;=</span> <span class="number">3</span><span class="symbol">)</span>
+    <span class="symbol">{</span>
+        <span class="keyword">if</span> <span class="symbol">(</span>performance <span class="symbol">&gt;=</span> <span class="number">80</span><span class="symbol">)</span>
+        <span class="symbol">{</span>
+            <span class="function">printf</span><span class="symbol">(</span><span class="string">"Bonus Approved"</span><span class="symbol">);</span>
+        <span class="symbol">}</span>
+    <span class="symbol">}</span>
+
+    <span class="keyword">return</span> <span class="number">0</span><span class="symbol">;</span>
+<span class="symbol">}</span>
+</code></pre>
+
+</div>
 
 <h4>Output</h4>
 
@@ -5913,32 +6265,39 @@ Bonus Approved
 
 <h4>Nested if with else</h4>
 
-<pre>
-#include &lt;stdio.h&gt;
+<div class="code-box">
 
-int main()
-{
-    int age = 17;
+    <div class="code-title">
+        <span>Program: Nested if-else Statement</span>
+    </div>
 
-    if(age >= 18)
-    {
-        if(age >= 21)
-        {
-            printf("Adult");
-        }
-        else
-        {
-            printf("Young Adult");
-        }
-    }
-    else
-    {
-        printf("Minor");
-    }
+<pre><code><span class="preprocessor">#include</span> <span class="header-file">&lt;stdio.h&gt;</span>
 
-    return 0;
-}
-</pre>
+<span class="datatype">int</span> <span class="function">main</span><span class="symbol">()</span>
+<span class="symbol">{</span>
+    <span class="datatype">int</span> age <span class="symbol">=</span> <span class="number">17</span><span class="symbol">;</span>
+
+    <span class="keyword">if</span> <span class="symbol">(</span>age <span class="symbol">&gt;=</span> <span class="number">18</span><span class="symbol">)</span>
+    <span class="symbol">{</span>
+        <span class="keyword">if</span> <span class="symbol">(</span>age <span class="symbol">&gt;=</span> <span class="number">21</span><span class="symbol">)</span>
+        <span class="symbol">{</span>
+            <span class="function">printf</span><span class="symbol">(</span><span class="string">"Adult"</span><span class="symbol">);</span>
+        <span class="symbol">}</span>
+        <span class="keyword">else</span>
+        <span class="symbol">{</span>
+            <span class="function">printf</span><span class="symbol">(</span><span class="string">"Young Adult"</span><span class="symbol">);</span>
+        <span class="symbol">}</span>
+    <span class="symbol">}</span>
+    <span class="keyword">else</span>
+    <span class="symbol">{</span>
+        <span class="function">printf</span><span class="symbol">(</span><span class="string">"Minor"</span><span class="symbol">);</span>
+    <span class="symbol">}</span>
+
+    <span class="keyword">return</span> <span class="number">0</span><span class="symbol">;</span>
+<span class="symbol">}</span>
+</code></pre>
+
+</div>
 
 <h4>Output</h4>
 
@@ -6050,6 +6409,8 @@ The else-if ladder is very useful when a program has multiple choices or outcome
 </p>
 
 <hr>
+<h4>Flowchart of Else-if Ladder</h4>
+<img src="bca_images/if-else-ladder.png" class="notes_img">
 
 <h4>Why Do We Need Else-if Ladder?</h4>
 
@@ -6072,29 +6433,6 @@ In such situations, we use the <strong>else-if ladder</strong>.
 
 <hr>
 
-<h4>Syntax of Else-if Ladder</h4>
-
-<pre>
-if(condition1)
-{
-    // statements
-}
-else if(condition2)
-{
-    // statements
-}
-else if(condition3)
-{
-    // statements
-}
-else
-{
-    // statements
-}
-</pre>
-
-<hr>
-
 <h4>Working of Else-if Ladder</h4>
 
 <ul>
@@ -6108,69 +6446,50 @@ else
 
 <hr>
 
-<h4>Flowchart of Else-if Ladder</h4>
-
-<pre>
-        Condition 1
-             |
-      ----------------
-      |              |
-    True          False
-      |              |
- Block 1       Condition 2
-                    |
-              --------------
-              |            |
-            True        False
-              |            |
-          Block 2    Condition 3
-                           |
-                     -------------
-                     |           |
-                   True       False
-                     |           |
-                 Block 3      Else Block
-</pre>
-
-<hr>
-
 <h4>Example 1: Student Grade System</h4>
 
-<pre>
-#include &lt;stdio.h&gt;
+<div class="code-box">
 
-int main()
-{
-    int marks = 82;
+    <div class="code-title">
+        <span>Program: Grade Calculation using else-if Ladder</span>
+    </div>
 
-    if(marks >= 90)
-    {
-        printf("Grade A");
-    }
-    else if(marks >= 75)
-    {
-        printf("Grade B");
-    }
-    else if(marks >= 60)
-    {
-        printf("Grade C");
-    }
-    else if(marks >= 40)
-    {
-        printf("Grade D");
-    }
-    else
-    {
-        printf("Fail");
-    }
+<pre><code><span class="preprocessor">#include</span> <span class="header-file">&lt;stdio.h&gt;</span>
 
-    return 0;
-}
-</pre>
+<span class="datatype">int</span> <span class="function">main</span><span class="symbol">()</span>
+<span class="symbol">{</span>
+    <span class="datatype">int</span> marks <span class="symbol">=</span> <span class="number">82</span><span class="symbol">;</span>
+
+    <span class="keyword">if</span> <span class="symbol">(</span>marks <span class="symbol">&gt;=</span> <span class="number">90</span><span class="symbol">)</span>
+    <span class="symbol">{</span>
+        <span class="function">printf</span><span class="symbol">(</span><span class="string">"Grade A"</span><span class="symbol">);</span>
+    <span class="symbol">}</span>
+    <span class="keyword">else if</span> <span class="symbol">(</span>marks <span class="symbol">&gt;=</span> <span class="number">75</span><span class="symbol">)</span>
+    <span class="symbol">{</span>
+        <span class="function">printf</span><span class="symbol">(</span><span class="string">"Grade B"</span><span class="symbol">);</span>
+    <span class="symbol">}</span>
+    <span class="keyword">else if</span> <span class="symbol">(</span>marks <span class="symbol">&gt;=</span> <span class="number">60</span><span class="symbol">)</span>
+    <span class="symbol">{</span>
+        <span class="function">printf</span><span class="symbol">(</span><span class="string">"Grade C"</span><span class="symbol">);</span>
+    <span class="symbol">}</span>
+    <span class="keyword">else if</span> <span class="symbol">(</span>marks <span class="symbol">&gt;=</span> <span class="number">40</span><span class="symbol">)</span>
+    <span class="symbol">{</span>
+        <span class="function">printf</span><span class="symbol">(</span><span class="string">"Grade D"</span><span class="symbol">);</span>
+    <span class="symbol">}</span>
+    <span class="keyword">else</span>
+    <span class="symbol">{</span>
+        <span class="function">printf</span><span class="symbol">(</span><span class="string">"Fail"</span><span class="symbol">);</span>
+    <span class="symbol">}</span>
+
+    <span class="keyword">return</span> <span class="number">0</span><span class="symbol">;</span>
+<span class="symbol">}</span>
+</code></pre>
+
+</div>
 
 <h4>Output</h4>
 
-<pre>
+<pre class="notes_text_pre">
 Grade B
 </pre>
 
@@ -6182,71 +6501,83 @@ Since marks are 82, the second condition becomes true and Grade B is displayed.
 
 <h4>Example 2: Find Largest Number</h4>
 
-<pre>
-#include &lt;stdio.h&gt;
+<div class="code-box">
 
-int main()
-{
-    int a = 20, b = 35, c = 15;
+    <div class="code-title">
+        <span>Program: Find the Largest of Three Numbers</span>
+    </div>
 
-    if(a > b && a > c)
-    {
-        printf("A is Largest");
-    }
-    else if(b > a && b > c)
-    {
-        printf("B is Largest");
-    }
-    else
-    {
-        printf("C is Largest");
-    }
+<pre><code><span class="preprocessor">#include</span> <span class="header-file">&lt;stdio.h&gt;</span>
 
-    return 0;
-}
-</pre>
+<span class="datatype">int</span> <span class="function">main</span><span class="symbol">()</span>
+<span class="symbol">{</span>
+    <span class="datatype">int</span> a <span class="symbol">=</span> <span class="number">20</span><span class="symbol">,</span> b <span class="symbol">=</span> <span class="number">35</span><span class="symbol">,</span> c <span class="symbol">=</span> <span class="number">15</span><span class="symbol">;</span>
+
+    <span class="keyword">if</span> <span class="symbol">(</span>a <span class="symbol">&gt;</span> b <span class="symbol">&amp;&amp;</span> a <span class="symbol">&gt;</span> c<span class="symbol">)</span>
+    <span class="symbol">{</span>
+        <span class="function">printf</span><span class="symbol">(</span><span class="string">"A is Largest"</span><span class="symbol">);</span>
+    <span class="symbol">}</span>
+    <span class="keyword">else if</span> <span class="symbol">(</span>b <span class="symbol">&gt;</span> a <span class="symbol">&amp;&amp;</span> b <span class="symbol">&gt;</span> c<span class="symbol">)</span>
+    <span class="symbol">{</span>
+        <span class="function">printf</span><span class="symbol">(</span><span class="string">"B is Largest"</span><span class="symbol">);</span>
+    <span class="symbol">}</span>
+    <span class="keyword">else</span>
+    <span class="symbol">{</span>
+        <span class="function">printf</span><span class="symbol">(</span><span class="string">"C is Largest"</span><span class="symbol">);</span>
+    <span class="symbol">}</span>
+
+    <span class="keyword">return</span> <span class="number">0</span><span class="symbol">;</span>
+<span class="symbol">}</span>
+</code></pre>
+
+</div>
 
 <h4>Output</h4>
 
-<pre>
+<pre class="notes_text_pre">
 B is Largest
 </pre>
 
 <hr>
 
-<h4>Example 3: Check Age Category</h4>
+<div class="code-box">
 
-<pre>
-#include &lt;stdio.h&gt;
+    <div class="code-title">
+        <span>Program: Check Age Category using else-if Ladder</span>
+    </div>
 
-int main()
-{
-    int age = 25;
+<pre><code><span class="preprocessor">#include</span> <span class="header-file">&lt;stdio.h&gt;</span>
 
-    if(age < 13)
-    {
-        printf("Child");
-    }
-    else if(age < 20)
-    {
-        printf("Teenager");
-    }
-    else if(age < 60)
-    {
-        printf("Adult");
-    }
-    else
-    {
-        printf("Senior Citizen");
-    }
+<span class="datatype">int</span> <span class="function">main</span><span class="symbol">()</span>
+<span class="symbol">{</span>
+    <span class="datatype">int</span> age <span class="symbol">=</span> <span class="number">25</span><span class="symbol">;</span>
 
-    return 0;
-}
-</pre>
+    <span class="keyword">if</span> <span class="symbol">(</span>age <span class="symbol">&lt;</span> <span class="number">13</span><span class="symbol">)</span>
+    <span class="symbol">{</span>
+        <span class="function">printf</span><span class="symbol">(</span><span class="string">"Child"</span><span class="symbol">);</span>
+    <span class="symbol">}</span>
+    <span class="keyword">else if</span> <span class="symbol">(</span>age <span class="symbol">&lt;</span> <span class="number">20</span><span class="symbol">)</span>
+    <span class="symbol">{</span>
+        <span class="function">printf</span><span class="symbol">(</span><span class="string">"Teenager"</span><span class="symbol">);</span>
+    <span class="symbol">}</span>
+    <span class="keyword">else if</span> <span class="symbol">(</span>age <span class="symbol">&lt;</span> <span class="number">60</span><span class="symbol">)</span>
+    <span class="symbol">{</span>
+        <span class="function">printf</span><span class="symbol">(</span><span class="string">"Adult"</span><span class="symbol">);</span>
+    <span class="symbol">}</span>
+    <span class="keyword">else</span>
+    <span class="symbol">{</span>
+        <span class="function">printf</span><span class="symbol">(</span><span class="string">"Senior Citizen"</span><span class="symbol">);</span>
+    <span class="symbol">}</span>
+
+    <span class="keyword">return</span> <span class="number">0</span><span class="symbol">;</span>
+<span class="symbol">}</span>
+</code></pre>
+
+</div>
 
 <h4>Output</h4>
 
-<pre>
+<pre class="notes_text_pre">
 Adult
 </pre>
 
