@@ -9050,59 +9050,44 @@ In simple words, when the break statement is encountered, the program stops the 
 
 <hr>
 
-<h4>Syntax of Break Statement</h4>
-
-<pre>
-break;
-</pre>
-
-<hr>
-
 <h4>Flow of Break Statement</h4>
-
-<pre>
-Loop Starts
-     |
-Condition
-     |
-Statements
-     |
-Break ?
- /      \\
-Yes      No
- |         |
-Exit     Continue
-Loop      Loop
-</pre>
-
+<img src="bca_images/break.png" alt="data type" class="notes_img" >
 <hr>
 
-<h4>Example 1: Break in For Loop</h4>
+<h4>Example 1: Break in for Loop</h4>
+
+<div class="code-box">
+
+    <div class="code-title">
+        <span class="code-text">Example: break Statement</span>
+    </div>
 
 <pre>
-#include &lt;stdio.h&gt;
+<span class="header-file">#include &lt;stdio.h&gt;</span>
 
-int main()
+<span class="datatype">int</span> <span class="function">main</span>()
 {
-    int i;
+    <span class="datatype">int</span> i;
 
-    for(i=1; i<=10; i++)
+    <span class="keyword">for</span>(i = <span class="number">1</span>; i &lt;= <span class="number">10</span>; i++)
     {
-        if(i==5)
+        <span class="keyword">if</span>(i == <span class="number">5</span>)
         {
-            break;
+            <span class="keyword">break</span>;
         }
 
-        printf("%d\\n", i);
+        <span class="function">printf</span>(<span class="string">"%d\\n"</span>, i);
     }
 
-    return 0;
+    <span class="keyword">return</span> <span class="number">0</span>;
 }
 </pre>
 
+</div>
+
 <h4>Output</h4>
 
-<pre>
+<pre class="notes_text_pre">
 1
 2
 3
@@ -9117,31 +9102,39 @@ When the value of i becomes 5, the break statement executes and the loop termina
 
 <h4>Example 2: Break in While Loop</h4>
 
+<div class="code-box">
+
+    <div class="code-title">
+        <span class="code-text">Example: break Statement</span>
+    </div>
+
 <pre>
-#include &lt;stdio.h&gt;
+<span class="header-file">#include &lt;stdio.h&gt;</span>
 
-int main()
+<span class="datatype">int</span> <span class="function">main</span>()
 {
-    int i=1;
+    <span class="datatype">int</span> i = <span class="number">1</span>;
 
-    while(i<=10)
+    <span class="keyword">while</span>(i &lt;= <span class="number">10</span>)
     {
-        if(i==7)
+        <span class="keyword">if</span>(i == <span class="number">7</span>)
         {
-            break;
+            <span class="keyword">break</span>;
         }
 
-        printf("%d\\n", i);
+        <span class="function">printf</span>(<span class="string">"%d\n"</span>, i);
         i++;
     }
 
-    return 0;
+    <span class="keyword">return</span> <span class="number">0</span>;
 }
 </pre>
 
+</div>
+
 <h4>Output</h4>
 
-<pre>
+<pre class="notes_text_pre">
 1
 2
 3
@@ -9152,23 +9145,31 @@ int main()
 
 <hr>
 
-<h4>Break Statement in Switch Case</h4>
+<h4>Break Statement in switch Case</h4>
+
+<div class="code-box">
+
+    <div class="code-title">
+        <span class="code-text">Example: break Statement in switch</span>
+    </div>
 
 <pre>
-switch(choice)
+<span class="keyword">switch</span>(choice)
 {
-    case 1:
-        printf("One");
-        break;
+    <span class="keyword">case</span> <span class="number">1</span>:
+        <span class="function">printf</span>(<span class="string">"One"</span>);
+        <span class="keyword">break</span>;
 
-    case 2:
-        printf("Two");
-        break;
+    <span class="keyword">case</span> <span class="number">2</span>:
+        <span class="function">printf</span>(<span class="string">"Two"</span>);
+        <span class="keyword">break</span>;
 
-    default:
-        printf("Invalid Choice");
+    <span class="keyword">default</span>:
+        <span class="function">printf</span>(<span class="string">"Invalid Choice"</span>);
 }
 </pre>
+
+</div>
 
 <p>
 In switch statements, break prevents the execution of other cases.
@@ -9222,62 +9223,45 @@ In simple words, continue does not terminate the loop. It only skips the current
 
 <hr>
 
-<h4>Syntax of Continue Statement</h4>
-
-<pre>
-continue;
-</pre>
-
-<hr>
-
 <h4>Flow of Continue Statement</h4>
-
-<pre>
-Loop Starts
-     |
-Condition
-     |
-Statements
-     |
-Continue ?
- /         \\
-Yes         No
- |            |
-Skip      Execute
-Current   Remaining
-Iteration Statements
- |
-Next Iteration
-</pre>
+<img src="bca_images/continue.png" alt="data type" class="notes_img" >
 
 <hr>
 
 <h4>Example 1: Skip Number 5</h4>
 
+<div class="code-box">
+
+    <div class="code-title">
+        <span class="code-text">Example: continue Statement</span>
+    </div>
+
 <pre>
-#include &lt;stdio.h&gt;
+<span class="header-file">#include &lt;stdio.h&gt;</span>
 
-int main()
+<span class="datatype">int</span> <span class="function">main</span>()
 {
-    int i;
+    <span class="datatype">int</span> i;
 
-    for(i=1; i<=10; i++)
+    <span class="keyword">for</span>(i = <span class="number">1</span>; i &lt;= <span class="number">10</span>; i++)
     {
-        if(i==5)
+        <span class="keyword">if</span>(i == <span class="number">5</span>)
         {
-            continue;
+            <span class="keyword">continue</span>;
         }
 
-        printf("%d\\n", i);
+        <span class="function">printf</span>(<span class="string">"%d\\n"</span>, i);
     }
 
-    return 0;
+    <span class="keyword">return</span> <span class="number">0</span>;
 }
 </pre>
 
+</div>
+
 <h4>Output</h4>
 
-<pre>
+<pre class="notes_text_pre">
 1
 2
 3
@@ -9290,43 +9274,8 @@ int main()
 </pre>
 
 <p>
-When i becomes 5, the continue statement skips that iteration and moves to the next iteration.
+When <strong>i</strong> becomes <strong>5</strong>, the <strong>continue</strong> statement skips that iteration and immediately moves to the next iteration of the loop.
 </p>
-
-<hr>
-
-<h4>Example 2: Print Odd Numbers Only</h4>
-
-<pre>
-#include &lt;stdio.h&gt;
-
-int main()
-{
-    int i;
-
-    for(i=1; i<=10; i++)
-    {
-        if(i%2==0)
-        {
-            continue;
-        }
-
-        printf("%d\\n", i);
-    }
-
-    return 0;
-}
-</pre>
-
-<h4>Output</h4>
-
-<pre>
-1
-3
-5
-7
-9
-</pre>
 
 <p>
 All even numbers are skipped and only odd numbers are displayed.
@@ -9431,16 +9380,29 @@ Although goto is available in C language, programmers generally avoid using it b
 
 <hr>
 
-<h4>Syntax of Goto Statement</h4>
+<h4>Syntax of goto Statement</h4>
+
+<div class="code-box">
+
+    <div class="code-title">
+        <span class="code-text">Syntax: goto Statement</span>
+    </div>
 
 <pre>
-goto label;
+<span class="keyword">goto</span> label;
 
-/* statements */
+<span class="comment">/* statements */</span>
 
 label:
     statement;
 </pre>
+
+</div>
+
+<hr>
+
+<h4>Flow of goto Statement</h4>
+<img src="bca_images/goto.png" alt="data type" class="notes_img" >
 
 <hr>
 
@@ -9471,65 +9433,80 @@ label:
 
 <hr>
 
-<h4>Example 1: Simple Goto Program</h4>
+<h4>Example 1: Simple goto Program</h4>
+
+<div class="code-box">
+
+    <div class="code-title">
+        <span class="code-text">Example: goto Statement</span>
+    </div>
 
 <pre>
-#include &lt;stdio.h&gt;
+<span class="header-file">#include &lt;stdio.h&gt;</span>
 
-int main()
+<span class="datatype">int</span> <span class="function">main</span>()
 {
-    printf("Welcome\\n");
+    <span class="function">printf</span>(<span class="string">"Welcome\\n"</span>);
 
-    goto end;
+    <span class="keyword">goto</span> end;
 
-    printf("This line will not execute\\n");
+    <span class="function">printf</span>(<span class="string">"This line will not execute\\n"</span>);
 
 end:
-    printf("Program Finished");
+    <span class="function">printf</span>(<span class="string">"Program Finished"</span>);
 
-    return 0;
+    <span class="keyword">return</span> <span class="number">0</span>;
 }
 </pre>
 
+</div>
+
 <h4>Output</h4>
 
-<pre>
+<pre class="notes_text_pre">
 Welcome
 Program Finished
 </pre>
-
 <p>
 The goto statement skips the middle printf() statement and directly jumps to the label named <strong>end</strong>.
 </p>
 
 <hr>
 
-<h4>Example 2: Print Numbers Using Goto</h4>
+<h4>Example 2: Print Numbers Using goto</h4>
+
+<div class="code-box">
+
+    <div class="code-title">
+        <span class="code-text">Example: goto Statement</span>
+    </div>
 
 <pre>
-#include &lt;stdio.h&gt;
+<span class="header-file">#include &lt;stdio.h&gt;</span>
 
-int main()
+<span class="datatype">int</span> <span class="function">main</span>()
 {
-    int i = 1;
+    <span class="datatype">int</span> i = <span class="number">1</span>;
 
 start:
 
-    printf("%d\\n", i);
+    <span class="function">printf</span>(<span class="string">"%d\\n"</span>, i);
     i++;
 
-    if(i <= 5)
+    <span class="keyword">if</span>(i &lt;= <span class="number">5</span>)
     {
-        goto start;
+        <span class="keyword">goto</span> start;
     }
 
-    return 0;
+    <span class="keyword">return</span> <span class="number">0</span>;
 }
 </pre>
 
+</div>
+
 <h4>Output</h4>
 
-<pre>
+<pre class="notes_text_pre">
 1
 2
 3
@@ -9547,22 +9524,6 @@ start:
 <li>Statements between goto and label are skipped.</li>
 <li>Execution continues from the labeled statement.</li>
 </ol>
-
-<hr>
-
-<h4>Flowchart of Goto Statement</h4>
-
-<pre>
- Statement
-     |
-   goto
-     |
-     V
-  Label
-     |
- Remaining
- Statements
-</pre>
 
 <hr>
 
@@ -9733,19 +9694,35 @@ Think of a calculator. When you press the addition button, the calculator perfor
 
 <hr>
 
-<h4>Example Without Function</h4>
+<h4>Example: Program Without Function</h4>
+
+<div class="code-box">
+
+    <div class="code-title">
+        <span class="code-text">welcome.c</span>
+    </div>
 
 <pre>
-#include &lt;stdio.h&gt;
+<span class="header-file">#include &lt;stdio.h&gt;</span>
 
-int main()
+<span class="datatype">int</span> <span class="function">main</span>()
 {
-    printf("Welcome Students\\n");
-    printf("Welcome Students\\n");
-    printf("Welcome Students\\n");
+    <span class="function">printf</span>(<span class="string">"Welcome Students\\n"</span>);
+    <span class="function">printf</span>(<span class="string">"Welcome Students\\n"</span>);
+    <span class="function">printf</span>(<span class="string">"Welcome Students\\n"</span>);
 
-    return 0;
+    <span class="keyword">return</span> <span class="number">0</span>;
 }
+</pre>
+
+</div>
+
+<h4>Output</h4>
+
+<pre class="notes_text_pre">
+Welcome Students
+Welcome Students
+Welcome Students
 </pre>
 
 <p>
@@ -9756,22 +9733,38 @@ Here the same statement is written multiple times.
 
 <h4>Example Using Function</h4>
 
+<div class="code-box">
+
+    <div class="code-title">
+        <span class="code-text">welcome.c</span>
+    </div>
+
 <pre>
-#include &lt;stdio.h&gt;
+<span class="header-file">#include &lt;stdio.h&gt;</span>
 
-void welcome()
+<span class="datatype">void</span> <span class="function">welcome</span>()
 {
-    printf("Welcome Students\\n");
+    <span class="function">printf</span>(<span class="string">"Welcome Students\\n"</span>);
 }
 
-int main()
+<span class="datatype">int</span> <span class="function">main</span>()
 {
-    welcome();
-    welcome();
-    welcome();
+    <span class="function">welcome</span>();
+    <span class="function">welcome</span>();
+    <span class="function">welcome</span>();
 
-    return 0;
+    <span class="keyword">return</span> <span class="number">0</span>;
 }
+</pre>
+
+</div>
+
+<h4>Output</h4>
+
+<pre class="notes_text_pre">
+Welcome Students
+Welcome Students
+Welcome Students
 </pre>
 
 <p>
@@ -9779,6 +9772,8 @@ Here the code is written once and reused multiple times.
 </p>
 
 <hr>
+<h4>Structure of a Function</h4>
+<img src="bca_images/function.png" alt="data type" class="notes_img" >
 
 <h4>Parts of a Function</h4>
 
@@ -9814,8 +9809,8 @@ Function declaration means informing the compiler about a function before its ac
 It tells the compiler the function name, return type, and parameters.
 </p>
 
-<h4>Example:</h4>
-<pre>
+<h4>Syntax:</h4>
+<pre class="notes_text_pre">
 int add(int, int);
 </pre>
 
