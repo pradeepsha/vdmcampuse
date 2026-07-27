@@ -973,31 +973,86 @@ const javaIntroContent = `
         programs once and run them on any platform that supports the Java Virtual Machine (JVM).
     </p>
 
-    <p><strong>Definition:</strong></p>
-
+    <h3>Definition:</h3>
     <p>
         Java is a high-level, object-oriented, platform-independent programming language developed by
         Sun Microsystems that enables developers to create secure, portable, and robust applications.
     </p>
 
-    <h3>History of Java</h3>
+<h3>History of Java</h3>
 
-    <p>
-        Java was developed by <strong>James Gosling</strong> and his team at
-        <strong>Sun Microsystems</strong> in <strong>1991</strong>. Initially, the language was called
-        <strong>Oak</strong> because an oak tree stood outside James Gosling's office.
-    </p>
+<p>
+    Before learning Java programming, let's understand <strong>how Java started</strong>.
+    The history of Java is simple and interesting, and it is a common interview as well as exam topic.
+</p>
 
-    <p>
-        Later, the name "Oak" was changed to <strong>Java</strong> because the name Oak was already
-        registered by another company. The name Java was inspired by Java coffee.
-    </p>
+<p>
+    In <strong>1991</strong>, a software engineer named <strong>James Gosling</strong> and his team at
+    <strong>Sun Microsystems</strong> started developing a new programming language. Their goal was to create
+    a language that could run on different electronic devices such as televisions, set-top boxes, and other smart devices.
+</p>
 
-    <p>
-        The first official version of Java, <strong>Java 1.0</strong>, was released in
-        <strong>1995</strong>. Today, Java is maintained by <strong>Oracle Corporation</strong>, which
-        acquired Sun Microsystems in 2010.
-    </p>
+<p>
+    The language was first named <strong>Oak</strong> because there was a large oak tree outside
+    James Gosling's office. However, they later discovered that the name <strong>Oak</strong> had already been
+    registered by another company, so they had to choose a new name.
+</p>
+
+<p>
+    Finally, the team selected the name <strong>Java</strong>. According to popular stories,
+    the name was inspired by <strong>Java Coffee</strong>, which the development team enjoyed while working.
+    The name is short, easy to remember, and became famous all over the world.
+</p>
+
+<p>
+    The first official version, <strong>Java 1.0</strong>, was released in
+    <strong>1995</strong>. It introduced the idea of
+    <strong>"Write Once, Run Anywhere (WORA)"</strong>, which means a Java program can run on different operating systems
+    without changing the source code.
+</p>
+
+<p>
+    In <strong>2010</strong>, <strong>Oracle Corporation</strong> acquired Sun Microsystems.
+    Since then, Oracle has been responsible for maintaining and improving Java by releasing new versions with better
+    features, security, and performance.
+</p>
+
+<h4>Easy Timeline to Remember</h4>
+
+<table class="notes-table">
+    <tr>
+        <th>Year</th>
+        <th>Event</th>
+    </tr>
+    <tr>
+        <td>1991</td>
+        <td>Java development started by James Gosling and his team at Sun Microsystems.</td>
+    </tr>
+    <tr>
+        <td>1991</td>
+        <td>The language was first named <strong>Oak</strong>.</td>
+    </tr>
+    <tr>
+        <td>1995</td>
+        <td>Oak was renamed to <strong>Java</strong> and Java 1.0 was officially released.</td>
+    </tr>
+    <tr>
+        <td>2010</td>
+        <td>Oracle Corporation acquired Sun Microsystems and became the owner of Java.</td>
+    </tr>
+</table>
+
+<h4>Remember for Exams</h4>
+
+<ul>
+    <li>Developer of Java: <strong>James Gosling</strong></li>
+    <li>Company: <strong>Sun Microsystems</strong></li>
+    <li>Development Started: <strong>1991</strong></li>
+    <li>Original Name: <strong>Oak</strong></li>
+    <li>Official Release: <strong>Java 1.0 (1995)</strong></li>
+    <li>Current Owner: <strong>Oracle Corporation (since 2010)</strong></li>
+    <li>Famous Motto: <strong>Write Once, Run Anywhere (WORA)</strong></li>
+</ul>
 
     <h3>Why Do We Need Java?</h3>
 
@@ -1405,7 +1460,7 @@ const variablesContent = `
         program execution. Every variable has a name, a data type, and a value.
     </p>
 
-    <p><strong>Definition:</strong></p>
+    <h3>Definition:</h3>
 
     <p>
         A variable is a named memory location that stores a value, and the value can be changed during
@@ -3235,21 +3290,6 @@ what an object should contain and what it can do.
 
 <hr>
 
-<h3>What You Will Learn</h3>
-
-<p>In this lecture, you will learn the following topics:</p>
-
-<ul>
-    <li>What is a Class?</li>
-    <li>Definition of Class</li>
-    <li>Why do we need a Class?</li>
-    <li>Real-life examples of Class</li>
-    <li>Features of a Class</li>
-    <li>Basic structure of a Class</li>
-    <li>Syntax of a Class</li>
-</ul>
-
-<hr>
 
 <h3>What is a Class?</h3>
 
@@ -3275,8 +3315,6 @@ It serves as a blueprint for creating objects.
 </div>
 
 <hr>
-
-<h3>Understanding Class with a Real-Life Example</h3>
 
 <h4>Example 1 : House Blueprint</h4>
 
@@ -4036,8 +4074,6 @@ An <strong>Object</strong> is an instance of a class that occupies memory and is
 </div>
 
 <hr>
-
-<h3>Real-Life Example</h3>
 
 <h4>Example 1 : Student</h4>
 
@@ -20609,32 +20645,6 @@ To overcome these limitations, Java introduced <b>Swing</b>, a more powerful and
 
 <hr>
 
-<h3>What Will We Learn?</h3>
-
-<ul>
-
-<li>Introduction to Swing</li>
-
-<li>Why Swing was introduced</li>
-
-<li>Features of Swing</li>
-
-<li>Advantages of Swing</li>
-
-<li>Swing Package</li>
-
-<li>Component Hierarchy</li>
-
-<li>MVC Architecture</li>
-
-<li>AWT vs Swing</li>
-
-<li>First Swing Program</li>
-
-</ul>
-
-<hr>
-
 <h3>What is Swing?</h3>
 
 <p>
@@ -20655,7 +20665,7 @@ Swing is a part of the <b>Java Foundation Classes (JFC)</b> and provides a rich 
 
 <hr>
 
-<h3>Real-Life Examples</h3>
+<h3>Examples</h3>
 
 <ul>
 
@@ -20855,34 +20865,7 @@ import javax.swing.*;
 <hr>
 
 <h3>Swing Component Hierarchy</h3>
-
-<pre class="notes_text_pre">
-
-          Object
-
-             │
-
-       Component
-
-             │
-
-       Container
-
-             │
-
-       JComponent
-
- ┌──────┼──────────────┐
-
- │      │              │
-
-JLabel JButton JTextField
-
- │      │              │
-
-JCheckBox JComboBox JTable
-
-</pre>
+<img src="bca_images/swing-class-hierarchy.png" alt="swing class hierarchy" class="notes_img" >
 
 <hr>
 
@@ -20953,36 +20936,7 @@ This design separates the application's data, user interface, and user actions.
 <hr>
 
 <h3>MVC Diagram</h3>
-
-<pre class="notes_text_pre">
-
-User
-
-  │
-
-  ▼
-
-Controller
-
-  │
-
-  ▼
-
-Model
-
-  │
-
-  ▼
-
-View
-
-  │
-
-  ▼
-
-Screen Output
-
-</pre>
+<img src="bca_images/mvc-arch.png" alt="swing class hierarchy" class="notes_img" >
 
 <hr>
 
@@ -21171,34 +21125,6 @@ All other Swing components such as buttons, labels, text fields, and menus are p
 
 <hr>
 
-<h3>What Will We Learn?</h3>
-
-<ul>
-
-<li>Introduction to JFrame</li>
-
-<li>Need for JFrame</li>
-
-<li>Features of JFrame</li>
-
-<li>Constructors of JFrame</li>
-
-<li>Important Methods</li>
-
-<li>Creating a JFrame</li>
-
-<li>Adding Components</li>
-
-<li>Closing a Window</li>
-
-<li>Complete Programs</li>
-
-<li>Interview Questions</li>
-
-</ul>
-
-<hr>
-
 <h3>What is JFrame?</h3>
 
 <p>
@@ -21219,30 +21145,14 @@ Every Swing application starts with a JFrame because it provides an area where a
 
 <hr>
 
-<h3>Real-Life Example</h3>
+<h3> Example</h3>
 
 <p>
 Think about applications like Calculator, Notepad, or a Student Management System.
 The main window that opens first is similar to a JFrame.
 </p>
 
-<pre class="notes_text_pre">
-
-+--------------------------------------+
-
-      Student Management System
-
-----------------------------------------
-
- Name      : [____________]
-
- Course    : [____________]
-
-          [ Save ]
-
-+--------------------------------------+
-
-</pre>
+<img src="bca_images/student-login.png" alt="data type" class="notes_img" >
 
 <hr>
 
@@ -21253,34 +21163,8 @@ import javax.swing.*;
 </code></pre>
 
 <hr>
-
 <h3>Class Hierarchy</h3>
-
-<pre class="notes_text_pre">
-
-Object
-
-  │
-
-Component
-
-  │
-
-Container
-
-  │
-
-Window
-
-  │
-
-Frame
-
-  │
-
-JFrame
-
-</pre>
+<img src="bca_images/Class-hierarchy.png" alt="data type" class="notes_img" >
 
 <hr>
 
@@ -21692,43 +21576,7 @@ public class JFrameExample
 <hr>
 
 <h3>Life Cycle of JFrame</h3>
-
-<pre class="notes_text_pre">
-
-Create JFrame
-
-      │
-
-      ▼
-
-Set Properties
-
-      │
-
-      ▼
-
-Add Components
-
-      │
-
-      ▼
-
-Display Window
-
-      │
-
-      ▼
-
-User Interaction
-
-      │
-
-      ▼
-
-Close Window
-
-</pre>
-
+<img src="bca_images/life-cycle-jframe.png" alt="life-cycle-jframe" class="notes_img" >
 <hr>
 
 <h3>Advantages of JFrame</h3>

@@ -2555,6 +2555,58 @@ Type modifiers are special keywords that are used to <b>modify the size, range, 
 The <b>short</b> modifier is used when the values to be stored are small. It uses less memory than a normal <code>int</code> on most systems.
 </p>
 
+<p>
+In C, <code>short</code> is the short form of <code>short int</code>. Therefore, both declarations are exactly the same:
+</p>
+
+<pre class="notes_text_pre">
+short int a = 5;
+short a = 5;
+</pre>
+
+<p>
+Both statements create a variable named <code>a</code> of type <code>short int</code> and initialize it with the value <code>5</code>.
+</p>
+
+<h4>Format Specifier for <code>short</code></h4>
+
+<p>
+The correct format specifier for a <code>short</code> or <code>short int</code> variable is <code>%hd</code>.
+</p>
+
+<table class="notes-table">
+    <tr>
+        <th>Specifier</th>
+        <th>Meaning</th>
+    </tr>
+    <tr>
+        <td><code>%</code></td>
+        <td>Indicates the beginning of a format specifier.</td>
+    </tr>
+    <tr>
+        <td><code>h</code></td>
+        <td>Represents a <code>short</code> integer.</td>
+    </tr>
+    <tr>
+        <td><code>d</code></td>
+        <td>Displays a signed decimal integer.</td>
+    </tr>
+</table>
+
+<p>
+Therefore, <code>%hd</code> is the correct format specifier for variables of type <code>short</code> or <code>short int</code>.
+</p>
+
+<pre class="notes_text_pre">
+short age = 20;
+
+printf("Age = %hd", age);
+</pre>
+
+<p>
+<b>Note:</b> Although <code>%d</code> also prints a <code>short</code> value correctly in <code>printf()</code> because of <b>integer promotion</b>, beginners should use <code>%hd</code> as it is the correct format specifier for the <code>short</code> data type.
+</p>
+
 
 
 <h4>Example</h4>
@@ -2562,21 +2614,24 @@ The <b>short</b> modifier is used when the values to be stored are small. It use
 <div class="code-box">
 
     <div class="code-title">
-        <span> short Modifier</span>
+        <span>short Modifier</span>
     </div>
 
 <pre><code><span class="preprocessor">#include</span> <span class="header-file">&lt;stdio.h&gt;</span>
 
 <span class="datatype">int</span> <span class="function">main</span><span class="symbol">()</span>
 <span class="symbol">{</span>
-    <span class="comment">// Short integer variable</span>
+    <span class="comment">// Both declarations are the same</span>
     <span class="datatype">short int</span> students <span class="symbol">=</span> 60<span class="symbol">;</span>
+    <span class="datatype">short</span> marks <span class="symbol">=</span> 95<span class="symbol">;</span>
 
-    <span class="comment">// Display the value</span>
-    <span class="function">printf</span><span class="symbol">(</span><span class="string">"Number of Students = %hd"</span><span class="symbol">,</span> students<span class="symbol">);</span>
+    <span class="comment">// Display the values</span>
+    <span class="function">printf</span><span class="symbol">(</span><span class="string">"Students = %hd"</span><span class="symbol">,</span> students<span class="symbol">);</span>
+    <span class="function">printf</span><span class="symbol">(</span><span class="string">"Marks = %hd"</span><span class="symbol">,</span> marks<span class="symbol">);</span>
 
     <span class="keyword">return</span> 0<span class="symbol">;</span>
-<span class="symbol">}</span></code></pre>
+<span class="symbol">}</span>
+</code></pre>
 
 </div>
 
