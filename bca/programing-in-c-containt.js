@@ -2866,6 +2866,1432 @@ There are two main types of modifiers used in programming:
 <b>Note:</b> Different programming languages support different modifiers. For example, C mainly uses <b>Type Modifiers</b>, while languages like Java and C++ use both <b>Type Modifiers</b> and <b>Access Modifiers</b>.
 </div>
 
+
+<h3>1. Type Modifiers</h3>
+
+<p>
+Type modifiers are special keywords that are used to <b>modify the size, range, or sign</b> of basic data types. They allow a program to store larger values, smaller values, or only positive values, depending on the requirement.
+</p>
+
+<p>The four type modifiers available in C are:</p>
+
+<ul>
+    <li><b>short</b></li>
+    <li><b>long</b></li>
+    <li><b>signed</b></li>
+    <li><b>unsigned</b></li>
+</ul>
+
+<h4>Type Modifiers with Data Types</h4>
+
+<table class="notes-table">
+    <tr>
+        <th>Modifier</th>
+        <th>Common Data Type</th>
+        <th>Example</th>
+        <th>Description</th>
+    </tr>
+    <tr>
+        <td><code>short</code></td>
+        <td>int</td>
+        <td><code>short int age;</code></td>
+        <td>Stores small integer values.</td>
+    </tr>
+    <tr>
+        <td><code>long</code></td>
+        <td>int, double</td>
+        <td><code>long int population;</code></td>
+        <td>Stores larger values than the normal data type.</td>
+    </tr>
+    <tr>
+        <td><code>signed</code></td>
+        <td>int, char</td>
+        <td><code>signed int temperature;</code></td>
+        <td>Stores both positive and negative values.</td>
+    </tr>
+    <tr>
+        <td><code>unsigned</code></td>
+        <td>int, char</td>
+        <td><code>unsigned int marks;</code></td>
+        <td>Stores only non-negative (positive) values.</td>
+    </tr>
+</table>
+
+<p>
+<b>Note:</b> Type modifiers cannot be used with every data type. They are mainly used with
+<code>int</code>, <code>char</code>, and <code>double</code> (only <code>long double</code>).
+</p>
+
+<hr>
+
+<h4>1. <span class="keyword">short</span> Modifier</h4>
+
+<p>
+The <b>short</b> modifier is used when the values to be stored are small. It uses less memory than a normal <code>int</code> on most systems.
+</p>
+
+<p>
+In C, <code>short</code> is the short form of <code>short int</code>. Therefore, both declarations are exactly the same:
+</p>
+
+<pre class="notes_text_pre">
+short int a = 5;
+short a = 5;
+</pre>
+
+<p>
+Both statements create a variable named <code>a</code> of type <code>short int</code> and initialize it with the value <code>5</code>.
+</p>
+
+<h4>Format Specifier for <code>short</code></h4>
+
+<p>
+The correct format specifier for a <code>short</code> or <code>short int</code> variable is <code>%hd</code>.
+</p>
+
+<table class="notes-table">
+    <tr>
+        <th>Specifier</th>
+        <th>Meaning</th>
+    </tr>
+    <tr>
+        <td><code>%</code></td>
+        <td>Indicates the beginning of a format specifier.</td>
+    </tr>
+    <tr>
+        <td><code>h</code></td>
+        <td>Represents a <code>short</code> integer.</td>
+    </tr>
+    <tr>
+        <td><code>d</code></td>
+        <td>Displays a signed decimal integer.</td>
+    </tr>
+</table>
+
+<p>
+Therefore, <code>%hd</code> is the correct format specifier for variables of type <code>short</code> or <code>short int</code>.
+</p>
+
+<pre class="notes_text_pre">
+short age = 20;
+
+printf("Age = %hd", age);
+</pre>
+
+<p>
+<b>Note:</b> Although <code>%d</code> also prints a <code>short</code> value correctly in <code>printf()</code> because of <b>integer promotion</b>, beginners should use <code>%hd</code> as it is the correct format specifier for the <code>short</code> data type.
+</p>
+
+
+
+<h4>Example</h4>
+
+<div class="code-box">
+
+    <div class="code-title">
+        <span>short Modifier</span>
+    </div>
+
+<pre><code><span class="preprocessor">#include</span> <span class="header-file">&lt;stdio.h&gt;</span>
+
+<span class="datatype">int</span> <span class="function">main</span><span class="symbol">()</span>
+<span class="symbol">{</span>
+    <span class="comment">// Both declarations are the same</span>
+    <span class="datatype">short int</span> students <span class="symbol">=</span> 60<span class="symbol">;</span>
+    <span class="datatype">short</span> marks <span class="symbol">=</span> 95<span class="symbol">;</span>
+
+    <span class="comment">// Display the values</span>
+    <span class="function">printf</span><span class="symbol">(</span><span class="string">"Students = %hd"</span><span class="symbol">,</span> students<span class="symbol">);</span>
+    <span class="function">printf</span><span class="symbol">(</span><span class="string">"Marks = %hd"</span><span class="symbol">,</span> marks<span class="symbol">);</span>
+
+    <span class="keyword">return</span> 0<span class="symbol">;</span>
+<span class="symbol">}</span>
+</code></pre>
+
+</div>
+
+<h4>Output</h4>
+
+<div class="code-box">
+
+    <div class="code-title">
+        <span>Output</span>
+    </div>
+
+<pre><code>
+Number of Students = 60
+</code></pre>
+
+</div>
+
+<p>
+<b>Explanation:</b> Here, <code>short int</code> is used because the number of students is small. It is a good choice for storing small integer values and can save memory compared to a normal <code>int</code> on some systems.
+</p>
+
+
+<h4>2. <span class="keyword">long</span> Modifier</h4>
+
+<p>
+The <b>long</b> modifier is used to store large integer values. It can hold much larger numbers than
+a normal <code>int</code>, making it suitable for applications where the value may exceed the range of
+an <code>int</code>. The exact size of a <code>long</code> depends on the compiler and operating system,
+but it is always at least as large as an <code>int</code>.
+</p>
+
+<p>
+In C, <code>long</code> is the short form of <code>long int</code>. Both declarations represent the
+same data type, so the compiler treats them identically. You may use either form according to your
+coding preference.
+</p>
+
+<pre class="notes_text_pre">
+long int population = 1450000000;
+long distance = 250000;
+</pre>
+
+<p>
+In the above example, both variables are of type <code>long int</code>. The first declaration uses
+the complete form, while the second uses the shorter keyword <code>long</code>. Both are exactly the
+same.
+</p>
+
+<h4>Memory Size and Range</h4>
+
+<p>
+The size of a <code>long</code> data type depends on the compiler and operating system. On many modern
+64-bit systems, it occupies <b>8 bytes</b>, while on many Windows compilers it occupies
+<b>4 bytes</b>. The C standard guarantees that <code>long</code> is never smaller than
+<code>int</code>.
+</p>
+
+<table class="notes-table">
+<tr>
+<th>Type</th>
+<th>Typical Size</th>
+<th>Typical Range</th>
+</tr>
+
+<tr>
+<td><code>long</code></td>
+<td>4 or 8 Bytes</td>
+<td>Much larger than <code>int</code></td>
+</tr>
+
+<tr>
+<td><code>unsigned long</code></td>
+<td>4 or 8 Bytes</td>
+<td>Stores only positive values</td>
+</tr>
+
+</table>
+
+<p>
+You can check the actual size of a <code>long</code> on your computer using the
+<code>sizeof()</code> operator.
+</p>
+
+<pre class="notes_text_pre">
+printf("%zu", sizeof(long));
+</pre>
+
+<h4>Why Use <code>long</code>?</h4>
+
+<ul>
+<li>It stores much larger integer values than <code>int</code>.</li>
+<li>It helps prevent overflow when working with large numbers.</li>
+<li>It is useful for scientific, financial, and engineering applications.</li>
+<li>It is commonly used for storing large counts, distances, populations, and file sizes.</li>
+<li>It provides better support for applications dealing with millions or billions of values.</li>
+</ul>
+
+<h4>When Should We Use <code>long</code>?</h4>
+
+<p>
+Use the <code>long</code> data type whenever an <code>int</code> may not be large enough to store the
+required value.
+</p>
+
+<ul>
+<li>Population of a country</li>
+<li>Distance between planets</li>
+<li>File sizes</li>
+<li>Bank transaction IDs</li>
+<li>Large product IDs</li>
+<li>Scientific calculations</li>
+</ul>
+
+<p>
+If even larger numbers are required, C also provides the
+<code>long long</code> data type.
+</p>
+
+<h4>Format Specifier for <code>long</code></h4>
+
+<p>
+The correct format specifier for a variable of type <code>long</code> or
+<code>long int</code> is <code>%ld</code>.
+</p>
+
+<table class="notes-table">
+
+<tr>
+<th>Specifier</th>
+<th>Meaning</th>
+</tr>
+
+<tr>
+<td><code>%</code></td>
+<td>Indicates the beginning of a format specifier.</td>
+</tr>
+
+<tr>
+<td><code>l</code></td>
+<td>Represents a <code>long</code> integer.</td>
+</tr>
+
+<tr>
+<td><code>d</code></td>
+<td>Displays or reads a signed decimal integer.</td>
+</tr>
+
+</table>
+
+<p>
+Therefore, <code>%ld</code> is the correct format specifier for variables declared using
+<code>long</code> or <code>long int</code>.
+</p>
+
+<pre class="notes_text_pre">
+long population = 1450000000;
+
+printf("Population = %ld\n", population);
+
+scanf("%ld", &population);
+</pre>
+
+<p>
+The first statement prints the value stored in the variable, while the second statement reads a
+value from the keyboard.
+</p>
+
+<p>
+<b>Note:</b> Beginners should always use <code>%ld</code> with a
+<code>long</code> variable. Using the correct format specifier makes programs more readable and avoids
+unexpected results.
+</p>
+
+<h4>Example</h4>
+
+<div class="code-box">
+
+<div class="code-title">
+<span>long Modifier</span>
+</div>
+
+<pre><code><span class="preprocessor">#include</span> <span class="header-file">&lt;stdio.h&gt;</span>
+
+<span class="datatype">int</span> <span class="function">main</span><span class="symbol">()</span>
+<span class="symbol">{</span>
+    <span class="datatype">long int</span> population <span class="symbol">=</span> 1450000000<span class="symbol">;</span>
+    <span class="datatype">long</span> distance <span class="symbol">=</span> 250000<span class="symbol">;</span>
+    <span class="datatype">long</span> salary <span class="symbol">=</span> 850000<span class="symbol">;</span>
+
+    <span class="function">printf</span><span class="symbol">(</span><span class="string">"Population = %ld\n"</span><span class="symbol">,</span> population<span class="symbol">);</span>
+    <span class="function">printf</span><span class="symbol">(</span><span class="string">"Distance = %ld\n"</span><span class="symbol">,</span> distance<span class="symbol">);</span>
+    <span class="function">printf</span><span class="symbol">(</span><span class="string">"Salary = %ld"</span><span class="symbol">,</span> salary<span class="symbol">);</span>
+
+    <span class="keyword">return</span> 0<span class="symbol">;</span>
+<span class="symbol">}</span>
+</code></pre>
+
+</div>
+
+<h4>Output</h4>
+
+<div class="code-box">
+
+<div class="code-title">
+<span>Output</span>
+</div>
+
+<pre><code>
+Population = 1450000000
+Distance = 250000
+Salary = 850000
+</code></pre>
+
+</div>
+
+<h4>Explanation</h4>
+
+<p>
+In this program, three variables are declared using the <code>long</code> data type. These variables
+store values that can be much larger than those typically stored in an <code>int</code>. The
+<code>printf()</code> function uses the <code>%ld</code> format specifier to display the values
+correctly.
+</p>
+
+<p>
+The example also demonstrates that <code>long</code> and <code>long int</code> are exactly the same
+data type. The compiler treats both declarations identically, so programmers often use the shorter
+keyword <code>long</code> because it is easier to read and write.
+</p>
+
+<p>
+Whenever your program needs to store large integer values such as populations, file sizes, distances,
+or transaction IDs, using the <code>long</code> data type is a better choice than
+<code>int</code> because it provides a larger storage capacity and reduces the risk of integer
+overflow.
+</p>
+
+<hr>
+
+<h4>3. <span class="keyword">long long</span> Modifier</h4>
+
+<p>
+The <b>long long</b> modifier is used to store very large integer values. It provides a larger storage
+capacity than both <code>int</code> and <code>long</code>. This data type is useful when your program
+needs to work with numbers that are too large to fit into a normal <code>int</code> or
+<code>long</code>.
+</p>
+
+<p>
+In C, <code>long long</code> is the short form of <code>long long int</code>. Both declarations
+represent exactly the same data type, so the compiler treats them identically.
+</p>
+
+<pre class="notes_text_pre">
+long long int worldPopulation = 8200000000;
+long long stars = 5000000000000;
+</pre>
+
+<p>
+In the above example, both variables are of type <code>long long int</code>. The first declaration
+uses the complete form, while the second uses the shorter keyword
+<code>long long</code>. Both are exactly the same.
+</p>
+
+<h4>Memory Size and Range</h4>
+
+<p>
+A <code>long long</code> data type usually occupies <b>8 bytes (64 bits)</b> on most modern
+computers. It can store extremely large integer values, making it suitable for scientific,
+financial, and engineering applications.
+</p>
+
+<table class="notes-table">
+<tr>
+<th>Type</th>
+<th>Typical Size</th>
+<th>Typical Range</th>
+</tr>
+
+<tr>
+<td><code>long long</code></td>
+<td>8 Bytes</td>
+<td>-9,223,372,036,854,775,808 to 9,223,372,036,854,775,807</td>
+</tr>
+
+<tr>
+<td><code>unsigned long long</code></td>
+<td>8 Bytes</td>
+<td>0 to 18,446,744,073,709,551,615</td>
+</tr>
+
+</table>
+
+<p>
+If your program needs to store numbers larger than a <code>long</code>, then
+<code>long long</code> is the appropriate choice.
+</p>
+
+<h4>Why Use <code>long long</code>?</h4>
+
+<ul>
+<li>It stores extremely large integer values.</li>
+<li>It greatly reduces the possibility of integer overflow.</li>
+<li>It is useful for scientific and mathematical calculations.</li>
+<li>It is commonly used in competitive programming.</li>
+<li>It is suitable for large file sizes, timestamps, and astronomical values.</li>
+</ul>
+
+<h4>When Should We Use <code>long long</code>?</h4>
+
+<p>
+Use the <code>long long</code> data type whenever the required value cannot fit into an
+<code>int</code> or <code>long</code>.
+</p>
+
+<ul>
+<li>World population statistics</li>
+<li>Distance between planets</li>
+<li>Large database record IDs</li>
+<li>Nanoseconds or milliseconds in time calculations</li>
+<li>Scientific and engineering calculations</li>
+<li>Very large counters in programs</li>
+</ul>
+
+<h4>Format Specifier for <code>long long</code></h4>
+
+<p>
+The correct format specifier for a variable of type
+<code>long long</code> or <code>long long int</code> is
+<code>%lld</code>.
+</p>
+
+<table class="notes-table">
+
+<tr>
+<th>Specifier</th>
+<th>Meaning</th>
+</tr>
+
+<tr>
+<td><code>%</code></td>
+<td>Indicates the beginning of a format specifier.</td>
+</tr>
+
+<tr>
+<td><code>ll</code></td>
+<td>Represents a <code>long long</code> integer.</td>
+</tr>
+
+<tr>
+<td><code>d</code></td>
+<td>Displays or reads a signed decimal integer.</td>
+</tr>
+
+</table>
+
+<p>
+Therefore, <code>%lld</code> is the correct format specifier for variables of type
+<code>long long</code>.
+</p>
+
+<pre class="notes_text_pre">
+long long population = 8200000000;
+
+printf("Population = %lld\n", population);
+
+scanf("%lld", &population);
+</pre>
+
+<p>
+The first statement prints the value stored in the variable, while the second statement reads a
+value from the keyboard.
+</p>
+
+<p>
+<b>Note:</b> Always use <code>%lld</code> with a <code>long long</code> variable.
+Using <code>%d</code> or <code>%ld</code> may produce incorrect output because they are intended for
+different integer types.
+</p>
+
+<h4>Example</h4>
+
+<div class="code-box">
+
+<div class="code-title">
+<span>long long Modifier</span>
+</div>
+
+<pre><code><span class="preprocessor">#include</span> <span class="header-file">&lt;stdio.h&gt;</span>
+
+<span class="datatype">int</span> <span class="function">main</span><span class="symbol">()</span>
+<span class="symbol">{</span>
+    <span class="datatype">long long</span> worldPopulation <span class="symbol">=</span> 8200000000LL<span class="symbol">;</span>
+    <span class="datatype">long long</span> stars <span class="symbol">=</span> 5000000000000LL<span class="symbol">;</span>
+
+    <span class="function">printf</span><span class="symbol">(</span><span class="string">"World Population = %lld\n"</span><span class="symbol">,</span> worldPopulation<span class="symbol">);</span>
+    <span class="function">printf</span><span class="symbol">(</span><span class="string">"Stars = %lld"</span><span class="symbol">,</span> stars<span class="symbol">);</span>
+
+    <span class="keyword">return</span> 0<span class="symbol">;</span>
+<span class="symbol">}</span>
+</code></pre>
+
+</div>
+
+<h4>Output</h4>
+
+<div class="code-box">
+
+<div class="code-title">
+<span>Output</span>
+</div>
+
+<pre><code>
+World Population = 8200000000
+Stars = 5000000000000
+</code></pre>
+
+</div>
+
+<h4>Explanation</h4>
+
+<p>
+In this program, the variables <code>worldPopulation</code> and <code>stars</code> are declared
+using the <code>long long</code> data type because their values are much larger than what an
+<code>int</code> can store. The <code>printf()</code> function uses the
+<code>%lld</code> format specifier to display these large numbers correctly.
+</p>
+
+<p>
+This example also shows that <code>long long</code> and
+<code>long long int</code> are identical data types. The shorter form
+<code>long long</code> is commonly used because it is easier to write while providing the same
+functionality.
+</p>
+
+<p>
+Whenever your program needs to work with extremely large integer values, choose
+<code>long long</code>. It provides a much larger storage range than both
+<code>int</code> and <code>long</code>, making it the preferred choice for handling very large
+numbers.
+</p>
+
+
+<h4>4. <span class="keyword">signed</span> Modifier</h4>
+
+<p>
+The <b>signed</b> modifier is used to store both <b>positive</b> and <b>negative</b> integer values.
+It allows a variable to represent numbers with a plus (<code>+</code>) or minus (<code>-</code>) sign.
+In C, integer data types such as <code>int</code>, <code>short</code>, and <code>long</code> are
+<b>signed by default</b>. Therefore, writing <code>signed int</code> and <code>int</code> means the
+same thing.
+</p>
+
+<p>
+A signed integer reserves one bit to represent the sign of the number. As a result, it can store
+both negative and positive values, but its maximum positive value is smaller than that of an
+unsigned integer of the same size.
+</p>
+
+<pre class="notes_text_pre">
+signed int temperature = -15;
+int marks = 95;
+signed salary = 25000;
+</pre>
+
+<p>
+In the above example, all variables are signed integers. The variable
+<code>temperature</code> stores a negative value, while <code>marks</code> and
+<code>salary</code> store positive values.
+</p>
+
+<h4>Memory Size and Range</h4>
+
+<p>
+The <code>signed</code> modifier does not change the size of a data type. It only specifies that
+the variable can store both positive and negative values. The size depends on the base data type.
+</p>
+
+<table class="notes-table">
+
+<tr>
+<th>Data Type</th>
+<th>Typical Size</th>
+<th>Typical Range</th>
+</tr>
+
+<tr>
+<td><code>signed short</code></td>
+<td>2 Bytes</td>
+<td>-32,768 to 32,767</td>
+</tr>
+
+<tr>
+<td><code>signed int</code></td>
+<td>4 Bytes</td>
+<td>-2,147,483,648 to 2,147,483,647</td>
+</tr>
+
+<tr>
+<td><code>signed long long</code></td>
+<td>8 Bytes</td>
+<td>-9,223,372,036,854,775,808 to 9,223,372,036,854,775,807</td>
+</tr>
+
+</table>
+
+<p>
+The exact range may vary depending on the compiler and operating system, but the above values are
+commonly found on modern systems.
+</p>
+
+<h4>Why Use <code>signed</code>?</h4>
+
+<ul>
+<li>It stores both positive and negative integer values.</li>
+<li>It is useful when values may increase or decrease.</li>
+<li>It is the default integer type in C.</li>
+<li>It is suitable for mathematical and scientific calculations.</li>
+<li>It allows arithmetic operations involving negative numbers.</li>
+</ul>
+
+<h4>When Should We Use <code>signed</code>?</h4>
+
+<p>
+Use the <code>signed</code> modifier whenever a variable may contain negative values.
+</p>
+
+<ul>
+<li>Temperature measurements</li>
+<li>Profit and loss calculations</li>
+<li>Bank account balance</li>
+<li>Altitude above or below sea level</li>
+<li>Student score differences</li>
+<li>Coordinate values on a graph</li>
+</ul>
+
+<h4>Format Specifier for <code>signed</code></h4>
+
+<p>
+The format specifier depends on the underlying data type, not on the
+<code>signed</code> keyword itself.
+</p>
+
+<table class="notes-table">
+
+<tr>
+<th>Data Type</th>
+<th>Format Specifier</th>
+</tr>
+
+<tr>
+<td><code>signed short</code></td>
+<td><code>%hd</code></td>
+</tr>
+
+<tr>
+<td><code>signed int</code></td>
+<td><code>%d</code></td>
+</tr>
+
+<tr>
+<td><code>signed long</code></td>
+<td><code>%ld</code></td>
+</tr>
+
+<tr>
+<td><code>signed long long</code></td>
+<td><code>%lld</code></td>
+</tr>
+
+</table>
+
+<pre class="notes_text_pre">
+signed int balance = -5000;
+
+printf("Balance = %d\n", balance);
+
+scanf("%d", &balance);
+</pre>
+
+<p>
+The <code>printf()</code> function displays the value of the variable, while
+<code>scanf()</code> reads a signed integer from the keyboard.
+</p>
+
+<p>
+<b>Note:</b> Since <code>int</code> is signed by default, writing
+<code>signed int</code> is optional. Both declarations create the same type of variable.
+</p>
+
+<h4>Example</h4>
+
+<div class="code-box">
+
+<div class="code-title">
+<span>signed Modifier</span>
+</div>
+
+<pre><code><span class="preprocessor">#include</span> <span class="header-file">&lt;stdio.h&gt;</span>
+
+<span class="datatype">int</span> <span class="function">main</span><span class="symbol">()</span>
+<span class="symbol">{</span>
+    <span class="datatype">signed int</span> temperature <span class="symbol">=</span> -15<span class="symbol">;</span>
+    <span class="datatype">signed int</span> balance <span class="symbol">=</span> -5000<span class="symbol">;</span>
+    <span class="datatype">signed int</span> marks <span class="symbol">=</span> 95<span class="symbol">;</span>
+
+    <span class="function">printf</span><span class="symbol">(</span><span class="string">"Temperature = %d\n"</span><span class="symbol">,</span> temperature<span class="symbol">);</span>
+    <span class="function">printf</span><span class="symbol">(</span><span class="string">"Balance = %d\n"</span><span class="symbol">,</span> balance<span class="symbol">);</span>
+    <span class="function">printf</span><span class="symbol">(</span><span class="string">"Marks = %d"</span><span class="symbol">,</span> marks<span class="symbol">);</span>
+
+    <span class="keyword">return</span> 0<span class="symbol">;</span>
+<span class="symbol">}</span>
+</code></pre>
+
+</div>
+
+<h4>Output</h4>
+
+<div class="code-box">
+
+<div class="code-title">
+<span>Output</span>
+</div>
+
+<pre><code>
+Temperature = -15
+Balance = -5000
+Marks = 95
+</code></pre>
+
+</div>
+
+<h4>Explanation</h4>
+
+<p>
+In this program, all variables are declared using the <code>signed</code> modifier. The variables
+<code>temperature</code> and <code>balance</code> store negative values, while
+<code>marks</code> stores a positive value. Because the variables are signed, they can represent
+both positive and negative integers.
+</p>
+
+<p>
+The <code>printf()</code> function uses the <code>%d</code> format specifier because the variables
+are of type <code>signed int</code>. Since <code>int</code> is signed by default, the declaration
+<code>signed int</code> can also be written simply as <code>int</code>.
+</p>
+
+<p>
+Whenever your program needs to work with values that may become negative, such as temperatures,
+bank balances, or profit and loss, the <code>signed</code> modifier is the appropriate choice.
+</p>
+
+
+<h4>5. <span class="keyword">unsigned</span> Modifier</h4>
+
+<p>
+The <b>unsigned</b> modifier is used to store <b>only non-negative (positive and zero)</b> integer
+values. Unlike a signed integer, an unsigned integer cannot store negative numbers. Since it does
+not need a sign bit, it can store a much larger positive value than a signed integer of the same
+size.
+</p>
+
+<p>
+In C, the <code>unsigned</code> modifier can be used with integer data types such as
+<code>short</code>, <code>int</code>, <code>long</code>, and
+<code>long long</code>. It is commonly used when negative values are never required.
+</p>
+
+<pre class="notes_text_pre">
+unsigned int age = 20;
+unsigned int students = 150;
+unsigned marks = 95;
+</pre>
+
+<p>
+In the above example, all variables are unsigned integers. They can store only
+positive values and zero. Assigning a negative value to an unsigned variable may
+produce unexpected results.
+</p>
+
+<h4>Memory Size and Range</h4>
+
+<p>
+The <code>unsigned</code> modifier does not change the memory size of a data type.
+It only changes the range of values that can be stored. Since there is no sign bit,
+the entire memory is used to store positive values.
+</p>
+
+<table class="notes-table">
+
+<tr>
+<th>Data Type</th>
+<th>Typical Size</th>
+<th>Typical Range</th>
+</tr>
+
+<tr>
+<td><code>unsigned short</code></td>
+<td>2 Bytes</td>
+<td>0 to 65,535</td>
+</tr>
+
+<tr>
+<td><code>unsigned int</code></td>
+<td>4 Bytes</td>
+<td>0 to 4,294,967,295</td>
+</tr>
+
+<tr>
+<td><code>unsigned long long</code></td>
+<td>8 Bytes</td>
+<td>0 to 18,446,744,073,709,551,615</td>
+</tr>
+
+</table>
+
+<p>
+These ranges are commonly found on modern systems. The exact values may vary
+depending on the compiler and operating system.
+</p>
+
+<h4>Why Use <code>unsigned</code>?</h4>
+
+<ul>
+<li>It stores larger positive values than the corresponding signed type.</li>
+<li>It is useful when negative values are not required.</li>
+<li>It provides a wider positive range without increasing memory usage.</li>
+<li>It is commonly used for counters and indexes.</li>
+<li>It is suitable for storing quantities that can never be negative.</li>
+</ul>
+
+<h4>When Should We Use <code>unsigned</code>?</h4>
+
+<p>
+Use the <code>unsigned</code> modifier whenever a variable should never contain a
+negative value.
+</p>
+
+<ul>
+<li>Age of a person</li>
+<li>Number of students in a class</li>
+<li>Marks obtained in an examination</li>
+<li>Quantity of products in stock</li>
+<li>Population count</li>
+<li>Array indexes and loop counters</li>
+</ul>
+
+<p>
+Avoid using <code>unsigned</code> if the value may become negative during program execution.
+</p>
+
+<h4>Format Specifier for <code>unsigned</code></h4>
+
+<p>
+The correct format specifier depends on the underlying unsigned data type.
+</p>
+
+<table class="notes-table">
+
+<tr>
+<th>Data Type</th>
+<th>Format Specifier</th>
+</tr>
+
+<tr>
+<td><code>unsigned short</code></td>
+<td><code>%hu</code></td>
+</tr>
+
+<tr>
+<td><code>unsigned int</code></td>
+<td><code>%u</code></td>
+</tr>
+
+<tr>
+<td><code>unsigned long</code></td>
+<td><code>%lu</code></td>
+</tr>
+
+<tr>
+<td><code>unsigned long long</code></td>
+<td><code>%llu</code></td>
+</tr>
+
+</table>
+
+<p>
+These format specifiers should be used with both <code>printf()</code> and
+<code>scanf()</code>.
+</p>
+
+<pre class="notes_text_pre">
+unsigned int students = 120;
+
+printf("Students = %u\n", students);
+
+scanf("%u", &students);
+</pre>
+
+<p>
+The <code>printf()</code> function displays the value stored in the variable,
+while <code>scanf()</code> reads an unsigned integer from the keyboard.
+</p>
+
+<p>
+<b>Note:</b> Never use <code>%d</code> for an <code>unsigned int</code>.
+Always use <code>%u</code> because it is the correct format specifier for
+unsigned integers.
+</p>
+
+<h4>Example</h4>
+
+<div class="code-box">
+
+<div class="code-title">
+<span>unsigned Modifier</span>
+</div>
+
+<pre><code><span class="preprocessor">#include</span> <span class="header-file">&lt;stdio.h&gt;</span>
+
+<span class="datatype">int</span> <span class="function">main</span><span class="symbol">()</span>
+<span class="symbol">{</span>
+    <span class="datatype">unsigned int</span> students <span class="symbol">=</span> 120<span class="symbol">;</span>
+    <span class="datatype">unsigned int</span> marks <span class="symbol">=</span> 95<span class="symbol">;</span>
+    <span class="datatype">unsigned long</span> population <span class="symbol">=</span> 1450000000<span class="symbol">;</span>
+
+    <span class="function">printf</span><span class="symbol">(</span><span class="string">"Students = %u\n"</span><span class="symbol">,</span> students<span class="symbol">);</span>
+    <span class="function">printf</span><span class="symbol">(</span><span class="string">"Marks = %u\n"</span><span class="symbol">,</span> marks<span class="symbol">);</span>
+    <span class="function">printf</span><span class="symbol">(</span><span class="string">"Population = %lu"</span><span class="symbol">,</span> population<span class="symbol">);</span>
+
+    <span class="keyword">return</span> 0<span class="symbol">;</span>
+<span class="symbol">}</span>
+</code></pre>
+
+</div>
+
+<h4>Output</h4>
+
+<div class="code-box">
+
+<div class="code-title">
+<span>Output</span>
+</div>
+
+<pre><code>
+Students = 120
+Marks = 95
+Population = 1450000000
+</code></pre>
+
+</div>
+
+<h4>Explanation</h4>
+
+<p>
+In this program, all variables are declared using the <code>unsigned</code>
+modifier. Since these variables represent quantities that can never be negative,
+using <code>unsigned</code> allows them to store a larger range of positive
+values than the corresponding signed data types.
+</p>
+
+<p>
+The <code>printf()</code> function uses <code>%u</code> for
+<code>unsigned int</code> variables and <code>%lu</code> for the
+<code>unsigned long</code> variable. Using the correct format specifier ensures
+that the values are displayed correctly.
+</p>
+
+<p>
+The <code>unsigned</code> modifier is commonly used for variables such as
+population counts, item quantities, array indexes, and loop counters because
+these values are never expected to be negative.
+</p>
+
+
+<h4>6. Comparison of <span class="keyword">signed</span> and <span class="keyword">unsigned</span> Modifiers</h4>
+
+<p>
+Both <code>signed</code> and <code>unsigned</code> are integer modifiers in C. They determine whether
+a variable can store negative values. A <code>signed</code> variable can store both positive and
+negative numbers, whereas an <code>unsigned</code> variable stores only positive numbers and zero.
+</p>
+
+<p>
+Since an <code>unsigned</code> variable does not reserve a bit for the sign, it can store a much
+larger positive value than the corresponding <code>signed</code> data type of the same size.
+</p>
+
+<h4>Difference Between <code>signed</code> and <code>unsigned</code></h4>
+
+<table class="notes-table">
+
+<tr>
+<th>Feature</th>
+<th>signed</th>
+<th>unsigned</th>
+</tr>
+
+<tr>
+<td>Stores Negative Values</td>
+<td>Yes</td>
+<td>No</td>
+</tr>
+
+<tr>
+<td>Stores Positive Values</td>
+<td>Yes</td>
+<td>Yes</td>
+</tr>
+
+<tr>
+<td>Stores Zero</td>
+<td>Yes</td>
+<td>Yes</td>
+</tr>
+
+<tr>
+<td>Sign Bit</td>
+<td>Uses one bit for the sign</td>
+<td>No sign bit</td>
+</tr>
+
+<tr>
+<td>Positive Range</td>
+<td>Smaller</td>
+<td>Larger</td>
+</tr>
+
+<tr>
+<td>Negative Range</td>
+<td>Available</td>
+<td>Not Available</td>
+</tr>
+
+<tr>
+<td>Default for <code>int</code></td>
+<td>Yes</td>
+<td>No</td>
+</tr>
+
+<tr>
+<td>Common Format Specifier</td>
+<td><code>%d</code></td>
+<td><code>%u</code></td>
+</tr>
+
+<tr>
+<td>Typical Uses</td>
+<td>Temperature, profit/loss, balance</td>
+<td>Age, quantity, population, counters</td>
+</tr>
+
+</table>
+
+<h4>Range Comparison (32-bit Integer)</h4>
+
+<table class="notes-table">
+
+<tr>
+<th>Data Type</th>
+<th>Typical Range</th>
+</tr>
+
+<tr>
+<td><code>signed int</code></td>
+<td>-2,147,483,648 to 2,147,483,647</td>
+</tr>
+
+<tr>
+<td><code>unsigned int</code></td>
+<td>0 to 4,294,967,295</td>
+</tr>
+
+</table>
+
+<p>
+Notice that both data types usually occupy the same memory (4 bytes), but
+<code>unsigned int</code> stores a much larger positive value because it does not
+need to store negative numbers.
+</p>
+
+<h4>Example</h4>
+
+<div class="code-box">
+
+<div class="code-title">
+<span>signed vs unsigned</span>
+</div>
+
+<pre><code><span class="preprocessor">#include</span> <span class="header-file">&lt;stdio.h&gt;</span>
+
+<span class="datatype">int</span> <span class="function">main</span><span class="symbol">()</span>
+<span class="symbol">{</span>
+    <span class="datatype">signed int</span> temperature <span class="symbol">=</span> -20<span class="symbol">;</span>
+    <span class="datatype">unsigned int</span> students <span class="symbol">=</span> 120<span class="symbol">;</span>
+
+    <span class="function">printf</span><span class="symbol">(</span><span class="string">"Temperature = %d\n"</span><span class="symbol">,</span> temperature<span class="symbol">);</span>
+    <span class="function">printf</span><span class="symbol">(</span><span class="string">"Students = %u"</span><span class="symbol">,</span> students<span class="symbol">);</span>
+
+    <span class="keyword">return</span> 0<span class="symbol">;</span>
+<span class="symbol">}</span>
+</code></pre>
+
+</div>
+
+<h4>Output</h4>
+
+<div class="code-box">
+
+<div class="code-title">
+<span>Output</span>
+</div>
+
+<pre><code>
+Temperature = -20
+Students = 120
+</code></pre>
+
+</div>
+
+<h4>Explanation</h4>
+
+<p>
+In this program, the variable <code>temperature</code> is declared as
+<code>signed int</code>, so it can store a negative value (<code>-20</code>).
+The variable <code>students</code> is declared as <code>unsigned int</code>,
+which stores only non-negative values.
+</p>
+
+<p>
+The <code>printf()</code> function uses <code>%d</code> to print the signed
+integer and <code>%u</code> to print the unsigned integer. Each format
+specifier matches the corresponding data type.
+</p>
+
+<h4>Important Points</h4>
+
+<ul>
+<li><code>int</code> is <b>signed</b> by default in C.</li>
+<li>Use <code>unsigned</code> only when negative values are never required.</li>
+<li>Both data types usually occupy the same amount of memory.</li>
+<li><code>unsigned</code> provides a larger positive range than <code>signed</code>.</li>
+<li>Always use the correct format specifier (<code>%d</code> or <code>%u</code>).</li>
+<li>Choosing the appropriate modifier improves program correctness and memory usage.</li>
+</ul>
+
+<h4>7. Combining Integer Modifiers</h4>
+
+<p>
+In C, integer modifiers can be combined with integer data types to create variables
+with different storage sizes and value ranges. Combining modifiers allows programmers
+to choose the most appropriate data type based on the requirements of the program.
+</p>
+
+<p>
+For example, if a variable needs to store only positive values, the
+<code>unsigned</code> modifier can be combined with <code>short</code>,
+<code>int</code>, <code>long</code>, or <code>long long</code>. Similarly,
+the <code>signed</code> modifier can also be combined with these data types.
+</p>
+
+<h4>Common Integer Modifier Combinations</h4>
+
+<table class="notes-table">
+
+<tr>
+<th>Declaration</th>
+<th>Description</th>
+<th>Typical Format Specifier</th>
+</tr>
+
+<tr>
+<td><code>short int</code></td>
+<td>Stores small signed integers.</td>
+<td><code>%hd</code></td>
+</tr>
+
+<tr>
+<td><code>unsigned short</code></td>
+<td>Stores only positive small integers.</td>
+<td><code>%hu</code></td>
+</tr>
+
+<tr>
+<td><code>int</code> or <code>signed int</code></td>
+<td>Stores positive and negative integers.</td>
+<td><code>%d</code></td>
+</tr>
+
+<tr>
+<td><code>unsigned int</code></td>
+<td>Stores only positive integers.</td>
+<td><code>%u</code></td>
+</tr>
+
+<tr>
+<td><code>long int</code></td>
+<td>Stores large signed integers.</td>
+<td><code>%ld</code></td>
+</tr>
+
+<tr>
+<td><code>unsigned long</code></td>
+<td>Stores large positive integers.</td>
+<td><code>%lu</code></td>
+</tr>
+
+<tr>
+<td><code>long long</code></td>
+<td>Stores very large signed integers.</td>
+<td><code>%lld</code></td>
+</tr>
+
+<tr>
+<td><code>unsigned long long</code></td>
+<td>Stores very large positive integers.</td>
+<td><code>%llu</code></td>
+</tr>
+
+</table>
+
+<h4>Example</h4>
+
+<div class="code-box">
+
+<div class="code-title">
+<span>Combining Integer Modifiers</span>
+</div>
+
+<pre><code><span class="preprocessor">#include</span> <span class="header-file">&lt;stdio.h&gt;</span>
+
+<span class="datatype">int</span> <span class="function">main</span><span class="symbol">()</span>
+<span class="symbol">{</span>
+    <span class="datatype">short</span> age <span class="symbol">=</span> 20<span class="symbol">;</span>
+    <span class="datatype">unsigned short</span> students <span class="symbol">=</span> 150<span class="symbol">;</span>
+
+    <span class="datatype">long</span> population <span class="symbol">=</span> 1450000000<span class="symbol">;</span>
+    <span class="datatype">unsigned long</span> distance <span class="symbol">=</span> 5000000<span class="symbol">;</span>
+
+    <span class="datatype">long long</span> stars <span class="symbol">=</span> 5000000000000LL<span class="symbol">;</span>
+    <span class="datatype">unsigned long long</span> atoms <span class="symbol">=</span> 18000000000000000000ULL<span class="symbol">;</span>
+
+    <span class="function">printf</span><span class="symbol">(</span><span class="string">"Age = %hd\n"</span><span class="symbol">,</span> age<span class="symbol">);</span>
+    <span class="function">printf</span><span class="symbol">(</span><span class="string">"Students = %hu\n"</span><span class="symbol">,</span> students<span class="symbol">);</span>
+
+    <span class="function">printf</span><span class="symbol">(</span><span class="string">"Population = %ld\n"</span><span class="symbol">,</span> population<span class="symbol">);</span>
+    <span class="function">printf</span><span class="symbol">(</span><span class="string">"Distance = %lu\n"</span><span class="symbol">,</span> distance<span class="symbol">);</span>
+
+    <span class="function">printf</span><span class="symbol">(</span><span class="string">"Stars = %lld\n"</span><span class="symbol">,</span> stars<span class="symbol">);</span>
+    <span class="function">printf</span><span class="symbol">(</span><span class="string">"Atoms = %llu"</span><span class="symbol">,</span> atoms<span class="symbol">);</span>
+
+    <span class="keyword">return</span> 0<span class="symbol">;</span>
+<span class="symbol">}</span>
+</code></pre>
+
+</div>
+
+<h4>Output</h4>
+
+<div class="code-box">
+
+<div class="code-title">
+<span>Output</span>
+</div>
+
+<pre><code>
+Age = 20
+Students = 150
+Population = 1450000000
+Distance = 5000000
+Stars = 5000000000000
+Atoms = 18000000000000000000
+</code></pre>
+
+</div>
+
+<h4>Explanation</h4>
+
+<p>
+This program demonstrates different combinations of integer modifiers. Each
+variable is declared according to the type of data it stores. Small values are
+stored using <code>short</code>, large values use <code>long</code>, very large
+values use <code>long long</code>, and variables that never contain negative
+numbers use the <code>unsigned</code> modifier.
+</p>
+
+<p>
+Notice that each data type uses its own format specifier while printing the
+value. Using the correct format specifier ensures that the output is displayed
+correctly and avoids undefined behavior.
+</p>
+
+<h4>Valid Integer Modifier Combinations</h4>
+
+<table class="notes-table">
+
+<tr>
+<th>Declaration</th>
+<th>Valid</th>
+</tr>
+
+<tr>
+<td><code>short</code></td>
+<td>✔ Yes</td>
+</tr>
+
+<tr>
+<td><code>unsigned short</code></td>
+<td>✔ Yes</td>
+</tr>
+
+<tr>
+<td><code>signed short</code></td>
+<td>✔ Yes</td>
+</tr>
+
+<tr>
+<td><code>int</code></td>
+<td>✔ Yes</td>
+</tr>
+
+<tr>
+<td><code>unsigned int</code></td>
+<td>✔ Yes</td>
+</tr>
+
+<tr>
+<td><code>signed int</code></td>
+<td>✔ Yes</td>
+</tr>
+
+<tr>
+<td><code>long</code></td>
+<td>✔ Yes</td>
+</tr>
+
+<tr>
+<td><code>unsigned long</code></td>
+<td>✔ Yes</td>
+</tr>
+
+<tr>
+<td><code>signed long</code></td>
+<td>✔ Yes</td>
+</tr>
+
+<tr>
+<td><code>long long</code></td>
+<td>✔ Yes</td>
+</tr>
+
+<tr>
+<td><code>unsigned long long</code></td>
+<td>✔ Yes</td>
+</tr>
+
+<tr>
+<td><code>signed long long</code></td>
+<td>✔ Yes</td>
+</tr>
+
+</table>
+
+<h4>Important Points</h4>
+
+<ul>
+<li><code>short</code>, <code>long</code>, and <code>long long</code> modify the <b>size</b> of an integer.</li>
+<li><code>signed</code> and <code>unsigned</code> modify the <b>range</b> of values.</li>
+<li><code>int</code> is <b>signed</b> by default.</li>
+<li><code>signed int</code> and <code>int</code> are identical.</li>
+<li>Use <code>unsigned</code> only when negative values are never required.</li>
+<li>Always use the correct format specifier with each data type.</li>
+<li>Choose the smallest suitable data type to improve memory efficiency and program performance.</li>
+</ul>
+
+<h4>Summary</h4>
+
+<p>
+Integer modifiers help programmers choose the most appropriate integer type for
+a program. By combining <code>signed</code>, <code>unsigned</code>,
+<code>short</code>, <code>long</code>, and <code>long long</code>, you can
+store values efficiently while ensuring that the required range of numbers is
+supported.
+</p>
+
 <hr>
 
 <h3>1. Type Modifiers</h3>
@@ -3152,7 +4578,7 @@ Arithmetic operators are used to perform mathematical calculations.
 <div class="code-box">
 
     <div class="code-title">
-        <span>Program: Arithmetic Operators</span>
+        <span>Arithmetic_Operators.c</span>
     </div>
 
 <pre><code><span class="preprocessor">#include</span> <span class="header-file">&lt;stdio.h&gt;</span>
@@ -3274,10 +4700,10 @@ Relational operators compare two values and return either True (1) or False (0).
 <h3>3. Logical Operators</h3>
 
 <p>
-Logical operators are used to combine two or more conditions.
+Logical operators are used to combine two or more conditions. The result of a logical operation is always either <b>true (1)</b> or <b>false (0)</b>.
 </p>
 
-<table  class="notes-table">
+<table class="notes-table">
 <tr>
 <th>Operator</th>
 <th>Name</th>
@@ -3303,6 +4729,208 @@ Logical operators are used to combine two or more conditions.
 </tr>
 
 </table>
+
+<hr>
+
+<h4>1. Logical AND (&&)</h4>
+
+<p>
+The <b>Logical AND (&&)</b> operator checks two or more conditions.
+It returns <b>true (1)</b> only when <b>all conditions are true</b>.
+If even one condition is false, the result becomes <b>false (0)</b>.
+</p>
+
+<h4>Truth Table</h4>
+
+<table class="notes-table">
+<tr>
+<th>Condition A</th>
+<th>Condition B</th>
+<th>A && B</th>
+</tr>
+
+<tr>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+</tr>
+
+<tr>
+<td>0</td>
+<td>1</td>
+<td>0</td>
+</tr>
+
+<tr>
+<td>1</td>
+<td>0</td>
+<td>0</td>
+</tr>
+
+<tr>
+<td>1</td>
+<td>1</td>
+<td>1</td>
+</tr>
+
+</table>
+
+<div class="code-box">
+
+<div class="code-title">
+<span>Logical AND Example</span>
+</div>
+
+<pre><code><span class="preprocessor">#include</span> <span class="header-file">&lt;stdio.h&gt;</span>
+
+<span class="datatype">int</span> <span class="function">main</span><span class="symbol">()</span>
+<span class="symbol">{</span>
+    <span class="datatype">int</span> age <span class="symbol">=</span> 20<span class="symbol">;</span>
+
+    <span class="keyword">if</span> <span class="symbol">(</span>age <span class="symbol">&gt;=</span> 18 <span class="symbol">&amp;&amp;</span> age <span class="symbol">&lt;=</span> 60<span class="symbol">)</span>
+    <span class="symbol">{</span>
+        <span class="function">printf</span><span class="symbol">(</span><span class="string">"Eligible"</span><span class="symbol">);</span>
+    <span class="symbol">}</span>
+
+    <span class="keyword">return</span> 0<span class="symbol">;</span>
+<span class="symbol">}</span>
+</code></pre>
+
+</div>
+
+<p><b>Output:</b> Eligible</p>
+
+<hr>
+
+<h4>2. Logical OR (||)</h4>
+
+<p>
+The <b>Logical OR (||)</b> operator returns <b>true (1)</b> if
+<b>at least one condition is true</b>.
+It returns <b>false (0)</b> only when <b>all conditions are false</b>.
+</p>
+
+<h4>Truth Table</h4>
+
+<table class="notes-table">
+<tr>
+<th>Condition A</th>
+<th>Condition B</th>
+<th>A || B</th>
+</tr>
+
+<tr>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+</tr>
+
+<tr>
+<td>0</td>
+<td>1</td>
+<td>1</td>
+</tr>
+
+<tr>
+<td>1</td>
+<td>0</td>
+<td>1</td>
+</tr>
+
+<tr>
+<td>1</td>
+<td>1</td>
+<td>1</td>
+</tr>
+
+</table>
+
+<div class="code-box">
+
+<div class="code-title">
+<span>Logical OR Example</span>
+</div>
+
+<pre><code><span class="preprocessor">#include</span> <span class="header-file">&lt;stdio.h&gt;</span>
+
+<span class="datatype">int</span> <span class="function">main</span><span class="symbol">()</span>
+<span class="symbol">{</span>
+    <span class="datatype">int</span> marks <span class="symbol">=</span> 35<span class="symbol">;</span>
+
+    <span class="keyword">if</span> <span class="symbol">(</span>marks <span class="symbol">&gt;=</span> 33 <span class="symbol">||</span> marks <span class="symbol">==</span> 0<span class="symbol">)</span>
+    <span class="symbol">{</span>
+        <span class="function">printf</span><span class="symbol">(</span><span class="string">"Condition is True"</span><span class="symbol">);</span>
+    <span class="symbol">}</span>
+
+    <span class="keyword">return</span> 0<span class="symbol">;</span>
+<span class="symbol">}</span>
+</code></pre>
+
+</div>
+
+<p><b>Output:</b> Condition is True</p>
+
+<hr>
+
+<h4>3. Logical NOT (!)</h4>
+
+<p>
+The <b>Logical NOT (!)</b> operator reverses the result of a condition.
+If the condition is <b>true (1)</b>, it becomes <b>false (0)</b>.
+If the condition is <b>false (0)</b>, it becomes <b>true (1)</b>.
+</p>
+
+<h4>Truth Table</h4>
+
+<table class="notes-table">
+<tr>
+<th>Condition A</th>
+<th>!A</th>
+</tr>
+
+<tr>
+<td>0</td>
+<td>1</td>
+</tr>
+
+<tr>
+<td>1</td>
+<td>0</td>
+</tr>
+
+</table>
+
+<div class="code-box">
+
+<div class="code-title">
+<span>Logical NOT Example</span>
+</div>
+
+<pre><code><span class="preprocessor">#include</span> <span class="header-file">&lt;stdio.h&gt;</span>
+
+<span class="datatype">int</span> <span class="function">main</span><span class="symbol">()</span>
+<span class="symbol">{</span>
+    <span class="datatype">int</span> isLoggedIn <span class="symbol">=</span> 0<span class="symbol">;</span>
+
+    <span class="keyword">if</span> <span class="symbol">(</span><span class="symbol">!</span>isLoggedIn<span class="symbol">)</span>
+    <span class="symbol">{</span>
+        <span class="function">printf</span><span class="symbol">(</span><span class="string">"Please Login"</span><span class="symbol">);</span>
+    <span class="symbol">}</span>
+
+    <span class="keyword">return</span> 0<span class="symbol">;</span>
+<span class="symbol">}</span>
+</code></pre>
+
+</div>
+
+<p><b>Output:</b> Please Login</p>
+
+<p>
+<b>Remember:</b><br>
+<b>&&</b> → All conditions must be true.<br>
+<b>||</b> → At least one condition must be true.<br>
+<b>!</b> → Reverses the result (True becomes False, False becomes True).
+</p>
 
 <h4>Example</h4>
 
@@ -3446,17 +5074,19 @@ These operators increase or decrease a variable value by 1.
 <h3>6. Bitwise Operators</h3>
 
 <p>
-Bitwise operators work directly on binary values (bits).
+Bitwise operators work directly on the <b>binary representation (bits)</b> of numbers.
+Each bit is compared or modified individually.
+They are commonly used in system programming, embedded systems, and performance optimization.
 </p>
 
-<table  class="notes-table">
+<table class="notes-table">
 <tr>
 <th>Operator</th>
 <th>Name</th>
 </tr>
 
 <tr>
-<td>&</td>
+<td>&amp;</td>
 <td>Bitwise AND</td>
 </tr>
 
@@ -3486,6 +5116,384 @@ Bitwise operators work directly on binary values (bits).
 </tr>
 
 </table>
+
+<hr>
+
+<h4>1. Bitwise AND (&amp;)</h4>
+
+<p>
+The <b>Bitwise AND (&amp;)</b> operator compares each bit of two numbers.
+A bit becomes <b>1</b> only when <b>both corresponding bits are 1</b>.
+Otherwise, the result is <b>0</b>.
+</p>
+
+<p><b>Example:</b> 5 &amp; 3</p>
+
+<p>
+5 = <b>0101</b><br>
+3 = <b>0011</b>
+</p>
+
+<h4>Truth Table</h4>
+
+<table class="notes-table">
+<tr>
+<th>A</th>
+<th>B</th>
+<th>A &amp; B</th>
+</tr>
+
+<tr>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+</tr>
+
+<tr>
+<td>0</td>
+<td>1</td>
+<td>0</td>
+</tr>
+
+<tr>
+<td>1</td>
+<td>0</td>
+<td>0</td>
+</tr>
+
+<tr>
+<td>1</td>
+<td>1</td>
+<td>1</td>
+</tr>
+
+</table>
+
+<p>
+Result:<br>
+0101<br>
+0011<br>
+────<br>
+0001 = <b>1</b>
+</p>
+
+<div class="code-box">
+
+<div class="code-title">
+<span>Bitwise AND Example</span>
+</div>
+
+<pre><code><span class="preprocessor">#include</span> <span class="header-file">&lt;stdio.h&gt;</span>
+
+<span class="datatype">int</span> <span class="function">main</span><span class="symbol">()</span>
+<span class="symbol">{</span>
+    <span class="datatype">int</span> a <span class="symbol">=</span> 5<span class="symbol">,</span> b <span class="symbol">=</span> 3<span class="symbol">;</span>
+
+    <span class="function">printf</span><span class="symbol">(</span><span class="string">"%d"</span><span class="symbol">,</span> a <span class="symbol">&amp;</span> b<span class="symbol">);</span>
+
+    <span class="keyword">return</span> 0<span class="symbol">;</span>
+<span class="symbol">}</span>
+</code></pre>
+
+</div>
+
+<p><b>Output:</b> 1</p>
+
+<hr>
+
+<h4>2. Bitwise OR (|)</h4>
+
+<p>
+The <b>Bitwise OR (|)</b> operator compares each bit of two numbers.
+A bit becomes <b>1</b> if <b>at least one corresponding bit is 1</b>.
+</p>
+
+<p><b>Example:</b> 5 | 3</p>
+
+<p>
+5 = <b>0101</b><br>
+3 = <b>0011</b>
+</p>
+
+<h4>Truth Table</h4>
+
+<table class="notes-table">
+<tr>
+<th>A</th>
+<th>B</th>
+<th>A | B</th>
+</tr>
+
+<tr>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+</tr>
+
+<tr>
+<td>0</td>
+<td>1</td>
+<td>1</td>
+</tr>
+
+<tr>
+<td>1</td>
+<td>0</td>
+<td>1</td>
+</tr>
+
+<tr>
+<td>1</td>
+<td>1</td>
+<td>1</td>
+</tr>
+
+</table>
+
+<p>
+Result:<br>
+0101<br>
+0011<br>
+────<br>
+0111 = <b>7</b>
+</p>
+
+<div class="code-box">
+
+<div class="code-title">
+<span>Bitwise OR Example</span>
+</div>
+
+<pre><code><span class="preprocessor">#include</span> <span class="header-file">&lt;stdio.h&gt;</span>
+
+<span class="datatype">int</span> <span class="function">main</span><span class="symbol">()</span>
+<span class="symbol">{</span>
+    <span class="datatype">int</span> a <span class="symbol">=</span> 5<span class="symbol">,</span> b <span class="symbol">=</span> 3<span class="symbol">;</span>
+
+    <span class="function">printf</span><span class="symbol">(</span><span class="string">"%d"</span><span class="symbol">,</span> a <span class="symbol">|</span> b<span class="symbol">);</span>
+
+    <span class="keyword">return</span> 0<span class="symbol">;</span>
+<span class="symbol">}</span>
+</code></pre>
+
+</div>
+
+<p><b>Output:</b> 7</p>
+
+<hr>
+
+<h4>3. Bitwise XOR (^)</h4>
+
+<p>
+The <b>Bitwise XOR (^)</b> operator returns <b>1</b> only when the two corresponding bits are <b>different</b>.
+If both bits are the same, the result is <b>0</b>.
+</p>
+
+<h4>Truth Table</h4>
+
+<table class="notes-table">
+<tr>
+<th>A</th>
+<th>B</th>
+<th>A ^ B</th>
+</tr>
+
+<tr>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+</tr>
+
+<tr>
+<td>0</td>
+<td>1</td>
+<td>1</td>
+</tr>
+
+<tr>
+<td>1</td>
+<td>0</td>
+<td>1</td>
+</tr>
+
+<tr>
+<td>1</td>
+<td>1</td>
+<td>0</td>
+</tr>
+
+</table>
+
+<p>
+Example:<br>
+5 = 0101<br>
+3 = 0011<br>
+────<br>
+0110 = <b>6</b>
+</p>
+
+<div class="code-box">
+
+<div class="code-title">
+<span>Bitwise XOR Example</span>
+</div>
+
+<pre><code><span class="preprocessor">#include</span> <span class="header-file">&lt;stdio.h&gt;</span>
+
+<span class="datatype">int</span> <span class="function">main</span><span class="symbol">()</span>
+<span class="symbol">{</span>
+    <span class="datatype">int</span> a <span class="symbol">=</span> 5<span class="symbol">,</span> b <span class="symbol">=</span> 3<span class="symbol">;</span>
+
+    <span class="function">printf</span><span class="symbol">(</span><span class="string">"%d"</span><span class="symbol">,</span> a <span class="symbol">^</span> b<span class="symbol">);</span>
+
+    <span class="keyword">return</span> 0<span class="symbol">;</span>
+<span class="symbol">}</span>
+</code></pre>
+
+</div>
+
+<p><b>Output:</b> 6</p>
+
+<hr>
+
+<h4>4. Bitwise NOT (~)</h4>
+
+<p>
+The <b>Bitwise NOT (~)</b> operator reverses every bit of a number.
+All <b>1s become 0s</b> and all <b>0s become 1s</b>.
+</p>
+
+<h4>Truth Table</h4>
+
+<table class="notes-table">
+<tr>
+<th>A</th>
+<th>~A</th>
+</tr>
+
+<tr>
+<td>0</td>
+<td>1</td>
+</tr>
+
+<tr>
+<td>1</td>
+<td>0</td>
+</tr>
+
+</table>
+
+<p>
+Example:<br>
+5 = 00000101<br>
+~5 = 11111010 = <b>-6</b> (in two's complement)
+</p>
+
+<div class="code-box">
+
+<div class="code-title">
+<span>Bitwise NOT Example</span>
+</div>
+
+<pre><code><span class="preprocessor">#include</span> <span class="header-file">&lt;stdio.h&gt;</span>
+
+<span class="datatype">int</span> <span class="function">main</span><span class="symbol">()</span>
+<span class="symbol">{</span>
+    <span class="datatype">int</span> a <span class="symbol">=</span> 5<span class="symbol">;</span>
+
+    <span class="function">printf</span><span class="symbol">(</span><span class="string">"%d"</span><span class="symbol">,</span> <span class="symbol">~</span>a<span class="symbol">);</span>
+
+    <span class="keyword">return</span> 0<span class="symbol">;</span>
+<span class="symbol">}</span>
+</code></pre>
+
+</div>
+
+<p><b>Output:</b> -6</p>
+
+<hr>
+
+<h4>5. Left Shift (&lt;&lt;)</h4>
+
+<p>
+The <b>Left Shift (&lt;&lt;)</b> operator shifts all bits to the left by the specified number of positions.
+Each left shift is approximately equal to multiplying the number by <b>2</b>.
+</p>
+
+<p>
+Example:<br>
+5 = 00000101<br>
+5 &lt;&lt; 1 = 00001010 = <b>10</b>
+</p>
+
+<div class="code-box">
+
+<div class="code-title">
+<span>Left Shift Example</span>
+</div>
+
+<pre><code><span class="preprocessor">#include</span> <span class="header-file">&lt;stdio.h&gt;</span>
+
+<span class="datatype">int</span> <span class="function">main</span><span class="symbol">()</span>
+<span class="symbol">{</span>
+    <span class="datatype">int</span> a <span class="symbol">=</span> 5<span class="symbol">;</span>
+
+    <span class="function">printf</span><span class="symbol">(</span><span class="string">"%d"</span><span class="symbol">,</span> a <span class="symbol">&lt;&lt;</span> 1<span class="symbol">);</span>
+
+    <span class="keyword">return</span> 0<span class="symbol">;</span>
+<span class="symbol">}</span>
+</code></pre>
+
+</div>
+
+<p><b>Output:</b> 10</p>
+
+<hr>
+
+<h4>6. Right Shift (&gt;&gt;)</h4>
+
+<p>
+The <b>Right Shift (&gt;&gt;)</b> operator shifts all bits to the right by the specified number of positions.
+Each right shift is approximately equal to dividing the number by <b>2</b>.
+</p>
+
+<p>
+Example:<br>
+20 = 00010100<br>
+20 &gt;&gt; 2 = 00000101 = <b>5</b>
+</p>
+
+<div class="code-box">
+
+<div class="code-title">
+<span>Right Shift Example</span>
+</div>
+
+<pre><code><span class="preprocessor">#include</span> <span class="header-file">&lt;stdio.h&gt;</span>
+
+<span class="datatype">int</span> <span class="function">main</span><span class="symbol">()</span>
+<span class="symbol">{</span>
+    <span class="datatype">int</span> a <span class="symbol">=</span> 20<span class="symbol">;</span>
+
+    <span class="function">printf</span><span class="symbol">(</span><span class="string">"%d"</span><span class="symbol">,</span> a <span class="symbol">&gt;&gt;</span> 2<span class="symbol">);</span>
+
+    <span class="keyword">return</span> 0<span class="symbol">;</span>
+<span class="symbol">}</span>
+</code></pre>
+
+</div>
+
+<p><b>Output:</b> 5</p>
+
+<p>
+<b>Remember:</b><br>
+<b>&amp;</b> → 1 only if both bits are 1.<br>
+<b>|</b> → 1 if at least one bit is 1.<br>
+<b>^</b> → 1 if both bits are different.<br>
+<b>~</b> → Reverses every bit.<br>
+<b>&lt;&lt;</b> → Shifts bits to the left (≈ multiply by 2).<br>
+<b>&gt;&gt;</b> → Shifts bits to the right (≈ divide by 2).
+</p>
 
 <h4>Example</h4>
 
@@ -4377,6 +6385,56 @@ Name = <span class="string">Pradeep</span></code></pre>
 <li><b>Format Specifiers</b> (%d, %f, %c, %s, etc.) tell <code>printf()</code> and <code>scanf()</code> how to print or read that data.</li>
 </ul>
 </div>
+
+<hr>
+
+<h3> scanf() with Different Format Specifiers </h3>
+
+<div class="code-box">
+
+    <div class="code-title">
+        scanf.c
+    </div>
+
+<pre><code><span class="preprocessor">#include</span> <span class="header-file">&lt;stdio.h&gt;</span>
+
+<span class="datatype">int</span> <span class="function">main</span><span class="symbol">()</span>
+<span class="symbol">{</span>
+    <span class="datatype">char</span> ch<span class="symbol">;</span>
+    <span class="datatype">char</span> str<span class="symbol">[</span>100<span class="symbol">];</span>
+    <span class="datatype">int</span> i<span class="symbol">;</span>
+    <span class="datatype">short</span> s<span class="symbol">;</span>
+    <span class="datatype">long</span> l<span class="symbol">;</span>
+    <span class="datatype">float</span> f<span class="symbol">;</span>
+    <span class="datatype">double</span> d<span class="symbol">;</span>
+
+    <span class="function">printf</span><span class="symbol">(</span><span class="string">"Enter a character: "</span><span class="symbol">);</span>
+    <span class="function">scanf</span><span class="symbol">(</span><span class="string">"%c"</span><span class="symbol">,</span> <span class="symbol">&amp;</span>ch<span class="symbol">);</span>
+
+    <span class="function">printf</span><span class="symbol">(</span><span class="string">"Enter a string: "</span><span class="symbol">);</span>
+    <span class="function">scanf</span><span class="symbol">(</span><span class="string">"%s"</span><span class="symbol">,</span> str<span class="symbol">);</span>
+
+    <span class="function">printf</span><span class="symbol">(</span><span class="string">"Enter an integer: "</span><span class="symbol">);</span>
+    <span class="function">scanf</span><span class="symbol">(</span><span class="string">"%d"</span><span class="symbol">,</span> <span class="symbol">&amp;</span>i<span class="symbol">);</span>
+
+    <span class="function">printf</span><span class="symbol">(</span><span class="string">"Enter a short integer: "</span><span class="symbol">);</span>
+    <span class="function">scanf</span><span class="symbol">(</span><span class="string">"%hd"</span><span class="symbol">,</span> <span class="symbol">&amp;</span>s<span class="symbol">);</span>
+
+    <span class="function">printf</span><span class="symbol">(</span><span class="string">"Enter a long integer: "</span><span class="symbol">);</span>
+    <span class="function">scanf</span><span class="symbol">(</span><span class="string">"%ld"</span><span class="symbol">,</span> <span class="symbol">&amp;</span>l<span class="symbol">);</span>
+
+    <span class="function">printf</span><span class="symbol">(</span><span class="string">"Enter a float: "</span><span class="symbol">);</span>
+    <span class="function">scanf</span><span class="symbol">(</span><span class="string">"%f"</span><span class="symbol">,</span> <span class="symbol">&amp;</span>f<span class="symbol">);</span>
+
+    <span class="function">printf</span><span class="symbol">(</span><span class="string">"Enter a double: "</span><span class="symbol">);</span>
+    <span class="function">scanf</span><span class="symbol">(</span><span class="string">"%lf"</span><span class="symbol">,</span> <span class="symbol">&amp;</span>d<span class="symbol">);</span>
+
+    <span class="keyword">return</span> 0<span class="symbol">;</span>
+<span class="symbol">}</span>
+</code></pre>
+
+</div>
+
 `;
 
 const cTypeConversion = `
@@ -9886,7 +11944,7 @@ It defines what the function will do.
 </p>
 
 <h4>Example:</h4>
-<pre>
+<pre class="notes_text_pre">
 int add(int a, int b) {
     int sum = a + b;
     return sum;
@@ -9909,7 +11967,7 @@ Function call means using the function in the program to execute its code.
 </p>
 
 <h4>Example:</h4>
-<pre>
+<pre class="notes_text_pre">
 int result = add(5, 10);
 </pre>
 
@@ -9921,32 +11979,39 @@ int result = add(5, 10);
 </ul>
 
 <hr>
-
 <h4>Complete Example</h4>
 
-<pre>
-#include &lt;stdio.h&gt;
+<div class="code-box">
 
-// Function Declaration
-int add(int, int);
+    <div class="code-title">
+        <span>Function Declaration, Function Call and Function Definition</span>
+    </div>
 
-int main() {
+<pre><code><span class="preprocessor">#include</span> <span class="header-file">&lt;stdio.h&gt;</span>
 
-    int result;
+<span class="comment">// Function Declaration</span>
+<span class="datatype">int</span> <span class="function">add</span><span class="symbol">(</span><span class="datatype">int</span><span class="symbol">,</span> <span class="datatype">int</span><span class="symbol">);</span>
 
-    // Function Call
-    result = add(5, 10);
+<span class="datatype">int</span> <span class="function">main</span><span class="symbol">()</span>
+<span class="symbol">{</span>
+    <span class="datatype">int</span> result<span class="symbol">;</span>
 
-    printf("Sum = %d", result);
+    <span class="comment">// Function Call</span>
+    result <span class="symbol">=</span> <span class="function">add</span><span class="symbol">(</span>5<span class="symbol">,</span> 10<span class="symbol">);</span>
 
-    return 0;
-}
+    <span class="function">printf</span><span class="symbol">(</span><span class="string">"Sum = %d"</span><span class="symbol">,</span> result<span class="symbol">);</span>
 
-// Function Definition
-int add(int a, int b) {
-    return a + b;
-}
-</pre>
+    <span class="keyword">return</span> 0<span class="symbol">;</span>
+<span class="symbol">}</span>
+
+<span class="comment">// Function Definition</span>
+<span class="datatype">int</span> <span class="function">add</span><span class="symbol">(</span><span class="datatype">int</span> a<span class="symbol">,</span> <span class="datatype">int</span> b<span class="symbol">)</span>
+<span class="symbol">{</span>
+    <span class="keyword">return</span> a <span class="symbol">+</span> b<span class="symbol">;</span>
+<span class="symbol">}</span>
+</code></pre>
+
+</div>
 
 <hr>
 
@@ -9961,7 +12026,7 @@ int add(int a, int b) {
 
 <h4>General Syntax of Function</h4>
 
-<pre>
+<pre class="notes_text_pre">
 return_type function_name()
 {
     // statements
@@ -9972,27 +12037,40 @@ return_type function_name()
 
 <h4>Example of Simple Function</h4>
 
-<pre>
-#include &lt;stdio.h&gt;
+<div class="code-box">
 
-void greet()
-{
-    printf("Hello Students");
-}
+    <div class="code-title">
+        <span>Simple Function Example</span>
+    </div>
 
-int main()
-{
-    greet();
+<pre><code><span class="preprocessor">#include</span> <span class="header-file">&lt;stdio.h&gt;</span>
 
-    return 0;
-}
-</pre>
+<span class="datatype">void</span> <span class="function">greet</span><span class="symbol">()</span>
+<span class="symbol">{</span>
+    <span class="function">printf</span><span class="symbol">(</span><span class="string">"Hello Students"</span><span class="symbol">);</span>
+<span class="symbol">}</span>
+
+<span class="datatype">int</span> <span class="function">main</span><span class="symbol">()</span>
+<span class="symbol">{</span>
+    <span class="function">greet</span><span class="symbol">();</span>
+
+    <span class="keyword">return</span> 0<span class="symbol">;</span>
+<span class="symbol">}</span>
+</code></pre>
+
+</div>
 
 <h4>Output</h4>
 
-<pre>
-Hello Students
-</pre>
+<div class="code-box">
+
+    <div class="code-title">
+        <span>Output</span>
+    </div>
+
+<pre><code>Hello Students</code></pre>
+
+</div>
 
 <hr>
 
@@ -10034,7 +12112,7 @@ Hello Students
 Functions created by programmers according to their requirements are called <strong>User-Defined Functions</strong>.
 </p>
 
-<pre>
+<pre class = "notes_text_pre">
 void display()
 {
     printf("Learning C Language");
@@ -11167,7 +13245,7 @@ In this type of function:
 
 <h4>Syntax</h4>
 
-<pre>
+<pre class="notes_text_pre">
 void display()
 {
     // statements
@@ -11176,27 +13254,42 @@ void display()
 
 <h4>Example</h4>
 
-<pre>
-#include &lt;stdio.h&gt;
+<h4>Example of User-Defined Function</h4>
 
-void display()
-{
-    printf("Welcome Students");
-}
+<div class="code-box">
 
-int main()
-{
-    display();
+    <div class="code-title">
+        <span>User-Defined Function Example</span>
+    </div>
 
-    return 0;
-}
-</pre>
+<pre><code><span class="preprocessor">#include</span> <span class="header-file">&lt;stdio.h&gt;</span>
+
+<span class="datatype">void</span> <span class="function">display</span><span class="symbol">()</span>
+<span class="symbol">{</span>
+    <span class="function">printf</span><span class="symbol">(</span><span class="string">"Welcome Students"</span><span class="symbol">);</span>
+<span class="symbol">}</span>
+
+<span class="datatype">int</span> <span class="function">main</span><span class="symbol">()</span>
+<span class="symbol">{</span>
+    <span class="function">display</span><span class="symbol">();</span>
+
+    <span class="keyword">return</span> 0<span class="symbol">;</span>
+<span class="symbol">}</span>
+</code></pre>
+
+</div>
 
 <h4>Output</h4>
 
-<pre>
-Welcome Students
-</pre>
+<div class="code-box">
+
+    <div class="code-title">
+        <span>Output</span>
+    </div>
+
+<pre><code>Welcome Students</code></pre>
+
+</div>
 
 <h4>Advantages</h4>
 
@@ -11222,36 +13315,49 @@ In this type:
 
 <h4>Syntax</h4>
 
-<pre>
+<pre class="notes_text_pre">
 void function_name(parameters)
 {
     // statements
 }
 </pre>
 
-<h4>Example</h4>
+<h4>Example of Function with Parameters</h4>
 
-<pre>
-#include &lt;stdio.h&gt;
+<div class="code-box">
 
-void sum(int a, int b)
-{
-    printf("Sum = %d", a+b);
-}
+    <div class="code-title">
+        <span>Function with Parameters Example</span>
+    </div>
 
-int main()
-{
-    sum(10,20);
+<pre><code><span class="preprocessor">#include</span> <span class="header-file">&lt;stdio.h&gt;</span>
 
-    return 0;
-}
-</pre>
+<span class="datatype">void</span> <span class="function">sum</span><span class="symbol">(</span><span class="datatype">int</span> a<span class="symbol">,</span> <span class="datatype">int</span> b<span class="symbol">)</span>
+<span class="symbol">{</span>
+    <span class="function">printf</span><span class="symbol">(</span><span class="string">"Sum = %d"</span><span class="symbol">,</span> a <span class="symbol">+</span> b<span class="symbol">);</span>
+<span class="symbol">}</span>
+
+<span class="datatype">int</span> <span class="function">main</span><span class="symbol">()</span>
+<span class="symbol">{</span>
+    <span class="function">sum</span><span class="symbol">(</span>10<span class="symbol">,</span> 20<span class="symbol">);</span>
+
+    <span class="keyword">return</span> 0<span class="symbol">;</span>
+<span class="symbol">}</span>
+</code></pre>
+
+</div>
 
 <h4>Output</h4>
 
-<pre>
-Sum = 30
-</pre>
+<div class="code-box">
+
+    <div class="code-title">
+        <span>Output</span>
+    </div>
+
+<pre><code>Sum = 30</code></pre>
+
+</div>
 
 <h4>Explanation</h4>
 
@@ -11275,40 +13381,53 @@ In this type:
 
 <h4>Syntax</h4>
 
-<pre>
+<pre class="notes_text_pre">
 return_type function_name()
 {
     return value;
 }
 </pre>
 
-<h4>Example</h4>
+<h4>Example of Function with Return Value</h4>
 
-<pre>
-#include &lt;stdio.h&gt;
+<div class="code-box">
 
-int getNumber()
-{
-    return 100;
-}
+    <div class="code-title">
+        <span>Function with Return Value Example</span>
+    </div>
 
-int main()
-{
-    int num;
+<pre><code><span class="preprocessor">#include</span> <span class="header-file">&lt;stdio.h&gt;</span>
 
-    num = getNumber();
+<span class="datatype">int</span> <span class="function">getNumber</span><span class="symbol">()</span>
+<span class="symbol">{</span>
+    <span class="keyword">return</span> 100<span class="symbol">;</span>
+<span class="symbol">}</span>
 
-    printf("%d", num);
+<span class="datatype">int</span> <span class="function">main</span><span class="symbol">()</span>
+<span class="symbol">{</span>
+    <span class="datatype">int</span> num<span class="symbol">;</span>
 
-    return 0;
-}
-</pre>
+    num <span class="symbol">=</span> <span class="function">getNumber</span><span class="symbol">();</span>
+
+    <span class="function">printf</span><span class="symbol">(</span><span class="string">"%d"</span><span class="symbol">,</span> num<span class="symbol">);</span>
+
+    <span class="keyword">return</span> 0<span class="symbol">;</span>
+<span class="symbol">}</span>
+</code></pre>
+
+</div>
 
 <h4>Output</h4>
 
-<pre>
-100
-</pre>
+<div class="code-box">
+
+    <div class="code-title">
+        <span>Output</span>
+    </div>
+
+<pre><code>100</code></pre>
+
+</div>
 
 <h4>Explanation</h4>
 
@@ -11332,40 +13451,53 @@ This is the most commonly used type of function.
 
 <h4>Syntax</h4>
 
-<pre>
+<pre class="notes_text_pre">
 return_type function_name(parameters)
 {
     return value;
 }
 </pre>
 
-<h4>Example</h4>
+<h4>Example of Function with Parameters and Return Value</h4>
 
-<pre>
-#include &lt;stdio.h&gt;
+<div class="code-box">
 
-int sum(int a, int b)
-{
-    return a+b;
-}
+    <div class="code-title">
+        <span>Function with Parameters and Return Value Example</span>
+    </div>
 
-int main()
-{
-    int result;
+<pre><code><span class="preprocessor">#include</span> <span class="header-file">&lt;stdio.h&gt;</span>
 
-    result = sum(10,20);
+<span class="datatype">int</span> <span class="function">sum</span><span class="symbol">(</span><span class="datatype">int</span> a<span class="symbol">,</span> <span class="datatype">int</span> b<span class="symbol">)</span>
+<span class="symbol">{</span>
+    <span class="keyword">return</span> a <span class="symbol">+</span> b<span class="symbol">;</span>
+<span class="symbol">}</span>
 
-    printf("Sum = %d", result);
+<span class="datatype">int</span> <span class="function">main</span><span class="symbol">()</span>
+<span class="symbol">{</span>
+    <span class="datatype">int</span> result<span class="symbol">;</span>
 
-    return 0;
-}
-</pre>
+    result <span class="symbol">=</span> <span class="function">sum</span><span class="symbol">(</span>10<span class="symbol">,</span> 20<span class="symbol">);</span>
+
+    <span class="function">printf</span><span class="symbol">(</span><span class="string">"Sum = %d"</span><span class="symbol">,</span> result<span class="symbol">);</span>
+
+    <span class="keyword">return</span> 0<span class="symbol">;</span>
+<span class="symbol">}</span>
+</code></pre>
+
+</div>
 
 <h4>Output</h4>
 
-<pre>
-Sum = 30
-</pre>
+<div class="code-box">
+
+    <div class="code-title">
+        <span>Output</span>
+    </div>
+
+<pre><code>Sum = 30</code></pre>
+
+</div>
 
 <h4>Explanation</h4>
 
@@ -11466,30 +13598,46 @@ Changes made inside the function do NOT affect the original value.
 
 <h4>Example (Call by Value)</h4>
 
-<pre>
-#include &lt;stdio.h&gt;
+<div class="code-box">
 
-void change(int x) {
-    x = x + 10;
-    printf("Inside function: %d\\n", x);
-}
+    <div class="code-title">
+        <span>Call by Value Example</span>
+    </div>
 
-int main() {
-    int a = 5;
+<pre><code><span class="preprocessor">#include</span> <span class="header-file">&lt;stdio.h&gt;</span>
 
-    change(a);
+<span class="datatype">void</span> <span class="function">change</span><span class="symbol">(</span><span class="datatype">int</span> x<span class="symbol">)</span>
+<span class="symbol">{</span>
+    x <span class="symbol">=</span> x <span class="symbol">+</span> 10<span class="symbol">;</span>
+    <span class="function">printf</span><span class="symbol">(</span><span class="string">"Inside function: %d\n"</span><span class="symbol">,</span> x<span class="symbol">);</span>
+<span class="symbol">}</span>
 
-    printf("Outside function: %d\\n", a);
+<span class="datatype">int</span> <span class="function">main</span><span class="symbol">()</span>
+<span class="symbol">{</span>
+    <span class="datatype">int</span> a <span class="symbol">=</span> 5<span class="symbol">;</span>
 
-    return 0;
-}
-</pre>
+    <span class="function">change</span><span class="symbol">(</span>a<span class="symbol">);</span>
 
-<h4>Output:</h4>
-<pre>
-Inside function: 15
-Outside function: 5
-</pre>
+    <span class="function">printf</span><span class="symbol">(</span><span class="string">"Outside function: %d\n"</span><span class="symbol">,</span> a<span class="symbol">);</span>
+
+    <span class="keyword">return</span> 0<span class="symbol">;</span>
+<span class="symbol">}</span>
+</code></pre>
+
+</div>
+
+<h4>Output</h4>
+
+<div class="code-box">
+
+    <div class="code-title">
+        <span>Output</span>
+    </div>
+
+<pre><code>Inside function: 15
+Outside function: 5</code></pre>
+
+</div>
 
 <hr>
 
@@ -11502,33 +13650,48 @@ Changes made inside the function affect the original value.
 
 <h4>Example (Call by Reference)</h4>
 
-<pre>
-#include &lt;stdio.h&gt;
+<div class="code-box">
 
-void change(int *x) {
-    *x = *x + 10;
-    printf("Inside function: %d\\n", *x);
-}
+    <div class="code-title">
+        <span>Call by Reference Example</span>
+    </div>
 
-int main() {
-    int a = 5;
+<pre><code><span class="preprocessor">#include</span> <span class="header-file">&lt;stdio.h&gt;</span>
 
-    change(&a);
+<span class="datatype">void</span> <span class="function">change</span><span class="symbol">(</span><span class="datatype">int</span> <span class="symbol">*</span>x<span class="symbol">)</span>
+<span class="symbol">{</span>
+    <span class="symbol">*</span>x <span class="symbol">=</span> <span class="symbol">*</span>x <span class="symbol">+</span> 10<span class="symbol">;</span>
+    <span class="function">printf</span><span class="symbol">(</span><span class="string">"Inside function: %d\n"</span><span class="symbol">,</span> <span class="symbol">*</span>x<span class="symbol">);</span>
+<span class="symbol">}</span>
 
-    printf("Outside function: %d\\n", a);
+<span class="datatype">int</span> <span class="function">main</span><span class="symbol">()</span>
+<span class="symbol">{</span>
+    <span class="datatype">int</span> a <span class="symbol">=</span> 5<span class="symbol">;</span>
 
-    return 0;
-}
-</pre>
+    <span class="function">change</span><span class="symbol">(</span><span class="symbol">&amp;</span>a<span class="symbol">);</span>
 
-<h4>Output:</h4>
-<pre>
-Inside function: 15
-Outside function: 15
-</pre>
+    <span class="function">printf</span><span class="symbol">(</span><span class="string">"Outside function: %d\n"</span><span class="symbol">,</span> a<span class="symbol">);</span>
+
+    <span class="keyword">return</span> 0<span class="symbol">;</span>
+<span class="symbol">}</span>
+</code></pre>
+
+</div>
+
+<h4>Output</h4>
+
+<div class="code-box">
+
+    <div class="code-title">
+        <span>Output</span>
+    </div>
+
+<pre><code>Inside function: 15
+Outside function: 15</code></pre>
+
+</div>
 
 <hr>
-
 <h4>Difference Between Call by Value and Call by Reference</h4>
 
 <ul>
@@ -11605,7 +13768,7 @@ Suppose we want to store marks of 5 students.
 
 <p><strong>Without Array:</strong></p>
 
-<pre>
+<pre class="notes_text_pre">
 int m1 = 80;
 int m2 = 75;
 int m3 = 90;
@@ -11619,7 +13782,7 @@ Here we need 5 different variables.
 
 <p><strong>With Array:</strong></p>
 
-<pre>
+<pre class="notes_text_pre">
 int marks[5] = {80, 75, 90, 85, 70};
 </pre>
 
@@ -11651,13 +13814,13 @@ An array is a data structure that stores a fixed number of elements of the same 
 
 <h4>Syntax of Array Declaration</h4>
 
-<pre>
+<pre class="notes_text_pre">
 data_type array_name[size];
 </pre>
 
 <h4>Example</h4>
 
-<pre>
+<pre class="notes_text_pre">
 int marks[5];
 </pre>
 
@@ -11733,7 +13896,7 @@ The index of an array always starts from <strong>0</strong>.
 
 </table>
 
-<pre>
+<pre class="notes_text_pre">
 int arr[5] = {10,20,30,40,50};
 </pre>
 
@@ -11755,13 +13918,13 @@ For an array of size n, the last index is n-1.
 
 <h4>Method 1: During Declaration</h4>
 
-<pre>
+<pre class="notes_text_pre">
 int num[5] = {10,20,30,40,50};
 </pre>
 
 <h4>Method 2: Partial Initialization</h4>
 
-<pre>
+<pre class="notes_text_pre">
 int num[5] = {10,20};
 </pre>
 
@@ -11773,25 +13936,37 @@ Remaining elements automatically become 0.
 
 <h4>Accessing Array Elements</h4>
 
-<pre>
-#include &lt;stdio.h&gt;
+<div class="code-box">
 
-int main()
-{
-    int arr[5] = {10,20,30,40,50};
+    <div class="code-title">
+        <span>accessing.c</span>
+    </div>
 
-    printf("%d", arr[2]);
+<pre><code><span class="preprocessor">#include</span> <span class="header-file">&lt;stdio.h&gt;</span>
 
-    return 0;
-}
-</pre>
+<span class="datatype">int</span> <span class="function">main</span><span class="symbol">()</span>
+<span class="symbol">{</span>
+    <span class="datatype">int</span> arr<span class="symbol">[</span>5<span class="symbol">]</span> <span class="symbol">=</span> <span class="symbol">{</span>10<span class="symbol">,</span> 20<span class="symbol">,</span> 30<span class="symbol">,</span> 40<span class="symbol">,</span> 50<span class="symbol">};</span>
+
+    <span class="function">printf</span><span class="symbol">(</span><span class="string">"%d"</span><span class="symbol">,</span> arr<span class="symbol">[</span>2<span class="symbol">]);</span>
+
+    <span class="keyword">return</span> 0<span class="symbol">;</span>
+<span class="symbol">}</span>
+</code></pre>
+
+</div>
 
 <h4>Output</h4>
 
-<pre>
-30
-</pre>
+<div class="code-box">
 
+    <div class="code-title">
+        <span>Output</span>
+    </div>
+
+<pre><code>30</code></pre>
+
+</div>
 <p>
 Because index 2 contains the value 30.
 </p>
@@ -11800,27 +13975,51 @@ Because index 2 contains the value 30.
 
 <h4>Input and Output Using Array</h4>
 
-<pre>
-#include &lt;stdio.h&gt;
+<div class="code-box">
 
-int main()
-{
-    int marks[5];
-    int i;
+    <div class="code-title">
+        <span>array.c</span>
+    </div>
 
-    for(i=0;i<5;i++)
-    {
-        scanf("%d",&marks[i]);
-    }
+<pre><code><span class="preprocessor">#include</span> <span class="header-file">&lt;stdio.h&gt;</span>
 
-    for(i=0;i<5;i++)
-    {
-        printf("%d ",marks[i]);
-    }
+<span class="datatype">int</span> <span class="function">main</span><span class="symbol">()</span>
+<span class="symbol">{</span>
+    <span class="datatype">int</span> marks<span class="symbol">[</span>5<span class="symbol">];</span>
+    <span class="datatype">int</span> i<span class="symbol">;</span>
 
-    return 0;
-}
-</pre>
+    <span class="comment">// Input array elements</span>
+    <span class="keyword">for</span><span class="symbol">(</span>i <span class="symbol">=</span> 0<span class="symbol">;</span> i <span class="symbol">&lt;</span> 5<span class="symbol">;</span> i<span class="symbol">++</span><span class="symbol">)</span>
+    <span class="symbol">{</span>
+        <span class="function">scanf</span><span class="symbol">(</span><span class="string">"%d"</span><span class="symbol">,</span> <span class="symbol">&amp;</span>marks<span class="symbol">[</span>i<span class="symbol">]);</span>
+    <span class="symbol">}</span>
+
+    <span class="comment">// Display array elements</span>
+    <span class="keyword">for</span><span class="symbol">(</span>i <span class="symbol">=</span> 0<span class="symbol">;</span> i <span class="symbol">&lt;</span> 5<span class="symbol">;</span> i<span class="symbol">++</span><span class="symbol">)</span>
+    <span class="symbol">{</span>
+        <span class="function">printf</span><span class="symbol">(</span><span class="string">"%d "</span><span class="symbol">,</span> marks<span class="symbol">[</span>i<span class="symbol">]);</span>
+    <span class="symbol">}</span>
+
+    <span class="keyword">return</span> 0<span class="symbol">;</span>
+<span class="symbol">}</span>
+</code></pre>
+
+</div>
+
+<h4>Output</h4>
+
+<div class="code-box">
+
+    <div class="code-title">
+        <span>Output</span>
+    </div>
+
+<pre><code>Enter 5 numbers:
+10 20 30 40 50
+
+10 20 30 40 50</code></pre>
+
+</div>
 
 <hr>
 
@@ -11830,12 +14029,19 @@ int main()
 The process of accessing each element of an array one by one is called <strong>Array Traversal</strong>.
 </p>
 
-<pre>
-for(i=0;i<5;i++)
-{
-    printf("%d",arr[i]);
-}
-</pre>
+<div class="code-box">
+
+    <div class="code-title">
+        <span>Print Array Elements Using for Loop</span>
+    </div>
+
+<pre><code><span class="keyword">for</span><span class="symbol">(</span>i <span class="symbol">=</span> 0<span class="symbol">;</span> i <span class="symbol">&lt;</span> 5<span class="symbol">;</span> i<span class="symbol">++</span><span class="symbol">)</span>
+<span class="symbol">{</span>
+    <span class="function">printf</span><span class="symbol">(</span><span class="string">"%d "</span><span class="symbol">,</span> arr<span class="symbol">[</span>i<span class="symbol">]);</span>
+<span class="symbol">}</span>
+</code></pre>
+
+</div>
 
 <hr>
 
@@ -11888,64 +14094,93 @@ Array elements are stored in continuous memory locations.
 
 <h4>Finding Sum of Array Elements</h4>
 
-<pre>
-#include &lt;stdio.h&gt;
+<div class="code-box">
 
-int main()
-{
-    int arr[5]={10,20,30,40,50};
-    int i,sum=0;
+    <div class="code-title">
+        <span>Sum of Array Elements Example</span>
+    </div>
 
-    for(i=0;i<5;i++)
-    {
-        sum=sum+arr[i];
-    }
+<pre><code><span class="preprocessor">#include</span> <span class="header-file">&lt;stdio.h&gt;</span>
 
-    printf("Sum = %d",sum);
+<span class="datatype">int</span> <span class="function">main</span><span class="symbol">()</span>
+<span class="symbol">{</span>
+    <span class="datatype">int</span> arr<span class="symbol">[</span>5<span class="symbol">]</span> <span class="symbol">=</span> <span class="symbol">{</span>10<span class="symbol">,</span> 20<span class="symbol">,</span> 30<span class="symbol">,</span> 40<span class="symbol">,</span> 50<span class="symbol">};</span>
+    <span class="datatype">int</span> i<span class="symbol">,</span> sum <span class="symbol">=</span> 0<span class="symbol">;</span>
 
-    return 0;
-}
-</pre>
+    <span class="comment">// Calculate the sum of all array elements</span>
+    <span class="keyword">for</span><span class="symbol">(</span>i <span class="symbol">=</span> 0<span class="symbol">;</span> i <span class="symbol">&lt;</span> 5<span class="symbol">;</span> i<span class="symbol">++</span><span class="symbol">)</span>
+    <span class="symbol">{</span>
+        sum <span class="symbol">=</span> sum <span class="symbol">+</span> arr<span class="symbol">[</span>i<span class="symbol">];</span>
+    <span class="symbol">}</span>
+
+    <span class="function">printf</span><span class="symbol">(</span><span class="string">"Sum = %d"</span><span class="symbol">,</span> sum<span class="symbol">);</span>
+
+    <span class="keyword">return</span> 0<span class="symbol">;</span>
+<span class="symbol">}</span>
+</code></pre>
+
+</div>
 
 <h4>Output</h4>
 
-<pre>
-Sum = 150
-</pre>
+<div class="code-box">
+
+    <div class="code-title">
+        <span>Output</span>
+    </div>
+
+<pre><code>Sum = 150</code></pre>
+
+</div>
 
 <hr>
 
-<h4>Finding Largest Element</h4>
+<h4>Finding the Largest Element in an Array</h4>
 
-<pre>
-#include &lt;stdio.h&gt;
+<div class="code-box">
 
-int main()
-{
-    int arr[5]={12,45,23,78,34};
-    int i,max;
+    <div class="code-title">
+        <span>element.c</span>
+    </div>
 
-    max=arr[0];
+<pre><code><span class="preprocessor">#include</span> <span class="header-file">&lt;stdio.h&gt;</span>
 
-    for(i=1;i<5;i++)
-    {
-        if(arr[i]>max)
-        {
-            max=arr[i];
-        }
-    }
+<span class="datatype">int</span> <span class="function">main</span><span class="symbol">()</span>
+<span class="symbol">{</span>
+    <span class="datatype">int</span> arr<span class="symbol">[</span>5<span class="symbol">]</span> <span class="symbol">=</span> <span class="symbol">{</span>12<span class="symbol">,</span> 45<span class="symbol">,</span> 23<span class="symbol">,</span> 78<span class="symbol">,</span> 34<span class="symbol">};</span>
+    <span class="datatype">int</span> i<span class="symbol">,</span> max<span class="symbol">;</span>
 
-    printf("Largest = %d",max);
+    <span class="comment">// Assume the first element is the largest</span>
+    max <span class="symbol">=</span> arr<span class="symbol">[</span>0<span class="symbol">];</span>
 
-    return 0;
-}
-</pre>
+    <span class="comment">// Compare remaining elements with max</span>
+    <span class="keyword">for</span><span class="symbol">(</span>i <span class="symbol">=</span> 1<span class="symbol">;</span> i <span class="symbol">&lt;</span> 5<span class="symbol">;</span> i<span class="symbol">++</span><span class="symbol">)</span>
+    <span class="symbol">{</span>
+        <span class="keyword">if</span><span class="symbol">(</span>arr<span class="symbol">[</span>i<span class="symbol">]</span> <span class="symbol">&gt;</span> max<span class="symbol">)</span>
+        <span class="symbol">{</span>
+            max <span class="symbol">=</span> arr<span class="symbol">[</span>i<span class="symbol">];</span>
+        <span class="symbol">}</span>
+    <span class="symbol">}</span>
+
+    <span class="function">printf</span><span class="symbol">(</span><span class="string">"Largest = %d"</span><span class="symbol">,</span> max<span class="symbol">);</span>
+
+    <span class="keyword">return</span> 0<span class="symbol">;</span>
+<span class="symbol">}</span>
+</code></pre>
+
+</div>
 
 <h4>Output</h4>
 
-<pre>
-Largest = 78
-</pre>
+<div class="code-box">
+
+    <div class="code-title">
+        <span>Output</span>
+    </div>
+
+<pre><code>Largest = 78</code></pre>
+
+</div>
 
 <hr>
 
@@ -12788,34 +15023,48 @@ So, changes made inside the function do NOT affect the original variable.
 
 <h4>Simple Example</h4>
 
-<pre>
-#include &lt;stdio.h&gt;
+<h4>Example (Pass by Value)</h4>
 
-void update(int x) {
-    x = x + 10;
-    printf("Inside Function: %d\\n", x);
-}
+<div class="code-box">
 
-int main() {
+    <div class="code-title">
+        <span>Pass by Value Example</span>
+    </div>
 
-    int a = 5;
+<pre><code><span class="preprocessor">#include</span> <span class="header-file">&lt;stdio.h&gt;</span>
 
-    update(a);
+<span class="datatype">void</span> <span class="function">update</span><span class="symbol">(</span><span class="datatype">int</span> x<span class="symbol">)</span>
+<span class="symbol">{</span>
+    x <span class="symbol">=</span> x <span class="symbol">+</span> 10<span class="symbol">;</span>
+    <span class="function">printf</span><span class="symbol">(</span><span class="string">"Inside Function: %d\n"</span><span class="symbol">,</span> x<span class="symbol">);</span>
+<span class="symbol">}</span>
 
-    printf("Outside Function: %d\\n", a);
+<span class="datatype">int</span> <span class="function">main</span><span class="symbol">()</span>
+<span class="symbol">{</span>
+    <span class="datatype">int</span> a <span class="symbol">=</span> 5<span class="symbol">;</span>
 
-    return 0;
-}
-</pre>
+    <span class="function">update</span><span class="symbol">(</span>a<span class="symbol">);</span>
 
-<hr>
+    <span class="function">printf</span><span class="symbol">(</span><span class="string">"Outside Function: %d\n"</span><span class="symbol">,</span> a<span class="symbol">);</span>
+
+    <span class="keyword">return</span> 0<span class="symbol">;</span>
+<span class="symbol">}</span>
+</code></pre>
+
+</div>
 
 <h4>Output</h4>
 
-<pre>
-Inside Function: 15
-Outside Function: 5
-</pre>
+<div class="code-box">
+
+    <div class="code-title">
+        <span>Output</span>
+    </div>
+
+<pre><code>Inside Function: 15
+Outside Function: 5</code></pre>
+
+</div>
 
 <hr>
 
@@ -12866,39 +15115,52 @@ So, the function works directly on the original data.
 
 <h4>Example</h4>
 
-<pre>
-#include &lt;stdio.h&gt;
+<h4>Example (Pass by Reference)</h4>
 
-void add(int *a, int *b, int *sum) {
-    *sum = *a + *b;
-}
+<div class="code-box">
 
-int main() {
+    <div class="code-title">
+        <span>Pass by Reference Example</span>
+    </div>
 
-    int x, y, result;
+<pre><code><span class="preprocessor">#include</span> <span class="header-file">&lt;stdio.h&gt;</span>
 
-    printf("Enter two numbers: ");
-    scanf("%d %d", &x, &y);
+<span class="datatype">void</span> <span class="function">add</span><span class="symbol">(</span><span class="datatype">int</span> <span class="symbol">*</span>a<span class="symbol">,</span> <span class="datatype">int</span> <span class="symbol">*</span>b<span class="symbol">,</span> <span class="datatype">int</span> <span class="symbol">*</span>sum<span class="symbol">)</span>
+<span class="symbol">{</span>
+    <span class="symbol">*</span>sum <span class="symbol">=</span> <span class="symbol">*</span>a <span class="symbol">+</span> <span class="symbol">*</span>b<span class="symbol">;</span>
+<span class="symbol">}</span>
 
-    add(&x, &y, &result);
+<span class="datatype">int</span> <span class="function">main</span><span class="symbol">()</span>
+<span class="symbol">{</span>
+    <span class="datatype">int</span> x<span class="symbol">,</span> y<span class="symbol">,</span> result<span class="symbol">;</span>
 
-    printf("Sum = %d", result);
+    <span class="function">printf</span><span class="symbol">(</span><span class="string">"Enter two numbers: "</span><span class="symbol">);</span>
+    <span class="function">scanf</span><span class="symbol">(</span><span class="string">"%d %d"</span><span class="symbol">,</span> <span class="symbol">&amp;</span>x<span class="symbol">,</span> <span class="symbol">&amp;</span>y<span class="symbol">);</span>
 
-    return 0;
-}
-</pre>
+    <span class="function">add</span><span class="symbol">(</span><span class="symbol">&amp;</span>x<span class="symbol">,</span> <span class="symbol">&amp;</span>y<span class="symbol">,</span> <span class="symbol">&amp;</span>result<span class="symbol">);</span>
 
-<hr>
+    <span class="function">printf</span><span class="symbol">(</span><span class="string">"Sum = %d"</span><span class="symbol">,</span> result<span class="symbol">);</span>
+
+    <span class="keyword">return</span> 0<span class="symbol">;</span>
+<span class="symbol">}</span>
+</code></pre>
+
+</div>
 
 <h4>Output</h4>
 
-<pre>
-Enter two numbers: 10 20
-Sum = 30
-</pre>
+<div class="code-box">
+
+    <div class="code-title">
+        <span>Output</span>
+    </div>
+
+<pre><code>Enter two numbers: 10 20
+Sum = 30</code></pre>
+
+</div>
 
 <hr>
-
 <h4>Explanation </h4>
 
 <ul>
@@ -12984,76 +15246,358 @@ We perform different operations to manage data efficiently.</p>
 <div class="box">
 <p>Traversal means visiting each element of an array one by one.</p>
 
-<pre>
-for(int i = 0; i < n; i++) {
-    printf("%d ", arr[i]);
-}
-</pre>
+<h4>Find Number of Elements in an Array</h4>
+
+<div class="code-box">
+
+    <div class="code-title">
+        <span>array.c</span>
+    </div>
+
+<pre><code><span class="preprocessor">#include</span> <span class="header-file">&lt;stdio.h&gt;</span>
+
+<span class="datatype">int</span> <span class="function">main</span><span class="symbol">()</span>
+<span class="symbol">{</span>
+    <span class="datatype">int</span> arr<span class="symbol">[]</span> <span class="symbol">=</span> <span class="symbol">{</span>10<span class="symbol">,</span> 20<span class="symbol">,</span> 30<span class="symbol">,</span> 40<span class="symbol">,</span> 50<span class="symbol">};</span>
+    <span class="datatype">int</span> n<span class="symbol">;</span>
+    <span class="datatype">int</span> i<span class="symbol">;</span>
+
+    <span class="comment">// Find the number of elements in the array</span>
+    n <span class="symbol">=</span> <span class="function">sizeof</span><span class="symbol">(</span>arr<span class="symbol">)</span> <span class="symbol">/</span> <span class="function">sizeof</span><span class="symbol">(</span>arr<span class="symbol">[</span>0<span class="symbol">]);</span>
+
+    <span class="function">printf</span><span class="symbol">(</span><span class="string">"Array Elements: "</span><span class="symbol">);</span>
+
+    <span class="comment">// Print all array elements</span>
+    <span class="keyword">for</span><span class="symbol">(</span>i <span class="symbol">=</span> 0<span class="symbol">;</span> i <span class="symbol">&lt;</span> n<span class="symbol">;</span> i<span class="symbol">++</span><span class="symbol">)</span>
+    <span class="symbol">{</span>
+        <span class="function">printf</span><span class="symbol">(</span><span class="string">"%d "</span><span class="symbol">,</span> arr<span class="symbol">[</span>i<span class="symbol">]);</span>
+    <span class="symbol">}</span>
+
+    <span class="keyword">return</span> 0<span class="symbol">;</span>
+<span class="symbol">}</span>
+</code></pre>
+
+</div>
+
+<h4>Output</h4>
+
+<div class="code-box">
+
+    <div class="code-title">
+        <span>Output</span>
+    </div>
+
+<pre><code>Array Elements: 10 20 30 40 50</code></pre>
+
+</div>
+
+
 </div>
 
 <h3>2️⃣ Insertion (Adding Element)</h3>
-<div class="box">
-<p>Insertion means adding a new element at a specific position.</p>
+<h4>Example (Insertion in an Array)</h4>
 
-<pre>
-for(int i = n; i > pos; i--) {
-    arr[i] = arr[i - 1];
-}
-arr[pos] = value;
-n++;
-</pre>
+<div class="box">
+<p>
+Insertion means adding a new element at a specific position in an array.
+To insert an element, first shift all elements one position to the right, then place the new value at the desired position.
+</p>
+</div>
+
+<div class="code-box">
+
+    <div class="code-title">
+        <span>Insertion in an Array Example</span>
+    </div>
+
+<pre><code><span class="preprocessor">#include</span> <span class="header-file">&lt;stdio.h&gt;</span>
+
+<span class="datatype">int</span> <span class="function">main</span><span class="symbol">()</span>
+<span class="symbol">{</span>
+    <span class="datatype">int</span> arr<span class="symbol">[</span>10<span class="symbol">]</span> <span class="symbol">=</span> <span class="symbol">{</span>10<span class="symbol">,</span> 20<span class="symbol">,</span> 30<span class="symbol">,</span> 40<span class="symbol">,</span> 50<span class="symbol">};</span>
+    <span class="datatype">int</span> n <span class="symbol">=</span> 5<span class="symbol">;</span>
+    <span class="datatype">int</span> pos <span class="symbol">=</span> 2<span class="symbol">;</span>
+    <span class="datatype">int</span> value <span class="symbol">=</span> 25<span class="symbol">;</span>
+    <span class="datatype">int</span> i<span class="symbol">;</span>
+
+    <span class="comment">// Shift elements to the right</span>
+    <span class="keyword">for</span><span class="symbol">(</span>i <span class="symbol">=</span> n<span class="symbol">;</span> i <span class="symbol">&gt;</span> pos<span class="symbol">;</span> i<span class="symbol">--</span><span class="symbol">)</span>
+    <span class="symbol">{</span>
+        arr<span class="symbol">[</span>i<span class="symbol">]</span> <span class="symbol">=</span> arr<span class="symbol">[</span>i <span class="symbol">-</span> 1<span class="symbol">];</span>
+    <span class="symbol">}</span>
+
+    <span class="comment">// Insert the new value</span>
+    arr<span class="symbol">[</span>pos<span class="symbol">]</span> <span class="symbol">=</span> value<span class="symbol">;</span>
+    n<span class="symbol">++;</span>
+
+    <span class="function">printf</span><span class="symbol">(</span><span class="string">"Array after insertion: "</span><span class="symbol">);</span>
+
+    <span class="keyword">for</span><span class="symbol">(</span>i <span class="symbol">=</span> 0<span class="symbol">;</span> i <span class="symbol">&lt;</span> n<span class="symbol">;</span> i<span class="symbol">++</span><span class="symbol">)</span>
+    <span class="symbol">{</span>
+        <span class="function">printf</span><span class="symbol">(</span><span class="string">"%d "</span><span class="symbol">,</span> arr<span class="symbol">[</span>i<span class="symbol">]);</span>
+    <span class="symbol">}</span>
+
+    <span class="keyword">return</span> 0<span class="symbol">;</span>
+<span class="symbol">}</span>
+</code></pre>
+
+</div>
+
+<h4>Output</h4>
+
+<div class="code-box">
+
+    <div class="code-title">
+        <span>Output</span>
+    </div>
+
+<pre><code>Array after insertion: 10 20 25 30 40 50</code></pre>
+
 </div>
 
 <h3>3️⃣ Deletion (Removing Element)</h3>
-<div class="box">
-<p>Deletion means removing an element and shifting remaining elements left.</p>
 
-<pre>
-for(int i = pos; i < n - 1; i++) {
-    arr[i] = arr[i + 1];
-}
-n--;
-</pre>
+<div class="box">
+<p>
+Deletion means removing an element from a specific position in an array.
+After deleting the element, all remaining elements are shifted one position to the left to fill the empty space.
+</p>
 </div>
+
+<div class="code-box">
+
+    <div class="code-title">
+        <span>Deletion in an Array Example</span>
+    </div>
+
+<pre><code><span class="preprocessor">#include</span> <span class="header-file">&lt;stdio.h&gt;</span>
+
+<span class="datatype">int</span> <span class="function">main</span><span class="symbol">()</span>
+<span class="symbol">{</span>
+    <span class="datatype">int</span> arr<span class="symbol">[</span>10<span class="symbol">]</span> <span class="symbol">=</span> <span class="symbol">{</span>10<span class="symbol">,</span> 20<span class="symbol">,</span> 30<span class="symbol">,</span> 40<span class="symbol">,</span> 50<span class="symbol">};</span>
+    <span class="datatype">int</span> n <span class="symbol">=</span> 5<span class="symbol">;</span>
+    <span class="datatype">int</span> pos <span class="symbol">=</span> 2<span class="symbol">;</span>
+    <span class="datatype">int</span> i<span class="symbol">;</span>
+
+    <span class="comment">// Shift elements to the left</span>
+    <span class="keyword">for</span><span class="symbol">(</span>i <span class="symbol">=</span> pos<span class="symbol">;</span> i <span class="symbol">&lt;</span> n <span class="symbol">-</span> 1<span class="symbol">;</span> i<span class="symbol">++</span><span class="symbol">)</span>
+    <span class="symbol">{</span>
+        arr<span class="symbol">[</span>i<span class="symbol">]</span> <span class="symbol">=</span> arr<span class="symbol">[</span>i <span class="symbol">+</span> 1<span class="symbol">];</span>
+    <span class="symbol">}</span>
+
+    <span class="comment">// Decrease the array size</span>
+    n<span class="symbol">--;</span>
+
+    <span class="function">printf</span><span class="symbol">(</span><span class="string">"Array after deletion: "</span><span class="symbol">);</span>
+
+    <span class="keyword">for</span><span class="symbol">(</span>i <span class="symbol">=</span> 0<span class="symbol">;</span> i <span class="symbol">&lt;</span> n<span class="symbol">;</span> i<span class="symbol">++</span><span class="symbol">)</span>
+    <span class="symbol">{</span>
+        <span class="function">printf</span><span class="symbol">(</span><span class="string">"%d "</span><span class="symbol">,</span> arr<span class="symbol">[</span>i<span class="symbol">]);</span>
+    <span class="symbol">}</span>
+
+    <span class="keyword">return</span> 0<span class="symbol">;</span>
+<span class="symbol">}</span>
+</code></pre>
+
+</div>
+
+<h4>Output</h4>
+
+<div class="code-box">
+
+    <div class="code-title">
+        <span>Output</span>
+    </div>
+
+<pre><code>Array after deletion: 10 20 40 50</code></pre>
+
+</div>
+
+<hr>
 
 <h3>4️⃣ Searching (Finding Element)</h3>
-<div class="box">
-<p>Searching means checking whether an element exists or not.</p>
 
-<pre>
-for(int i = 0; i < n; i++) {
-    if(arr[i] == key) {
-        printf("Found at position %d", i);
-    }
-}
-</pre>
+<div class="box">
+<p>
+Searching means finding whether a specific element is present in an array or not.
+If the element is found, its position (index) is displayed; otherwise, a message is shown that the element is not found.
+</p>
 </div>
+
+<div class="code-box">
+
+    <div class="code-title">
+        <span>Searching an Element in an Array Example</span>
+    </div>
+
+<pre><code><span class="preprocessor">#include</span> <span class="header-file">&lt;stdio.h&gt;</span>
+
+<span class="datatype">int</span> <span class="function">main</span><span class="symbol">()</span>
+<span class="symbol">{</span>
+    <span class="datatype">int</span> arr<span class="symbol">[]</span> <span class="symbol">=</span> <span class="symbol">{</span>10<span class="symbol">,</span> 20<span class="symbol">,</span> 30<span class="symbol">,</span> 40<span class="symbol">,</span> 50<span class="symbol">};</span>
+    <span class="datatype">int</span> n <span class="symbol">=</span> 5<span class="symbol">;</span>
+    <span class="datatype">int</span> key <span class="symbol">=</span> 30<span class="symbol">;</span>
+    <span class="datatype">int</span> i<span class="symbol">,</span> found <span class="symbol">=</span> 0<span class="symbol">;</span>
+
+    <span class="comment">// Search for the element</span>
+    <span class="keyword">for</span><span class="symbol">(</span>i <span class="symbol">=</span> 0<span class="symbol">;</span> i <span class="symbol">&lt;</span> n<span class="symbol">;</span> i<span class="symbol">++</span><span class="symbol">)</span>
+    <span class="symbol">{</span>
+        <span class="keyword">if</span><span class="symbol">(</span>arr<span class="symbol">[</span>i<span class="symbol">]</span> <span class="symbol">==</span> key<span class="symbol">)</span>
+        <span class="symbol">{</span>
+            <span class="function">printf</span><span class="symbol">(</span><span class="string">"Element found at index %d"</span><span class="symbol">,</span> i<span class="symbol">);</span>
+            found <span class="symbol">=</span> 1<span class="symbol">;</span>
+            <span class="keyword">break</span><span class="symbol">;</span>
+        <span class="symbol">}</span>
+    <span class="symbol">}</span>
+
+    <span class="keyword">if</span><span class="symbol">(</span>found <span class="symbol">==</span> 0<span class="symbol">)</span>
+    <span class="symbol">{</span>
+        <span class="function">printf</span><span class="symbol">(</span><span class="string">"Element not found"</span><span class="symbol">);</span>
+    <span class="symbol">}</span>
+
+    <span class="keyword">return</span> 0<span class="symbol">;</span>
+<span class="symbol">}</span>
+</code></pre>
+
+</div>
+
+<h4>Output</h4>
+
+<div class="code-box">
+
+    <div class="code-title">
+        <span>Output</span>
+    </div>
+
+<pre><code>Element found at index 2</code></pre>
+
+</div>
+
+<hr>
 
 <h3>5️⃣ Update (Modify Element)</h3>
-<div class="box">
-<p>Update means changing the value of an existing element.</p>
 
-<pre>
-arr[pos] = newValue;
-</pre>
+<div class="box">
+<p>
+Update means changing the value of an existing element in an array.
+The old value is replaced with a new value at the specified position (index).
+</p>
 </div>
+
+<div class="code-box">
+
+    <div class="code-title">
+        <span>Update an Element in an Array Example</span>
+    </div>
+
+<pre><code><span class="preprocessor">#include</span> <span class="header-file">&lt;stdio.h&gt;</span>
+
+<span class="datatype">int</span> <span class="function">main</span><span class="symbol">()</span>
+<span class="symbol">{</span>
+    <span class="datatype">int</span> arr<span class="symbol">[]</span> <span class="symbol">=</span> <span class="symbol">{</span>10<span class="symbol">,</span> 20<span class="symbol">,</span> 30<span class="symbol">,</span> 40<span class="symbol">,</span> 50<span class="symbol">};</span>
+    <span class="datatype">int</span> n <span class="symbol">=</span> 5<span class="symbol">;</span>
+    <span class="datatype">int</span> pos <span class="symbol">=</span> 2<span class="symbol">;</span>
+    <span class="datatype">int</span> newValue <span class="symbol">=</span> 35<span class="symbol">;</span>
+    <span class="datatype">int</span> i<span class="symbol">;</span>
+
+    <span class="comment">// Update the element</span>
+    arr<span class="symbol">[</span>pos<span class="symbol">]</span> <span class="symbol">=</span> newValue<span class="symbol">;</span>
+
+    <span class="function">printf</span><span class="symbol">(</span><span class="string">"Array after update: "</span><span class="symbol">);</span>
+
+    <span class="keyword">for</span><span class="symbol">(</span>i <span class="symbol">=</span> 0<span class="symbol">;</span> i <span class="symbol">&lt;</span> n<span class="symbol">;</span> i<span class="symbol">++</span><span class="symbol">)</span>
+    <span class="symbol">{</span>
+        <span class="function">printf</span><span class="symbol">(</span><span class="string">"%d "</span><span class="symbol">,</span> arr<span class="symbol">[</span>i<span class="symbol">]);</span>
+    <span class="symbol">}</span>
+
+    <span class="keyword">return</span> 0<span class="symbol">;</span>
+<span class="symbol">}</span>
+</code></pre>
+
+</div>
+
+<h4>Output</h4>
+
+<div class="code-box">
+
+    <div class="code-title">
+        <span>Output</span>
+    </div>
+
+<pre><code>Array after update: 10 20 35 40 50</code></pre>
+
+</div>
+
+<hr>
 
 <h3>6️⃣ Sorting (Arranging Elements)</h3>
-<div class="box">
-<p>Sorting means arranging elements in ascending or descending order.</p>
 
-<pre>
-for(int i = 0; i < n; i++) {
-    for(int j = i + 1; j < n; j++) {
-        if(arr[i] > arr[j]) {
-            int temp = arr[i];
-            arr[i] = arr[j];
-            arr[j] = temp;
-        }
-    }
-}
-</pre>
+<div class="box">
+<p>
+Sorting means arranging the elements of an array in a specific order.
+The order can be <b>ascending (smallest to largest)</b> or <b>descending (largest to smallest)</b>.
+The following example uses a simple sorting technique to arrange the array in ascending order.
+</p>
 </div>
+
+
+::contentReference[oaicite:0]{index=0}
+
+
+<div class="code-box">
+
+    <div class="code-title">
+        <span>Sorting an Array in Ascending Order</span>
+    </div>
+
+<pre><code><span class="preprocessor">#include</span> <span class="header-file">&lt;stdio.h&gt;</span>
+
+<span class="datatype">int</span> <span class="function">main</span><span class="symbol">()</span>
+<span class="symbol">{</span>
+    <span class="datatype">int</span> arr<span class="symbol">[]</span> <span class="symbol">=</span> <span class="symbol">{</span>50<span class="symbol">,</span> 20<span class="symbol">,</span> 40<span class="symbol">,</span> 10<span class="symbol">,</span> 30<span class="symbol">};</span>
+    <span class="datatype">int</span> n <span class="symbol">=</span> 5<span class="symbol">;</span>
+    <span class="datatype">int</span> i<span class="symbol">,</span> j<span class="symbol">,</span> temp<span class="symbol">;</span>
+
+    <span class="comment">// Sort the array in ascending order</span>
+    <span class="keyword">for</span><span class="symbol">(</span>i <span class="symbol">=</span> 0<span class="symbol">;</span> i <span class="symbol">&lt;</span> n <span class="symbol">-</span> 1<span class="symbol">;</span> i<span class="symbol">++</span><span class="symbol">)</span>
+    <span class="symbol">{</span>
+        <span class="keyword">for</span><span class="symbol">(</span>j <span class="symbol">=</span> i <span class="symbol">+</span> 1<span class="symbol">;</span> j <span class="symbol">&lt;</span> n<span class="symbol">;</span> j<span class="symbol">++</span><span class="symbol">)</span>
+        <span class="symbol">{</span>
+            <span class="keyword">if</span><span class="symbol">(</span>arr<span class="symbol">[</span>i<span class="symbol">]</span> <span class="symbol">&gt;</span> arr<span class="symbol">[</span>j<span class="symbol">]</span><span class="symbol">)</span>
+            <span class="symbol">{</span>
+                temp <span class="symbol">=</span> arr<span class="symbol">[</span>i<span class="symbol">];</span>
+                arr<span class="symbol">[</span>i<span class="symbol">]</span> <span class="symbol">=</span> arr<span class="symbol">[</span>j<span class="symbol">];</span>
+                arr<span class="symbol">[</span>j<span class="symbol">]</span> <span class="symbol">=</span> temp<span class="symbol">;</span>
+            <span class="symbol">}</span>
+        <span class="symbol">}</span>
+    <span class="symbol">}</span>
+
+    <span class="function">printf</span><span class="symbol">(</span><span class="string">"Sorted Array: "</span><span class="symbol">);</span>
+
+    <span class="keyword">for</span><span class="symbol">(</span>i <span class="symbol">=</span> 0<span class="symbol">;</span> i <span class="symbol">&lt;</span> n<span class="symbol">;</span> i<span class="symbol">++</span><span class="symbol">)</span>
+    <span class="symbol">{</span>
+        <span class="function">printf</span><span class="symbol">(</span><span class="string">"%d "</span><span class="symbol">,</span> arr<span class="symbol">[</span>i<span class="symbol">]);</span>
+    <span class="symbol">}</span>
+
+    <span class="keyword">return</span> 0<span class="symbol">;</span>
+<span class="symbol">}</span>
+</code></pre>
+
+</div>
+
+<h4>Output</h4>
+
+<div class="code-box">
+
+    <div class="code-title">
+        <span>Output</span>
+    </div>
+
+<pre><code>Sorted Array: 10 20 30 40 50</code></pre>
+
+</div>
+
+<hr>
 
 <h3>Quick Revision</h3>
 <div class="box">
@@ -13085,59 +15629,111 @@ let traversalCContent = `
         It is used to display or process all elements of an array.
     </p>
 
-    <h4> Example 1: Fixed Array Traversal</h4>
-    <pre>
-#include <stdio.h>
+    <h4>Fixed Array Traversal</h4>
 
-int main() {
-    int arr[5] = {10, 20, 30, 40, 50};
-    int i;
+<div class="code-box">
 
-    printf("Array Elements:\\n");
+    <div class="code-title">
+        <span>example.c</span>
+    </div>
 
-    for(i = 0; i < 5; i++) {
-        printf("%d\\n", arr[i]);
-    }
+<pre><code><span class="preprocessor">#include</span> <span class="header-file">&lt;stdio.h&gt;</span>
 
-    return 0;
-}
-    </pre>
+<span class="datatype">int</span> <span class="function">main</span><span class="symbol">()</span>
+<span class="symbol">{</span>
+    <span class="datatype">int</span> arr<span class="symbol">[</span>5<span class="symbol">]</span> <span class="symbol">=</span> <span class="symbol">{</span>10<span class="symbol">,</span> 20<span class="symbol">,</span> 30<span class="symbol">,</span> 40<span class="symbol">,</span> 50<span class="symbol">};</span>
+    <span class="datatype">int</span> i<span class="symbol">;</span>
 
-    <h4> Output</h4>
-    <pre>
-Array Elements:
+    <span class="function">printf</span><span class="symbol">(</span><span class="string">"Array Elements:\\n"</span><span class="symbol">);</span>
+
+    <span class="comment">// Traverse the array using a for loop</span>
+    <span class="keyword">for</span><span class="symbol">(</span>i <span class="symbol">=</span> 0<span class="symbol">;</span> i <span class="symbol">&lt;</span> 5<span class="symbol">;</span> i<span class="symbol">++</span><span class="symbol">)</span>
+    <span class="symbol">{</span>
+        <span class="function">printf</span><span class="symbol">(</span><span class="string">"%d\\n"</span><span class="symbol">,</span> arr<span class="symbol">[</span>i<span class="symbol">]);</span>
+    <span class="symbol">}</span>
+
+    <span class="keyword">return</span> 0<span class="symbol">;</span>
+<span class="symbol">}</span>
+</code></pre>
+
+</div>
+
+<h4>Output</h4>
+
+<div class="code-box">
+
+    <div class="code-title">
+        <span>Output</span>
+    </div>
+
+<pre><code>Array Elements:
 10
 20
 30
 40
-50
-    </pre>
+50</code></pre>
 
-    <h4> Example 2: Take Input from User and Traverse</h4>
-    <pre>
-#include <stdio.h>
+</div>
 
-int main() {
-    int arr[100], n, i;
+    <h4>Example 2: Take Input from User and Traverse</h4>
 
-    printf("Enter number of elements: ");
-    scanf("%d", &n);
+<div class="code-box">
 
-    printf("Enter %d elements:\\n", n);
+    <div class="code-title">
+        <span>Array Traversal Using User Input</span>
+    </div>
 
-    for(i = 0; i < n; i++) {
-        scanf("%d", &arr[i]);
-    }
+<pre><code><span class="preprocessor">#include</span> <span class="header-file">&lt;stdio.h&gt;</span>
 
-    printf("Array Elements are:\\n");
+<span class="datatype">int</span> <span class="function">main</span><span class="symbol">()</span>
+<span class="symbol">{</span>
+    <span class="datatype">int</span> arr<span class="symbol">[</span>100<span class="symbol">],</span> n<span class="symbol">,</span> i<span class="symbol">;</span>
 
-    for(i = 0; i < n; i++) {
-        printf("%d\\n", arr[i]);
-    }
+    <span class="function">printf</span><span class="symbol">(</span><span class="string">"Enter number of elements: "</span><span class="symbol">);</span>
+    <span class="function">scanf</span><span class="symbol">(</span><span class="string">"%d"</span><span class="symbol">,</span> <span class="symbol">&amp;</span>n<span class="symbol">);</span>
 
-    return 0;
-}
-    </pre>
+    <span class="function">printf</span><span class="symbol">(</span><span class="string">"Enter %d elements:\\n"</span><span class="symbol">,</span> n<span class="symbol">);</span>
+
+    <span class="comment">// Input array elements</span>
+    <span class="keyword">for</span><span class="symbol">(</span>i <span class="symbol">=</span> 0<span class="symbol">;</span> i <span class="symbol">&lt;</span> n<span class="symbol">;</span> i<span class="symbol">++</span><span class="symbol">)</span>
+    <span class="symbol">{</span>
+        <span class="function">scanf</span><span class="symbol">(</span><span class="string">"%d"</span><span class="symbol">,</span> <span class="symbol">&amp;</span>arr<span class="symbol">[</span>i<span class="symbol">]);</span>
+    <span class="symbol">}</span>
+
+    <span class="function">printf</span><span class="symbol">(</span><span class="string">"Array Elements are:\\n"</span><span class="symbol">);</span>
+
+    <span class="comment">// Traverse and display the array</span>
+    <span class="keyword">for</span><span class="symbol">(</span>i <span class="symbol">=</span> 0<span class="symbol">;</span> i <span class="symbol">&lt;</span> n<span class="symbol">;</span> i<span class="symbol">++</span><span class="symbol">)</span>
+    <span class="symbol">{</span>
+        <span class="function">printf</span><span class="symbol">(</span><span class="string">"%d\\n"</span><span class="symbol">,</span> arr<span class="symbol">[</span>i<span class="symbol">]);</span>
+    <span class="symbol">}</span>
+
+    <span class="keyword">return</span> 0<span class="symbol">;</span>
+<span class="symbol">}</span>
+</code></pre>
+
+</div>
+
+<h4>Output</h4>
+
+<div class="code-box">
+
+    <div class="code-title">
+        <span>Output</span>
+    </div>
+
+<pre><code>Enter number of elements: 5
+Enter 5 elements:
+10 20 30 40 50
+
+Array Elements are:
+10
+20
+30
+40
+50</code></pre>
+
+</div>
 
     <h4> Explanation</h4>
     <ul>
@@ -13168,43 +15764,83 @@ let insertionCContent = `
     </p>
 
     <h4> Example 1: Insert Element with User Input</h4>
-    <pre>
-#include <stdio.h>
 
-int main() {
-    int arr[100], n, i, pos, value;
+<div class="code-box">
 
-    printf("Enter number of elements: ");
-    scanf("%d", &n);
+    <div class="code-title">
+        <span>Insert an Element into an Array</span>
+    </div>
 
-    printf("Enter %d elements:\\n", n);
-    for(i = 0; i < n; i++) {
-        scanf("%d", &arr[i]);
-    }
+<pre><code><span class="preprocessor">#include</span> <span class="header-file">&lt;stdio.h&gt;</span>
 
-    printf("Enter position to insert: ");
-    scanf("%d", &pos);
+<span class="datatype">int</span> <span class="function">main</span><span class="symbol">()</span>
+<span class="symbol">{</span>
+    <span class="datatype">int</span> arr<span class="symbol">[</span>100<span class="symbol">],</span> n<span class="symbol">,</span> i<span class="symbol">,</span> pos<span class="symbol">,</span> value<span class="symbol">;</span>
 
-    printf("Enter value to insert: ");
-    scanf("%d", &value);
+    <span class="function">printf</span><span class="symbol">(</span><span class="string">"Enter number of elements: "</span><span class="symbol">);</span>
+    <span class="function">scanf</span><span class="symbol">(</span><span class="string">"%d"</span><span class="symbol">,</span> <span class="symbol">&amp;</span>n<span class="symbol">);</span>
 
-    // Shifting elements to right
-    for(i = n; i > pos; i--) {
-        arr[i] = arr[i - 1];
-    }
+    <span class="function">printf</span><span class="symbol">(</span><span class="string">"Enter %d elements:\\n"</span><span class="symbol">,</span> n<span class="symbol">);</span>
 
-    arr[pos] = value;
-    n++;
+    <span class="comment">// Input array elements</span>
+    <span class="keyword">for</span><span class="symbol">(</span>i <span class="symbol">=</span> 0<span class="symbol">;</span> i <span class="symbol">&lt;</span> n<span class="symbol">;</span> i<span class="symbol">++</span><span class="symbol">)</span>
+    <span class="symbol">{</span>
+        <span class="function">scanf</span><span class="symbol">(</span><span class="string">"%d"</span><span class="symbol">,</span> <span class="symbol">&amp;</span>arr<span class="symbol">[</span>i<span class="symbol">]);</span>
+    <span class="symbol">}</span>
 
-    printf("Array after insertion:\\n");
+    <span class="function">printf</span><span class="symbol">(</span><span class="string">"Enter position to insert: "</span><span class="symbol">);</span>
+    <span class="function">scanf</span><span class="symbol">(</span><span class="string">"%d"</span><span class="symbol">,</span> <span class="symbol">&amp;</span>pos<span class="symbol">);</span>
 
-    for(i = 0; i < n; i++) {
-        printf("%d\\n", arr[i]);
-    }
+    <span class="function">printf</span><span class="symbol">(</span><span class="string">"Enter value to insert: "</span><span class="symbol">);</span>
+    <span class="function">scanf</span><span class="symbol">(</span><span class="string">"%d"</span><span class="symbol">,</span> <span class="symbol">&amp;</span>value<span class="symbol">);</span>
 
-    return 0;
-}
-    </pre>
+    <span class="comment">// Shift elements to the right</span>
+    <span class="keyword">for</span><span class="symbol">(</span>i <span class="symbol">=</span> n<span class="symbol">;</span> i <span class="symbol">&gt;</span> pos<span class="symbol">;</span> i<span class="symbol">--</span><span class="symbol">)</span>
+    <span class="symbol">{</span>
+        arr<span class="symbol">[</span>i<span class="symbol">]</span> <span class="symbol">=</span> arr<span class="symbol">[</span>i <span class="symbol">-</span> 1<span class="symbol">];</span>
+    <span class="symbol">}</span>
+
+    <span class="comment">// Insert the new value</span>
+    arr<span class="symbol">[</span>pos<span class="symbol">]</span> <span class="symbol">=</span> value<span class="symbol">;</span>
+    n<span class="symbol">++;</span>
+
+    <span class="function">printf</span><span class="symbol">(</span><span class="string">"Array after insertion:\\n"</span><span class="symbol">);</span>
+
+    <span class="comment">// Display updated array</span>
+    <span class="keyword">for</span><span class="symbol">(</span>i <span class="symbol">=</span> 0<span class="symbol">;</span> i <span class="symbol">&lt;</span> n<span class="symbol">;</span> i<span class="symbol">++</span><span class="symbol">)</span>
+    <span class="symbol">{</span>
+        <span class="function">printf</span><span class="symbol">(</span><span class="string">"%d\\n"</span><span class="symbol">,</span> arr<span class="symbol">[</span>i<span class="symbol">]);</span>
+    <span class="symbol">}</span>
+
+    <span class="keyword">return</span> 0<span class="symbol">;</span>
+<span class="symbol">}</span>
+</code></pre>
+
+</div>
+
+<h4>Output</h4>
+
+<div class="code-box">
+
+    <div class="code-title">
+        <span>Output</span>
+    </div>
+
+<pre><code>Enter number of elements: 5
+Enter 5 elements:
+10 20 30 40 50
+Enter position to insert: 2
+Enter value to insert: 25
+
+Array after insertion:
+10
+20
+25
+30
+40
+50</code></pre>
+
+</div>
 
     <h4> Explanation</h4>
     <ul>
@@ -13235,40 +15871,77 @@ Deletion means removing an element from a specific position in an array.
 After deletion, remaining elements are shifted to the left side.
 </p>
 
-<h4>Example Program</h4>
+<h4>Example: Deletion from an Array (User Input)</h4>
 
-<pre>
-#include <stdio.h>
+<div class="code-box">
 
-int main() {
-    int arr[100], n, i, pos;
+    <div class="code-title">
+        <span>Delete an Element from an Array</span>
+    </div>
 
-    printf("Enter number of elements: ");
-    scanf("%d", &n);
+<pre><code><span class="preprocessor">#include</span> <span class="header-file">&lt;stdio.h&gt;</span>
 
-    printf("Enter %d elements:\\n", n);
-    for(i = 0; i < n; i++) {
-        scanf("%d", &arr[i]);
-    }
+<span class="datatype">int</span> <span class="function">main</span><span class="symbol">()</span>
+<span class="symbol">{</span>
+    <span class="datatype">int</span> arr<span class="symbol">[</span>100<span class="symbol">],</span> n<span class="symbol">,</span> i<span class="symbol">,</span> pos<span class="symbol">;</span>
 
-    printf("Enter position to delete: ");
-    scanf("%d", &pos);
+    <span class="function">printf</span><span class="symbol">(</span><span class="string">"Enter number of elements: "</span><span class="symbol">);</span>
+    <span class="function">scanf</span><span class="symbol">(</span><span class="string">"%d"</span><span class="symbol">,</span> <span class="symbol">&amp;</span>n<span class="symbol">);</span>
 
-    for(i = pos; i < n - 1; i++) {
-        arr[i] = arr[i + 1];
-    }
+    <span class="function">printf</span><span class="symbol">(</span><span class="string">"Enter %d elements:\\n"</span><span class="symbol">,</span> n<span class="symbol">);</span>
 
-    n--;
+    <span class="comment">// Input array elements</span>
+    <span class="keyword">for</span><span class="symbol">(</span>i <span class="symbol">=</span> 0<span class="symbol">;</span> i <span class="symbol">&lt;</span> n<span class="symbol">;</span> i<span class="symbol">++</span><span class="symbol">)</span>
+    <span class="symbol">{</span>
+        <span class="function">scanf</span><span class="symbol">(</span><span class="string">"%d"</span><span class="symbol">,</span> <span class="symbol">&amp;</span>arr<span class="symbol">[</span>i<span class="symbol">]);</span>
+    <span class="symbol">}</span>
 
-    printf("Array after deletion:\\n");
+    <span class="function">printf</span><span class="symbol">(</span><span class="string">"Enter position to delete: "</span><span class="symbol">);</span>
+    <span class="function">scanf</span><span class="symbol">(</span><span class="string">"%d"</span><span class="symbol">,</span> <span class="symbol">&amp;</span>pos<span class="symbol">);</span>
 
-    for(i = 0; i < n; i++) {
-        printf("%d\\n", arr[i]);
-    }
+    <span class="comment">// Shift elements to the left</span>
+    <span class="keyword">for</span><span class="symbol">(</span>i <span class="symbol">=</span> pos<span class="symbol">;</span> i <span class="symbol">&lt;</span> n <span class="symbol">-</span> 1<span class="symbol">;</span> i<span class="symbol">++</span><span class="symbol">)</span>
+    <span class="symbol">{</span>
+        arr<span class="symbol">[</span>i<span class="symbol">]</span> <span class="symbol">=</span> arr<span class="symbol">[</span>i <span class="symbol">+</span> 1<span class="symbol">];</span>
+    <span class="symbol">}</span>
 
-    return 0;
-}
-</pre>
+    <span class="comment">// Reduce the array size</span>
+    n<span class="symbol">--;</span>
+
+    <span class="function">printf</span><span class="symbol">(</span><span class="string">"Array after deletion:\\n"</span><span class="symbol">);</span>
+
+    <span class="comment">// Display updated array</span>
+    <span class="keyword">for</span><span class="symbol">(</span>i <span class="symbol">=</span> 0<span class="symbol">;</span> i <span class="symbol">&lt;</span> n<span class="symbol">;</span> i<span class="symbol">++</span><span class="symbol">)</span>
+    <span class="symbol">{</span>
+        <span class="function">printf</span><span class="symbol">(</span><span class="string">"%d\\n"</span><span class="symbol">,</span> arr<span class="symbol">[</span>i<span class="symbol">]);</span>
+    <span class="symbol">}</span>
+
+    <span class="keyword">return</span> 0<span class="symbol">;</span>
+<span class="symbol">}</span>
+</code></pre>
+
+</div>
+
+<h4>Output</h4>
+
+<div class="code-box">
+
+    <div class="code-title">
+        <span>Output</span>
+    </div>
+
+<pre><code>Enter number of elements: 5
+Enter 5 elements:
+10 20 30 40 50
+Enter position to delete: 2
+
+Array after deletion:
+10
+20
+40
+50</code></pre>
+
+</div>
 
 <h4>Explanation</h4>
 <ul>
@@ -13297,44 +15970,76 @@ Searching means finding a specific element in an array. If the element is found,
 its position is displayed; otherwise, a message is shown that the element is not found.
 </p>
 
-<h4>Example Program</h4>
+<h4>Example: Searching an Element in an Array (User Input)</h4>
 
-<pre>
-#include <stdio.h>
+<div class="code-box">
 
-int main() {
-    int arr[100], n, i, key, found = 0;
+    <div class="code-title">
+        <span>Search an Element in an Array</span>
+    </div>
 
-    printf("Enter number of elements: ");
-    scanf("%d", &n);
+<pre><code><span class="preprocessor">#include</span> <span class="header-file">&lt;stdio.h&gt;</span>
 
-    printf("Enter %d elements:\\n", n);
-    for(i = 0; i < n; i++) {
-        scanf("%d", &arr[i]);
-    }
+<span class="datatype">int</span> <span class="function">main</span><span class="symbol">()</span>
+<span class="symbol">{</span>
+    <span class="datatype">int</span> arr<span class="symbol">[</span>100<span class="symbol">],</span> n<span class="symbol">,</span> i<span class="symbol">,</span> key<span class="symbol">,</span> found <span class="symbol">=</span> 0<span class="symbol">;</span>
 
-    printf("Enter element to search: ");
-    scanf("%d", &key);
+    <span class="function">printf</span><span class="symbol">(</span><span class="string">"Enter number of elements: "</span><span class="symbol">);</span>
+    <span class="function">scanf</span><span class="symbol">(</span><span class="string">"%d"</span><span class="symbol">,</span> <span class="symbol">&amp;</span>n<span class="symbol">);</span>
 
-    for(i = 0; i < n; i++) {
-        if(arr[i] == key) {
-            printf("Element found at position %d", i + 1);
-            found = 1;
-            break;
-        }
-    }
+    <span class="function">printf</span><span class="symbol">(</span><span class="string">"Enter %d elements:\\n"</span><span class="symbol">,</span> n<span class="symbol">);</span>
 
-    if(found == 0) {
-        printf("Element not found");
-    }
+    <span class="comment">// Input array elements</span>
+    <span class="keyword">for</span><span class="symbol">(</span>i <span class="symbol">=</span> 0<span class="symbol">;</span> i <span class="symbol">&lt;</span> n<span class="symbol">;</span> i<span class="symbol">++</span><span class="symbol">)</span>
+    <span class="symbol">{</span>
+        <span class="function">scanf</span><span class="symbol">(</span><span class="string">"%d"</span><span class="symbol">,</span> <span class="symbol">&amp;</span>arr<span class="symbol">[</span>i<span class="symbol">]);</span>
+    <span class="symbol">}</span>
 
-    return 0;
-}
-</pre>
+    <span class="function">printf</span><span class="symbol">(</span><span class="string">"Enter element to search: "</span><span class="symbol">);</span>
+    <span class="function">scanf</span><span class="symbol">(</span><span class="string">"%d"</span><span class="symbol">,</span> <span class="symbol">&amp;</span>key<span class="symbol">);</span>
+
+    <span class="comment">// Search for the element</span>
+    <span class="keyword">for</span><span class="symbol">(</span>i <span class="symbol">=</span> 0<span class="symbol">;</span> i <span class="symbol">&lt;</span> n<span class="symbol">;</span> i<span class="symbol">++</span><span class="symbol">)</span>
+    <span class="symbol">{</span>
+        <span class="keyword">if</span><span class="symbol">(</span>arr<span class="symbol">[</span>i<span class="symbol">]</span> <span class="symbol">==</span> key<span class="symbol">)</span>
+        <span class="symbol">{</span>
+            <span class="function">printf</span><span class="symbol">(</span><span class="string">"Element found at position %d"</span><span class="symbol">,</span> i <span class="symbol">+</span> 1<span class="symbol">);</span>
+            found <span class="symbol">=</span> 1<span class="symbol">;</span>
+            <span class="keyword">break</span><span class="symbol">;</span>
+        <span class="symbol">}</span>
+    <span class="symbol">}</span>
+
+    <span class="keyword">if</span><span class="symbol">(</span>found <span class="symbol">==</span> 0<span class="symbol">)</span>
+    <span class="symbol">{</span>
+        <span class="function">printf</span><span class="symbol">(</span><span class="string">"Element not found"</span><span class="symbol">);</span>
+    <span class="symbol">}</span>
+
+    <span class="keyword">return</span> 0<span class="symbol">;</span>
+<span class="symbol">}</span>
+</code></pre>
+
+</div>
+
+<h4>Output</h4>
+
+<div class="code-box">
+
+    <div class="code-title">
+        <span>Output</span>
+    </div>
+
+<pre><code>Enter number of elements: 5
+Enter 5 elements:
+10 20 30 40 50
+Enter element to search: 30
+
+Element found at position 3</code></pre>
+
+</div>
 
 <h4>Sample Input</h4>
 
-<pre>
+<pre class="notes_text_pre">
 Enter number of elements: 5
 Enter 5 elements:
 10 20 30 40 50
@@ -13343,7 +16048,7 @@ Enter element to search: 30
 
 <h4>Output</h4>
 
-<pre>
+<pre class="notes_text_pre">
 Element found at position 3
 </pre>
 
@@ -13387,120 +16092,148 @@ insert elements, display elements, search elements, update elements, and delete 
 using a menu-driven program.
 </p>
 
-<h4>Example Program</h4>
+<h4>Example: Array CRUD Operations (Insert, Display, Search, Update & Delete)</h4>
 
-<pre>
-#include <stdio.h>
+<div class="code-box">
 
-int main() {
-    int arr[100], n = 0;
-    int choice, i, pos, value, key, found;
+    <div class="code-title">
+        <span>Array CRUD Operations Using Menu</span>
+    </div>
 
-    while(1) {
+<pre><code><span class="preprocessor">#include</span> <span class="header-file">&lt;stdio.h&gt;</span>
 
-        printf("\\nArray CRUD Operations");
-        printf("\\n1. Insert");
-        printf("\\n2. Display");
-        printf("\\n3. Search");
-        printf("\\n4. Update");
-        printf("\\n5. Delete");
-        printf("\\n6. Exit");
+<span class="datatype">int</span> <span class="function">main</span><span class="symbol">()</span>
+<span class="symbol">{</span>
+    <span class="datatype">int</span> arr<span class="symbol">[</span>100<span class="symbol">],</span> n <span class="symbol">=</span> 0<span class="symbol">;</span>
+    <span class="datatype">int</span> choice<span class="symbol">,</span> i<span class="symbol">,</span> pos<span class="symbol">,</span> value<span class="symbol">,</span> key<span class="symbol">,</span> found<span class="symbol">;</span>
 
-        printf("\\nEnter your choice: ");
-        scanf("%d", &choice);
+    <span class="keyword">while</span><span class="symbol">(</span>1<span class="symbol">)</span>
+    <span class="symbol">{</span>
+        <span class="function">printf</span><span class="symbol">(</span><span class="string">"\\n========== Array CRUD Operations ==========\\n"</span><span class="symbol">);</span>
+        <span class="function">printf</span><span class="symbol">(</span><span class="string">"1. Insert\\n"</span><span class="symbol">);</span>
+        <span class="function">printf</span><span class="symbol">(</span><span class="string">"2. Display\\n"</span><span class="symbol">);</span>
+        <span class="function">printf</span><span class="symbol">(</span><span class="string">"3. Search\\n"</span><span class="symbol">);</span>
+        <span class="function">printf</span><span class="symbol">(</span><span class="string">"4. Update\\n"</span><span class="symbol">);</span>
+        <span class="function">printf</span><span class="symbol">(</span><span class="string">"5. Delete\\n"</span><span class="symbol">);</span>
+        <span class="function">printf</span><span class="symbol">(</span><span class="string">"6. Exit\\n"</span><span class="symbol">);</span>
 
-        switch(choice) {
+        <span class="function">printf</span><span class="symbol">(</span><span class="string">"\\nEnter your choice: "</span><span class="symbol">);</span>
+        <span class="function">scanf</span><span class="symbol">(</span><span class="string">"%d"</span><span class="symbol">,</span> <span class="symbol">&amp;</span>choice<span class="symbol">);</span>
 
-            case 1:
-                printf("Enter element to insert: ");
-                scanf("%d", &value);
+        <span class="keyword">switch</span><span class="symbol">(</span>choice<span class="symbol">)</span>
+        <span class="symbol">{</span>
+            <span class="keyword">case</span> 1<span class="symbol">:</span>
 
-                arr[n] = value;
-                n++;
+                <span class="function">printf</span><span class="symbol">(</span><span class="string">"Enter element to insert: "</span><span class="symbol">);</span>
+                <span class="function">scanf</span><span class="symbol">(</span><span class="string">"%d"</span><span class="symbol">,</span> <span class="symbol">&amp;</span>value<span class="symbol">);</span>
 
-                printf("Element inserted successfully.");
-                break;
+                arr<span class="symbol">[</span>n<span class="symbol">]</span> <span class="symbol">=</span> value<span class="symbol">;</span>
+                n<span class="symbol">++;</span>
 
-            case 2:
-                if(n == 0) {
-                    printf("Array is empty.");
-                } else {
-                    printf("Array Elements:\\n");
+                <span class="function">printf</span><span class="symbol">(</span><span class="string">"Element inserted successfully."</span><span class="symbol">);</span>
+                <span class="keyword">break</span><span class="symbol">;</span>
 
-                    for(i = 0; i < n; i++) {
-                        printf("%d ", arr[i]);
-                    }
-                }
-                break;
+            <span class="keyword">case</span> 2<span class="symbol">:</span>
 
-            case 3:
-                printf("Enter element to search: ");
-                scanf("%d", &key);
+                <span class="keyword">if</span><span class="symbol">(</span>n <span class="symbol">==</span> 0<span class="symbol">)</span>
+                <span class="symbol">{</span>
+                    <span class="function">printf</span><span class="symbol">(</span><span class="string">"Array is empty."</span><span class="symbol">);</span>
+                <span class="symbol">}</span>
+                <span class="keyword">else</span>
+                <span class="symbol">{</span>
+                    <span class="function">printf</span><span class="symbol">(</span><span class="string">"Array Elements:\\n"</span><span class="symbol">);</span>
 
-                found = 0;
+                    <span class="keyword">for</span><span class="symbol">(</span>i <span class="symbol">=</span> 0<span class="symbol">;</span> i <span class="symbol">&lt;</span> n<span class="symbol">;</span> i<span class="symbol">++</span><span class="symbol">)</span>
+                    <span class="symbol">{</span>
+                        <span class="function">printf</span><span class="symbol">(</span><span class="string">"%d "</span><span class="symbol">,</span> arr<span class="symbol">[</span>i<span class="symbol">]);</span>
+                    <span class="symbol">}</span>
+                <span class="symbol">}</span>
+                <span class="keyword">break</span><span class="symbol">;</span>
 
-                for(i = 0; i < n; i++) {
-                    if(arr[i] == key) {
-                        printf("Element found at position %d", i + 1);
-                        found = 1;
-                        break;
-                    }
-                }
+            <span class="keyword">case</span> 3<span class="symbol">:</span>
 
-                if(found == 0) {
-                    printf("Element not found.");
-                }
+                <span class="function">printf</span><span class="symbol">(</span><span class="string">"Enter element to search: "</span><span class="symbol">);</span>
+                <span class="function">scanf</span><span class="symbol">(</span><span class="string">"%d"</span><span class="symbol">,</span> <span class="symbol">&amp;</span>key<span class="symbol">);</span>
 
-                break;
+                found <span class="symbol">=</span> 0<span class="symbol">;</span>
 
-            case 4:
-                printf("Enter position to update: ");
-                scanf("%d", &pos);
+                <span class="keyword">for</span><span class="symbol">(</span>i <span class="symbol">=</span> 0<span class="symbol">;</span> i <span class="symbol">&lt;</span> n<span class="symbol">;</span> i<span class="symbol">++</span><span class="symbol">)</span>
+                <span class="symbol">{</span>
+                    <span class="keyword">if</span><span class="symbol">(</span>arr<span class="symbol">[</span>i<span class="symbol">]</span> <span class="symbol">==</span> key<span class="symbol">)</span>
+                    <span class="symbol">{</span>
+                        <span class="function">printf</span><span class="symbol">(</span><span class="string">"Element found at position %d"</span><span class="symbol">,</span> i <span class="symbol">+</span> 1<span class="symbol">);</span>
+                        found <span class="symbol">=</span> 1<span class="symbol">;</span>
+                        <span class="keyword">break</span><span class="symbol">;</span>
+                    <span class="symbol">}</span>
+                <span class="symbol">}</span>
 
-                if(pos < 1 || pos > n) {
-                    printf("Invalid position.");
-                } else {
-                    printf("Enter new value: ");
-                    scanf("%d", &value);
+                <span class="keyword">if</span><span class="symbol">(</span>found <span class="symbol">==</span> 0<span class="symbol">)</span>
+                <span class="symbol">{</span>
+                    <span class="function">printf</span><span class="symbol">(</span><span class="string">"Element not found."</span><span class="symbol">);</span>
+                <span class="symbol">}</span>
 
-                    arr[pos - 1] = value;
+                <span class="keyword">break</span><span class="symbol">;</span>
 
-                    printf("Element updated successfully.");
-                }
+            <span class="keyword">case</span> 4<span class="symbol">:</span>
 
-                break;
+                <span class="function">printf</span><span class="symbol">(</span><span class="string">"Enter position to update: "</span><span class="symbol">);</span>
+                <span class="function">scanf</span><span class="symbol">(</span><span class="string">"%d"</span><span class="symbol">,</span> <span class="symbol">&amp;</span>pos<span class="symbol">);</span>
 
-            case 5:
-                printf("Enter position to delete: ");
-                scanf("%d", &pos);
+                <span class="keyword">if</span><span class="symbol">(</span>pos <span class="symbol">&lt;</span> 1 <span class="symbol">||</span> pos <span class="symbol">&gt;</span> n<span class="symbol">)</span>
+                <span class="symbol">{</span>
+                    <span class="function">printf</span><span class="symbol">(</span><span class="string">"Invalid position."</span><span class="symbol">);</span>
+                <span class="symbol">}</span>
+                <span class="keyword">else</span>
+                <span class="symbol">{</span>
+                    <span class="function">printf</span><span class="symbol">(</span><span class="string">"Enter new value: "</span><span class="symbol">);</span>
+                    <span class="function">scanf</span><span class="symbol">(</span><span class="string">"%d"</span><span class="symbol">,</span> <span class="symbol">&amp;</span>value<span class="symbol">);</span>
 
-                if(pos < 1 || pos > n) {
-                    printf("Invalid position.");
-                } else {
+                    arr<span class="symbol">[</span>pos <span class="symbol">-</span> 1<span class="symbol">]</span> <span class="symbol">=</span> value<span class="symbol">;</span>
 
-                    for(i = pos - 1; i < n - 1; i++) {
-                        arr[i] = arr[i + 1];
-                    }
+                    <span class="function">printf</span><span class="symbol">(</span><span class="string">"Element updated successfully."</span><span class="symbol">);</span>
+                <span class="symbol">}</span>
 
-                    n--;
+                <span class="keyword">break</span><span class="symbol">;</span>
 
-                    printf("Element deleted successfully.");
-                }
+            <span class="keyword">case</span> 5<span class="symbol">:</span>
 
-                break;
+                <span class="function">printf</span><span class="symbol">(</span><span class="string">"Enter position to delete: "</span><span class="symbol">);</span>
+                <span class="function">scanf</span><span class="symbol">(</span><span class="string">"%d"</span><span class="symbol">,</span> <span class="symbol">&amp;</span>pos<span class="symbol">);</span>
 
-            case 6:
-                printf("Program terminated.");
-                return 0;
+                <span class="keyword">if</span><span class="symbol">(</span>pos <span class="symbol">&lt;</span> 1 <span class="symbol">||</span> pos <span class="symbol">&gt;</span> n<span class="symbol">)</span>
+                <span class="symbol">{</span>
+                    <span class="function">printf</span><span class="symbol">(</span><span class="string">"Invalid position."</span><span class="symbol">);</span>
+                <span class="symbol">}</span>
+                <span class="keyword">else</span>
+                <span class="symbol">{</span>
+                    <span class="keyword">for</span><span class="symbol">(</span>i <span class="symbol">=</span> pos <span class="symbol">-</span> 1<span class="symbol">;</span> i <span class="symbol">&lt;</span> n <span class="symbol">-</span> 1<span class="symbol">;</span> i<span class="symbol">++</span><span class="symbol">)</span>
+                    <span class="symbol">{</span>
+                        arr<span class="symbol">[</span>i<span class="symbol">]</span> <span class="symbol">=</span> arr<span class="symbol">[</span>i <span class="symbol">+</span> 1<span class="symbol">];</span>
+                    <span class="symbol">}</span>
 
-            default:
-                printf("Invalid choice.");
-        }
-    }
+                    n<span class="symbol">--;</span>
 
-    return 0;
-}
-</pre>
+                    <span class="function">printf</span><span class="symbol">(</span><span class="string">"Element deleted successfully."</span><span class="symbol">);</span>
+                <span class="symbol">}</span>
+
+                <span class="keyword">break</span><span class="symbol">;</span>
+
+            <span class="keyword">case</span> 6<span class="symbol">:</span>
+
+                <span class="function">printf</span><span class="symbol">(</span><span class="string">"Program terminated."</span><span class="symbol">);</span>
+                <span class="keyword">return</span> 0<span class="symbol">;</span>
+
+            <span class="keyword">default</span><span class="symbol">:</span>
+
+                <span class="function">printf</span><span class="symbol">(</span><span class="string">"Invalid choice."</span><span class="symbol">);</span>
+        <span class="symbol">}</span>
+    <span class="symbol">}</span>
+
+    <span class="keyword">return</span> 0<span class="symbol">;</span>
+<span class="symbol">}</span>
+</code></pre>
+
+</div>
 
 <h4>Operations Performed</h4>
 
@@ -13514,9 +16247,13 @@ int main() {
 
 <h4>Sample Output</h4>
 
-<pre>
-Array CRUD Operations
+<div class="code-box">
 
+    <div class="code-title">
+        <span>Output</span>
+    </div>
+
+<pre><code>========== Array CRUD Operations ==========
 1. Insert
 2. Display
 3. Search
@@ -13526,19 +16263,33 @@ Array CRUD Operations
 
 Enter your choice: 1
 Enter element to insert: 10
-
 Element inserted successfully.
+
+========== Array CRUD Operations ==========
+1. Insert
+2. Display
+3. Search
+4. Update
+5. Delete
+6. Exit
 
 Enter your choice: 1
 Enter element to insert: 20
-
 Element inserted successfully.
 
-Enter your choice: 2
+========== Array CRUD Operations ==========
+1. Insert
+2. Display
+3. Search
+4. Update
+5. Delete
+6. Exit
 
+Enter your choice: 2
 Array Elements:
-10 20
-</pre>
+10 20</code></pre>
+
+</div>
 
 <h4>Explanation</h4>
 
@@ -13583,13 +16334,13 @@ The most commonly used multidimensional array is a two-dimensional array, which 
 
 <h4>Syntax</h4>
 
-<pre>
+<pre class="notes_text_pre">
 data_type array_name[row_size][column_size];
 </pre>
 
 <h4>Example</h4>
 
-<pre>
+<pre class="notes_text_pre">
 int marks[3][4];
 </pre>
 
@@ -13605,76 +16356,130 @@ In this example:
 
 <h4>Initialization of a Two-Dimensional Array</h4>
 
-<pre>
+<pre class="notes_text_pre">
 int matrix[2][3] = {
     {10, 20, 30},
     {40, 50, 60}
 };
 </pre>
 
-<h4>Program to Display Elements of a Two-Dimensional Array</h4>
+<h4>Example: Print a Two-Dimensional Array (Matrix)</h4>
 
-<pre>
-#include <stdio.h>
+<div class="code-box">
 
-int main() {
-    int matrix[2][3] = {
-        {10, 20, 30},
-        {40, 50, 60}
-    };
+    <div class="code-title">
+        <span>Display Matrix Elements</span>
+    </div>
 
-    int i, j;
+<pre><code><span class="preprocessor">#include</span> <span class="header-file">&lt;stdio.h&gt;</span>
 
-    printf("Matrix Elements:\\n");
+<span class="datatype">int</span> <span class="function">main</span><span class="symbol">()</span>
+<span class="symbol">{</span>
+    <span class="datatype">int</span> matrix<span class="symbol">[</span>2<span class="symbol">][</span>3<span class="symbol">]</span> <span class="symbol">=</span>
+    <span class="symbol">{</span>
+        <span class="symbol">{</span>10<span class="symbol">,</span> 20<span class="symbol">,</span> 30<span class="symbol">}</span><span class="symbol">,</span>
+        <span class="symbol">{</span>40<span class="symbol">,</span> 50<span class="symbol">,</span> 60<span class="symbol">}</span>
+    <span class="symbol">};</span>
 
-    for(i = 0; i < 2; i++) {
-        for(j = 0; j < 3; j++) {
-            printf("%d ", matrix[i][j]);
-        }
-        printf("\\n");
-    }
+    <span class="datatype">int</span> i<span class="symbol">,</span> j<span class="symbol">;</span>
 
-    return 0;
-}
-</pre>
+    <span class="function">printf</span><span class="symbol">(</span><span class="string">"Matrix Elements:\n"</span><span class="symbol">);</span>
+
+    <span class="comment">// Traverse the matrix using nested loops</span>
+    <span class="keyword">for</span><span class="symbol">(</span>i <span class="symbol">=</span> 0<span class="symbol">;</span> i <span class="symbol">&lt;</span> 2<span class="symbol">;</span> i<span class="symbol">++</span><span class="symbol">)</span>
+    <span class="symbol">{</span>
+        <span class="keyword">for</span><span class="symbol">(</span>j <span class="symbol">=</span> 0<span class="symbol">;</span> j <span class="symbol">&lt;</span> 3<span class="symbol">;</span> j<span class="symbol">++</span><span class="symbol">)</span>
+        <span class="symbol">{</span>
+            <span class="function">printf</span><span class="symbol">(</span><span class="string">"%d "</span><span class="symbol">,</span> matrix<span class="symbol">[</span>i<span class="symbol">][</span>j<span class="symbol">]);</span>
+        <span class="symbol">}</span>
+
+        <span class="function">printf</span><span class="symbol">(</span><span class="string">"\n"</span><span class="symbol">);</span>
+    <span class="symbol">}</span>
+
+    <span class="keyword">return</span> 0<span class="symbol">;</span>
+<span class="symbol">}</span>
+</code></pre>
+
+</div>
 
 <h4>Output</h4>
 
-<pre>
-Matrix Elements:
+<div class="code-box">
+
+    <div class="code-title">
+        <span>Output</span>
+    </div>
+
+<pre><code>Matrix Elements:
 10 20 30
-40 50 60
-</pre>
+40 50 60</code></pre>
+
+</div>
 
 <h4>Program to Take Input from User and Display Matrix</h4>
 
-<pre>
-#include <stdio.h>
+<div class="code-box">
 
-int main() {
-    int matrix[3][3];
-    int i, j;
+    <div class="code-title">
+        <span>Input and Display Matrix Elements</span>
+    </div>
 
-    printf("Enter 9 elements:\\n");
+<pre><code><span class="preprocessor">#include</span> <span class="header-file">&lt;stdio.h&gt;</span>
 
-    for(i = 0; i < 3; i++) {
-        for(j = 0; j < 3; j++) {
-            scanf("%d", &matrix[i][j]);
-        }
-    }
+<span class="datatype">int</span> <span class="function">main</span><span class="symbol">()</span>
+<span class="symbol">{</span>
+    <span class="datatype">int</span> matrix<span class="symbol">[</span>3<span class="symbol">][</span>3<span class="symbol">];</span>
+    <span class="datatype">int</span> i<span class="symbol">,</span> j<span class="symbol">;</span>
 
-    printf("Matrix Elements:\\n");
+    <span class="function">printf</span><span class="symbol">(</span><span class="string">"Enter 9 elements:\n"</span><span class="symbol">);</span>
 
-    for(i = 0; i < 3; i++) {
-        for(j = 0; j < 3; j++) {
-            printf("%d ", matrix[i][j]);
-        }
-        printf("\\n");
-    }
+    <span class="comment">// Input matrix elements</span>
+    <span class="keyword">for</span><span class="symbol">(</span>i <span class="symbol">=</span> 0<span class="symbol">;</span> i <span class="symbol">&lt;</span> 3<span class="symbol">;</span> i<span class="symbol">++</span><span class="symbol">)</span>
+    <span class="symbol">{</span>
+        <span class="keyword">for</span><span class="symbol">(</span>j <span class="symbol">=</span> 0<span class="symbol">;</span> j <span class="symbol">&lt;</span> 3<span class="symbol">;</span> j<span class="symbol">++</span><span class="symbol">)</span>
+        <span class="symbol">{</span>
+            <span class="function">scanf</span><span class="symbol">(</span><span class="string">"%d"</span><span class="symbol">,</span> <span class="symbol">&amp;</span>matrix<span class="symbol">[</span>i<span class="symbol">][</span>j<span class="symbol">]);</span>
+        <span class="symbol">}</span>
+    <span class="symbol">}</span>
 
-    return 0;
-}
-</pre>
+    <span class="function">printf</span><span class="symbol">(</span><span class="string">"Matrix Elements:\n"</span><span class="symbol">);</span>
+
+    <span class="comment">// Display matrix elements</span>
+    <span class="keyword">for</span><span class="symbol">(</span>i <span class="symbol">=</span> 0<span class="symbol">;</span> i <span class="symbol">&lt;</span> 3<span class="symbol">;</span> i<span class="symbol">++</span><span class="symbol">)</span>
+    <span class="symbol">{</span>
+        <span class="keyword">for</span><span class="symbol">(</span>j <span class="symbol">=</span> 0<span class="symbol">;</span> j <span class="symbol">&lt;</span> 3<span class="symbol">;</span> j<span class="symbol">++</span><span class="symbol">)</span>
+        <span class="symbol">{</span>
+            <span class="function">printf</span><span class="symbol">(</span><span class="string">"%d "</span><span class="symbol">,</span> matrix<span class="symbol">[</span>i<span class="symbol">][</span>j<span class="symbol">]);</span>
+        <span class="symbol">}</span>
+
+        <span class="function">printf</span><span class="symbol">(</span><span class="string">"\n"</span><span class="symbol">);</span>
+    <span class="symbol">}</span>
+
+    <span class="keyword">return</span> 0<span class="symbol">;</span>
+<span class="symbol">}</span>
+</code></pre>
+
+</div>
+
+<h4>Output</h4>
+
+<div class="code-box">
+
+    <div class="code-title">
+        <span>Output</span>
+    </div>
+
+<pre><code>Enter 9 elements:
+10 20 30
+40 50 60
+70 80 90
+
+Matrix Elements:
+10 20 30
+40 50 60
+70 80 90</code></pre>
+
+</div>
 
 <h4>Explanation</h4>
 
@@ -13730,13 +16535,13 @@ let pointersContent = `
 
 <p>Syntax:</p>
 
-<pre>
+<pre class="notes_text_pre">
 data_type *pointer_name;
 </pre>
 
 <p>Example:</p>
 
-<pre>
+<pre class="notes_text_pre">
 int *ptr;
 float *fptr;
 char *cptr;
@@ -13744,24 +16549,50 @@ char *cptr;
 
 <hr>
 
-<h3>Initializing a Pointer</h3>
+<h4>Example: Pointer Basics</h4>
 
-<pre>
-#include <stdio.h>
+<div class="code-box">
 
-int main() {
+    <div class="code-title">
+        <span>Pointer Example</span>
+    </div>
 
-    int num = 10;
-    int *ptr = &num;
+<pre><code><span class="preprocessor">#include</span> <span class="header-file">&lt;stdio.h&gt;</span>
 
-    printf("Value of num = %d", num);
-    printf("\\nAddress of num = %p", &num);
-    printf("\\nValue stored in ptr = %p", ptr);
-    printf("\\nValue using pointer = %d", *ptr);
+<span class="datatype">int</span> <span class="function">main</span><span class="symbol">()</span>
+<span class="symbol">{</span>
+    <span class="datatype">int</span> num <span class="symbol">=</span> 10<span class="symbol">;</span>
+    <span class="datatype">int</span> <span class="symbol">*</span>ptr <span class="symbol">=</span> <span class="symbol">&amp;</span>num<span class="symbol">;</span>
 
-    return 0;
-}
-</pre>
+    <span class="function">printf</span><span class="symbol">(</span><span class="string">"Value of num = %d"</span><span class="symbol">,</span> num<span class="symbol">);</span>
+    <span class="function">printf</span><span class="symbol">(</span><span class="string">"\nAddress of num = %p"</span><span class="symbol">,</span> <span class="symbol">&amp;</span>num<span class="symbol">);</span>
+    <span class="function">printf</span><span class="symbol">(</span><span class="string">"\nValue stored in ptr = %p"</span><span class="symbol">,</span> ptr<span class="symbol">);</span>
+    <span class="function">printf</span><span class="symbol">(</span><span class="string">"\nValue using pointer = %d"</span><span class="symbol">,</span> <span class="symbol">*</span>ptr<span class="symbol">);</span>
+
+    <span class="keyword">return</span> 0<span class="symbol">;</span>
+<span class="symbol">}</span>
+</code></pre>
+
+</div>
+
+<h4>Output</h4>
+
+<div class="code-box">
+
+    <div class="code-title">
+        <span>Output</span>
+    </div>
+
+<pre><code>Value of num = 10
+Address of num = 0x7ffe1234abcd
+Value stored in ptr = 0x7ffe1234abcd
+Value using pointer = 10</code></pre>
+
+</div>
+
+<div class="box">
+<b>Note:</b> The memory address printed using <code>%p</code> is different on every computer and every program execution. Therefore, your output address may not match the address shown above.
+</div>
 
 <h4>Explanation</h4>
 
@@ -13779,7 +16610,7 @@ int main() {
 
 <p>Returns the address of a variable.</p>
 
-<pre>
+<pre class="notes_text_pre">
 int a = 5;
 printf("%p", &a);
 </pre>
@@ -13788,7 +16619,7 @@ printf("%p", &a);
 
 <p>Returns the value stored at the address.</p>
 
-<pre>
+<pre class="notes_text_pre">
 int a = 5;
 int *ptr = &a;
 
@@ -13803,7 +16634,7 @@ printf("%d", *ptr);
 
 <p>Stores the address of an integer variable.</p>
 
-<pre>
+<pre class="notes_text_pre">
 int num = 100;
 int *ptr = &num;
 </pre>
@@ -13812,7 +16643,7 @@ int *ptr = &num;
 
 <p>Stores the address of a character variable.</p>
 
-<pre>
+<pre class="notes_text_pre">
 char ch = 'A';
 char *ptr = &ch;
 </pre>
@@ -13821,7 +16652,7 @@ char *ptr = &ch;
 
 <p>Stores the address of a float variable.</p>
 
-<pre>
+<pre class="notes_text_pre">
 float price = 99.5;
 float *ptr = &price;
 </pre>
@@ -13830,7 +16661,7 @@ float *ptr = &price;
 
 <p>Stores the address of a double variable.</p>
 
-<pre>
+<pre class="notes_text_pre">
 double pi = 3.14;
 double *ptr = &pi;
 </pre>
@@ -13839,13 +16670,13 @@ double *ptr = &pi;
 
 <p>A void pointer can store the address of any data type.</p>
 
-<pre>
+<pre class="notes_text_pre">
 void *ptr;
 </pre>
 
 <p>Example:</p>
 
-<pre>
+<pre class="notes_text_pre">
 int num = 50;
 
 void *ptr = &num;
@@ -13861,7 +16692,7 @@ printf("%d", *(int *)ptr);
 
 <p>A pointer that points to nothing.</p>
 
-<pre>
+<pre class="notes_text_pre">
 int *ptr = NULL;
 </pre>
 
@@ -13871,7 +16702,7 @@ int *ptr = NULL;
 
 <p>An uninitialized pointer.</p>
 
-<pre>
+<pre class="notes_text_pre">
 int *ptr;
 </pre>
 
@@ -13881,7 +16712,7 @@ int *ptr;
 
 <p>A pointer that points to memory which has already been released.</p>
 
-<pre>
+<pre class="notes_text_pre">
 int *ptr = (int *)malloc(sizeof(int));
 
 free(ptr);
@@ -13895,26 +16726,58 @@ free(ptr);
 
 <p>A pointer that stores the address of another pointer.</p>
 
-<pre>
-#include <stdio.h>
+<h4>Example: Pointer to Pointer (Double Pointer)</h4>
 
-int main() {
+<div class="code-box">
 
-    int num = 10;
+    <div class="code-title">
+        <span>Pointer to Pointer Example</span>
+    </div>
 
-    int *ptr = &num;
+<pre><code><span class="preprocessor">#include</span> <span class="header-file">&lt;stdio.h&gt;</span>
 
-    int **pptr = &ptr;
+<span class="datatype">int</span> <span class="function">main</span><span class="symbol">()</span>
+<span class="symbol">{</span>
+    <span class="datatype">int</span> num <span class="symbol">=</span> 10<span class="symbol">;</span>
 
-    printf("%d", **pptr);
+    <span class="datatype">int</span> <span class="symbol">*</span>ptr <span class="symbol">=</span> <span class="symbol">&amp;</span>num<span class="symbol">;</span>
 
-    return 0;
-}
-</pre>
+    <span class="datatype">int</span> <span class="symbol">**</span>pptr <span class="symbol">=</span> <span class="symbol">&amp;</span>ptr<span class="symbol">;</span>
+
+    <span class="function">printf</span><span class="symbol">(</span><span class="string">"%d"</span><span class="symbol">,</span> <span class="symbol">**</span>pptr<span class="symbol">);</span>
+
+    <span class="keyword">return</span> 0<span class="symbol">;</span>
+<span class="symbol">}</span>
+</code></pre>
+
+</div>
+
+<h4>Output</h4>
+
+<div class="code-box">
+
+    <div class="code-title">
+        <span>Output</span>
+    </div>
+
+<pre><code>10</code></pre>
+
+</div>
+
+<div class="box">
+<b>Explanation:</b>
+<ul>
+<li><code>num</code> stores the value <b>10</b>.</li>
+<li><code>ptr</code> stores the address of <code>num</code>.</li>
+<li><code>pptr</code> stores the address of <code>ptr</code>.</li>
+<li><code>*pptr</code> gives the value of <code>ptr</code> (the address of <code>num</code>).</li>
+<li><code>**pptr</code> accesses the value stored at that address, which is <b>10</b>.</li>
+</ul>
+</div>
 
 <h4>Memory Representation</h4>
 
-<pre>
+<pre class="notes_text_pre">
 num  = 10
 ptr  = address of num
 pptr = address of ptr
@@ -13926,23 +16789,57 @@ pptr = address of ptr
 
 <p>The name of an array acts as a pointer to its first element.</p>
 
-<pre>
-#include <stdio.h>
+<h4>Example: Pointer with Array</h4>
 
-int main() {
+<div class="code-box">
 
-    int arr[] = {10,20,30,40};
+    <div class="code-title">
+        <span>Access Array Elements Using Pointer</span>
+    </div>
 
-    printf("%d", *arr);
-    printf("\\n%d", *(arr+1));
+<pre><code><span class="preprocessor">#include</span> <span class="header-file">&lt;stdio.h&gt;</span>
 
-    return 0;
-}
-</pre>
+<span class="datatype">int</span> <span class="function">main</span><span class="symbol">()</span>
+<span class="symbol">{</span>
+    <span class="datatype">int</span> arr<span class="symbol">[]</span> <span class="symbol">=</span> <span class="symbol">{</span>10<span class="symbol">,</span> 20<span class="symbol">,</span> 30<span class="symbol">,</span> 40<span class="symbol">};</span>
+
+    <span class="comment">// Access array elements using pointer notation</span>
+    <span class="function">printf</span><span class="symbol">(</span><span class="string">"%d"</span><span class="symbol">,</span> <span class="symbol">*</span>arr<span class="symbol">);</span>
+
+    <span class="function">printf</span><span class="symbol">(</span><span class="string">"\n%d"</span><span class="symbol">,</span> <span class="symbol">*</span><span class="symbol">(</span>arr <span class="symbol">+</span> 1<span class="symbol">));</span>
+
+    <span class="keyword">return</span> 0<span class="symbol">;</span>
+<span class="symbol">}</span>
+</code></pre>
+
+</div>
 
 <h4>Output</h4>
 
-<pre>
+<div class="code-box">
+
+    <div class="code-title">
+        <span>Output</span>
+    </div>
+
+<pre><code>10
+20</code></pre>
+
+</div>
+
+<div class="box">
+<b>Explanation:</b>
+<ul>
+<li><code>arr</code> points to the address of the first element of the array.</li>
+<li><code>*arr</code> accesses the first element (<b>10</b>).</li>
+<li><code>arr + 1</code> points to the second element of the array.</li>
+<li><code>*(arr + 1)</code> accesses the second element (<b>20</b>).</li>
+</ul>
+</div>
+
+<h4>Output</h4>
+
+<pre class="notes_text_pre">
 10
 20
 </pre>
@@ -13953,70 +16850,122 @@ int main() {
 
 <p>Pointers can be incremented and decremented.</p>
 
-<pre>
-#include <stdio.h>
+<h4>Example: Pointer Arithmetic</h4>
 
-int main() {
+<div class="code-box">
 
-    int arr[] = {10,20,30};
+    <div class="code-title">
+        <span>Pointer Arithmetic Example</span>
+    </div>
 
-    int *ptr = arr;
+<pre><code><span class="preprocessor">#include</span> <span class="header-file">&lt;stdio.h&gt;</span>
 
-    printf("%d\\n", *ptr);
+<span class="datatype">int</span> <span class="function">main</span><span class="symbol">()</span>
+<span class="symbol">{</span>
+    <span class="datatype">int</span> arr<span class="symbol">[]</span> <span class="symbol">=</span> <span class="symbol">{</span>10<span class="symbol">,</span> 20<span class="symbol">,</span> 30<span class="symbol">};</span>
 
-    ptr++;
+    <span class="datatype">int</span> <span class="symbol">*</span>ptr <span class="symbol">=</span> arr<span class="symbol">;</span>
 
-    printf("%d", *ptr);
+    <span class="comment">// Print the first element</span>
+    <span class="function">printf</span><span class="symbol">(</span><span class="string">"%d\n"</span><span class="symbol">,</span> <span class="symbol">*</span>ptr<span class="symbol">);</span>
 
-    return 0;
-}
-</pre>
+    <span class="comment">// Move the pointer to the next element</span>
+    ptr<span class="symbol">++;</span>
+
+    <span class="comment">// Print the second element</span>
+    <span class="function">printf</span><span class="symbol">(</span><span class="string">"%d"</span><span class="symbol">,</span> <span class="symbol">*</span>ptr<span class="symbol">);</span>
+
+    <span class="keyword">return</span> 0<span class="symbol">;</span>
+<span class="symbol">}</span>
+</code></pre>
+
+</div>
 
 <h4>Output</h4>
 
-<pre>
-10
-20
-</pre>
+<div class="code-box">
 
+    <div class="code-title">
+        <span>Output</span>
+    </div>
+
+<pre><code>10
+20</code></pre>
+
+</div>
+
+<div class="box">
+<b>Explanation:</b>
+<ul>
+<li><code>ptr = arr</code> stores the address of the first element of the array.</li>
+<li><code>*ptr</code> accesses the first element, which is <b>10</b>.</li>
+<li><code>ptr++</code> moves the pointer to the next integer location in memory.</li>
+<li>After incrementing, <code>ptr</code> points to the second element of the array.</li>
+<li><code>*ptr</code> now accesses the second element, which is <b>20</b>.</li>
+</ul>
+</div>
 <hr>
 
-<h3>Pointers and Functions</h3>
+<h4>Example: Swap Two Numbers Using Pointers (Call by Reference)</h4>
 
-<h4>Call By Reference Using Pointers</h4>
+<div class="code-box">
 
-<pre>
-#include <stdio.h>
+    <div class="code-title">
+        <span>Call by Reference</span>
+    </div>
 
-void swap(int *a, int *b) {
+<pre><code><span class="preprocessor">#include</span> <span class="header-file">&lt;stdio.h&gt;</span>
 
-    int temp;
+<span class="datatype">void</span> <span class="function">swap</span><span class="symbol">(</span><span class="datatype">int</span> <span class="symbol">*</span>a<span class="symbol">,</span> <span class="datatype">int</span> <span class="symbol">*</span>b<span class="symbol">)</span>
+<span class="symbol">{</span>
+    <span class="datatype">int</span> temp<span class="symbol">;</span>
 
-    temp = *a;
-    *a = *b;
-    *b = temp;
-}
+    temp <span class="symbol">=</span> <span class="symbol">*</span>a<span class="symbol">;</span>
+    <span class="symbol">*</span>a <span class="symbol">=</span> <span class="symbol">*</span>b<span class="symbol">;</span>
+    <span class="symbol">*</span>b <span class="symbol">=</span> temp<span class="symbol">;</span>
+<span class="symbol">}</span>
 
-int main() {
+<span class="datatype">int</span> <span class="function">main</span><span class="symbol">()</span>
+<span class="symbol">{</span>
+    <span class="datatype">int</span> x <span class="symbol">=</span> 10<span class="symbol">;</span>
+    <span class="datatype">int</span> y <span class="symbol">=</span> 20<span class="symbol">;</span>
 
-    int x = 10;
-    int y = 20;
+    <span class="comment">// Pass the addresses of x and y</span>
+    <span class="function">swap</span><span class="symbol">(</span><span class="symbol">&amp;</span>x<span class="symbol">,</span> <span class="symbol">&amp;</span>y<span class="symbol">);</span>
 
-    swap(&x, &y);
+    <span class="function">printf</span><span class="symbol">(</span><span class="string">"x = %d"</span><span class="symbol">,</span> x<span class="symbol">);</span>
+    <span class="function">printf</span><span class="symbol">(</span><span class="string">"\ny = %d"</span><span class="symbol">,</span> y<span class="symbol">);</span>
 
-    printf("x = %d", x);
-    printf("\\ny = %d", y);
+    <span class="keyword">return</span> 0<span class="symbol">;</span>
+<span class="symbol">}</span>
+</code></pre>
 
-    return 0;
-}
-</pre>
+</div>
 
 <h4>Output</h4>
 
-<pre>
-x = 20
-y = 10
-</pre>
+<div class="code-box">
+
+    <div class="code-title">
+        <span>Output</span>
+    </div>
+
+<pre><code>x = 20
+y = 10</code></pre>
+
+</div>
+
+<div class="box">
+<b>Explanation:</b>
+<ul>
+<li><code>swap()</code> receives the addresses of <code>x</code> and <code>y</code>.</li>
+<li><code>*a</code> represents the value of <code>x</code> and <code>*b</code> represents the value of <code>y</code>.</li>
+<li>A temporary variable <code>temp</code> stores the value of <code>*a</code>.</li>
+<li>The value of <code>*b</code> is assigned to <code>*a</code>.</li>
+<li>The value stored in <code>temp</code> is assigned to <code>*b</code>.</li>
+<li>Since the original variables are modified through their addresses, the values of <code>x</code> and <code>y</code> are successfully swapped.</li>
+</ul>
+</div>
 
 <hr>
 
@@ -14024,29 +16973,68 @@ y = 10
 
 <p>Pointers are used with malloc(), calloc(), realloc(), and free().</p>
 
-<pre>
-#include <stdio.h>
-#include <stdlib.h>
+<h4>Example: Dynamic Memory Allocation Using <code>malloc()</code></h4>
 
-int main() {
+<div class="code-box">
 
-    int *ptr;
+    <div class="code-title">
+        <span>malloc() Example</span>
+    </div>
 
-    ptr = (int *)malloc(5 * sizeof(int));
+<pre><code><span class="preprocessor">#include</span> <span class="header-file">&lt;stdio.h&gt;</span>
+<span class="preprocessor">#include</span> <span class="header-file">&lt;stdlib.h&gt;</span>
 
-    for(int i=0; i<5; i++) {
-        ptr[i] = i + 1;
-    }
+<span class="datatype">int</span> <span class="function">main</span><span class="symbol">()</span>
+<span class="symbol">{</span>
+    <span class="datatype">int</span> <span class="symbol">*</span>ptr<span class="symbol">;</span>
 
-    for(int i=0; i<5; i++) {
-        printf("%d ", ptr[i]);
-    }
+    <span class="comment">// Allocate memory for 5 integers</span>
+    ptr <span class="symbol">=</span> <span class="symbol">(</span><span class="datatype">int</span> <span class="symbol">*</span><span class="symbol">)</span><span class="function">malloc</span><span class="symbol">(</span>5 <span class="symbol">*</span> <span class="keyword">sizeof</span><span class="symbol">(</span><span class="datatype">int</span><span class="symbol">));</span>
 
-    free(ptr);
+    <span class="comment">// Store values in allocated memory</span>
+    <span class="keyword">for</span><span class="symbol">(</span><span class="datatype">int</span> i <span class="symbol">=</span> 0<span class="symbol">;</span> i <span class="symbol">&lt;</span> 5<span class="symbol">;</span> i<span class="symbol">++</span><span class="symbol">)</span>
+    <span class="symbol">{</span>
+        ptr<span class="symbol">[</span>i<span class="symbol">]</span> <span class="symbol">=</span> i <span class="symbol">+</span> 1<span class="symbol">;</span>
+    <span class="symbol">}</span>
 
-    return 0;
-}
-</pre>
+    <span class="comment">// Display the values</span>
+    <span class="keyword">for</span><span class="symbol">(</span><span class="datatype">int</span> i <span class="symbol">=</span> 0<span class="symbol">;</span> i <span class="symbol">&lt;</span> 5<span class="symbol">;</span> i<span class="symbol">++</span><span class="symbol">)</span>
+    <span class="symbol">{</span>
+        <span class="function">printf</span><span class="symbol">(</span><span class="string">"%d "</span><span class="symbol">,</span> ptr<span class="symbol">[</span>i<span class="symbol">]);</span>
+    <span class="symbol">}</span>
+
+    <span class="comment">// Free the allocated memory</span>
+    <span class="function">free</span><span class="symbol">(</span>ptr<span class="symbol">);</span>
+
+    <span class="keyword">return</span> 0<span class="symbol">;</span>
+<span class="symbol">}</span>
+</code></pre>
+
+</div>
+
+<h4>Output</h4>
+
+<div class="code-box">
+
+    <div class="code-title">
+        <span>Output</span>
+    </div>
+
+<pre><code>1 2 3 4 5</code></pre>
+
+</div>
+
+<div class="box">
+<b>Explanation:</b>
+<ul>
+<li><code>malloc()</code> dynamically allocates memory for <b>5 integer</b> values.</li>
+<li><code>sizeof(int)</code> returns the size of one integer in bytes.</li>
+<li><code>ptr</code> stores the address of the allocated memory block.</li>
+<li>The first <code>for</code> loop stores the values <b>1, 2, 3, 4, 5</b> in the allocated memory.</li>
+<li>The second <code>for</code> loop prints all the values stored in memory.</li>
+<li><code>free(ptr)</code> releases the allocated memory to prevent memory leaks.</li>
+</ul>
+</div>
 
 <hr>
 
@@ -14204,25 +17192,67 @@ Books, Products, and Vehicles where multiple pieces of related information need 
 
 <h3>Syntax of Structure</h3>
 
-<pre>
-struct structure_name
-{
-    data_type member1;
-    data_type member2;
-    data_type member3;
-};
-</pre>
+<div class="code-box">
 
-<h4>Example</h4>
+    <div class="code-title">
+        <span>Structure Syntax</span>
+    </div>
 
-<pre>
-struct Student
-{
-    int rollNo;
-    char name[50];
-    float marks;
-};
-</pre>
+<pre><code><span class="keyword">struct</span> structure_name
+<span class="symbol">{</span>
+    <span class="datatype">data_type</span> member1<span class="symbol">;</span>
+    <span class="datatype">data_type</span> member2<span class="symbol">;</span>
+    <span class="datatype">data_type</span> member3<span class="symbol">;</span>
+<span class="symbol">}</span><span class="symbol">;</span>
+</code></pre>
+
+</div>
+
+<div class="box">
+<b>Explanation:</b>
+
+<ul>
+<li><code>struct</code> is a keyword used to define a structure in C.</li>
+<li><code>structure_name</code> is the name of the structure (for example: <code>Student</code>, <code>Employee</code>, <code>Book</code>).</li>
+<li>Inside the structure, we declare variables called <b>members</b> (or fields).</li>
+<li>Each member can have a different data type such as <code>int</code>, <code>float</code>, <code>char</code>, etc.</li>
+<li>The structure definition ends with a semicolon (<code>;</code>).</li>
+<li>A structure only defines a new data type. Memory is allocated only when a structure variable is created.</li>
+</ul>
+
+</div>
+
+<h4>Example: Structure Declaration</h4>
+
+<div class="code-box">
+
+    <div class="code-title">
+        <span>Declare a Structure</span>
+    </div>
+
+<pre><code><span class="keyword">struct</span> Student
+<span class="symbol">{</span>
+    <span class="datatype">int</span> rollNo<span class="symbol">;</span>
+    <span class="datatype">char</span> name<span class="symbol">[</span>50<span class="symbol">];</span>
+    <span class="datatype">float</span> marks<span class="symbol">;</span>
+<span class="symbol">}</span><span class="symbol">;</span>
+</code></pre>
+
+</div>
+
+<div class="box">
+<b>Explanation:</b>
+
+<ul>
+<li><code>Student</code> is the name of the structure.</li>
+<li><code>rollNo</code> stores the student's roll number.</li>
+<li><code>name</code> stores the student's name as a character array (string).</li>
+<li><code>marks</code> stores the student's marks in decimal format.</li>
+<li>This code only defines the structure. It does <b>not</b> create any variable or allocate memory.</li>
+<li>To use this structure, you must create a structure variable such as <code>struct Student s1;</code>.</li>
+</ul>
+
+</div>
 
 <p>
 Here Student is the structure name and rollNo, name, and marks are structure members.
@@ -14238,27 +17268,79 @@ After creating a structure, we need a structure variable to store data.
 
 <h4>Method 1: Declare Variable After Structure</h4>
 
-<pre>
-struct Student
-{
-    int rollNo;
-    char name[50];
-    float marks;
-};
 
-struct Student s1;
-</pre>
+<div class="code-box">
+
+    <div class="code-title">
+        <span>Create a Structure Variable</span>
+    </div>
+
+<pre><code><span class="keyword">struct</span> Student
+<span class="symbol">{</span>
+    <span class="datatype">int</span> rollNo<span class="symbol">;</span>
+    <span class="datatype">char</span> name<span class="symbol">[</span>50<span class="symbol">];</span>
+    <span class="datatype">float</span> marks<span class="symbol">;</span>
+<span class="symbol">}</span><span class="symbol">;</span>
+
+<span class="keyword">struct</span> Student s1<span class="symbol">;</span>
+</code></pre>
+
+</div>
+
+<div class="box">
+<b>Explanation:</b>
+
+<ul>
+<li><code>struct Student</code> defines a new structure data type.</li>
+<li><code>s1</code> is a structure variable of type <code>Student</code>.</li>
+<li>Memory is allocated for <code>s1</code> when it is declared.</li>
+<li><code>s1</code> contains three members:
+    <ul>
+        <li><code>s1.rollNo</code></li>
+        <li><code>s1.name</code></li>
+        <li><code>s1.marks</code></li>
+    </ul>
+</li>
+<li>You can access the members of <code>s1</code> using the <b>dot (.) operator</b>.</li>
+</ul>
+
+</div>
 
 <h4>Method 2: Declare Variable During Structure Creation</h4>
 
-<pre>
-struct Student
-{
-    int rollNo;
-    char name[50];
-    float marks;
-} s1, s2;
-</pre>
+<div class="code-box">
+
+    <div class="code-title">
+        <span>Create Multiple Structure Variables</span>
+    </div>
+
+<pre><code><span class="keyword">struct</span> Student
+<span class="symbol">{</span>
+    <span class="datatype">int</span> rollNo<span class="symbol">;</span>
+    <span class="datatype">char</span> name<span class="symbol">[</span>50<span class="symbol">];</span>
+    <span class="datatype">float</span> marks<span class="symbol">;</span>
+<span class="symbol">}</span> s1<span class="symbol">,</span> s2<span class="symbol">;</span>
+</code></pre>
+
+</div>
+
+<div class="box">
+<b>Explanation:</b>
+
+<ul>
+<li><code>struct Student</code> defines a new structure named <code>Student</code>.</li>
+<li><code>s1</code> and <code>s2</code> are two structure variables created at the same time.</li>
+<li>Separate memory is allocated for both <code>s1</code> and <code>s2</code>.</li>
+<li>Each variable has its own members:
+    <ul>
+        <li><code>s1.rollNo</code>, <code>s1.name</code>, <code>s1.marks</code></li>
+        <li><code>s2.rollNo</code>, <code>s2.name</code>, <code>s2.marks</code></li>
+    </ul>
+</li>
+<li>You can store different data in <code>s1</code> and <code>s2</code> independently.</li>
+</ul>
+
+</div>
 
 <hr>
 
@@ -14268,31 +17350,67 @@ struct Student
 The dot (.) operator is used to access structure members.
 </p>
 
-<h4>Example</h4>
+<h4>Example: Accessing Structure Members Using Dot (.) Operator</h4>
 
-<pre>
-#include <stdio.h>
+<div class="code-box">
 
-struct Student
-{
-    int rollNo;
-    char name[50];
-    float marks;
-};
+    <div class="code-title">
+        <span>Structure Member Access</span>
+    </div>
 
-int main()
-{
-    struct Student s1;
+<pre><code><span class="preprocessor">#include</span> <span class="header-file">&lt;stdio.h&gt;</span>
 
-    s1.rollNo = 101;
-    s1.marks = 85.5;
+<span class="keyword">struct</span> Student
+<span class="symbol">{</span>
+    <span class="datatype">int</span> rollNo<span class="symbol">;</span>
+    <span class="datatype">char</span> name<span class="symbol">[</span>50<span class="symbol">];</span>
+    <span class="datatype">float</span> marks<span class="symbol">;</span>
+<span class="symbol">}</span><span class="symbol">;</span>
 
-    printf("Roll Number = %d\\n", s1.rollNo);
-    printf("Marks = %.2f", s1.marks);
+<span class="datatype">int</span> <span class="function">main</span><span class="symbol">()</span>
+<span class="symbol">{</span>
+    <span class="keyword">struct</span> Student s1<span class="symbol">;</span>
 
-    return 0;
-}
-</pre>
+    <span class="comment">// Assign values to structure members</span>
+    s1<span class="symbol">.</span>rollNo <span class="symbol">=</span> 101<span class="symbol">;</span>
+    s1<span class="symbol">.</span>marks <span class="symbol">=</span> 85.5<span class="symbol">;</span>
+
+    <span class="comment">// Display structure members</span>
+    <span class="function">printf</span><span class="symbol">(</span><span class="string">"Roll Number = %d\n"</span><span class="symbol">,</span> s1<span class="symbol">.</span>rollNo<span class="symbol">);</span>
+    <span class="function">printf</span><span class="symbol">(</span><span class="string">"Marks = %.2f"</span><span class="symbol">,</span> s1<span class="symbol">.</span>marks<span class="symbol">);</span>
+
+    <span class="keyword">return</span> 0<span class="symbol">;</span>
+<span class="symbol">}</span>
+</code></pre>
+
+</div>
+
+<h4>Output</h4>
+
+<div class="code-box">
+
+    <div class="code-title">
+        <span>Output</span>
+    </div>
+
+<pre><code>Roll Number = 101
+Marks = 85.50</code></pre>
+
+</div>
+
+<div class="box">
+<b>Explanation:</b>
+
+<ul>
+<li><code>s1</code> is a structure variable of type <code>Student</code>.</li>
+<li>The <b>dot (.) operator</b> is used to access the members of a structure.</li>
+<li><code>s1.rollNo = 101;</code> assigns <b>101</b> to the <code>rollNo</code> member.</li>
+<li><code>s1.marks = 85.5;</code> assigns <b>85.5</b> to the <code>marks</code> member.</li>
+<li><code>printf()</code> displays the values stored in the structure members.</li>
+<li>The <code>name</code> member is declared but is not used in this example.</li>
+</ul>
+
+</div>
 
 <hr>
 
@@ -14302,30 +17420,65 @@ int main()
 Values can be assigned during declaration.
 </p>
 
-<h4>Example</h4>
+<h4>Example: Structure Initialization</h4>
 
-<pre>
-#include <stdio.h>
+<div class="code-box">
 
-struct Student
-{
-    int rollNo;
-    char name[20];
-    float marks;
-};
+    <div class="code-title">
+        <span>Initialize a Structure Variable</span>
+    </div>
 
-int main()
-{
-    struct Student s1 = {101, "Pradeep", 89.5};
+<pre><code><span class="preprocessor">#include</span> <span class="header-file">&lt;stdio.h&gt;</span>
 
-    printf("Roll No = %d\\n", s1.rollNo);
-    printf("Name = %s\\n", s1.name);
-    printf("Marks = %.2f", s1.marks);
+<span class="keyword">struct</span> Student
+<span class="symbol">{</span>
+    <span class="datatype">int</span> rollNo<span class="symbol">;</span>
+    <span class="datatype">char</span> name<span class="symbol">[</span>20<span class="symbol">];</span>
+    <span class="datatype">float</span> marks<span class="symbol">;</span>
+<span class="symbol">}</span><span class="symbol">;</span>
 
-    return 0;
-}
-</pre>
+<span class="datatype">int</span> <span class="function">main</span><span class="symbol">()</span>
+<span class="symbol">{</span>
+    <span class="comment">// Initialize structure variable</span>
+    <span class="keyword">struct</span> Student s1 <span class="symbol">=</span> <span class="symbol">{</span>101<span class="symbol">,</span> <span class="string">"Pradeep"</span><span class="symbol">,</span> 89.5<span class="symbol">}</span><span class="symbol">;</span>
 
+    <span class="comment">// Display structure members</span>
+    <span class="function">printf</span><span class="symbol">(</span><span class="string">"Roll No = %d\n"</span><span class="symbol">,</span> s1<span class="symbol">.</span>rollNo<span class="symbol">);</span>
+    <span class="function">printf</span><span class="symbol">(</span><span class="string">"Name = %s\n"</span><span class="symbol">,</span> s1<span class="symbol">.</span>name<span class="symbol">);</span>
+    <span class="function">printf</span><span class="symbol">(</span><span class="string">"Marks = %.2f"</span><span class="symbol">,</span> s1<span class="symbol">.</span>marks<span class="symbol">);</span>
+
+    <span class="keyword">return</span> 0<span class="symbol">;</span>
+<span class="symbol">}</span>
+</code></pre>
+
+</div>
+
+<h4>Output</h4>
+
+<div class="code-box">
+
+    <div class="code-title">
+        <span>Output</span>
+    </div>
+
+<pre><code>Roll No = 101
+Name = Pradeep
+Marks = 89.50</code></pre>
+
+</div>
+
+<div class="box">
+<b>Explanation:</b>
+
+<ul>
+<li><code>struct Student s1 = {101, "Pradeep", 89.5};</code> initializes all structure members at the time of declaration.</li>
+<li><code>101</code> is assigned to <code>rollNo</code>.</li>
+<li><code>"Pradeep"</code> is assigned to the <code>name</code> character array.</li>
+<li><code>89.5</code> is assigned to the <code>marks</code> member.</li>
+<li>The <b>dot (.) operator</b> is used to access and display each member of the structure.</li>
+</ul>
+
+</div>
 <hr>
 
 <h3>Structure Assignment</h3>
@@ -14334,30 +17487,68 @@ int main()
 One structure variable can be assigned to another structure variable of the same type.
 </p>
 
-<h4>Example</h4>
+<h4>Example: Copying One Structure to Another</h4>
 
-<pre>
-#include <stdio.h>
+<div class="code-box">
 
-struct Student
-{
-    int rollNo;
-    float marks;
-};
+    <div class="code-title">
+        <span>Structure Assignment</span>
+    </div>
 
-int main()
-{
-    struct Student s1 = {101, 90};
-    struct Student s2;
+<pre><code><span class="preprocessor">#include</span> <span class="header-file">&lt;stdio.h&gt;</span>
 
-    s2 = s1;
+<span class="keyword">struct</span> Student
+<span class="symbol">{</span>
+    <span class="datatype">int</span> rollNo<span class="symbol">;</span>
+    <span class="datatype">float</span> marks<span class="symbol">;</span>
+<span class="symbol">}</span><span class="symbol">;</span>
 
-    printf("Roll No = %d\\n", s2.rollNo);
-    printf("Marks = %.2f", s2.marks);
+<span class="datatype">int</span> <span class="function">main</span><span class="symbol">()</span>
+<span class="symbol">{</span>
+    <span class="comment">// Initialize first structure variable</span>
+    <span class="keyword">struct</span> Student s1 <span class="symbol">=</span> <span class="symbol">{</span>101<span class="symbol">,</span> 90<span class="symbol">}</span><span class="symbol">;</span>
 
-    return 0;
-}
-</pre>
+    <span class="comment">// Declare second structure variable</span>
+    <span class="keyword">struct</span> Student s2<span class="symbol">;</span>
+
+    <span class="comment">// Copy all members of s1 into s2</span>
+    s2 <span class="symbol">=</span> s1<span class="symbol">;</span>
+
+    <span class="comment">// Display copied values</span>
+    <span class="function">printf</span><span class="symbol">(</span><span class="string">"Roll No = %d\n"</span><span class="symbol">,</span> s2<span class="symbol">.</span>rollNo<span class="symbol">);</span>
+    <span class="function">printf</span><span class="symbol">(</span><span class="string">"Marks = %.2f"</span><span class="symbol">,</span> s2<span class="symbol">.</span>marks<span class="symbol">);</span>
+
+    <span class="keyword">return</span> 0<span class="symbol">;</span>
+<span class="symbol">}</span>
+</code></pre>
+
+</div>
+
+<h4>Output</h4>
+
+<div class="code-box">
+
+    <div class="code-title">
+        <span>Output</span>
+    </div>
+
+<pre><code>Roll No = 101
+Marks = 90.00</code></pre>
+
+</div>
+
+<div class="box">
+<b>Explanation:</b>
+
+<ul>
+<li><code>s1</code> is initialized with the values <b>101</b> and <b>90</b>.</li>
+<li><code>s2</code> is another structure variable of the same type.</li>
+<li><code>s2 = s1;</code> copies all members of <code>s1</code> into <code>s2</code>.</li>
+<li>After copying, both <code>s1</code> and <code>s2</code> contain the same values.</li>
+<li>Changing the values of <code>s2</code> later will <b>not</b> affect <code>s1</code>, because each structure has its own separate memory.</li>
+</ul>
+
+</div>
 
 <hr>
 
@@ -14367,42 +17558,84 @@ int main()
 A structure inside another structure is called a Nested Structure.
 </p>
 
-<h4>Example</h4>
+<h4>Example: Nested Structure</h4>
 
-<pre>
-#include <stdio.h>
+<div class="code-box">
 
-struct Address
-{
-    char city[30];
-    int pin;
-};
+    <div class="code-title">
+        <span>Structure Inside Another Structure</span>
+    </div>
 
-struct Student
-{
-    int rollNo;
-    char name[30];
-    struct Address add;
-};
+<pre><code><span class="preprocessor">#include</span> <span class="header-file">&lt;stdio.h&gt;</span>
 
-int main()
-{
-    struct Student s1 =
-    {
-        101,
-        "Pradeep",
-        {"Gorakhpur", 273001}
-    };
+<span class="keyword">struct</span> Address
+<span class="symbol">{</span>
+    <span class="datatype">char</span> city<span class="symbol">[</span>30<span class="symbol">];</span>
+    <span class="datatype">int</span> pin<span class="symbol">;</span>
+<span class="symbol">}</span><span class="symbol">;</span>
 
-    printf("Roll No = %d\\n", s1.rollNo);
-    printf("Name = %s\\n", s1.name);
-    printf("City = %s\\n", s1.add.city);
-    printf("PIN = %d", s1.add.pin);
+<span class="keyword">struct</span> Student
+<span class="symbol">{</span>
+    <span class="datatype">int</span> rollNo<span class="symbol">;</span>
+    <span class="datatype">char</span> name<span class="symbol">[</span>30<span class="symbol">];</span>
+    <span class="keyword">struct</span> Address add<span class="symbol">;</span>
+<span class="symbol">}</span><span class="symbol">;</span>
 
-    return 0;
-}
-</pre>
+<span class="datatype">int</span> <span class="function">main</span><span class="symbol">()</span>
+<span class="symbol">{</span>
+    <span class="comment">// Initialize nested structure</span>
+    <span class="keyword">struct</span> Student s1 <span class="symbol">=</span>
+    <span class="symbol">{</span>
+        101<span class="symbol">,</span>
+        <span class="string">"Pradeep"</span><span class="symbol">,</span>
+        <span class="symbol">{</span><span class="string">"Gorakhpur"</span><span class="symbol">,</span> 273001<span class="symbol">}</span>
+    <span class="symbol">}</span><span class="symbol">;</span>
 
+    <span class="comment">// Display structure members</span>
+    <span class="function">printf</span><span class="symbol">(</span><span class="string">"Roll No = %d\n"</span><span class="symbol">,</span> s1<span class="symbol">.</span>rollNo<span class="symbol">);</span>
+    <span class="function">printf</span><span class="symbol">(</span><span class="string">"Name = %s\n"</span><span class="symbol">,</span> s1<span class="symbol">.</span>name<span class="symbol">);</span>
+    <span class="function">printf</span><span class="symbol">(</span><span class="string">"City = %s\n"</span><span class="symbol">,</span> s1<span class="symbol">.</span>add<span class="symbol">.</span>city<span class="symbol">);</span>
+    <span class="function">printf</span><span class="symbol">(</span><span class="string">"PIN = %d"</span><span class="symbol">,</span> s1<span class="symbol">.</span>add<span class="symbol">.</span>pin<span class="symbol">);</span>
+
+    <span class="keyword">return</span> 0<span class="symbol">;</span>
+<span class="symbol">}</span>
+</code></pre>
+
+</div>
+
+<h4>Output</h4>
+
+<div class="code-box">
+
+    <div class="code-title">
+        <span>Output</span>
+    </div>
+
+<pre><code>Roll No = 101
+Name = Pradeep
+City = Gorakhpur
+PIN = 273001</code></pre>
+
+</div>
+
+<div class="box">
+<b>Explanation:</b>
+
+<ul>
+<li><code>Address</code> is a structure that stores the student's <code>city</code> and <code>pin</code>.</li>
+<li><code>Student</code> is another structure that contains an <code>Address</code> structure as a member named <code>add</code>.</li>
+<li>This is called a <b>Nested Structure</b> because one structure is declared inside another structure.</li>
+<li>The nested structure is initialized using:
+<code>{ "Gorakhpur", 273001 }</code>.</li>
+<li>The nested members are accessed using multiple dot (<code>.</code>) operators:
+<ul>
+<li><code>s1.add.city</code> → Accesses the city name.</li>
+<li><code>s1.add.pin</code> → Accesses the PIN code.</li>
+</ul>
+</li>
+</ul>
+
+</div>
 <hr>
 
 <h3>Structures and Functions</h3>
@@ -14413,68 +17646,137 @@ Structures can be passed to functions just like normal variables.
 
 <h4>Example: Passing Structure to Function</h4>
 
-<pre>
-#include <stdio.h>
+<div class="code-box">
 
-struct Student
-{
-    int rollNo;
-    float marks;
-};
+    <div class="code-title">
+        <span>Pass Structure to Function</span>
+    </div>
 
-void display(struct Student s)
-{
-    printf("Roll No = %d\\n", s.rollNo);
-    printf("Marks = %.2f", s.marks);
-}
+<pre><code><span class="preprocessor">#include</span> <span class="header-file">&lt;stdio.h&gt;</span>
 
-int main()
-{
-    struct Student s1 = {101, 88.5};
+<span class="keyword">struct</span> Student
+<span class="symbol">{</span>
+    <span class="datatype">int</span> rollNo<span class="symbol">;</span>
+    <span class="datatype">float</span> marks<span class="symbol">;</span>
+<span class="symbol">}</span><span class="symbol">;</span>
 
-    display(s1);
+<span class="datatype">void</span> <span class="function">display</span><span class="symbol">(</span><span class="keyword">struct</span> Student s<span class="symbol">)</span>
+<span class="symbol">{</span>
+    <span class="function">printf</span><span class="symbol">(</span><span class="string">"Roll No = %d\n"</span><span class="symbol">,</span> s<span class="symbol">.</span>rollNo<span class="symbol">);</span>
+    <span class="function">printf</span><span class="symbol">(</span><span class="string">"Marks = %.2f"</span><span class="symbol">,</span> s<span class="symbol">.</span>marks<span class="symbol">);</span>
+<span class="symbol">}</span>
 
-    return 0;
-}
-</pre>
+<span class="datatype">int</span> <span class="function">main</span><span class="symbol">()</span>
+<span class="symbol">{</span>
+    <span class="comment">// Initialize structure variable</span>
+    <span class="keyword">struct</span> Student s1 <span class="symbol">=</span> <span class="symbol">{</span>101<span class="symbol">,</span> 88.5<span class="symbol">}</span><span class="symbol">;</span>
+
+    <span class="comment">// Pass structure variable to the function</span>
+    <span class="function">display</span><span class="symbol">(</span>s1<span class="symbol">);</span>
+
+    <span class="keyword">return</span> 0<span class="symbol">;</span>
+<span class="symbol">}</span>
+</code></pre>
+
+</div>
+
+<h4>Output</h4>
+
+<div class="code-box">
+
+    <div class="code-title">
+        <span>Output</span>
+    </div>
+
+<pre><code>Roll No = 101
+Marks = 88.50</code></pre>
+
+</div>
+
+<div class="box">
+<b>Explanation:</b>
+
+<ul>
+<li><code>struct Student</code> defines a structure with two members: <code>rollNo</code> and <code>marks</code>.</li>
+<li><code>s1</code> is initialized with the values <b>101</b> and <b>88.5</b>.</li>
+<li><code>display(s1);</code> passes the entire structure variable to the <code>display()</code> function.</li>
+<li>The function receives a copy of the structure in the parameter <code>s</code>.</li>
+<li>Inside the function, the members are accessed using the <b>dot (.) operator</b>.</li>
+<li>Since the structure is passed by value, any changes made to <code>s</code> inside the function will <b>not</b> affect the original structure <code>s1</code>.</li>
+</ul>
+
+</div>
 
 <hr>
 
 <h3>Returning Structure From Function</h3>
 
-<h4>Example</h4>
+<div class="code-box">
 
-<pre>
-#include <stdio.h>
+    <div class="code-title">
+        <span>Return Structure from Function</span>
+    </div>
 
-struct Student
-{
-    int rollNo;
-    float marks;
-};
+<pre><code><span class="preprocessor">#include</span> <span class="header-file">&lt;stdio.h&gt;</span>
 
-struct Student getData()
-{
-    struct Student s;
+<span class="keyword">struct</span> Student
+<span class="symbol">{</span>
+    <span class="datatype">int</span> rollNo<span class="symbol">;</span>
+    <span class="datatype">float</span> marks<span class="symbol">;</span>
+<span class="symbol">}</span><span class="symbol">;</span>
 
-    s.rollNo = 101;
-    s.marks = 92.5;
+<span class="keyword">struct</span> Student <span class="function">getData</span><span class="symbol">()</span>
+<span class="symbol">{</span>
+    <span class="keyword">struct</span> Student s<span class="symbol">;</span>
 
-    return s;
-}
+    s<span class="symbol">.</span>rollNo <span class="symbol">=</span> 101<span class="symbol">;</span>
+    s<span class="symbol">.</span>marks <span class="symbol">=</span> 92.5<span class="symbol">;</span>
 
-int main()
-{
-    struct Student s1;
+    <span class="keyword">return</span> s<span class="symbol">;</span>
+<span class="symbol">}</span>
 
-    s1 = getData();
+<span class="datatype">int</span> <span class="function">main</span><span class="symbol">()</span>
+<span class="symbol">{</span>
+    <span class="keyword">struct</span> Student s1<span class="symbol">;</span>
 
-    printf("Roll No = %d\\n", s1.rollNo);
-    printf("Marks = %.2f", s1.marks);
+    <span class="comment">// Receive the returned structure</span>
+    s1 <span class="symbol">=</span> <span class="function">getData</span><span class="symbol">();</span>
 
-    return 0;
-}
-</pre>
+    <span class="comment">// Display structure members</span>
+    <span class="function">printf</span><span class="symbol">(</span><span class="string">"Roll No = %d\n"</span><span class="symbol">,</span> s1<span class="symbol">.</span>rollNo<span class="symbol">);</span>
+    <span class="function">printf</span><span class="symbol">(</span><span class="string">"Marks = %.2f"</span><span class="symbol">,</span> s1<span class="symbol">.</span>marks<span class="symbol">);</span>
+
+    <span class="keyword">return</span> 0<span class="symbol">;</span>
+<span class="symbol">}</span>
+</code></pre>
+
+</div>
+
+<h4>Output</h4>
+
+<div class="code-box">
+
+    <div class="code-title">
+        <span>Output</span>
+    </div>
+
+<pre><code>Roll No = 101
+Marks = 92.50</code></pre>
+
+</div>
+
+<div class="box">
+<b>Explanation:</b>
+
+<ul>
+<li><code>getData()</code> is a function that returns a structure of type <code>Student</code>.</li>
+<li>Inside the function, a structure variable <code>s</code> is created and its members are assigned values.</li>
+<li><code>return s;</code> returns the complete structure to the calling function.</li>
+<li>In <code>main()</code>, the returned structure is stored in <code>s1</code> using <code>s1 = getData();</code>.</li>
+<li>The members of <code>s1</code> are accessed using the <b>dot (.) operator</b> and displayed using <code>printf()</code>.</li>
+</ul>
+
+</div>
 
 <hr>
 
@@ -14493,47 +17795,121 @@ This is called an Array of Structures.
 Used to store information of multiple students, employees, books, etc.
 </p>
 
-<h4>Example</h4>
+<h4>Example: Array of Structures</h4>
 
-<pre>
-#include <stdio.h>
+<div class="code-box">
 
-struct Student
-{
-    int rollNo;
-    char name[30];
-    float marks;
-};
+    <div class="code-title">
+        <span>Store and Display Multiple Student Records</span>
+    </div>
 
-int main()
-{
-    struct Student s[3];
+<pre><code><span class="preprocessor">#include</span> <span class="header-file">&lt;stdio.h&gt;</span>
 
-    for(int i = 0; i < 3; i++)
-    {
-        printf("Enter Roll No: ");
-        scanf("%d", &s[i].rollNo);
+<span class="keyword">struct</span> Student
+<span class="symbol">{</span>
+    <span class="datatype">int</span> rollNo<span class="symbol">;</span>
+    <span class="datatype">char</span> name<span class="symbol">[</span>30<span class="symbol">];</span>
+    <span class="datatype">float</span> marks<span class="symbol">;</span>
+<span class="symbol">}</span><span class="symbol">;</span>
 
-        printf("Enter Name: ");
-        scanf("%s", s[i].name);
+<span class="datatype">int</span> <span class="function">main</span><span class="symbol">()</span>
+<span class="symbol">{</span>
+    <span class="comment">// Declare an array of structures</span>
+    <span class="keyword">struct</span> Student s<span class="symbol">[</span>3<span class="symbol">];</span>
 
-        printf("Enter Marks: ");
-        scanf("%f", &s[i].marks);
-    }
+    <span class="comment">// Input student details</span>
+    <span class="keyword">for</span><span class="symbol">(</span><span class="datatype">int</span> i <span class="symbol">=</span> 0<span class="symbol">;</span> i <span class="symbol">&lt;</span> 3<span class="symbol">;</span> i<span class="symbol">++</span><span class="symbol">)</span>
+    <span class="symbol">{</span>
+        <span class="function">printf</span><span class="symbol">(</span><span class="string">"Enter Roll No: "</span><span class="symbol">);</span>
+        <span class="function">scanf</span><span class="symbol">(</span><span class="string">"%d"</span><span class="symbol">,</span> <span class="symbol">&amp;</span>s<span class="symbol">[</span>i<span class="symbol">]</span><span class="symbol">.</span>rollNo<span class="symbol">);</span>
 
-    printf("\\nStudent Details\\n");
+        <span class="function">printf</span><span class="symbol">(</span><span class="string">"Enter Name: "</span><span class="symbol">);</span>
+        <span class="function">scanf</span><span class="symbol">(</span><span class="string">"%s"</span><span class="symbol">,</span> s<span class="symbol">[</span>i<span class="symbol">]</span><span class="symbol">.</span>name<span class="symbol">);</span>
 
-    for(int i = 0; i < 3; i++)
-    {
-        printf("\\nRoll No = %d\\n", s[i].rollNo);
-        printf("Name = %s\\n", s[i].name);
-        printf("Marks = %.2f\\n", s[i].marks);
-    }
+        <span class="function">printf</span><span class="symbol">(</span><span class="string">"Enter Marks: "</span><span class="symbol">);</span>
+        <span class="function">scanf</span><span class="symbol">(</span><span class="string">"%f"</span><span class="symbol">,</span> <span class="symbol">&amp;</span>s<span class="symbol">[</span>i<span class="symbol">]</span><span class="symbol">.</span>marks<span class="symbol">);</span>
+    <span class="symbol">}</span>
 
-    return 0;
-}
-</pre>
+    <span class="function">printf</span><span class="symbol">(</span><span class="string">"\nStudent Details\n"</span><span class="symbol">);</span>
 
+    <span class="comment">// Display student details</span>
+    <span class="keyword">for</span><span class="symbol">(</span><span class="datatype">int</span> i <span class="symbol">=</span> 0<span class="symbol">;</span> i <span class="symbol">&lt;</span> 3<span class="symbol">;</span> i<span class="symbol">++</span><span class="symbol">)</span>
+    <span class="symbol">{</span>
+        <span class="function">printf</span><span class="symbol">(</span><span class="string">"\nRoll No = %d\n"</span><span class="symbol">,</span> s<span class="symbol">[</span>i<span class="symbol">]</span><span class="symbol">.</span>rollNo<span class="symbol">);</span>
+        <span class="function">printf</span><span class="symbol">(</span><span class="string">"Name = %s\n"</span><span class="symbol">,</span> s<span class="symbol">[</span>i<span class="symbol">]</span><span class="symbol">.</span>name<span class="symbol">);</span>
+        <span class="function">printf</span><span class="symbol">(</span><span class="string">"Marks = %.2f\n"</span><span class="symbol">,</span> s<span class="symbol">[</span>i<span class="symbol">]</span><span class="symbol">.</span>marks<span class="symbol">);</span>
+    <span class="symbol">}</span>
+
+    <span class="keyword">return</span> 0<span class="symbol">;</span>
+<span class="symbol">}</span>
+</code></pre>
+
+</div>
+
+<h4>Sample Input</h4>
+
+<div class="code-box">
+
+    <div class="code-title">
+        <span>Input</span>
+    </div>
+
+<pre><code>Enter Roll No: 101
+Enter Name: Pradeep
+Enter Marks: 89.5
+
+Enter Roll No: 102
+Enter Name: Rahul
+Enter Marks: 84.0
+
+Enter Roll No: 103
+Enter Name: Amit
+Enter Marks: 91.5</code></pre>
+
+</div>
+
+<h4>Output</h4>
+
+<div class="code-box">
+
+    <div class="code-title">
+        <span>Output</span>
+    </div>
+
+<pre><code>Student Details
+
+Roll No = 101
+Name = Pradeep
+Marks = 89.50
+
+Roll No = 102
+Name = Rahul
+Marks = 84.00
+
+Roll No = 103
+Name = Amit
+Marks = 91.50</code></pre>
+
+</div>
+
+<div class="box">
+<b>Explanation:</b>
+
+<ul>
+<li><code>struct Student s[3];</code> creates an array that can store details of <b>3 students</b>.</li>
+<li>Each element of the array is a separate structure variable.</li>
+<li>The first <code>for</code> loop is used to input the roll number, name, and marks for each student.</li>
+<li>The second <code>for</code> loop displays the details of all students.</li>
+<li>Members of each structure are accessed using the <b>dot (.) operator</b>, such as:
+    <ul>
+        <li><code>s[i].rollNo</code></li>
+        <li><code>s[i].name</code></li>
+        <li><code>s[i].marks</code></li>
+    </ul>
+</li>
+</ul>
+
+</div>
 <hr>
 
 <h3>Structures Containing Arrays</h3>
@@ -14542,87 +17918,198 @@ int main()
 A structure member can itself be an array.
 </p>
 
-<h4>Example</h4>
+<h4>Example: Structure with Array</h4>
 
-<pre>
-#include <stdio.h>
+<div class="code-box">
 
-struct Student
-{
-    int rollNo;
-    char name[50];
-    int marks[5];
-};
+    <div class="code-title">
+        <span>Structure Containing an Array</span>
+    </div>
 
-int main()
-{
-    struct Student s1;
+<pre><code><span class="preprocessor">#include</span> <span class="header-file">&lt;stdio.h&gt;</span>
 
-    s1.rollNo = 101;
+<span class="keyword">struct</span> Student
+<span class="symbol">{</span>
+    <span class="datatype">int</span> rollNo<span class="symbol">;</span>
+    <span class="datatype">char</span> name<span class="symbol">[</span>50<span class="symbol">];</span>
+    <span class="datatype">int</span> marks<span class="symbol">[</span>5<span class="symbol">];</span>
+<span class="symbol">}</span><span class="symbol">;</span>
 
-    printf("Enter Name: ");
-    scanf("%s", s1.name);
+<span class="datatype">int</span> <span class="function">main</span><span class="symbol">()</span>
+<span class="symbol">{</span>
+    <span class="keyword">struct</span> Student s1<span class="symbol">;</span>
 
-    printf("Enter 5 Subject Marks\\n");
+    s1<span class="symbol">.</span>rollNo <span class="symbol">=</span> 101<span class="symbol">;</span>
 
-    for(int i = 0; i < 5; i++)
-    {
-        scanf("%d", &s1.marks[i]);
-    }
+    <span class="function">printf</span><span class="symbol">(</span><span class="string">"Enter Name: "</span><span class="symbol">);</span>
+    <span class="function">scanf</span><span class="symbol">(</span><span class="string">"%s"</span><span class="symbol">,</span> s1<span class="symbol">.</span>name<span class="symbol">);</span>
 
-    printf("\\nStudent Information\\n");
+    <span class="function">printf</span><span class="symbol">(</span><span class="string">"Enter 5 Subject Marks\n"</span><span class="symbol">);</span>
 
-    printf("Roll No = %d\\n", s1.rollNo);
-    printf("Name = %s\\n", s1.name);
+    <span class="comment">// Input marks</span>
+    <span class="keyword">for</span><span class="symbol">(</span><span class="datatype">int</span> i <span class="symbol">=</span> 0<span class="symbol">;</span> i <span class="symbol">&lt;</span> 5<span class="symbol">;</span> i<span class="symbol">++</span><span class="symbol">)</span>
+    <span class="symbol">{</span>
+        <span class="function">scanf</span><span class="symbol">(</span><span class="string">"%d"</span><span class="symbol">,</span> <span class="symbol">&amp;</span>s1<span class="symbol">.</span>marks<span class="symbol">[</span>i<span class="symbol">]</span><span class="symbol">);</span>
+    <span class="symbol">}</span>
 
-    printf("Marks = ");
+    <span class="function">printf</span><span class="symbol">(</span><span class="string">"\nStudent Information\n"</span><span class="symbol">);</span>
 
-    for(int i = 0; i < 5; i++)
-    {
-        printf("%d ", s1.marks[i]);
-    }
+    <span class="function">printf</span><span class="symbol">(</span><span class="string">"Roll No = %d\n"</span><span class="symbol">,</span> s1<span class="symbol">.</span>rollNo<span class="symbol">);</span>
+    <span class="function">printf</span><span class="symbol">(</span><span class="string">"Name = %s\n"</span><span class="symbol">,</span> s1<span class="symbol">.</span>name<span class="symbol">);</span>
 
-    return 0;
-}
-</pre>
+    <span class="function">printf</span><span class="symbol">(</span><span class="string">"Marks = "</span><span class="symbol">);</span>
 
+    <span class="comment">// Display marks</span>
+    <span class="keyword">for</span><span class="symbol">(</span><span class="datatype">int</span> i <span class="symbol">=</span> 0<span class="symbol">;</span> i <span class="symbol">&lt;</span> 5<span class="symbol">;</span> i<span class="symbol">++</span><span class="symbol">)</span>
+    <span class="symbol">{</span>
+        <span class="function">printf</span><span class="symbol">(</span><span class="string">"%d "</span><span class="symbol">,</span> s1<span class="symbol">.</span>marks<span class="symbol">[</span>i<span class="symbol">]</span><span class="symbol">);</span>
+    <span class="symbol">}</span>
+
+    <span class="keyword">return</span> 0<span class="symbol">;</span>
+<span class="symbol">}</span>
+</code></pre>
+
+</div>
+
+<h4>Sample Input</h4>
+
+<div class="code-box">
+
+    <div class="code-title">
+        <span>Input</span>
+    </div>
+
+<pre><code>Enter Name: Pradeep
+Enter 5 Subject Marks
+80
+85
+90
+88
+92</code></pre>
+
+</div>
+
+<h4>Output</h4>
+
+<div class="code-box">
+
+    <div class="code-title">
+        <span>Output</span>
+    </div>
+
+<pre><code>Student Information
+Roll No = 101
+Name = Pradeep
+Marks = 80 85 90 88 92</code></pre>
+
+</div>
+
+<div class="box">
+<b>Explanation:</b>
+
+<ul>
+<li><code>struct Student</code> contains three members: <code>rollNo</code>, <code>name</code>, and an integer array <code>marks[5]</code>.</li>
+<li>The <code>marks</code> array stores the marks of <b>5 subjects</b> for one student.</li>
+<li><code>scanf("%s", s1.name);</code> reads the student's name.</li>
+<li>The first <code>for</code> loop inputs the marks into <code>s1.marks[i]</code>.</li>
+<li>The second <code>for</code> loop displays all five subject marks.</li>
+<li>The array inside the structure is accessed using <code>s1.marks[i]</code>.</li>
+</ul>
+
+</div>
 <hr>
 
 <h3>Real Life Example of Structure</h3>
 
-<pre>
-#include <stdio.h>
+<div class="code-box">
 
-struct Employee
-{
-    int id;
-    char name[50];
-    float salary;
-};
+    <div class="code-title">
+        <span>Read and Display Employee Information</span>
+    </div>
 
-int main()
-{
-    struct Employee emp;
+<pre><code><span class="preprocessor">#include</span> <span class="header-file">&lt;stdio.h&gt;</span>
 
-    printf("Enter Employee ID: ");
-    scanf("%d", &emp.id);
+<span class="keyword">struct</span> Employee
+<span class="symbol">{</span>
+    <span class="datatype">int</span> id<span class="symbol">;</span>
+    <span class="datatype">char</span> name<span class="symbol">[</span>50<span class="symbol">];</span>
+    <span class="datatype">float</span> salary<span class="symbol">;</span>
+<span class="symbol">}</span><span class="symbol">;</span>
 
-    printf("Enter Employee Name: ");
-    scanf("%s", emp.name);
+<span class="datatype">int</span> <span class="function">main</span><span class="symbol">()</span>
+<span class="symbol">{</span>
+    <span class="keyword">struct</span> Employee emp<span class="symbol">;</span>
 
-    printf("Enter Salary: ");
-    scanf("%f", &emp.salary);
+    <span class="comment">// Input employee details</span>
+    <span class="function">printf</span><span class="symbol">(</span><span class="string">"Enter Employee ID: "</span><span class="symbol">);</span>
+    <span class="function">scanf</span><span class="symbol">(</span><span class="string">"%d"</span><span class="symbol">,</span> <span class="symbol">&amp;</span>emp<span class="symbol">.</span>id<span class="symbol">);</span>
 
-    printf("\\nEmployee Information\\n");
+    <span class="function">printf</span><span class="symbol">(</span><span class="string">"Enter Employee Name: "</span><span class="symbol">);</span>
+    <span class="function">scanf</span><span class="symbol">(</span><span class="string">"%s"</span><span class="symbol">,</span> emp<span class="symbol">.</span>name<span class="symbol">);</span>
 
-    printf("ID = %d\\n", emp.id);
-    printf("Name = %s\\n", emp.name);
-    printf("Salary = %.2f", emp.salary);
+    <span class="function">printf</span><span class="symbol">(</span><span class="string">"Enter Salary: "</span><span class="symbol">);</span>
+    <span class="function">scanf</span><span class="symbol">(</span><span class="string">"%f"</span><span class="symbol">,</span> <span class="symbol">&amp;</span>emp<span class="symbol">.</span>salary<span class="symbol">);</span>
 
-    return 0;
-}
-</pre>
+    <span class="function">printf</span><span class="symbol">(</span><span class="string">"\nEmployee Information\n"</span><span class="symbol">);</span>
 
+    <span class="comment">// Display employee details</span>
+    <span class="function">printf</span><span class="symbol">(</span><span class="string">"ID = %d\n"</span><span class="symbol">,</span> emp<span class="symbol">.</span>id<span class="symbol">);</span>
+    <span class="function">printf</span><span class="symbol">(</span><span class="string">"Name = %s\n"</span><span class="symbol">,</span> emp<span class="symbol">.</span>name<span class="symbol">);</span>
+    <span class="function">printf</span><span class="symbol">(</span><span class="string">"Salary = %.2f"</span><span class="symbol">,</span> emp<span class="symbol">.</span>salary<span class="symbol">);</span>
+
+    <span class="keyword">return</span> 0<span class="symbol">;</span>
+<span class="symbol">}</span>
+</code></pre>
+
+</div>
+
+<h4>Sample Input</h4>
+
+<div class="code-box">
+
+    <div class="code-title">
+        <span>Input</span>
+    </div>
+
+<pre><code>Enter Employee ID: 101
+Enter Employee Name: Pradeep
+Enter Salary: 45000</code></pre>
+
+</div>
+
+<h4>Output</h4>
+
+<div class="code-box">
+
+    <div class="code-title">
+        <span>Output</span>
+    </div>
+
+<pre><code>Employee Information
+ID = 101
+Name = Pradeep
+Salary = 45000.00</code></pre>
+
+</div>
+
+<div class="box">
+<b>Explanation:</b>
+
+<ul>
+<li><code>struct Employee</code> defines a structure with three members: <code>id</code>, <code>name</code>, and <code>salary</code>.</li>
+<li><code>struct Employee emp;</code> creates a structure variable named <code>emp</code>.</li>
+<li><code>scanf()</code> is used to input the employee's ID, name, and salary.</li>
+<li>The <b>dot (.) operator</b> is used to access the structure members:
+    <ul>
+        <li><code>emp.id</code></li>
+        <li><code>emp.name</code></li>
+        <li><code>emp.salary</code></li>
+    </ul>
+</li>
+<li><code>printf()</code> displays all the information stored in the structure variable.</li>
+</ul>
+
+</div>
 <hr>
 
 <h3>Advantages of Structures</h3>
@@ -14817,25 +18304,75 @@ the same memory space. Therefore, at any given time, only one member can contain
 
 <h3>Syntax of Union</h3>
 
-<pre>
-union union_name
-{
-    data_type member1;
-    data_type member2;
-    data_type member3;
-};
-</pre>
+<div class="code-box">
 
-<h4>Example</h4>
+    <div class="code-title">
+        <span>Union Syntax</span>
+    </div>
 
-<pre>
-union Student
-{
-    int rollNo;
-    float marks;
-    char grade;
-};
-</pre>
+<pre><code><span class="keyword">union</span> union_name
+<span class="symbol">{</span>
+    <span class="datatype">data_type</span> member1<span class="symbol">;</span>
+    <span class="datatype">data_type</span> member2<span class="symbol">;</span>
+    <span class="datatype">data_type</span> member3<span class="symbol">;</span>
+<span class="symbol">}</span><span class="symbol">;</span>
+</code></pre>
+
+</div>
+
+<div class="box">
+<b>Explanation:</b>
+
+<ul>
+<li><code>union</code> is a keyword used to define a union in C.</li>
+<li><code>union_name</code> is the name of the union (for example: <code>Student</code>, <code>Employee</code>, <code>Data</code>).</li>
+<li>Inside the union, different members of different data types can be declared.</li>
+<li>Unlike a structure, <b>all members of a union share the same memory location</b>.</li>
+<li>At any given time, only <b>one member</b> can store a valid value.</li>
+<li>The size of a union is equal to the size of its <b>largest member</b>.</li>
+<li>The union definition ends with a semicolon (<code>;</code>).</li>
+<li>Memory is allocated only when a union variable is created.</li>
+</ul>
+
+</div>
+
+<h4>Example: Defining a Union</h4>
+
+<div class="code-box">
+
+    <div class="code-title">
+        <span>Union Declaration</span>
+    </div>
+
+<pre><code><span class="keyword">union</span> Student
+<span class="symbol">{</span>
+    <span class="datatype">int</span> rollNo<span class="symbol">;</span>
+    <span class="datatype">float</span> marks<span class="symbol">;</span>
+    <span class="datatype">char</span> grade<span class="symbol">;</span>
+<span class="symbol">}</span><span class="symbol">;</span>
+</code></pre>
+
+</div>
+
+<div class="box">
+<b>Explanation:</b>
+
+<ul>
+<li><code>union Student</code> defines a union named <code>Student</code>.</li>
+<li>The union contains three members:
+    <ul>
+        <li><code>rollNo</code> of type <code>int</code></li>
+        <li><code>marks</code> of type <code>float</code></li>
+        <li><code>grade</code> of type <code>char</code></li>
+    </ul>
+</li>
+<li>All members share the <b>same memory location</b>.</li>
+<li>Only <b>one member can hold a valid value at a time</b>.</li>
+<li>If a new value is assigned to one member, the previous value stored in another member is overwritten.</li>
+<li>The size of the union is equal to the size of its <b>largest data member</b>. In this example, the size is typically the size of a <code>float</code> or an <code>int</code> (usually <code>4 bytes</code>, depending on the compiler).</li>
+</ul>
+
+</div>
 
 <hr>
 
@@ -14845,28 +18382,78 @@ union Student
 After creating a union, we need a union variable to store data.
 </p>
 
-<h4>Method 1</h4>
+<h4>Method 1: Declare Union Variable After Union Definition</h4>
 
-<pre>
-union Student
-{
-    int rollNo;
-    float marks;
-};
+<div class="code-box">
 
-union Student s1;
-</pre>
+    <div class="code-title">
+        <span>Method 1</span>
+    </div>
 
-<h4>Method 2</h4>
+<pre><code><span class="keyword">union</span> Student
+<span class="symbol">{</span>
+    <span class="datatype">int</span> rollNo<span class="symbol">;</span>
+    <span class="datatype">float</span> marks<span class="symbol">;</span>
+<span class="symbol">}</span><span class="symbol">;</span>
 
-<pre>
-union Student
-{
-    int rollNo;
-    float marks;
-} s1, s2;
-</pre>
+<span class="keyword">union</span> Student s1<span class="symbol">;</span>
+</code></pre>
 
+</div>
+
+<div class="box">
+<b>Explanation:</b>
+
+<ul>
+<li>First, the <code>Student</code> union is defined.</li>
+<li>After the union definition, a union variable <code>s1</code> is declared.</li>
+<li>Memory is allocated for the union only when the variable <code>s1</code> is created.</li>
+<li>This method is useful when you want to create variables later in the program.</li>
+</ul>
+
+</div>
+
+<hr>
+
+<h4>Method 2: Declare Union Variables Along with Union Definition</h4>
+
+<div class="code-box">
+
+    <div class="code-title">
+        <span>Method 2</span>
+    </div>
+
+<pre><code><span class="keyword">union</span> Student
+<span class="symbol">{</span>
+    <span class="datatype">int</span> rollNo<span class="symbol">;</span>
+    <span class="datatype">float</span> marks<span class="symbol">;</span>
+<span class="symbol">}</span> s1<span class="symbol">,</span> s2<span class="symbol">;</span>
+</code></pre>
+
+</div>
+
+<div class="box">
+<b>Explanation:</b>
+
+<ul>
+<li>The <code>Student</code> union is defined and the variables <code>s1</code> and <code>s2</code> are declared in the same statement.</li>
+<li>Memory is allocated for both <code>s1</code> and <code>s2</code> immediately.</li>
+<li>Both variables are independent but have the same union type.</li>
+<li>This method is shorter and is commonly used when the variables are needed immediately after the union definition.</li>
+</ul>
+
+</div>
+
+<div class="box">
+<b>Note:</b>
+
+<ul>
+<li>Both methods are correct.</li>
+<li>The only difference is <b>when and where the union variables are declared</b>.</li>
+<li>In both methods, the union behaves the same and all members share the same memory location.</li>
+</ul>
+
+</div>
 <hr>
 
 <h3>Accessing Union Members</h3>
@@ -14875,28 +18462,63 @@ union Student
 The dot (.) operator is used to access union members.
 </p>
 
-<h4>Example</h4>
 
-<pre>
-#include <stdio.h>
+<h4>Example: Accessing Union Members</h4>
 
-union Student
-{
-    int rollNo;
-};
+<div class="code-box">
 
-int main()
-{
-    union Student s1;
+    <div class="code-title">
+        <span>Union Member Access</span>
+    </div>
 
-    s1.rollNo = 101;
+<pre><code><span class="preprocessor">#include</span> <span class="header-file">&lt;stdio.h&gt;</span>
 
-    printf("Roll No = %d", s1.rollNo);
+<span class="keyword">union</span> Student
+<span class="symbol">{</span>
+    <span class="datatype">int</span> rollNo<span class="symbol">;</span>
+<span class="symbol">}</span><span class="symbol">;</span>
 
-    return 0;
-}
-</pre>
+<span class="datatype">int</span> <span class="function">main</span><span class="symbol">()</span>
+<span class="symbol">{</span>
+    <span class="keyword">union</span> Student s1<span class="symbol">;</span>
 
+    <span class="comment">// Assign value to union member</span>
+    s1<span class="symbol">.</span>rollNo <span class="symbol">=</span> 101<span class="symbol">;</span>
+
+    <span class="comment">// Display union member</span>
+    <span class="function">printf</span><span class="symbol">(</span><span class="string">"Roll No = %d"</span><span class="symbol">,</span> s1<span class="symbol">.</span>rollNo<span class="symbol">);</span>
+
+    <span class="keyword">return</span> 0<span class="symbol">;</span>
+<span class="symbol">}</span>
+</code></pre>
+
+</div>
+
+<h4>Output</h4>
+
+<div class="code-box">
+
+    <div class="code-title">
+        <span>Output</span>
+    </div>
+
+<pre><code>Roll No = 101</code></pre>
+
+</div>
+
+<div class="box">
+<b>Explanation:</b>
+
+<ul>
+<li><code>union Student</code> contains one member named <code>rollNo</code>.</li>
+<li><code>union Student s1;</code> creates a union variable named <code>s1</code>.</li>
+<li><code>s1.rollNo = 101;</code> stores the value <b>101</b> in the <code>rollNo</code> member.</li>
+<li>The <b>dot (.) operator</b> is used to access union members, just like a structure.</li>
+<li><code>printf()</code> displays the value stored in the union member.</li>
+<li>Since this union has only one member, there is no memory-sharing effect in this example.</li>
+</ul>
+
+</div>
 <hr>
 
 <h3>Union Initialization</h3>
@@ -14906,27 +18528,60 @@ A union can be initialized during declaration.
 Only the first member is initialized directly.
 </p>
 
-<h4>Example</h4>
+<h4>Example: Union Initialization</h4>
 
-<pre>
-#include <stdio.h>
+<div class="code-box">
 
-union Data
-{
-    int num;
-    float price;
-};
+    <div class="code-title">
+        <span>Initialize a Union Variable</span>
+    </div>
 
-int main()
-{
-    union Data d = {100};
+<pre><code><span class="preprocessor">#include</span> <span class="header-file">&lt;stdio.h&gt;</span>
 
-    printf("Number = %d", d.num);
+<span class="keyword">union</span> Data
+<span class="symbol">{</span>
+    <span class="datatype">int</span> num<span class="symbol">;</span>
+    <span class="datatype">float</span> price<span class="symbol">;</span>
+<span class="symbol">}</span><span class="symbol">;</span>
 
-    return 0;
-}
-</pre>
+<span class="datatype">int</span> <span class="function">main</span><span class="symbol">()</span>
+<span class="symbol">{</span>
+    <span class="comment">// Initialize the first member of the union</span>
+    <span class="keyword">union</span> Data d <span class="symbol">=</span> <span class="symbol">{</span>100<span class="symbol">}</span><span class="symbol">;</span>
 
+    <span class="comment">// Display the value</span>
+    <span class="function">printf</span><span class="symbol">(</span><span class="string">"Number = %d"</span><span class="symbol">,</span> d<span class="symbol">.</span>num<span class="symbol">);</span>
+
+    <span class="keyword">return</span> 0<span class="symbol">;</span>
+<span class="symbol">}</span>
+</code></pre>
+
+</div>
+
+<h4>Output</h4>
+
+<div class="code-box">
+
+    <div class="code-title">
+        <span>Output</span>
+    </div>
+
+<pre><code>Number = 100</code></pre>
+
+</div>
+
+<div class="box">
+<b>Explanation:</b>
+
+<ul>
+<li><code>union Data</code> contains two members: <code>num</code> and <code>price</code>.</li>
+<li><code>union Data d = {100};</code> initializes the union with the value <b>100</b>.</li>
+<li>By default, the value inside the braces is assigned to the <b>first member</b> of the union, which is <code>num</code>.</li>
+<li><code>printf("Number = %d", d.num);</code> displays the value stored in the <code>num</code> member.</li>
+<li>Since all union members share the same memory, writing a value to another member (such as <code>price</code>) will overwrite the value of <code>num</code>.</li>
+</ul>
+
+</div>
 <hr>
 
 <h3>Understanding Shared Memory</h3>
@@ -14936,34 +18591,75 @@ All members of a union share the same memory location.
 When one member's value changes, the previous member's value is overwritten.
 </p>
 
-<h4>Example</h4>
+<h4>Example: Memory Sharing in Union</h4>
 
-<pre>
-#include <stdio.h>
+<div class="code-box">
 
-union Data
-{
-    int num;
-    float price;
-};
+    <div class="code-title">
+        <span>Union Memory Sharing</span>
+    </div>
 
-int main()
-{
-    union Data d;
+<pre><code><span class="preprocessor">#include</span> <span class="header-file">&lt;stdio.h&gt;</span>
 
-    d.num = 100;
+<span class="keyword">union</span> Data
+<span class="symbol">{</span>
+    <span class="datatype">int</span> num<span class="symbol">;</span>
+    <span class="datatype">float</span> price<span class="symbol">;</span>
+<span class="symbol">}</span><span class="symbol">;</span>
 
-    printf("Number = %d\\n", d.num);
+<span class="datatype">int</span> <span class="function">main</span><span class="symbol">()</span>
+<span class="symbol">{</span>
+    <span class="keyword">union</span> Data d<span class="symbol">;</span>
 
-    d.price = 99.5;
+    <span class="comment">// Store value in num</span>
+    d<span class="symbol">.</span>num <span class="symbol">=</span> 100<span class="symbol">;</span>
 
-    printf("Price = %.2f\\n", d.price);
+    <span class="function">printf</span><span class="symbol">(</span><span class="string">"Number = %d\n"</span><span class="symbol">,</span> d<span class="symbol">.</span>num<span class="symbol">);</span>
 
-    printf("Number After Storing Price = %d", d.num);
+    <span class="comment">// Store value in price</span>
+    d<span class="symbol">.</span>price <span class="symbol">=</span> 99.5<span class="symbol">;</span>
 
-    return 0;
-}
-</pre>
+    <span class="function">printf</span><span class="symbol">(</span><span class="string">"Price = %.2f\n"</span><span class="symbol">,</span> d<span class="symbol">.</span>price<span class="symbol">);</span>
+
+    <span class="comment">// Previous value of num is overwritten</span>
+    <span class="function">printf</span><span class="symbol">(</span><span class="string">"Number After Storing Price = %d"</span><span class="symbol">,</span> d<span class="symbol">.</span>num<span class="symbol">);</span>
+
+    <span class="keyword">return</span> 0<span class="symbol">;</span>
+<span class="symbol">}</span>
+</code></pre>
+
+</div>
+
+<h4>Sample Output</h4>
+
+<div class="code-box">
+
+    <div class="code-title">
+        <span>Output</span>
+    </div>
+
+<pre><code>Number = 100
+Price = 99.50
+Number After Storing Price = 1120337920</code></pre>
+
+</div>
+
+<div class="box">
+<b>Explanation:</b>
+
+<ul>
+<li><code>union Data</code> contains two members: <code>num</code> and <code>price</code>.</li>
+<li>Initially, <code>d.num = 100;</code> stores the integer value <b>100</b>.</li>
+<li>The program prints:
+<code>Number = 100</code>.</li>
+<li>Next, <code>d.price = 99.5;</code> stores a floating-point value in the <code>price</code> member.</li>
+<li>Since all union members share the <b>same memory location</b>, storing <code>price</code> overwrites the memory previously used by <code>num</code>.</li>
+<li>When <code>d.num</code> is printed again, it no longer contains <b>100</b>. Instead, it displays the integer interpretation of the binary representation of the floating-point value <code>99.5</code>.</li>
+<li>The exact value of <code>Number After Storing Price</code> may be different on different compilers and systems because it depends on how the float is stored in memory.</li>
+<li>This example clearly demonstrates that <b>only one union member can hold a valid value at a time</b>.</li>
+</ul>
+
+</div>
 
 <h4>Explanation</h4>
 
@@ -14981,25 +18677,78 @@ int main()
 The size of a union is equal to the size of its largest member.
 </p>
 
-<h4>Example</h4>
 
-<pre>
-#include <stdio.h>
+<h4>Example: Size of Union</h4>
 
-union Data
-{
-    int num;
-    float marks;
-    char grade;
-};
+<div class="code-box">
 
-int main()
-{
-    printf("Size = %lu", sizeof(union Data));
+    <div class="code-title">
+        <span>Find Size of Union</span>
+    </div>
 
-    return 0;
-}
-</pre>
+<pre><code><span class="preprocessor">#include</span> <span class="header-file">&lt;stdio.h&gt;</span>
+
+<span class="keyword">union</span> Data
+<span class="symbol">{</span>
+    <span class="datatype">int</span> num<span class="symbol">;</span>
+    <span class="datatype">float</span> marks<span class="symbol">;</span>
+    <span class="datatype">char</span> grade<span class="symbol">;</span>
+<span class="symbol">}</span><span class="symbol">;</span>
+
+<span class="datatype">int</span> <span class="function">main</span><span class="symbol">()</span>
+<span class="symbol">{</span>
+    <span class="function">printf</span><span class="symbol">(</span><span class="string">"Size = %lu"</span><span class="symbol">,</span> <span class="function">sizeof</span><span class="symbol">(</span><span class="keyword">union</span> Data<span class="symbol">)</span><span class="symbol">);</span>
+
+    <span class="keyword">return</span> 0<span class="symbol">;</span>
+<span class="symbol">}</span>
+</code></pre>
+
+</div>
+
+<h4>Sample Output</h4>
+
+<div class="code-box">
+
+    <div class="code-title">
+        <span>Output</span>
+    </div>
+
+<pre><code>Size = 4</code></pre>
+
+</div>
+
+<div class="box">
+<b>Explanation:</b>
+
+<ul>
+<li><code>union Data</code> contains three members:
+    <ul>
+        <li><code>int num</code></li>
+        <li><code>float marks</code></li>
+        <li><code>char grade</code></li>
+    </ul>
+</li>
+
+<li><code>sizeof(union Data)</code> returns the total memory occupied by the union.</li>
+
+<li>In a union, <b>all members share the same memory location</b>.</li>
+
+<li>The size of a union is equal to the size of its <b>largest data member</b>, not the sum of all members.</li>
+
+<li>On most systems:
+    <ul>
+        <li><code>int</code> = 4 bytes</li>
+        <li><code>float</code> = 4 bytes</li>
+        <li><code>char</code> = 1 byte</li>
+    </ul>
+</li>
+
+<li>Since the largest member (<code>int</code> or <code>float</code>) is <b>4 bytes</b>, the size of the union is <b>4 bytes</b>.</li>
+
+<li>Some compilers may add padding for alignment, so the size can vary on different systems.</li>
+</ul>
+
+</div>
 
 <h4>Explanation</h4>
 
@@ -15012,29 +18761,71 @@ then the union size will be 4 bytes because the largest member is 4 bytes.
 
 <h3>Union with User Input</h3>
 
-<h4>Example</h4>
+<div class="code-box">
 
-<pre>
-#include <stdio.h>
+    <div class="code-title">
+        <span>Read and Display Union Data</span>
+    </div>
 
-union Data
-{
-    int num;
-};
+<pre><code><span class="preprocessor">#include</span> <span class="header-file">&lt;stdio.h&gt;</span>
 
-int main()
-{
-    union Data d;
+<span class="keyword">union</span> Data
+<span class="symbol">{</span>
+    <span class="datatype">int</span> num<span class="symbol">;</span>
+<span class="symbol">}</span><span class="symbol">;</span>
 
-    printf("Enter Number: ");
-    scanf("%d", &d.num);
+<span class="datatype">int</span> <span class="function">main</span><span class="symbol">()</span>
+<span class="symbol">{</span>
+    <span class="keyword">union</span> Data d<span class="symbol">;</span>
 
-    printf("You Entered = %d", d.num);
+    <span class="function">printf</span><span class="symbol">(</span><span class="string">"Enter Number: "</span><span class="symbol">);</span>
+    <span class="function">scanf</span><span class="symbol">(</span><span class="string">"%d"</span><span class="symbol">,</span> <span class="symbol">&amp;</span>d<span class="symbol">.</span>num<span class="symbol">);</span>
 
-    return 0;
-}
-</pre>
+    <span class="function">printf</span><span class="symbol">(</span><span class="string">"You Entered = %d"</span><span class="symbol">,</span> d<span class="symbol">.</span>num<span class="symbol">);</span>
 
+    <span class="keyword">return</span> 0<span class="symbol">;</span>
+<span class="symbol">}</span>
+</code></pre>
+
+</div>
+
+<h4>Sample Input</h4>
+
+<div class="code-box">
+
+    <div class="code-title">
+        <span>Input</span>
+    </div>
+
+<pre><code>Enter Number: 100</code></pre>
+
+</div>
+
+<h4>Output</h4>
+
+<div class="code-box">
+
+    <div class="code-title">
+        <span>Output</span>
+    </div>
+
+<pre><code>You Entered = 100</code></pre>
+
+</div>
+
+<div class="box">
+<b>Explanation:</b>
+
+<ul>
+<li><code>union Data</code> contains one member named <code>num</code>.</li>
+<li><code>union Data d;</code> creates a union variable named <code>d</code>.</li>
+<li><code>scanf("%d", &amp;d.num);</code> reads an integer from the user and stores it in the <code>num</code> member.</li>
+<li><code>printf("You Entered = %d", d.num);</code> displays the value entered by the user.</li>
+<li>The <b>dot (.) operator</b> is used to access the members of a union.</li>
+<li>Since this union has only one member, there is no memory-sharing effect in this example.</li>
+</ul>
+
+</div>
 <hr>
 
 <h3>Array of Unions</h3>
@@ -15043,36 +18834,90 @@ int main()
 An array can store multiple union variables.
 </p>
 
-<h4>Example</h4>
+<h4>Example: Array of Unions</h4>
 
-<pre>
-#include <stdio.h>
+<div class="code-box">
 
-union Student
-{
-    int rollNo;
-};
+    <div class="code-title">
+        <span>Store and Display Multiple Union Records</span>
+    </div>
 
-int main()
-{
-    union Student s[3];
+<pre><code><span class="preprocessor">#include</span> <span class="header-file">&lt;stdio.h&gt;</span>
 
-    for(int i = 0; i < 3; i++)
-    {
-        printf("Enter Roll No: ");
-        scanf("%d", &s[i].rollNo);
-    }
+<span class="keyword">union</span> Student
+<span class="symbol">{</span>
+    <span class="datatype">int</span> rollNo<span class="symbol">;</span>
+<span class="symbol">}</span><span class="symbol">;</span>
 
-    printf("\\nStudent Details\\n");
+<span class="datatype">int</span> <span class="function">main</span><span class="symbol">()</span>
+<span class="symbol">{</span>
+    <span class="comment">// Declare an array of unions</span>
+    <span class="keyword">union</span> Student s<span class="symbol">[</span>3<span class="symbol">];</span>
 
-    for(int i = 0; i < 3; i++)
-    {
-        printf("Roll No = %d\\n", s[i].rollNo);
-    }
+    <span class="comment">// Input roll numbers</span>
+    <span class="keyword">for</span><span class="symbol">(</span><span class="datatype">int</span> i <span class="symbol">=</span> 0<span class="symbol">;</span> i <span class="symbol">&lt;</span> 3<span class="symbol">;</span> i<span class="symbol">++</span><span class="symbol">)</span>
+    <span class="symbol">{</span>
+        <span class="function">printf</span><span class="symbol">(</span><span class="string">"Enter Roll No: "</span><span class="symbol">);</span>
+        <span class="function">scanf</span><span class="symbol">(</span><span class="string">"%d"</span><span class="symbol">,</span> <span class="symbol">&amp;</span>s<span class="symbol">[</span>i<span class="symbol">]</span><span class="symbol">.</span>rollNo<span class="symbol">);</span>
+    <span class="symbol">}</span>
 
-    return 0;
-}
-</pre>
+    <span class="function">printf</span><span class="symbol">(</span><span class="string">"\nStudent Details\n"</span><span class="symbol">);</span>
+
+    <span class="comment">// Display roll numbers</span>
+    <span class="keyword">for</span><span class="symbol">(</span><span class="datatype">int</span> i <span class="symbol">=</span> 0<span class="symbol">;</span> i <span class="symbol">&lt;</span> 3<span class="symbol">;</span> i<span class="symbol">++</span><span class="symbol">)</span>
+    <span class="symbol">{</span>
+        <span class="function">printf</span><span class="symbol">(</span><span class="string">"Roll No = %d\n"</span><span class="symbol">,</span> s<span class="symbol">[</span>i<span class="symbol">]</span><span class="symbol">.</span>rollNo<span class="symbol">);</span>
+    <span class="symbol">}</span>
+
+    <span class="keyword">return</span> 0<span class="symbol">;</span>
+<span class="symbol">}</span>
+</code></pre>
+
+</div>
+
+<h4>Sample Input</h4>
+
+<div class="code-box">
+
+    <div class="code-title">
+        <span>Input</span>
+    </div>
+
+<pre><code>Enter Roll No: 101
+Enter Roll No: 102
+Enter Roll No: 103</code></pre>
+
+</div>
+
+<h4>Output</h4>
+
+<div class="code-box">
+
+    <div class="code-title">
+        <span>Output</span>
+    </div>
+
+<pre><code>Student Details
+Roll No = 101
+Roll No = 102
+Roll No = 103</code></pre>
+
+</div>
+
+<div class="box">
+<b>Explanation:</b>
+
+<ul>
+<li><code>union Student s[3];</code> creates an array of <b>3 union variables</b>.</li>
+<li>Each element of the array is an independent union.</li>
+<li>The first <code>for</code> loop is used to input the roll number for each union variable.</li>
+<li>The second <code>for</code> loop displays the stored roll numbers.</li>
+<li>The union member is accessed using the <b>dot (.) operator</b>, for example <code>s[i].rollNo</code>.</li>
+<li>Although this example uses an array of unions, each union still follows the same rule that <b>all members of a union share the same memory location</b>.</li>
+<li>Since this union contains only one member, there is no memory-sharing effect in this program.</li>
+</ul>
+
+</div>
 
 <hr>
 
@@ -15082,36 +18927,92 @@ int main()
 A union can be used as a member of a structure.
 </p>
 
-<h4>Example</h4>
+<h4>Example: Union Inside a Structure</h4>
 
-<pre>
-#include <stdio.h>
+<div class="code-box">
 
-union Data
-{
-    int num;
-    float marks;
-};
+    <div class="code-title">
+        <span>Nested Union in Structure</span>
+    </div>
 
-struct Student
-{
-    int rollNo;
-    union Data info;
-};
+<pre><code><span class="preprocessor">#include</span> <span class="header-file">&lt;stdio.h&gt;</span>
 
-int main()
-{
-    struct Student s1;
+<span class="keyword">union</span> Data
+<span class="symbol">{</span>
+    <span class="datatype">int</span> num<span class="symbol">;</span>
+    <span class="datatype">float</span> marks<span class="symbol">;</span>
+<span class="symbol">}</span><span class="symbol">;</span>
 
-    s1.rollNo = 101;
-    s1.info.marks = 88.5;
+<span class="keyword">struct</span> Student
+<span class="symbol">{</span>
+    <span class="datatype">int</span> rollNo<span class="symbol">;</span>
+    <span class="keyword">union</span> Data info<span class="symbol">;</span>
+<span class="symbol">}</span><span class="symbol">;</span>
 
-    printf("Roll No = %d\\n", s1.rollNo);
-    printf("Marks = %.2f", s1.info.marks);
+<span class="datatype">int</span> <span class="function">main</span><span class="symbol">()</span>
+<span class="symbol">{</span>
+    <span class="keyword">struct</span> Student s1<span class="symbol">;</span>
 
-    return 0;
-}
-</pre>
+    <span class="comment">// Assign values</span>
+    s1<span class="symbol">.</span>rollNo <span class="symbol">=</span> 101<span class="symbol">;</span>
+    s1<span class="symbol">.</span>info<span class="symbol">.</span>marks <span class="symbol">=</span> 88.5<span class="symbol">;</span>
+
+    <span class="comment">// Display values</span>
+    <span class="function">printf</span><span class="symbol">(</span><span class="string">"Roll No = %d\n"</span><span class="symbol">,</span> s1<span class="symbol">.</span>rollNo<span class="symbol">);</span>
+    <span class="function">printf</span><span class="symbol">(</span><span class="string">"Marks = %.2f"</span><span class="symbol">,</span> s1<span class="symbol">.</span>info<span class="symbol">.</span>marks<span class="symbol">);</span>
+
+    <span class="keyword">return</span> 0<span class="symbol">;</span>
+<span class="symbol">}</span>
+</code></pre>
+
+</div>
+
+<h4>Output</h4>
+
+<div class="code-box">
+
+    <div class="code-title">
+        <span>Output</span>
+    </div>
+
+<pre><code>Roll No = 101
+Marks = 88.50</code></pre>
+
+</div>
+
+<div class="box">
+<b>Explanation:</b>
+
+<ul>
+<li><code>union Data</code> contains two members:
+    <ul>
+        <li><code>num</code> (integer)</li>
+        <li><code>marks</code> (floating-point)</li>
+    </ul>
+</li>
+
+<li><code>struct Student</code> contains:
+    <ul>
+        <li><code>rollNo</code> (student's roll number)</li>
+        <li><code>info</code>, which is a union of type <code>Data</code></li>
+    </ul>
+</li>
+
+<li><code>s1.info.marks = 88.5;</code> stores the marks inside the union member of the structure.</li>
+
+<li>The members of the nested union are accessed using the <b>dot (.) operator</b>:
+    <ul>
+        <li><code>s1.info.num</code></li>
+        <li><code>s1.info.marks</code></li>
+    </ul>
+</li>
+
+<li>Since <code>info</code> is a union, its members share the same memory location. If <code>info.num</code> is assigned a value later, it will overwrite the value stored in <code>info.marks</code>.</li>
+
+<li>This example demonstrates how a <b>union can be nested inside a structure</b> to save memory when only one of several related values is needed at a time.</li>
+</ul>
+
+</div>
 
 <hr>
 
@@ -15121,32 +19022,71 @@ int main()
 Union variables can be passed to functions.
 </p>
 
-<h4>Example</h4>
+<h4>Example: Passing Union to Function</h4>
 
-<pre>
-#include <stdio.h>
+<div class="code-box">
 
-union Data
-{
-    int num;
-};
+    <div class="code-title">
+        <span>Pass Union as Function Argument</span>
+    </div>
 
-void display(union Data d)
-{
-    printf("Number = %d", d.num);
-}
+<pre><code><span class="preprocessor">#include</span> <span class="header-file">&lt;stdio.h&gt;</span>
 
-int main()
-{
-    union Data d;
+<span class="keyword">union</span> Data
+<span class="symbol">{</span>
+    <span class="datatype">int</span> num<span class="symbol">;</span>
+<span class="symbol">}</span><span class="symbol">;</span>
 
-    d.num = 500;
+<span class="datatype">void</span> <span class="function">display</span><span class="symbol">(</span><span class="keyword">union</span> Data d<span class="symbol">)</span>
+<span class="symbol">{</span>
+    <span class="function">printf</span><span class="symbol">(</span><span class="string">"Number = %d"</span><span class="symbol">,</span> d<span class="symbol">.</span>num<span class="symbol">);</span>
+<span class="symbol">}</span>
 
-    display(d);
+<span class="datatype">int</span> <span class="function">main</span><span class="symbol">()</span>
+<span class="symbol">{</span>
+    <span class="keyword">union</span> Data d<span class="symbol">;</span>
 
-    return 0;
-}
-</pre>
+    d<span class="symbol">.</span>num <span class="symbol">=</span> 500<span class="symbol">;</span>
+
+    <span class="comment">// Pass union to function</span>
+    <span class="function">display</span><span class="symbol">(</span>d<span class="symbol">);</span>
+
+    <span class="keyword">return</span> 0<span class="symbol">;</span>
+<span class="symbol">}</span>
+</code></pre>
+
+</div>
+
+<h4>Output</h4>
+
+<div class="code-box">
+
+    <div class="code-title">
+        <span>Output</span>
+    </div>
+
+<pre><code>Number = 500</code></pre>
+
+</div>
+
+<div class="box">
+<b>Explanation:</b>
+
+<ul>
+<li><code>union Data</code> contains one member named <code>num</code>.</li>
+
+<li><code>display(union Data d)</code> is a function that accepts a <b>union variable as an argument</b>.</li>
+
+<li>In <code>main()</code>, a union variable <code>d</code> is created and <code>d.num</code> is assigned the value <b>500</b>.</li>
+
+<li><code>display(d);</code> passes the complete union variable to the <code>display()</code> function.</li>
+
+<li>Inside the function, the value is accessed using <code>d.num</code> and displayed using <code>printf()</code>.</li>
+
+<li>When a union is passed by value, a copy of the union is passed to the function. Any changes made inside the function do not affect the original union variable in <code>main()</code>.</li>
+</ul>
+
+</div>
 
 <hr>
 
@@ -15157,27 +19097,75 @@ Suppose a student can have either marks or grade stored at a time.
 Using a union helps save memory because only one value is needed at a time.
 </p>
 
-<pre>
-#include <stdio.h>
+<h4>Example: Using Union to Store Student Result</h4>
 
-union Result
-{
-    float marks;
-    char grade;
-};
+<div class="code-box">
 
-int main()
-{
-    union Result r;
+    <div class="code-title">
+        <span>Union Example</span>
+    </div>
 
-    r.marks = 89.5;
+<pre><code><span class="preprocessor">#include</span> <span class="header-file">&lt;stdio.h&gt;</span>
 
-    printf("Marks = %.2f", r.marks);
+<span class="keyword">union</span> Result
+<span class="symbol">{</span>
+    <span class="datatype">float</span> marks<span class="symbol">;</span>
+    <span class="datatype">char</span> grade<span class="symbol">;</span>
+<span class="symbol">}</span><span class="symbol">;</span>
 
-    return 0;
-}
-</pre>
+<span class="datatype">int</span> <span class="function">main</span><span class="symbol">()</span>
+<span class="symbol">{</span>
+    <span class="keyword">union</span> Result r<span class="symbol">;</span>
 
+    <span class="comment">// Store marks in the union</span>
+    r<span class="symbol">.</span>marks <span class="symbol">=</span> 89.5<span class="symbol">;</span>
+
+    <span class="comment">// Display marks</span>
+    <span class="function">printf</span><span class="symbol">(</span><span class="string">"Marks = %.2f"</span><span class="symbol">,</span> r<span class="symbol">.</span>marks<span class="symbol">);</span>
+
+    <span class="keyword">return</span> 0<span class="symbol">;</span>
+<span class="symbol">}</span>
+</code></pre>
+
+</div>
+
+<h4>Output</h4>
+
+<div class="code-box">
+
+    <div class="code-title">
+        <span>Output</span>
+    </div>
+
+<pre><code>Marks = 89.50</code></pre>
+
+</div>
+
+<div class="box">
+<b>Explanation:</b>
+
+<ul>
+<li><code>union Result</code> contains two members:
+    <ul>
+        <li><code>marks</code> of type <code>float</code></li>
+        <li><code>grade</code> of type <code>char</code></li>
+    </ul>
+</li>
+
+<li>A union variable <code>r</code> is created using <code>union Result r;</code>.</li>
+
+<li><code>r.marks = 89.5;</code> stores the floating-point value <b>89.5</b> in the union.</li>
+
+<li><code>printf("Marks = %.2f", r.marks);</code> displays the stored marks with two digits after the decimal point.</li>
+
+<li>Since only the <code>marks</code> member is used, the output is correct.</li>
+
+<li>If a value is later assigned to <code>r.grade</code>, it will overwrite the value stored in <code>r.marks</code> because both members share the same memory location.</li>
+
+<li>This example shows that a union can store different types of data, but <b>only one member should be used at a time</b>.</li>
+</ul>
+
+</div>
 <hr>
 
 <h3>Advantages of Union</h3>
@@ -15338,12 +19326,102 @@ A file is a collection of related data stored on a storage device such as a hard
 <p>
 In C language, files are handled using the <b>FILE</b> structure and file pointers.
 </p>
-
 <h4>File Pointer</h4>
 
-<pre>
-FILE *fp;
-</pre>
+<div class="code-box">
+
+    <div class="code-title">
+        <span>Syntax of File Pointer</span>
+    </div>
+
+<pre><code><span class="datatype">FILE</span> <span class="symbol">*</span>fp<span class="symbol">;</span>
+</code></pre>
+
+</div>
+
+<div class="box">
+<b>Explanation:</b>
+
+<ul>
+<li><code>FILE</code> is a predefined data type (structure) provided by the <code>&lt;stdio.h&gt;</code> header file.</li>
+
+<li><code>fp</code> is a file pointer variable.</li>
+
+<li>A file pointer is used to <b>open, read, write, append, and close files</b> in C.</li>
+
+<li>The pointer stores the address of the file that is opened using the <code>fopen()</code> function.</li>
+
+<li>Before performing any file operation, a file pointer must be declared.</li>
+
+<li>Multiple file pointers can be declared if you need to work with multiple files.</li>
+
+<h4>Example: Declaring Multiple File Pointers</h4>
+
+<div class="code-box">
+
+    <div class="code-title">
+        <span>File Pointer Declaration</span>
+    </div>
+
+<pre><code><span class="datatype">FILE</span> <span class="symbol">*</span>fp1<span class="symbol">;</span>
+<span class="datatype">FILE</span> <span class="symbol">*</span>fp2<span class="symbol">;</span>
+</code></pre>
+
+</div>
+
+<div class="box">
+<b>Explanation:</b>
+
+<ul>
+
+<li><code>FILE</code> is a predefined data type in C used for file handling.</li>
+
+<li><code>fp1</code> and <code>fp2</code> are file pointers used to store the address of opened files.</li>
+
+<li>Multiple file pointers can be declared when working with more than one file at the same time.</li>
+
+<li>For example, one pointer can be used for reading a file and another pointer can be used for writing data into another file.</li>
+
+</ul>
+
+</div>
+
+<h4>Example Usage</h4>
+
+<div class="code-box">
+
+    <div class="code-title">
+        <span>Opening Two Files</span>
+    </div>
+
+<pre><code><span class="datatype">FILE</span> <span class="symbol">*</span>fp1<span class="symbol">;</span>
+<span class="datatype">FILE</span> <span class="symbol">*</span>fp2<span class="symbol">;</span>
+
+fp1 <span class="symbol">=</span> <span class="function">fopen</span><span class="symbol">(</span><span class="string">"source.txt"</span><span class="symbol">,</span> <span class="string">"r"</span><span class="symbol">);</span>
+
+fp2 <span class="symbol">=</span> <span class="function">fopen</span><span class="symbol">(</span><span class="string">"destination.txt"</span><span class="symbol">,</span> <span class="string">"w"</span><span class="symbol">);</span>
+</code></pre>
+
+</div>
+
+<div class="box">
+
+<b>Example:</b>
+
+<ul>
+<li><code>fp1</code> → points to <code>source.txt</code> for reading data.</li>
+<li><code>fp2</code> → points to <code>destination.txt</code> for writing data.</li>
+</ul>
+
+</div>
+
+<li>After opening a file, the file pointer points to the beginning of the file.</li>
+
+<li>After completing file operations, the file should always be closed using the <code>fclose()</code> function.</li>
+
+</ul>
+
+</div>
 
 <p>
 A file pointer is used to access and manipulate a file.
@@ -15368,13 +19446,208 @@ A file pointer is used to access and manipulate a file.
 The fopen() function is used to open a file.
 </p>
 
-<h4>Syntax</h4>
+<h4>Syntax of <code>fopen()</code></h4>
 
-<pre>
-FILE *fp;
+<div class="code-box">
 
-fp = fopen("filename","mode");
-</pre>
+    <div class="code-title">
+        <span>Open a File</span>
+    </div>
+
+<pre><code><span class="datatype">FILE</span> <span class="symbol">*</span>fp<span class="symbol">;</span>
+
+fp <span class="symbol">=</span> <span class="function">fopen</span><span class="symbol">(</span><span class="string">"filename"</span><span class="symbol">,</span> <span class="string">"mode"</span><span class="symbol">);</span>
+</code></pre>
+
+</div>
+
+<div class="box">
+<b>Explanation:</b>
+
+<ul>
+<li><code>FILE *fp;</code> declares a file pointer.</li>
+
+<li><code>fopen()</code> is a library function used to <b>open a file</b>.</li>
+
+<li>The function returns a pointer to the opened file. This pointer is stored in <code>fp</code>.</li>
+
+<li>If the file cannot be opened, <code>fopen()</code> returns <code>NULL</code>.</li>
+
+<li>The syntax of <code>fopen()</code> is:</li>
+
+<h4>Syntax of <code>fopen()</code></h4>
+
+<div class="code-box">
+
+    <div class="code-title">
+        <span>Opening a File</span>
+    </div>
+
+<pre><code><span class="function">fopen</span><span class="symbol">(</span><span class="string">"filename"</span><span class="symbol">,</span> <span class="string">"mode"</span><span class="symbol">);</span>
+</code></pre>
+
+</div>
+
+<div class="box">
+<b>Explanation:</b>
+
+<ul>
+
+<li><code>fopen()</code> is a library function used to <b>open a file</b> in C programming.</li>
+
+<li>It returns a file pointer that is used for further file operations.</li>
+
+<li>The syntax contains two parameters:</li>
+
+</ul>
+
+<table class="notes-table">
+
+<tr>
+<th>Parameter</th>
+<th>Description</th>
+</tr>
+
+<tr>
+<td><code>"filename"</code></td>
+<td>Name of the file that we want to open.</td>
+</tr>
+
+<tr>
+<td><code>"mode"</code></td>
+<td>Specifies the purpose for opening the file (read, write, append, etc.).</td>
+</tr>
+
+</table>
+
+</div>
+
+<h4>File Opening Modes</h4>
+
+<div class="box">
+
+<table class="notes-table">
+
+<tr>
+<th>Mode</th>
+<th>Description</th>
+</tr>
+
+<tr>
+<td><code>r</code></td>
+<td>Open an existing file for reading.</td>
+</tr>
+
+<tr>
+<td><code>w</code></td>
+<td>Open a file for writing. Creates a new file if it does not exist. Deletes old content if the file exists.</td>
+</tr>
+
+<tr>
+<td><code>a</code></td>
+<td>Open a file for appending. New data is added at the end of the file.</td>
+</tr>
+
+<tr>
+<td><code>r+</code></td>
+<td>Open an existing file for both reading and writing.</td>
+</tr>
+
+<tr>
+<td><code>w+</code></td>
+<td>Create a file for both reading and writing.</td>
+</tr>
+
+<tr>
+<td><code>a+</code></td>
+<td>Open a file for reading and appending.</td>
+</tr>
+
+</table>
+
+</div>
+
+<h4>Example</h4>
+
+<div class="code-box">
+
+    <div class="code-title">
+        <span>Opening a File</span>
+    </div>
+
+<pre><code><span class="datatype">FILE</span> <span class="symbol">*</span>fp<span class="symbol">;</span>
+
+fp <span class="symbol">=</span> <span class="function">fopen</span><span class="symbol">(</span><span class="string">"student.txt"</span><span class="symbol">,</span> <span class="string">"r"</span><span class="symbol">);</span>
+</code></pre>
+
+</div>
+
+<div class="box">
+
+<b>Explanation:</b>
+
+<ul>
+
+<li><code>student.txt</code> is the file name.</li>
+
+<li><code>"r"</code> opens the file in read mode.</li>
+
+<li>The returned file address is stored in the file pointer <code>fp</code>.</li>
+
+</ul>
+
+</div>
+
+<li><code>"filename"</code> specifies the name (or path) of the file to open.</li>
+
+<li><code>"mode"</code> specifies how the file should be opened, such as for reading, writing, or appending.</li>
+
+<li>After finishing all file operations, the file should be closed using <code>fclose(fp);</code>.</li>
+
+</ul>
+
+</div>
+
+<h4>Common File Modes</h4>
+
+<table class="notes-table">
+
+<tr>
+<th>Mode</th>
+<th>Description</th>
+</tr>
+
+<tr>
+<td><code>r</code></td>
+<td>Opens an existing file for reading.</td>
+</tr>
+
+<tr>
+<td><code>w</code></td>
+<td>Creates a new file or overwrites an existing file for writing.</td>
+</tr>
+
+<tr>
+<td><code>a</code></td>
+<td>Opens a file for appending. New data is added at the end of the file.</td>
+</tr>
+
+<tr>
+<td><code>r+</code></td>
+<td>Opens an existing file for both reading and writing.</td>
+</tr>
+
+<tr>
+<td><code>w+</code></td>
+<td>Creates a new file (or overwrites an existing one) for both reading and writing.</td>
+</tr>
+
+<tr>
+<td><code>a+</code></td>
+<td>Opens a file for reading and appending.</td>
+</tr>
+
+</table>
 
 <hr>
 
@@ -15427,21 +19700,195 @@ fp = fopen("filename","mode");
 The fclose() function is used to close a file.
 </p>
 
-<h4>Syntax</h4>
+<h4>Syntax of <code>fclose()</code></h4>
 
-<pre>
-fclose(fp);
-</pre>
+<div class="code-box">
+
+    <div class="code-title">
+        <span>Close a File</span>
+    </div>
+
+<pre><code><span class="function">fclose</span><span class="symbol">(</span>fp<span class="symbol">);</span>
+</code></pre>
+
+</div>
+
+<div class="box">
+<b>Explanation:</b>
+
+<ul>
+<li><code>fclose()</code> is a library function used to <b>close an opened file</b>.</li>
+
+<li><code>fp</code> is the file pointer that refers to the opened file.</li>
+
+<li>After all file operations (reading, writing, or appending) are completed, the file should be closed using <code>fclose()</code>.</li>
+
+<li>Closing a file saves any pending data to the file and releases the memory and other system resources associated with the file.</li>
+
+<li>It is considered a good programming practice to always close a file after use.</li>
+
+<li>If the file is not closed properly, some data may not be written to the file completely.</li>
+
+<li>The <code>fclose()</code> function returns:
+    <ul>
+        <li><code>0</code> if the file is closed successfully.</li>
+        <li><code>EOF</code> if an error occurs while closing the file.</li>
+    </ul>
+</li>
+
+</ul>
+
+</div>
 
 <h4>Example</h4>
 
-<pre>
-FILE *fp;
+<div class="code-box">
 
-fp = fopen("data.txt","r");
+    <div class="code-title">
+        <span>Closing a File</span>
+    </div>
 
-fclose(fp);
-</pre>
+<pre><code><span class="datatype">FILE</span> <span class="symbol">*</span>fp<span class="symbol">;</span>
+
+fp <span class="symbol">=</span> <span class="function">fopen</span><span class="symbol">(</span><span class="string">"data.txt"</span><span class="symbol">,</span> <span class="string">"w"</span><span class="symbol">);</span>
+
+<span class="comment">// File operations</span>
+
+<span class="function">fclose</span><span class="symbol">(</span>fp<span class="symbol">);</span>
+</code></pre>
+
+</div>
+
+<h4>Example: Opening and Closing a File</h4>
+
+<div class="code-box">
+
+    <div class="code-title">
+        <span>Open and Close File</span>
+    </div>
+
+<pre><code><span class="datatype">FILE</span> <span class="symbol">*</span>fp<span class="symbol">;</span>
+
+fp <span class="symbol">=</span> <span class="function">fopen</span><span class="symbol">(</span><span class="string">"data.txt"</span><span class="symbol">,</span> <span class="string">"r"</span><span class="symbol">);</span>
+
+<span class="function">fclose</span><span class="symbol">(</span>fp<span class="symbol">);</span>
+</code></pre>
+
+</div>
+
+<div class="box">
+<b>Explanation:</b>
+
+<ul>
+
+<li><code>FILE *fp;</code> declares a file pointer.</li>
+
+<li><code>fopen("data.txt", "r");</code> opens the file <code>data.txt</code> in <b>read (<code>r</code>) mode</b>.</li>
+
+<li>If the file exists, <code>fp</code> stores the address of the opened file.</li>
+
+<li>If the file does not exist or cannot be opened, <code>fopen()</code> returns <code>NULL</code>.</li>
+
+<li><code>fclose(fp);</code> closes the opened file and releases the resources associated with it.</li>
+
+<li>Always close a file after completing file operations to avoid memory leaks and ensure that all resources are released properly.</li>
+
+</ul>
+
+</div>
+
+<div class="box">
+<b>Note:</b>
+
+<ul>
+
+<li>Before reading from a file, it is a good practice to check whether the file was opened successfully.</li>
+
+<h4>Example: Checking File Opening Error</h4>
+
+<div class="code-box">
+
+    <div class="code-title">
+        <span>Using <code>NULL</code> Check with File Pointer</span>
+    </div>
+
+<pre><code><span class="keyword">if</span><span class="symbol">(</span>fp <span class="symbol">==</span> NULL<span class="symbol">)</span>
+<span class="symbol">{</span>
+    <span class="function">printf</span><span class="symbol">(</span><span class="string">"File could not be opened."</span><span class="symbol">);</span>
+<span class="symbol">}</span>
+</code></pre>
+
+</div>
+
+<div class="box">
+<b>Explanation:</b>
+
+<ul>
+
+<li>When a file is opened using <code>fopen()</code>, it returns the address of the file.</li>
+
+<li>If the file cannot be opened, <code>fopen()</code> returns <code>NULL</code>.</li>
+
+<li><code>fp == NULL</code> checks whether the file pointer contains a valid address or not.</li>
+
+<li>If the condition is true, it means the file opening failed.</li>
+
+<li>This check prevents errors while performing file operations.</li>
+
+</ul>
+
+</div>
+
+<h4>Complete Example</h4>
+
+<div class="code-box">
+
+    <div class="code-title">
+        <span>File Opening with Error Handling</span>
+    </div>
+
+<pre><code><span class="preprocessor">#include</span> <span class="header-file">&lt;stdio.h&gt;</span>
+
+<span class="datatype">int</span> <span class="function">main</span><span class="symbol">()</span>
+<span class="symbol">{</span>
+
+    <span class="datatype">FILE</span> <span class="symbol">*</span>fp<span class="symbol">;</span>
+
+    fp <span class="symbol">=</span> <span class="function">fopen</span><span class="symbol">(</span><span class="string">"data.txt"</span><span class="symbol">,</span> <span class="string">"r"</span><span class="symbol">);</span>
+
+    <span class="keyword">if</span><span class="symbol">(</span>fp <span class="symbol">==</span> NULL<span class="symbol">)</span>
+    <span class="symbol">{</span>
+        <span class="function">printf</span><span class="symbol">(</span><span class="string">"File could not be opened."</span><span class="symbol">);</span>
+    <span class="symbol">}</span>
+    <span class="keyword">else</span>
+    <span class="symbol">{</span>
+        <span class="function">printf</span><span class="symbol">(</span><span class="string">"File opened successfully."</span><span class="symbol">);</span>
+
+        <span class="function">fclose</span><span class="symbol">(</span>fp<span class="symbol">);</span>
+    <span class="symbol">}</span>
+
+    <span class="keyword">return</span> 0<span class="symbol">;</span>
+
+<span class="symbol">}</span>
+</code></pre>
+
+</div>
+
+<h4>Possible Output</h4>
+
+<div class="code-box">
+
+    <div class="code-title">
+        <span>Output</span>
+    </div>
+
+<pre><code>File opened successfully.</code></pre>
+
+</div>
+
+</ul>
+
+</div>
 
 <hr>
 
@@ -15451,65 +19898,248 @@ fclose(fp);
 The fprintf() function is used to write formatted data into a file.
 </p>
 
-<h4>Syntax</h4>
+<h4>Syntax of <code>fprintf()</code></h4>
+
+<div class="code-box">
+
+    <div class="code-title">
+        <span>Write Data to a File</span>
+    </div>
+
+<pre><code><span class="function">fprintf</span><span class="symbol">(</span>fp<span class="symbol">,</span> <span class="string">"format"</span><span class="symbol">,</span> variables<span class="symbol">);</span>
+</code></pre>
+
+</div>
+
+<div class="box">
+<b>Explanation:</b>
+
+<ul>
+
+<li><code>fprintf()</code> is a library function used to <b>write formatted data to a file</b>.</li>
+
+<li><code>fp</code> is the file pointer that refers to the opened file.</li>
+
+<li><code>"format"</code> specifies the format in which the data will be written, such as <code>%d</code>, <code>%f</code>, <code>%c</code>, and <code>%s</code>.</li>
+
+<li><code>variables</code> are the values that will be written to the file.</li>
+
+<li><code>fprintf()</code> works similarly to <code>printf()</code>, but instead of displaying data on the screen, it writes the data into a file.</li>
+
+<li>The file must be opened in a mode that allows writing, such as <code>"w"</code>, <code>"a"</code>, or <code>"w+"</code>.</li>
+
+<li>After writing data, always close the file using <code>fclose(fp);</code>.</li>
+
+</ul>
+
+</div>
+
+<h4>Example</h4>
+
+<div class="code-box">
+
+    <div class="code-title">
+        <span>Writing Data Using fprintf()</span>
+    </div>
+
+<pre><code><span class="datatype">FILE</span> <span class="symbol">*</span>fp<span class="symbol">;</span>
+
+fp <span class="symbol">=</span> <span class="function">fopen</span><span class="symbol">(</span><span class="string">"data.txt"</span><span class="symbol">,</span> <span class="string">"w"</span><span class="symbol">);</span>
+
+<span class="function">fprintf</span><span class="symbol">(</span>fp<span class="symbol">,</span> <span class="string">"Age = %d"</span><span class="symbol">,</span> 25<span class="symbol">);</span>
+
+<span class="function">fclose</span><span class="symbol">(</span>fp<span class="symbol">);</span>
+</code></pre>
+
+</div>
+
+<div class="box">
+<b>Output in <code>data.txt</code>:</b>
 
 <pre>
-fprintf(fp,"format",variables);
+Age = 25
 </pre>
+
+</div>
 
 <h4>Example: Write Student Information</h4>
 
-<pre>
-#include <stdio.h>
+<div class="code-box">
 
-int main()
-{
-    FILE *fp;
+    <div class="code-title">
+        <span>Writing Data to a File Using <code>fprintf()</code></span>
+    </div>
 
-    fp = fopen("student.txt","w");
+<pre><code><span class="preprocessor">#include</span> <span class="header-file">&lt;stdio.h&gt;</span>
 
-    fprintf(fp,"Roll No = 101\\n");
-    fprintf(fp,"Name = Pradeep\\n");
-    fprintf(fp,"Marks = 89");
+<span class="datatype">int</span> <span class="function">main</span><span class="symbol">()</span>
+<span class="symbol">{</span>
+    <span class="datatype">FILE</span> <span class="symbol">*</span>fp<span class="symbol">;</span>
 
-    fclose(fp);
+    <span class="comment">// Open file in write mode</span>
+    fp <span class="symbol">=</span> <span class="function">fopen</span><span class="symbol">(</span><span class="string">"student.txt"</span><span class="symbol">,</span> <span class="string">"w"</span><span class="symbol">);</span>
 
-    printf("Data Written Successfully");
+    <span class="comment">// Write data into the file</span>
+    <span class="function">fprintf</span><span class="symbol">(</span>fp<span class="symbol">,</span> <span class="string">"Roll No = 101\n"</span><span class="symbol">);</span>
+    <span class="function">fprintf</span><span class="symbol">(</span>fp<span class="symbol">,</span> <span class="string">"Name = Pradeep\n"</span><span class="symbol">);</span>
+    <span class="function">fprintf</span><span class="symbol">(</span>fp<span class="symbol">,</span> <span class="string">"Marks = 89"</span><span class="symbol">);</span>
 
-    return 0;
-}
-</pre>
+    <span class="comment">// Close the file</span>
+    <span class="function">fclose</span><span class="symbol">(</span>fp<span class="symbol">);</span>
 
+    <span class="function">printf</span><span class="symbol">(</span><span class="string">"Data Written Successfully"</span><span class="symbol">);</span>
+
+    <span class="keyword">return</span> 0<span class="symbol">;</span>
+<span class="symbol">}</span>
+</code></pre>
+
+</div>
+
+<h4>Output (Console)</h4>
+
+<div class="code-box">
+
+    <div class="code-title">
+        <span>Output</span>
+    </div>
+
+<pre><code>Data Written Successfully</code></pre>
+
+</div>
+
+<h4>Content of <code>student.txt</code></h4>
+
+<div class="code-box">
+
+    <div class="code-title">
+        <span>student.txt</span>
+    </div>
+
+<pre><code>Roll No = 101
+Name = Pradeep
+Marks = 89</code></pre>
+
+</div>
+
+<div class="box">
+<b>Explanation:</b>
+
+<ul>
+
+<li><code>FILE *fp;</code> declares a file pointer.</li>
+
+<li><code>fopen("student.txt", "w");</code> opens the file in <b>write mode</b>. If the file does not exist, it is created. If it already exists, its previous contents are erased.</li>
+
+<li><code>fprintf()</code> writes the student information into the file.</li>
+
+<li>The escape sequence <code>\n</code> moves the cursor to the next line in the file.</li>
+
+<li><code>fclose(fp);</code> closes the file and ensures that all data is saved properly.</li>
+
+<li><code>printf("Data Written Successfully");</code> displays a confirmation message on the screen after writing the data.</li>
+
+</ul>
+
+</div>
 <hr>
 
 <h3>Writing User Input into a File</h3>
 
-<h4>Example</h4>
+<div class="code-box">
 
-<pre>
-#include <stdio.h>
+    <div class="code-title">
+        <span>Writing User Input Using <code>fprintf()</code></span>
+    </div>
 
-int main()
-{
-    FILE *fp;
+<pre><code><span class="preprocessor">#include</span> <span class="header-file">&lt;stdio.h&gt;</span>
 
-    char name[50];
+<span class="datatype">int</span> <span class="function">main</span><span class="symbol">()</span>
+<span class="symbol">{</span>
+    <span class="datatype">FILE</span> <span class="symbol">*</span>fp<span class="symbol">;</span>
 
-    fp = fopen("student.txt","w");
+    <span class="datatype">char</span> name<span class="symbol">[</span>50<span class="symbol">]</span><span class="symbol">;</span>
 
-    printf("Enter Name: ");
-    scanf("%s", name);
+    <span class="comment">// Open file in write mode</span>
+    fp <span class="symbol">=</span> <span class="function">fopen</span><span class="symbol">(</span><span class="string">"student.txt"</span><span class="symbol">,</span> <span class="string">"w"</span><span class="symbol">);</span>
 
-    fprintf(fp,"%s", name);
+    <span class="comment">// Take input from user</span>
+    <span class="function">printf</span><span class="symbol">(</span><span class="string">"Enter Name: "</span><span class="symbol">);</span>
+    <span class="function">scanf</span><span class="symbol">(</span><span class="string">"%s"</span><span class="symbol">,</span> name<span class="symbol">);</span>
 
-    fclose(fp);
+    <span class="comment">// Write input to the file</span>
+    <span class="function">fprintf</span><span class="symbol">(</span>fp<span class="symbol">,</span> <span class="string">"%s"</span><span class="symbol">,</span> name<span class="symbol">);</span>
 
-    printf("Data Saved Successfully");
+    <span class="comment">// Close the file</span>
+    <span class="function">fclose</span><span class="symbol">(</span>fp<span class="symbol">);</span>
 
-    return 0;
-}
-</pre>
+    <span class="function">printf</span><span class="symbol">(</span><span class="string">"Data Saved Successfully"</span><span class="symbol">);</span>
 
+    <span class="keyword">return</span> 0<span class="symbol">;</span>
+<span class="symbol">}</span>
+</code></pre>
+
+</div>
+
+<h4>Sample Input</h4>
+
+<div class="code-box">
+
+    <div class="code-title">
+        <span>Input</span>
+    </div>
+
+<pre><code>Enter Name: Pradeep</code></pre>
+
+</div>
+
+<h4>Output (Console)</h4>
+
+<div class="code-box">
+
+    <div class="code-title">
+        <span>Output</span>
+    </div>
+
+<pre><code>Data Saved Successfully</code></pre>
+
+</div>
+
+<h4>Content of <code>student.txt</code></h4>
+
+<div class="code-box">
+
+    <div class="code-title">
+        <span>student.txt</span>
+    </div>
+
+<pre><code>Pradeep</code></pre>
+
+</div>
+
+<div class="box">
+<b>Explanation:</b>
+
+<ul>
+
+<li><code>FILE *fp;</code> declares a file pointer.</li>
+
+<li><code>char name[50];</code> declares a character array to store the user's name.</li>
+
+<li><code>fopen("student.txt", "w");</code> opens the file in <b>write mode</b>.</li>
+
+<li><code>scanf("%s", name);</code> reads the name entered by the user.</li>
+
+<li><code>fprintf(fp, "%s", name);</code> writes the entered name into the file.</li>
+
+<li><code>fclose(fp);</code> closes the file and saves the data permanently.</li>
+
+<li><code>printf("Data Saved Successfully");</code> displays a success message on the screen.</li>
+
+<li><b>Note:</b> <code>%s</code> reads only a single word. To store a full name containing spaces (for example, <code>Pradeep Kumar</code>), use <code>fgets()</code> instead of <code>scanf("%s")</code>.</li>
+
+</ul>
+
+</div>
 <hr>
 
 <h3>Reading Data from a File</h3>
@@ -15518,34 +20148,162 @@ int main()
 The fscanf() function is used to read formatted data from a file.
 </p>
 
-<h4>Syntax</h4>
+<h4>Syntax of <code>fscanf()</code></h4>
 
-<pre>
-fscanf(fp,"format",variables);
-</pre>
+<div class="code-box">
+
+    <div class="code-title">
+        <span>Read Data from a File</span>
+    </div>
+
+<pre><code><span class="function">fscanf</span><span class="symbol">(</span>fp<span class="symbol">,</span> <span class="string">"format"</span><span class="symbol">,</span> variables<span class="symbol">);</span>
+</code></pre>
+
+</div>
+
+<div class="box">
+<b>Explanation:</b>
+
+<ul>
+
+<li><code>fscanf()</code> is a library function used to <b>read formatted data from a file</b>.</li>
+
+<li><code>fp</code> is the file pointer that refers to the opened file.</li>
+
+<li><code>"format"</code> specifies the type of data to be read, such as <code>%d</code>, <code>%f</code>, <code>%c</code>, and <code>%s</code>.</li>
+
+<li><code>variables</code> are the variables where the read data will be stored.</li>
+
+<li><code>fscanf()</code> works similarly to <code>scanf()</code>, but instead of reading data from the keyboard, it reads data from a file.</li>
+
+<li>The file must be opened in a mode that allows reading, such as <code>"r"</code>, <code>"r+"</code>, or <code>"a+"</code>.</li>
+
+<li>After reading the required data, always close the file using <code>fclose(fp);</code>.</li>
+
+</ul>
+
+</div>
 
 <h4>Example</h4>
 
+<div class="code-box">
+
+    <div class="code-title">
+        <span>Reading Data Using <code>fscanf()</code></span>
+    </div>
+
+<pre><code><span class="datatype">FILE</span> <span class="symbol">*</span>fp<span class="symbol">;</span>
+
+<span class="datatype">int</span> age<span class="symbol">;</span>
+
+fp <span class="symbol">=</span> <span class="function">fopen</span><span class="symbol">(</span><span class="string">"data.txt"</span><span class="symbol">,</span> <span class="string">"r"</span><span class="symbol">);</span>
+
+<span class="function">fscanf</span><span class="symbol">(</span>fp<span class="symbol">,</span> <span class="string">"%d"</span><span class="symbol">,</span> <span class="symbol">&amp;</span>age<span class="symbol">);</span>
+
+<span class="function">printf</span><span class="symbol">(</span><span class="string">"Age = %d"</span><span class="symbol">,</span> age<span class="symbol">);</span>
+
+<span class="function">fclose</span><span class="symbol">(</span>fp<span class="symbol">);</span>
+</code></pre>
+
+</div>
+
+<div class="box">
+<b>Suppose <code>data.txt</code> contains:</b>
+
 <pre>
-#include <stdio.h>
-
-int main()
-{
-    FILE *fp;
-
-    char name[50];
-
-    fp = fopen("student.txt","r");
-
-    fscanf(fp,"%s", name);
-
-    printf("Name = %s", name);
-
-    fclose(fp);
-
-    return 0;
-}
+25
 </pre>
+
+<b>Output:</b>
+
+<pre>
+Age = 25
+</pre>
+
+</div>
+
+<h4>Example</h4>
+
+<h4>Example: Read Data from a File Using <code>fscanf()</code></h4>
+
+<div class="code-box">
+
+    <div class="code-title">
+        <span>Reading Data from File</span>
+    </div>
+
+<pre><code><span class="preprocessor">#include</span> <span class="header-file">&lt;stdio.h&gt;</span>
+
+<span class="datatype">int</span> <span class="function">main</span><span class="symbol">()</span>
+<span class="symbol">{</span>
+    <span class="datatype">FILE</span> <span class="symbol">*</span>fp<span class="symbol">;</span>
+
+    <span class="datatype">char</span> name<span class="symbol">[</span>50<span class="symbol">]</span><span class="symbol">;</span>
+
+    <span class="comment">// Open file in read mode</span>
+    fp <span class="symbol">=</span> <span class="function">fopen</span><span class="symbol">(</span><span class="string">"student.txt"</span><span class="symbol">,</span> <span class="string">"r"</span><span class="symbol">);</span>
+
+    <span class="comment">// Read data from the file</span>
+    <span class="function">fscanf</span><span class="symbol">(</span>fp<span class="symbol">,</span> <span class="string">"%s"</span><span class="symbol">,</span> name<span class="symbol">);</span>
+
+    <span class="comment">// Display the data</span>
+    <span class="function">printf</span><span class="symbol">(</span><span class="string">"Name = %s"</span><span class="symbol">,</span> name<span class="symbol">);</span>
+
+    <span class="comment">// Close the file</span>
+    <span class="function">fclose</span><span class="symbol">(</span>fp<span class="symbol">);</span>
+
+    <span class="keyword">return</span> 0<span class="symbol">;</span>
+<span class="symbol">}</span>
+</code></pre>
+
+</div>
+
+<h4>Suppose <code>student.txt</code> Contains</h4>
+
+<div class="code-box">
+
+    <div class="code-title">
+        <span>student.txt</span>
+    </div>
+
+<pre><code>Pradeep</code></pre>
+
+</div>
+
+<h4>Output</h4>
+
+<div class="code-box">
+
+    <div class="code-title">
+        <span>Output</span>
+    </div>
+
+<pre><code>Name = Pradeep</code></pre>
+
+</div>
+
+<div class="box">
+<b>Explanation:</b>
+
+<ul>
+
+<li><code>FILE *fp;</code> declares a file pointer.</li>
+
+<li><code>char name[50];</code> creates a character array to store the name read from the file.</li>
+
+<li><code>fopen("student.txt", "r");</code> opens the file in <b>read mode</b>.</li>
+
+<li><code>fscanf(fp, "%s", name);</code> reads a string from the file and stores it in the <code>name</code> array.</li>
+
+<li><code>printf("Name = %s", name);</code> displays the name on the screen.</li>
+
+<li><code>fclose(fp);</code> closes the file after reading is complete.</li>
+
+<li><b>Note:</b> <code>fscanf("%s", name)</code> reads only one word. If the file contains multiple words separated by spaces (for example, <code>Pradeep Kumar</code>), only <code>Pradeep</code> will be read.</li>
+
+</ul>
+
+</div>
 
 <hr>
 
@@ -15555,29 +20313,94 @@ int main()
 The fgetc() function reads one character at a time.
 </p>
 
-<h4>Example</h4>
+<h4>Example: Read File Character by Character Using <code>fgetc()</code></h4>
 
-<pre>
-#include <stdio.h>
+<div class="code-box">
 
-int main()
-{
-    FILE *fp;
+    <div class="code-title">
+        <span>Reading Characters from a File</span>
+    </div>
 
-    char ch;
+<pre><code><span class="preprocessor">#include</span> <span class="header-file">&lt;stdio.h&gt;</span>
 
-    fp = fopen("student.txt","r");
+<span class="datatype">int</span> <span class="function">main</span><span class="symbol">()</span>
+<span class="symbol">{</span>
+    <span class="datatype">FILE</span> <span class="symbol">*</span>fp<span class="symbol">;</span>
 
-    while((ch = fgetc(fp)) != EOF)
-    {
-        printf("%c", ch);
-    }
+    <span class="datatype">char</span> ch<span class="symbol">;</span>
 
-    fclose(fp);
+    <span class="comment">// Open file in read mode</span>
+    fp <span class="symbol">=</span> <span class="function">fopen</span><span class="symbol">(</span><span class="string">"student.txt"</span><span class="symbol">,</span> <span class="string">"r"</span><span class="symbol">);</span>
 
-    return 0;
-}
-</pre>
+    <span class="comment">// Read file character by character</span>
+    <span class="keyword">while</span><span class="symbol">((</span>ch <span class="symbol">=</span> <span class="function">fgetc</span><span class="symbol">(</span>fp<span class="symbol">))</span> <span class="symbol">!=</span> EOF<span class="symbol">)</span>
+    <span class="symbol">{</span>
+        <span class="function">printf</span><span class="symbol">(</span><span class="string">"%c"</span><span class="symbol">,</span> ch<span class="symbol">);</span>
+    <span class="symbol">}</span>
+
+    <span class="comment">// Close the file</span>
+    <span class="function">fclose</span><span class="symbol">(</span>fp<span class="symbol">);</span>
+
+    <span class="keyword">return</span> 0<span class="symbol">;</span>
+<span class="symbol">}</span>
+</code></pre>
+
+</div>
+
+<h4>Suppose <code>student.txt</code> Contains</h4>
+
+<div class="code-box">
+
+    <div class="code-title">
+        <span>student.txt</span>
+    </div>
+
+<pre><code>Pradeep
+Kumar
+Marks = 89</code></pre>
+
+</div>
+
+<h4>Output</h4>
+
+<div class="code-box">
+
+    <div class="code-title">
+        <span>Output</span>
+    </div>
+
+<pre><code>Pradeep
+Kumar
+Marks = 89</code></pre>
+
+</div>
+
+<div class="box">
+<b>Explanation:</b>
+
+<ul>
+
+<li><code>FILE *fp;</code> declares a file pointer.</li>
+
+<li><code>char ch;</code> declares a character variable to store one character at a time.</li>
+
+<li><code>fopen("student.txt", "r");</code> opens the file in <b>read mode</b>.</li>
+
+<li><code>fgetc(fp)</code> reads <b>one character</b> from the file each time it is called.</li>
+
+<li>The <code>while</code> loop continues reading characters until <code>fgetc()</code> returns <code>EOF</code> (End Of File).</li>
+
+<li><code>printf("%c", ch);</code> displays each character on the screen exactly as it appears in the file.</li>
+
+<li><code>EOF</code> is a predefined constant that indicates the end of the file has been reached.</li>
+
+<li><code>fclose(fp);</code> closes the file after all characters have been read.</li>
+
+<li>This method is useful when you need to process a file <b>character by character</b>.</li>
+
+</ul>
+
+</div>
 
 <hr>
 
@@ -15587,26 +20410,85 @@ int main()
 The fputc() function writes one character at a time.
 </p>
 
-<h4>Example</h4>
+<h4>Example: Write Characters to a File Using <code>fputc()</code></h4>
 
-<pre>
-#include <stdio.h>
+<div class="code-box">
 
-int main()
-{
-    FILE *fp;
+    <div class="code-title">
+        <span>Writing Characters to a File</span>
+    </div>
 
-    fp = fopen("data.txt","w");
+<pre><code><span class="preprocessor">#include</span> <span class="header-file">&lt;stdio.h&gt;</span>
 
-    fputc('A', fp);
-    fputc('B', fp);
-    fputc('C', fp);
+<span class="datatype">int</span> <span class="function">main</span><span class="symbol">()</span>
+<span class="symbol">{</span>
+    <span class="datatype">FILE</span> <span class="symbol">*</span>fp<span class="symbol">;</span>
 
-    fclose(fp);
+    <span class="comment">// Open file in write mode</span>
+    fp <span class="symbol">=</span> <span class="function">fopen</span><span class="symbol">(</span><span class="string">"data.txt"</span><span class="symbol">,</span> <span class="string">"w"</span><span class="symbol">);</span>
 
-    return 0;
-}
-</pre>
+    <span class="comment">// Write characters to the file</span>
+    <span class="function">fputc</span><span class="symbol">(</span><span class="character">'A'</span><span class="symbol">,</span> fp<span class="symbol">);</span>
+    <span class="function">fputc</span><span class="symbol">(</span><span class="character">'B'</span><span class="symbol">,</span> fp<span class="symbol">);</span>
+    <span class="function">fputc</span><span class="symbol">(</span><span class="character">'C'</span><span class="symbol">,</span> fp<span class="symbol">);</span>
+
+    <span class="comment">// Close the file</span>
+    <span class="function">fclose</span><span class="symbol">(</span>fp<span class="symbol">);</span>
+
+    <span class="keyword">return</span> 0<span class="symbol">;</span>
+<span class="symbol">}</span>
+</code></pre>
+
+</div>
+
+<h4>Content of <code>data.txt</code></h4>
+
+<div class="code-box">
+
+    <div class="code-title">
+        <span>data.txt</span>
+    </div>
+
+<pre><code>ABC</code></pre>
+
+</div>
+
+<h4>Output (Console)</h4>
+
+<div class="code-box">
+
+    <div class="code-title">
+        <span>Output</span>
+    </div>
+
+<pre><code>No output is displayed on the screen.</code></pre>
+
+</div>
+
+<div class="box">
+<b>Explanation:</b>
+
+<ul>
+
+<li><code>FILE *fp;</code> declares a file pointer.</li>
+
+<li><code>fopen("data.txt", "w");</code> opens the file in <b>write mode</b>. If the file does not exist, it is created. If it already exists, its previous contents are erased.</li>
+
+<li><code>fputc('A', fp);</code> writes the character <code>A</code> into the file.</li>
+
+<li><code>fputc('B', fp);</code> writes the character <code>B</code> immediately after <code>A</code>.</li>
+
+<li><code>fputc('C', fp);</code> writes the character <code>C</code> immediately after <code>B</code>.</li>
+
+<li>After execution, the file <code>data.txt</code> contains <code>ABC</code>.</li>
+
+<li><code>fclose(fp);</code> closes the file and saves all written characters.</li>
+
+<li><code>fputc()</code> is used when you want to write <b>one character at a time</b> into a file.</li>
+
+</ul>
+
+</div>
 
 <hr>
 
@@ -15616,28 +20498,88 @@ int main()
 The fgets() function reads a complete line from a file.
 </p>
 
-<h4>Example</h4>
+<h4>Example: Read a Line from a File Using <code>fgets()</code></h4>
 
-<pre>
-#include <stdio.h>
+<div class="code-box">
 
-int main()
-{
-    FILE *fp;
+    <div class="code-title">
+        <span>Reading a String from a File</span>
+    </div>
 
-    char str[100];
+<pre><code><span class="preprocessor">#include</span> <span class="header-file">&lt;stdio.h&gt;</span>
 
-    fp = fopen("data.txt","r");
+<span class="datatype">int</span> <span class="function">main</span><span class="symbol">()</span>
+<span class="symbol">{</span>
+    <span class="datatype">FILE</span> <span class="symbol">*</span>fp<span class="symbol">;</span>
 
-    fgets(str,100,fp);
+    <span class="datatype">char</span> str<span class="symbol">[</span>100<span class="symbol">]</span><span class="symbol">;</span>
 
-    printf("%s", str);
+    <span class="comment">// Open file in read mode</span>
+    fp <span class="symbol">=</span> <span class="function">fopen</span><span class="symbol">(</span><span class="string">"data.txt"</span><span class="symbol">,</span> <span class="string">"r"</span><span class="symbol">);</span>
 
-    fclose(fp);
+    <span class="comment">// Read one line from the file</span>
+    <span class="function">fgets</span><span class="symbol">(</span>str<span class="symbol">,</span> 100<span class="symbol">,</span> fp<span class="symbol">);</span>
 
-    return 0;
-}
-</pre>
+    <span class="comment">// Display the string</span>
+    <span class="function">printf</span><span class="symbol">(</span><span class="string">"%s"</span><span class="symbol">,</span> str<span class="symbol">);</span>
+
+    <span class="comment">// Close the file</span>
+    <span class="function">fclose</span><span class="symbol">(</span>fp<span class="symbol">);</span>
+
+    <span class="keyword">return</span> 0<span class="symbol">;</span>
+<span class="symbol">}</span>
+</code></pre>
+
+</div>
+
+<h4>Suppose <code>data.txt</code> Contains</h4>
+
+<div class="code-box">
+
+    <div class="code-title">
+        <span>data.txt</span>
+    </div>
+
+<pre><code>Welcome to C Programming</code></pre>
+
+</div>
+
+<h4>Output</h4>
+
+<div class="code-box">
+
+    <div class="code-title">
+        <span>Output</span>
+    </div>
+
+<pre><code>Welcome to C Programming</code></pre>
+
+</div>
+
+<div class="box">
+<b>Explanation:</b>
+
+<ul>
+
+<li><code>FILE *fp;</code> declares a file pointer.</li>
+
+<li><code>char str[100];</code> creates a character array that can store up to 99 characters plus the null character (<code>'\0'</code>).</li>
+
+<li><code>fopen("data.txt", "r");</code> opens the file in <b>read mode</b>.</li>
+
+<li><code>fgets(str, 100, fp);</code> reads one line (or up to 99 characters) from the file and stores it in the <code>str</code> array.</li>
+
+<li>The number <code>100</code> specifies the maximum number of characters that can be read, including the null terminator.</li>
+
+<li><code>printf("%s", str);</code> displays the string that was read from the file.</li>
+
+<li><code>fclose(fp);</code> closes the file after reading is complete.</li>
+
+<li><code>fgets()</code> is useful for reading an entire line, including spaces, from a file.</li>
+
+</ul>
+
+</div>
 
 <hr>
 
@@ -15647,24 +20589,81 @@ int main()
 The fputs() function writes a complete string into a file.
 </p>
 
-<h4>Example</h4>
+<h4>Write a String to a File Using <code>fputs()</code></h4>
 
-<pre>
-#include <stdio.h>
+<div class="code-box">
 
-int main()
-{
-    FILE *fp;
+    <div class="code-title">
+        <span>Writing a String to a File</span>
+    </div>
 
-    fp = fopen("data.txt","w");
+<pre><code><span class="preprocessor">#include</span> <span class="header-file">&lt;stdio.h&gt;</span>
 
-    fputs("Welcome to File Handling", fp);
+<span class="datatype">int</span> <span class="function">main</span><span class="symbol">()</span>
+<span class="symbol">{</span>
+    <span class="datatype">FILE</span> <span class="symbol">*</span>fp<span class="symbol">;</span>
 
-    fclose(fp);
+    <span class="comment">// Open file in write mode</span>
+    fp <span class="symbol">=</span> <span class="function">fopen</span><span class="symbol">(</span><span class="string">"data.txt"</span><span class="symbol">,</span> <span class="string">"w"</span><span class="symbol">);</span>
 
-    return 0;
-}
-</pre>
+    <span class="comment">// Write a string to the file</span>
+    <span class="function">fputs</span><span class="symbol">(</span><span class="string">"Welcome to File Handling"</span><span class="symbol">,</span> fp<span class="symbol">);</span>
+
+    <span class="comment">// Close the file</span>
+    <span class="function">fclose</span><span class="symbol">(</span>fp<span class="symbol">);</span>
+
+    <span class="keyword">return</span> 0<span class="symbol">;</span>
+<span class="symbol">}</span>
+</code></pre>
+
+</div>
+
+<h4>Content of <code>data.txt</code></h4>
+
+<div class="code-box">
+
+    <div class="code-title">
+        <span>data.txt</span>
+    </div>
+
+<pre><code>Welcome to File Handling</code></pre>
+
+</div>
+
+<h4>Output (Console)</h4>
+
+<div class="code-box">
+
+    <div class="code-title">
+        <span>Output</span>
+    </div>
+
+<pre><code>No output is displayed on the screen.</code></pre>
+
+</div>
+
+<div class="box">
+<b>Explanation:</b>
+
+<ul>
+
+<li><code>FILE *fp;</code> declares a file pointer.</li>
+
+<li><code>fopen("data.txt", "w");</code> opens the file in <b>write mode</b>. If the file does not exist, it is created. If it already exists, its previous contents are erased.</li>
+
+<li><code>fputs("Welcome to File Handling", fp);</code> writes the complete string into the file.</li>
+
+<li>Unlike <code>fprintf()</code>, <code>fputs()</code> writes only a string and does not use format specifiers such as <code>%d</code> or <code>%f</code>.</li>
+
+<li><code>fclose(fp);</code> closes the file and saves the written data.</li>
+
+<li>After execution, the file <code>data.txt</code> contains the text <code>Welcome to File Handling</code>.</li>
+
+<li><code>fputs()</code> is useful when you want to write an entire string to a file in a single statement.</li>
+
+</ul>
+
+</div>
 
 <hr>
 
@@ -15674,24 +20673,86 @@ int main()
 Append mode adds new data at the end of the file without deleting old data.
 </p>
 
-<h4>Example</h4>
+<h4>Example: Append Data to a File</h4>
 
-<pre>
-#include <stdio.h>
+<div class="code-box">
 
-int main()
-{
-    FILE *fp;
+    <div class="code-title">
+        <span>Appending Data Using <code>fprintf()</code></span>
+    </div>
 
-    fp = fopen("student.txt","a");
+<pre><code><span class="preprocessor">#include</span> <span class="header-file">&lt;stdio.h&gt;</span>
 
-    fprintf(fp,"\\nNew Record Added");
+<span class="datatype">int</span> <span class="function">main</span><span class="symbol">()</span>
+<span class="symbol">{</span>
+    <span class="datatype">FILE</span> <span class="symbol">*</span>fp<span class="symbol">;</span>
 
-    fclose(fp);
+    <span class="comment">// Open file in append mode</span>
+    fp <span class="symbol">=</span> <span class="function">fopen</span><span class="symbol">(</span><span class="string">"student.txt"</span><span class="symbol">,</span> <span class="string">"a"</span><span class="symbol">);</span>
 
-    return 0;
-}
-</pre>
+    <span class="comment">// Append new data to the file</span>
+    <span class="function">fprintf</span><span class="symbol">(</span>fp<span class="symbol">,</span> <span class="string">"\nNew Record Added"</span><span class="symbol">);</span>
+
+    <span class="comment">// Close the file</span>
+    <span class="function">fclose</span><span class="symbol">(</span>fp<span class="symbol">);</span>
+
+    <span class="keyword">return</span> 0<span class="symbol">;</span>
+<span class="symbol">}</span>
+</code></pre>
+
+</div>
+
+<h4>Suppose <code>student.txt</code> Contains Before Execution</h4>
+
+<div class="code-box">
+
+    <div class="code-title">
+        <span>student.txt (Before)</span>
+    </div>
+
+<pre><code>Roll No = 101
+Name = Pradeep
+Marks = 89</code></pre>
+
+</div>
+
+<h4>Content of <code>student.txt</code> After Execution</h4>
+
+<div class="code-box">
+
+    <div class="code-title">
+        <span>student.txt (After)</span>
+    </div>
+
+<pre><code>Roll No = 101
+Name = Pradeep
+Marks = 89
+New Record Added</code></pre>
+
+</div>
+
+<div class="box">
+<b>Explanation:</b>
+
+<ul>
+
+<li><code>FILE *fp;</code> declares a file pointer.</li>
+
+<li><code>fopen("student.txt", "a");</code> opens the file in <b>append (<code>a</code>) mode</b>.</li>
+
+<li>In append mode, new data is always added at the <b>end of the file</b>.</li>
+
+<li>The existing contents of the file are <b>not deleted</b>.</li>
+
+<li><code>fprintf(fp, "\nNew Record Added");</code> writes the text on a new line because of the <code>\n</code> escape sequence.</li>
+
+<li><code>fclose(fp);</code> closes the file and saves the appended data.</li>
+
+<li>Append mode is useful when you want to keep existing records and continuously add new records to the same file.</li>
+
+</ul>
+
+</div>
 
 <hr>
 
@@ -15713,11 +20774,89 @@ This is also called Random Access in files.
 Used to move the file pointer to a specified position.
 </p>
 
-<h4>Syntax</h4>
+<h4>Syntax of <code>fseek()</code></h4>
+
+<div class="code-box">
+
+    <div class="code-title">
+        <span>Move File Pointer</span>
+    </div>
+
+<pre><code><span class="function">fseek</span><span class="symbol">(</span>fp<span class="symbol">,</span> offset<span class="symbol">,</span> position<span class="symbol">);</span>
+</code></pre>
+
+</div>
+
+<div class="box">
+<b>Explanation:</b>
+
+<ul>
+
+<li><code>fseek()</code> is a library function used to <b>move the file pointer</b> to a specific location in a file.</li>
+
+<li><code>fp</code> is the file pointer that refers to the opened file.</li>
+
+<li><code>offset</code> specifies the number of bytes to move the file pointer.</li>
+
+<li><code>position</code> specifies the starting point from where the movement begins.</li>
+
+<li><code>fseek()</code> is commonly used in file handling when you need to skip data, read from a particular position, or overwrite data in a file.</li>
+
+</ul>
+
+</div>
+
+<h4>Position Values</h4>
+
+<table class="notes-table">
+
+<tr>
+<th>Position</th>
+<th>Description</th>
+</tr>
+
+<tr>
+<td><code>SEEK_SET</code></td>
+<td>Moves the file pointer relative to the beginning of the file.</td>
+</tr>
+
+<tr>
+<td><code>SEEK_CUR</code></td>
+<td>Moves the file pointer relative to the current position.</td>
+</tr>
+
+<tr>
+<td><code>SEEK_END</code></td>
+<td>Moves the file pointer relative to the end of the file.</td>
+</tr>
+
+</table>
+
+<div class="box">
+<b>Example:</b>
 
 <pre>
-fseek(fp, offset, position);
+fseek(fp, 10, SEEK_SET);
 </pre>
+
+<ul>
+<li>This moves the file pointer <b>10 bytes from the beginning</b> of the file.</li>
+</ul>
+
+</div>
+
+<div class="box">
+<b>Note:</b>
+
+<ul>
+
+<li><code>fseek()</code> moves the file pointer by bytes, not by lines.</li>
+
+<li>It is often used together with functions like <code>fgetc()</code>, <code>fgets()</code>, <code>fprintf()</code>, and <code>fread()</code>.</li>
+
+</ul>
+
+</div>
 
 <h4>Position Values</h4>
 
@@ -15745,30 +20884,104 @@ fseek(fp, offset, position);
 
 </table>
 
-<h4>Example</h4>
+<h4>Example: Using <code>fseek()</code> to Move the File Pointer</h4>
+
+<div class="code-box">
+
+    <div class="code-title">
+        <span>Read Character from a Specific Position</span>
+    </div>
+
+<pre><code><span class="preprocessor">#include</span> <span class="header-file">&lt;stdio.h&gt;</span>
+
+<span class="datatype">int</span> <span class="function">main</span><span class="symbol">()</span>
+<span class="symbol">{</span>
+    <span class="datatype">FILE</span> <span class="symbol">*</span>fp<span class="symbol">;</span>
+
+    <span class="datatype">char</span> ch<span class="symbol">;</span>
+
+    <span class="comment">// Open file in read mode</span>
+    fp <span class="symbol">=</span> <span class="function">fopen</span><span class="symbol">(</span><span class="string">"data.txt"</span><span class="symbol">,</span> <span class="string">"r"</span><span class="symbol">);</span>
+
+    <span class="comment">// Move file pointer 5 bytes from the beginning</span>
+    <span class="function">fseek</span><span class="symbol">(</span>fp<span class="symbol">,</span> 5<span class="symbol">,</span> SEEK_SET<span class="symbol">);</span>
+
+    <span class="comment">// Read one character from the current position</span>
+    ch <span class="symbol">=</span> <span class="function">fgetc</span><span class="symbol">(</span>fp<span class="symbol">);</span>
+
+    <span class="comment">// Display the character</span>
+    <span class="function">printf</span><span class="symbol">(</span><span class="string">"%c"</span><span class="symbol">,</span> ch<span class="symbol">);</span>
+
+    <span class="comment">// Close the file</span>
+    <span class="function">fclose</span><span class="symbol">(</span>fp<span class="symbol">);</span>
+
+    <span class="keyword">return</span> 0<span class="symbol">;</span>
+<span class="symbol">}</span>
+</code></pre>
+
+</div>
+
+<h4>Suppose <code>data.txt</code> Contains</h4>
+
+<div class="code-box">
+
+    <div class="code-title">
+        <span>data.txt</span>
+    </div>
+
+<pre><code>Hello World</code></pre>
+
+</div>
+
+<h4>Output</h4>
+
+<div class="code-box">
+
+    <div class="code-title">
+        <span>Output</span>
+    </div>
+
+<pre><code> </code></pre>
+
+<p><b>Explanation of Output:</b> The 6<sup>th</sup> character (byte) in <code>"Hello World"</code> is a <b>space</b>, so the program prints a blank space.</p>
+
+</div>
+
+<div class="box">
+<b>Explanation:</b>
+
+<ul>
+
+<li><code>FILE *fp;</code> declares a file pointer.</li>
+
+<li><code>fopen("data.txt", "r");</code> opens the file in <b>read mode</b>.</li>
+
+<li><code>fseek(fp, 5, SEEK_SET);</code> moves the file pointer <b>5 bytes from the beginning</b> of the file.
+    <ul>
+        <li><code>fp</code> → file pointer</li>
+        <li><code>5</code> → number of bytes to move</li>
+        <li><code>SEEK_SET</code> → start counting from the beginning of the file</li>
+    </ul>
+</li>
+
+<li>After moving the pointer, <code>fgetc(fp)</code> reads the character at the current position.</li>
+
+<li><code>printf("%c", ch);</code> displays that character on the screen.</li>
+
+<li><code>fclose(fp);</code> closes the file after reading.</li>
+
+<li><b>Character positions in "Hello World":</b></li>
 
 <pre>
-#include <stdio.h>
-
-int main()
-{
-    FILE *fp;
-
-    char ch;
-
-    fp = fopen("data.txt","r");
-
-    fseek(fp, 5, SEEK_SET);
-
-    ch = fgetc(fp);
-
-    printf("%c", ch);
-
-    fclose(fp);
-
-    return 0;
-}
+Index : 0 1 2 3 4 5 6 7 8 9 10
+Data  : H e l l o _ W o r l  d
+              ↑
+          fseek(fp, 5, SEEK_SET)
 </pre>
+
+</ul>
+
+</div>
 
 <hr>
 
@@ -15778,24 +20991,184 @@ int main()
 Returns the current position of the file pointer.
 </p>
 
+<h4>Example: Using <code>ftell()</code> to Find File Pointer Position</h4>
+
+<div class="code-box">
+
+    <div class="code-title">
+        <span>Get Current Position of File Pointer</span>
+    </div>
+
+<pre><code><span class="preprocessor">#include</span> <span class="header-file">&lt;stdio.h&gt;</span>
+
+<span class="datatype">int</span> <span class="function">main</span><span class="symbol">()</span>
+<span class="symbol">{</span>
+    <span class="datatype">FILE</span> <span class="symbol">*</span>fp<span class="symbol">;</span>
+
+    <span class="comment">// Open file in read mode</span>
+    fp <span class="symbol">=</span> <span class="function">fopen</span><span class="symbol">(</span><span class="string">"data.txt"</span><span class="symbol">,</span> <span class="string">"r"</span><span class="symbol">);</span>
+
+    <span class="comment">// Get current position of file pointer</span>
+    <span class="function">printf</span><span class="symbol">(</span><span class="string">"%ld"</span><span class="symbol">,</span> <span class="function">ftell</span><span class="symbol">(</span>fp<span class="symbol">));</span>
+
+    <span class="comment">// Close the file</span>
+    <span class="function">fclose</span><span class="symbol">(</span>fp<span class="symbol">);</span>
+
+    <span class="keyword">return</span> 0<span class="symbol">;</span>
+<span class="symbol">}</span>
+</code></pre>
+
+</div>
+
+<h4>Suppose <code>data.txt</code> Contains</h4>
+
+<div class="code-box">
+
+    <div class="code-title">
+        <span>data.txt</span>
+    </div>
+
+<pre><code>Hello World</code></pre>
+
+</div>
+
+<h4>Output</h4>
+
+<div class="code-box">
+
+    <div class="code-title">
+        <span>Output</span>
+    </div>
+
+<pre><code>0</code></pre>
+
+</div>
+
+<div class="box">
+<b>Explanation:</b>
+
+<ul>
+
+<li><code>ftell()</code> is a library function used to find the <b>current position of the file pointer</b>.</li>
+
+<h4>Syntax of <code>ftell()</code></h4>
+
+<div class="code-box">
+
+    <div class="code-title">
+        <span>Finding Current File Pointer Position</span>
+    </div>
+
+<pre><code><span class="function">ftell</span><span class="symbol">(</span>fp<span class="symbol">);</span>
+</code></pre>
+
+</div>
+
+<div class="box">
+<b>Explanation:</b>
+
+<ul>
+
+<li><code>ftell()</code> is a file handling function used to find the <b>current position of the file pointer</b>.</li>
+
+<li><code>fp</code> is the file pointer that points to the opened file.</li>
+
+<li>It returns the current position of the file pointer in the form of a <code>long int</code> value.</li>
+
+<li>The position is calculated in <b>bytes</b> from the beginning of the file.</li>
+
+<li>When a file is opened, the initial file pointer position is <code>0</code>.</li>
+
+</ul>
+
+</div>
+
 <h4>Example</h4>
 
+<div class="code-box">
+
+    <div class="code-title">
+        <span>Using <code>ftell()</code></span>
+    </div>
+
+<pre><code><span class="datatype">FILE</span> <span class="symbol">*</span>fp<span class="symbol">;</span>
+
+fp <span class="symbol">=</span> <span class="function">fopen</span><span class="symbol">(</span><span class="string">"data.txt"</span><span class="symbol">,</span> <span class="string">"r"</span><span class="symbol">);</span>
+
+<span class="function">printf</span><span class="symbol">(</span><span class="string">"%ld"</span><span class="symbol">,</span> <span class="function">ftell</span><span class="symbol">(</span>fp<span class="symbol">));</span>
+</code></pre>
+
+</div>
+
+<h4>Output</h4>
+
+<div class="code-box">
+
+    <div class="code-title">
+        <span>Output</span>
+    </div>
+
+<pre><code>0</code></pre>
+
+</div>
+
+<div class="box">
+<b>Note:</b>
+
+<ul>
+
+<li><code>ftell()</code> is generally used with <code>fseek()</code> and <code>rewind()</code> for controlling file pointer movement.</li>
+
+<li>The format specifier <code>%ld</code> is used because <code>ftell()</code> returns a <code>long int</code> value.</li>
+
+</ul>
+
+</div>
+
+<li><code>fp</code> is the file pointer that points to the opened file.</li>
+
+<li>When a file is opened using <code>fopen()</code> in read mode, the file pointer is initially placed at the <b>beginning</b> of the file.</li>
+
+<li>The beginning position of a file is represented by <b>0</b>, so <code>ftell(fp)</code> returns <code>0</code>.</li>
+
+<li><code>%ld</code> format specifier is used to print the value returned by <code>ftell()</code> because it returns a <code>long int</code> value.</li>
+
+<li>The file pointer position changes after reading or moving the pointer using functions like <code>fgetc()</code>, <code>fgets()</code>, or <code>fseek()</code>.</li>
+
+</ul>
+
+</div>
+
+<h4>Example After Reading a Character</h4>
+
+<div class="code-box">
+
+    <div class="code-title">
+        <span>File Pointer Movement</span>
+    </div>
+
+<pre><code>FILE *fp;
+
+fp = fopen("data.txt","r");
+
+fgetc(fp);
+
+printf("%ld", ftell(fp));
+</code></pre>
+
+</div>
+
+<div class="box">
+
+<b>Output:</b>
+
 <pre>
-#include <stdio.h>
-
-int main()
-{
-    FILE *fp;
-
-    fp = fopen("data.txt","r");
-
-    printf("%ld", ftell(fp));
-
-    fclose(fp);
-
-    return 0;
-}
+1
 </pre>
+
+<b>Reason:</b> After reading one character, the file pointer moves one byte forward.
+
+</div>
 
 <hr>
 
@@ -15805,63 +21178,258 @@ int main()
 Moves the file pointer back to the beginning of the file.
 </p>
 
-<h4>Example</h4>
+<h4>Example: Using <code>rewind()</code> to Move File Pointer to Beginning</h4>
 
-<pre>
-#include <stdio.h>
+<div class="code-box">
 
-int main()
-{
-    FILE *fp;
+    <div class="code-title">
+        <span>Reset File Pointer Position</span>
+    </div>
 
-    fp = fopen("data.txt","r");
+<pre><code><span class="preprocessor">#include</span> <span class="header-file">&lt;stdio.h&gt;</span>
 
-    fseek(fp,10,SEEK_SET);
+<span class="datatype">int</span> <span class="function">main</span><span class="symbol">()</span>
+<span class="symbol">{</span>
+    <span class="datatype">FILE</span> <span class="symbol">*</span>fp<span class="symbol">;</span>
 
-    rewind(fp);
+    <span class="comment">// Open file in read mode</span>
+    fp <span class="symbol">=</span> <span class="function">fopen</span><span class="symbol">(</span><span class="string">"data.txt"</span><span class="symbol">,</span> <span class="string">"r"</span><span class="symbol">);</span>
 
-    printf("%ld", ftell(fp));
+    <span class="comment">// Move file pointer 10 bytes from beginning</span>
+    <span class="function">fseek</span><span class="symbol">(</span>fp<span class="symbol">,</span> 10<span class="symbol">,</span> SEEK_SET<span class="symbol">);</span>
 
-    fclose(fp);
+    <span class="comment">// Move file pointer back to beginning</span>
+    <span class="function">rewind</span><span class="symbol">(</span>fp<span class="symbol">);</span>
 
-    return 0;
-}
-</pre>
+    <span class="comment">// Print current file pointer position</span>
+    <span class="function">printf</span><span class="symbol">(</span><span class="string">"%ld"</span><span class="symbol">,</span> <span class="function">ftell</span><span class="symbol">(</span>fp<span class="symbol">));</span>
 
+    <span class="comment">// Close the file</span>
+    <span class="function">fclose</span><span class="symbol">(</span>fp<span class="symbol">);</span>
+
+    <span class="keyword">return</span> 0<span class="symbol">;</span>
+<span class="symbol">}</span>
+</code></pre>
+
+</div>
+
+<h4>Suppose <code>data.txt</code> Contains</h4>
+
+<div class="code-box">
+
+    <div class="code-title">
+        <span>data.txt</span>
+    </div>
+
+<pre><code>Hello World Programming</code></pre>
+
+</div>
+
+<h4>Output</h4>
+
+<div class="code-box">
+
+    <div class="code-title">
+        <span>Output</span>
+    </div>
+
+<pre><code>0</code></pre>
+
+</div>
+
+<div class="box">
+<b>Explanation:</b>
+
+<ul>
+
+<li><code>fseek(fp, 10, SEEK_SET);</code> moves the file pointer <b>10 bytes from the beginning</b> of the file.</li>
+
+<li>After executing <code>fseek()</code>, the file pointer is at position <b>10</b>.</li>
+
+<li><code>rewind(fp);</code> moves the file pointer back to the <b>beginning of the file</b>.</li>
+
+<li>The position after <code>rewind()</code> becomes <b>0</b>.</li>
+
+<li><code>ftell(fp);</code> returns the current position of the file pointer.</li>
+
+<li>Therefore, the output is <code>0</code>.</li>
+
+</ul>
+
+</div>
+
+<h4>File Pointer Movement</h4>
+
+<div class="code-box">
+
+    <div class="code-title">
+        <span>Working Flow</span>
+    </div>
+
+<pre><code>
+Initial Position
+        |
+        v
+Position = 0
+
+fseek(fp,10,SEEK_SET)
+
+        |
+        v
+
+Position = 10
+
+rewind(fp)
+
+        |
+        v
+
+Position = 0
+</code></pre>
+
+</div>
+
+<div class="box">
+<b>Note:</b>
+
+<ul>
+
+<li><code>rewind()</code> is similar to <code>fseek(fp, 0, SEEK_SET)</code>.</li>
+
+<li>It is used when we want to read a file again from the beginning.</li>
+
+<li><code>rewind()</code> does not return any value.</li>
+
+</ul>
+
+</div>
 <hr>
 
-<h3>File Copy Program</h3>
+<h4>Example: Copy Data from One File to Another File</h4>
 
-<h4>Example</h4>
+<div class="code-box">
 
-<pre>
-#include <stdio.h>
+    <div class="code-title">
+        <span>File Copy Program Using <code>fgetc()</code> and <code>fputc()</code></span>
+    </div>
 
-int main()
-{
-    FILE *source;
-    FILE *destination;
+<pre><code><span class="preprocessor">#include</span> <span class="header-file">&lt;stdio.h&gt;</span>
 
-    char ch;
+<span class="datatype">int</span> <span class="function">main</span><span class="symbol">()</span>
+<span class="symbol">{</span>
+    <span class="datatype">FILE</span> <span class="symbol">*</span>source<span class="symbol">;</span>
+    <span class="datatype">FILE</span> <span class="symbol">*</span>destination<span class="symbol">;</span>
 
-    source = fopen("source.txt","r");
+    <span class="datatype">char</span> ch<span class="symbol">;</span>
 
-    destination = fopen("destination.txt","w");
+    <span class="comment">// Open source file in read mode</span>
+    source <span class="symbol">=</span> <span class="function">fopen</span><span class="symbol">(</span><span class="string">"source.txt"</span><span class="symbol">,</span> <span class="string">"r"</span><span class="symbol">);</span>
 
-    while((ch = fgetc(source)) != EOF)
-    {
-        fputc(ch,destination);
-    }
+    <span class="comment">// Open destination file in write mode</span>
+    destination <span class="symbol">=</span> <span class="function">fopen</span><span class="symbol">(</span><span class="string">"destination.txt"</span><span class="symbol">,</span> <span class="string">"w"</span><span class="symbol">);</span>
 
-    fclose(source);
-    fclose(destination);
+    <span class="comment">// Read from source and write into destination</span>
+    <span class="keyword">while</span><span class="symbol">((</span>ch <span class="symbol">=</span> <span class="function">fgetc</span><span class="symbol">(</span>source<span class="symbol">))</span> <span class="symbol">!=</span> EOF<span class="symbol">)</span>
+    <span class="symbol">{</span>
+        <span class="function">fputc</span><span class="symbol">(</span>ch<span class="symbol">,</span> destination<span class="symbol">);</span>
+    <span class="symbol">}</span>
 
-    printf("File Copied Successfully");
+    <span class="comment">// Close both files</span>
+    <span class="function">fclose</span><span class="symbol">(</span>source<span class="symbol">);</span>
+    <span class="function">fclose</span><span class="symbol">(</span>destination<span class="symbol">);</span>
 
-    return 0;
-}
-</pre>
+    <span class="function">printf</span><span class="symbol">(</span><span class="string">"File Copied Successfully"</span><span class="symbol">);</span>
 
+    <span class="keyword">return</span> 0<span class="symbol">;</span>
+<span class="symbol">}</span>
+</code></pre>
+
+</div>
+
+<h4>Suppose <code>source.txt</code> Contains</h4>
+
+<div class="code-box">
+
+    <div class="code-title">
+        <span>source.txt</span>
+    </div>
+
+<pre><code>Welcome to C Programming</code></pre>
+
+</div>
+
+<h4>Content of <code>destination.txt</code> After Execution</h4>
+
+<div class="code-box">
+
+    <div class="code-title">
+        <span>destination.txt</span>
+    </div>
+
+<pre><code>Welcome to C Programming</code></pre>
+
+</div>
+
+<h4>Output</h4>
+
+<div class="code-box">
+
+    <div class="code-title">
+        <span>Console Output</span>
+    </div>
+
+<pre><code>File Copied Successfully</code></pre>
+
+</div>
+
+<div class="box">
+<b>Explanation:</b>
+
+<ul>
+
+<li><code>FILE *source;</code> creates a file pointer for the source file.</li>
+
+<li><code>FILE *destination;</code> creates a file pointer for the destination file.</li>
+
+<li><code>fopen("source.txt","r");</code> opens the source file in <b>read mode</b>.</li>
+
+<li><code>fopen("destination.txt","w");</code> opens the destination file in <b>write mode</b>.</li>
+
+<li><code>fgetc(source)</code> reads one character at a time from the source file.</li>
+
+<li><code>fputc(ch, destination)</code> writes the read character into the destination file.</li>
+
+<li>The <code>while</code> loop continues until the end of the source file is reached (<code>EOF</code>).</li>
+
+<li>After copying all characters, both files are closed using <code>fclose()</code>.</li>
+
+<li>This program copies the complete content of one file into another file.</li>
+
+</ul>
+
+</div>
+
+<h4>Working Flow</h4>
+
+<div class="code-box">
+
+    <div class="code-title">
+        <span>File Copy Process</span>
+    </div>
+
+<pre><code>
+source.txt
+    |
+    |  fgetc()
+    v
+Read Character
+    |
+    |  fputc()
+    v
+destination.txt
+</code></pre>
+
+</div>
 <hr>
 
 <h3>Advantages of File Handling</h3>
