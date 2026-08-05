@@ -4903,28 +4903,72 @@ If the condition is <b>false (0)</b>, it becomes <b>true (1)</b>.
 <div class="code-box">
 
 <div class="code-title">
-<span>Logical NOT Example</span>
+<span>Logical NOT Numerical Example</span>
 </div>
 
 <pre><code><span class="preprocessor">#include</span> <span class="header-file">&lt;stdio.h&gt;</span>
 
 <span class="datatype">int</span> <span class="function">main</span><span class="symbol">()</span>
 <span class="symbol">{</span>
-    <span class="datatype">int</span> isLoggedIn <span class="symbol">=</span> 0<span class="symbol">;</span>
 
-    <span class="keyword">if</span> <span class="symbol">(</span><span class="symbol">!</span>isLoggedIn<span class="symbol">)</span>
-    <span class="symbol">{</span>
-        <span class="function">printf</span><span class="symbol">(</span><span class="string">"Please Login"</span><span class="symbol">);</span>
-    <span class="symbol">}</span>
+    <span class="datatype">int</span> a <span class="symbol">=</span> <span class="symbol">!(</span>3 <span class="symbol">&lt;</span> 5<span class="symbol">);</span>   <span class="comment">// !(1) = 0</span>
+    <span class="datatype">int</span> b <span class="symbol">=</span> <span class="symbol">!(</span>3 <span class="symbol">&lt;</span> 1<span class="symbol">);</span>   <span class="comment">// !(0) = 1</span>
+    <span class="datatype">int</span> c <span class="symbol">=</span> <span class="symbol">!</span>5<span class="symbol">;</span>         <span class="comment">// !5 = 0</span>
+
+    <span class="function">printf</span><span class="symbol">(</span><span class="string">"a = %d\\n"</span><span class="symbol">,</span> a<span class="symbol">);</span>
+    <span class="function">printf</span><span class="symbol">(</span><span class="string">"b = %d\\n"</span><span class="symbol">,</span> b<span class="symbol">);</span>
+    <span class="function">printf</span><span class="symbol">(</span><span class="string">"c = %d"</span><span class="symbol">,</span> c<span class="symbol">);</span>
 
     <span class="keyword">return</span> 0<span class="symbol">;</span>
+
 <span class="symbol">}</span>
 </code></pre>
 
 </div>
 
-<p><b>Output:</b> Please Login</p>
+<h4>Output</h4>
 
+<pre class="notes_text_pre">
+a = 0
+b = 1
+c = 0
+</pre>
+
+<h4>Step-by-Step Evaluation</h4>
+
+<pre class="notes_text_pre">
+a = !(3 &lt; 5)
+  = !(1)
+  = 0
+
+b = !(3 &lt; 1)
+  = !(0)
+  = 1
+
+c = !5
+  = !1
+  = 0
+</pre>
+
+<h4>Explanation</h4>
+
+<ul>
+<li><b>3 &lt; 5</b> is true, so it becomes <b>1</b>. Therefore, <b>!1 = 0</b>.</li>
+<li><b>3 &lt; 1</b> is false, so it becomes <b>0</b>. Therefore, <b>!0 = 1</b>.</li>
+<li><b>5</b> is a non-zero value, which is treated as <b>True</b>. Therefore, <b>!5 = 0</b>.</li>
+</ul>
+
+<h4>Exam Point</h4>
+
+<p>
+The <b>Logical NOT (!)</b> operator reverses the logical value:
+</p>
+
+<ul>
+<li><b>!0 → 1</b></li>
+<li><b>!1 → 0</b></li>
+<li><b>!any non-zero value → 0</b></li>
+</ul>
 <p>
 <b>Remember:</b><br>
 <b>&&</b> → All conditions must be true.<br>
@@ -5012,6 +5056,62 @@ Assignment operators are used to assign values to variables.
 </tr>
 
 </table>
+
+<hr>
+<div class="code-box">
+
+<div class="code-title">
+<span>Example</span>
+</div>
+
+<pre><code><span class="preprocessor">#include</span> <span class="header-file">&lt;stdio.h&gt;</span>
+
+<span class="datatype">int</span> <span class="function">main</span><span class="symbol">()</span>
+<span class="symbol">{</span>
+
+    <span class="datatype">int</span> a <span class="symbol">=</span> 10<span class="symbol">;</span>
+
+    <span class="comment">// Assignment Operator (=)</span>
+    a <span class="symbol">=</span> 20<span class="symbol">;</span>
+    <span class="function">printf</span><span class="symbol">(</span><span class="string">"a = %d\\n"</span><span class="symbol">,</span> a<span class="symbol">);</span>
+
+    <span class="comment">// Add and Assign (+=)</span>
+    a <span class="symbol">+=</span> 5<span class="symbol">;</span>
+    <span class="function">printf</span><span class="symbol">(</span><span class="string">"a += 5 = %d\\n"</span><span class="symbol">,</span> a<span class="symbol">);</span>
+
+    <span class="comment">// Subtract and Assign (-=)</span>
+    a <span class="symbol">-=</span> 10<span class="symbol">;</span>
+    <span class="function">printf</span><span class="symbol">(</span><span class="string">"a -= 10 = %d\\n"</span><span class="symbol">,</span> a<span class="symbol">);</span>
+
+    <span class="comment">// Multiply and Assign (*=)</span>
+    a <span class="symbol">*=</span> 2<span class="symbol">;</span>
+    <span class="function">printf</span><span class="symbol">(</span><span class="string">"a *= 2 = %d\\n"</span><span class="symbol">,</span> a<span class="symbol">);</span>
+
+    <span class="comment">// Divide and Assign (/=)</span>
+    a <span class="symbol">/=</span> 3<span class="symbol">;</span>
+    <span class="function">printf</span><span class="symbol">(</span><span class="string">"a /= 3 = %d\\n"</span><span class="symbol">,</span> a<span class="symbol">);</span>
+
+    <span class="comment">// Modulus and Assign (%=)</span>
+    a <span class="symbol">%=</span> 4<span class="symbol">;</span>
+    <span class="function">printf</span><span class="symbol">(</span><span class="string">"a %%= 4 = %d\\n"</span><span class="symbol">,</span> a<span class="symbol">);</span>
+
+    <span class="keyword">return</span> 0<span class="symbol">;</span>
+
+<span class="symbol">}</span>
+</code></pre>
+
+</div>
+
+<h4>Output</h4>
+
+<pre class="notes_text_pre">
+a = 20
+a += 5 = 25
+a -= 10 = 15
+a *= 2 = 30
+a /= 3 = 10
+a %= 4 = 2
+</pre>
 
 <hr>
 
@@ -7056,6 +7156,359 @@ Digit = <span class="character">5</span></code></pre>
 
 <hr>
 
+
+<h3>Reading Character Input Using scanf("%c") in C</h3>
+
+<p>
+The <code>%c</code> format specifier is used to read a single character from the keyboard.
+One important thing to remember is that <code>%c</code> does not ignore spaces, tabs, or the Enter key (<code>\\n</code>).
+If there is any whitespace left in the input buffer, <code>%c</code> will read it immediately.
+</p>
+
+<h4>Example: Problem with scanf("%c")</h4>
+
+<div class="code-box">
+
+<div class="code-title">
+<span>Character Input Using scanf("%c")</span>
+</div>
+
+<pre><code><span class="preprocessor">#include</span> <span class="header-file">&lt;stdio.h&gt;</span>
+
+<span class="datatype">int</span> <span class="function">main</span><span class="symbol">()</span>
+<span class="symbol">{</span>
+
+    <span class="datatype">int</span> a<span class="symbol">;</span>
+    <span class="datatype">int</span> ch<span class="symbol">;</span>
+
+    <span class="function">printf</span><span class="symbol">(</span><span class="string">"Please enter your roll.no: "</span><span class="symbol">);</span>
+    <span class="function">scanf</span><span class="symbol">(</span><span class="string">"%d"</span><span class="symbol">,</span> <span class="symbol">&amp;</span>a<span class="symbol">);</span>
+
+    <span class="function">printf</span><span class="symbol">(</span><span class="string">"%d\\n"</span><span class="symbol">,</span> a<span class="symbol">);</span>
+
+    <span class="function">printf</span><span class="symbol">(</span><span class="string">"Please enter your grade: "</span><span class="symbol">);</span>
+    <span class="function">scanf</span><span class="symbol">(</span><span class="string">"%c"</span><span class="symbol">,</span> <span class="symbol">&amp;</span>ch<span class="symbol">);</span>
+
+    <span class="function">printf</span><span class="symbol">(</span><span class="string">"Grade = %c"</span><span class="symbol">,</span> ch<span class="symbol">);</span>
+
+    <span class="keyword">return</span> 0<span class="symbol">;</span>
+
+<span class="symbol">}</span>
+</code></pre>
+
+</div>
+
+<h4>Output</h4>
+
+<div class="code-box">
+
+<div class="code-title">
+<span>Output</span>
+</div>
+
+<pre><code>Please enter your roll.no: 101
+101
+Please enter your grade:
+Grade =
+</code></pre>
+
+</div>
+
+<h4>Why Does This Happen?</h4>
+
+<p>
+When the user enters the roll number and presses the Enter key, the Enter key (<code>\\n</code>) remains in the input buffer.
+The <code>%c</code> format specifier does not skip whitespace, so it immediately reads the remaining <code>\\n</code> instead of waiting for the user to enter a character.
+</p>
+
+<h4>Solution</h4>
+
+<p>
+Add a space before <code>%c</code>.
+The leading space tells <code>scanf()</code> to ignore all whitespace characters such as spaces, tabs, and newline characters before reading the next character.
+</p>
+
+<div class="code-box">
+
+<div class="code-title">
+<span>Correct Program</span>
+</div>
+
+<pre><code><span class="preprocessor">#include</span> <span class="header-file">&lt;stdio.h&gt;</span>
+
+<span class="datatype">int</span> <span class="function">main</span><span class="symbol">()</span>
+<span class="symbol">{</span>
+
+    <span class="datatype">int</span> roll<span class="symbol">;</span>
+    <span class="datatype">char</span> grade<span class="symbol">;</span>
+
+    <span class="function">printf</span><span class="symbol">(</span><span class="string">"Enter Roll Number: "</span><span class="symbol">);</span>
+    <span class="function">scanf</span><span class="symbol">(</span><span class="string">"%d"</span><span class="symbol">,</span> <span class="symbol">&amp;</span>roll<span class="symbol">);</span>
+
+    <span class="function">printf</span><span class="symbol">(</span><span class="string">"Enter Grade: "</span><span class="symbol">);</span>
+    <span class="function">scanf</span><span class="symbol">(</span><span class="string">" %c"</span><span class="symbol">,</span> <span class="symbol">&amp;</span>grade<span class="symbol">);</span>
+
+    <span class="function">printf</span><span class="symbol">(</span><span class="string">"Roll Number = %d\\n"</span><span class="symbol">,</span> roll<span class="symbol">);</span>
+    <span class="function">printf</span><span class="symbol">(</span><span class="string">"Grade = %c"</span><span class="symbol">,</span> grade<span class="symbol">);</span>
+
+    <span class="keyword">return</span> 0<span class="symbol">;</span>
+
+<span class="symbol">}</span>
+</code></pre>
+
+</div>
+
+<h4>Sample Input</h4>
+
+<pre class="notes_text_pre">
+Enter Roll Number: 101
+Enter Grade: A
+</pre>
+
+<h4>Output</h4>
+
+<pre class="notes_text_pre">
+Roll Number = 101
+Grade = A
+</pre>
+
+<h4>Explanation</h4>
+
+<ul>
+<li><code>%d</code> reads the integer value.</li>
+<li>After entering the integer, the Enter key (<code>\\n</code>) remains in the input buffer.</li>
+<li><code>%c</code> reads the very next character, including spaces and newline.</li>
+<li>Therefore, <code>%c</code> reads the remaining <code>\\n</code>.</li>
+<li>Adding a space before <code>%c</code> skips all whitespace characters.</li>
+<li>Using <code>char grade;</code> is better than <code>int ch;</code> for storing a character.</li>
+</ul>
+
+<h4>Algorithm</h4>
+
+<ol>
+<li>Declare an integer variable for roll number.</li>
+<li>Declare a character variable for grade.</li>
+<li>Read the roll number using <code>%d</code>.</li>
+<li>Read the grade using <code>" %c"</code>.</li>
+<li>Display the roll number and grade.</li>
+</ol>
+
+<h4>Exam Point</h4>
+
+<p>
+The <code>%c</code> format specifier does not skip whitespace characters. Always use <code>scanf(" %c",&ch);</code> when reading a character after another input operation like <code>%d</code>, <code>%f</code>, or <code>%s</code>.
+</p>
+
+<h3>getchar() Function in C</h3>
+
+<p>
+The <code>getchar()</code> function is used to read a single character from the keyboard or input buffer.
+It is commonly used after <code>scanf()</code> to remove the newline character (<code>\\n</code>) left in the input buffer.
+This prevents <code>scanf("%c")</code> from reading the leftover Enter key.
+</p>
+
+<h4>Syntax</h4>
+
+<pre class="notes_text_pre">
+getchar();
+</pre>
+
+<h4>Example: Using getchar() with scanf("%c")</h4>
+
+<div class="code-box">
+
+<div class="code-title">
+<span>Using getchar() Before Character Input</span>
+</div>
+
+<pre><code><span class="preprocessor">#include</span> <span class="header-file">&lt;stdio.h&gt;</span>
+
+<span class="datatype">int</span> <span class="function">main</span><span class="symbol">()</span>
+<span class="symbol">{</span>
+
+    <span class="datatype">int</span> roll<span class="symbol">;</span>
+    <span class="datatype">char</span> grade2<span class="symbol">;</span>
+    <span class="datatype">char</span> grade<span class="symbol">;</span>
+
+    <span class="function">printf</span><span class="symbol">(</span><span class="string">"Please enter your roll.no: "</span><span class="symbol">);</span>
+    <span class="function">scanf</span><span class="symbol">(</span><span class="string">"%d"</span><span class="symbol">,</span> <span class="symbol">&amp;</span>roll<span class="symbol">);</span>
+
+    <span class="function">getchar</span><span class="symbol">();</span>
+
+    <span class="function">printf</span><span class="symbol">(</span><span class="string">"Please enter your grade: "</span><span class="symbol">);</span>
+    <span class="function">scanf</span><span class="symbol">(</span><span class="string">"%c"</span><span class="symbol">,</span> <span class="symbol">&amp;</span>grade<span class="symbol">);</span>
+
+    <span class="function">printf</span><span class="symbol">(</span><span class="string">"Roll Number = %d\\n"</span><span class="symbol">,</span> roll<span class="symbol">);</span>
+    <span class="function">printf</span><span class="symbol">(</span><span class="string">"Grade = %c\\n"</span><span class="symbol">,</span> grade<span class="symbol">);</span>
+
+    <span class="function">printf</span><span class="symbol">(</span><span class="string">"Please enter your grade2: "</span><span class="symbol">);</span>
+    <span class="function">scanf</span><span class="symbol">(</span><span class="string">"%c"</span><span class="symbol">,</span> <span class="symbol">&amp;</span>grade2<span class="symbol">);</span>
+
+    <span class="keyword">return</span> 0<span class="symbol">;</span>
+
+<span class="symbol">}</span>
+</code></pre>
+
+</div>
+
+
+<h4> Output</h4>
+
+<pre class="notes_text_pre">
+Roll Number = 101
+Grade = A
+Please enter your grade2:
+</pre>
+
+<p>
+The program does <b>not wait</b> for the user to enter <b>grade2</b>. Instead, it immediately reads the newline character (<code>\\n</code>) left in the input buffer after entering <b>grade</b>.
+</p>
+
+<h4>Why Does This Happen?</h4>
+
+<p>
+When the user enters the grade and presses the Enter key, two characters are sent to the input buffer.
+</p>
+
+<pre class="notes_text_pre">
+A↵
+</pre>
+
+<p>
+The input buffer contains:
+</p>
+
+<pre class="notes_text_pre">
+A \\n
+</pre>
+
+<p>
+The statement
+</p>
+
+<pre class="notes_text_pre">
+scanf("%c", &grade);
+</pre>
+
+<p>
+reads only the character <code>A</code>. The newline character (<code>\\n</code>) is still present in the input buffer.
+</p>
+
+<p>
+When the next statement
+</p>
+
+<pre class="notes_text_pre">
+scanf("%c", &grade2);
+</pre>
+
+<p>
+is executed, it immediately reads the remaining <code>\\n</code>. Therefore, the program does not wait for the user to type <b>grade2</b>.
+</p>
+
+<h4>Input Buffer Illustration</h4>
+
+<pre class="notes_text_pre">
+User Input
+
+101↵
+
+↓
+
+Input Buffer
+
+1 0 1 \\n
+
+↓
+
+scanf("%d",&roll)
+
+↓
+
+\\n
+
+↓
+
+getchar()
+
+↓
+
+Buffer Empty
+
+↓
+
+User Input
+
+A↵
+
+↓
+
+Input Buffer
+
+A \\n
+
+↓
+
+scanf("%c",&grade)
+
+↓
+
+\\n
+
+↓
+
+scanf("%c",&grade2)
+
+↓
+
+Reads \\n
+
+↓
+
+Program does not wait for input
+</pre>
+
+<h4>Solution 1 (Recommended)</h4>
+
+<p>
+Add a space before <code>%c</code>.
+The space tells <code>scanf()</code> to ignore all whitespace characters before reading the next character.
+</p>
+
+<pre class="notes_text_pre">
+scanf(" %c", &grade2);
+</pre>
+
+<h4>Solution 2</h4>
+
+<p>
+Use <code>getchar()</code> again before reading <code>grade2</code>.
+</p>
+
+<pre class="notes_text_pre">
+getchar();
+scanf("%c", &grade2);
+</pre>
+
+<h4>Explanation</h4>
+
+<ul>
+<li><code>getchar()</code> reads one character from the input buffer.</li>
+<li>It is commonly used to remove the leftover newline character (<code>\\n</code>).</li>
+<li>The first <code>getchar()</code> removes the newline after reading the roll number.</li>
+<li>After entering <code>grade</code>, another newline remains in the buffer.</li>
+<li>Therefore, another <code>getchar()</code> (or <code>scanf(" %c")</code>) is required before reading <code>grade2</code>.</li>
+</ul>
+
+
+<h4>Exam Point</h4>
+
+<p>
+<b>getchar()</b> removes only <b>one character</b> from the input buffer. If multiple input operations leave newline characters in the buffer, you must call <code>getchar()</code> again or use <code>scanf(" %c")</code> before reading another character with <code>%c</code>.
+</p>
+
+
+
 <h3>4. String Constants</h3>
 
 <p>
@@ -7123,6 +7576,153 @@ City = <span class="string">Delhi</span>
 Course = <span class="string">BCA</span></code></pre>
 
 </div>
+
+<h3>Reading String Using scanf() in C</h3>
+
+<p>
+A string is a collection of characters stored in a character array and terminated by a null character (<code>\\0</code>).
+In C, the <code>%s</code> format specifier is used with the <code>scanf()</code> function to read a string from the keyboard.
+</p>
+
+<h4>Syntax</h4>
+
+<pre class="notes_text_pre">
+char variable_name[size];
+
+scanf("%s", variable_name);
+</pre>
+
+<p>
+<b>Note:</b> Do not use the <code>&amp;</code> operator with a string array because the array name already represents the address of its first element.
+</p>
+
+<h4>Example: Reading String Using scanf()</h4>
+
+<div class="code-box">
+
+<div class="code-title">
+<span>Input String Using scanf()</span>
+</div>
+
+<pre><code><span class="preprocessor">#include</span> <span class="header-file">&lt;stdio.h&gt;</span>
+
+<span class="datatype">int</span> <span class="function">main</span><span class="symbol">()</span>
+<span class="symbol">{</span>
+
+    <span class="datatype">char</span> name<span class="symbol">[</span>10<span class="symbol">];</span>
+    <span class="datatype">char</span> city<span class="symbol">[</span>20<span class="symbol">];</span>
+    <span class="datatype">char</span> course<span class="symbol">[</span>10<span class="symbol">];</span>
+
+    <span class="function">printf</span><span class="symbol">(</span><span class="string">"Enter your Name: "</span><span class="symbol">);</span>
+    <span class="function">scanf</span><span class="symbol">(</span><span class="string">"%s"</span><span class="symbol">,</span> name<span class="symbol">);</span>
+
+    <span class="function">printf</span><span class="symbol">(</span><span class="string">"Enter your City: "</span><span class="symbol">);</span>
+    <span class="function">scanf</span><span class="symbol">(</span><span class="string">"%s"</span><span class="symbol">,</span> city<span class="symbol">);</span>
+
+    <span class="function">printf</span><span class="symbol">(</span><span class="string">"Enter your Course: "</span><span class="symbol">);</span>
+    <span class="function">scanf</span><span class="symbol">(</span><span class="string">"%s"</span><span class="symbol">,</span> course<span class="symbol">);</span>
+
+    <span class="function">printf</span><span class="symbol">(</span><span class="string">"\\nStudent Details\\n"</span><span class="symbol">);</span>
+    <span class="function">printf</span><span class="symbol">(</span><span class="string">"Name   = %s\\n"</span><span class="symbol">,</span> name<span class="symbol">);</span>
+    <span class="function">printf</span><span class="symbol">(</span><span class="string">"City   = %s\\n"</span><span class="symbol">,</span> city<span class="symbol">);</span>
+    <span class="function">printf</span><span class="symbol">(</span><span class="string">"Course = %s\\n"</span><span class="symbol">,</span> course<span class="symbol">);</span>
+
+    <span class="keyword">return</span> 0<span class="symbol">;</span>
+
+<span class="symbol">}</span>
+</code></pre>
+
+</div>
+
+<h4>Sample Input</h4>
+
+<pre class="notes_text_pre">
+Enter your Name: Rahul
+Enter your City: Delhi
+Enter your Course: BCA
+</pre>
+
+<h4>Output</h4>
+
+<pre class="notes_text_pre">
+Student Details
+Name   = Rahul
+City   = Delhi
+Course = BCA
+</pre>
+
+<h4>How scanf("%s") Works</h4>
+
+<p>
+When the user types a string and presses the Enter key, <code>scanf("%s")</code> reads characters one by one until it encounters a whitespace character such as a space, tab, or newline.
+After reading the string, it automatically adds the null character (<code>\\0</code>) at the end.
+</p>
+
+<h4>Example</h4>
+
+<pre class="notes_text_pre">
+User Input
+
+Rahul↵
+
+Memory
+
++---+---+---+---+---+---+
+| R | a | h | u | l | \\0 |
++---+---+---+---+---+---+
+</pre>
+
+<h4>Explanation</h4>
+
+<ul>
+<li><code>char name[10];</code> creates a character array that can store up to 9 characters and one null character (<code>\\0</code>).</li>
+<li><code>scanf("%s", name);</code> reads the string from the keyboard.</li>
+<li>The array name (<code>name</code>) is passed directly because it already represents the address of the first character.</li>
+<li><code>printf("%s", name);</code> prints the complete string until the null character (<code>\\0</code>) is reached.</li>
+</ul>
+
+<h4>Limitation of scanf("%s")</h4>
+
+<p>
+<code>scanf("%s")</code> reads only a single word. It stops reading when it encounters a space.
+</p>
+
+<h4>Example</h4>
+
+<pre class="notes_text_pre">
+Input
+
+Rahul Kumar
+
+Stored Value
+
+Rahul
+</pre>
+
+<p>
+The word <b>Kumar</b> is not stored because <code>scanf("%s")</code> stops reading at the first space.
+</p>
+
+<h4>Algorithm</h4>
+
+<ol>
+<li>Declare a character array.</li>
+<li>Display a message asking for input.</li>
+<li>Read the string using <code>scanf("%s", array_name);</code>.</li>
+<li>Display the string using <code>printf("%s", array_name);</code>.</li>
+</ol>
+
+<h4>Exam Point</h4>
+
+<ul>
+<li><code>%s</code> is used to read and print strings.</li>
+<li>Do not use the <code>&amp;</code> operator with a character array.</li>
+<li><code>scanf("%s")</code> reads only one word.</li>
+<li>The string is automatically terminated with the null character (<code>\\0</code>).</li>
+<li>To read a string containing spaces, use <code>fgets()</code> instead of <code>scanf("%s")</code>.</li>
+</ul>
+
+
 
 <hr>
 
