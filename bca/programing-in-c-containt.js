@@ -5115,61 +5115,431 @@ a %= 4 = 2
 
 <hr>
 
-<h3>5. Increment and Decrement Operators</h3>
 
-<p>
-These operators increase or decrease a variable value by 1.
-</p>
+  <h3>Increment and Decrement Operators in C</h3>
+<div class="notes_text">
 
-<table  class="notes-table">
-<tr>
-<th>Operator</th>
-<th>Name</th>
-<th>Example</th>
-</tr>
+  
 
-<tr>
-<td>++</td>
-<td>Increment</td>
-<td>a++</td>
-</tr>
+    <p>
+        Increment and decrement operators are <b>unary operators</b> in C.
+        They are used to increase or decrease the value of a variable by <b>1</b>.
+    </p>
 
-<tr>
-<td>--</td>
-<td>Decrement</td>
-<td>a--</td>
-</tr>
+    <h4>Types of Increment and Decrement Operators</h4>
 
-</table>
+    <table class="notes-table">
+        <tr>
+            <th>Operator</th>
+            <th>Name</th>
+            <th>Operation</th>
+        </tr>
+        <tr>
+            <td>++</td>
+            <td>Increment</td>
+            <td>Increases value by 1</td>
+        </tr>
+        <tr>
+            <td>--</td>
+            <td>Decrement</td>
+            <td>Decreases value by 1</td>
+        </tr>
+    </table>
 
-<h4>Example</h4>
+    <h4>1. Increment Operator (++)</h4>
+
+    <p>
+        The <b>++</b> operator increases the value of a variable by <b>1</b>.
+    </p>
+
+<div class="code-box">
+<div class="code-title">
+<span>Example: Increment Operator</span>
+</div>
+<pre><code><span class="preprocessor">#include</span> <span class="header-file">&lt;stdio.h&gt;</span>
+<span class="datatype">int</span> <span class="function">main</span><span class="symbol">()</span>
+<span class="symbol">{</span>
+    <span class="datatype">int</span> a <span class="symbol">=</span> 5<span class="symbol">;</span>
+    a<span class="symbol">++;</span>
+    <span class="function">printf</span><span class="symbol">(</span><span class="string">"Value of a = %d\\n"</span><span class="symbol">,</span> a<span class="symbol">);</span>
+    <span class="keyword">return</span> 0<span class="symbol">;</span>
+<span class="symbol">}</span>
+</code></pre>
+<p><b>Output:</b></p>
+<pre><code>Value of a = 6</code></pre>
+</div>
+
+</div>
+
+    <h4>2. Decrement Operator (--)</h4>
+
+    <p>
+        The <b>--</b> operator decreases the value of a variable by <b>1</b>.
+    </p>
 
 <div class="code-box">
 
-    <div class="code-title">
-        <span>Program: Increment and Decrement Operators</span>
-    </div>
+<div class="code-title">
+<span>Example: Decrement Operator</span>
+</div>
+
+<pre><code><span class="preprocessor">#include</span> <span class="header-file">&lt;stdio.h&gt;</span>
+<span class="datatype">int</span> <span class="function">main</span><span class="symbol">()</span>
+<span class="symbol">{</span>
+    <span class="datatype">int</span> a <span class="symbol">=</span> 5<span class="symbol">;</span>
+    a<span class="symbol">--;</span>
+    <span class="function">printf</span><span class="symbol">(</span><span class="string">"Value of a = %d\\n"</span><span class="symbol">,</span> a<span class="symbol">);</span>
+    <span class="keyword">return</span> 0<span class="symbol">;</span>
+<span class="symbol">}</span></code></pre>
+
+<p><b>Output:</b></p>
+
+<pre><code>Value of a = 4</code></pre>
+
+</div>
+
+</div>
+
+    <h4>Types Based on Position</h4>
+
+    <p>
+        Increment and decrement operators can also be classified based on
+        where the operator is placed.
+    </p>
+
+    <table class="notes-table">
+        <tr>
+            <th>Type</th>
+            <th>Example</th>
+            <th>Meaning</th>
+        </tr>
+        <tr>
+            <td>Pre-Increment</td>
+            <td>++a</td>
+            <td>First increase, then use the value</td>
+        </tr>
+        <tr>
+            <td>Post-Increment</td>
+            <td>a++</td>
+            <td>First use the value, then increase</td>
+        </tr>
+        <tr>
+            <td>Pre-Decrement</td>
+            <td>--a</td>
+            <td>First decrease, then use the value</td>
+        </tr>
+        <tr>
+            <td>Post-Decrement</td>
+            <td>a--</td>
+            <td>First use the value, then decrease</td>
+        </tr>
+    </table>
+
+    <h4>1. Pre-Increment (++a)</h4>
+
+    <p>
+        In pre-increment, the value is increased by <b>1 first</b>,
+        and then the updated value is used.
+    </p>
+
+<div class="code-box">
+<div class="code-title">
+<span>Example: Pre-Increment</span>
+</div>
+<pre><code><span class="preprocessor">#include</span> <span class="header-file">&lt;stdio.h&gt;</span>
+<span class="datatype">int</span> <span class="function">main</span><span class="symbol">()</span>
+<span class="symbol">{</span>
+    <span class="datatype">int</span> a <span class="symbol">=</span> 5<span class="symbol">;</span>
+    <span class="datatype">int</span> b <span class="symbol">=</span> <span class="symbol">++</span>a<span class="symbol">;</span>
+    <span class="function">printf</span><span class="symbol">(</span><span class="string">"a = %d\\n"</span><span class="symbol">,</span> a<span class="symbol">);</span>
+    <span class="function">printf</span><span class="symbol">(</span><span class="string">"b = %d"</span><span class="symbol">,</span> b<span class="symbol">);</span>
+    <span class="keyword">return</span> 0<span class="symbol">;</span>\n
+<span class="symbol">}</span></code></pre>
+<p><b>Output:</b></p>
+<pre><code>a = 6
+b = 6</code></pre>
+
+</div>
+
+    <p>
+        Here, <b>a</b> becomes 6 first. Then 6 is assigned to <b>b</b>.
+    </p>
+
+    <h4>2. Post-Increment (a++)</h4>
+
+    <p>
+        In post-increment, the current value is used first,
+        and then the value is increased by <b>1</b>.
+    </p>
+
+<div class="code-box">
+<div class="code-title">
+<span>Example: Post-Increment</span>
+</div>
+<pre><code><span class="preprocessor">#include</span> <span class="header-file">&lt;stdio.h&gt;</span>
+<span class="datatype">int</span> <span class="function">main</span><span class="symbol">()</span>
+<span class="symbol">{</span>
+    <span class="datatype">int</span> a <span class="symbol">=</span> 5<span class="symbol">;</span>
+    <span class="datatype">int</span> b <span class="symbol">=</span> a<span class="symbol">++;</span>
+    <span class="function">printf</span><span class="symbol">(</span><span class="string">"a = %d\\n"</span><span class="symbol">,</span> a<span class="symbol">);</span>
+    <span class="function">printf</span><span class="symbol">(</span><span class="string">"b = %d"</span><span class="symbol">,</span> b<span class="symbol">);</span>
+    <span class="keyword">return</span> 0<span class="symbol">;</span>
+<span class="symbol">}</span></code></pre>
+<p><b>Output:</b></p>
+<pre><code>a = 6
+b = 5</code></pre>
+</div>
+
+    <p>
+        Here, the old value <b>5</b> is assigned to <b>b</b> first.
+        After that, <b>a</b> becomes 6.
+    </p>
+
+    <h4>3. Pre-Decrement (--a)</h4>
+
+    <p>
+        In pre-decrement, the value is decreased by <b>1 first</b>,
+        and then the updated value is used.
+    </p>
+
+<div class="code-box">
+<div class="code-title">
+<span>Example: Pre-Decrement</span>
+</div>
+<pre><code><span class="preprocessor">#include</span> <span class="header-file">&lt;stdio.h&gt;</span>
+<span class="datatype">int</span> <span class="function">main</span><span class="symbol">()</span>
+<span class="symbol">{</span>
+    <span class="datatype">int</span> a <span class="symbol">=</span> 5<span class="symbol">;</span>
+    <span class="datatype">int</span> b <span class="symbol">=</span> <span class="symbol">--</span>a<span class="symbol">;</span>
+    <span class="function">printf</span><span class="symbol">(</span><span class="string">"a = %d\\n"</span><span class="symbol">,</span> a<span class="symbol">);</span>
+    <span class="function">printf</span><span class="symbol">(</span><span class="string">"b = %d"</span><span class="symbol">,</span> b<span class="symbol">);</span>
+    <span class="keyword">return</span> 0<span class="symbol">;</span>
+<span class="symbol">}</span></code></pre>
+<p><b>Output:</b></p>
+<pre><code>a = 4
+b = 4</code></pre>
+</div>
+
+    <h4>4. Post-Decrement (a--)</h4>
+
+    <p>
+        In post-decrement, the current value is used first,
+        and then the value is decreased by <b>1</b>.
+    </p>
+
+<div class="code-box">
+<div class="code-title">
+<span>Example: Post-Decrement</span>
+</div>
+<pre><code><span class="preprocessor">#include</span> <span class="header-file">&lt;stdio.h&gt;</span>
+<span class="datatype">int</span> <span class="function">main</span><span class="symbol">()</span>
+<span class="symbol">{</span>
+    <span class="datatype">int</span> a <span class="symbol">=</span> 5<span class="symbol">;</span>
+    <span class="datatype">int</span> b <span class="symbol">=</span> a<span class="symbol">--;</span>
+    <span class="function">printf</span><span class="symbol">(</span><span class="string">"a = %d\\n"</span><span class="symbol">,</span> a<span class="symbol">);</span>
+    <span class="function">printf</span><span class="symbol">(</span><span class="string">"b = %d"</span><span class="symbol">,</span> b<span class="symbol">);</span>
+    <span class="keyword">return</span> 0<span class="symbol">;</span>
+<span class="symbol">}</span></code></pre>
+<p><b>Output:</b></p>
+<pre><code>a = 4
+b = 5</code></pre>
+
+</div>
+
+    <h4>Quick Difference</h4>
+
+    <table class="notes-table">
+        <tr>
+            <th>Operator</th>
+            <th>First Step</th>
+            <th>Second Step</th>
+        </tr>
+        <tr>
+            <td>++a</td>
+            <td>Increase</td>
+            <td>Use value</td>
+        </tr>
+        <tr>
+            <td>a++</td>
+            <td>Use value</td>
+            <td>Increase</td>
+        </tr>
+        <tr>
+            <td>--a</td>
+            <td>Decrease</td>
+            <td>Use value</td>
+        </tr>
+        <tr>
+            <td>a--</td>
+            <td>Use value</td>
+            <td>Decrease</td>
+        </tr>
+    </table>
+
+</div>
+
+<hr>
+
+<h3>Practice Examples</h3>
+
+<div class="code-box">
+
+<div class="code-title">
+<span>Example 1: Increment Operator</span>
+</div>
+<pre><code><span class="preprocessor">#include</span> <span class="header-file">&lt;stdio.h&gt;</span>
+<span class="datatype">int</span> <span class="function">main</span><span class="symbol">()</span>
+<span class="symbol">{</span>
+    <span class="datatype">int</span> a <span class="symbol">=</span> 10<span class="symbol">;</span>
+    a<span class="symbol">++;</span>
+    <span class="function">printf</span><span class="symbol">(</span><span class="string">"%d"</span><span class="symbol">,</span> a<span class="symbol">);</span>
+    <span class="keyword">return</span> 0<span class="symbol">;</span>
+<span class="symbol">}</span>
+</code></pre>
+
+</div>
+
+<div class="code-box">
+
+<div class="code-title">
+<span>Example 2: Decrement Operator</span>
+</div>
+<pre><code><span class="preprocessor">#include</span> <span class="header-file">&lt;stdio.h&gt;</span>
+<span class="datatype">int</span> <span class="function">main</span><span class="symbol">()</span>
+<span class="symbol">{</span>
+    <span class="datatype">int</span> a <span class="symbol">=</span> 10<span class="symbol">;</span>
+    a<span class="symbol">--;</span>
+    <span class="function">printf</span><span class="symbol">(</span><span class="string">"%d"</span><span class="symbol">,</span> a<span class="symbol">);</span>
+    <span class="keyword">return</span> 0<span class="symbol">;</span>
+<span class="symbol">}</span>
+</code></pre>
+
+</div>
+
+<div class="code-box">
+<div class="code-title">
+<span>Example 3: Pre-Increment</span>
+</div>
+<pre><code><span class="preprocessor">#include</span> <span class="header-file">&lt;stdio.h&gt;</span>
+<span class="datatype">int</span> <span class="function">main</span><span class="symbol">()</span>
+<span class="symbol">{</span>
+    <span class="datatype">int</span> a <span class="symbol">=</span> 5<span class="symbol">;</span>
+    <span class="datatype">int</span> b<span class="symbol">;</span>
+    b <span class="symbol">=</span> <span class="symbol">++</span>a<span class="symbol">;</span>
+    <span class="function">printf</span><span class="symbol">(</span><span class="string">"a = %d\\n"</span><span class="symbol">,</span> a<span class="symbol">);</span>
+    <span class="function">printf</span><span class="symbol">(</span><span class="string">"b = %d"</span><span class="symbol">,</span> b<span class="symbol">);</span>
+    <span class="keyword">return</span> 0<span class="symbol">;</span>
+<span class="symbol">}</span>
+</code></pre>
+
+</div>
+
+<div class="code-box">
+
+<div class="code-title">
+<span>Example 4: Post-Increment</span>
+</div>
+<pre><code><span class="preprocessor">#include</span> <span class="header-file">&lt;stdio.h&gt;</span>
+<span class="datatype">int</span> <span class="function">main</span><span class="symbol">()</span>
+<span class="symbol">{</span>
+    <span class="datatype">int</span> a <span class="symbol">=</span> 5<span class="symbol">;</span>
+    <span class="datatype">int</span> b<span class="symbol">;</span>
+    <span class="symbol">=</span> a<span class="symbol">++;</span>
+    <span class="function">printf</span><span class="symbol">(</span><span class="string">"a = %d\\n"</span><span class="symbol">,</span> a<span class="symbol">);</span>
+    <span class="function">printf</span><span class="symbol">(</span><span class="string">"b = %d"</span><span class="symbol">,</span> b<span class="symbol">);</span>
+    <span class="keyword">return</span> 0<span class="symbol">;</span>
+<span class="symbol">}</span>
+</code></pre>
+
+</div>
+
+<div class="code-box">
+
+<div class="code-title">
+<span>Example 5: Pre and Post Increment</span>
+</div>
+<pre><code><span class="preprocessor">#include</span> <span class="header-file">&lt;stdio.h&gt;</span>
+<span class="datatype">int</span> <span class="function">main</span><span class="symbol">()</span>
+<span class="symbol">{</span>
+    <span class="datatype">int</span> a <span class="symbol">=</span> 5<span class="symbol">;</span>
+    <span class="function">printf</span><span class="symbol">(</span><span class="string">"%d\\n"</span><span class="symbol">,</span> a<span class="symbol">++);</span>
+    <span class="function">printf</span><span class="symbol">(</span><span class="string">"%d\\n"</span><span class="symbol">,</span> a<span class="symbol">);</span>
+    <span class="function">printf</span><span class="symbol">(</span><span class="string">"%d"</span><span class="symbol">,</span> <span class="symbol">++</span>a<span class="symbol">);</span>
+    <span class="keyword">return</span> 0<span class="symbol">;</span>
+<span class="symbol">}</span>
+</code></pre>
+
+</div>
+
+<div class="code-box">
+
+<div class="code-title">
+<span>Practice: Increment and Decrement Expressions</span>
+</div>
 
 <pre><code><span class="preprocessor">#include</span> <span class="header-file">&lt;stdio.h&gt;</span>
 
 <span class="datatype">int</span> <span class="function">main</span><span class="symbol">()</span>
 <span class="symbol">{</span>
-    <span class="datatype">int</span> a <span class="symbol">=</span> <span class="number">5</span><span class="symbol">;</span>
+    <span class="datatype">int</span> a <span class="symbol">=</span> 5<span class="symbol">;</span>
+    <span class="datatype">int</span> b <span class="symbol">=</span> 3<span class="symbol">;</span>
 
-    <span class="comment">// Increment operator (++): Increases the value by 1</span>
-    a<span class="symbol">++;</span>
-    <span class="function">printf</span><span class="symbol">(</span><span class="string">"After Increment = %d\\n"</span><span class="symbol">,</span> a<span class="symbol">);</span>
+    <span class="datatype">int</span> c <span class="symbol">=</span> a<span class="symbol">++</span> <span class="symbol">+</span> <span class="symbol">++</span>b<span class="symbol">;</span>
 
-    <span class="comment">// Decrement operator (--): Decreases the value by 1</span>
-    a<span class="symbol">--;</span>
-    <span class="function">printf</span><span class="symbol">(</span><span class="string">"After Decrement = %d\\n"</span><span class="symbol">,</span> a<span class="symbol">);</span>
+    <span class="function">printf</span><span class="symbol">(</span><span class="string">"Expression 1: a++ + ++b\\n"</span><span class="symbol">);</span>
+    <span class="function">printf</span><span class="symbol">(</span><span class="string">"a = %d, b = %d, c = %d\\n"</span><span class="symbol">,</span> a<span class="symbol">,</span> b<span class="symbol">,</span> c<span class="symbol">);</span>
 
-    <span class="keyword">return</span> <span class="number">0</span><span class="symbol">;</span>
+
+    <span class="datatype">int</span> x <span class="symbol">=</span> 10<span class="symbol">;</span>
+    <span class="datatype">int</span> y <span class="symbol">=</span> <span class="symbol">--</span>x<span class="symbol">;</span>
+
+    <span class="function">printf</span><span class="symbol">(</span><span class="string">"Expression 2: --x\\n"</span><span class="symbol">);</span>
+    <span class="function">printf</span><span class="symbol">(</span><span class="string">"x = %d, y = %d\\n"</span><span class="symbol">,</span> x<span class="symbol">,</span> y<span class="symbol">);</span>
+
+
+    <span class="datatype">int</span> p <span class="symbol">=</span> 8<span class="symbol">;</span>
+    <span class="datatype">int</span> q <span class="symbol">=</span> p<span class="symbol">--;</span>
+
+    <span class="function">printf</span><span class="symbol">(</span><span class="string">"Expression 3: p--\\n"</span><span class="symbol">);</span>
+    <span class="function">printf</span><span class="symbol">(</span><span class="string">"p = %d, q = %d\\n"</span><span class="symbol">,</span> p<span class="symbol">,</span> q<span class="symbol">);</span>
+
+
+    <span class="datatype">int</span> m <span class="symbol">=</span> 4<span class="symbol">;</span>
+    <span class="datatype">int</span> n <span class="symbol">=</span> <span class="symbol">++</span>m <span class="symbol">+</span> 2<span class="symbol">;</span>
+
+    <span class="function">printf</span><span class="symbol">(</span><span class="string">"Expression 4: ++m + 2\\n"</span><span class="symbol">);</span>
+    <span class="function">printf</span><span class="symbol">(</span><span class="string">"m = %d, n = %d"</span><span class="symbol">,</span> m<span class="symbol">,</span> n<span class="symbol">);</span>
+
+
+    <span class="datatype">int</span> r <span class="symbol">=</span> 7<span class="symbol">;</span>
+    <span class="datatype">int</span> s <span class="symbol">=</span> r<span class="symbol">--</span> <span class="symbol">+</span> 3<span class="symbol">;</span>
+
+    <span class="function">printf</span><span class="symbol">(</span><span class="string">"Expression 5: r-- + 3\n"</span><span class="symbol">);</span>
+    <span class="function">printf</span><span class="symbol">(</span><span class="string">"r = %d, s = %d"</span><span class="symbol">,</span> r<span class="symbol">,</span> s<span class="symbol">);</span>
+
+
+    <span class="keyword">return</span> 0<span class="symbol">;</span>
 <span class="symbol">}</span></code></pre>
+
+<p><b>Output:</b></p>
+
+<pre><code>Expression 1: a++ + ++b
+a = 6, b = 4, c = 9
+
+Expression 2: --x
+x = 9, y = 9
+
+Expression 3: p--
+p = 7, q = 8
+
+Expression 4: ++m + 2
+m = 5, n = 7
+
+Expression 5: r-- + 3
+r = 6, s = 10</code></pre>
 
 </div>
 
-<hr>
 
 <h3>6. Bitwise Operators</h3>
 
@@ -7406,67 +7776,6 @@ scanf("%c", &grade2);
 is executed, it immediately reads the remaining <code>\\n</code>. Therefore, the program does not wait for the user to type <b>grade2</b>.
 </p>
 
-<h4>Input Buffer Illustration</h4>
-
-<pre class="notes_text_pre">
-User Input
-
-101↵
-
-↓
-
-Input Buffer
-
-1 0 1 \\n
-
-↓
-
-scanf("%d",&roll)
-
-↓
-
-\\n
-
-↓
-
-getchar()
-
-↓
-
-Buffer Empty
-
-↓
-
-User Input
-
-A↵
-
-↓
-
-Input Buffer
-
-A \\n
-
-↓
-
-scanf("%c",&grade)
-
-↓
-
-\\n
-
-↓
-
-scanf("%c",&grade2)
-
-↓
-
-Reads \\n
-
-↓
-
-Program does not wait for input
-</pre>
 
 <h4>Solution 1 (Recommended)</h4>
 
@@ -9743,8 +10052,6 @@ The <strong>default</strong> case works like the else block of an if-else statem
 It executes when none of the case values match the expression.
 </p>
 
-<h4>Example</h4>
-
 <h4>Example 5: Using default Case</h4>
 
 <div class="code-box">
@@ -9754,7 +10061,7 @@ It executes when none of the case values match the expression.
         <span class="code-dot yellow"></span>
         <span class="code-dot green"></span>
 
-        <span class="code-text">Example: switch Statement with default</span>
+        <span class="code-text">deault.c</span>
     </div>
 
 <pre><code>
@@ -14380,13 +14687,10 @@ int m5 = 70;
 Here we need 5 different variables.
 </p>
 
-<p><strong>With Array:</strong></p>
-
-<pre class="notes_text_pre">
-int marks[5] = {80, 75, 90, 85, 70};
-</pre>
 
 <p>
+With Array: <br>
+int marks[5] = {80, 75, 90, 85, 70};<br>
 Using an array, all values can be stored in a single variable.
 </p>
 

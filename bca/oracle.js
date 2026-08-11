@@ -15558,7 +15558,7 @@ In today's lecture, we learned about **DATE Data Types** in Oracle:
 let oracleOperatorsContent = `
 
 
-<h3>Introduction to Oracle Operators</h3>
+<h3>Introduction to Operators</h3>
 
 
 <p>
@@ -15571,8 +15571,8 @@ Today we will learn about Operators in Oracle Database. Operators are special sy
 <strong>What We Will Cover:</strong>
 </p>
 <ul>
-    <li>Introduction to Oracle Operators</li>
-    <li>Types of Operators in Oracle</li>
+    <li>Introduction to  Operators</li>
+    <li>Types of Operators </li>
     <li>ASSIGNMENT OPERATOR (Detailed Explanation)</li>
     <li>Assignment Operator Syntax</li>
     <li>Assignment Operator in SQL (UPDATE, SET)</li>
@@ -15581,7 +15581,7 @@ Today we will learn about Operators in Oracle Database. Operators are special sy
 </ul>
 
 
-<h3>Introduction to Oracle Operators</h3>
+<h3>Introduction to Operators</h3>
 
 
 <p>
@@ -16434,8 +16434,377 @@ In today's lecture, we learned about Oracle Operators with focus on ASSIGNMENT O
 <strong>Next Topic:</strong> Arithmetic Operators in Oracle (+, -, *, /)
 </p>
 
+    <div class="notes_text">
+
+        <h3>Operators Precedence</h3>
+
+        <p>
+            <strong>Operator precedence</strong> in SQL determines the order
+            in which different operators are evaluated when an expression
+            contains more than one operator.
+        </p>
+
+        <p>
+            In simple words:
+            <strong>
+                Operator precedence tells SQL which operation should be
+                performed first.
+            </strong>
+        </p>
+
+
+        <h4>Why is Operator Precedence Important?</h4>
+
+        <p>
+            When an SQL expression contains multiple operators, SQL does not
+            evaluate them randomly. It follows a specific order of precedence.
+        </p>
+
+        <div class="code-box">
+            <div class="code-title">
+                <span>Example</span>
+            </div>
+            <pre><code>SELECT 10 + 5 * 2;</code></pre>
+        </div>
+
+        <p>
+            Multiplication (<strong>*</strong>) has higher precedence than
+            addition (<strong>+</strong>).
+        </p>
+
+        <p>
+            Therefore, SQL evaluates:
+        </p>
+
+        <div class="code-box">
+            <pre><code>10 + (5 * 2)
+= 10 + 10
+= 20</code></pre>
+        </div>
+
+
+        <h4>General Order of Operator Precedence</h4>
+
+        <p>
+            The exact precedence rules can vary slightly between different
+            SQL database systems. A commonly used order is:
+        </p>
+
+        <table class="notes-table">
+
+            <tr>
+                <th>Priority</th>
+                <th>Operators / Expressions</th>
+            </tr>
+
+            <tr>
+                <td>1</td>
+                <td>Parentheses ( )</td>
+            </tr>
+
+            <tr>
+                <td>2</td>
+                <td>Unary operators such as + and -</td>
+            </tr>
+
+            <tr>
+                <td>3</td>
+                <td>Multiplication (*), Division (/), Modulus (%)</td>
+            </tr>
+
+            <tr>
+                <td>4</td>
+                <td>Addition (+), Subtraction (-)</td>
+            </tr>
+
+            <tr>
+                <td>5</td>
+                <td>Comparison operators: =, &lt;&gt;, &lt;, &gt;, &lt;=, &gt;=</td>
+            </tr>
+
+            <tr>
+                <td>6</td>
+                <td>IS NULL, IS NOT NULL, LIKE, IN, BETWEEN</td>
+            </tr>
+
+            <tr>
+                <td>7</td>
+                <td>NOT</td>
+            </tr>
+
+            <tr>
+                <td>8</td>
+                <td>AND</td>
+            </tr>
+
+            <tr>
+                <td>9</td>
+                <td>OR</td>
+            </tr>
+
+        </table>
+
+
+        <h4>1. Parentheses ( )</h4>
+
+        <p>
+            Parentheses have the highest priority in an expression.
+            The expression inside parentheses is evaluated first.
+        </p>
+
+        <div class="code-box">
+            <pre><code>SELECT (10 + 5) * 2;</code></pre>
+        </div>
+
+        <p>Evaluation:</p>
+
+        <div class="code-box">
+            <pre><code>(10 + 5) * 2
+= 15 * 2
+= 30</code></pre>
+        </div>
+
+
+        <h4>2. Arithmetic Operators</h4>
+
+        <p>
+            Multiplication and division generally have higher precedence
+            than addition and subtraction.
+        </p>
+
+        <div class="code-box">
+            <pre><code>SELECT 20 + 10 / 2;</code></pre>
+        </div>
+
+        <p>Evaluation:</p>
+
+        <div class="code-box">
+            <pre><code>20 + (10 / 2)
+= 20 + 5
+= 25</code></pre>
+        </div>
+
+
+        <h4>3. Comparison Operators</h4>
+
+        <p>
+            Comparison operators are used to compare two values.
+        </p>
+
+        <div class="code-box">
+            <pre><code>=
+&lt;&gt;
+&lt;
+&gt;
+&lt;=
+&gt;=</code></pre>
+        </div>
+
+        <p>Example:</p>
+
+        <div class="code-box">
+            <pre><code>SELECT *
+FROM Student
+WHERE Marks &gt;= 50;</code></pre>
+        </div>
+
+
+        <h4>4. NOT Operator</h4>
+
+        <p>
+            <strong>NOT</strong> reverses the result of a Boolean condition.
+        </p>
+
+        <div class="code-box">
+            <pre><code>WHERE NOT Marks &lt; 40</code></pre>
+        </div>
+
+        <p>
+            It means that the condition
+            <strong>Marks &lt; 40</strong> must not be true.
+        </p>
+
+
+        <h4>5. AND Operator</h4>
+
+        <p>
+            <strong>AND</strong> is used when all specified conditions must
+            be true.
+        </p>
+
+        <div class="code-box">
+            <pre><code>SELECT *
+FROM Student
+WHERE Marks &gt;= 50
+AND Age &gt;= 18;</code></pre>
+        </div>
+
+        <p>
+            Both conditions must be satisfied.
+        </p>
+
+
+        <h4>6. OR Operator</h4>
+
+        <p>
+            <strong>OR</strong> is used when at least one condition must
+            be true.
+        </p>
+
+        <div class="code-box">
+            <pre><code>SELECT *
+FROM Student
+WHERE City = 'Delhi'
+OR City = 'Mumbai';</code></pre>
+        </div>
+
+
+        <h4>Example of Multiple Operators</h4>
+
+        <div class="code-box">
+            <div class="code-title">
+                <span>SQL Example</span>
+            </div>
+            <pre><code>SELECT *
+FROM Student
+WHERE Marks &gt; 50
+AND Age &gt; 18
+OR City = 'Delhi';</code></pre>
+        </div>
+
+        <p>
+            Here, <strong>AND</strong> has higher precedence than
+            <strong>OR</strong>.
+        </p>
+
+        <p>
+            Therefore, SQL evaluates it conceptually as:
+        </p>
+
+        <div class="code-box">
+            <pre><code>(Marks &gt; 50 AND Age &gt; 18)
+OR City = 'Delhi'</code></pre>
+        </div>
+
+
+        <h4>Using Parentheses to Change Precedence</h4>
+
+        <p>
+            Parentheses can be used when we want to explicitly control the
+            order of evaluation.
+        </p>
+
+        <div class="code-box">
+            <pre><code>SELECT *
+FROM Student
+WHERE Marks &gt; 50
+AND (Age &gt; 18 OR City = 'Delhi');</code></pre>
+        </div>
+
+        <p>
+            Here, the expression inside the parentheses is evaluated first.
+        </p>
+
+
+        <h4>Precedence of AND and OR</h4>
+
+        <p>
+            One of the most important rules to remember is:
+        </p>
+
+        <div class="code-box">
+            <pre><code>NOT
+ ↓
+AND
+ ↓
+OR</code></pre>
+        </div>
+
+        <p>
+            Therefore:
+            <strong>NOT has higher precedence than AND, and AND has higher
+            precedence than OR.</strong>
+        </p>
+
+
+        <h4>Example for Students</h4>
+
+        <div class="code-box">
+            <pre><code>WHERE Marks &gt;= 50
+OR Marks &gt;= 40
+AND Attendance &gt;= 75</code></pre>
+        </div>
+
+        <p>
+            Because <strong>AND</strong> has higher precedence than
+            <strong>OR</strong>, SQL evaluates it as:
+        </p>
+
+        <div class="code-box">
+            <pre><code>WHERE Marks &gt;= 50
+OR (Marks &gt;= 40 AND Attendance &gt;= 75)</code></pre>
+        </div>
+
+
+        <h4>How to Avoid Confusion?</h4>
+
+        <p>
+            When an SQL condition contains multiple operators, it is good
+            practice to use <strong>parentheses</strong> to make the intended
+            logic clear.
+        </p>
+
+        <div class="code-box">
+            <pre><code>WHERE (Marks &gt;= 50 AND Attendance &gt;= 75)
+OR City = 'Delhi';</code></pre>
+        </div>
+
+
+        <h4>Key Points</h4>
+
+        <ul>
+            <li>
+                Operator precedence determines the order of evaluation.
+            </li>
+            <li>
+                Parentheses have the highest priority.
+            </li>
+            <li>
+                Multiplication and division are generally evaluated before
+                addition and subtraction.
+            </li>
+            <li>
+                Comparison operators are evaluated before logical operators.
+            </li>
+            <li>
+                NOT has higher precedence than AND.
+            </li>
+            <li>
+                AND has higher precedence than OR.
+            </li>
+            <li>
+                Parentheses can be used to explicitly control the evaluation
+                order.
+            </li>
+        </ul>
+
+
+        <h4> Definition</h4>
+
+        <p>
+            <strong>
+                Operator precedence is the set of rules that determines the
+                order in which SQL evaluates multiple operators in an
+                expression. Parentheses can be used to change or clearly
+                specify the order of evaluation.
+            </strong>
+        </p>
+
+    </div>
 
 `;
+
+
 
 let oracleArithmeticOperatorsContent = `
 
