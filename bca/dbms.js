@@ -14226,7 +14226,7 @@ FROM Student_B;</code></pre>
         </ul>
 
 
-        <h4>Student-Friendly Definition</h4>
+        <h4> Definition</h4>
 
         <p>
             <strong>
@@ -14590,7 +14590,7 @@ Students associated with ALL courses in S</code></pre>
         </ul>
 
 
-        <h4>Student-Friendly Definition</h4>
+        <h4> Definition</h4>
 
         <p>
             <strong>
@@ -15031,11 +15031,13 @@ WHERE Age = 20;</code></pre>
 
         <p>Example in a query:</p>
 
-        <div class="code-box">
-            <pre><code>SELECT *
-FROM Student
-WHERE Marks >= 50;</code></pre>
-        </div>
+<div class="code-box">
+    <div class="code-title">SQL Example</div>
+
+    <pre><code><span class="keyword">SELECT</span> *
+<span class="keyword">FROM</span> Student
+<span class="keyword">WHERE</span> Marks &gt;= <span class="number">50</span>;</code></pre>
+</div>
 
         <p>
             Here, <strong>50</strong> is a numeric literal.
@@ -15065,12 +15067,11 @@ WHERE Marks >= 50;</code></pre>
         </div>
 
         <p>Example:</p>
-
-        <div class="code-box">
-            <pre><code>SELECT *
-FROM Student
-WHERE Name = 'Amit';</code></pre>
-        </div>
+<div class="code-box">
+    <pre><code><span class="keyword">SELECT</span> *
+<span class="keyword">FROM</span> Student
+<span class="keyword">WHERE</span> Name = <span class="string">'Amit'</span>;</code></pre>
+</div>
 
         <p>
             Here, <strong>'Amit'</strong> is a string literal.
@@ -15088,22 +15089,22 @@ WHERE Name = 'Amit';</code></pre>
             The exact literal syntax can vary between SQL implementations.
         </p>
 
-        <div class="code-box">
-            <div class="code-title">
-                <span>Examples</span>
-            </div>
-            <pre><code>DATE '2026-08-11'
-TIME '10:30:00'
-TIMESTAMP '2026-08-11 10:30:00'</code></pre>
-        </div>
+<div class="code-box">
+    <div class="code-title">
+        <span>Examples</span>
+    </div>
+
+    <pre><code><span class="keyword">DATE</span> <span class="string">'2026-08-11'</span>
+<span class="keyword">TIME</span> <span class="string">'10:30:00'</span>
+<span class="keyword">TIMESTAMP</span> <span class="string">'2026-08-11 10:30:00'</span></code></pre>
+</div>
 
         <p>Example:</p>
-
-        <div class="code-box">
-            <pre><code>SELECT *
-FROM Student
-WHERE AdmissionDate = DATE '2026-08-11';</code></pre>
-        </div>
+<div class="code-box">
+    <pre><code><span class="keyword">SELECT</span> *
+<span class="keyword">FROM</span> Student
+<span class="keyword">WHERE</span> AdmissionDate = <span class="keyword">DATE</span> <span class="string">'2026-08-11'</span>;</code></pre>
+</div>
 
 
         <h4>4. Boolean Literals</h4>
@@ -15113,23 +15114,24 @@ WHERE AdmissionDate = DATE '2026-08-11';</code></pre>
             <strong>TRUE</strong> and <strong>FALSE</strong>.
         </p>
 
-        <div class="code-box">
-            <div class="code-title">
-                <span>Examples</span>
-            </div>
-            <pre><code>TRUE
-FALSE</code></pre>
-        </div>
+<div class="code-box">
+    <div class="code-title">
+        <span>Examples</span>
+    </div>
+
+    <pre><code><span class="keyword">TRUE</span>
+<span class="keyword">FALSE</span></code></pre>
+</div>
 
         <p>
             Example:
         </p>
 
-        <div class="code-box">
-            <pre><code>SELECT *
-FROM Student
-WHERE IsActive = TRUE;</code></pre>
-        </div>
+<div class="code-box">
+    <pre><code><span class="keyword">SELECT</span> *
+<span class="keyword">FROM</span> Student
+<span class="keyword">WHERE</span> IsActive = <span class="keyword">TRUE</span>;</code></pre>
+</div>
 
         <p>
             <strong>Note:</strong> Boolean support and syntax can differ
@@ -15144,13 +15146,14 @@ WHERE IsActive = TRUE;</code></pre>
             unknown value.
         </p>
 
-        <div class="code-box">
-            <div class="code-title">
-                <span>Example</span>
-            </div>
-            <pre><code>INSERT INTO Student (StudentID, Name, Email)
-VALUES (101, 'Amit', NULL);</code></pre>
-        </div>
+<div class="code-box">
+    <div class="code-title">
+        <span>Example</span>
+    </div>
+
+    <pre><code><span class="keyword">INSERT INTO</span> Student (StudentID, Name, Email)
+<span class="keyword">VALUES</span> (<span class="number">101</span>, <span class="string">'Amit'</span>, <span class="keyword">NULL</span>);</code></pre>
+</div>
 
         <p>
             Here, <strong>NULL</strong> indicates that the Email value is
@@ -15163,11 +15166,11 @@ VALUES (101, 'Amit', NULL);</code></pre>
             <strong>IS NOT NULL</strong>.
         </p>
 
-        <div class="code-box">
-            <pre><code>SELECT *
-FROM Student
-WHERE Email IS NULL;</code></pre>
-        </div>
+<div class="code-box">
+    <pre><code><span class="keyword">SELECT</span> *
+<span class="keyword">FROM</span> Student
+<span class="keyword">WHERE</span> Email <span class="keyword">IS NULL</span>;</code></pre>
+</div>
 
 
         <h4>6. Binary Literals</h4>
@@ -15181,12 +15184,13 @@ WHERE Email IS NULL;</code></pre>
             Their syntax depends on the database system.
         </p>
 
-        <div class="code-box">
-            <div class="code-title">
-                <span>Example</span>
-            </div>
-            <pre><code>X'48656C6C6F'</code></pre>
-        </div>
+<div class="code-box">
+    <div class="code-title">
+        <span>Example</span>
+    </div>
+
+    <pre><code><span class="keyword">X</span><span class="string">'48656C6C6F'</span></code></pre>
+</div>
 
         <p>
             The above represents binary data using hexadecimal notation in
@@ -15201,11 +15205,11 @@ WHERE Email IS NULL;</code></pre>
             whereas a column value comes from a row stored in the database.
         </p>
 
-        <div class="code-box">
-            <pre><code>SELECT *
-FROM Student
-WHERE Age = 20;</code></pre>
-        </div>
+<div class="code-box">
+    <pre><code><span class="keyword">SELECT</span> *
+<span class="keyword">FROM</span> Student
+<span class="keyword">WHERE</span> Age = <span class="number">20</span>;</code></pre>
+</div>
 
         <p>
             Here:
@@ -15279,7 +15283,7 @@ WHERE Age = 20;</code></pre>
         </table>
 
 
-        <h4>Student-Friendly Definition</h4>
+        <h4> Definition</h4>
 
         <p>
             <strong>

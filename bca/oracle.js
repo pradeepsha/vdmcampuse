@@ -6272,32 +6272,56 @@ Today we will learn about **DDL (Data Definition Language)** in detail. DDL comm
 
 <h3>1. CREATE Command</h3>
 
-<p>Creates a new database object (table, database, index, view, etc.)</p>
+<p>Creates a new database object such as a table, database, index, view, etc.</p>
+
 
 <h4>Syntax:</h4>
+
+<div class="code-box">
+
+
+    <div class="code-title">
+        <span class="code-text">Syntax: CREATE TABLE</span>
+    </div>
+
+
 <pre>
-CREATE TABLE table_name (
-    column1 datatype constraint,
-    column2 datatype constraint,
-    column3 datatype constraint,
+<span class="keyword">CREATE TABLE</span> <span class="table-name">table_name</span>
+(
+    <span class="column">column1</span> <span class="datatype">datatype</span> <span class="keyword">constraint</span>,
+    <span class="column">column2</span> <span class="datatype">datatype</span> <span class="keyword">constraint</span>,
+    <span class="column">column3</span> <span class="datatype">datatype</span> <span class="keyword">constraint</span>,
     ...
 );
 </pre>
 
-<h4>Detailed Example – Creating Student Table:</h4>
+
+</div>
+
+<div class="code-box">
+
+
+    <div class="code-title">
+        <span class="code-text">Example: CREATE TABLE</span>
+    </div>
+
 
 <pre>
-CREATE TABLE students (
-    student_id NUMBER(5) PRIMARY KEY,
-    student_name VARCHAR2(50) NOT NULL,
-    student_email VARCHAR2(100) UNIQUE,
-    mobile_number VARCHAR2(10),
-    age NUMBER(3),
-    department VARCHAR2(50),
-    enrollment_date DATE,
-    status VARCHAR2(20) DEFAULT 'Active'
+<span class="keyword">CREATE TABLE</span> <span class="table-name">students</span>
+(
+    <span class="column">student_id</span>      <span class="datatype">NUMBER</span>(<span class="number">5</span>) <span class="keyword">PRIMARY KEY</span>,
+    <span class="column">student_name</span>    <span class="datatype">VARCHAR2</span>(<span class="number">50</span>) <span class="keyword">NOT NULL</span>,
+    <span class="column">student_email</span>   <span class="datatype">VARCHAR2</span>(<span class="number">100</span>) <span class="keyword">UNIQUE</span>,
+    <span class="column">mobile_number</span>   <span class="datatype">VARCHAR2</span>(<span class="number">10</span>),
+    <span class="column">age</span>             <span class="datatype">NUMBER</span>(<span class="number">3</span>),
+    <span class="column">department</span>      <span class="datatype">VARCHAR2</span>(<span class="number">50</span>),
+    <span class="column">enrollment_date</span> <span class="datatype">DATE</span>,
+    <span class="column">status</span>           <span class="datatype">VARCHAR2</span>(<span class="number">20</span>) <span class="keyword">DEFAULT</span> <span class="string">'Active'</span>
 );
 </pre>
+
+
+</div>
 
 <table border="1" class="notes-table" cellpadding="10">
     <tr>
@@ -6386,9 +6410,21 @@ CREATE TABLE students (
  Modify existing column's data type, size, or constraints
 </p>
 
+<div class="code-box">
+
+
+    <div class="code-title">
+        <span class="code-text">Example: ALTER TABLE</span>
+    </div>
+
+
 <pre>
-ALTER TABLE students MODIFY student_name VARCHAR2(100);
+<span class="keyword">ALTER TABLE</span> <span class="table-name">students</span>
+<span class="keyword">MODIFY</span> <span class="column">student_name</span> <span class="datatype">VARCHAR2</span>(<span class="number">100</span>);
 </pre>
+
+
+</div>
 
 <p>
 <strong>Explanation:</strong> Changes student_name column from VARCHAR2(50) to VARCHAR2(100), allowing longer names
@@ -6429,16 +6465,32 @@ ALTER TABLE students MODIFY student_name VARCHAR2(100);
 
 <h4>Complete MODIFY Example:</h4>
 
+<div class="code-box">
+
+
+    <div class="code-title">
+        <span class="code-text">Examples: MODIFY Columns</span>
+    </div>
+
+
 <pre>
--- Change email column to accept longer emails
-ALTER TABLE students MODIFY student_email VARCHAR2(150);
+<span class="comment">-- Change email column to accept longer emails</span>
+<span class="keyword">ALTER TABLE</span> <span class="table-name">students</span>
+<span class="keyword">MODIFY</span> <span class="column">student_email</span> <span class="datatype">VARCHAR2</span>(<span class="number">150</span>);
 
--- Change age column to allow larger values
-ALTER TABLE students MODIFY age NUMBER(5);
 
--- Add NOT NULL constraint to mobile
-ALTER TABLE students MODIFY mobile_number VARCHAR2(10) NOT NULL;
+<span class="comment">-- Change age column to allow larger values</span>
+<span class="keyword">ALTER TABLE</span> <span class="table-name">students</span>
+<span class="keyword">MODIFY</span> <span class="column">age</span> <span class="datatype">NUMBER</span>(<span class="number">5</span>);
+
+
+<span class="comment">-- Add NOT NULL constraint to mobile</span>
+<span class="keyword">ALTER TABLE</span> <span class="table-name">students</span>
+<span class="keyword">MODIFY</span> <span class="column">mobile_number</span> <span class="datatype">VARCHAR2</span>(<span class="number">10</span>) <span class="keyword">NOT NULL</span>;
 </pre>
+
+
+</div>
 
 <h4>ALTER – ADD (Add New Column)</h4>
 
@@ -6446,9 +6498,23 @@ ALTER TABLE students MODIFY mobile_number VARCHAR2(10) NOT NULL;
  Add a new column to existing table
 </p>
 
+<div class="code-box">
+
+
+    <div class="code-title">
+        <span class="code-text">Example: ADD Column</span>
+    </div>
+
+
 <pre>
-ALTER TABLE students ADD (gender VARCHAR2(10));
+<span class="keyword">ALTER TABLE</span> <span class="table-name">students</span>
+<span class="keyword">ADD</span> (
+    <span class="column">gender</span> <span class="datatype">VARCHAR2</span>(<span class="number">10</span>)
+);
 </pre>
+
+
+</div>
 
 <p>
 <strong>Explanation:</strong> Adds new column "gender" to students table
@@ -6456,18 +6522,34 @@ ALTER TABLE students ADD (gender VARCHAR2(10));
 
 <h4>Complete ADD Example – Adding Multiple Columns:</h4>
 
-<pre>
--- Add single column
-ALTER TABLE students ADD (gender VARCHAR2(10));
+<div class="code-box">
 
--- Add multiple columns at once
-ALTER TABLE students ADD (
-    father_name VARCHAR2(50),
-    mother_name VARCHAR2(50),
-    address VARCHAR2(200),
-    pincode NUMBER(6)
+
+    <div class="code-title">
+        <span class="code-text">Examples: ADD Columns</span>
+    </div>
+
+
+<pre>
+<span class="comment">-- Add single column</span>
+<span class="keyword">ALTER TABLE</span> <span class="table-name">students</span>
+<span class="keyword">ADD</span> (
+    <span class="column">gender</span> <span class="datatype">VARCHAR2</span>(<span class="number">10</span>)
+);
+
+
+<span class="comment">-- Add multiple columns at once</span>
+<span class="keyword">ALTER TABLE</span> <span class="table-name">students</span>
+<span class="keyword">ADD</span> (
+    <span class="column">father_name</span> <span class="datatype">VARCHAR2</span>(<span class="number">50</span>),
+    <span class="column">mother_name</span> <span class="datatype">VARCHAR2</span>(<span class="number">50</span>),
+    <span class="column">address</span> <span class="datatype">VARCHAR2</span>(<span class="number">200</span>),
+    <span class="column">pincode</span> <span class="datatype">NUMBER</span>(<span class="number">6</span>)
 );
 </pre>
+
+
+</div>
 
 <table border="1" class="notes-table" cellpadding="10">
     <tr>
@@ -6503,20 +6585,49 @@ ALTER TABLE students ADD (
  Rename an existing column
 </p>
 
-<h4>Syntax (Oracle 12c and later):</h4>
+<h4>Syntax :</h4>
+<div class="code-box">
+
+
+    <div class="code-title">
+        <span class="code-text">Syntax: RENAME Column</span>
+    </div>
+
+
 <pre>
-ALTER TABLE table_name RENAME COLUMN old_column_name TO new_column_name;
+<span class="keyword">ALTER TABLE</span> <span class="table-name">table_name</span>
+<span class="keyword">RENAME COLUMN</span> <span class="column">old_column_name</span>
+<span class="keyword">TO</span> <span class="column">new_column_name</span>;
 </pre>
+
+
+</div>
 
 <h4>Example:</h4>
 
-<pre>
--- Rename mobile_number to phone_number
-ALTER TABLE students RENAME COLUMN mobile_number TO phone_number;
+<div class="code-box">
 
--- Rename enrollment_date to join_date
-ALTER TABLE students RENAME COLUMN enrollment_date TO join_date;
+
+    <div class="code-title">
+        <span class="code-text">Examples: RENAME Column</span>
+    </div>
+
+
+<pre>
+<span class="comment">-- Rename mobile_number to phone_number</span>
+<span class="keyword">ALTER TABLE</span> <span class="table-name">students</span>
+<span class="keyword">RENAME COLUMN</span> <span class="column">mobile_number</span>
+<span class="keyword">TO</span> <span class="column">phone_number</span>;
+
+
+<span class="comment">-- Rename enrollment_date to join_date</span>
+<span class="keyword">ALTER TABLE</span> <span class="table-name">students</span>
+<span class="keyword">RENAME COLUMN</span> <span class="column">enrollment_date</span>
+<span class="keyword">TO</span> <span class="column">join_date</span>;
 </pre>
+
+
+</div>
 
 <h4>Old Syntax (Oracle versions before 12c):</h4>
 <pre>
@@ -6562,9 +6673,21 @@ ALTER TABLE table_name RENAME old_column_name TO new_column_name;
  Delete a column from existing table (column structure removed, data lost)
 </p>
 
+<div class="code-box">
+
+
+    <div class="code-title">
+        <span class="code-text">Example: DROP Column</span>
+    </div>
+
+
 <pre>
-ALTER TABLE students DROP COLUMN gender;
+<span class="keyword">ALTER TABLE</span> <span class="table-name">students</span>
+<span class="keyword">DROP COLUMN</span> <span class="column">gender</span>;
 </pre>
+
+
+</div>
 
 <p>
 <strong>Explanation:</strong> Removes "gender" column completely from students table
@@ -6572,13 +6695,31 @@ ALTER TABLE students DROP COLUMN gender;
 
 <h4>Complete DROP Example:</h4>
 
-<pre>
--- Drop single column
-ALTER TABLE students DROP COLUMN father_name;
+<div class="code-box">
 
--- Drop multiple columns
-ALTER TABLE students DROP COLUMN (mother_name, address, pincode);
+
+    <div class="code-title">
+        <span class="code-text">Examples: DROP Columns</span>
+    </div>
+
+
+<pre>
+<span class="comment">-- Drop single column</span>
+<span class="keyword">ALTER TABLE</span> <span class="table-name">students</span>
+<span class="keyword">DROP COLUMN</span> <span class="column">father_name</span>;
+
+
+<span class="comment">-- Drop multiple columns</span>
+<span class="keyword">ALTER TABLE</span> <span class="table-name">students</span>
+<span class="keyword">DROP COLUMN</span> (
+    <span class="column">mother_name</span>,
+    <span class="column">address</span>,
+    <span class="column">pincode</span>
+);
 </pre>
+
+
+</div>
 
 <table border="1" class="notes-table" cellpadding="10">
     <tr>
@@ -6620,24 +6761,62 @@ ALTER TABLE students DROP COLUMN (mother_name, address, pincode);
 <p>Rename an entire table (not just column)</p>
 
 <h4>Syntax (Oracle 12c and later):</h4>
+<div class="code-box">
+
+
+    <div class="code-title">
+        <span class="code-text">Syntax: RENAME Table</span>
+    </div>
+
+
 <pre>
-RENAME old_table_name TO new_table_name;
+<span class="keyword">RENAME</span> <span class="table-name">old_table_name</span>
+<span class="keyword">TO</span> <span class="table-name">new_table_name</span>;
 </pre>
 
+
+</div>
+
 <h4>Old Syntax (all Oracle versions):</h4>
+<div class="code-box">
+
+
+    <div class="code-title">
+        <span class="code-text">Syntax: RENAME Table using ALTER TABLE</span>
+    </div>
+
+
 <pre>
-ALTER TABLE old_table_name RENAME TO new_table_name;
+<span class="keyword">ALTER TABLE</span> <span class="table-name">old_table_name</span>
+<span class="keyword">RENAME TO</span> <span class="table-name">new_table_name</span>;
 </pre>
+
+
+</div>
 
 <h4>Example:</h4>
 
-<pre>
--- Rename students table to student_records
-RENAME students TO student_records;
+<div class="code-box">
 
--- Or using ALTER syntax
-ALTER TABLE students RENAME TO student_records;
+
+    <div class="code-title">
+        <span class="code-text">Examples: RENAME Table</span>
+    </div>
+
+
+<pre>
+<span class="comment">-- Rename students table to student_records</span>
+<span class="keyword">RENAME</span> <span class="table-name">students</span>
+<span class="keyword">TO</span> <span class="table-name">student_records</span>;
+
+
+<span class="comment">-- Or using ALTER syntax</span>
+<span class="keyword">ALTER TABLE</span> <span class="table-name">students</span>
+<span class="keyword">RENAME TO</span> <span class="table-name">student_records</span>;
 </pre>
+
+
+</div>
 
 <table border="1" class="notes-table" cellpadding="10">
     <tr>
@@ -6672,16 +6851,38 @@ ALTER TABLE students RENAME TO student_records;
 <p>Remove **all data** from table but **keep table structure** intact</p>
 
 <h4>Syntax:</h4>
+<div class="code-box">
+
+
+    <div class="code-title">
+        <span class="code-text">Syntax: TRUNCATE TABLE</span>
+    </div>
+
+
 <pre>
-TRUNCATE TABLE table_name;
+<span class="keyword">TRUNCATE TABLE</span> <span class="table-name">table_name</span>;
 </pre>
+
+
+</div>
 
 <h4>Example:</h4>
 
+<div class="code-box">
+
+
+    <div class="code-title">
+        <span class="code-text">Example: TRUNCATE TABLE</span>
+    </div>
+
+
 <pre>
--- Remove all students from table
-TRUNCATE TABLE students;
+<span class="comment">-- Remove all students from table</span>
+<span class="keyword">TRUNCATE TABLE</span> <span class="table-name">students</span>;
 </pre>
+
+
+</div>
 
 <table border="1" class="notes-table" cellpadding="10">
     <tr>
@@ -6733,66 +6934,115 @@ TRUNCATE TABLE students;
 
 <h4>Complete Practical Example:</h4>
 
-<pre>
--- Step 1: Create table
-CREATE TABLE course_enrollment (
-    enrollment_id NUMBER(5) PRIMARY KEY,
-    student_id NUMBER(5),
-    course_id NUMBER(5),
-    enrollment_date DATE
+<div class="code-box">
+
+
+    <div class="code-title">
+        <span class="code-text">Example: TRUNCATE TABLE Workflow</span>
+    </div>
+
+
+<pre >
+<span class="comment">-- Step 1: Create table</span>
+<span class="keyword">CREATE TABLE</span> <span class="table-name">course_enrollment</span>
+(
+    <span class="column">enrollment_id</span>   <span class="datatype">NUMBER</span>(<span class="number">5</span>) <span class="keyword">PRIMARY KEY</span>,
+    <span class="column">student_id</span>      <span class="datatype">NUMBER</span>(<span class="number">5</span>),
+    <span class="column">course_id</span>       <span class="datatype">NUMBER</span>(<span class="number">5</span>),
+    <span class="column">enrollment_date</span> <span class="datatype">DATE</span>
 );
 
--- Step 2: Insert test data
-INSERT INTO course_enrollment VALUES (1, 101, 1, '2024-01-15');
-INSERT INTO course_enrollment VALUES (2, 102, 1, '2024-01-16');
-INSERT INTO course_enrollment VALUES (3, 103, 2, '2024-01-17');
 
--- Step 3: Check data
-SELECT * FROM course_enrollment;
+<span class="comment">-- Step 2: Insert test data</span>
+<span class="keyword">INSERT INTO</span> <span class="table-name">course_enrollment</span>
+<span class="keyword">VALUES</span> (<span class="number">1</span>, <span class="number">101</span>, <span class="number">1</span>, <span class="string">'2024-01-15'</span>);
 
--- Step 4: Clear all data (keep table)
-TRUNCATE TABLE course_enrollment;
+<span class="keyword">INSERT INTO</span> <span class="table-name">course_enrollment</span>
+<span class="keyword">VALUES</span> (<span class="number">2</span>, <span class="number">102</span>, <span class="number">1</span>, <span class="string">'2024-01-16'</span>);
 
--- Step 5: Table is empty but structure exists
-SELECT * FROM course_enrollment; -- Returns 0 rows
+<span class="keyword">INSERT INTO</span> <span class="table-name">course_enrollment</span>
+<span class="keyword">VALUES</span> (<span class="number">3</span>, <span class="number">103</span>, <span class="number">2</span>, <span class="string">'2024-01-17'</span>);
+
+
+<span class="comment">-- Step 3: Check data</span>
+<span class="keyword">SELECT</span> * <span class="keyword">FROM</span> <span class="table-name">course_enrollment</span>;
+
+
+<span class="comment">-- Step 4: Clear all data (keep table)</span>
+<span class="keyword">TRUNCATE TABLE</span> <span class="table-name">course_enrollment</span>;
+
+
+<span class="comment">-- Step 5: Table is empty but structure exists</span>
+<span class="keyword">SELECT</span> * <span class="keyword">FROM</span> <span class="table-name">course_enrollment</span>;
+<span class="comment">-- Returns 0 rows</span>
 </pre>
+
+
+</div>
+
 
 <h3>Complete DDL Workflow Example – Student Database</h3>
 
+
+<div class="code-box">
+
+
+    <div class="code-title">
+        <span class="code-text">Example: Complete DDL Workflow</span>
+    </div>
+
+
 <pre>
--- STEP 1: CREATE the table
-CREATE TABLE students (
-    student_id NUMBER(5) PRIMARY KEY,
-    student_name VARCHAR2(50) NOT NULL,
-    student_email VARCHAR2(100),
-    age NUMBER(3)
+<span class="comment">-- STEP 1: CREATE the table</span>
+<span class="keyword">CREATE TABLE</span> <span class="table-name">students</span>
+(
+    <span class="column">student_id</span>    <span class="datatype">NUMBER</span>(<span class="number">5</span>) <span class="keyword">PRIMARY KEY</span>,
+    <span class="column">student_name</span>  <span class="datatype">VARCHAR2</span>(<span class="number">50</span>) <span class="keyword">NOT NULL</span>,
+    <span class="column">student_email</span> <span class="datatype">VARCHAR2</span>(<span class="number">100</span>),
+    <span class="column">age</span>           <span class="datatype">NUMBER</span>(<span class="number">3</span>)
 );
 
--- STEP 2: ALTER – ADD new columns
-ALTER TABLE students ADD (
-    mobile_number VARCHAR2(10),
-    department VARCHAR2(50)
+
+<span class="comment">-- STEP 2: ALTER – ADD new columns</span>
+<span class="keyword">ALTER TABLE</span> <span class="table-name">students</span>
+<span class="keyword">ADD</span> (
+    <span class="column">mobile_number</span> <span class="datatype">VARCHAR2</span>(<span class="number">10</span>),
+    <span class="column">department</span>    <span class="datatype">VARCHAR2</span>(<span class="number">50</span>)
 );
 
--- STEP 3: ALTER – MODIFY column size
-ALTER TABLE students MODIFY student_name VARCHAR2(100);
 
--- STEP 4: ALTER – RENAME column
-ALTER TABLE students RENAME COLUMN mobile_number TO phone_number;
+<span class="comment">-- STEP 3: ALTER – MODIFY column size</span>
+<span class="keyword">ALTER TABLE</span> <span class="table-name">students</span>
+<span class="keyword">MODIFY</span> <span class="column">student_name</span> <span class="datatype">VARCHAR2</span>(<span class="number">100</span>);
 
--- STEP 5: ALTER – DROP unnecessary column
-ALTER TABLE students DROP COLUMN age;
 
--- STEP 6: RENAME table
-RENAME students TO student_records;
+<span class="comment">-- STEP 4: ALTER – RENAME column</span>
+<span class="keyword">ALTER TABLE</span> <span class="table-name">students</span>
+<span class="keyword">RENAME COLUMN</span> <span class="column">mobile_number</span>
+<span class="keyword">TO</span> <span class="column">phone_number</span>;
 
--- STEP 7: TRUNCATE to clear all data
-TRUNCATE TABLE student_records;
 
--- STEP 8: Verify table structure still exists
-DESC student_records; -- Shows all columns
+<span class="comment">-- STEP 5: ALTER – DROP unnecessary column</span>
+<span class="keyword">ALTER TABLE</span> <span class="table-name">students</span>
+<span class="keyword">DROP COLUMN</span> <span class="column">age</span>;
+
+
+<span class="comment">-- STEP 6: RENAME table</span>
+<span class="keyword">RENAME</span> <span class="table-name">students</span>
+<span class="keyword">TO</span> <span class="table-name">student_records</span>;
+
+
+<span class="comment">-- STEP 7: TRUNCATE to clear all data</span>
+<span class="keyword">TRUNCATE TABLE</span> <span class="table-name">student_records</span>;
+
+
+<span class="comment">-- STEP 8: Verify table structure still exists</span>
+<span class="keyword">DESC</span> <span class="table-name">student_records</span>;
+<span class="comment">-- Shows all columns</span>
 </pre>
 
+
+</div>
 <h3>DDL Command Comparison Table</h3>
 
 <table border="1" class="notes-table" cellpadding="10">
@@ -7748,27 +7998,60 @@ Today we will learn about **DML (Data Manipulation Language)** in detail. DML co
 <p>Adds new rows (records) to a table</p>
 
 <h4>Syntax:</h4>
+
+<div class="code-box">
+
+    <div class="code-title">
+        <span class="code-text">Syntax: INSERT INTO</span>
+    </div>
+
 <pre>
-INSERT INTO table_name (column1, column2, column3, ...)
-VALUES (value1, value2, value3, ...);
+<span class="keyword">INSERT INTO</span> table_name(column1,column2,column3,...)
+<span class="keyword">VALUES</span>(value1,value2,value3,...);
 </pre>
 
-<h4>Basic Example – Insert Single Row:</h4>
+</div>
+
+<h4>Example – Insert Single Row:</h4>
+
+<div class="code-box">
+
+    <div class="code-title">
+        <span class="code-text">Example: INSERT Single Row</span>
+    </div>
 
 <pre>
--- Create table first
-CREATE TABLE students (
-    student_id NUMBER(5) PRIMARY KEY,
-    student_name VARCHAR2(50),
-    student_email VARCHAR2(100),
-    age NUMBER(3),
-    department VARCHAR2(50)
+<span class="comment">-- Create table first</span>
+<span class="keyword">CREATE TABLE</span> students
+(
+    student_id    <span class="datatype">NUMBER</span>(<span class="number">5</span>) <span class="keyword">PRIMARY KEY</span>,
+    student_name  <span class="datatype">VARCHAR2</span>(<span class="number">50</span>),
+    student_email <span class="datatype">VARCHAR2</span>(<span class="number">100</span>),
+    age           <span class="datatype">NUMBER</span>(<span class="number">3</span>),
+    department    <span class="datatype">VARCHAR2</span>(<span class="number">50</span>)
 );
 
--- Insert single row
-INSERT INTO students (student_id, student_name, student_email, age, department)
-VALUES (1, 'Rahul Kumar', 'rahul@email.com', 20, 'Computer Science');
+
+<span class="comment">-- Insert single row</span>
+<span class="keyword">INSERT INTO</span> students
+(
+    student_id,
+    student_name,
+    student_email,
+    age,
+    department
+)
+<span class="keyword">VALUES</span>
+(
+    <span class="number">1</span>,
+    <span class="string">'Rahul Kumar'</span>,
+    <span class="string">'rahul@email.com'</span>,
+    <span class="number">20</span>,
+    <span class="string">'Computer Science'</span>
+);
 </pre>
+
+</div>
 
 <table border="1" class="notes-table" cellpadding="10">
     <tr>
@@ -7800,42 +8083,140 @@ VALUES (1, 'Rahul Kumar', 'rahul@email.com', 20, 'Computer Science');
 
 <h4>INSERT with All Columns (Skip Column List):</h4>
 
+<div class="code-box">
+
+    <div class="code-title">
+        <span class="code-text">Example: INSERT All Columns</span>
+    </div>
+
 <pre>
--- When inserting values for ALL columns in order
-INSERT INTO students
-VALUES (2, 'Priya Singh', 'priya@email.com', 21, 'Mathematics');
+<span class="comment">-- When inserting values for ALL columns in order</span>
+<span class="keyword">INSERT INTO</span> students
+<span class="keyword">VALUES</span>
+(
+    <span class="number">2</span>,<span class="string">'Priya Singh'</span>,
+    <span class="string">'priya@email.com'</span>,<span class="number">21</span>,
+    <span class="string">'Mathematics'</span>
+);
 </pre>
+
+</div>
 
 <h4>INSERT with NULL Values:</h4>
 
-<pre>
--- Insert with NULL for optional column
-INSERT INTO students (student_id, student_name, student_email, age, department)
-VALUES (3, 'Amit Patel', 'amit@email.com', NULL, NULL);
+<div class="code-box">
 
--- Or explicitly use NULL
-INSERT INTO students (student_id, student_name, student_email)
-VALUES (4, 'Sneha Gupta', 'sneha@email.com');
+    <div class="code-title">
+        <span class="code-text">Examples: INSERT NULL Values</span>
+    </div>
+
+<pre>
+<span class="comment">-- Insert with NULL for optional columns</span>
+<span class="keyword">INSERT INTO</span> students
+(
+    student_id,
+    student_name,
+    student_email,
+    age,
+    department
+)
+<span class="keyword">VALUES</span>
+(
+    <span class="number">3</span>,
+    <span class="string">'Amit Patel'</span>,
+    <span class="string">'amit@email.com'</span>,
+    <span class="keyword">NULL</span>,
+    <span class="keyword">NULL</span>
+);
+
+
+<span class="comment">-- Or explicitly use NULL</span>
+<span class="keyword">INSERT INTO</span> students
+(
+    student_id,
+    student_name,
+    student_email
+)
+<span class="keyword">VALUES</span>
+(
+    <span class="number">4</span>,
+    <span class="string">'Sneha Gupta'</span>,
+    <span class="string">'sneha@email.com'</span>
+);
 </pre>
+
+</div>
 
 <h4>INSERT Multiple Rows (Standard Method):</h4>
 
+<div class="code-box">
+
+    <div class="code-title">
+        <span class="code-text">Example: INSERT Multiple Rows</span>
+    </div>
+
 <pre>
--- Insert first row
-INSERT INTO students (student_id, student_name, student_email, age, department)
-VALUES (1, 'Rahul Kumar', 'rahul@email.com', 20, 'Computer Science');
+<span class="comment">-- Insert first row</span>
+<span class="keyword">INSERT INTO</span> students
+(
+    student_id,
+    student_name,
+    student_email,
+    age,
+    department
+)
+<span class="keyword">VALUES</span>
+(
+    <span class="number">1</span>,
+    <span class="string">'Rahul Kumar'</span>,
+    <span class="string">'rahul@email.com'</span>,
+    <span class="number">20</span>,
+    <span class="string">'Computer Science'</span>
+);
 
--- Insert second row
-INSERT INTO students (student_id, student_name, student_email, age, department)
-VALUES (2, 'Priya Singh', 'priya@email.com', 21, 'Mathematics');
 
--- Insert third row
-INSERT INTO students (student_id, student_name, student_email, age, department)
-VALUES (3, 'Amit Patel', 'amit@email.com', 22, 'Physics');
+<span class="comment">-- Insert second row</span>
+<span class="keyword">INSERT INTO</span> students
+(
+    student_id,
+    student_name,
+    student_email,
+    age,
+    department
+)
+<span class="keyword">VALUES</span>
+(
+    <span class="number">2</span>,
+    <span class="string">'Priya Singh'</span>,
+    <span class="string">'priya@email.com'</span>,
+    <span class="number">21</span>,
+    <span class="string">'Mathematics'</span>
+);
 
--- Save all changes
-COMMIT;
+
+<span class="comment">-- Insert third row</span>
+<span class="keyword">INSERT INTO</span> students
+(
+    student_id,
+    student_name,
+    student_email,
+    age,
+    department
+)
+<span class="keyword">VALUES</span>
+(
+    <span class="number">3</span>,
+    <span class="string">'Amit Patel'</span>,
+    <span class="string">'amit@email.com'</span>,
+    <span class="number">22</span>,
+    <span class="string">'Physics'</span>
+);
+
+<span class="comment">-- Save all changes</span>
+<span class="keyword">COMMIT</span>;
 </pre>
+
+</div>
 
 <h3>2. NEW FEATURE: INSERT ALL (Bulk Insert)</h3>
 
@@ -7843,29 +8224,134 @@ COMMIT;
 <p><strong>INSERT ALL</strong> is a new Oracle feature that allows inserting multiple rows in a single statement (more efficient than multiple INSERT statements)</p>
 
 <h4>Syntax:</h4>
+
+<div class="code-box">
+
+    <div class="code-title">
+        <span class="code-text">Syntax: INSERT ALL</span>
+    </div>
+
 <pre>
-INSERT ALL
-INTO table_name (column1, column2, ...) VALUES (value1, value2, ...)
-INTO table_name (column1, column2, ...) VALUES (value1, value2, ...)
-INTO table_name (column1, column2, ...) VALUES (value1, value2, ...)
-[SELECT 1];
+<span class="keyword">INSERT ALL</span>
+<span class="keyword">INTO</span> table_name (column1, column2, ...)
+<span class="keyword">VALUES</span> (value1, value2, ...)
+
+<span class="keyword">INTO</span> table_name (column1, column2, ...)
+<span class="keyword">VALUES</span> (value1, value2, ...)
+
+<span class="keyword">INTO</span> table_name (column1, column2, ...)
+<span class="keyword">VALUES</span> (value1, value2, ...)
+
+[<span class="keyword">SELECT</span> <span class="number">1</span>];
 </pre>
+
+</div>
 
 <h4>Example – Insert Multiple Rows with INSERT ALL:</h4>
 
-<pre>
--- Insert 5 students in ONE statement
-INSERT ALL
-INTO students (student_id, student_name, student_email, age, department) VALUES (1, 'Rahul Kumar', 'rahul@email.com', 20, 'Computer Science')
-INTO students (student_id, student_name, student_email, age, department) VALUES (2, 'Priya Singh', 'priya@email.com', 21, 'Mathematics')
-INTO students (student_id, student_name, student_email, age, department) VALUES (3, 'Amit Patel', 'amit@email.com', 22, 'Physics')
-INTO students (student_id, student_name, student_email, age, department) VALUES (4, 'Sneha Gupta', 'sneha@email.com', 20, 'Chemistry')
-INTO students (student_id, student_name, student_email, age, department) VALUES (5, 'Vikram Reddy', 'vikram@email.com', 21, 'Computer Science')
-SELECT 1;
+<div class="code-box">
 
--- Save changes
-COMMIT;
+    <div class="code-title">
+        <span class="code-text">Example: INSERT ALL</span>
+    </div>
+
+<pre>
+<span class="comment">-- Insert 5 students in ONE statement</span>
+<span class="keyword">INSERT ALL</span>
+
+<span class="keyword">INTO</span> students
+(
+    student_id,
+    student_name,
+    student_email,
+    age,
+    department
+)
+<span class="keyword">VALUES</span>
+(
+    <span class="number">1</span>,
+    <span class="string">'Rahul Kumar'</span>,
+    <span class="string">'rahul@email.com'</span>,
+    <span class="number">20</span>,
+    <span class="string">'Computer Science'</span>
+)
+
+<span class="keyword">INTO</span> students
+(
+    student_id,
+    student_name,
+    student_email,
+    age,
+    department
+)
+<span class="keyword">VALUES</span>
+(
+    <span class="number">2</span>,
+    <span class="string">'Priya Singh'</span>,
+    <span class="string">'priya@email.com'</span>,
+    <span class="number">21</span>,
+    <span class="string">'Mathematics'</span>
+)
+
+<span class="keyword">INTO</span> students
+(
+    student_id,
+    student_name,
+    student_email,
+    age,
+    department
+)
+<span class="keyword">VALUES</span>
+(
+    <span class="number">3</span>,
+    <span class="string">'Amit Patel'</span>,
+    <span class="string">'amit@email.com'</span>,
+    <span class="number">22</span>,
+    <span class="string">'Physics'</span>
+)
+
+<span class="keyword">INTO</span> students
+(
+    student_id,
+    student_name,
+    student_email,
+    age,
+    department
+)
+<span class="keyword">VALUES</span>
+(
+    <span class="number">4</span>,
+    <span class="string">'Sneha Gupta'</span>,
+    <span class="string">'sneha@email.com'</span>,
+    <span class="number">20</span>,
+    <span class="string">'Chemistry'</span>
+)
+
+<span class="keyword">INTO</span> students
+(
+    student_id,
+    student_name,
+    student_email,
+    age,
+    department
+)
+<span class="keyword">VALUES</span>
+(
+    <span class="number">5</span>,
+    <span class="string">'Vikram Reddy'</span>,
+    <span class="string">'vikram@email.com'</span>,
+    <span class="number">21</span>,
+    <span class="string">'Computer Science'</span>
+)
+
+<span class="keyword">SELECT</span> <span class="number">1</span>;
+
+
+<span class="comment">-- Save changes</span>
+<span class="keyword">COMMIT</span>;
 </pre>
+
+</div>
 
 <table border="1" class="notes-table" cellpadding="10">
     <tr>
@@ -7902,36 +8388,81 @@ COMMIT;
 
 <h4>Complete INSERT ALL Example:</h4>
 
+<div class="code-box">
+
+    <div class="code-title">
+        <span class="code-text">Example: INSERT ALL – Employees</span>
+    </div>
+
 <pre>
--- Create employees table
-CREATE TABLE employees (
-    emp_id NUMBER(5) PRIMARY KEY,
-    emp_name VARCHAR2(50),
-    salary NUMBER(10),
-    department VARCHAR2(50)
+<span class="comment">-- Create employees table</span>
+<span class="keyword">CREATE TABLE</span> employees
+(
+    emp_id      <span class="datatype">NUMBER</span>(<span class="number">5</span>) <span class="keyword">PRIMARY KEY</span>,
+    emp_name    <span class="datatype">VARCHAR2</span>(<span class="number">50</span>),
+    salary      <span class="datatype">NUMBER</span>(<span class="number">10</span>),
+    department  <span class="datatype">VARCHAR2</span>(<span class="number">50</span>)
 );
 
--- Insert 10 employees using INSERT ALL
-INSERT ALL
-INTO employees (emp_id, emp_name, salary, department) VALUES (1, 'Rahul Sharma', 50000, 'IT')
-INTO employees (emp_id, emp_name, salary, department) VALUES (2, 'Priya Mehta', 60000, 'IT')
-INTO employees (emp_id, emp_name, salary, department) VALUES (3, 'Amit Kumar', 55000, 'Finance')
-INTO employees (emp_id, emp_name, salary, department) VALUES (4, 'Sneha Joshi', 58000, 'Finance')
-INTO employees (emp_id, emp_name, salary, department) VALUES (5, 'Vikram Singh', 62000, 'Marketing')
-INTO employees (emp_id, emp_name, salary, department) VALUES (6, 'Neha Patel', 57000, 'Marketing')
-INTO employees (emp_id, emp_name, salary, department) VALUES (7, 'Rajesh Gupta', 65000, 'IT')
-INTO employees (emp_id, emp_name, salary, department) VALUES (8, 'Pooja Reddy', 59000, 'Finance')
-INTO employees (emp_id, emp_name, salary, department) VALUES (9, 'Karan Malhotra', 61000, 'IT')
-INTO employees (emp_id, emp_name, salary, department) VALUES (10, 'Anita Desai', 56000, 'Marketing')
-SELECT 1;
 
--- Commit all changes
-COMMIT;
+<span class="comment">-- Insert 10 employees using INSERT ALL</span>
+<span class="keyword">INSERT ALL</span>
 
--- Verify insertion
-SELECT * FROM employees;
-SELECT COUNT(*) FROM employees; -- Shows 10
+<span class="keyword">INTO</span> employees
+(emp_id, emp_name, salary, department)
+<span class="keyword">VALUES</span> (<span class="number">1</span>, <span class="string">'Rahul Sharma'</span>, <span class="number">50000</span>, <span class="string">'IT'</span>)
+
+<span class="keyword">INTO</span> employees
+(emp_id, emp_name, salary, department)
+<span class="keyword">VALUES</span> (<span class="number">2</span>, <span class="string">'Priya Mehta'</span>, <span class="number">60000</span>, <span class="string">'IT'</span>)
+
+<span class="keyword">INTO</span> employees
+(emp_id, emp_name, salary, department)
+<span class="keyword">VALUES</span> (<span class="number">3</span>, <span class="string">'Amit Kumar'</span>, <span class="number">55000</span>, <span class="string">'Finance'</span>)
+
+<span class="keyword">INTO</span> employees
+(emp_id, emp_name, salary, department)
+<span class="keyword">VALUES</span> (<span class="number">4</span>, <span class="string">'Sneha Joshi'</span>, <span class="number">58000</span>, <span class="string">'Finance'</span>)
+
+<span class="keyword">INTO</span> employees
+(emp_id, emp_name, salary, department)
+<span class="keyword">VALUES</span> (<span class="number">5</span>, <span class="string">'Vikram Singh'</span>, <span class="number">62000</span>, <span class="string">'Marketing'</span>)
+
+<span class="keyword">INTO</span> employees
+(emp_id, emp_name, salary, department)
+<span class="keyword">VALUES</span> (<span class="number">6</span>, <span class="string">'Neha Patel'</span>, <span class="number">57000</span>, <span class="string">'Marketing'</span>)
+
+<span class="keyword">INTO</span> employees
+(emp_id, emp_name, salary, department)
+<span class="keyword">VALUES</span> (<span class="number">7</span>, <span class="string">'Rajesh Gupta'</span>, <span class="number">65000</span>, <span class="string">'IT'</span>)
+
+<span class="keyword">INTO</span> employees
+(emp_id, emp_name, salary, department)
+<span class="keyword">VALUES</span> (<span class="number">8</span>, <span class="string">'Pooja Reddy'</span>, <span class="number">59000</span>, <span class="string">'Finance'</span>)
+
+<span class="keyword">INTO</span> employees
+(emp_id, emp_name, salary, department)
+<span class="keyword">VALUES</span> (<span class="number">9</span>, <span class="string">'Karan Malhotra'</span>, <span class="number">61000</span>, <span class="string">'IT'</span>)
+
+<span class="keyword">INTO</span> employees
+(emp_id, emp_name, salary, department)
+<span class="keyword">VALUES</span> (<span class="number">10</span>, <span class="string">'Anita Desai'</span>, <span class="number">56000</span>, <span class="string">'Marketing'</span>)
+
+<span class="keyword">SELECT</span> <span class="number">1</span>;
+
+
+<span class="comment">-- Commit all changes</span>
+<span class="keyword">COMMIT</span>;
+
+
+<span class="comment">-- Verify insertion</span>
+<span class="keyword">SELECT</span> * <span class="keyword">FROM</span> employees;
+
+<span class="keyword">SELECT</span> <span class="function">COUNT</span>(*) <span class="keyword">FROM</span> employees;
+<span class="comment">-- Shows 10</span>
 </pre>
+
+</div>
 
 <h4>When to Use INSERT ALL:</h4>
 <ul>
@@ -7949,38 +8480,66 @@ SELECT COUNT(*) FROM employees; -- Shows 10
 <p>Modifies existing data in table rows</p>
 
 <h4>Syntax:</h4>
+
+<div class="code-box">
+
+    <div class="code-title">
+        <span class="code-text">Syntax: UPDATE</span>
+    </div>
+
 <pre>
-UPDATE table_name
-SET column1 = value1, column2 = value2, ...
-WHERE condition;
+<span class="keyword">UPDATE</span> table_name
+<span class="keyword">SET</span> column1 = value1,
+    column2 = value2,
+    ...
+<span class="keyword">WHERE</span> condition;
 </pre>
+
+</div>
 
 <h4>Important Note:</h4>
 <p>⚠️ Always use WHERE clause! Without WHERE, ALL rows will be updated</p>
 
 <h4>Example 1 – Update Single Column:</h4>
 
-<pre>
--- Update age of student_id = 1
-UPDATE students
-SET age = 21
-WHERE student_id = 1;
+<div class="code-box">
 
--- Commit the change
-COMMIT;
+    <div class="code-title">
+        <span class="code-text">Example: UPDATE Single Column</span>
+    </div>
+
+<pre>
+<span class="comment">-- Update age of student_id = 1</span>
+<span class="keyword">UPDATE</span> students
+<span class="keyword">SET</span> age = <span class="number">21</span>
+<span class="keyword">WHERE</span> student_id = <span class="number">1</span>;
+
+
+<span class="comment">-- Commit the change</span>
+<span class="keyword">COMMIT</span>;
 </pre>
+
+</div>
 
 <h4>Example 2 – Update Multiple Columns:</h4>
 
-<pre>
--- Update multiple columns for student_id = 2
-UPDATE students
-SET age = 22,
-    department = 'Statistics'
-WHERE student_id = 2;
+<div class="code-box">
 
-COMMIT;
+    <div class="code-title">
+        <span class="code-text">Example: UPDATE Multiple Columns</span>
+    </div>
+
+<pre>
+<span class="comment">-- Update multiple columns for student_id = 2</span>
+<span class="keyword">UPDATE</span> students
+<span class="keyword">SET</span> age = <span class="number">22</span>,
+    department = <span class="string">'Statistics'</span>
+<span class="keyword">WHERE</span> student_id = <span class="number">2</span>;
+
+<span class="keyword">COMMIT</span>;
 </pre>
+
+</div>
 
 <table border="1" class="notes-table" cellpadding="10">
     <tr>
@@ -7995,33 +8554,67 @@ COMMIT;
 
 <h4>Example 3 – Update Without WHERE (DANGEROUS!):</h4>
 
-<pre>
--- This updates ALL rows in table!
-UPDATE students
-SET age = 25;
+<div class="code-box">
 
--- ALL students now have age = 25 (probably wrong!)
+    <div class="code-title">
+        <span class="code-text">Example: UPDATE All Rows</span>
+    </div>
+
+<pre>
+<span class="comment">-- This updates ALL rows in table!</span>
+<span class="keyword">UPDATE</span> students
+<span class="keyword">SET</span> age = <span class="number">25</span>;
+
+
+<span class="comment">-- ALL students now have age = 25 (probably wrong!)</span>
 </pre>
+
+</div>
 
 <h4>Example 4 – Update with Calculation:</h4>
 
-<pre>
--- Increase salary by 10% for all IT employees
-UPDATE employees
-SET salary = salary * 1.10
-WHERE department = 'IT';
+<div class="code-box">
 
-COMMIT;
+    <div class="code-title">
+        <span class="code-text">Example: UPDATE with Expression</span>
+    </div>
+
+<pre>
+<span class="comment">-- Increase salary by 10% for all IT employees</span>
+<span class="keyword">UPDATE</span> employees
+<span class="keyword">SET</span> salary = salary * <span class="number">1.10</span>
+<span class="keyword">WHERE</span> department = <span class="string">'IT'</span>;
+
+
+<span class="keyword">COMMIT</span>;
 </pre>
+
+</div>
 
 <h4>Example 5 – Update with Subquery:</h4>
 
+<div class="code-box">
+
+    <div class="code-title">
+        <span class="code-text">Example: UPDATE with Subquery</span>
+    </div>
+
 <pre>
--- Update department based on another table
-UPDATE students s
-SET s.department = (SELECT dept_name FROM departments WHERE dept_id = s.dept_id)
-WHERE EXISTS (SELECT dept_name FROM departments WHERE dept_id = s.dept_id);
+<span class="comment">-- Update department based on another table</span>
+<span class="keyword">UPDATE</span> students s
+<span class="keyword">SET</span> s.department = (
+    <span class="keyword">SELECT</span> dept_name
+    <span class="keyword">FROM</span> departments
+    <span class="keyword">WHERE</span> dept_id = s.dept_id
+)
+<span class="keyword">WHERE EXISTS</span> (
+    <span class="keyword">SELECT</span> dept_name
+    <span class="keyword">FROM</span> departments
+    <span class="keyword">WHERE</span> dept_id = s.dept_id
+);
 </pre>
+
+</div>
 
 <h4>When to Use UPDATE:</h4>
 <ul>
@@ -8035,17 +8628,34 @@ WHERE EXISTS (SELECT dept_name FROM departments WHERE dept_id = s.dept_id);
 
 <h4>Verify UPDATE:</h4>
 
+<div class="code-box">
+
+    <div class="code-title">
+        <span class="code-text">Example: Verify UPDATE</span>
+    </div>
+
 <pre>
--- Before update
-SELECT student_id, student_name, age, department FROM students WHERE student_id = 1;
+<span class="comment">-- Before update</span>
+<span class="keyword">SELECT</span> student_id, student_name, age, department
+<span class="keyword">FROM</span> students
+<span class="keyword">WHERE</span> student_id = <span class="number">1</span>;
 
--- Perform update
-UPDATE students SET age = 21 WHERE student_id = 1;
-COMMIT;
 
--- After update
-SELECT student_id, student_name, age, department FROM students WHERE student_id = 1;
+<span class="comment">-- Perform update</span>
+<span class="keyword">UPDATE</span> students
+<span class="keyword">SET</span> age = <span class="number">21</span>
+<span class="keyword">WHERE</span> student_id = <span class="number">1</span>;
+
+<span class="keyword">COMMIT</span>;
+
+
+<span class="comment">-- After update</span>
+<span class="keyword">SELECT</span> student_id, student_name, age, department
+<span class="keyword">FROM</span> students
+<span class="keyword">WHERE</span> student_id = <span class="number">1</span>;
 </pre>
+
+</div>
 
 <h3>4. DELETE Command</h3>
 
@@ -8062,25 +8672,42 @@ WHERE condition;
 <p>⚠️ Always use WHERE clause! Without WHERE, ALL rows will be deleted</p>
 
 <h4>Example 1 – Delete Single Row:</h4>
+<div class="code-box">
+
+    <div class="code-title">
+        <span class="code-text">Example: DELETE Single Row</span>
+    </div>
 
 <pre>
--- Delete student with student_id = 3
-DELETE FROM students
-WHERE student_id = 3;
+<span class="comment">-- Delete student with student_id = 3</span>
+<span class="keyword">DELETE FROM</span> students
+<span class="keyword">WHERE</span> student_id = <span class="number">3</span>;
 
--- Commit the deletion
-COMMIT;
+
+<span class="comment">-- Commit the deletion</span>
+<span class="keyword">COMMIT</span>;
 </pre>
+
+</div>
 
 <h4>Example 2 – Delete Multiple Rows:</h4>
 
-<pre>
--- Delete all students from Physics department
-DELETE FROM students
-WHERE department = 'Physics';
+<div class="code-box">
 
-COMMIT;
+    <div class="code-title">
+        <span class="code-text">Example: DELETE Multiple Rows</span>
+    </div>
+
+<pre>
+<span class="comment">-- Delete all students from Physics department</span>
+<span class="keyword">DELETE FROM</span> students
+<span class="keyword">WHERE</span> department = <span class="string">'Physics'</span>;
+
+
+<span class="keyword">COMMIT</span>;
 </pre>
+
+</div>
 
 <table border="1" class="notes-table" cellpadding="10">
     <tr>
@@ -8095,29 +8722,50 @@ COMMIT;
 
 <h4>Example 3 – Delete Without WHERE (DANGEROUS!):</h4>
 
-<pre>
--- This deletes ALL rows!
-DELETE FROM students;
+<div class="code-box">
 
--- Table is now empty (but structure exists)
-SELECT COUNT(*) FROM students; -- Shows 0
+    <div class="code-title">
+        <span class="code-text">Example: DELETE All Rows</span>
+    </div>
+
+<pre>
+<span class="comment">-- This deletes ALL rows!</span>
+<span class="keyword">DELETE FROM</span> students;
+
+
+<span class="comment">-- Table is now empty (but structure exists)</span>
+<span class="keyword">SELECT</span> <span class="function">COUNT</span>(*) <span class="keyword">FROM</span> students;
+<span class="comment">-- Shows 0</span>
 </pre>
+
+</div>
 
 <h4>Example 4 – Delete with Condition:</h4>
 
+<div class="code-box">
+
+    <div class="code-title">
+        <span class="code-text">Examples: DELETE with Conditions</span>
+    </div>
+
 <pre>
--- Delete students older than 30
-DELETE FROM students
-WHERE age > 30;
+<span class="comment">-- Delete students older than 30</span>
+<span class="keyword">DELETE FROM</span> students
+<span class="keyword">WHERE</span> age &gt; <span class="number">30</span>;
 
-COMMIT;
 
--- Delete inactive students
-DELETE FROM students
-WHERE status = 'Inactive';
+<span class="keyword">COMMIT</span>;
 
-COMMIT;
+
+<span class="comment">-- Delete inactive students</span>
+<span class="keyword">DELETE FROM</span> students
+<span class="keyword">WHERE</span> status = <span class="string">'Inactive'</span>;
+
+
+<span class="keyword">COMMIT</span>;
 </pre>
+
+</div>
 
 <h4>DELETE vs TRUNCATE Comparison:</h4>
 
@@ -8170,85 +8818,161 @@ COMMIT;
 
 <h4>Verify DELETE:</h4>
 
+<div class="code-box">
+
+    <div class="code-title">
+        <span class="code-text">Example: Verify DELETE</span>
+    </div>
+
 <pre>
--- Before delete
-SELECT COUNT(*) FROM students; -- Shows 5
+<span class="comment">-- Before delete</span>
+<span class="keyword">SELECT</span> <span class="function">COUNT</span>(*) <span class="keyword">FROM</span> students;
+<span class="comment">-- Shows 5</span>
 
--- Perform delete
-DELETE FROM students WHERE student_id = 3;
-COMMIT;
 
--- After delete
-SELECT COUNT(*) FROM students; -- Shows 4
+<span class="comment">-- Perform delete</span>
+<span class="keyword">DELETE FROM</span> students
+<span class="keyword">WHERE</span> student_id = <span class="number">3</span>;
+
+<span class="keyword">COMMIT</span>;
+
+
+<span class="comment">-- After delete</span>
+<span class="keyword">SELECT</span> <span class="function">COUNT</span>(*) <span class="keyword">FROM</span> students;
+<span class="comment">-- Shows 4</span>
 </pre>
+
+</div>
 
 <h3>5. NEW FEATURE: MERGE (Insert or Update)</h3>
 
 <p><strong>MERGE</strong> is a powerful Oracle feature that combines INSERT and UPDATE. It inserts a row if it doesn't exist, OR updates if it already exists (also called "Upsert")</p>
 
 <h4>Syntax:</h4>
+
+<div class="code-box">
+
+    <div class="code-title">
+        <span class="code-text">Syntax: MERGE</span>
+    </div>
+
 <pre>
-MERGE INTO target_table t
-USING source_table s
-ON (t.column = s.column)
-WHEN MATCHED THEN
-    UPDATE SET t.column1 = s.column1, t.column2 = s.column2
-WHEN NOT MATCHED THEN
-    INSERT (column1, column2) VALUES (s.column1, s.column2);
+<span class="keyword">MERGE INTO</span> target_table t
+<span class="keyword">USING</span> source_table s
+<span class="keyword">ON</span> (t.column = s.column)
+
+<span class="keyword">WHEN MATCHED THEN</span>
+    <span class="keyword">UPDATE SET</span> t.column1 = s.column1,
+                   t.column2 = s.column2
+
+<span class="keyword">WHEN NOT MATCHED THEN</span>
+    <span class="keyword">INSERT</span> (column1, column2)
+    <span class="keyword">VALUES</span> (s.column1, s.column2);
 </pre>
+
+</div>
 
 <h4>Simple MERGE Example:</h4>
 
+<div class="code-box">
+
+    <div class="code-title">
+        <span class="code-text">Example: MERGE – Create Source and Target Tables</span>
+    </div>
+
 <pre>
--- Create target table
-CREATE TABLE student_scores (
-    student_id NUMBER(5) PRIMARY KEY,
-    student_name VARCHAR2(50),
-    score NUMBER(5)
+<span class="comment">-- Create target table</span>
+<span class="keyword">CREATE TABLE</span> student_scores
+(
+    student_id   <span class="datatype">NUMBER</span>(<span class="number">5</span>) <span class="keyword">PRIMARY KEY</span>,
+    student_name <span class="datatype">VARCHAR2</span>(<span class="number">50</span>),
+    score        <span class="datatype">NUMBER</span>(<span class="number">5</span>)
 );
 
--- Insert initial data
-INSERT INTO student_scores (student_id, student_name, score)
-VALUES (1, 'Rahul', 85);
 
-INSERT INTO student_scores (student_id, student_name, score)
-VALUES (2, 'Priya', 90);
-
-COMMIT;
-
--- Create source data (new scores)
-CREATE TABLE score_updates (
-    student_id NUMBER(5),
-    student_name VARCHAR2(50),
-    score NUMBER(5)
+<span class="comment">-- Insert initial data</span>
+<span class="keyword">INSERT INTO</span> student_scores
+(student_id, student_name, score)
+<span class="keyword">VALUES</span>
+(
+    <span class="number">1</span>,
+    <span class="string">'Rahul'</span>,
+    <span class="number">85</span>
 );
 
-INSERT INTO score_updates VALUES (1, 'Rahul', 88);  -- Existing student - UPDATE
-INSERT INTO score_updates VALUES (2, 'Priya', 92);  -- Existing student - UPDATE
-INSERT INTO score_updates VALUES (3, 'Amit', 75);   -- New student - INSERT
 
-COMMIT;
+<span class="keyword">INSERT INTO</span> student_scores
+(student_id, student_name, score)
+<span class="keyword">VALUES</span>
+(
+    <span class="number">2</span>,
+    <span class="string">'Priya'</span>,
+    <span class="number">90</span>
+);
+
+
+<span class="keyword">COMMIT</span>;
+
+
+<span class="comment">-- Create source data (new scores)</span>
+<span class="keyword">CREATE TABLE</span> score_updates
+(
+    student_id   <span class="datatype">NUMBER</span>(<span class="number">5</span>),
+    student_name <span class="datatype">VARCHAR2</span>(<span class="number">50</span>),
+    score        <span class="datatype">NUMBER</span>(<span class="number">5</span>)
+);
+
+
+<span class="keyword">INSERT INTO</span> score_updates
+<span class="keyword">VALUES</span> (<span class="number">1</span>, <span class="string">'Rahul'</span>, <span class="number">88</span>);
+<span class="comment">-- Existing student - UPDATE</span>
+
+<span class="keyword">INSERT INTO</span> score_updates
+<span class="keyword">VALUES</span> (<span class="number">2</span>, <span class="string">'Priya'</span>, <span class="number">92</span>);
+<span class="comment">-- Existing student - UPDATE</span>
+
+<span class="keyword">INSERT INTO</span> score_updates
+<span class="keyword">VALUES</span> (<span class="number">3</span>, <span class="string">'Amit'</span>, <span class="number">75</span>);
+<span class="comment">-- New student - INSERT</span>
+
+
+<span class="keyword">COMMIT</span>;
 </pre>
 
+</div>
 <h4>Execute MERGE:</h4>
 
+<div class="code-box">
+
+    <div class="code-title">
+        <span class="code-text">Example: MERGE – Update and Insert</span>
+    </div>
+
 <pre>
--- Merge source into target
-MERGE INTO student_scores t
-USING score_updates s
-ON (t.student_id = s.student_id)
-WHEN MATCHED THEN
-    UPDATE SET t.score = s.score, t.student_name = s.student_name
-WHEN NOT MATCHED THEN
-    INSERT (student_id, student_name, score)
-    VALUES (s.student_id, s.student_name, s.score);
+<span class="comment">-- Merge source into target</span>
+<span class="keyword">MERGE INTO</span> student_scores t
+<span class="keyword">USING</span> score_updates s
+<span class="keyword">ON</span> (t.student_id = s.student_id)
 
--- Commit the merge
-COMMIT;
+<span class="keyword">WHEN MATCHED THEN</span>
+    <span class="keyword">UPDATE SET</span>
+        t.score = s.score,
+        t.student_name = s.student_name
 
--- Verify results
-SELECT * FROM student_scores;
+<span class="keyword">WHEN NOT MATCHED THEN</span>
+    <span class="keyword">INSERT</span> (student_id, student_name, score)
+    <span class="keyword">VALUES</span> (s.student_id, s.student_name, s.score);
+
+
+<span class="comment">-- Commit the merge</span>
+<span class="keyword">COMMIT</span>;
+
+
+<span class="comment">-- Verify results</span>
+<span class="keyword">SELECT</span> * <span class="keyword">FROM</span> student_scores;
 </pre>
+
+</div>
 
 <table border="1" class="notes-table" cellpadding="10">
     <tr>
@@ -8279,67 +9003,113 @@ SELECT * FROM student_scores;
 
 <h4>MERGE with Values Clause:</h4>
 
-<pre>
--- MERGE with direct values instead of table
-MERGE INTO student_scores t
-USING (SELECT 4 AS student_id, 'Neha' AS student_name, 82 AS score FROM dual) s
-ON (t.student_id = s.student_id)
-WHEN MATCHED THEN
-    UPDATE SET t.score = s.score
-WHEN NOT MATCHED THEN
-    INSERT (student_id, student_name, score)
-    VALUES (s.student_id, s.student_name, s.score);
+<div class="code-box">
 
-COMMIT;
+    <div class="code-title">
+        <span class="code-text">Example: MERGE with Direct Values</span>
+    </div>
+
+<pre>
+<span class="comment">-- MERGE with direct values instead of table</span>
+<span class="keyword">MERGE INTO</span> student_scores t
+<span class="keyword">USING</span> (
+    <span class="keyword">SELECT</span>
+        <span class="number">4</span> <span class="keyword">AS</span> student_id,
+        <span class="string">'Neha'</span> <span class="keyword">AS</span> student_name,
+        <span class="number">82</span> <span class="keyword">AS</span> score
+    <span class="keyword">FROM</span> dual
+) s
+
+<span class="keyword">ON</span> (t.student_id = s.student_id)
+
+<span class="keyword">WHEN MATCHED THEN</span>
+    <span class="keyword">UPDATE SET</span>
+        t.score = s.score
+
+<span class="keyword">WHEN NOT MATCHED THEN</span>
+    <span class="keyword">INSERT</span> (student_id, student_name, score)
+    <span class="keyword">VALUES</span> (s.student_id, s.student_name, s.score);
+
+
+<span class="keyword">COMMIT</span>;
 </pre>
+
+</div>
 
 <h4>Complete MERGE Example – Employee Database:</h4>
 
+<div class="code-box">
+
+    <div class="code-title">
+        <span class="code-text">Example: MERGE – Employee Master</span>
+    </div>
+
 <pre>
--- Create target table
-CREATE TABLE employee_master (
-    emp_id NUMBER(5) PRIMARY KEY,
-    emp_name VARCHAR2(50),
-    salary NUMBER(10),
-    department VARCHAR2(50)
+<span class="comment">-- Create target table</span>
+<span class="keyword">CREATE TABLE</span> employee_master
+(
+    emp_id      <span class="datatype">NUMBER</span>(<span class="number">5</span>) <span class="keyword">PRIMARY KEY</span>,
+    emp_name    <span class="datatype">VARCHAR2</span>(<span class="number">50</span>),
+    salary      <span class="datatype">NUMBER</span>(<span class="number">10</span>),
+    department  <span class="datatype">VARCHAR2</span>(<span class="number">50</span>)
 );
 
--- Create source table (HR updates)
-CREATE TABLE hr_updates (
-    emp_id NUMBER(5),
-    emp_name VARCHAR2(50),
-    salary NUMBER(10),
-    department VARCHAR2(50)
+
+<span class="comment">-- Create source table (HR updates)</span>
+<span class="keyword">CREATE TABLE</span> hr_updates
+(
+    emp_id      <span class="datatype">NUMBER</span>(<span class="number">5</span>),
+    emp_name    <span class="datatype">VARCHAR2</span>(<span class="number">50</span>),
+    salary      <span class="datatype">NUMBER</span>(<span class="number">10</span>),
+    department  <span class="datatype">VARCHAR2</span>(<span class="number">50</span>)
 );
 
--- Insert existing employees
-INSERT INTO employee_master VALUES (1, 'Rahul', 50000, 'IT');
-INSERT INTO employee_master VALUES (2, 'Priya', 55000, 'Finance');
-COMMIT;
 
--- Insert updates (some existing, some new)
-INSERT INTO hr_updates VALUES (1, 'Rahul', 55000, 'IT');  -- Update salary
-INSERT INTO hr_updates VALUES (2, 'Priya', 60000, 'Finance'); -- Update salary
-INSERT INTO hr_updates VALUES (3, 'Amit', 52000, 'Marketing'); -- New employee
+<span class="comment">-- Insert existing employees</span>
+<span class="keyword">INSERT INTO</span> employee_master
+<span class="keyword">VALUES</span> (<span class="number">1</span>, <span class="string">'Rahul'</span>, <span class="number">50000</span>, <span class="string">'IT'</span>);
 
-COMMIT;
+<span class="keyword">INSERT INTO</span> employee_master
+<span class="keyword">VALUES</span> (<span class="number">2</span>, <span class="string">'Priya'</span>, <span class="number">55000</span>, <span class="string">'Finance'</span>);
 
--- Execute MERGE
-MERGE INTO employee_master e
-USING hr_updates h
-ON (e.emp_id = h.emp_id)
-WHEN MATCHED THEN
-    UPDATE SET e.salary = h.salary, e.department = h.department
-WHEN NOT MATCHED THEN
-    INSERT (emp_id, emp_name, salary, department)
-    VALUES (h.emp_id, h.emp_name, h.salary, h.department);
+<span class="keyword">COMMIT</span>;
 
-COMMIT;
 
--- Verify
-SELECT * FROM employee_master;
+<span class="comment">-- Insert updates (some existing, some new)</span>
+<span class="keyword">INSERT INTO</span> hr_updates
+<span class="keyword">VALUES</span> (<span class="number">1</span>, <span class="string">'Rahul'</span>, <span class="number">55000</span>, <span class="string">'IT'</span>);
+<span class="comment">-- Update salary</span>
+
+<span class="keyword">INSERT INTO</span> hr_updates
+<span class="keyword">VALUES</span> (<span class="number">2</span>, <span class="string">'Priya'</span>, <span class="number">60000</span>, <span class="string">'Finance'</span>);
+<span class="comment">-- Update salary</span>
+
+<span class="keyword">INSERT INTO</span> hr_updates
+<span class="keyword">VALUES</span> (<span class="number">3</span>, <span class="string">'Amit'</span>, <span class="number">52000</span>, <span class="string">'Marketing'</span>);
+<span class="comment">-- New employee</span>
+
+<span class="keyword">COMMIT</span>;
+
+<span class="comment">-- Execute MERGE</span>
+<span class="keyword">MERGE INTO</span> employee_master e
+<span class="keyword">USING</span> hr_updates h
+<span class="keyword">ON</span> (e.emp_id = h.emp_id)
+
+<span class="keyword">WHEN MATCHED THEN</span>
+    <span class="keyword">UPDATE SET</span>
+        e.salary = h.salary,
+        e.department = h.department
+
+<span class="keyword">WHEN NOT MATCHED THEN</span>
+    <span class="keyword">INSERT</span> (emp_id, emp_name, salary, department)
+    <span class="keyword">VALUES</span> (h.emp_id, h.emp_name, h.salary, h.department);
+
+<span class="keyword">COMMIT</span>;
+<span class="comment">-- Verify</span>
+<span class="keyword">SELECT</span> * <span class="keyword">FROM</span> employee_master;
 </pre>
 
+</div>
 <table border="1" class="notes-table" cellpadding="10">
     <tr>
         <th>emp_id</th>
@@ -8407,93 +9177,134 @@ SELECT * FROM employee_master;
 
 <h3>Complete DML Workflow Example</h3>
 
+<div class="code-box">
+
+    <div class="code-title">
+        <span class="code-text">Example: Complete DML Workflow – Products</span>
+    </div>
+
 <pre>
--- ===== STEP 1: CREATE TABLE =====
-CREATE TABLE products (
-    product_id NUMBER(5) PRIMARY KEY,
-    product_name VARCHAR2(50),
-    price NUMBER(10),
-    quantity NUMBER(5),
-    category VARCHAR2(50)
+<span class="comment">-- ===== STEP 1: CREATE TABLE =====</span>
+<span class="keyword">CREATE TABLE</span> products
+(
+    product_id   <span class="datatype">NUMBER</span>(<span class="number">5</span>) <span class="keyword">PRIMARY KEY</span>,
+    product_name <span class="datatype">VARCHAR2</span>(<span class="number">50</span>),
+    price        <span class="datatype">NUMBER</span>(<span class="number">10</span>),
+    quantity     <span class="datatype">NUMBER</span>(<span class="number">5</span>),
+    category     <span class="datatype">VARCHAR2</span>(<span class="number">50</span>)
 );
 
--- ===== STEP 2: INSERT DATA (Standard) =====
-INSERT INTO products (product_id, product_name, price, quantity, category)
-VALUES (1, 'Laptop', 50000, 10, 'Electronics');
+<span class="comment">-- ===== STEP 2: INSERT DATA (Standard) =====</span>
+<span class="keyword">INSERT INTO</span> products
+(product_id, product_name, price, quantity, category)
+<span class="keyword">VALUES</span>
+(<span class="number">1</span>, <span class="string">'Laptop'</span>, <span class="number">50000</span>, <span class="number">10</span>, <span class="string">'Electronics'</span>);
 
-INSERT INTO products (product_id, product_name, price, quantity, category)
-VALUES (2, 'Mouse', 500, 50, 'Electronics');
+<span class="keyword">INSERT INTO</span> products
+(product_id, product_name, price, quantity, category)
+<span class="keyword">VALUES</span>
+(<span class="number">2</span>, <span class="string">'Mouse'</span>, <span class="number">500</span>, <span class="number">50</span>, <span class="string">'Electronics'</span>);
 
-COMMIT;
+<span class="keyword">COMMIT</span>;
 
--- ===== STEP 3: INSERT DATA (Bulk with INSERT ALL) =====
-INSERT ALL
-INTO products (product_id, product_name, price, quantity, category) VALUES (3, 'Keyboard', 1500, 30, 'Electronics')
-INTO products (product_id, product_name, price, quantity, category) VALUES (4, 'Monitor', 15000, 15, 'Electronics')
-INTO products (product_id, product_name, price, quantity, category) VALUES (5, 'Pen', 20, 200, 'Office')
-SELECT 1;
+<span class="comment">-- ===== STEP 3: INSERT DATA (Bulk with INSERT ALL) =====</span>
+<span class="keyword">INSERT ALL</span>
 
-COMMIT;
+<span class="keyword">INTO</span> products
+(product_id, product_name, price, quantity, category)
+<span class="keyword">VALUES</span>
+(<span class="number">3</span>, <span class="string">'Keyboard'</span>, <span class="number">1500</span>, <span class="number">30</span>, <span class="string">'Electronics'</span>)
 
--- ===== STEP 4: VERIFY INSERT =====
-SELECT * FROM products;
--- Shows 5 products
+<span class="keyword">INTO</span> products
+(product_id, product_name, price, quantity, category)
+<span class="keyword">VALUES</span>
+(<span class="number">4</span>, <span class="string">'Monitor'</span>, <span class="number">15000</span>, <span class="number">15</span>, <span class="string">'Electronics'</span>)
 
--- ===== STEP 5: UPDATE DATA =====
--- Increase price of Laptop by 10%
-UPDATE products
-SET price = price * 1.10
-WHERE product_name = 'Laptop';
+<span class="keyword">INTO</span> products
+(product_id, product_name, price, quantity, category)
+<span class="keyword">VALUES</span>
+(<span class="number">5</span>, <span class="string">'Pen'</span>, <span class="number">20</span>, <span class="number">200</span>, <span class="string">'Office'</span>)
 
-COMMIT;
+<span class="keyword">SELECT</span> <span class="number">1</span>;
 
--- Verify update
-SELECT product_name, price FROM products WHERE product_name = 'Laptop';
--- Price: 55000 (was 50000)
+<span class="keyword">COMMIT</span>;
 
--- ===== STEP 6: DELETE DATA =====
--- Delete products with quantity < 20
-DELETE FROM products
-WHERE quantity < 20;
+<span class="comment">-- ===== STEP 4: VERIFY INSERT =====</span>
+<span class="keyword">SELECT</span> * <span class="keyword">FROM</span> products;
+<span class="comment">-- Shows 5 products</span>
 
-COMMIT;
+<span class="comment">-- ===== STEP 5: UPDATE DATA =====</span>
+<span class="comment">-- Increase price of Laptop by 10%</span>
+<span class="keyword">UPDATE</span> products
+<span class="keyword">SET</span> price = price * <span class="number">1.10</span>
+<span class="keyword">WHERE</span> product_name = <span class="string">'Laptop'</span>;
 
--- Verify delete
-SELECT * FROM products;
--- Shows 3 products (Mouse, Keyboard, Pen)
+<span class="keyword">COMMIT</span>;
 
--- ===== STEP 7: MERGE (Upsert) =====
--- Create source table
-CREATE TABLE product_updates (
-    product_id NUMBER(5),
-    product_name VARCHAR2(50),
-    price NUMBER(10),
-    quantity NUMBER(5)
+<span class="comment">-- Verify update</span>
+<span class="keyword">SELECT</span> product_name, price
+<span class="keyword">FROM</span> products
+<span class="keyword">WHERE</span> product_name = <span class="string">'Laptop'</span>;
+<span class="comment">-- Price: 55000 (was 50000)</span>
+
+<span class="comment">-- ===== STEP 6: DELETE DATA =====</span>
+<span class="comment">-- Delete products with quantity &lt; 20</span>
+<span class="keyword">DELETE FROM</span> products
+<span class="keyword">WHERE</span> quantity &lt; <span class="number">20</span>;
+
+<span class="keyword">COMMIT</span>;
+
+<span class="comment">-- Verify delete</span>
+<span class="keyword">SELECT</span> * <span class="keyword">FROM</span> products;
+<span class="comment">-- Shows 3 products (Mouse, Keyboard, Pen)</span>
+
+<span class="comment">-- ===== STEP 7: MERGE (Upsert) =====</span>
+<span class="comment">-- Create source table</span>
+<span class="keyword">CREATE TABLE</span> product_updates
+(
+    product_id   <span class="datatype">NUMBER</span>(<span class="number">5</span>),
+    product_name <span class="datatype">VARCHAR2</span>(<span class="number">50</span>),
+    price        <span class="datatype">NUMBER</span>(<span class="number">10</span>),
+    quantity     <span class="datatype">NUMBER</span>(<span class="number">5</span>)
 );
 
--- Insert update data
-INSERT INTO product_updates VALUES (2, 'Mouse', 550, 60);  -- Update
-INSERT INTO product_updates VALUES (6, 'Headphone', 3000, 25); -- New
+<span class="comment">-- Insert update data</span>
+<span class="keyword">INSERT INTO</span> product_updates
+<span class="keyword">VALUES</span>
+(<span class="number">2</span>, <span class="string">'Mouse'</span>, <span class="number">550</span>, <span class="number">60</span>);
+<span class="comment">-- Update</span>
 
-COMMIT;
+<span class="keyword">INSERT INTO</span> product_updates
+<span class="keyword">VALUES</span>
+(<span class="number">6</span>, <span class="string">'Headphone'</span>, <span class="number">3000</span>, <span class="number">25</span>);
+<span class="comment">-- New</span>
 
--- Execute MERGE
-MERGE INTO products p
-USING product_updates u
-ON (p.product_id = u.product_id)
-WHEN MATCHED THEN
-    UPDATE SET p.price = u.price, p.quantity = u.quantity
-WHEN NOT MATCHED THEN
-    INSERT (product_id, product_name, price, quantity, category)
-    VALUES (u.product_id, u.product_name, u.price, u.quantity, 'Electronics');
+<span class="keyword">COMMIT</span>;
 
-COMMIT;
+<span class="comment">-- Execute MERGE</span>
+<span class="keyword">MERGE INTO</span> products p
+<span class="keyword">USING</span> product_updates u
+<span class="keyword">ON</span> (p.product_id = u.product_id)
 
--- Final verification
-SELECT * FROM products;
--- Shows 4 products (Mouse updated, Headphone inserted)
+<span class="keyword">WHEN MATCHED THEN</span>
+    <span class="keyword">UPDATE SET</span>
+        p.price = u.price,
+        p.quantity = u.quantity
+
+<span class="keyword">WHEN NOT MATCHED THEN</span>
+    <span class="keyword">INSERT</span>
+    (product_id, product_name, price, quantity, category)
+    <span class="keyword">VALUES</span>
+    (u.product_id, u.product_name, u.price, u.quantity, <span class="string">'Electronics'</span>);
+
+<span class="keyword">COMMIT</span>;
+
+<span class="comment">-- Final verification</span>
+<span class="keyword">SELECT</span> * <span class="keyword">FROM</span> products;
+<span class="comment">-- Shows 4 products (Mouse updated, Headphone inserted)</span>
 </pre>
 
+</div>
 <h3>DML Commands Summary Table</h3>
 
 <table border="1" class="notes-table" cellpadding="10">
@@ -23178,26 +23989,44 @@ These functions are used to change the case of text data.
 <h4>UPPER()</h4>
 <p>Converts all characters into uppercase.</p>
 
-<pre>
-SELECT UPPER('oracle') FROM dual;
-Output: ORACLE
-</pre>
+<div class="code-box">
+    <div class="code-title">
+        <span>Example</span>
+    </div>
+
+    <pre><code><span class="keyword">SELECT</span> <span class="function">UPPER</span>(<span class="string">'oracle'</span>)
+<span class="keyword">FROM</span> dual;
+
+<span class="comment">-- Output: ORACLE</span></code></pre>
+</div>
 
 <h4>LOWER()</h4>
 <p>Converts all characters into lowercase.</p>
 
-<pre>
-SELECT LOWER('ORACLE') FROM dual;
-Output: oracle
-</pre>
+<div class="code-box">
+    <div class="code-title">
+        <span>Example</span>
+    </div>
+
+    <pre><code><span class="keyword">SELECT</span> <span class="function">LOWER</span>(<span class="string">'ORACLE'</span>)
+<span class="keyword">FROM</span> dual;
+
+<span class="comment">-- Output: oracle</span></code></pre>
+</div>
 
 <h4>INITCAP()</h4>
 <p>Converts first letter of each word into uppercase.</p>
 
-<pre>
-SELECT INITCAP('oracle sql functions') FROM dual;
-Output: Oracle Sql Functions
-</pre>
+<div class="code-box">
+    <div class="code-title">
+        <span>Example</span>
+    </div>
+
+    <pre><code><span class="keyword">SELECT</span> <span class="function">INITCAP</span>(<span class="string">'oracle sql functions'</span>)
+<span class="keyword">FROM</span> dual;
+
+<span class="comment">-- Output: Oracle Sql Functions</span></code></pre>
+</div>
 
 <h3>2. String Manipulation Functions</h3>
 
@@ -23207,35 +24036,61 @@ These functions are used to work with string values such as joining, extracting,
 
 <h4>CONCAT()</h4>
 <p>Joins two strings together.</p>
+<div class="code-box">
+    <div class="code-title">
+        <span>Example</span>
+    </div>
 
-<pre>
-SELECT CONCAT('Hello', ' World') FROM dual;
-Output: Hello World
-</pre>
+    <pre><code><span class="keyword">SELECT</span> <span class="function">CONCAT</span>(<span class="string">'Hello'</span>, <span class="string">' World'</span>)
+<span class="keyword">FROM</span> dual;
+
+<span class="comment">-- Output: Hello World</span></code></pre>
+</div>
 
 <h4>SUBSTR()</h4>
 <p>Extracts a part of a string.</p>
 
-<pre>
-SELECT SUBSTR('ORACLE DATABASE', 1, 6) FROM dual;
-Output: ORACLE
-</pre>
+<div class="code-box">
+    <div class="code-title">
+        <span>Example</span>
+    </div>
 
+    <pre><code><span class="keyword">SELECT</span> <span class="function">SUBSTR</span>(<span class="string">'ORACLE DATABASE'</span>, <span class="number">1</span>, <span class="number">6</span>)
+<span class="keyword">FROM</span> dual;
+
+<span class="comment">-- Output: ORACLE</span></code></pre>
+</div>
 <h4>LENGTH()</h4>
 <p>Returns the number of characters in a string.</p>
 
-<pre>
-SELECT LENGTH('ORACLE') FROM dual;
-Output: 6
-</pre>
+<div class="code-box">
+    <div class="code-title">
+        <span>Example</span>
+    </div>
+
+    <pre><code><span class="keyword">SELECT</span> <span class="function">LENGTH</span>(<span class="string">'ORACLE'</span>)
+<span class="keyword">FROM</span> dual;
+
+<span class="comment">-- Output: 6</span></code></pre>
+</div>
 
 <h4>REPLACE()</h4>
 <p>Replaces a part of a string with another value.</p>
 
-<pre>
-SELECT REPLACE('JAVA SQL', 'JAVA', 'ORACLE') FROM dual;
-Output: ORACLE SQL
-</pre>
+<div class="code-box">
+    <div class="code-title">
+        <span>Example</span>
+    </div>
+
+    <pre><code><span class="keyword">SELECT</span> <span class="function">REPLACE</span>(
+    <span class="string">'JAVA SQL'</span>,
+    <span class="string">'JAVA'</span>,
+    <span class="string">'ORACLE'</span>
+)
+<span class="keyword">FROM</span> dual;
+
+<span class="comment">-- Output: ORACLE SQL</span></code></pre>
+</div>
 
 <h3>3. Trimming Functions</h3>
 
@@ -23246,10 +24101,16 @@ These functions are used to remove unwanted spaces or characters.
 <h4>TRIM()</h4>
 <p>Removes spaces from both sides of a string.</p>
 
-<pre>
-SELECT TRIM('  ORACLE  ') FROM dual;
-Output: ORACLE
-</pre>
+<div class="code-box">
+    <div class="code-title">
+        <span>Example</span>
+    </div>
+
+    <pre><code><span class="keyword">SELECT</span> <span class="function">TRIM</span>(<span class="string">'  ORACLE  '</span>)
+<span class="keyword">FROM</span> dual;
+
+<span class="comment">-- Output: ORACLE</span></code></pre>
+</div>
 
 <h4>LTRIM()</h4>
 <p>Removes spaces from the left side of a string.</p>
@@ -23283,7 +24144,7 @@ Character Functions are very powerful in Oracle SQL. They help in cleaning, form
 
 let oracleNumberFunctionsContent = `
 
-<h3>Number Functions in Oracle SQL</h3>
+<h3>Number Functions in SQL</h3>
 
 <p>
 Good morning students!
@@ -23365,15 +24226,27 @@ Number Functions are functions that take numeric input, perform mathematical ope
 The ROUND function is used to round a number to the nearest integer or specified decimal places.
 </p>
 
-<pre>
-SELECT ROUND(45.678) FROM dual;
-Output: 46
-</pre>
+<div class="code-box">
+    <div class="code-title">
+        <span>Example</span>
+    </div>
 
-<pre>
-SELECT ROUND(45.678, 2) FROM dual;
-Output: 45.68
-</pre>
+    <pre><code><span class="keyword">SELECT</span> <span class="function">ROUND</span>(<span class="number">45.678</span>)
+<span class="keyword">FROM</span> dual;
+
+<span class="comment">-- Output: 46</span></code></pre>
+</div>
+
+<div class="code-box">
+    <div class="code-title">
+        <span>Example</span>
+    </div>
+
+    <pre><code><span class="keyword">SELECT</span> <span class="function">ROUND</span>(<span class="number">45.678</span>, <span class="number">2</span>)
+<span class="keyword">FROM</span> dual;
+
+<span class="comment">-- Output: 45.68</span></code></pre>
+</div>
 
 <h3>2. TRUNC() Function</h3>
 
@@ -23381,10 +24254,16 @@ Output: 45.68
 The TRUNC function removes decimal values without rounding.
 </p>
 
-<pre>
-SELECT TRUNC(45.678) FROM dual;
-Output: 45
-</pre>
+<div class="code-box">
+    <div class="code-title">
+        <span>Example</span>
+    </div>
+
+    <pre><code><span class="keyword">SELECT</span> <span class="function">TRUNC</span>(<span class="number">45.678</span>)
+<span class="keyword">FROM</span> dual;
+
+<span class="comment">-- Output: 45</span></code></pre>
+</div>
 
 <h3>3. CEIL() Function</h3>
 
@@ -23392,10 +24271,16 @@ Output: 45
 The CEIL function returns the smallest integer greater than or equal to the given number.
 </p>
 
-<pre>
-SELECT CEIL(45.2) FROM dual;
-Output: 46
-</pre>
+<div class="code-box">
+    <div class="code-title">
+        <span>Example</span>
+    </div>
+
+    <pre><code><span class="keyword">SELECT</span> <span class="function">CEIL</span>(<span class="number">45.2</span>)
+<span class="keyword">FROM</span> dual;
+
+<span class="comment">-- Output: 46</span></code></pre>
+</div>
 
 <h3>4. FLOOR() Function</h3>
 
@@ -23403,10 +24288,16 @@ Output: 46
 The FLOOR function returns the largest integer less than or equal to the given number.
 </p>
 
-<pre>
-SELECT FLOOR(45.9) FROM dual;
-Output: 45
-</pre>
+<div class="code-box">
+    <div class="code-title">
+        <span>Example</span>
+    </div>
+
+    <pre><code><span class="keyword">SELECT</span> <span class="function">FLOOR</span>(<span class="number">45.9</span>)
+<span class="keyword">FROM</span> dual;
+
+<span class="comment">-- Output: 45</span></code></pre>
+</div>
 
 <h3>5. MOD() Function</h3>
 
@@ -23414,10 +24305,16 @@ Output: 45
 The MOD function returns the remainder after division.
 </p>
 
-<pre>
-SELECT MOD(10, 3) FROM dual;
-Output: 1
-</pre>
+<div class="code-box">
+    <div class="code-title">
+        <span>Example</span>
+    </div>
+
+    <pre><code><span class="keyword">SELECT</span> <span class="function">MOD</span>(<span class="number">10</span>, <span class="number">3</span>)
+<span class="keyword">FROM</span> dual;
+
+<span class="comment">-- Output: 1</span></code></pre>
+</div>
 
 <h3>6. ABS() Function</h3>
 
@@ -23425,10 +24322,16 @@ Output: 1
 The ABS function returns the absolute value (removes negative sign).
 </p>
 
-<pre>
-SELECT ABS(-25) FROM dual;
-Output: 25
-</pre>
+<div class="code-box">
+    <div class="code-title">
+        <span>Example</span>
+    </div>
+
+    <pre><code><span class="keyword">SELECT</span> <span class="function">ABS</span>(<span class="number">-25</span>)
+<span class="keyword">FROM</span> dual;
+
+<span class="comment">-- Output: 25</span></code></pre>
+</div>
 
 <h3>Real-Life Example</h3>
 
@@ -23534,10 +24437,16 @@ Date Functions are functions that take date values as input, perform operations 
 SYSDATE returns the current system date and time from the database server.
 </p>
 
-<pre>
-SELECT SYSDATE FROM dual;
-Output: 30-JUN-2026
-</pre>
+<div class="code-box">
+    <div class="code-title">
+        <span>Example</span>
+    </div>
+
+    <pre><code><span class="keyword">SELECT</span> <span class="function">SYSDATE</span>
+<span class="keyword">FROM</span> dual;
+
+<span class="comment">-- Output: 30-JUN-2026</span></code></pre>
+</div>
 
 <h3>2. CURRENT_DATE</h3>
 
@@ -23545,10 +24454,16 @@ Output: 30-JUN-2026
 CURRENT_DATE returns the current date based on the session time zone.
 </p>
 
-<pre>
-SELECT CURRENT_DATE FROM dual;
-Output: 30-JUN-2026
-</pre>
+<div class="code-box">
+    <div class="code-title">
+        <span>Example</span>
+    </div>
+
+    <pre><code><span class="keyword">SELECT</span> <span class="function">CURRENT_DATE</span>
+<span class="keyword">FROM</span> dual;
+
+<span class="comment">-- Output: 30-JUN-2026</span></code></pre>
+</div>
 
 <h3>3. ADD_MONTHS()</h3>
 
@@ -23556,15 +24471,27 @@ Output: 30-JUN-2026
 ADD_MONTHS function is used to add or subtract months from a given date.
 </p>
 
-<pre>
-SELECT ADD_MONTHS(SYSDATE, 2) FROM dual;
-Output: (date after 2 months)
-</pre>
+<div class="code-box">
+    <div class="code-title">
+        <span>Example</span>
+    </div>
 
-<pre>
-SELECT ADD_MONTHS(SYSDATE, -1) FROM dual;
-Output: (date before 1 month)
-</pre>
+    <pre><code><span class="keyword">SELECT</span> <span class="function">ADD_MONTHS</span>(<span class="function">SYSDATE</span>, <span class="number">2</span>)
+<span class="keyword">FROM</span> dual;
+
+<span class="comment">-- Output: Date after 2 months</span></code></pre>
+</div>
+
+<div class="code-box">
+    <div class="code-title">
+        <span>Example</span>
+    </div>
+
+    <pre><code><span class="keyword">SELECT</span> <span class="function">ADD_MONTHS</span>(<span class="function">SYSDATE</span>, <span class="number">2</span>)
+<span class="keyword">FROM</span> dual;
+
+<span class="comment">-- Output: Date after 2 months</span></code></pre>
+</div>
 
 <h3>4. MONTHS_BETWEEN()</h3>
 
@@ -23572,10 +24499,19 @@ Output: (date before 1 month)
 MONTHS_BETWEEN returns the number of months between two dates.
 </p>
 
-<pre>
-SELECT MONTHS_BETWEEN('01-JAN-2026', '01-JAN-2025') FROM dual;
-Output: 12
-</pre>
+<div class="code-box">
+    <div class="code-title">
+        <span>Example</span>
+    </div>
+
+    <pre><code><span class="keyword">SELECT</span> <span class="function">MONTHS_BETWEEN</span>(
+    <span class="string">'01-JAN-2026'</span>,
+    <span class="string">'01-JAN-2025'</span>
+)
+<span class="keyword">FROM</span> dual;
+
+<span class="comment">-- Output: 12</span></code></pre>
+</div>
 
 <h3>5. LAST_DAY()</h3>
 
@@ -23583,10 +24519,16 @@ Output: 12
 LAST_DAY returns the last date of the month for a given date.
 </p>
 
-<pre>
-SELECT LAST_DAY(SYSDATE) FROM dual;
-Output: 31-JUL-2026 (example based on current month)
-</pre>
+<div class="code-box">
+    <div class="code-title">
+        <span>Example</span>
+    </div>
+
+    <pre><code><span class="keyword">SELECT</span> <span class="function">LAST_DAY</span>(<span class="function">SYSDATE</span>)
+<span class="keyword">FROM</span> dual;
+
+<span class="comment">-- Output: 31-JUL-2026 (example based on current month)</span></code></pre>
+</div>
 
 <h3>6. NEXT_DAY()</h3>
 
@@ -23594,10 +24536,16 @@ Output: 31-JUL-2026 (example based on current month)
 NEXT_DAY returns the next occurrence of a specified weekday.
 </p>
 
-<pre>
-SELECT NEXT_DAY(SYSDATE, 'MONDAY') FROM dual;
-Output: Next Monday date
-</pre>
+<div class="code-box">
+    <div class="code-title">
+        <span>Example</span>
+    </div>
+
+    <pre><code><span class="keyword">SELECT</span> <span class="function">NEXT_DAY</span>(<span class="function">SYSDATE</span>, <span class="string">'MONDAY'</span>)
+<span class="keyword">FROM</span> dual;
+
+<span class="comment">-- Output: Next Monday date</span></code></pre>
+</div>
 
 <h3>Real-Life Example</h3>
 
@@ -23685,27 +24633,51 @@ Conversion Functions are functions that convert one data type into another and r
 TO_CHAR function is used to convert a number or date into a string format.
 </p>
 
-<pre>
-SELECT TO_CHAR(SYSDATE) FROM dual;
-Output: 30-JUN-2026
-</pre>
+<div class="code-box">
+    <div class="code-title">
+        <span>Example</span>
+    </div>
 
-<pre>
-SELECT TO_CHAR(12345) FROM dual;
-Output: '12345'
-</pre>
+    <pre><code><span class="keyword">SELECT</span> <span class="function">TO_CHAR</span>(<span class="function">SYSDATE</span>)
+<span class="keyword">FROM</span> dual;
+
+<span class="comment">-- Output: 30-JUN-2026</span></code></pre>
+</div>
+
+<div class="code-box">
+    <div class="code-title">
+        <span>Example</span>
+    </div>
+
+    <pre><code><span class="keyword">SELECT</span> <span class="function">TO_CHAR</span>(<span class="number">12345</span>)
+<span class="keyword">FROM</span> dual;
+
+<span class="comment">-- Output: '12345'</span></code></pre>
+</div>
 
 <h4>TO_CHAR with Date Format</h4>
 
-<pre>
-SELECT TO_CHAR(SYSDATE, 'DD-MON-YYYY') FROM dual;
-Output: 30-JUN-2026
-</pre>
+<div class="code-box">
+    <div class="code-title">
+        <span>Example 1</span>
+    </div>
 
-<pre>
-SELECT TO_CHAR(SYSDATE, 'YYYY-MM-DD') FROM dual;
-Output: 2026-06-30
-</pre>
+    <pre><code><span class="keyword">SELECT</span> <span class="function">TO_CHAR</span>(<span class="function">SYSDATE</span>, <span class="string">'DD-MON-YYYY'</span>)
+<span class="keyword">FROM</span> dual;
+
+<span class="comment">-- Output: 30-JUN-2026</span></code></pre>
+</div>
+
+<div class="code-box">
+    <div class="code-title">
+        <span>Example 2</span>
+    </div>
+
+    <pre><code><span class="keyword">SELECT</span> <span class="function">TO_CHAR</span>(<span class="function">SYSDATE</span>, <span class="string">'YYYY-MM-DD'</span>)
+<span class="keyword">FROM</span> dual;
+
+<span class="comment">-- Output: 2026-06-30</span></code></pre>
+</div>
 
 <h3>2. TO_NUMBER() Function</h3>
 
@@ -23713,15 +24685,27 @@ Output: 2026-06-30
 TO_NUMBER function is used to convert a string value into a number.
 </p>
 
-<pre>
-SELECT TO_NUMBER('100') FROM dual;
-Output: 100
-</pre>
+<div class="code-box">
+    <div class="code-title">
+        <span>Example 1</span>
+    </div>
 
-<pre>
-SELECT TO_NUMBER('2500') + 500 FROM dual;
-Output: 3000
-</pre>
+    <pre><code><span class="keyword">SELECT</span> <span class="function">TO_NUMBER</span>(<span class="string">'100'</span>)
+<span class="keyword">FROM</span> dual;
+
+<span class="comment">-- Output: 100</span></code></pre>
+</div>
+
+<div class="code-box">
+    <div class="code-title">
+        <span>Example 2</span>
+    </div>
+
+    <pre><code><span class="keyword">SELECT</span> <span class="function">TO_NUMBER</span>(<span class="string">'2500'</span>) + 500
+<span class="keyword">FROM</span> dual;
+
+<span class="comment">-- Output: 3000</span></code></pre>
+</div>
 
 <h3>3. TO_DATE() Function</h3>
 
@@ -23729,15 +24713,27 @@ Output: 3000
 TO_DATE function is used to convert a string into a date format.
 </p>
 
-<pre>
-SELECT TO_DATE('2026-06-30', 'YYYY-MM-DD') FROM dual;
-Output: 30-JUN-2026
-</pre>
+<div class="code-box">
+    <div class="code-title">
+        <span>Example 1</span>
+    </div>
 
-<pre>
-SELECT TO_DATE('01-JAN-2026', 'DD-MON-YYYY') FROM dual;
-Output: 01-JAN-2026
-</pre>
+    <pre><code><span class="keyword">SELECT</span> <span class="function">TO_DATE</span>(<span class="string">'2026-06-30'</span>, <span class="string">'YYYY-MM-DD'</span>)
+<span class="keyword">FROM</span> dual;
+
+<span class="comment">-- Output: 30-JUN-2026</span></code></pre>
+</div>
+
+<div class="code-box">
+    <div class="code-title">
+        <span>Example 2</span>
+    </div>
+
+    <pre><code><span class="keyword">SELECT</span> <span class="function">TO_DATE</span>(<span class="string">'01-JAN-2026'</span>, <span class="string">'DD-MON-YYYY'</span>)
+<span class="keyword">FROM</span> dual;
+
+<span class="comment">-- Output: 01-JAN-2026</span></code></pre>
+</div>
 
 <h3>Real-Life Example</h3>
 
@@ -23830,15 +24826,27 @@ General Functions are functions that help us manage NULL values and control data
 NVL function is used to replace NULL values with a default value.
 </p>
 
-<pre>
-SELECT NVL(NULL, 0) FROM dual;
-Output: 0
-</pre>
+<div class="code-box">
+    <div class="code-title">
+        <span>Example 1</span>
+    </div>
 
-<pre>
-SELECT NVL(salary, 5000) FROM employees;
-Output: salary value or 5000 if NULL
-</pre>
+    <pre><code><span class="keyword">SELECT</span> <span class="function">NVL</span>(<span class="keyword">NULL</span>, 0)
+<span class="keyword">FROM</span> dual;
+
+<span class="comment">-- Output: 0</span></code></pre>
+</div>
+
+<div class="code-box">
+    <div class="code-title">
+        <span>Example 2</span>
+    </div>
+
+    <pre><code><span class="keyword">SELECT</span> <span class="function">NVL</span>(salary, 5000)
+<span class="keyword">FROM</span> employees;
+
+<span class="comment">-- Output: Salary value or 5000 if NULL</span></code></pre>
+</div>
 
 <h3>2. NVL2() Function</h3>
 
@@ -23846,15 +24854,27 @@ Output: salary value or 5000 if NULL
 NVL2 checks whether a value is NULL or not and returns two different results.
 </p>
 
-<pre>
-SELECT NVL2(100, 'NOT NULL', 'NULL') FROM dual;
-Output: NOT NULL
-</pre>
+<div class="code-box">
+    <div class="code-title">
+        <span>Example 1</span>
+    </div>
 
-<pre>
-SELECT NVL2(NULL, 'NOT NULL', 'NULL') FROM dual;
-Output: NULL
-</pre>
+    <pre><code><span class="keyword">SELECT</span> <span class="function">NVL2</span>(100, <span class="string">'NOT NULL'</span>, <span class="string">'NULL'</span>)
+<span class="keyword">FROM</span> dual;
+
+<span class="comment">-- Output: NOT NULL</span></code></pre>
+</div>
+
+<div class="code-box">
+    <div class="code-title">
+        <span>Example 2</span>
+    </div>
+
+    <pre><code><span class="keyword">SELECT</span> <span class="function">NVL2</span>(<span class="keyword">NULL</span>, <span class="string">'NOT NULL'</span>, <span class="string">'NULL'</span>)
+<span class="keyword">FROM</span> dual;
+
+<span class="comment">-- Output: NULL</span></code></pre>
+</div>
 
 <h3>3. NULLIF() Function</h3>
 
@@ -23862,15 +24882,27 @@ Output: NULL
 NULLIF returns NULL if both values are equal; otherwise returns the first value.
 </p>
 
-<pre>
-SELECT NULLIF(10, 10) FROM dual;
-Output: NULL
-</pre>
+<div class="code-box">
+    <div class="code-title">
+        <span>Example 1</span>
+    </div>
 
-<pre>
-SELECT NULLIF(10, 20) FROM dual;
-Output: 10
-</pre>
+    <pre><code><span class="keyword">SELECT</span> <span class="function">NULLIF</span>(10, 10)
+<span class="keyword">FROM</span> dual;
+
+<span class="comment">-- Output: NULL</span></code></pre>
+</div>
+
+<div class="code-box">
+    <div class="code-title">
+        <span>Example 2</span>
+    </div>
+
+    <pre><code><span class="keyword">SELECT</span> <span class="function">NULLIF</span>(10, 20)
+<span class="keyword">FROM</span> dual;
+
+<span class="comment">-- Output: 10</span></code></pre>
+</div>
 
 <h3>4. COALESCE() Function</h3>
 
@@ -23878,10 +24910,16 @@ Output: 10
 COALESCE returns the first non-null value from a list of expressions.
 </p>
 
-<pre>
-SELECT COALESCE(NULL, NULL, 50, 100) FROM dual;
-Output: 50
-</pre>
+<div class="code-box">
+    <div class="code-title">
+        <span>Example 1</span>
+    </div>
+
+    <pre><code><span class="keyword">SELECT</span> <span class="function">COALESCE</span>(<span class="keyword">NULL</span>, <span class="keyword">NULL</span>, 50, 100)
+<span class="keyword">FROM</span> dual;
+
+<span class="comment">-- Output: 50</span></code></pre>
+</div>
 
 <h3>Real-Life Example</h3>
 
@@ -23979,10 +25017,14 @@ Suppose a teacher wants to know the average marks of all students in a class.
 Instead of calculating the average manually, Oracle can calculate it automatically.
 </p>
 
-<pre>
-SELECT AVG(Marks)
-FROM Student;
-</pre>
+<div class="code-box">
+    <div class="code-title">
+        <span>Example 1</span>
+    </div>
+
+    <pre><code><span class="keyword">SELECT</span> <span class="function">AVG</span>(Marks)
+<span class="keyword">FROM</span> Student;</code></pre>
+</div>
 
 <table class="notes-table">
 <tr>
@@ -24106,17 +25148,26 @@ The <strong>COUNT()</strong> function is used to count the total number of rows.
 
 <h4>Syntax</h4>
 
-<pre>
-SELECT COUNT(*)
-FROM table_name;
-</pre>
+<div class="code-box">
+    <div class="code-title">
+        <span>Syntax</span>
+    </div>
+
+    <pre><code><span class="keyword">SELECT</span> <span class="function">COUNT</span>(*)
+<span class="keyword">FROM</span> table_name;</code></pre>
+</div>
+
 
 <h4>Example</h4>
 
-<pre>
-SELECT COUNT(*)
-FROM Student;
-</pre>
+<div class="code-box">
+    <div class="code-title">
+        <span>Example 1</span>
+    </div>
+
+    <pre><code><span class="keyword">SELECT</span> <span class="function">COUNT</span>(*)
+<span class="keyword">FROM</span> Student;</code></pre>
+</div>
 
 <table class="notes-table">
 
@@ -24136,10 +25187,14 @@ COUNT(*) counts all rows, including rows containing NULL values.
 
 <h4>COUNT(column_name)</h4>
 
-<pre>
-SELECT COUNT(Email)
-FROM Student;
-</pre>
+<div class="code-box">
+    <div class="code-title">
+        <span>Example 2</span>
+    </div>
+
+    <pre><code><span class="keyword">SELECT</span> <span class="function">COUNT</span>(Email)
+<span class="keyword">FROM</span> Student;</code></pre>
+</div>
 
 <p>
 This counts only those rows where the Email column is NOT NULL.
@@ -24155,17 +25210,26 @@ The <strong>SUM()</strong> function calculates the total of a numeric column.
 
 <h4>Syntax</h4>
 
-<pre>
-SELECT SUM(column_name)
-FROM table_name;
-</pre>
+<div class="code-box">
+    <div class="code-title">
+        <span>Syntax</span>
+    </div>
+
+    <pre><code><span class="keyword">SELECT</span> <span class="function">SUM</span>(column_name)
+<span class="keyword">FROM</span> table_name;</code></pre>
+</div>
+
 
 <h4>Example</h4>
 
-<pre>
-SELECT SUM(Salary)
-FROM Employee;
-</pre>
+<div class="code-box">
+    <div class="code-title">
+        <span>Example 1</span>
+    </div>
+
+    <pre><code><span class="keyword">SELECT</span> <span class="function">SUM</span>(Salary)
+<span class="keyword">FROM</span> Employee;</code></pre>
+</div>
 
 <table class="notes-table">
 
@@ -24189,17 +25253,26 @@ The <strong>AVG()</strong> function calculates the average value of a numeric co
 
 <h4>Syntax</h4>
 
-<pre>
-SELECT AVG(column_name)
-FROM table_name;
-</pre>
+<div class="code-box">
+    <div class="code-title">
+        <span>Syntax</span>
+    </div>
+
+    <pre><code><span class="keyword">SELECT</span> <span class="function">AVG</span>(column_name)
+<span class="keyword">FROM</span> table_name;</code></pre>
+</div>
+
 
 <h4>Example</h4>
 
-<pre>
-SELECT AVG(Marks)
-FROM Student;
-</pre>
+<div class="code-box">
+    <div class="code-title">
+        <span>Example 1</span>
+    </div>
+
+    <pre><code><span class="keyword">SELECT</span> <span class="function">AVG</span>(Marks)
+<span class="keyword">FROM</span> Student;</code></pre>
+</div>
 
 <table class="notes-table">
 
@@ -24223,10 +25296,14 @@ The <strong>MAX()</strong> function returns the highest value from a column.
 
 <h4>Example</h4>
 
-<pre>
-SELECT MAX(Salary)
-FROM Employee;
-</pre>
+<div class="code-box">
+    <div class="code-title">
+        <span>Example 1</span>
+    </div>
+
+    <pre><code><span class="keyword">SELECT</span> <span class="function">MAX</span>(Salary)
+<span class="keyword">FROM</span> Employee;</code></pre>
+</div>
 
 <table class="notes-table">
 
@@ -24250,10 +25327,14 @@ The <strong>MIN()</strong> function returns the smallest value from a column.
 
 <h4>Example</h4>
 
-<pre>
-SELECT MIN(Salary)
-FROM Employee;
-</pre>
+<div class="code-box">
+    <div class="code-title">
+        <span>Example 1</span>
+    </div>
+
+    <pre><code><span class="keyword">SELECT</span> <span class="function">MIN</span>(Salary)
+<span class="keyword">FROM</span> Employee;</code></pre>
+</div>
 
 <table class="notes-table">
 
@@ -24431,12 +25512,16 @@ Similarly, Nested Functions also work step by step. One function completes its w
 
 <h3>Syntax</h3>
 
-<pre>
-SELECT Outer_Function(
+<div class="code-box">
+    <div class="code-title">
+        <span>Syntax</span>
+    </div>
+
+    <pre><code><span class="keyword">SELECT</span> Outer_Function(
        Inner_Function(column_name)
 )
-FROM table_name;
-</pre>
+<span class="keyword">FROM</span> table_name;</code></pre>
+</div>
 
 <hr>
 
@@ -24446,10 +25531,16 @@ FROM table_name;
 Suppose we want to extract the first five characters of a name and convert them into uppercase.
 </p>
 
-<pre>
-SELECT UPPER(SUBSTR('oracle database',1,6))
-FROM dual;
-</pre>
+<div class="code-box">
+    <div class="code-title">
+        <span>Example 1</span>
+    </div>
+
+    <pre><code><span class="keyword">SELECT</span> <span class="function">UPPER</span>(
+       <span class="function">SUBSTR</span>(<span class="string">'oracle database'</span>, 1, 6)
+)
+<span class="keyword">FROM</span> dual;</code></pre>
+</div>
 
 <table class="notes-table">
 
@@ -24470,13 +25561,6 @@ FROM dual;
 
 </table>
 
-<p>
-Final Output:
-</p>
-
-<pre>
-ORACLE
-</pre>
 
 <hr>
 
@@ -24486,10 +25570,16 @@ ORACLE
 Replace one word first and then convert the complete string into lowercase.
 </p>
 
-<pre>
-SELECT LOWER(REPLACE('JAVA SQL','JAVA','ORACLE'))
-FROM dual;
-</pre>
+<div class="code-box">
+    <div class="code-title">
+        <span>Example 2</span>
+    </div>
+
+    <pre><code><span class="keyword">SELECT</span> <span class="function">LOWER</span>(
+       <span class="function">REPLACE</span>(<span class="string">'JAVA SQL'</span>, <span class="string">'JAVA'</span>, <span class="string">'ORACLE'</span>)
+)
+<span class="keyword">FROM</span> dual;</code></pre>
+</div>
 
 <table class="notes-table">
 
@@ -24518,10 +25608,16 @@ FROM dual;
 Suppose we want to calculate the average salary and then round it.
 </p>
 
-<pre>
-SELECT ROUND(AVG(Salary))
-FROM Employee;
-</pre>
+<div class="code-box">
+    <div class="code-title">
+        <span>Example 1</span>
+    </div>
+
+    <pre><code><span class="keyword">SELECT</span> <span class="function">ROUND</span>(
+       <span class="function">AVG</span>(Salary)
+)
+<span class="keyword">FROM</span> Employee;</code></pre>
+</div>
 
 <table class="notes-table">
 
@@ -24550,10 +25646,14 @@ FROM Employee;
 Display the current system date in a custom format.
 </p>
 
-<pre>
-SELECT TO_CHAR(SYSDATE,'DD-MON-YYYY')
-FROM dual;
-</pre>
+<div class="code-box">
+    <div class="code-title">
+        <span>Example 1</span>
+    </div>
+
+    <pre><code><span class="keyword">SELECT</span> <span class="function">TO_CHAR</span>(<span class="function">SYSDATE</span>, <span class="string">'DD-MON-YYYY'</span>)
+<span class="keyword">FROM</span> dual;</code></pre>
+</div>
 
 <table class="notes-table">
 
@@ -24582,10 +25682,16 @@ FROM dual;
 Suppose a string contains unwanted spaces. First remove the spaces and then calculate the length.
 </p>
 
-<pre>
-SELECT LENGTH(TRIM('   Oracle SQL   '))
-FROM dual;
-</pre>
+<div class="code-box">
+    <div class="code-title">
+        <span>Example 1</span>
+    </div>
+
+    <pre><code><span class="keyword">SELECT</span> <span class="function">LENGTH</span>(
+       <span class="function">TRIM</span>(<span class="string">'   Oracle SQL   '</span>)
+)
+<span class="keyword">FROM</span> dual;</code></pre>
+</div>
 
 <table class="notes-table">
 

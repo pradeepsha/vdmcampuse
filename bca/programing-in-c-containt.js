@@ -9914,6 +9914,67 @@ Wednesday
 Subtraction = 10
 </pre>
 <hr>
+
+<h4> Write a C program to perform arithmetic operations using switch and dynamic user input.  </h4>
+<div class="code-box">
+    <div class="code-title">
+        <span>Switch with Arithmetic Operators</span>
+    </div>
+
+    <pre><code><span class="keyword">#include</span> &lt;stdio.h&gt;
+
+<span class="keyword">int</span> main()
+{
+    <span class="keyword">int</span> a, b;
+    <span class="keyword">char</span> choice;
+
+    printf(<span class="string">"Enter first number: "</span>);
+    scanf(<span class="string">"%d"</span>, &amp;a);
+
+    printf(<span class="string">"Enter second number: "</span>);
+    scanf(<span class="string">"%d"</span>, &amp;b);
+
+    printf(<span class="string">"Enter Operator (+, -, *, /): "</span>);
+    scanf(<span class="string">" %c"</span>, &amp;choice);
+
+    <span class="keyword">switch</span>(choice)
+    {
+        <span class="keyword">case</span> <span class="operator">'+'</span>:
+            printf(<span class="string">"Addition = %d"</span>, a <span class="operator">+</span> b);
+            <span class="keyword">break</span>;
+
+        <span class="keyword">case</span> <span class="operator">'-'</span>:
+            printf(<span class="string">"Subtraction = %d"</span>, a <span class="operator">-</span> b);
+            <span class="keyword">break</span>;
+
+        <span class="keyword">case</span> <span class="operator">'*'</span>:
+            printf(<span class="string">"Multiplication = %d"</span>, a <span class="operator">*</span> b);
+            <span class="keyword">break</span>;
+
+        <span class="keyword">case</span> <span class="operator">'/'</span>:
+            printf(<span class="string">"Division = %d"</span>, a <span class="operator">/</span> b);
+            <span class="keyword">break</span>;
+
+        <span class="keyword">default</span>:
+            printf(<span class="string">"Invalid Operator"</span>);
+    }
+
+    <span class="keyword">return</span> <span class="number">0</span>;
+}</code></pre>
+</div>
+
+<div class="code-box">
+    <div class="code-title">
+        <span>Output</span>
+    </div>
+
+    <pre><code>Enter first number: <span class="number">20</span>
+Enter second number: <span class="number">10</span>
+Enter Operator (+, -, *, /): <span class="operator">+</span>
+Addition = <span class="number">30</span></code></pre>
+</div>
+
+<hr>
 <h4>Example 3: Check Vowel or Consonant</h4>
 
 <div class="code-box">
@@ -22473,3 +22534,701 @@ Dynamic Accessing or Random Access allows moving directly to any position in a f
 </ul>
 
 `;
+
+const operatorPrecedenceContent = `
+
+<div class="notes_title">
+    Operator Precedence in C
+</div>
+
+
+<div class="notes_text">
+
+    <p>
+        <b>Operator precedence</b> tells us which operator is performed
+        first when an expression contains more than one operator.
+    </p>
+
+    <p>
+        In simple words, <b>operator precedence decides the priority
+        of operators</b> in an expression.
+    </p>
+
+</div>
+
+
+<div class="notes_title">
+    Example 1: Multiplication and Addition
+</div>
+
+
+<div class="code-box">
+    <div class="code-title">
+        <span>Example</span>
+    </div>
+
+    <pre><code><span class="keyword">int</span> result = <span class="number">10</span> + <span class="number">5</span> * <span class="number">2</span>;</code></pre>
+</div>
+
+
+<div class="notes_text">
+
+    <p>
+        Here, <b>*</b> has higher precedence than <b>+</b>.
+        Therefore, multiplication is performed first.
+    </p>
+
+</div>
+
+
+<div class="code-box">
+    <div class="code-title">
+        <span>Calculation</span>
+    </div>
+
+    <pre><code><span class="number">10</span> + <span class="number">5</span> * <span class="number">2</span>
+<span class="number">10</span> + <span class="number">10</span>
+<span class="number">20</span></code></pre>
+</div>
+
+
+<div class="code-box">
+    <div class="code-title">
+        <span>C Program</span>
+    </div>
+
+    <pre><code><span class="keyword">#include</span> &lt;<span class="header-file">stdio.h</span>&gt;
+
+<span class="keyword">int</span> <span class="function">main</span>()
+{
+    <span class="keyword">int</span> result = <span class="number">10</span> + <span class="number">5</span> * <span class="number">2</span>;
+
+    <span class="function">printf</span>(<span class="string">"Result = %d"</span>, result);
+
+    <span class="keyword">return</span> <span class="number">0</span>;
+}</code></pre>
+</div>
+
+
+<div class="code-box">
+    <div class="code-title">
+        <span>Output</span>
+    </div>
+
+    <pre><code>Result = <span class="number">20</span></code></pre>
+</div>
+
+
+<div class="notes_title">
+    Example 2: Using Parentheses
+</div>
+
+
+<div class="notes_text">
+
+    <p>
+        Parentheses <b>()</b> have higher precedence than arithmetic
+        operators.
+    </p>
+
+    <p>
+        Parentheses can be used to change the normal order of evaluation.
+    </p>
+
+</div>
+
+
+<div class="code-box">
+    <div class="code-title">
+        <span>Example</span>
+    </div>
+
+    <pre><code><span class="keyword">int</span> result = (<span class="number">10</span> + <span class="number">5</span>) * <span class="number">2</span>;</code></pre>
+</div>
+
+
+<div class="code-box">
+    <div class="code-title">
+        <span>Calculation</span>
+    </div>
+
+    <pre><code>(<span class="number">10</span> + <span class="number">5</span>) * <span class="number">2</span>
+<span class="number">15</span> * <span class="number">2</span>
+<span class="number">30</span></code></pre>
+</div>
+
+
+<div class="code-box">
+    <div class="code-title">
+        <span>Output</span>
+    </div>
+
+    <pre><code>Result = <span class="number">30</span></code></pre>
+</div>
+
+
+<div class="notes_title">
+    Example 3: Multiple Operators
+</div>
+
+
+<div class="notes_text">
+
+    <p>
+        Consider an expression containing multiple arithmetic operators.
+    </p>
+
+</div>
+
+
+<div class="code-box">
+    <div class="code-title">
+        <span>Example</span>
+    </div>
+
+    <pre><code><span class="keyword">int</span> a = <span class="number">10</span>;
+<span class="keyword">int</span> b = <span class="number">5</span>;
+<span class="keyword">int</span> c = <span class="number">2</span>;
+
+<span class="keyword">int</span> result = a + b * c;</code></pre>
+</div>
+
+
+<div class="notes_text">
+
+    <p>
+        First, <b>*</b> is performed because multiplication has
+        higher precedence than addition.
+    </p>
+
+</div>
+
+
+<div class="code-box">
+    <div class="code-title">
+        <span>Calculation</span>
+    </div>
+
+    <pre><code>b * c
+<span class="number">5</span> * <span class="number">2</span>
+<span class="number">10</span>
+
+a + <span class="number">10</span>
+<span class="number">10</span> + <span class="number">10</span>
+<span class="number">20</span></code></pre>
+</div>
+
+
+<div class="code-box">
+    <div class="code-title">
+        <span>Output</span>
+    </div>
+
+    <pre><code>Result = <span class="number">20</span></code></pre>
+</div>
+
+
+<div class="notes_title">
+    Complete Program
+</div>
+
+
+<div class="code-box">
+    <div class="code-title">
+        <span>C Program</span>
+    </div>
+
+    <pre><code><span class="keyword">#include</span> &lt;<span class="header-file">stdio.h</span>&gt;
+
+<span class="keyword">int</span> <span class="function">main</span>()
+{
+    <span class="keyword">int</span> a = <span class="number">10</span>;
+    <span class="keyword">int</span> b = <span class="number">5</span>;
+    <span class="keyword">int</span> c = <span class="number">2</span>;
+
+    <span class="keyword">int</span> result = a + b * c;
+
+    <span class="function">printf</span>(<span class="string">"Result = %d"</span>, result);
+
+    <span class="keyword">return</span> <span class="number">0</span>;
+}</code></pre>
+</div>
+
+
+<div class="code-box">
+    <div class="code-title">
+        <span>Output</span>
+    </div>
+
+    <pre><code>Result = <span class="number">20</span></code></pre>
+</div>
+
+
+<div class="notes_title">
+    Common Operator Precedence in C
+</div>
+
+
+<table class="notes-table">
+
+    <tr>
+        <th>Priority</th>
+        <th>Operators</th>
+        <th>Description</th>
+    </tr>
+
+    <tr>
+        <td>1</td>
+        <td>() [] -> .</td>
+        <td>Parentheses, Array, Member Access</td>
+    </tr>
+
+    <tr>
+        <td>2</td>
+        <td>++ --</td>
+        <td>Increment / Decrement</td>
+    </tr>
+
+    <tr>
+        <td>3</td>
+        <td>* / %</td>
+        <td>Multiplication, Division, Modulus</td>
+    </tr>
+
+    <tr>
+        <td>4</td>
+        <td>+ -</td>
+        <td>Addition, Subtraction</td>
+    </tr>
+
+    <tr>
+        <td>5</td>
+        <td>&lt; &lt;= &gt; &gt;=</td>
+        <td>Relational Operators</td>
+    </tr>
+
+    <tr>
+        <td>6</td>
+        <td>== !=</td>
+        <td>Equality Operators</td>
+    </tr>
+
+    <tr>
+        <td>7</td>
+        <td>&amp;&amp;</td>
+        <td>Logical AND</td>
+    </tr>
+
+    <tr>
+        <td>8</td>
+        <td>||</td>
+        <td>Logical OR</td>
+    </tr>
+
+    <tr>
+        <td>9</td>
+        <td>?:</td>
+        <td>Conditional Operator</td>
+    </tr>
+
+    <tr>
+        <td>10</td>
+        <td>= += -= *= /=</td>
+        <td>Assignment Operators</td>
+    </tr>
+
+</table>
+
+
+<div class="notes_title">
+    Example 4: Division and Multiplication
+</div>
+
+
+<div class="notes_text">
+
+    <p>
+        The <b>*</b> and <b>/</b> operators have the same precedence.
+    </p>
+
+    <p>
+        When operators have the same precedence, their
+        <b>associativity</b> determines the direction of evaluation.
+    </p>
+
+</div>
+
+
+<div class="code-box">
+    <div class="code-title">
+        <span>Example</span>
+    </div>
+
+    <pre><code><span class="keyword">int</span> result = <span class="number">20</span> / <span class="number">5</span> * <span class="number">2</span>;</code></pre>
+</div>
+
+
+<div class="notes_text">
+
+    <p>
+        Both <b>/</b> and <b>*</b> have the same precedence and
+        are evaluated from <b>left to right</b>.
+    </p>
+
+</div>
+
+
+<div class="code-box">
+    <div class="code-title">
+        <span>Calculation</span>
+    </div>
+
+    <pre><code><span class="number">20</span> / <span class="number">5</span> * <span class="number">2</span>
+<span class="number">4</span> * <span class="number">2</span>
+<span class="number">8</span></code></pre>
+</div>
+
+
+<div class="code-box">
+    <div class="code-title">
+        <span>Output</span>
+    </div>
+
+    <pre><code>Result = <span class="number">8</span></code></pre>
+</div>
+
+
+<div class="notes_title">
+    Complete Program
+</div>
+
+
+<div class="code-box">
+    <div class="code-title">
+        <span>C Program</span>
+    </div>
+
+    <pre><code><span class="keyword">#include</span> &lt;<span class="header-file">stdio.h</span>&gt;
+
+<span class="keyword">int</span> <span class="function">main</span>()
+{
+    <span class="keyword">int</span> result = <span class="number">20</span> / <span class="number">5</span> * <span class="number">2</span>;
+
+    <span class="function">printf</span>(<span class="string">"Result = %d"</span>, result);
+
+    <span class="keyword">return</span> <span class="number">0</span>;
+}</code></pre>
+</div>
+
+
+<div class="code-box">
+    <div class="code-title">
+        <span>Output</span>
+    </div>
+
+    <pre><code>Result = <span class="number">8</span></code></pre>
+</div>
+
+
+<div class="notes_title">
+    Precedence vs Associativity
+</div>
+
+
+<table class="notes-table">
+
+    <tr>
+        <th>Concept</th>
+        <th>Meaning</th>
+    </tr>
+
+    <tr>
+        <td>Precedence</td>
+        <td>Decides which operator has higher priority.</td>
+    </tr>
+
+    <tr>
+        <td>Associativity</td>
+        <td>Decides the direction when operators have the same precedence.</td>
+    </tr>
+
+</table>
+
+
+<div class="notes_title">
+    Example 5: Left-to-Right Associativity
+</div>
+
+
+<div class="notes_text">
+
+    <p>
+        The multiplication <b>*</b> and division <b>/</b> operators
+        have the same precedence.
+    </p>
+
+    <p>
+        Their associativity is <b>left to right</b>.
+    </p>
+
+</div>
+
+
+<div class="code-box">
+    <div class="code-title">
+        <span>Example</span>
+    </div>
+
+    <pre><code><span class="keyword">int</span> result = <span class="number">20</span> / <span class="number">5</span> * <span class="number">2</span>;</code></pre>
+</div>
+
+
+<div class="code-box">
+    <div class="code-title">
+        <span>Calculation</span>
+    </div>
+
+    <pre><code><span class="number">20</span> / <span class="number">5</span> * <span class="number">2</span>
+<span class="number">4</span> * <span class="number">2</span>
+<span class="number">8</span></code></pre>
+</div>
+
+
+<div class="code-box">
+    <div class="code-title">
+        <span>Output</span>
+    </div>
+
+    <pre><code>Result = <span class="number">8</span></code></pre>
+</div>
+
+
+<div class="notes_title">
+    Example 6: Assignment Operator
+</div>
+
+
+<div class="notes_text">
+
+    <p>
+        Assignment operators have lower precedence than most
+        arithmetic operators.
+    </p>
+
+</div>
+
+
+<div class="code-box">
+    <div class="code-title">
+        <span>Example</span>
+    </div>
+
+    <pre><code><span class="keyword">int</span> result;
+
+result = <span class="number">10</span> + <span class="number">5</span> * <span class="number">2</span>;</code></pre>
+</div>
+
+
+<div class="code-box">
+    <div class="code-title">
+        <span>Calculation</span>
+    </div>
+
+    <pre><code><span class="number">5</span> * <span class="number">2</span>
+<span class="number">10</span>
+
+<span class="number">10</span> + <span class="number">10</span>
+<span class="number">20</span>
+
+result = <span class="number">20</span></code></pre>
+</div>
+
+
+<div class="code-box">
+    <div class="code-title">
+        <span>Output</span>
+    </div>
+
+    <pre><code>Result = <span class="number">20</span></code></pre>
+</div>
+
+
+<div class="notes_title">
+    Example 7: Relational and Arithmetic Operators
+</div>
+
+
+<div class="notes_text">
+
+    <p>
+        Arithmetic operators have higher precedence than relational
+        operators.
+    </p>
+
+</div>
+
+
+<div class="code-box">
+    <div class="code-title">
+        <span>Example</span>
+    </div>
+
+    <pre><code><span class="keyword">int</span> result = <span class="number">10</span> + <span class="number">5</span> &gt; <span class="number">12</span>;</code></pre>
+</div>
+
+
+<div class="code-box">
+    <div class="code-title">
+        <span>Calculation</span>
+    </div>
+
+    <pre><code><span class="number">10</span> + <span class="number">5</span> &gt; <span class="number">12</span>
+<span class="number">15</span> &gt; <span class="number">12</span>
+<span class="number">1</span></code></pre>
+</div>
+
+
+<div class="notes_text">
+
+    <p>
+        The result is <b>1</b> because the condition
+        <b>15 &gt; 12</b> is true.
+    </p>
+
+</div>
+
+
+<div class="code-box">
+    <div class="code-title">
+        <span>Output</span>
+    </div>
+
+    <pre><code>Result = <span class="number">1</span></code></pre>
+</div>
+
+
+<div class="notes_title">
+    Example 8: Logical AND
+</div>
+
+
+<div class="notes_text">
+
+    <p>
+        The logical AND operator <b>&amp;&amp;</b> is evaluated after
+        relational and equality operators.
+    </p>
+
+</div>
+
+
+<div class="code-box">
+    <div class="code-title">
+        <span>Example</span>
+    </div>
+
+    <pre><code><span class="keyword">int</span> result = <span class="number">10</span> &gt; <span class="number">5</span> &amp;&amp; <span class="number">20</span> &gt; <span class="number">15</span>;</code></pre>
+</div>
+
+
+<div class="code-box">
+    <div class="code-title">
+        <span>Calculation</span>
+    </div>
+
+    <pre><code><span class="number">10</span> &gt; <span class="number">5</span> &amp;&amp; <span class="number">20</span> &gt; <span class="number">15</span>
+<span class="number">1</span> &amp;&amp; <span class="number">1</span>
+<span class="number">1</span></code></pre>
+</div>
+
+
+<div class="code-box">
+    <div class="code-title">
+        <span>Output</span>
+    </div>
+
+    <pre><code>Result = <span class="number">1</span></code></pre>
+</div>
+
+
+<div class="notes_title">
+    Easy Rule to Remember
+</div>
+
+
+<div class="code-box">
+    <div class="code-title">
+        <span>Operator Precedence</span>
+    </div>
+
+    <pre><code><span class="number">1</span>. Parentheses          ()
+<span class="number">2</span>. Increment/Decrement  ++ --
+<span class="number">3</span>. *, /, %
+<span class="number">4</span>. +, -
+<span class="number">5</span>. Relational           &lt; &lt;= &gt; &gt;=
+<span class="number">6</span>. Equality             == !=
+<span class="number">7</span>. Logical AND          &amp;&amp;
+<span class="number">8</span>. Logical OR           ||
+<span class="number">9</span>. Conditional          ?:
+<span class="number">10</span>. Assignment          = += -= *= /=</code></pre>
+</div>
+
+
+<div class="notes_title">
+    Important Point
+</div>
+
+
+<div class="notes_text">
+
+    <p>
+        <b>Higher precedence</b> means higher priority.
+    </p>
+
+    <p>
+        For example:
+    </p>
+
+</div>
+
+
+<div class="code-box">
+    <div class="code-title">
+        <span>Example</span>
+    </div>
+
+    <pre><code><span class="keyword">int</span> result = <span class="number">10</span> + <span class="number">5</span> * <span class="number">2</span>;</code></pre>
+</div>
+
+
+<div class="notes_text">
+
+    <p>
+        Since <b>*</b> has higher precedence than <b>+</b>,
+        multiplication is performed first.
+    </p>
+
+</div>
+
+
+<div class="code-box">
+    <div class="code-title">
+        <span>Calculation</span>
+    </div>
+
+    <pre><code><span class="number">10</span> + (<span class="number">5</span> * <span class="number">2</span>)
+<span class="number">10</span> + <span class="number">10</span>
+<span class="number">20</span></code></pre>
+</div>
+
+
+<div class="code-box">
+    <div class="code-title">
+        <span>Final Result</span>
+    </div>
+
+    <pre><code>Result = <span class="number">20</span></code></pre>
+</div>
+
+`;
+

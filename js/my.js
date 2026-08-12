@@ -12,16 +12,33 @@ dropbtn.addEventListener("click", function () {
 });
 
 
-// open togel subunit 
-// function toggleSubUnit(element) {
-// 	let list = element.nextElementSibling;
+        function loadNote(title, text, event) {
 
-// 	if (list.style.display === "block") {
-// 		list.style.display = "none";
-// 	} else {
-// 		list.style.display = "block";
-// 	}
-// }
+            document.getElementById("notes_title").innerHTML = title;
+            document.getElementById("notes_text").innerHTML = text;
+
+            let lectures = document.querySelectorAll(".lecture");
+
+            lectures.forEach(l => l.classList.remove("active"));
+
+
+            // Remove active from all sub lectures
+            document.querySelectorAll(".sub_lecture").forEach(item => {
+                item.classList.remove("active");
+            });
+
+            // Add active to clicked sub lecture
+            event.currentTarget.classList.add("active");
+
+            // Scroll content area to top after loading
+            document.getElementById("mainContent").scrollTo({
+                top: 0,
+                behavior: "smooth"
+            });
+
+            closeSidebar();
+        }
+
 
 function toggleUnit(element) {
 	let current = element.nextElementSibling;
@@ -38,20 +55,47 @@ function toggleUnit(element) {
 			: 'none';
 }
 
+// function toggleSubUnit(element) {
+// 	let current = element.nextElementSibling;
+
+// 	document.querySelectorAll('.sub_lecture_list').forEach(list => {
+// 		if (list !== current) {
+// 			list.style.display = 'none';
+// 		}
+// 	});
+
+// 	current.style.display =
+// 		window.getComputedStyle(current).display === 'none'
+// 			? 'block'
+// 			: 'none';
+
+// }
+
+
 function toggleSubUnit(element) {
-	let current = element.nextElementSibling;
 
-	document.querySelectorAll('.sub_lecture_list').forEach(list => {
-		if (list !== current) {
-			list.style.display = 'none';
-		}
-	});
+    let current = element.nextElementSibling;
 
-	current.style.display =
-		window.getComputedStyle(current).display === 'none'
-			? 'block'
-			: 'none';
+    // Remove active from all lectures
+    document.querySelectorAll(".lecture").forEach(lecture => {
+        lecture.classList.remove("active");
+    });
 
+    // Add active to clicked lecture
+    element.parentElement.classList.add("active");
+
+    // Close other sub-lecture lists
+    document.querySelectorAll(".sub_lecture_list").forEach(list => {
+        if (list !== current) {
+            list.style.display = "none";
+        }
+    });
+
+    // Toggle current sub-lecture list
+    current.style.display =
+        window.getComputedStyle(current).display === "none"
+            ? "block"
+            : "none";
 }
 
 
@@ -234,4 +278,54 @@ ${content}
 }
 
 // End print current note
+
+
+function loadQuestions() {
+    let content = "";
+
+    cProgrammingQuestions.forEach((item, index) => {
+
+        content += `
+            <div class="question-box">
+
+                <div class="question-title">
+                    Question ${index + 1}
+                </div>
+
+                <div class="question-text">
+                    ${item.question}
+                </div>
+
+                <button class="view-solution-btn"
+                    onclick="toggleSolution(this)">
+                    view
+                </button>
+
+                <div class="solution-content">
+                    ${item.solution}
+                </div>
+
+            </div>
+        `;
+    });
+
+    document.getElementById("questions").innerHTML = content;
+}
+
+function toggleSolution(button) {
+
+    const solution = button.nextElementSibling;
+
+    if (solution.style.display === "none" ||
+        solution.style.display === "") {
+
+        solution.style.display = "block";
+        button.innerText = "Solution";
+
+    } else {
+
+        solution.style.display = "none";
+        button.innerText = "view";
+    }
+}
 

@@ -623,7 +623,7 @@
 
                             <div onclick="toggleSubUnit(this)">
                                 <span>L4.4 SQL Commands</span>
-                               
+
                             </div>
 
                             <div class="sub_lecture_list">
@@ -662,7 +662,7 @@
 
                             <div onclick="toggleSubUnit(this)">
                                 <span>L4.6 SQL Keys</span>
-                               
+
                             </div>
 
                             <div class="sub_lecture_list">
@@ -714,7 +714,7 @@
 
                             <div onclick="toggleSubUnit(this)">
                                 <span>L4.7 SQL Operators</span>
-                               
+
                             </div>
 
                             <div class="sub_lecture_list">
@@ -756,7 +756,7 @@
 
                             <div onclick="toggleSubUnit(this)">
                                 <span>L4.8 SQL Joins</span>
-                               
+
                             </div>
 
                             <div class="sub_lecture_list">
@@ -804,7 +804,7 @@
 
                             <div onclick="toggleSubUnit(this)">
                                 <span>L4.9 SQL Data Types</span>
-                               
+
                             </div>
 
                             <div class="sub_lecture_list">
@@ -841,7 +841,7 @@
 
                             <div onclick="toggleSubUnit(this)">
                                 <span>L4.10 SQL Functions</span>
-                               
+
                             </div>
 
                             <div class="sub_lecture_list">
@@ -1480,26 +1480,40 @@
 
         /* LOAD NOTE */
 
-        function loadNote(title, text, event) {
+        // function loadNote(title, text, event) {
 
-            document.getElementById("notes_title").innerHTML = title;
-            document.getElementById("notes_text").innerHTML = text;
+        //     document.getElementById("notes_title").innerHTML = title;
+        //     document.getElementById("notes_text").innerHTML = text;
 
-            let lectures = document.querySelectorAll(".lecture");
+        //     let lectures = document.querySelectorAll(".lecture");
 
-            lectures.forEach(l => l.classList.remove("active"));
+        //     lectures.forEach(l => l.classList.remove("active"));
 
-            event.currentTarget.classList.add("active");
+        //     event.currentTarget.classList.add("active");
 
-            // Scroll content area to top after loading
-            document.getElementById('mainContent').scrollTo({
-                top: 0,
-                behavior: 'smooth'
-            });
+        //     // Scroll content area to top after loading
+        //     document.getElementById('mainContent').scrollTo({
+        //         top: 0,
+        //         behavior: 'smooth'
+        //     });
 
-            closeSidebar();
 
-        }
+
+        //     // Remove active from all sub lectures
+        //     document.querySelectorAll('.sub_lecture').forEach(item => {
+        //         item.classList.remove('active');
+        //     });
+
+        //     // Add active to clicked sub lecture
+        //     event.currentTarget.classList.add('active');
+
+
+
+
+        //     closeSidebar();
+
+        // }
+
 
 
         /* TOGGLE UNIT */
