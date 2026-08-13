@@ -7227,7 +7227,7 @@ Similarly, C converts the integer into a float so that the decimal value is pres
 
 let constantsAndLiterals = `
 
-<h3>Constants and Literals in C Language</h3>
+<h3>Constants and Literals in C</h3>
 
 <p>
 In C programming, <strong>Constants</strong> and <strong>Literals</strong> represent fixed values that do not change during program execution.

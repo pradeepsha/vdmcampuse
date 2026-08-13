@@ -157,6 +157,179 @@ const cQuestion5 = {
 `
 };
 
+const cQuestion6 = {
+    question: "Write a C program to find the ASCII value of a character.",
+
+    solution: `
+<div class="code-box">
+
+    <div class="code-title">
+        <span>Solution</span>
+    </div>
+
+    <pre><code><span class="keyword">#include</span> &lt;stdio.h&gt;
+
+<span class="keyword">int</span> main()
+{
+    <span class="keyword">char</span> ch;
+
+    printf(<span class="string">"Enter a character: "</span>);
+    scanf(<span class="string">"%c"</span>, &amp;ch);
+
+    printf(<span class="string">"ASCII value of %c = %d"</span>, ch, ch);
+
+    <span class="keyword">return</span> <span class="number">0</span>;
+}</code></pre>
+
+</div>
+`
+};
+
+const cQuestion7 = {
+    question: "Write a C program to find the size of int, float, double, and char data types.",
+
+    solution: `
+<div class="code-box">
+
+    <div class="code-title">
+        <span>Solution</span>
+    </div>
+
+    <pre><code><span class="keyword">#include</span> &lt;stdio.h&gt;
+
+<span class="keyword">int</span> main()
+{
+    printf(<span class="string">"Size of int = %zu bytes\\n"</span>, <span class="function">sizeof</span>(<span class="keyword">int</span>));
+
+    printf(<span class="string">"Size of float = %zu bytes\\n"</span>, <span class="function">sizeof</span>(<span class="keyword">float</span>));
+
+    printf(<span class="string">"Size of double = %zu bytes\\n"</span>, <span class="function">sizeof</span>(<span class="keyword">double</span>));
+
+    printf(<span class="string">"Size of char = %zu byte"</span>, <span class="function">sizeof</span>(<span class="keyword">char</span>));
+
+    <span class="keyword">return</span> <span class="number">0</span>;
+}</code></pre>
+
+</div>
+`
+};
+
+const cQuestion8 = {
+    question: "Write a C program to print your own name.",
+
+    solution: `
+<div class="code-box">
+
+    <div class="code-title">
+        <span>Solution</span>
+    </div>
+
+    <pre><code><span class="keyword">#include</span> &lt;stdio.h&gt;
+
+<span class="keyword">int</span> main()
+{
+    printf(<span class="string">"Pradeep Kumar Yadav"</span>);
+
+    <span class="keyword">return</span> <span class="number">0</span>;
+}</code></pre>
+
+</div>
+`
+};
+
+
+const cQuestion9 = {
+    question: "Write a C program to take an integer from the user and print it.",
+
+    solution: `
+<div class="code-box">
+
+    <div class="code-title">
+        <span>Solution</span>
+    </div>
+
+    <pre><code><span class="keyword">#include</span> &lt;stdio.h&gt;
+
+<span class="keyword">int</span> main()
+{
+    <span class="keyword">int</span> num;
+
+    printf(<span class="string">"Enter an integer: "</span>);
+    scanf(<span class="string">"%d"</span>, &amp;num);
+
+    printf(<span class="string">"You entered: %d"</span>, num);
+
+    <span class="keyword">return</span> <span class="number">0</span>;
+}</code></pre>
+
+</div>
+`
+};
+
+const cQuestion10 = {
+    question: "Write a C program to print the ASCII value of a character using typecasting.",
+
+    solution: `
+<div class="code-box">
+
+    <div class="code-title">
+        <span>Solution</span>
+    </div>
+
+    <pre><code><span class="keyword">#include</span> &lt;stdio.h&gt;
+
+<span class="keyword">int</span> main()
+{
+    <span class="keyword">char</span> ch;
+
+    printf(<span class="string">"Enter a character: "</span>);
+    scanf(<span class="string">"%c"</span>, &amp;ch);
+
+    printf(<span class="string">"ASCII value of %c = %d"</span>, ch, (<span class="keyword">int</span>)ch);
+
+    <span class="keyword">return</span> <span class="number">0</span>;
+}</code></pre>
+
+</div>
+`
+};
+
+const cQuestion11 = {
+    question: "Write a C program to find the ASCII value of a character using a function.",
+
+    solution: `
+<div class="code-box">
+
+    <div class="code-title">
+        <span>Solution</span>
+    </div>
+
+    <pre><code><span class="keyword">#include</span> &lt;stdio.h&gt;
+
+<span class="keyword">int</span> getASCII(<span class="keyword">char</span> ch)
+{
+    <span class="keyword">return</span> ch;
+}
+
+<span class="keyword">int</span> main()
+{
+    <span class="keyword">char</span> ch;
+    <span class="keyword">int</span> ascii;
+
+    printf(<span class="string">"Enter a character: "</span>);
+    scanf(<span class="string">"%c"</span>, &amp;ch);
+
+    ascii = getASCII(ch);
+
+    printf(<span class="string">"ASCII value of %c = %d"</span>, ch, ascii);
+
+    <span class="keyword">return</span> <span class="number">0</span>;
+}</code></pre>
+
+</div>
+`
+};
+
 
 // ========================================
 // ALL QUESTIONS
@@ -167,13 +340,11 @@ const cProgrammingQuestions = [
     cQuestion2,
     cQuestion3,
     cQuestion4,
-    cQuestion1,
-    cQuestion2,
-    cQuestion3,
-    cQuestion4,
-    cQuestion1,
-    cQuestion2,
-    cQuestion3,
-    cQuestion4,
-    cQuestion5
+    cQuestion5,
+    cQuestion6,
+    cQuestion7,
+    cQuestion8,
+    cQuestion9,
+    cQuestion10,
+    cQuestion11
 ];
