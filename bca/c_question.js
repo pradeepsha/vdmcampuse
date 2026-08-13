@@ -331,10 +331,3363 @@ const cQuestion11 = {
 };
 
 
+const cQuestion12 = {
+    question: "Who developed the C programming language?",
+
+    options: [
+        "James Gosling",
+        "Dennis Ritchie",
+        "Ken Thompson",
+        "Bjarne Stroustrup"
+    ],
+
+    answer: 1,
+
+    solution: `
+<div class="code-box">
+
+    <div class="code-title">
+        <span>Answer</span>
+    </div>
+
+    <pre><code><span class="keyword">Correct Answer:</span> <span class="string">B) Dennis Ritchie</span></code></pre>
+
+</div>
+`
+};
+
+
+const cQuestion13 = {
+    question: "In which year was C language developed?",
+
+    options: [
+        "1965",
+        "1970",
+        "1972",
+        "1980"
+    ],
+
+    answer: 2,
+
+    solution: `
+<div class="code-box">
+
+    <div class="code-title">
+        <span>Answer</span>
+    </div>
+
+    <pre><code><span class="keyword">Correct Answer:</span> <span class="string">C) 1972</span></code></pre>
+
+</div>
+`
+};
+
+
+const cQuestion14 = {
+    question: "Where was C language developed?",
+
+    options: [
+        "IBM",
+        "Microsoft",
+        "Bell Laboratories",
+        "Google"
+    ],
+
+    answer: 2,
+
+    solution: `
+<div class="code-box">
+
+    <div class="code-title">
+        <span>Answer</span>
+    </div>
+
+    <pre><code><span class="keyword">Correct Answer:</span> <span class="string">C) Bell Laboratories</span></code></pre>
+
+</div>
+`
+};
+
+
+const cQuestion15 = {
+    question: "C language was mainly developed for which operating system?",
+
+    options: [
+        "Windows",
+        "UNIX",
+        "Android",
+        "Linux"
+    ],
+
+    answer: 1,
+
+    solution: `
+<div class="code-box">
+
+    <div class="code-title">
+        <span>Answer</span>
+    </div>
+
+    <pre><code><span class="keyword">Correct Answer:</span> <span class="string">B) UNIX</span></code></pre>
+
+</div>
+`
+};
+
+
+const cQuestion16 = {
+    question: "Which language directly influenced the development of C?",
+
+    options: [
+        "Java",
+        "B",
+        "Python",
+        "Pascal"
+    ],
+
+    answer: 1,
+
+    solution: `
+<div class="code-box">
+
+    <div class="code-title">
+        <span>Answer</span>
+    </div>
+
+    <pre><code><span class="keyword">Correct Answer:</span> <span class="string">B) B</span></code></pre>
+
+</div>
+`
+};
+
+
+const cQuestion17 = {
+    question: "Who developed the B programming language?",
+
+    options: [
+        "Dennis Ritchie",
+        "Ken Thompson",
+        "Martin Richards",
+        "James Gosling"
+    ],
+
+    answer: 1,
+
+    solution: `
+<div class="code-box">
+
+    <div class="code-title">
+        <span>Answer</span>
+    </div>
+
+    <pre><code><span class="keyword">Correct Answer:</span> <span class="string">B) Ken Thompson</span></code></pre>
+
+</div>
+`
+};
+
+
+const cQuestion18 = {
+    question: "Which language came before B?",
+
+    options: [
+        "C",
+        "C++",
+        "BCPL",
+        "Java"
+    ],
+
+    answer: 2,
+
+    solution: `
+<div class="code-box">
+
+    <div class="code-title">
+        <span>Answer</span>
+    </div>
+
+    <pre><code><span class="keyword">Correct Answer:</span> <span class="string">C) BCPL</span></code></pre>
+
+</div>
+`
+};
+
+
+const cQuestion19 = {
+    question: "Which organization standardized C in 1989?",
+
+    options: [
+        "ISO",
+        "ANSI",
+        "IEEE",
+        "W3C"
+    ],
+
+    answer: 1,
+
+    solution: `
+<div class="code-box">
+
+    <div class="code-title">
+        <span>Answer</span>
+    </div>
+
+    <pre><code><span class="keyword">Correct Answer:</span> <span class="string">B) ANSI</span></code></pre>
+
+</div>
+`
+};
+
+
+const cQuestion20 = {
+    question: "Which version of C was introduced in 1999?",
+
+    options: [
+        "C89",
+        "C90",
+        "C99",
+        "C11"
+    ],
+
+    answer: 2,
+
+    solution: `
+<div class="code-box">
+
+    <div class="code-title">
+        <span>Answer</span>
+    </div>
+
+    <pre><code><span class="keyword">Correct Answer:</span> <span class="string">C) C99</span></code></pre>
+
+</div>
+`
+};
+
+
+const cQuestion21 = {
+    question: "Which of the following is a major use of C language?",
+
+    options: [
+        "System programming",
+        "Web browsing only",
+        "Video editing only",
+        "Database management only"
+    ],
+
+    answer: 0,
+
+    solution: `
+<div class="code-box">
+
+    <div class="code-title">
+        <span>Answer</span>
+    </div>
+
+    <pre><code><span class="keyword">Correct Answer:</span> <span class="string">A) System programming</span></code></pre>
+
+</div>
+`
+};
+
+const cQuestion22 = {
+    question: "Which of the following is a valid identifier in C?",
+
+    options: [
+        "2value",
+        "total_marks",
+        "float",
+        "my-name"
+    ],
+
+    answer: 1,
+
+    solution: `
+<div class="code-box">
+
+    <div class="code-title">
+        <span>Answer</span>
+    </div>
+
+    <pre><code><span class="keyword">Correct Answer:</span> <span class="string">B) total_marks</span></code></pre>
+
+</div>
+`
+};
+
+
+const cQuestion23 = {
+    question: "Which symbol can be used in a C identifier?",
+
+    options: [
+        "@",
+        "#",
+        "_",
+        "-"
+    ],
+
+    answer: 2,
+
+    solution: `
+<div class="code-box">
+
+    <div class="code-title">
+        <span>Answer</span>
+    </div>
+
+    <pre><code><span class="keyword">Correct Answer:</span> <span class="string">C) _</span></code></pre>
+
+</div>
+`
+};
+
+
+const cQuestion24 = {
+    question: "Which of the following cannot be the first character of an identifier?",
+
+    options: [
+        "Letter",
+        "Underscore",
+        "Digit",
+        "Special character"
+    ],
+
+    answer: 2,
+
+    solution: `
+<div class="code-box">
+
+    <div class="code-title">
+        <span>Answer</span>
+    </div>
+
+    <pre><code><span class="keyword">Correct Answer:</span> <span class="string">C) Digit</span></code></pre>
+
+</div>
+`
+};
+
+
+const cQuestion25 = {
+    question: "C identifiers are:",
+
+    options: [
+        "Case-sensitive",
+        "Case-insensitive",
+        "Both",
+        "None"
+    ],
+
+    answer: 0,
+
+    solution: `
+<div class="code-box">
+
+    <div class="code-title">
+        <span>Answer</span>
+    </div>
+
+    <pre><code><span class="keyword">Correct Answer:</span> <span class="string">A) Case-sensitive</span></code></pre>
+
+</div>
+`
+};
+
+
+const cQuestion26 = {
+    question: "Which of the following is an invalid identifier?",
+
+    options: [
+        "student1",
+        "_marks",
+        "totalMarks",
+        "1student"
+    ],
+
+    answer: 3,
+
+    solution: `
+<div class="code-box">
+
+    <div class="code-title">
+        <span>Answer</span>
+    </div>
+
+    <pre><code><span class="keyword">Correct Answer:</span> <span class="string">D) 1student</span></code></pre>
+
+</div>
+`
+};
+
+
+const cQuestion27 = {
+    question: "Which of the following is a valid variable declaration?",
+
+    options: [
+        "int 1num;",
+        "int num1;",
+        "int num-1;",
+        "int float;"
+    ],
+
+    answer: 1,
+
+    solution: `
+<div class="code-box">
+
+    <div class="code-title">
+        <span>Answer</span>
+    </div>
+
+    <pre><code><span class="keyword">Correct Answer:</span> <span class="string">B) int num1;</span></code></pre>
+
+</div>
+`
+};
+
+
+const cQuestion28 = {
+    question: "How many variables are declared in: int a, b, c;",
+
+    options: [
+        "1",
+        "2",
+        "3",
+        "4"
+    ],
+
+    answer: 2,
+
+    solution: `
+<div class="code-box">
+
+    <div class="code-title">
+        <span>Answer</span>
+    </div>
+
+    <pre><code><span class="keyword">Correct Answer:</span> <span class="string">C) 3</span></code></pre>
+
+</div>
+`
+};
+
+
+const cQuestion29 = {
+    question: "What is the value of x after: int x = 10;",
+
+    options: [
+        "0",
+        "1",
+        "10",
+        "Garbage value"
+    ],
+
+    answer: 2,
+
+    solution: `
+<div class="code-box">
+
+    <div class="code-title">
+        <span>Answer</span>
+    </div>
+
+    <pre><code><span class="keyword">Correct Answer:</span> <span class="string">C) 10</span></code></pre>
+
+</div>
+`
+};
+
+
+const cQuestion30 = {
+    question: "Which of the following cannot be used as an identifier?",
+
+    options: [
+        "main",
+        "student",
+        "return",
+        "_main"
+    ],
+
+    answer: 2,
+
+    solution: `
+<div class="code-box">
+
+    <div class="code-title">
+        <span>Answer</span>
+    </div>
+
+    <pre><code><span class="keyword">Correct Answer:</span> <span class="string">C) return</span></code></pre>
+
+</div>
+`
+};
+
+
+const cQuestion31 = {
+    question: `What will be the output?
+
+int a = 10;
+int A = 20;`,
+
+    options: [
+        "a = 20 and A = 20",
+        "a = 10 and A = 10",
+        "a = 10 and A = 20",
+        "Compilation error"
+    ],
+
+    answer: 2,
+
+    solution: `
+<div class="code-box">
+
+    <div class="code-title">
+        <span>Answer</span>
+    </div>
+
+    <pre><code><span class="keyword">Correct Answer:</span> <span class="string">C) a = 10 and A = 20</span></code></pre>
+
+    <pre><code><span class="comment">// C identifiers are case-sensitive.</span>
+
+<span class="keyword">int</span> a = <span class="number">10</span>;
+<span class="keyword">int</span> A = <span class="number">20</span>;</code></pre>
+
+</div>
+`
+};
+
+const cQuestion32 = {
+    question: "Which data type is used to store an integer value?",
+
+    options: [
+        "float",
+        "int",
+        "char",
+        "double"
+    ],
+
+    answer: 1,
+
+    solution: `
+<div class="code-box">
+
+    <div class="code-title">
+        <span>Answer</span>
+    </div>
+
+    <pre><code><span class="keyword">Correct Answer:</span> <span class="string">B) int</span></code></pre>
+
+</div>
+`
+};
+
+
+const cQuestion33 = {
+    question: "Which data type is used to store a single character?",
+
+    options: [
+        "int",
+        "float",
+        "char",
+        "double"
+    ],
+
+    answer: 2,
+
+    solution: `
+<div class="code-box">
+
+    <div class="code-title">
+        <span>Answer</span>
+    </div>
+
+    <pre><code><span class="keyword">Correct Answer:</span> <span class="string">C) char</span></code></pre>
+
+</div>
+`
+};
+
+
+const cQuestion34 = {
+    question: "Which data type is generally used to store decimal values?",
+
+    options: [
+        "int",
+        "char",
+        "float",
+        "void"
+    ],
+
+    answer: 2,
+
+    solution: `
+<div class="code-box">
+
+    <div class="code-title">
+        <span>Answer</span>
+    </div>
+
+    <pre><code><span class="keyword">Correct Answer:</span> <span class="string">C) float</span></code></pre>
+
+</div>
+`
+};
+
+
+const cQuestion35 = {
+    question: "Which data type provides higher precision for floating-point values?",
+
+    options: [
+        "char",
+        "int",
+        "float",
+        "double"
+    ],
+
+    answer: 3,
+
+    solution: `
+<div class="code-box">
+
+    <div class="code-title">
+        <span>Answer</span>
+    </div>
+
+    <pre><code><span class="keyword">Correct Answer:</span> <span class="string">D) double</span></code></pre>
+
+</div>
+`
+};
+
+
+const cQuestion36 = {
+    question: "Which data type does not return any value?",
+
+    options: [
+        "int",
+        "char",
+        "void",
+        "float"
+    ],
+
+    answer: 2,
+
+    solution: `
+<div class="code-box">
+
+    <div class="code-title">
+        <span>Answer</span>
+    </div>
+
+    <pre><code><span class="keyword">Correct Answer:</span> <span class="string">C) void</span></code></pre>
+
+</div>
+`
+};
+
+
+const cQuestion37 = {
+    question: "Which of the following is a valid declaration?",
+
+    options: [
+        "int age;",
+        "integer age;",
+        "number age;",
+        "real age;"
+    ],
+
+    answer: 0,
+
+    solution: `
+<div class="code-box">
+
+    <div class="code-title">
+        <span>Answer</span>
+    </div>
+
+    <pre><code><span class="keyword">Correct Answer:</span> <span class="string">A) int age;</span></code></pre>
+
+</div>
+`
+};
+
+
+const cQuestion38 = {
+    question: "Which format specifier is used to print an integer?",
+
+    options: [
+        "%f",
+        "%d",
+        "%c",
+        "%s"
+    ],
+
+    answer: 1,
+
+    solution: `
+<div class="code-box">
+
+    <div class="code-title">
+        <span>Answer</span>
+    </div>
+
+    <pre><code><span class="keyword">Correct Answer:</span> <span class="string">B) %d</span></code></pre>
+
+</div>
+`
+};
+
+
+const cQuestion39 = {
+    question: "Which format specifier is used to print a character?",
+
+    options: [
+        "%d",
+        "%f",
+        "%c",
+        "%lf"
+    ],
+
+    answer: 2,
+
+    solution: `
+<div class="code-box">
+
+    <div class="code-title">
+        <span>Answer</span>
+    </div>
+
+    <pre><code><span class="keyword">Correct Answer:</span> <span class="string">C) %c</span></code></pre>
+
+</div>
+`
+};
+
+
+const cQuestion40 = {
+    question: "Which of the following is NOT a basic data type in C?",
+
+    options: [
+        "int",
+        "char",
+        "float",
+        "string"
+    ],
+
+    answer: 3,
+
+    solution: `
+<div class="code-box">
+
+    <div class="code-title">
+        <span>Answer</span>
+    </div>
+
+    <pre><code><span class="keyword">Correct Answer:</span> <span class="string">D) string</span></code></pre>
+
+</div>
+`
+};
+
+
+const cQuestion41 = {
+    question: "Which data type is commonly used to store a double-precision floating-point value?",
+
+    options: [
+        "int",
+        "char",
+        "double",
+        "void"
+    ],
+
+    answer: 2,
+
+    solution: `
+<div class="code-box">
+
+    <div class="code-title">
+        <span>Answer</span>
+    </div>
+
+    <pre><code><span class="keyword">Correct Answer:</span> <span class="string">C) double</span></code></pre>
+
+</div>
+`
+};
+
+const cQuestion42 = {
+    question: "Which format specifier is used to print an integer in C?",
+
+    options: [
+        "%f",
+        "%d",
+        "%c",
+        "%s"
+    ],
+
+    answer: 1,
+
+    solution: `
+<div class="code-box">
+
+    <div class="code-title">
+        <span>Answer</span>
+    </div>
+
+    <pre><code><span class="keyword">Correct Answer:</span> <span class="string">B) %d</span></code></pre>
+
+</div>
+`
+};
+
+
+const cQuestion43 = {
+    question: "Which format specifier is used to print a character?",
+
+    options: [
+        "%d",
+        "%f",
+        "%c",
+        "%s"
+    ],
+
+    answer: 2,
+
+    solution: `
+<div class="code-box">
+
+    <div class="code-title">
+        <span>Answer</span>
+    </div>
+
+    <pre><code><span class="keyword">Correct Answer:</span> <span class="string">C) %c</span></code></pre>
+
+</div>
+`
+};
+
+
+const cQuestion44 = {
+    question: "Which format specifier is used to print a string?",
+
+    options: [
+        "%s",
+        "%c",
+        "%d",
+        "%f"
+    ],
+
+    answer: 0,
+
+    solution: `
+<div class="code-box">
+
+    <div class="code-title">
+        <span>Answer</span>
+    </div>
+
+    <pre><code><span class="keyword">Correct Answer:</span> <span class="string">A) %s</span></code></pre>
+
+</div>
+`
+};
+
+
+const cQuestion45 = {
+    question: "Which format specifier is commonly used to print a float value?",
+
+    options: [
+        "%d",
+        "%c",
+        "%f",
+        "%s"
+    ],
+
+    answer: 2,
+
+    solution: `
+<div class="code-box">
+
+    <div class="code-title">
+        <span>Answer</span>
+    </div>
+
+    <pre><code><span class="keyword">Correct Answer:</span> <span class="string">C) %f</span></code></pre>
+
+</div>
+`
+};
+
+
+const cQuestion46 = {
+    question: "Which format specifier is used for an unsigned integer?",
+
+    options: [
+        "%u",
+        "%d",
+        "%i",
+        "%f"
+    ],
+
+    answer: 0,
+
+    solution: `
+<div class="code-box">
+
+    <div class="code-title">
+        <span>Answer</span>
+    </div>
+
+    <pre><code><span class="keyword">Correct Answer:</span> <span class="string">A) %u</span></code></pre>
+
+</div>
+`
+};
+
+
+const cQuestion47 = {
+    question: "Which format specifier is used to print a hexadecimal value in lowercase?",
+
+    options: [
+        "%o",
+        "%X",
+        "%x",
+        "%h"
+    ],
+
+    answer: 2,
+
+    solution: `
+<div class="code-box">
+
+    <div class="code-title">
+        <span>Answer</span>
+    </div>
+
+    <pre><code><span class="keyword">Correct Answer:</span> <span class="string">C) %x</span></code></pre>
+
+</div>
+`
+};
+
+
+const cQuestion48 = {
+    question: "Which format specifier is used to print an octal value?",
+
+    options: [
+        "%o",
+        "%x",
+        "%d",
+        "%u"
+    ],
+
+    answer: 0,
+
+    solution: `
+<div class="code-box">
+
+    <div class="code-title">
+        <span>Answer</span>
+    </div>
+
+    <pre><code><span class="keyword">Correct Answer:</span> <span class="string">A) %o</span></code></pre>
+
+</div>
+`
+};
+
+
+const cQuestion49 = {
+    question: "Which format specifier is used to print a pointer address?",
+
+    options: [
+        "%a",
+        "%p",
+        "%ptr",
+        "%P"
+    ],
+
+    answer: 1,
+
+    solution: `
+<div class="code-box">
+
+    <div class="code-title">
+        <span>Answer</span>
+    </div>
+
+    <pre><code><span class="keyword">Correct Answer:</span> <span class="string">B) %p</span></code></pre>
+
+</div>
+`
+};
+
+
+const cQuestion50 = {
+    question: "Which format specifier is used to print the % symbol?",
+
+    options: [
+        "%p",
+        "%%",
+        "%percent",
+        "%s"
+    ],
+
+    answer: 1,
+
+    solution: `
+<div class="code-box">
+
+    <div class="code-title">
+        <span>Answer</span>
+    </div>
+
+    <pre><code><span class="keyword">Correct Answer:</span> <span class="string">B) %%</span></code></pre>
+
+</div>
+`
+};
+
+
+const cQuestion51 = {
+    question: "Which format specifier is used with scanf() to read a double value?",
+
+    options: [
+        "%f",
+        "%d",
+        "%lf",
+        "%ld"
+    ],
+
+    answer: 2,
+
+    solution: `
+<div class="code-box">
+
+    <div class="code-title">
+        <span>Answer</span>
+    </div>
+
+    <pre><code><span class="keyword">Correct Answer:</span> <span class="string">C) %lf</span></code></pre>
+
+</div>
+`
+};
+
+const cQuestion52 = {
+    question: "Which operator is used for addition in C?",
+
+    options: [
+        "-",
+        "+",
+        "*",
+        "/"
+    ],
+
+    answer: 1,
+
+    solution: `
+<div class="code-box">
+    <div class="code-title">
+        <span>Answer</span>
+    </div>
+
+    <pre><code><span class="keyword">Correct Answer:</span> <span class="string">B) +</span></code></pre>
+</div>
+`
+};
+
+
+const cQuestion53 = {
+    question: "Which operator is used to find the remainder?",
+
+    options: [
+        "/",
+        "//",
+        "%",
+        "&"
+    ],
+
+    answer: 2,
+
+    solution: `
+<div class="code-box">
+    <div class="code-title">
+        <span>Answer</span>
+    </div>
+
+    <pre><code><span class="keyword">Correct Answer:</span> <span class="string">C) %</span></code></pre>
+</div>
+`
+};
+
+
+const cQuestion54 = {
+    question: "What is the output of: 10 / 3?",
+
+    options: [
+        "3",
+        "3.33",
+        "4",
+        "1"
+    ],
+
+    answer: 0,
+
+    solution: `
+<div class="code-box">
+    <div class="code-title">
+        <span>Answer</span>
+    </div>
+
+    <pre><code><span class="keyword">Correct Answer:</span> <span class="string">A) 3</span></code></pre>
+</div>
+`
+};
+
+
+const cQuestion55 = {
+    question: "Which operator has the highest precedence among the following?",
+
+    options: [
+        "+",
+        "-",
+        "*",
+        "="
+    ],
+
+    answer: 2,
+
+    solution: `
+<div class="code-box">
+    <div class="code-title">
+        <span>Answer</span>
+    </div>
+
+    <pre><code><span class="keyword">Correct Answer:</span> <span class="string">C) *</span></code></pre>
+</div>
+`
+};
+
+
+const cQuestion56 = {
+    question: "Which operator is used for simple assignment?",
+
+    options: [
+        "==",
+        "=",
+        ":=",
+        "==="
+    ],
+
+    answer: 1,
+
+    solution: `
+<div class="code-box">
+    <div class="code-title">
+        <span>Answer</span>
+    </div>
+
+    <pre><code><span class="keyword">Correct Answer:</span> <span class="string">B) =</span></code></pre>
+</div>
+`
+};
+
+
+const cQuestion57 = {
+    question: "What is the value of x after: x = 10; x += 5;?",
+
+    options: [
+        "5",
+        "10",
+        "15",
+        "50"
+    ],
+
+    answer: 2,
+
+    solution: `
+<div class="code-box">
+    <div class="code-title">
+        <span>Answer</span>
+    </div>
+
+    <pre><code><span class="keyword">Correct Answer:</span> <span class="string">C) 15</span></code></pre>
+</div>
+`
+};
+
+
+const cQuestion58 = {
+    question: "Which is equivalent to: x = x * 5?",
+
+    options: [
+        "x += 5",
+        "x *= 5",
+        "x /= 5",
+        "x %= 5"
+    ],
+
+    answer: 1,
+
+    solution: `
+<div class="code-box">
+    <div class="code-title">
+        <span>Answer</span>
+    </div>
+
+    <pre><code><span class="keyword">Correct Answer:</span> <span class="string">B) x *= 5</span></code></pre>
+</div>
+`
+};
+
+
+const cQuestion59 = {
+    question: "Which operator checks whether two values are equal?",
+
+    options: [
+        "=",
+        "!=",
+        "==",
+        "<="
+    ],
+
+    answer: 2,
+
+    solution: `
+<div class="code-box">
+    <div class="code-title">
+        <span>Answer</span>
+    </div>
+
+    <pre><code><span class="keyword">Correct Answer:</span> <span class="string">C) ==</span></code></pre>
+</div>
+`
+};
+
+
+const cQuestion60 = {
+    question: "Which logical operator represents AND?",
+
+    options: [
+        "||",
+        "&&",
+        "!",
+        "&"
+    ],
+
+    answer: 1,
+
+    solution: `
+<div class="code-box">
+    <div class="code-title">
+        <span>Answer</span>
+    </div>
+
+    <pre><code><span class="keyword">Correct Answer:</span> <span class="string">B) &&</span></code></pre>
+</div>
+`
+};
+
+
+const cQuestion61 = {
+    question: "Which logical operator represents OR?",
+
+    options: [
+        "&&",
+        "||",
+        "!",
+        "|"
+    ],
+
+    answer: 1,
+
+    solution: `
+<div class="code-box">
+    <div class="code-title">
+        <span>Answer</span>
+    </div>
+
+    <pre><code><span class="keyword">Correct Answer:</span> <span class="string">B) ||</span></code></pre>
+</div>
+`
+};
+
+
+const cQuestion62 = {
+    question: "What is the result of: 1 && 0?",
+
+    options: [
+        "1",
+        "0",
+        "10",
+        "Error"
+    ],
+
+    answer: 1,
+
+    solution: `
+<div class="code-box">
+    <div class="code-title">
+        <span>Answer</span>
+    </div>
+
+    <pre><code><span class="keyword">Correct Answer:</span> <span class="string">B) 0</span></code></pre>
+</div>
+`
+};
+
+
+const cQuestion63 = {
+    question: "What is the result of: 1 || 0?",
+
+    options: [
+        "0",
+        "1",
+        "10",
+        "Error"
+    ],
+
+    answer: 1,
+
+    solution: `
+<div class="code-box">
+    <div class="code-title">
+        <span>Answer</span>
+    </div>
+
+    <pre><code><span class="keyword">Correct Answer:</span> <span class="string">B) 1</span></code></pre>
+</div>
+`
+};
+
+
+const cQuestion64 = {
+    question: "Which operator is used for logical NOT?",
+
+    options: [
+        "~",
+        "!",
+        "!=",
+        "^"
+    ],
+
+    answer: 1,
+
+    solution: `
+<div class="code-box">
+    <div class="code-title">
+        <span>Answer</span>
+    </div>
+
+    <pre><code><span class="keyword">Correct Answer:</span> <span class="string">B) !</span></code></pre>
+</div>
+`
+};
+
+
+const cQuestion65 = {
+    question: "What is the result of: !5?",
+
+    options: [
+        "5",
+        "1",
+        "0",
+        "-5"
+    ],
+
+    answer: 2,
+
+    solution: `
+<div class="code-box">
+    <div class="code-title">
+        <span>Answer</span>
+    </div>
+
+    <pre><code><span class="keyword">Correct Answer:</span> <span class="string">C) 0</span></code></pre>
+</div>
+`
+};
+
+
+const cQuestion66 = {
+    question: "Which operator performs bitwise AND?",
+
+    options: [
+        "&&",
+        "&",
+        "|",
+        "^"
+    ],
+
+    answer: 1,
+
+    solution: `
+<div class="code-box">
+    <div class="code-title">
+        <span>Answer</span>
+    </div>
+
+    <pre><code><span class="keyword">Correct Answer:</span> <span class="string">B) &</span></code></pre>
+</div>
+`
+};
+
+
+const cQuestion67 = {
+    question: "Which operator performs bitwise OR?",
+
+    options: [
+        "||",
+        "&",
+        "|",
+        "^"
+    ],
+
+    answer: 2,
+
+    solution: `
+<div class="code-box">
+    <div class="code-title">
+        <span>Answer</span>
+    </div>
+
+    <pre><code><span class="keyword">Correct Answer:</span> <span class="string">C) |</span></code></pre>
+</div>
+`
+};
+
+
+const cQuestion68 = {
+    question: "Which operator performs bitwise XOR?",
+
+    options: [
+        "^",
+        "&&",
+        "||",
+        "~"
+    ],
+
+    answer: 0,
+
+    solution: `
+<div class="code-box">
+    <div class="code-title">
+        <span>Answer</span>
+    </div>
+
+    <pre><code><span class="keyword">Correct Answer:</span> <span class="string">A) ^</span></code></pre>
+</div>
+`
+};
+
+
+const cQuestion69 = {
+    question: "Which operator performs bitwise NOT?",
+
+    options: [
+        "!",
+        "~",
+        "^",
+        "&"
+    ],
+
+    answer: 1,
+
+    solution: `
+<div class="code-box">
+    <div class="code-title">
+        <span>Answer</span>
+    </div>
+
+    <pre><code><span class="keyword">Correct Answer:</span> <span class="string">B) ~</span></code></pre>
+</div>
+`
+};
+
+
+const cQuestion70 = {
+    question: "What is the result of: 5 & 3?",
+
+    options: [
+        "1",
+        "2",
+        "3",
+        "7"
+    ],
+
+    answer: 0,
+
+    solution: `
+<div class="code-box">
+    <div class="code-title">
+        <span>Answer</span>
+    </div>
+
+    <pre><code><span class="keyword">Correct Answer:</span> <span class="string">A) 1</span></code></pre>
+</div>
+`
+};
+
+
+const cQuestion71 = {
+    question: "What is the result of: 5 | 3?",
+
+    options: [
+        "1",
+        "6",
+        "7",
+        "8"
+    ],
+
+    answer: 2,
+
+    solution: `
+<div class="code-box">
+    <div class="code-title">
+        <span>Answer</span>
+    </div>
+
+    <pre><code><span class="keyword">Correct Answer:</span> <span class="string">C) 7</span></code></pre>
+</div>
+`
+};
+
+
+const cQuestion72 = {
+    question: "Which operator is used for incrementing a value by 1?",
+
+    options: [
+        "+",
+        "++",
+        "+=",
+        "**"
+    ],
+
+    answer: 1,
+
+    solution: `
+<div class="code-box">
+    <div class="code-title">
+        <span>Answer</span>
+    </div>
+
+    <pre><code><span class="keyword">Correct Answer:</span> <span class="string">B) ++</span></code></pre>
+</div>
+`
+};
+
+
+const cQuestion73 = {
+    question: "Which operator is used for decrementing a value by 1?",
+
+    options: [
+        "--",
+        "-=",
+        "-",
+        "**"
+    ],
+
+    answer: 0,
+
+    solution: `
+<div class="code-box">
+    <div class="code-title">
+        <span>Answer</span>
+    </div>
+
+    <pre><code><span class="keyword">Correct Answer:</span> <span class="string">A) --</span></code></pre>
+</div>
+`
+};
+
+
+const cQuestion74 = {
+    question: `What is the value of x after:
+
+int x = 5;
+++x;`,
+
+    options: [
+        "4",
+        "5",
+        "6",
+        "7"
+    ],
+
+    answer: 2,
+
+    solution: `
+<div class="code-box">
+    <div class="code-title">
+        <span>Answer</span>
+    </div>
+
+    <pre><code><span class="keyword">Correct Answer:</span> <span class="string">C) 6</span></code></pre>
+</div>
+`
+};
+
+
+const cQuestion75 = {
+    question: `What is the output?
+
+int x = 5;
+printf("%d", x++);`,
+
+    options: [
+        "4",
+        "5",
+        "6",
+        "Error"
+    ],
+
+    answer: 1,
+
+    solution: `
+<div class="code-box">
+    <div class="code-title">
+        <span>Answer</span>
+    </div>
+
+    <pre><code><span class="keyword">Correct Answer:</span> <span class="string">B) 5</span></code></pre>
+
+    <pre><code><span class="keyword">int</span> x = <span class="number">5</span>;
+printf(<span class="string">"%d"</span>, x++);</code></pre>
+
+</div>
+`
+};
+
+
+const cQuestion76 = {
+    question: `What is the output?
+
+int x = 5;
+printf("%d", ++x);`,
+
+    options: [
+        "4",
+        "5",
+        "6",
+        "7"
+    ],
+
+    answer: 2,
+
+    solution: `
+<div class="code-box">
+    <div class="code-title">
+        <span>Answer</span>
+    </div>
+
+    <pre><code><span class="keyword">Correct Answer:</span> <span class="string">C) 6</span></code></pre>
+
+    <pre><code><span class="keyword">int</span> x = <span class="number">5</span>;
+printf(<span class="string">"%d"</span>, ++x);</code></pre>
+
+</div>
+`
+};
+
+
+const cQuestion77 = {
+    question: "Which operator is called the conditional or ternary operator?",
+
+    options: [
+        "::",
+        "??",
+        "?:",
+        "=="
+    ],
+
+    answer: 2,
+
+    solution: `
+<div class="code-box">
+    <div class="code-title">
+        <span>Answer</span>
+    </div>
+
+    <pre><code><span class="keyword">Correct Answer:</span> <span class="string">C) ?:</span></code></pre>
+</div>
+`
+};
+
+
+const cQuestion78 = {
+    question: "What is the correct syntax of the ternary operator?",
+
+    options: [
+        "condition : expression ? expression",
+        "condition ? expression1 : expression2",
+        "condition ? expression1 ; expression2",
+        "condition :: expression1 : expression2"
+    ],
+
+    answer: 1,
+
+    solution: `
+<div class="code-box">
+    <div class="code-title">
+        <span>Answer</span>
+    </div>
+
+    <pre><code><span class="keyword">Correct Answer:</span> <span class="string">B) condition ? expression1 : expression2</span></code></pre>
+</div>
+`
+};
+
+
+const cQuestion79 = {
+    question: `What is the output?
+
+int x = 10;
+int y = (x > 5) ? 100 : 200;
+printf("%d", y);`,
+
+    options: [
+        "5",
+        "10",
+        "100",
+        "200"
+    ],
+
+    answer: 2,
+
+    solution: `
+<div class="code-box">
+    <div class="code-title">
+        <span>Answer</span>
+    </div>
+
+    <pre><code><span class="keyword">Correct Answer:</span> <span class="string">C) 100</span></code></pre>
+
+    <pre><code><span class="keyword">int</span> x = <span class="number">10</span>;
+<span class="keyword">int</span> y = (x &gt; <span class="number">5</span>) ? <span class="number">100</span> : <span class="number">200</span>;
+printf(<span class="string">"%d"</span>, y);</code></pre>
+
+</div>
+`
+};
+
+
+const cQuestion80 = {
+    question: `What is the output?
+
+int a = 10, b = 20;
+int max = (a > b) ? a : b;
+printf("%d", max);`,
+
+    options: [
+        "10",
+        "20",
+        "30",
+        "0"
+    ],
+
+    answer: 1,
+
+    solution: `
+<div class="code-box">
+    <div class="code-title">
+        <span>Answer</span>
+    </div>
+
+    <pre><code><span class="keyword">Correct Answer:</span> <span class="string">B) 20</span></code></pre>
+
+    <pre><code><span class="keyword">int</span> a = <span class="number">10</span>, b = <span class="number">20</span>;
+<span class="keyword">int</span> max = (a &gt; b) ? a : b;
+printf(<span class="string">"%d"</span>, max);</code></pre>
+
+</div>
+`
+};
+
+
+const cQuestion81 = {
+    question: `What is the output?
+
+int a = 5, b = 10, c = 15;
+int result = (a > b) ? a : (b > c) ? b : c;
+printf("%d", result);`,
+
+    options: [
+        "5",
+        "10",
+        "15",
+        "30"
+    ],
+
+    answer: 2,
+
+    solution: `
+<div class="code-box">
+    <div class="code-title">
+        <span>Answer</span>
+    </div>
+
+    <pre><code><span class="keyword">Correct Answer:</span> <span class="string">C) 15</span></code></pre>
+
+    <pre><code><span class="keyword">int</span> a = <span class="number">5</span>, b = <span class="number">10</span>, c = <span class="number">15</span>;
+<span class="keyword">int</span> result = (a &gt; b) ? a : (b &gt; c) ? b : c;
+printf(<span class="string">"%d"</span>, result);</code></pre>
+
+</div>
+`
+};
+
+const cQuestion82 = {
+    question: `What is the output of the following code?
+
+int a = 5;
+printf("%d", ++a);`,
+
+    options: [
+        "4",
+        "5",
+        "6",
+        "7"
+    ],
+
+    answer: 2,
+
+    solution: `
+<div class="code-box">
+
+    <div class="code-title">
+        <span>Answer</span>
+    </div>
+
+    <pre><code><span class="keyword">Correct Answer:</span> <span class="string">C) 6</span></code></pre>
+
+</div>
+`
+};
+
+
+const cQuestion83 = {
+    question: `What is the output of the following code?
+
+int a = 5;
+printf("%d", a++);`,
+
+    options: [
+        "4",
+        "5",
+        "6",
+        "7"
+    ],
+
+    answer: 1,
+
+    solution: `
+<div class="code-box">
+
+    <div class="code-title">
+        <span>Answer</span>
+    </div>
+
+    <pre><code><span class="keyword">Correct Answer:</span> <span class="string">B) 5</span></code></pre>
+
+</div>
+`
+};
+
+
+const cQuestion84 = {
+    question: `What is the output of the following code?
+
+int a = 10;
+printf("%d", --a);`,
+
+    options: [
+        "8",
+        "9",
+        "10",
+        "11"
+    ],
+
+    answer: 1,
+
+    solution: `
+<div class="code-box">
+
+    <div class="code-title">
+        <span>Answer</span>
+    </div>
+
+    <pre><code><span class="keyword">Correct Answer:</span> <span class="string">B) 9</span></code></pre>
+
+</div>
+`
+};
+
+
+const cQuestion85 = {
+    question: `What is the output of the following code?
+
+int a = 10;
+printf("%d", a--);`,
+
+    options: [
+        "8",
+        "9",
+        "10",
+        "11"
+    ],
+
+    answer: 2,
+
+    solution: `
+<div class="code-box">
+
+    <div class="code-title">
+        <span>Answer</span>
+    </div>
+
+    <pre><code><span class="keyword">Correct Answer:</span> <span class="string">C) 10</span></code></pre>
+
+</div>
+`
+};
+
+
+const cQuestion86 = {
+    question: `What is the output of the following code?
+
+int a = 5;
+printf("%d ", a++);
+printf("%d", a);`,
+
+    options: [
+        "5 5",
+        "5 6",
+        "6 6",
+        "6 5"
+    ],
+
+    answer: 1,
+
+    solution: `
+<div class="code-box">
+
+    <div class="code-title">
+        <span>Answer</span>
+    </div>
+
+    <pre><code><span class="keyword">Correct Answer:</span> <span class="string">B) 5 6</span></code></pre>
+
+</div>
+`
+};
+
+
+const cQuestion87 = {
+    question: `What is the output of the following code?
+
+int a = 5;
+printf("%d ", ++a);
+printf("%d", a);`,
+
+    options: [
+        "5 5",
+        "5 6",
+        "6 6",
+        "6 5"
+    ],
+
+    answer: 2,
+
+    solution: `
+<div class="code-box">
+
+    <div class="code-title">
+        <span>Answer</span>
+    </div>
+
+    <pre><code><span class="keyword">Correct Answer:</span> <span class="string">C) 6 6</span></code></pre>
+
+</div>
+`
+};
+
+
+const cQuestion88 = {
+    question: `What is the output of the following code?
+
+int a = 10;
+printf("%d ", a--);
+printf("%d", a);`,
+
+    options: [
+        "10 10",
+        "10 9",
+        "9 9",
+        "9 10"
+    ],
+
+    answer: 1,
+
+    solution: `
+<div class="code-box">
+
+    <div class="code-title">
+        <span>Answer</span>
+    </div>
+
+    <pre><code><span class="keyword">Correct Answer:</span> <span class="string">B) 10 9</span></code></pre>
+
+</div>
+`
+};
+
+
+const cQuestion89 = {
+    question: `What is the output of the following code?
+
+int a = 10;
+printf("%d ", --a);
+printf("%d", a);`,
+
+    options: [
+        "10 9",
+        "9 9",
+        "9 10",
+        "10 10"
+    ],
+
+    answer: 1,
+
+    solution: `
+<div class="code-box">
+
+    <div class="code-title">
+        <span>Answer</span>
+    </div>
+
+    <pre><code><span class="keyword">Correct Answer:</span> <span class="string">B) 9 9</span></code></pre>
+
+</div>
+`
+};
+
+
+const cQuestion90 = {
+    question: `What is the output of the following code?
+
+int a = 3;
+printf("%d ", a++);
+printf("%d ", ++a);
+printf("%d", a);`,
+
+    options: [
+        "3 4 4",
+        "3 5 5",
+        "4 5 5",
+        "3 4 5"
+    ],
+
+    answer: 1,
+
+    solution: `
+<div class="code-box">
+
+    <div class="code-title">
+        <span>Answer</span>
+    </div>
+
+    <pre><code><span class="keyword">Correct Answer:</span> <span class="string">B) 3 5 5</span></code></pre>
+
+</div>
+`
+};
+
+
+const cQuestion91 = {
+    question: `What is the output of the following code?
+
+int a = 8;
+printf("%d ", --a);
+printf("%d ", a--);
+printf("%d", a);`,
+
+    options: [
+        "7 7 6",
+        "8 7 6",
+        "7 6 6",
+        "8 8 7"
+    ],
+
+    answer: 0,
+
+    solution: `
+<div class="code-box">
+
+    <div class="code-title">
+        <span>Answer</span>
+    </div>
+
+    <pre><code><span class="keyword">Correct Answer:</span> <span class="string">A) 7 7 6</span></code></pre>
+
+</div>
+`
+};
+
+const cQuestion92 = {
+    question: "Which operator is used for logical AND in C?",
+
+    options: [
+        "&",
+        "&&",
+        "||",
+        "!"
+    ],
+
+    answer: 1,
+
+    solution: `
+<div class="code-box">
+
+    <div class="code-title">
+        <span>Answer</span>
+    </div>
+
+    <pre><code><span class="keyword">Correct Answer:</span> <span class="string">B) &&</span></code></pre>
+
+</div>
+`
+};
+
+
+const cQuestion93 = {
+    question: "Which operator is used for logical OR in C?",
+
+    options: [
+        "|",
+        "&&",
+        "||",
+        "!"
+    ],
+
+    answer: 2,
+
+    solution: `
+<div class="code-box">
+
+    <div class="code-title">
+        <span>Answer</span>
+    </div>
+
+    <pre><code><span class="keyword">Correct Answer:</span> <span class="string">C) ||</span></code></pre>
+
+</div>
+`
+};
+
+
+const cQuestion94 = {
+    question: "Which operator is used for logical NOT in C?",
+
+    options: [
+        "~",
+        "!=",
+        "!",
+        "^"
+    ],
+
+    answer: 2,
+
+    solution: `
+<div class="code-box">
+
+    <div class="code-title">
+        <span>Answer</span>
+    </div>
+
+    <pre><code><span class="keyword">Correct Answer:</span> <span class="string">C) !</span></code></pre>
+
+</div>
+`
+};
+
+
+const cQuestion95 = {
+    question: `What is the result of the following expression?
+
+1 && 1`,
+
+    options: [
+        "0",
+        "1",
+        "2",
+        "Error"
+    ],
+
+    answer: 1,
+
+    solution: `
+<div class="code-box">
+
+    <div class="code-title">
+        <span>Answer</span>
+    </div>
+
+    <pre><code><span class="keyword">Correct Answer:</span> <span class="string">B) 1</span></code></pre>
+
+</div>
+`
+};
+
+
+const cQuestion96 = {
+    question: `What is the result of the following expression?
+
+1 && 0`,
+
+    options: [
+        "0",
+        "1",
+        "2",
+        "Error"
+    ],
+
+    answer: 0,
+
+    solution: `
+<div class="code-box">
+
+    <div class="code-title">
+        <span>Answer</span>
+    </div>
+
+    <pre><code><span class="keyword">Correct Answer:</span> <span class="string">A) 0</span></code></pre>
+
+</div>
+`
+};
+
+
+const cQuestion97 = {
+    question: `What is the result of the following expression?
+
+0 || 1`,
+
+    options: [
+        "0",
+        "1",
+        "2",
+        "Error"
+    ],
+
+    answer: 1,
+
+    solution: `
+<div class="code-box">
+
+    <div class="code-title">
+        <span>Answer</span>
+    </div>
+
+    <pre><code><span class="keyword">Correct Answer:</span> <span class="string">B) 1</span></code></pre>
+
+</div>
+`
+};
+
+
+const cQuestion98 = {
+    question: `What is the result of the following expression?
+
+!0`,
+
+    options: [
+        "0",
+        "1",
+        "-1",
+        "Error"
+    ],
+
+    answer: 1,
+
+    solution: `
+<div class="code-box">
+
+    <div class="code-title">
+        <span>Answer</span>
+    </div>
+
+    <pre><code><span class="keyword">Correct Answer:</span> <span class="string">B) 1</span></code></pre>
+
+</div>
+`
+};
+
+
+const cQuestion99 = {
+    question: `What is the output?
+
+int a = 10;
+printf("%d", a > 5 && a < 20);`,
+
+    options: [
+        "0",
+        "1",
+        "10",
+        "Error"
+    ],
+
+    answer: 1,
+
+    solution: `
+<div class="code-box">
+
+    <div class="code-title">
+        <span>Answer</span>
+    </div>
+
+    <pre><code><span class="keyword">Correct Answer:</span> <span class="string">B) 1</span></code></pre>
+
+</div>
+`
+};
+
+
+const cQuestion100 = {
+    question: `What is the output?
+
+int a = 10;
+printf("%d", a < 5 || a == 10);`,
+
+    options: [
+        "0",
+        "1",
+        "10",
+        "Error"
+    ],
+
+    answer: 1,
+
+    solution: `
+<div class="code-box">
+
+    <div class="code-title">
+        <span>Answer</span>
+    </div>
+
+    <pre><code><span class="keyword">Correct Answer:</span> <span class="string">B) 1</span></code></pre>
+
+</div>
+`
+};
+
+
+const cQuestion101 = {
+    question: `What is the output?
+
+int a = 5;
+printf("%d", !(a > 10));`,
+
+    options: [
+        "0",
+        "1",
+        "5",
+        "10"
+    ],
+
+    answer: 1,
+
+    solution: `
+<div class="code-box">
+
+    <div class="code-title">
+        <span>Answer</span>
+    </div>
+
+    <pre><code><span class="keyword">Correct Answer:</span> <span class="string">B) 1</span></code></pre>
+
+</div>
+`
+};
+
+const cQuestion102 = {
+    question: "Write a C program to perform addition, subtraction, multiplication, division, and modulus of two integers.",
+
+    solution: `
+<div class="code-box">
+
+    <div class="code-title">
+        <span>Solution</span>
+    </div>
+
+    <pre><code><span class="keyword">#include</span> &lt;stdio.h&gt;
+
+<span class="keyword">int</span> main()
+{
+    <span class="keyword">int</span> a, b;
+
+    printf(<span class="string">"Enter two integers: "</span>);
+    scanf(<span class="string">"%d %d"</span>, &amp;a, &amp;b);
+
+    printf(<span class="string">"Addition = %d\\n"</span>, a + b);
+    printf(<span class="string">"Subtraction = %d\\n"</span>, a - b);
+    printf(<span class="string">"Multiplication = %d\\n"</span>, a * b);
+    printf(<span class="string">"Division = %d\\n"</span>, a / b);
+    printf(<span class="string">"Modulus = %d\\n"</span>, a % b);
+
+    <span class="keyword">return</span> <span class="number">0</span>;
+}</code></pre>
+
+</div>
+`
+};
+
+
+const cQuestion103 = {
+    question: "Write a C program to calculate the area of a circle using arithmetic operators.",
+
+    solution: `
+<div class="code-box">
+
+    <div class="code-title">
+        <span>Solution</span>
+    </div>
+
+    <pre><code><span class="keyword">#include</span> &lt;stdio.h&gt;
+
+<span class="keyword">int</span> main()
+{
+    <span class="keyword">float</span> radius, area;
+    <span class="keyword">const float</span> PI = <span class="number">3.14</span>;
+
+    printf(<span class="string">"Enter radius: "</span>);
+    scanf(<span class="string">"%f"</span>, &amp;radius);
+
+    area = PI * radius * radius;
+
+    printf(<span class="string">"Area of circle = %.2f"</span>, area);
+
+    <span class="keyword">return</span> <span class="number">0</span>;
+}</code></pre>
+
+</div>
+`
+};
+
+
+const cQuestion104 = {
+    question: "Write a C program to calculate the total and average of three numbers.",
+
+    solution: `
+<div class="code-box">
+
+    <div class="code-title">
+        <span>Solution</span>
+    </div>
+
+    <pre><code><span class="keyword">#include</span> &lt;stdio.h&gt;
+
+<span class="keyword">int</span> main()
+{
+    <span class="keyword">float</span> a, b, c, total, average;
+
+    printf(<span class="string">"Enter three numbers: "</span>);
+    scanf(<span class="string">"%f %f %f"</span>, &amp;a, &amp;b, &amp;c);
+
+    total = a + b + c;
+    average = total / <span class="number">3</span>;
+
+    printf(<span class="string">"Total = %.2f\\n"</span>, total);
+    printf(<span class="string">"Average = %.2f"</span>, average);
+
+    <span class="keyword">return</span> <span class="number">0</span>;
+}</code></pre>
+
+</div>
+`
+};
+
+
+const cQuestion105 = {
+    question: "Write a C program to calculate the simple interest using arithmetic operators.",
+
+    solution: `
+<div class="code-box">
+
+    <div class="code-title">
+        <span>Solution</span>
+    </div>
+
+    <pre><code><span class="keyword">#include</span> &lt;stdio.h&gt;
+
+<span class="keyword">int</span> main()
+{
+    <span class="keyword">float</span> principal, rate, time, interest;
+
+    printf(<span class="string">"Enter principal, rate and time: "</span>);
+    scanf(<span class="string">"%f %f %f"</span>, &amp;principal, &amp;rate, &amp;time);
+
+    interest = (principal * rate * time) / <span class="number">100</span>;
+
+    printf(<span class="string">"Simple Interest = %.2f"</span>, interest);
+
+    <span class="keyword">return</span> <span class="number">0</span>;
+}</code></pre>
+
+</div>
+`
+};
+
+
+const cQuestion106 = {
+    question: "Write a C program to swap the values of two variables using assignment operators.",
+
+    solution: `
+<div class="code-box">
+
+    <div class="code-title">
+        <span>Solution</span>
+    </div>
+
+    <pre><code><span class="keyword">#include</span> &lt;stdio.h&gt;
+
+<span class="keyword">int</span> main()
+{
+    <span class="keyword">int</span> a, b, temp;
+
+    printf(<span class="string">"Enter two numbers: "</span>);
+    scanf(<span class="string">"%d %d"</span>, &amp;a, &amp;b);
+
+    temp = a;
+    a = b;
+    b = temp;
+
+    printf(<span class="string">"After swapping: a = %d, b = %d"</span>, a, b);
+
+    <span class="keyword">return</span> <span class="number">0</span>;
+}</code></pre>
+
+</div>
+`
+};
+
+
+const cQuestion107 = {
+    question: "Write a C program to increase the value of a variable by 10 using the += operator.",
+
+    solution: `
+<div class="code-box">
+
+    <div class="code-title">
+        <span>Solution</span>
+    </div>
+
+    <pre><code><span class="keyword">#include</span> &lt;stdio.h&gt;
+
+<span class="keyword">int</span> main()
+{
+    <span class="keyword">int</span> number;
+
+    printf(<span class="string">"Enter a number: "</span>);
+    scanf(<span class="string">"%d"</span>, &amp;number);
+
+    number += <span class="number">10</span>;
+
+    printf(<span class="string">"Updated value = %d"</span>, number);
+
+    <span class="keyword">return</span> <span class="number">0</span>;
+}</code></pre>
+
+</div>
+`
+};
+
+
+const cQuestion108 = {
+    question: "Write a C program to calculate the final price of a product after applying a discount using assignment operators.",
+
+    solution: `
+<div class="code-box">
+
+    <div class="code-title">
+        <span>Solution</span>
+    </div>
+
+    <pre><code><span class="keyword">#include</span> &lt;stdio.h&gt;
+
+<span class="keyword">int</span> main()
+{
+    <span class="keyword">float</span> price, discount, finalPrice;
+
+    printf(<span class="string">"Enter product price: "</span>);
+    scanf(<span class="string">"%f"</span>, &amp;price);
+
+    printf(<span class="string">"Enter discount percentage: "</span>);
+    scanf(<span class="string">"%f"</span>, &amp;discount);
+
+    finalPrice = price;
+    finalPrice -= (price * discount) / <span class="number">100</span>;
+
+    printf(<span class="string">"Final Price = %.2f"</span>, finalPrice);
+
+    <span class="keyword">return</span> <span class="number">0</span>;
+}</code></pre>
+
+</div>
+`
+};
+
+
+const cQuestion109 = {
+    question: "Write a C program to check whether a number is positive using a logical operator.",
+
+    solution: `
+<div class="code-box">
+
+    <div class="code-title">
+        <span>Solution</span>
+    </div>
+
+    <pre><code><span class="keyword">#include</span> &lt;stdio.h&gt;
+
+<span class="keyword">int</span> main()
+{
+    <span class="keyword">int</span> number;
+
+    printf(<span class="string">"Enter a number: "</span>);
+    scanf(<span class="string">"%d"</span>, &amp;number);
+
+    <span class="keyword">if</span> (number &gt; <span class="number">0</span>)
+        printf(<span class="string">"Positive number"</span>);
+    <span class="keyword">else</span>
+        printf(<span class="string">"Not a positive number"</span>);
+
+    <span class="keyword">return</span> <span class="number">0</span>;
+}</code></pre>
+
+</div>
+`
+};
+
+
+const cQuestion110 = {
+    question: "Write a C program to check whether a number lies between 10 and 50 using the logical AND operator.",
+
+    solution: `
+<div class="code-box">
+
+    <div class="code-title">
+        <span>Solution</span>
+    </div>
+
+    <pre><code><span class="keyword">#include</span> &lt;stdio.h&gt;
+
+<span class="keyword">int</span> main()
+{
+    <span class="keyword">int</span> number;
+
+    printf(<span class="string">"Enter a number: "</span>);
+    scanf(<span class="string">"%d"</span>, &amp;number);
+
+    <span class="keyword">if</span> (number &gt;= <span class="number">10</span> &amp;&amp; number &lt;= <span class="number">50</span>)
+        printf(<span class="string">"Number lies between 10 and 50"</span>);
+    <span class="keyword">else</span>
+        printf(<span class="string">"Number is outside the range"</span>);
+
+    <span class="keyword">return</span> <span class="number">0</span>;
+}</code></pre>
+
+</div>
+`
+};
+
+
+const cQuestion111 = {
+    question: "Write a C program to check whether a number is divisible by either 3 or 5 using the logical OR operator.",
+
+    solution: `
+<div class="code-box">
+
+    <div class="code-title">
+        <span>Solution</span>
+    </div>
+
+    <pre><code><span class="keyword">#include</span> &lt;stdio.h&gt;
+
+<span class="keyword">int</span> main()
+{
+    <span class="keyword">int</span> number;
+
+    printf(<span class="string">"Enter a number: "</span>);
+    scanf(<span class="string">"%d"</span>, &amp;number);
+
+    <span class="keyword">if</span> (number % <span class="number">3</span> == <span class="number">0</span> || number % <span class="number">5</span> == <span class="number">0</span>)
+        printf(<span class="string">"Number is divisible by 3 or 5"</span>);
+    <span class="keyword">else</span>
+        printf(<span class="string">"Number is not divisible by 3 or 5"</span>);
+
+    <span class="keyword">return</span> <span class="number">0</span>;
+}</code></pre>
+
+</div>
+`
+};
+
+
+const cQuestion112 = {
+    question: "Write a C program to check whether a number is NOT equal to zero using the logical NOT operator.",
+
+    solution: `
+<div class="code-box">
+
+    <div class="code-title">
+        <span>Solution</span>
+    </div>
+
+    <pre><code><span class="keyword">#include</span> &lt;stdio.h&gt;
+
+<span class="keyword">int</span> main()
+{
+    <span class="keyword">int</span> number;
+
+    printf(<span class="string">"Enter a number: "</span>);
+    scanf(<span class="string">"%d"</span>, &amp;number);
+
+    <span class="keyword">if</span> (!(number == <span class="number">0</span>))
+        printf(<span class="string">"Number is NOT equal to zero"</span>);
+    <span class="keyword">else</span>
+        printf(<span class="string">"Number is equal to zero"</span>);
+
+    <span class="keyword">return</span> <span class="number">0</span>;
+}</code></pre>
+
+</div>
+`
+};
+
+
+const cQuestion113 = {
+    question: "Write a C program to check whether a student has passed using logical operators. The passing marks are 40 or above in both subjects.",
+
+    solution: `
+<div class="code-box">
+
+    <div class="code-title">
+        <span>Solution</span>
+    </div>
+
+    <pre><code><span class="keyword">#include</span> &lt;stdio.h&gt;
+
+<span class="keyword">int</span> main()
+{
+    <span class="keyword">int</span> subject1, subject2;
+
+    printf(<span class="string">"Enter marks of two subjects: "</span>);
+    scanf(<span class="string">"%d %d"</span>, &amp;subject1, &amp;subject2);
+
+    <span class="keyword">if</span> (subject1 &gt;= <span class="number">40</span> &amp;&amp; subject2 &gt;= <span class="number">40</span>)
+        printf(<span class="string">"Pass"</span>);
+    <span class="keyword">else</span>
+        printf(<span class="string">"Fail"</span>);
+
+    <span class="keyword">return</span> <span class="number">0</span>;
+}</code></pre>
+
+</div>
+`
+};
+
+
+const cQuestion114 = {
+    question: "Write a C program to find the result of bitwise AND, OR, and XOR between two integers.",
+
+    solution: `
+<div class="code-box">
+
+    <div class="code-title">
+        <span>Solution</span>
+    </div>
+
+    <pre><code><span class="keyword">#include</span> &lt;stdio.h&gt;
+
+<span class="keyword">int</span> main()
+{
+    <span class="keyword">int</span> a, b;
+
+    printf(<span class="string">"Enter two integers: "</span>);
+    scanf(<span class="string">"%d %d"</span>, &amp;a, &amp;b);
+
+    printf(<span class="string">"Bitwise AND = %d\\n"</span>, a &amp; b);
+    printf(<span class="string">"Bitwise OR = %d\\n"</span>, a | b);
+    printf(<span class="string">"Bitwise XOR = %d"</span>, a ^ b);
+
+    <span class="keyword">return</span> <span class="number">0</span>;
+}</code></pre>
+
+</div>
+`
+};
+
+
+const cQuestion115 = {
+    question: "Write a C program to perform bitwise NOT operation on an integer.",
+
+    solution: `
+<div class="code-box">
+
+    <div class="code-title">
+        <span>Solution</span>
+    </div>
+
+    <pre><code><span class="keyword">#include</span> &lt;stdio.h&gt;
+
+<span class="keyword">int</span> main()
+{
+    <span class="keyword">int</span> number;
+
+    printf(<span class="string">"Enter an integer: "</span>);
+    scanf(<span class="string">"%d"</span>, &amp;number);
+
+    printf(<span class="string">"Bitwise NOT = %d"</span>, ~number);
+
+    <span class="keyword">return</span> <span class="number">0</span>;
+}</code></pre>
+
+</div>
+`
+};
+
+
+const cQuestion116 = {
+    question: "Write a C program to check whether a number is even or odd using the bitwise AND operator.",
+
+    solution: `
+<div class="code-box">
+
+    <div class="code-title">
+        <span>Solution</span>
+    </div>
+
+    <pre><code><span class="keyword">#include</span> &lt;stdio.h&gt;
+
+<span class="keyword">int</span> main()
+{
+    <span class="keyword">int</span> number;
+
+    printf(<span class="string">"Enter an integer: "</span>);
+    scanf(<span class="string">"%d"</span>, &amp;number);
+
+    <span class="keyword">if</span> ((number &amp; <span class="number">1</span>) == <span class="number">0</span>)
+        printf(<span class="string">"Even number"</span>);
+    <span class="keyword">else</span>
+        printf(<span class="string">"Odd number"</span>);
+
+    <span class="keyword">return</span> <span class="number">0</span>;
+}</code></pre>
+
+</div>
+`
+};
+
+
+const cQuestion117 = {
+    question: "Write a C program to multiply an integer by 2 using the left-shift operator.",
+
+    solution: `
+<div class="code-box">
+
+    <div class="code-title">
+        <span>Solution</span>
+    </div>
+
+    <pre><code><span class="keyword">#include</span> &lt;stdio.h&gt;
+
+<span class="keyword">int</span> main()
+{
+    <span class="keyword">int</span> number, result;
+
+    printf(<span class="string">"Enter an integer: "</span>);
+    scanf(<span class="string">"%d"</span>, &amp;number);
+
+    result = number &lt;&lt; <span class="number">1</span>;
+
+    printf(<span class="string">"Result = %d"</span>, result);
+
+    <span class="keyword">return</span> <span class="number">0</span>;
+}</code></pre>
+
+</div>
+`
+};
+
+
+const cQuestion118 = {
+    question: "Write a C program to divide an integer by 2 using the right-shift operator.",
+
+    solution: `
+<div class="code-box">
+
+    <div class="code-title">
+        <span>Solution</span>
+    </div>
+
+    <pre><code><span class="keyword">#include</span> &lt;stdio.h&gt;
+
+<span class="keyword">int</span> main()
+{
+    <span class="keyword">int</span> number, result;
+
+    printf(<span class="string">"Enter an integer: "</span>);
+    scanf(<span class="string">"%d"</span>, &amp;number);
+
+    result = number &gt;&gt; <span class="number">1</span>;
+
+    printf(<span class="string">"Result = %d"</span>, result);
+
+    <span class="keyword">return</span> <span class="number">0</span>;
+}</code></pre>
+
+</div>
+`
+};
+
+
+const cQuestion119 = {
+    question: "Write a C program to demonstrate the difference between pre-increment and post-increment operators using printf().",
+
+    solution: `
+<div class="code-box">
+
+    <div class="code-title">
+        <span>Solution</span>
+    </div>
+
+    <pre><code><span class="keyword">#include</span> &lt;stdio.h&gt;
+
+<span class="keyword">int</span> main()
+{
+    <span class="keyword">int</span> a = <span class="number">5</span>;
+
+    printf(<span class="string">"Post-increment: %d\\n"</span>, a++);
+    printf(<span class="string">"After post-increment: %d\\n"</span>, a);
+
+    printf(<span class="string">"Pre-increment: %d\\n"</span>, ++a);
+    printf(<span class="string">"After pre-increment: %d"</span>, a);
+
+    <span class="keyword">return</span> <span class="number">0</span>;
+}</code></pre>
+
+</div>
+`
+};
+
+
+const cQuestion120 = {
+    question: "Write a C program to demonstrate the difference between pre-decrement and post-decrement operators using printf().",
+
+    solution: `
+<div class="code-box">
+
+    <div class="code-title">
+        <span>Solution</span>
+    </div>
+
+    <pre><code><span class="keyword">#include</span> &lt;stdio.h&gt;
+
+<span class="keyword">int</span> main()
+{
+    <span class="keyword">int</span> a = <span class="number">5</span>;
+
+    printf(<span class="string">"Post-decrement: %d\\n"</span>, a--);
+    printf(<span class="string">"After post-decrement: %d\\n"</span>, a);
+
+    printf(<span class="string">"Pre-decrement: %d\\n"</span>, --a);
+    printf(<span class="string">"After pre-decrement: %d"</span>, a);
+
+    <span class="keyword">return</span> <span class="number">0</span>;
+}</code></pre>
+
+</div>
+`
+};
+
+
+const cQuestion121 = {
+    question: "Write a C program to increment a variable three times and display its value after each increment.",
+
+    solution: `
+<div class="code-box">
+
+    <div class="code-title">
+        <span>Solution</span>
+    </div>
+
+    <pre><code><span class="keyword">#include</span> &lt;stdio.h&gt;
+
+<span class="keyword">int</span> main()
+{
+    <span class="keyword">int</span> number = <span class="number">5</span>;
+
+    number++;
+    printf(<span class="string">"After first increment = %d\\n"</span>, number);
+
+    number++;
+    printf(<span class="string">"After second increment = %d\\n"</span>, number);
+
+    number++;
+    printf(<span class="string">"After third increment = %d"</span>, number);
+
+    <span class="keyword">return</span> <span class="number">0</span>;
+}</code></pre>
+
+</div>
+`
+};
+
+
+const cQuestion122 = {
+    question: "Write a C program to decrement a variable three times and display its value after each decrement.",
+
+    solution: `
+<div class="code-box">
+
+    <div class="code-title">
+        <span>Solution</span>
+    </div>
+
+    <pre><code><span class="keyword">#include</span> &lt;stdio.h&gt;
+
+<span class="keyword">int</span> main()
+{
+    <span class="keyword">int</span> number = <span class="number">5</span>;
+
+    number--;
+    printf(<span class="string">"After first decrement = %d\\n"</span>, number);
+
+    number--;
+    printf(<span class="string">"After second decrement = %d\\n"</span>, number);
+
+    number--;
+    printf(<span class="string">"After third decrement = %d"</span>, number);
+
+    <span class="keyword">return</span> <span class="number">0</span>;
+}</code></pre>
+
+</div>
+`
+};
+
+
+const cQuestion123 = {
+    question: "Write a C program to find the greater of two numbers using the ternary operator.",
+
+    solution: `
+<div class="code-box">
+
+    <div class="code-title">
+        <span>Solution</span>
+    </div>
+
+    <pre><code><span class="keyword">#include</span> &lt;stdio.h&gt;
+
+<span class="keyword">int</span> main()
+{
+    <span class="keyword">int</span> a, b, greater;
+
+    printf(<span class="string">"Enter two numbers: "</span>);
+    scanf(<span class="string">"%d %d"</span>, &amp;a, &amp;b);
+
+    greater = (a &gt; b) ? a : b;
+
+    printf(<span class="string">"Greater number = %d"</span>, greater);
+
+    <span class="keyword">return</span> <span class="number">0</span>;
+}</code></pre>
+
+</div>
+`
+};
+
+
+const cQuestion124 = {
+    question: "Write a C program to check whether a number is even or odd using the ternary operator.",
+
+    solution: `
+<div class="code-box">
+
+    <div class="code-title">
+        <span>Solution</span>
+    </div>
+
+    <pre><code><span class="keyword">#include</span> &lt;stdio.h&gt;
+
+<span class="keyword">int</span> main()
+{
+    <span class="keyword">int</span> number;
+
+    printf(<span class="string">"Enter a number: "</span>);
+    scanf(<span class="string">"%d"</span>, &amp;number);
+
+    (number % <span class="number">2</span> == <span class="number">0</span>)
+        ? printf(<span class="string">"Even number"</span>)
+        : printf(<span class="string">"Odd number"</span>);
+
+    <span class="keyword">return</span> <span class="number">0</span>;
+}</code></pre>
+
+</div>
+`
+};
+
+
+const cQuestion125 = {
+    question: "Write a C program to find the largest of three numbers using nested ternary operators.",
+
+    solution: `
+<div class="code-box">
+
+    <div class="code-title">
+        <span>Solution</span>
+    </div>
+
+    <pre><code><span class="keyword">#include</span> &lt;stdio.h&gt;
+
+<span class="keyword">int</span> main()
+{
+    <span class="keyword">int</span> a, b, c, largest;
+
+    printf(<span class="string">"Enter three numbers: "</span>);
+    scanf(<span class="string">"%d %d %d"</span>, &amp;a, &amp;b, &amp;c);
+
+    largest = (a &gt; b)
+              ? ((a &gt; c) ? a : c)
+              : ((b &gt; c) ? b : c);
+
+    printf(<span class="string">"Largest number = %d"</span>, largest);
+
+    <span class="keyword">return</span> <span class="number">0</span>;
+}</code></pre>
+
+</div>
+`
+};
+
+
+const cQuestion126 = {
+    question: "Write a C program to determine whether a student is Pass or Fail using the ternary operator.",
+
+    solution: `
+<div class="code-box">
+
+    <div class="code-title">
+        <span>Solution</span>
+    </div>
+
+    <pre><code><span class="keyword">#include</span> &lt;stdio.h&gt;
+
+<span class="keyword">int</span> main()
+{
+    <span class="keyword">int</span> marks;
+
+    printf(<span class="string">"Enter marks: "</span>);
+    scanf(<span class="string">"%d"</span>, &amp;marks);
+
+    (marks &gt;= <span class="number">40</span>)
+        ? printf(<span class="string">"Pass"</span>)
+        : printf(<span class="string">"Fail"</span>);
+
+    <span class="keyword">return</span> <span class="number">0</span>;
+}</code></pre>
+
+</div>
+`
+};
+
+
+const cQuestion127 = {
+    question: "Write a C program to demonstrate operator precedence using an expression containing +, -, *, /, and % operators.",
+
+    solution: `
+<div class="code-box">
+
+    <div class="code-title">
+        <span>Solution</span>
+    </div>
+
+    <pre><code><span class="keyword">#include</span> &lt;stdio.h&gt;
+
+<span class="keyword">int</span> main()
+{
+    <span class="keyword">int</span> result;
+
+    result = <span class="number">20</span> + <span class="number">10</span> * <span class="number">2</span> - <span class="number">8</span> / <span class="number">2</span> % <span class="number">3</span>;
+
+    printf(<span class="string">"Result = %d"</span>, result);
+
+    <span class="keyword">return</span> <span class="number">0</span>;
+}</code></pre>
+
+</div>
+`
+};
+
+
+const cQuestion128 = {
+    question: "Write a C program to evaluate the following expression and display the result: result = 10 + 5 * 2 - 8 / 4;",
+
+    solution: `
+<div class="code-box">
+
+    <div class="code-title">
+        <span>Solution</span>
+    </div>
+
+    <pre><code><span class="keyword">#include</span> &lt;stdio.h&gt;
+
+<span class="keyword">int</span> main()
+{
+    <span class="keyword">int</span> result;
+
+    result = <span class="number">10</span> + <span class="number">5</span> * <span class="number">2</span> - <span class="number">8</span> / <span class="number">4</span>;
+
+    printf(<span class="string">"Result = %d"</span>, result);
+
+    <span class="keyword">return</span> <span class="number">0</span>;
+}</code></pre>
+
+</div>
+`
+};
+
+
+const cQuestion129 = {
+    question: "Write a C program to declare and use integer, floating-point, character, and string literals.",
+
+    solution: `
+<div class="code-box">
+
+    <div class="code-title">
+        <span>Solution</span>
+    </div>
+
+    <pre><code><span class="keyword">#include</span> &lt;stdio.h&gt;
+
+<span class="keyword">int</span> main()
+{
+    <span class="keyword">int</span> number = <span class="number">100</span>;
+    <span class="keyword">float</span> price = <span class="number">99.50</span>;
+    <span class="keyword">char</span> grade = <span class="string">'A'</span>;
+    <span class="keyword">char</span> name[] = <span class="string">"Pradeep"</span>;
+
+    printf(<span class="string">"Integer = %d\\n"</span>, number);
+    printf(<span class="string">"Float = %.2f\\n"</span>, price);
+    printf(<span class="string">"Character = %c\\n"</span>, grade);
+    printf(<span class="string">"String = %s"</span>, name);
+
+    <span class="keyword">return</span> <span class="number">0</span>;
+}</code></pre>
+
+</div>
+`
+};
+
+
+const cQuestion130 = {
+    question: "Write a C program using const variables to store the value of PI and calculate the area of a circle.",
+
+    solution: `
+<div class="code-box">
+
+    <div class="code-title">
+        <span>Solution</span>
+    </div>
+
+    <pre><code><span class="keyword">#include</span> &lt;stdio.h&gt;
+
+<span class="keyword">int</span> main()
+{
+    <span class="keyword">const float</span> PI = <span class="number">3.14</span>;
+    <span class="keyword">float</span> radius, area;
+
+    printf(<span class="string">"Enter radius: "</span>);
+    scanf(<span class="string">"%f"</span>, &amp;radius);
+
+    area = PI * radius * radius;
+
+    printf(<span class="string">"Area of circle = %.2f"</span>, area);
+
+    <span class="keyword">return</span> <span class="number">0</span>;
+}</code></pre>
+
+</div>
+`
+};
+
+
+const cQuestion131 = {
+    question: "Write a C program that takes two integers from the user and demonstrates arithmetic, assignment, logical, bitwise, increment/decrement, and ternary operators, displaying the result of each operation.",
+
+    solution: `
+<div class="code-box">
+
+    <div class="code-title">
+        <span>Solution</span>
+    </div>
+
+    <pre><code><span class="keyword">#include</span> &lt;stdio.h&gt;
+
+<span class="keyword">int</span> main()
+{
+    <span class="keyword">int</span> a, b, x, greater;
+
+    printf(<span class="string">"Enter two integers: "</span>);
+    scanf(<span class="string">"%d %d"</span>, &amp;a, &amp;b);
+
+    <span class="comment">// Arithmetic Operators</span>
+    printf(<span class="string">"Addition = %d\\n"</span>, a + b);
+    printf(<span class="string">"Subtraction = %d\\n"</span>, a - b);
+    printf(<span class="string">"Multiplication = %d\\n"</span>, a * b);
+    printf(<span class="string">"Division = %d\\n"</span>, a / b);
+    printf(<span class="string">"Modulus = %d\\n"</span>, a % b);
+
+    <span class="comment">// Assignment Operator</span>
+    x = a;
+    x += b;
+    printf(<span class="string">"Assignment (x += b) = %d\\n"</span>, x);
+
+    <span class="comment">// Logical Operators</span>
+    printf(<span class="string">"Logical AND = %d\\n"</span>, a &gt; <span class="number">0</span> &amp;&amp; b &gt; <span class="number">0</span>);
+    printf(<span class="string">"Logical OR = %d\\n"</span>, a &gt; <span class="number">0</span> || b &gt; <span class="number">0</span>);
+    printf(<span class="string">"Logical NOT = %d\\n"</span>, !(a == <span class="number">0</span>));
+
+    <span class="comment">// Bitwise Operators</span>
+    printf(<span class="string">"Bitwise AND = %d\\n"</span>, a &amp; b);
+    printf(<span class="string">"Bitwise OR = %d\\n"</span>, a | b);
+    printf(<span class="string">"Bitwise XOR = %d\\n"</span>, a ^ b);
+
+    <span class="comment">// Increment / Decrement</span>
+    x = a;
+    printf(<span class="string">"Post-increment = %d\\n"</span>, x++);
+    printf(<span class="string">"After increment = %d\\n"</span>, x);
+
+    printf(<span class="string">"Pre-decrement = %d\\n"</span>, --x);
+
+    <span class="comment">// Ternary Operator</span>
+    greater = (a &gt; b) ? a : b;
+
+    printf(<span class="string">"Greater number = %d"</span>, greater);
+
+    <span class="keyword">return</span> <span class="number">0</span>;
+}</code></pre>
+
+</div>
+`
+};
+
 // ========================================
 // ALL QUESTIONS
 // ========================================
-
 const cProgrammingQuestions = [
     cQuestion1,
     cQuestion2,
@@ -346,5 +3699,125 @@ const cProgrammingQuestions = [
     cQuestion8,
     cQuestion9,
     cQuestion10,
-    cQuestion11
+    cQuestion11,
+    cQuestion12,
+    cQuestion13,
+    cQuestion14,
+    cQuestion15,
+    cQuestion16,
+    cQuestion17,
+    cQuestion18,
+    cQuestion19,
+    cQuestion20,
+    cQuestion21,
+    cQuestion22,
+    cQuestion23,
+    cQuestion24,
+    cQuestion25,
+    cQuestion26,
+    cQuestion27,
+    cQuestion28,
+    cQuestion29,
+    cQuestion30,
+    cQuestion31,
+    cQuestion32,
+    cQuestion33,
+    cQuestion34,
+    cQuestion35,
+    cQuestion36,
+    cQuestion37,
+    cQuestion38,
+    cQuestion39,
+    cQuestion40,
+    cQuestion41,
+    cQuestion42,
+    cQuestion43,
+    cQuestion44,
+    cQuestion45,
+    cQuestion46,
+    cQuestion47,
+    cQuestion48,
+    cQuestion49,
+    cQuestion50,
+    cQuestion51,
+    cQuestion52,
+    cQuestion53,
+    cQuestion54,
+    cQuestion55,
+    cQuestion56,
+    cQuestion57,
+    cQuestion58,
+    cQuestion59,
+    cQuestion60,
+    cQuestion61,
+    cQuestion62,
+    cQuestion63,
+    cQuestion64,
+    cQuestion65,
+    cQuestion66,
+    cQuestion67,
+    cQuestion68,
+    cQuestion69,
+    cQuestion70,
+    cQuestion71,
+    cQuestion72,
+    cQuestion73,
+    cQuestion74,
+    cQuestion75,
+    cQuestion76,
+    cQuestion77,
+    cQuestion78,
+    cQuestion79,
+    cQuestion80,
+    cQuestion81,
+    cQuestion82,
+    cQuestion83,
+    cQuestion84,
+    cQuestion85,
+    cQuestion86,
+    cQuestion87,
+    cQuestion88,
+    cQuestion89,
+    cQuestion90,
+    cQuestion91,
+    cQuestion92,
+    cQuestion93,
+    cQuestion94,
+    cQuestion95,
+    cQuestion96,
+    cQuestion97,
+    cQuestion98,
+    cQuestion99,
+    cQuestion100,
+    cQuestion101,
+    cQuestion102,
+    cQuestion103,
+    cQuestion104,
+    cQuestion105,
+    cQuestion106,
+    cQuestion107,
+    cQuestion108,
+    cQuestion109,
+    cQuestion110,
+    cQuestion111,
+    cQuestion112,
+    cQuestion113,
+    cQuestion114,
+    cQuestion115,
+    cQuestion116,
+    cQuestion117,
+    cQuestion118,
+    cQuestion119,
+    cQuestion120,
+    cQuestion121,
+    cQuestion122,
+    cQuestion123,
+    cQuestion124,
+    cQuestion125,
+    cQuestion126,
+    cQuestion127,
+    cQuestion128,
+    cQuestion129,
+    cQuestion130,
+    cQuestion131
 ];

@@ -300,14 +300,208 @@ function toggleSolution(button)
 }
 
 
+// let currentQuestionPage = 1;
+
+const questionsPerPage = 10;
+
+
+// function loadQuestions()
+// {
+//     const totalQuestions = cProgrammingQuestions.length;
+
+//     const totalPages = Math.ceil(
+//         totalQuestions / questionsPerPage
+//     );
+
+//     let startIndex =
+//         (currentQuestionPage - 1) * questionsPerPage;
+
+//     let endIndex =
+//         startIndex + questionsPerPage;
+
+//     let questions = cProgrammingQuestions.slice(
+//         startIndex,
+//         endIndex
+//     );
+
+//     let content = "";
+
+//     // ==============================
+//     // PAGINATION
+//     // ==============================
+
+//     content += `
+//         <div class="question-pagination">
+
+//             <button
+//                 class="pagination-btn"
+//                 onclick="previousQuestionPage()"
+//                 ${currentQuestionPage === 1 ? "disabled" : ""}>
+//                 Previous
+//             </button>
+//     `;
+
+
+//     for(let i = 1; i <= totalPages; i++)
+//     {
+//         content += `
+//             <button
+//                 class="pagination-number
+//                 ${i === currentQuestionPage ? "active" : ""}"
+//                 onclick="goToQuestionPage(${i})">
+//                 ${i}
+//             </button>
+//         `;
+//     }
+
+
+//     content += `
+//             <button
+//                 class="pagination-btn"
+//                 onclick="nextQuestionPage()"
+//                 ${currentQuestionPage === totalPages ? "disabled" : ""}>
+//                 Next
+//             </button>
+
+//         </div>
+//     `;
+
+
+//     // ==============================
+//     // QUESTIONS
+//     // ==============================
+
+//     questions.forEach((item, index) =>
+//     {
+//         let questionNumber =
+//             startIndex + index + 1;
+
+
+//         // ==============================
+//         // MCQ OPTIONS
+//         // ==============================
+
+//         const optionLetters = ["A", "B", "C", "D"];
+
+//         let optionsHTML = "";
+
+//         if (item.options)
+//         {
+//             optionsHTML = `
+//                 <div class="mcq-options">
+
+//                     ${item.options.map((option, optionIndex) => `
+                        
+//                         <div class="mcq-option">
+
+//                             <span class="mcq-option-label">
+//                                 ${optionLetters[optionIndex]}
+//                             </span>
+
+//                             <span class="mcq-option-text">
+//                                 ${option}
+//                             </span>
+
+//                         </div>
+
+//                     `).join("")}
+
+//                 </div>
+//             `;
+//         }
+
+
+//         // ==============================
+//         // QUESTION HTML
+//         // ==============================
+
+//         content += `
+//             <div class="question-box">
+
+//                 <div class="question-title">
+//                     Question ${questionNumber}
+//                 </div>
+
+//                 <div class="question-row">
+
+//                     <div class="question-text">
+//                         ${item.question}
+//                     </div>
+
+//                     <button
+//                         class="view-solution-btn"
+//                         onclick="toggleSolution(this)">
+//                         View
+//                     </button>
+
+//                 </div>
+
+//                 ${optionsHTML}
+
+//                 <div class="solution-content">
+//                     ${item.solution}
+//                 </div>
+
+//             </div>
+//         `;
+//     });
+
+
+//     document.getElementById("questions").innerHTML = content;
+// }
+
+// function previousQuestionPage()
+// {
+//     if(currentQuestionPage > 1)
+//     {
+//         currentQuestionPage--;
+
+//         loadQuestions();
+//     }
+// }
+
+// function nextQuestionPage()
+// {
+//     const totalPages = Math.ceil(
+//         cProgrammingQuestions.length / questionsPerPage
+//     );
+
+//     if(currentQuestionPage < totalPages)
+//     {
+//         currentQuestionPage++;
+
+//         loadQuestions();
+//     }
+// }
+
+// function goToQuestionPage(page)
+// {
+//     currentQuestionPage = page;
+
+//     loadQuestions();
+// }
+
+
+
+let currentQuestionArray = [];
 let currentQuestionPage = 1;
 
-const questionsPerPage = 5;
 
-
-function loadQuestions()
+function loadQuestions(questionArray)
 {
-    const totalQuestions = cProgrammingQuestions.length;
+    // Store the selected question array
+    currentQuestionArray = questionArray;
+
+    // Reset pagination when a new question array is loaded
+    currentQuestionPage = 1;
+
+    renderQuestions();
+}
+
+
+function renderQuestions()
+{
+    const totalQuestions = currentQuestionArray.length;
 
     const totalPages = Math.ceil(
         totalQuestions / questionsPerPage
@@ -319,12 +513,13 @@ function loadQuestions()
     let endIndex =
         startIndex + questionsPerPage;
 
-    let questions = cProgrammingQuestions.slice(
+    let questions = currentQuestionArray.slice(
         startIndex,
         endIndex
     );
 
     let content = "";
+
 
     // ==============================
     // PAGINATION
@@ -376,6 +571,46 @@ function loadQuestions()
         let questionNumber =
             startIndex + index + 1;
 
+
+        // ==============================
+        // MCQ OPTIONS
+        // ==============================
+
+        const optionLetters = ["A", "B", "C", "D"];
+
+        let optionsHTML = "";
+
+
+        if(item.options)
+        {
+            optionsHTML = `
+                <div class="mcq-options">
+
+                    ${item.options.map((option, optionIndex) => `
+
+                        <div class="mcq-option">
+
+                            <span class="mcq-option-label">
+                                ${optionLetters[optionIndex]}
+                            </span>
+
+                            <span class="mcq-option-text">
+                                ${option}
+                            </span>
+
+                        </div>
+
+                    `).join("")}
+
+                </div>
+            `;
+        }
+
+
+        // ==============================
+        // QUESTION HTML
+        // ==============================
+
         content += `
             <div class="question-box">
 
@@ -397,6 +632,8 @@ function loadQuestions()
 
                 </div>
 
+                ${optionsHTML}
+
                 <div class="solution-content">
                     ${item.solution}
                 </div>
@@ -405,6 +642,10 @@ function loadQuestions()
         `;
     });
 
+
+    // ==============================
+    // DISPLAY QUESTIONS
+    // ==============================
 
     document.getElementById("questions").innerHTML = content;
 }
@@ -415,29 +656,31 @@ function previousQuestionPage()
     {
         currentQuestionPage--;
 
-        loadQuestions();
+        renderQuestions();
     }
 }
+
 
 function nextQuestionPage()
 {
     const totalPages = Math.ceil(
-        cProgrammingQuestions.length / questionsPerPage
+        currentQuestionArray.length / questionsPerPage
     );
 
     if(currentQuestionPage < totalPages)
     {
         currentQuestionPage++;
 
-        loadQuestions();
+        renderQuestions();
     }
 }
+
 
 function goToQuestionPage(page)
 {
     currentQuestionPage = page;
 
-    loadQuestions();
+    renderQuestions();
 }
 
 
