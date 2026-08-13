@@ -279,27 +279,123 @@ ${content}
 
 // End print current note
 
+// Practice Questions
 
-function loadQuestions() {
+function toggleSolution(button)
+{
+    const questionBox = button.closest(".question-box");
+    const solution = questionBox.querySelector(".solution-content");
+
+    if(solution.style.display === "none" ||
+       solution.style.display === "")
+    {
+        solution.style.display = "block";
+        button.innerText = "Hide";
+    }
+    else
+    {
+        solution.style.display = "none";
+        button.innerText = "View";
+    }
+}
+
+
+let currentQuestionPage = 1;
+
+const questionsPerPage = 5;
+
+
+function loadQuestions()
+{
+    const totalQuestions = cProgrammingQuestions.length;
+
+    const totalPages = Math.ceil(
+        totalQuestions / questionsPerPage
+    );
+
+    let startIndex =
+        (currentQuestionPage - 1) * questionsPerPage;
+
+    let endIndex =
+        startIndex + questionsPerPage;
+
+    let questions = cProgrammingQuestions.slice(
+        startIndex,
+        endIndex
+    );
+
     let content = "";
 
-    cProgrammingQuestions.forEach((item, index) => {
+    // ==============================
+    // PAGINATION
+    // ==============================
+
+    content += `
+        <div class="question-pagination">
+
+            <button
+                class="pagination-btn"
+                onclick="previousQuestionPage()"
+                ${currentQuestionPage === 1 ? "disabled" : ""}>
+                Previous
+            </button>
+    `;
+
+
+    for(let i = 1; i <= totalPages; i++)
+    {
+        content += `
+            <button
+                class="pagination-number
+                ${i === currentQuestionPage ? "active" : ""}"
+                onclick="goToQuestionPage(${i})">
+                ${i}
+            </button>
+        `;
+    }
+
+
+    content += `
+            <button
+                class="pagination-btn"
+                onclick="nextQuestionPage()"
+                ${currentQuestionPage === totalPages ? "disabled" : ""}>
+                Next
+            </button>
+
+        </div>
+    `;
+
+
+    // ==============================
+    // QUESTIONS
+    // ==============================
+
+    questions.forEach((item, index) =>
+    {
+        let questionNumber =
+            startIndex + index + 1;
 
         content += `
             <div class="question-box">
 
                 <div class="question-title">
-                    Question ${index + 1}
+                    Question ${questionNumber}
                 </div>
 
-                <div class="question-text">
-                    ${item.question}
-                </div>
+                <div class="question-row">
 
-                <button class="view-solution-btn"
-                    onclick="toggleSolution(this)">
-                    view
-                </button>
+                    <div class="question-text">
+                        ${item.question}
+                    </div>
+
+                    <button
+                        class="view-solution-btn"
+                        onclick="toggleSolution(this)">
+                        View
+                    </button>
+
+                </div>
 
                 <div class="solution-content">
                     ${item.solution}
@@ -309,23 +405,40 @@ function loadQuestions() {
         `;
     });
 
+
     document.getElementById("questions").innerHTML = content;
 }
 
-function toggleSolution(button) {
+function previousQuestionPage()
+{
+    if(currentQuestionPage > 1)
+    {
+        currentQuestionPage--;
 
-    const solution = button.nextElementSibling;
-
-    if (solution.style.display === "none" ||
-        solution.style.display === "") {
-
-        solution.style.display = "block";
-        button.innerText = "Solution";
-
-    } else {
-
-        solution.style.display = "none";
-        button.innerText = "view";
+        loadQuestions();
     }
 }
 
+function nextQuestionPage()
+{
+    const totalPages = Math.ceil(
+        cProgrammingQuestions.length / questionsPerPage
+    );
+
+    if(currentQuestionPage < totalPages)
+    {
+        currentQuestionPage++;
+
+        loadQuestions();
+    }
+}
+
+function goToQuestionPage(page)
+{
+    currentQuestionPage = page;
+
+    loadQuestions();
+}
+
+
+// End Practice Questions

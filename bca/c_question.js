@@ -167,5 +167,13 @@ const cProgrammingQuestions = [
     cQuestion2,
     cQuestion3,
     cQuestion4,
+    cQuestion1,
+    cQuestion2,
+    cQuestion3,
+    cQuestion4,
+    cQuestion1,
+    cQuestion2,
+    cQuestion3,
+    cQuestion4,
     cQuestion5
 ];

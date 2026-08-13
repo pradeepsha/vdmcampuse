@@ -537,37 +537,59 @@ pre {
 {
     margin-bottom: 20px;
     padding: 15px;
+
     border: 1px solid #ddd;
     border-radius: 8px;
+
+    background: #ffffff;
 }
 
 .question-title
 {
+    margin-bottom: 12px;
+
     font-weight: bold;
-    margin-bottom: 10px;
 }
 
+.question-row
+{
+    display: flex;
+
+    align-items: center;
+    justify-content: space-between;
+
+    gap: 20px;
+}
+
+.question-text
+{
+    flex: 1;
+
+    line-height: 1.5;
+}
 
 .solution-content
 {
     display: none;
+
     margin-top: 15px;
 }
 
 .view-solution-btn
 {
     display: inline-flex;
-    align-items: center;
-    gap: 8px;
 
-    padding: 3px 14px;
-	margin-top: -25px;
-	float: right;
+    align-items: center;
+    justify-content: center;
+
+    flex-shrink: 0;
+
+    padding: 6px 14px;
 
     background: #ffffff;
     color: #2563eb;
 
-    /* border: 1px solid #2563eb; */
+    border: 1px solid #2563eb;
     border-radius: 6px;
 
     font-family: inherit;
@@ -592,11 +614,122 @@ pre {
 .view-solution-btn:active
 {
     transform: translateY(0);
+
     box-shadow: none;
 }
 
 .view-solution-btn:focus
 {
     outline: none;
+
     box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.15);
+}
+
+.question-pagination
+{
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    gap: 6px;
+
+    margin-bottom: 20px;
+
+    padding: 10px;
+
+    border-bottom: 1px solid #e5e7eb;
+}
+.pagination-btn
+{
+    padding: 6px 12px;
+
+    background: #ffffff;
+    color: #2563eb;
+
+    border: 1px solid #dbe3f0;
+    border-radius: 5px;
+
+    font-family: inherit;
+    font-size: 13px;
+    font-weight: 600;
+
+    cursor: pointer;
+
+    transition: all 0.2s ease;
+}
+
+.pagination-btn:hover:not(:disabled)
+{
+    background: #2563eb;
+    color: #ffffff;
+
+    border-color: #2563eb;
+}
+
+.pagination-btn:disabled
+{
+    opacity: 0.45;
+
+    cursor: not-allowed;
+}
+
+.pagination-number
+{
+    width: 32px;
+    height: 32px;
+
+    display: inline-flex;
+
+    align-items: center;
+    justify-content: center;
+
+    padding: 0;
+
+    background: #ffffff;
+    color: #374151;
+
+    border: 1px solid #dbe3f0;
+    border-radius: 5px;
+
+    font-family: inherit;
+    font-size: 13px;
+    font-weight: 600;
+
+    cursor: pointer;
+
+    transition: all 0.2s ease;
+}
+
+.pagination-number:hover
+{
+    background: #eff6ff;
+
+    color: #2563eb;
+
+    border-color: #2563eb;
+}
+
+.pagination-number.active
+{
+    background: #2563eb;
+
+    color: #ffffff;
+
+    border-color: #2563eb;
+}
+
+/* Mobile */
+@media (max-width: 600px)
+{
+    .question-row
+    {
+        align-items: flex-start;
+        flex-direction: column;
+    }
+
+    .view-solution-btn
+    {
+        width: 100%;
+    }
 }
