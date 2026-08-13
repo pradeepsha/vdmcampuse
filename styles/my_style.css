@@ -450,6 +450,7 @@ pre {
 			/* height: 100vh; */
 			height: auto;
 			margin-top: 0px;
+			padding: 5px;
 		}
 
 		.mobile_menu_btn {
