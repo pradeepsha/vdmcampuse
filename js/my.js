@@ -1,58 +1,58 @@
 
 
 function openHambergurMenu() {
-	document.getElementById("m-drop-down").classList.toggle("show");
+    document.getElementById("m-drop-down").classList.toggle("show");
 }
 
 const dropdown = document.querySelector(".mobile_dropdown");
 const dropbtn = document.querySelector(".mobile_dropbtn");
 
 dropbtn.addEventListener("click", function () {
-	dropdown.classList.toggle("active");
+    dropdown.classList.toggle("active");
 });
 
 
-        function loadNote(title, text, event) {
+function loadNote(title, text, event) {
 
-            document.getElementById("notes_title").innerHTML = title;
-            document.getElementById("notes_text").innerHTML = text;
+    document.getElementById("notes_title").innerHTML = title;
+    document.getElementById("notes_text").innerHTML = text;
 
-            let lectures = document.querySelectorAll(".lecture");
+    let lectures = document.querySelectorAll(".lecture");
 
-            lectures.forEach(l => l.classList.remove("active"));
+    lectures.forEach(l => l.classList.remove("active"));
 
 
-            // Remove active from all sub lectures
-            document.querySelectorAll(".sub_lecture").forEach(item => {
-                item.classList.remove("active");
-            });
+    // Remove active from all sub lectures
+    document.querySelectorAll(".sub_lecture").forEach(item => {
+        item.classList.remove("active");
+    });
 
-            // Add active to clicked sub lecture
-            event.currentTarget.classList.add("active");
+    // Add active to clicked sub lecture
+    event.currentTarget.classList.add("active");
 
-            // Scroll content area to top after loading
-            document.getElementById("mainContent").scrollTo({
-                top: 0,
-                behavior: "smooth"
-            });
+    // Scroll content area to top after loading
+    document.getElementById("mainContent").scrollTo({
+        top: 0,
+        behavior: "smooth"
+    });
 
-            closeSidebar();
-        }
+    closeSidebar();
+}
 
 
 function toggleUnit(element) {
-	let current = element.nextElementSibling;
+    let current = element.nextElementSibling;
 
-	document.querySelectorAll('.lecture_list').forEach(list => {
-		if (list !== current) {
-			list.style.display = 'none';
-		}
-	});
+    document.querySelectorAll('.lecture_list').forEach(list => {
+        if (list !== current) {
+            list.style.display = 'none';
+        }
+    });
 
-	current.style.display =
-		window.getComputedStyle(current).display === 'none'
-			? 'block'
-			: 'none';
+    current.style.display =
+        window.getComputedStyle(current).display === 'none'
+            ? 'block'
+            : 'none';
 }
 
 // function toggleSubUnit(element) {
@@ -111,7 +111,7 @@ async function getAllCssStyles() {
         if (el.tagName.toLowerCase() === 'style') {
             return el.textContent;
         }
-        
+
         // If it's a <link> tag, fetch the external CSS file asynchronously
         if (el.tagName.toLowerCase() === 'link') {
             try {
@@ -158,8 +158,8 @@ async function printCurrentNote() {
     // ).map(el => el.outerHTML).join("\n");
 
     // How to use it:
-const styles = await getAllCssStyles();
-console.log(styles);
+    const styles = await getAllCssStyles();
+    console.log(styles);
 
     // Remove old iframe if exists
     const oldFrame = document.getElementById("printFrame");
@@ -281,19 +281,16 @@ ${content}
 
 // Practice Questions
 
-function toggleSolution(button)
-{
+function toggleSolution(button) {
     const questionBox = button.closest(".question-box");
     const solution = questionBox.querySelector(".solution-content");
 
-    if(solution.style.display === "none" ||
-       solution.style.display === "")
-    {
+    if (solution.style.display === "none" ||
+        solution.style.display === "") {
         solution.style.display = "block";
         button.innerText = "Hide";
     }
-    else
-    {
+    else {
         solution.style.display = "none";
         button.innerText = "View";
     }
@@ -391,7 +388,7 @@ const questionsPerPage = 10;
 //                 <div class="mcq-options">
 
 //                     ${item.options.map((option, optionIndex) => `
-                        
+
 //                         <div class="mcq-option">
 
 //                             <span class="mcq-option-label">
@@ -487,8 +484,7 @@ let currentQuestionArray = [];
 let currentQuestionPage = 1;
 
 
-function loadQuestions(questionArray)
-{
+function loadQuestions(questionArray) {
     // Store the selected question array
     currentQuestionArray = questionArray;
 
@@ -499,8 +495,7 @@ function loadQuestions(questionArray)
 }
 
 
-function renderQuestions()
-{
+function renderQuestions() {
     const totalQuestions = currentQuestionArray.length;
 
     const totalPages = Math.ceil(
@@ -537,8 +532,7 @@ function renderQuestions()
     `;
 
 
-    for(let i = 1; i <= totalPages; i++)
-    {
+    for (let i = 1; i <= totalPages; i++) {
         content += `
             <button
                 class="pagination-number
@@ -566,8 +560,7 @@ function renderQuestions()
     // QUESTIONS
     // ==============================
 
-    questions.forEach((item, index) =>
-    {
+    questions.forEach((item, index) => {
         let questionNumber =
             startIndex + index + 1;
 
@@ -581,8 +574,7 @@ function renderQuestions()
         let optionsHTML = "";
 
 
-        if(item.options)
-        {
+        if (item.options) {
             optionsHTML = `
                 <div class="mcq-options">
 
@@ -606,6 +598,48 @@ function renderQuestions()
             `;
         }
 
+        // ==============================
+        // inputs
+        // ==============================
+
+        let inputHTML = "";
+
+        if (item.input) {
+            inputHTML = `
+        <div class="question-input">
+
+            <div class="input-title">
+                <span>Input</span>
+            </div>
+
+            <pre>${item.input}</pre>
+
+        </div>
+    `;
+        }
+
+
+        // ==============================
+        // OUTPUT
+        // ==============================
+
+        let outputHTML = "";
+
+
+        if (item.output) {
+            outputHTML = `
+                <div class="question-output">
+
+                    <div class="output-title">
+                        Expected Output
+                    </div>
+
+                    <pre>${item.output}</pre>
+
+                </div>
+            `;
+        }
+
 
         // ==============================
         // QUESTION HTML
@@ -617,6 +651,7 @@ function renderQuestions()
                 <div class="question-title">
                     Question ${questionNumber}
                 </div>
+
 
                 <div class="question-row">
 
@@ -632,10 +667,17 @@ function renderQuestions()
 
                 </div>
 
+
                 ${optionsHTML}
 
+ ${inputHTML}
+                ${outputHTML}
+
+
                 <div class="solution-content">
-                    ${item.solution}
+
+                    ${item.solution || ""}
+
                 </div>
 
             </div>
@@ -650,10 +692,8 @@ function renderQuestions()
     document.getElementById("questions").innerHTML = content;
 }
 
-function previousQuestionPage()
-{
-    if(currentQuestionPage > 1)
-    {
+function previousQuestionPage() {
+    if (currentQuestionPage > 1) {
         currentQuestionPage--;
 
         renderQuestions();
@@ -661,14 +701,12 @@ function previousQuestionPage()
 }
 
 
-function nextQuestionPage()
-{
+function nextQuestionPage() {
     const totalPages = Math.ceil(
         currentQuestionArray.length / questionsPerPage
     );
 
-    if(currentQuestionPage < totalPages)
-    {
+    if (currentQuestionPage < totalPages) {
         currentQuestionPage++;
 
         renderQuestions();
@@ -676,8 +714,7 @@ function nextQuestionPage()
 }
 
 
-function goToQuestionPage(page)
-{
+function goToQuestionPage(page) {
     currentQuestionPage = page;
 
     renderQuestions();
