@@ -720,6 +720,39 @@ pre {
     border-color: #2563eb;
 }
 
+@media (max-width: 600px)
+{
+    .question-pagination
+    {
+        flex-wrap: wrap;
+
+        justify-content: center;
+
+        gap: 5px;
+
+        padding: 8px 5px;
+    }
+
+    .pagination-number
+    {
+        flex-shrink: 0;
+
+        width: 30px;
+        height: 30px;
+
+        font-size: 12px;
+    }
+
+    .pagination-btn
+    {
+        flex-shrink: 0;
+
+        padding: 6px 9px;
+
+        font-size: 12px;
+    }
+}
+
 /* Mobile */
 @media (max-width: 600px)
 {
