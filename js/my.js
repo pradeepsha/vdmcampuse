@@ -496,6 +496,7 @@ function loadQuestions(questionArray) {
 
 
 function renderQuestions() {
+
     const totalQuestions = currentQuestionArray.length;
 
     const totalPages = Math.ceil(
@@ -533,10 +534,10 @@ function renderQuestions() {
 
 
     for (let i = 1; i <= totalPages; i++) {
+
         content += `
             <button
-                class="pagination-number
-                ${i === currentQuestionPage ? "active" : ""}"
+                class="pagination-number ${i === currentQuestionPage ? "active" : ""}"
                 onclick="goToQuestionPage(${i})">
                 ${i}
             </button>
@@ -561,8 +562,22 @@ function renderQuestions() {
     // ==============================
 
     questions.forEach((item, index) => {
+
         let questionNumber =
             startIndex + index + 1;
+
+
+        // ==============================
+        // PROGRAM
+        // ==============================
+
+        let programHTML = "";
+
+        if (item.program) {
+
+            programHTML = item.program;
+
+        }
 
 
         // ==============================
@@ -575,6 +590,7 @@ function renderQuestions() {
 
 
         if (item.options) {
+
             optionsHTML = `
                 <div class="mcq-options">
 
@@ -598,24 +614,26 @@ function renderQuestions() {
             `;
         }
 
+
         // ==============================
-        // inputs
+        // INPUT
         // ==============================
 
         let inputHTML = "";
 
         if (item.input) {
+
             inputHTML = `
-        <div class="question-input">
+                <div class="question-input">
 
-            <div class="input-title">
-                <span>Input</span>
-            </div>
+                    <div class="input-title">
+                        <span>Input</span>
+                    </div>
 
-            <pre>${item.input}</pre>
+                    <pre>${item.input}</pre>
 
-        </div>
-    `;
+                </div>
+            `;
         }
 
 
@@ -625,8 +643,8 @@ function renderQuestions() {
 
         let outputHTML = "";
 
-
         if (item.output) {
+
             outputHTML = `
                 <div class="question-output">
 
@@ -668,11 +686,27 @@ function renderQuestions() {
                 </div>
 
 
+                <!-- PROGRAM -->
+
+                ${programHTML}
+
+
+                <!-- OPTIONS -->
+
                 ${optionsHTML}
 
- ${inputHTML}
+
+                <!-- INPUT -->
+
+                ${inputHTML}
+
+
+                <!-- OUTPUT -->
+
                 ${outputHTML}
 
+
+                <!-- SOLUTION -->
 
                 <div class="solution-content">
 
@@ -722,3 +756,18 @@ function goToQuestionPage(page) {
 
 
 // End Practice Questions
+
+const practiceQuestions = `
+
+<div class="notes_title">
+    Practice Questions
+
+</div>
+
+<div class="notes_text">
+
+    <div id="questions"></div>
+
+</div>
+
+`;

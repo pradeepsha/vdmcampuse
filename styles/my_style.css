@@ -942,3 +942,98 @@ pre {
     overflow-x: auto;
 	border-radius: 5px;
 }
+
+
+
+    /* =================================
+   PROGRAM CODE BOX
+================================= */
+
+.program-code-box {
+    width: 100%;
+    margin: 16px 0;
+    background: #f8fafc;
+    box-sizing: border-box;
+}
+
+
+/* =================================
+   PROGRAM CODE
+================================= */
+
+.program-code-box-pre {
+    margin: 0;
+
+    overflow-x: auto;
+
+    background: var(--white);
+
+    font-family:
+        "Consolas",
+        "Courier New",
+        monospace;
+
+    font-size: 13px;
+
+    color: #334155;
+
+    white-space: pre;
+}
+
+
+/* =================================
+   CODE
+================================= */
+
+.program-code-box-code {
+    font-family: inherit;
+    font-size: inherit;
+    color: inherit;
+}
+
+
+/* =================================
+   KEYWORDS
+================================= */
+
+.program-code-box-keyword {
+    color: #7c3aed;
+    font-weight: 600;
+}
+
+
+/* =================================
+   NUMBERS
+================================= */
+
+.program-code-box-number {
+    color: #2563eb;
+}
+
+
+/* =================================
+   STRINGS
+================================= */
+
+.program-code-box-string {
+    color: #059669;
+}
+
+
+/* =================================
+   MOBILE
+================================= */
+
+@media (max-width: 600px) {
+
+    .program-code-box {
+        margin: 12px 0;
+    }
+
+    .program-code-box-pre {
+        padding: 12px;
+        font-size: 13px;
+        line-height: 1.6;
+    }
+
+}

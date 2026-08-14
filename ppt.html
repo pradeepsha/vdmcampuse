@@ -1,138 +1,113 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Responsive Hamburger Menu</title>
+<div class="program-code-box">
 
-<link rel="stylesheet"
-href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <pre class="program-code-box-pre"><code class="program-code-box-code"><span class="program-code-box-keyword">#include</span> &lt;stdio.h&gt;
 
-<style>
-
-*{
-    margin:0;
-    padding:0;
-    box-sizing:border-box;
-    font-family:Arial, sans-serif;
-}
-
-/* Navigation Bar */
-.topnav{
-    background:#222;
-    display:flex;
-    justify-content:space-between;
-    align-items:center;
-    padding:0 20px;
-    position:relative;
-}
-
-/* Logo */
-.logo{
-    color:white;
-    font-size:24px;
-    font-weight:bold;
-    padding:15px 0;
-    text-decoration:none;
-}
-
-/* Menu Links */
-#myLinks{
-    display:flex;
-}
-
-#myLinks a{
-    color:white;
-    text-decoration:none;
-    padding:20px 15px;
-    transition:0.3s;
-}
-
-#myLinks a:hover{
-    background:white;
-    color:black;
-}
-
-/* Hamburger Icon */
-.icon{
-    display:none;
-    color:white;
-    font-size:26px;
-    cursor:pointer;
-}
-
-/* Responsive Design */
-@media(max-width:768px){
-
-    .topnav{
-        flex-direction:column;
-        align-items:flex-start;
+<span class="program-code-box-keyword">int</span> main()
+{
+    <span class="program-code-box-keyword">for</span>(<span class="program-code-box-keyword">int</span> i = <span class="program-code-box-number">1</span>; i &lt;= <span class="program-code-box-number">5</span>; i++)
+    {
+        printf(<span class="program-code-box-string">"%d "</span>, i);
     }
 
-    #myLinks{
-        display:none;
-        flex-direction:column;
-        width:100%;
-    }
-
-    #myLinks a{
-        width:100%;
-        border-top:1px solid #444;
-    }
-
-    .icon{
-        display:block;
-        position:absolute;
-        right:20px;
-        top:18px;
-    }
-
-    #myLinks.show{
-        display:flex;
-    }
-}
-
-</style>
-</head>
-
-<body
-
-
-
-
-
-
-
-
-
-
-
-
-<div class="topnav">
-
-    <!-- Logo -->
-    <a href="#" class="logo">Logo</a>
-
-    <!-- Menu Links -->
-    <div id="myLinks">
-        <a href="#">Home</a>
-        <a href="#">About</a>
-        <a href="#">Services</a>
-        <a href="#">Contact</a>
-    </div>
-
-    <!-- Hamburger Icon -->
-    <i class="fa fa-bars icon" onclick="myFunction()"></i>
+    <span class="program-code-box-keyword">return</span> <span class="program-code-box-number">0</span>;
+}</code></pre>
 
 </div>
 
-<script>
+<style>
 
-function myFunction(){
-    document.getElementById("myLinks").classList.toggle("show");
+    /* =================================
+   PROGRAM CODE BOX
+================================= */
+
+.program-code-box {
+    width: 100%;
+    margin: 16px 0;
+    background: #f8fafc;
+    box-sizing: border-box;
 }
 
-</script>
 
-</body>
-</html>
+/* =================================
+   PROGRAM CODE
+================================= */
+
+.program-code-box-pre {
+    margin: 0;
+    padding: 16px;
+
+    overflow-x: auto;
+
+    background: #f8fafc;
+
+    font-family:
+        "Consolas",
+        "Courier New",
+        monospace;
+
+    font-size: 14px;
+    line-height: 1.7;
+
+    color: #334155;
+
+    white-space: pre;
+}
+
+
+/* =================================
+   CODE
+================================= */
+
+.program-code-box-code {
+    font-family: inherit;
+    font-size: inherit;
+    color: inherit;
+}
+
+
+/* =================================
+   KEYWORDS
+================================= */
+
+.program-code-box-keyword {
+    color: #7c3aed;
+    font-weight: 600;
+}
+
+
+/* =================================
+   NUMBERS
+================================= */
+
+.program-code-box-number {
+    color: #2563eb;
+}
+
+
+/* =================================
+   STRINGS
+================================= */
+
+.program-code-box-string {
+    color: #059669;
+}
+
+
+/* =================================
+   MOBILE
+================================= */
+
+@media (max-width: 600px) {
+
+    .program-code-box {
+        margin: 12px 0;
+    }
+
+    .program-code-box-pre {
+        padding: 12px;
+        font-size: 13px;
+        line-height: 1.6;
+    }
+
+}
+</style>

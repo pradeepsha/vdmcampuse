@@ -322,6 +322,24 @@ The <span class="keyword">for</span> loop is commonly used when the number of it
 const cUnit_3Question11 = {
     question: "What will be the output of the following C program?",
 
+    program: `
+<div class="program-code-box">
+
+    <pre class="program-code-box-pre"><code class="program-code-box-code"><span class="program-code-box-keyword">#include</span> &lt;stdio.h&gt;
+
+<span class="program-code-box-keyword">int</span> main()
+{
+    <span class="program-code-box-keyword">for</span>(<span class="program-code-box-keyword">int</span> i = <span class="program-code-box-number">1</span>; i &lt;= <span class="program-code-box-number">5</span>; i++)
+    {
+        printf(<span class="program-code-box-string">"%d "</span>, i);
+    }
+
+    <span class="program-code-box-keyword">return</span> <span class="program-code-box-number">0</span>;
+}</code></pre>
+
+</div>
+`,
+
     options: [
         "0 1 2 3 4",
         "1 2 3 4 5",
@@ -338,23 +356,12 @@ const cUnit_3Question11 = {
         <span>Answer</span>
     </div>
 
-    <pre><code><span class="keyword">#include</span> &lt;stdio.h&gt;
-
-<span class="keyword">int</span> main()
-{
-    <span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">1</span>; i &lt;= <span class="number">5</span>; i++)
-    {
-        printf(<span class="string">"%d "</span>, i);
-    }
-
-    <span class="keyword">return</span> <span class="number">0</span>;
-}
-
-<span class="keyword">Output:</span>
+    <pre><code><span class="keyword">Output:</span>
 <span class="string">1 2 3 4 5</span>
 
 <span class="keyword">Explanation:</span>
-The loop starts from 1 and continues until i becomes 5.</span></code></pre>
+The loop starts from 1 and continues until i becomes 5.
+Therefore, the values printed are 1, 2, 3, 4, and 5.</code></pre>
 
 </div>
 `
@@ -363,6 +370,24 @@ The loop starts from 1 and continues until i becomes 5.</span></code></pre>
 
 const cUnit_3Question12 = {
     question: "What will be the output of the following C program?",
+
+    program: `
+<div class="program-code-box">
+
+    <pre class="program-code-box-pre"><code class="program-code-box-code"><span class="program-code-box-keyword">#include</span> &lt;stdio.h&gt;
+
+<span class="program-code-box-keyword">int</span> main()
+{
+    <span class="program-code-box-keyword">for</span>(<span class="program-code-box-keyword">int</span> i = <span class="program-code-box-number">5</span>; i &gt;= <span class="program-code-box-number">1</span>; i--)
+    {
+        printf(<span class="program-code-box-string">"%d "</span>, i);
+    }
+
+    <span class="program-code-box-keyword">return</span> <span class="program-code-box-number">0</span>;
+}</code></pre>
+
+</div>
+`,
 
     options: [
         "1 2 3 4 5",
@@ -380,19 +405,7 @@ const cUnit_3Question12 = {
         <span>Answer</span>
     </div>
 
-    <pre><code><span class="keyword">#include</span> &lt;stdio.h&gt;
-
-<span class="keyword">int</span> main()
-{
-    <span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">5</span>; i &gt;= <span class="number">1</span>; i--)
-    {
-        printf(<span class="string">"%d "</span>, i);
-    }
-
-    <span class="keyword">return</span> <span class="number">0</span>;
-}
-
-<span class="keyword">Output:</span>
+    <pre><code><span class="keyword">Output:</span>
 <span class="string">5 4 3 2 1</span>
 
 <span class="keyword">Explanation:</span>
@@ -405,6 +418,24 @@ The loop starts at 5 and decreases i by 1 using i--.</code></pre>
 
 const cUnit_3Question13 = {
     question: "What will be the output of the following C program?",
+
+    program: `
+<div class="program-code-box">
+
+    <pre class="program-code-box-pre"><code class="program-code-box-code"><span class="program-code-box-keyword">#include</span> &lt;stdio.h&gt;
+
+<span class="program-code-box-keyword">int</span> main()
+{
+    <span class="program-code-box-keyword">for</span>(<span class="program-code-box-keyword">int</span> i = <span class="program-code-box-number">2</span>; i &lt;= <span class="program-code-box-number">10</span>; i += <span class="program-code-box-number">2</span>)
+    {
+        printf(<span class="program-code-box-string">"%d "</span>, i);
+    }
+
+    <span class="program-code-box-keyword">return</span> <span class="program-code-box-number">0</span>;
+}</code></pre>
+
+</div>
+`,
 
     options: [
         "1 2 3 4 5",
@@ -422,19 +453,7 @@ const cUnit_3Question13 = {
         <span>Answer</span>
     </div>
 
-    <pre><code><span class="keyword">#include</span> &lt;stdio.h&gt;
-
-<span class="keyword">int</span> main()
-{
-    <span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">2</span>; i &lt;= <span class="number">10</span>; i += <span class="number">2</span>)
-    {
-        printf(<span class="string">"%d "</span>, i);
-    }
-
-    <span class="keyword">return</span> <span class="number">0</span>;
-}
-
-<span class="keyword">Output:</span>
+    <pre><code><span class="keyword">Output:</span>
 <span class="string">2 4 6 8 10</span>
 
 <span class="keyword">Explanation:</span>
@@ -447,6 +466,24 @@ The value of i increases by 2 after every iteration.</code></pre>
 
 const cUnit_3Question14 = {
     question: "What will be the output of the following C program?",
+
+    program: `
+<div class="program-code-box">
+
+    <pre class="program-code-box-pre"><code class="program-code-box-code"><span class="program-code-box-keyword">#include</span> &lt;stdio.h&gt;
+
+<span class="program-code-box-keyword">int</span> main()
+{
+    <span class="program-code-box-keyword">for</span>(<span class="program-code-box-keyword">int</span> i = <span class="program-code-box-number">1</span>; i &lt;= <span class="program-code-box-number">5</span>; i++)
+    {
+        printf(<span class="program-code-box-string">"%d "</span>, i * i);
+    }
+
+    <span class="program-code-box-keyword">return</span> <span class="program-code-box-number">0</span>;
+}</code></pre>
+
+</div>
+`,
 
     options: [
         "1 2 3 4 5",
@@ -464,19 +501,7 @@ const cUnit_3Question14 = {
         <span>Answer</span>
     </div>
 
-    <pre><code><span class="keyword">#include</span> &lt;stdio.h&gt;
-
-<span class="keyword">int</span> main()
-{
-    <span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">1</span>; i &lt;= <span class="number">5</span>; i++)
-    {
-        printf(<span class="string">"%d "</span>, i * i);
-    }
-
-    <span class="keyword">return</span> <span class="number">0</span>;
-}
-
-<span class="keyword">Output:</span>
+    <pre><code><span class="keyword">Output:</span>
 <span class="string">1 4 9 16 25</span>
 
 <span class="keyword">Explanation:</span>
@@ -489,6 +514,28 @@ The expression i * i calculates the square of each value of i.</code></pre>
 
 const cUnit_3Question15 = {
     question: "What will be the output of the following C program?",
+
+    program: `
+<div class="program-code-box">
+
+    <pre class="program-code-box-pre"><code class="program-code-box-code"><span class="program-code-box-keyword">#include</span> &lt;stdio.h&gt;
+
+<span class="program-code-box-keyword">int</span> main()
+{
+    <span class="program-code-box-keyword">int</span> sum = <span class="program-code-box-number">0</span>;
+
+    <span class="program-code-box-keyword">for</span>(<span class="program-code-box-keyword">int</span> i = <span class="program-code-box-number">1</span>; i &lt;= <span class="program-code-box-number">5</span>; i++)
+    {
+        sum = sum + i;
+    }
+
+    printf(<span class="program-code-box-string">"%d"</span>, sum);
+
+    <span class="program-code-box-keyword">return</span> <span class="program-code-box-number">0</span>;
+}</code></pre>
+
+</div>
+`,
 
     options: [
         "5",
@@ -506,23 +553,7 @@ const cUnit_3Question15 = {
         <span>Answer</span>
     </div>
 
-    <pre><code><span class="keyword">#include</span> &lt;stdio.h&gt;
-
-<span class="keyword">int</span> main()
-{
-    <span class="keyword">int</span> sum = <span class="number">0</span>;
-
-    <span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">1</span>; i &lt;= <span class="number">5</span>; i++)
-    {
-        sum = sum + i;
-    }
-
-    printf(<span class="string">"%d"</span>, sum);
-
-    <span class="keyword">return</span> <span class="number">0</span>;
-}
-
-<span class="keyword">Output:</span>
+    <pre><code><span class="keyword">Output:</span>
 <span class="string">15</span>
 
 <span class="keyword">Explanation:</span>
@@ -537,6 +568,27 @@ The loop calculates:
 
 const cUnit_3Question16 = {
     question: "What will be the output of the following C program?",
+
+    program: `
+<div class="program-code-box">
+
+    <pre class="program-code-box-pre"><code class="program-code-box-code"><span class="program-code-box-keyword">#include</span> &lt;stdio.h&gt;
+
+<span class="program-code-box-keyword">int</span> main()
+{
+    <span class="program-code-box-keyword">for</span>(<span class="program-code-box-keyword">int</span> i = <span class="program-code-box-number">1</span>; i &lt;= <span class="program-code-box-number">5</span>; i++)
+    {
+        <span class="program-code-box-keyword">if</span>(i == <span class="program-code-box-number">3</span>)
+            <span class="program-code-box-keyword">continue</span>;
+
+        printf(<span class="program-code-box-string">"%d "</span>, i);
+    }
+
+    <span class="program-code-box-keyword">return</span> <span class="program-code-box-number">0</span>;
+}</code></pre>
+
+</div>
+`,
 
     options: [
         "1 2 3 4 5",
@@ -554,26 +606,11 @@ const cUnit_3Question16 = {
         <span>Answer</span>
     </div>
 
-    <pre><code><span class="keyword">#include</span> &lt;stdio.h&gt;
-
-<span class="keyword">int</span> main()
-{
-    <span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">1</span>; i &lt;= <span class="number">5</span>; i++)
-    {
-        <span class="keyword">if</span>(i == <span class="number">3</span>)
-            <span class="keyword">continue</span>;
-
-        printf(<span class="string">"%d "</span>, i);
-    }
-
-    <span class="keyword">return</span> <span class="number">0</span>;
-}
-
-<span class="keyword">Output:</span>
+    <pre><code><span class="keyword">Output:</span>
 <span class="string">1 2 4 5</span>
 
 <span class="keyword">Explanation:</span>
-When i becomes 3, continue skips that iteration.</span></code></pre>
+When i becomes 3, continue skips that iteration.</code></pre>
 
 </div>
 `
@@ -582,6 +619,27 @@ When i becomes 3, continue skips that iteration.</span></code></pre>
 
 const cUnit_3Question17 = {
     question: "What will be the output of the following C program?",
+
+    program: `
+<div class="program-code-box">
+
+    <pre class="program-code-box-pre"><code class="program-code-box-code"><span class="program-code-box-keyword">#include</span> &lt;stdio.h&gt;
+
+<span class="program-code-box-keyword">int</span> main()
+{
+    <span class="program-code-box-keyword">for</span>(<span class="program-code-box-keyword">int</span> i = <span class="program-code-box-number">1</span>; i &lt;= <span class="program-code-box-number">5</span>; i++)
+    {
+        <span class="program-code-box-keyword">if</span>(i == <span class="program-code-box-number">3</span>)
+            <span class="program-code-box-keyword">break</span>;
+
+        printf(<span class="program-code-box-string">"%d "</span>, i);
+    }
+
+    <span class="program-code-box-keyword">return</span> <span class="program-code-box-number">0</span>;
+}</code></pre>
+
+</div>
+`,
 
     options: [
         "1 2",
@@ -599,22 +657,7 @@ const cUnit_3Question17 = {
         <span>Answer</span>
     </div>
 
-    <pre><code><span class="keyword">#include</span> &lt;stdio.h&gt;
-
-<span class="keyword">int</span> main()
-{
-    <span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">1</span>; i &lt;= <span class="number">5</span>; i++)
-    {
-        <span class="keyword">if</span>(i == <span class="number">3</span>)
-            <span class="keyword">break</span>;
-
-        printf(<span class="string">"%d "</span>, i);
-    }
-
-    <span class="keyword">return</span> <span class="number">0</span>;
-}
-
-<span class="keyword">Output:</span>
+    <pre><code><span class="keyword">Output:</span>
 <span class="string">1 2</span>
 
 <span class="keyword">Explanation:</span>
@@ -627,6 +670,24 @@ When i becomes 3, break terminates the loop immediately.</code></pre>
 
 const cUnit_3Question18 = {
     question: "What will be the output of the following C program?",
+
+    program: `
+<div class="program-code-box">
+
+    <pre class="program-code-box-pre"><code class="program-code-box-code"><span class="program-code-box-keyword">#include</span> &lt;stdio.h&gt;
+
+<span class="program-code-box-keyword">int</span> main()
+{
+    <span class="program-code-box-keyword">for</span>(<span class="program-code-box-keyword">int</span> i = <span class="program-code-box-number">10</span>; i &gt;= <span class="program-code-box-number">2</span>; i -= <span class="program-code-box-number">2</span>)
+    {
+        printf(<span class="program-code-box-string">"%d "</span>, i);
+    }
+
+    <span class="program-code-box-keyword">return</span> <span class="program-code-box-number">0</span>;
+}</code></pre>
+
+</div>
+`,
 
     options: [
         "10 8 6 4 2",
@@ -644,19 +705,7 @@ const cUnit_3Question18 = {
         <span>Answer</span>
     </div>
 
-    <pre><code><span class="keyword">#include</span> &lt;stdio.h&gt;
-
-<span class="keyword">int</span> main()
-{
-    <span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">10</span>; i &gt;= <span class="number">2</span>; i -= <span class="number">2</span>)
-    {
-        printf(<span class="string">"%d "</span>, i);
-    }
-
-    <span class="keyword">return</span> <span class="number">0</span>;
-}
-
-<span class="keyword">Output:</span>
+    <pre><code><span class="keyword">Output:</span>
 <span class="string">10 8 6 4 2</span>
 
 <span class="keyword">Explanation:</span>
@@ -669,6 +718,27 @@ The loop starts at 10 and decreases by 2 in every iteration.</code></pre>
 
 const cUnit_3Question19 = {
     question: "What will be the output of the following C program?",
+
+    program: `
+<div class="program-code-box">
+
+    <pre class="program-code-box-pre"><code class="program-code-box-code"><span class="program-code-box-keyword">#include</span> &lt;stdio.h&gt;
+
+<span class="program-code-box-keyword">int</span> main()
+{
+    <span class="program-code-box-keyword">for</span>(<span class="program-code-box-keyword">int</span> i = <span class="program-code-box-number">1</span>; i &lt;= <span class="program-code-box-number">3</span>; i++)
+    {
+        <span class="program-code-box-keyword">for</span>(<span class="program-code-box-keyword">int</span> j = <span class="program-code-box-number">1</span>; j &lt;= <span class="program-code-box-number">2</span>; j++)
+        {
+            printf(<span class="program-code-box-string">"* "</span>);
+        }
+    }
+
+    <span class="program-code-box-keyword">return</span> <span class="program-code-box-number">0</span>;
+}</code></pre>
+
+</div>
+`,
 
     options: [
         "* * *",
@@ -686,22 +756,7 @@ const cUnit_3Question19 = {
         <span>Answer</span>
     </div>
 
-    <pre><code><span class="keyword">#include</span> &lt;stdio.h&gt;
-
-<span class="keyword">int</span> main()
-{
-    <span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">1</span>; i &lt;= <span class="number">3</span>; i++)
-    {
-        <span class="keyword">for</span>(<span class="keyword">int</span> j = <span class="number">1</span>; j &lt;= <span class="number">2</span>; j++)
-        {
-            printf(<span class="string">"* "</span>);
-        }
-    }
-
-    <span class="keyword">return</span> <span class="number">0</span>;
-}
-
-<span class="keyword">Output:</span>
+    <pre><code><span class="keyword">Output:</span>
 <span class="string">* * * * * *</span>
 
 <span class="keyword">Explanation:</span>
@@ -721,6 +776,24 @@ Total executions:
 const cUnit_3Question20 = {
     question: "What will be the output of the following C program?",
 
+    program: `
+<div class="program-code-box">
+
+    <pre class="program-code-box-pre"><code class="program-code-box-code"><span class="program-code-box-keyword">#include</span> &lt;stdio.h&gt;
+
+<span class="program-code-box-keyword">int</span> main()
+{
+    <span class="program-code-box-keyword">for</span>(<span class="program-code-box-keyword">int</span> i = <span class="program-code-box-number">1</span>; i &lt;= <span class="program-code-box-number">5</span>; i++)
+    {
+        printf(<span class="program-code-box-string">"%d "</span>, i * <span class="program-code-box-number">2</span>);
+    }
+
+    <span class="program-code-box-keyword">return</span> <span class="program-code-box-number">0</span>;
+}</code></pre>
+
+</div>
+`,
+
     options: [
         "1 2 3 4 5",
         "2 4 6 8 10",
@@ -737,19 +810,7 @@ const cUnit_3Question20 = {
         <span>Answer</span>
     </div>
 
-    <pre><code><span class="keyword">#include</span> &lt;stdio.h&gt;
-
-<span class="keyword">int</span> main()
-{
-    <span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">1</span>; i &lt;= <span class="number">5</span>; i++)
-    {
-        printf(<span class="string">"%d "</span>, i * <span class="number">2</span>);
-    }
-
-    <span class="keyword">return</span> <span class="number">0</span>;
-}
-
-<span class="keyword">Output:</span>
+    <pre><code><span class="keyword">Output:</span>
 <span class="string">2 4 6 8 10</span>
 
 <span class="keyword">Explanation:</span>
@@ -758,8 +819,6 @@ Each value of i is multiplied by 2.</code></pre>
 </div>
 `
 };
-
-
 // ======================================================
 // PROGRAM BASED QUESTIONS
 // ======================================================
@@ -1512,8 +1571,6 @@ const cUnit_3Question39 = {
         "for(initialization, condition, increment)",
         "for(increment; condition; initialization)"
     ],
-
-    answer: 0,
 
     solution: `
 <div class="code-box">
