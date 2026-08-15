@@ -120,7 +120,7 @@ const javascriptIntroductionQuestion5 = {
 
 
 const javascriptIntroductionQuestion6 = {
-    question: "Which language is used for Android programming according to the PPT?",
+    question: "Which language is used for Android programming?",
 
     options: [
         "Swift",
@@ -2303,6 +2303,815 @@ The initial value is 10, so the new value is 11.</code></pre>
 `
 };
 
+const javascriptEqualityQuestion81 = {
+    question: "What is the output of the following JavaScript code?<br><br><code>console.log(5 == \"5\");</code>",
+
+    options: [
+        "true",
+        "false",
+        "undefined",
+        "Error"
+    ],
+
+    solution: `
+<div class="code-box">
+
+    <div class="code-title">
+        <span>Answer</span>
+    </div>
+
+    <pre><code><span class="keyword">Correct Answer:</span> <span class="string">true</span>
+
+<span class="keyword">Explanation:</span>
+The <span class="operator">==</span> operator performs
+type conversion before comparison.
+
+<span class="number">5</span> == <span class="string">"5"</span>
+Both values become comparable as numbers.
+
+Therefore, the result is <span class="string">true</span>.</code></pre>
+
+</div>
+`
+};
+
+
+const javascriptEqualityQuestion82 = {
+    question: "What is the output of the following JavaScript code?<br><br><code>console.log(5 === \"5\");</code>",
+
+    options: [
+        "true",
+        "false",
+        "undefined",
+        "Error"
+    ],
+
+    solution: `
+<div class="code-box">
+
+    <div class="code-title">
+        <span>Answer</span>
+    </div>
+
+    <pre><code><span class="keyword">Correct Answer:</span> <span class="string">false</span>
+
+<span class="keyword">Explanation:</span>
+The <span class="operator">===</span> operator checks both
+value and data type.
+
+<span class="number">5</span> is a number, while <span class="string">"5"</span> is a string.
+
+Therefore, the result is <span class="string">false</span>.</code></pre>
+
+</div>
+`
+};
+
+
+const javascriptEqualityQuestion83 = {
+    question: "Which operator checks both value and data type in JavaScript?",
+
+    options: [
+        "=",
+        "==",
+        "===",
+        "!="
+    ],
+
+    solution: `
+<div class="code-box">
+
+    <div class="code-title">
+        <span>Answer</span>
+    </div>
+
+    <pre><code><span class="keyword">Correct Answer:</span> <span class="operator">===</span>
+
+<span class="keyword">Explanation:</span>
+The <span class="operator">===</span> operator is called
+the strict equality operator.
+
+It checks both:
+
+<span class="number">1.</span> Value
+<span class="number">2.</span> Data Type
+
+Example:
+
+<span class="number">5</span> === <span class="number">5</span>       → <span class="string">true</span>
+<span class="number">5</span> === <span class="string">"5"</span>     → <span class="string">false</span></code></pre>
+
+</div>
+`
+};
+
+
+const javascriptEqualityQuestion84 = {
+    question: "What is the output of the following JavaScript code?<br><br><code>console.log(0 == false);<br>console.log(0 === false);</code>",
+
+    options: [
+        "true, true",
+        "false, false",
+        "true, false",
+        "false, true"
+    ],
+
+    solution: `
+<div class="code-box">
+
+    <div class="code-title">
+        <span>Answer</span>
+    </div>
+
+    <pre><code><span class="keyword">Correct Answer:</span> <span class="string">true, false</span>
+
+<span class="keyword">Explanation:</span>
+The <span class="operator">==</span> operator performs type conversion.
+
+<span class="number">0</span> == <span class="boolean">false</span>  → <span class="string">true</span>
+
+The <span class="operator">===</span> operator checks the data type
+as well as the value.
+
+<span class="number">0</span> === <span class="boolean">false</span> → <span class="string">false</span>
+
+Therefore, the output is:
+
+<span class="string">true</span>
+<span class="string">false</span></code></pre>
+
+</div>
+`
+};
+
+
+const javascriptEqualityQuestion85 = {
+    question: "Which statement is correct about == and === in JavaScript?",
+
+    options: [
+        "== checks only data type",
+        "=== performs type conversion before comparison",
+        "== may perform type conversion, while === does not",
+        "Both operators always behave the same"
+    ],
+
+    solution: `
+<div class="code-box">
+
+    <div class="code-title">
+        <span>Answer</span>
+    </div>
+
+    <pre><code><span class="keyword">Correct Answer:</span>
+<span class="string">== may perform type conversion, while === does not</span>
+
+<span class="keyword">Explanation:</span>
+The <span class="operator">==</span> operator is called
+loose equality and may perform type conversion.
+
+The <span class="operator">===</span> operator is called
+strict equality and compares both value and type.
+
+Example:
+
+<span class="number">5</span> == <span class="string">"5"</span>   → <span class="string">true</span>
+<span class="number">5</span> === <span class="string">"5"</span>  → <span class="string">false</span></code></pre>
+
+</div>
+`
+};
+
+const javascriptLogicalQuestion86 = {
+    question: "What is the output of the following JavaScript code?<br><br><code>console.log(true &amp;&amp; false);</code>",
+
+    options: [
+        "true",
+        "false",
+        "undefined",
+        "Error"
+    ],
+
+    solution: `
+<div class="code-box">
+
+    <div class="code-title">
+        <span>Answer</span>
+    </div>
+
+    <pre><code><span class="keyword">Correct Answer:</span> <span class="boolean">false</span>
+
+<span class="keyword">Explanation:</span>
+The <span class="operator">&amp;&amp;</span> operator returns true only when
+both conditions are true.
+
+<span class="boolean">true</span> &amp;&amp; <span class="boolean">false</span> → <span class="boolean">false</span></code></pre>
+
+</div>
+`
+};
+
+
+const javascriptLogicalQuestion87 = {
+    question: "Which logical operator returns true when at least one condition is true?",
+
+    options: [
+        "&&",
+        "||",
+        "!",
+        "=="
+    ],
+
+    solution: `
+<div class="code-box">
+
+    <div class="code-title">
+        <span>Answer</span>
+    </div>
+
+    <pre><code><span class="keyword">Correct Answer:</span> <span class="operator">||</span>
+
+<span class="keyword">Explanation:</span>
+The logical OR operator <span class="operator">||</span>
+returns true when at least one condition is true.</code></pre>
+
+</div>
+`
+};
+
+
+const javascriptLogicalQuestion88 = {
+    question: "What is the output of the following JavaScript code?<br><br><code>console.log(true || false);</code>",
+
+    options: [
+        "true",
+        "false",
+        "undefined",
+        "null"
+    ],
+
+    solution: `
+<div class="code-box">
+
+    <div class="code-title">
+        <span>Answer</span>
+    </div>
+
+    <pre><code><span class="keyword">Correct Answer:</span> <span class="boolean">true</span>
+
+<span class="keyword">Explanation:</span>
+The <span class="operator">||</span> operator returns true if
+at least one operand is true.
+
+<span class="boolean">true</span> || <span class="boolean">false</span> → <span class="boolean">true</span></code></pre>
+
+</div>
+`
+};
+
+
+const javascriptLogicalQuestion89 = {
+    question: "What is the output of the following JavaScript code?<br><br><code>console.log(!true);</code>",
+
+    options: [
+        "true",
+        "false",
+        "undefined",
+        "Error"
+    ],
+
+    solution: `
+<div class="code-box">
+
+    <div class="code-title">
+        <span>Answer</span>
+    </div>
+
+    <pre><code><span class="keyword">Correct Answer:</span> <span class="boolean">false</span>
+
+<span class="keyword">Explanation:</span>
+The logical NOT operator <span class="operator">!</span>
+reverses the boolean value.
+
+<span class="operator">!</span><span class="boolean">true</span> → <span class="boolean">false</span></code></pre>
+
+</div>
+`
+};
+
+
+const javascriptLogicalQuestion90 = {
+    question: "What is the output of the following JavaScript code?<br><br><code>console.log(false &amp;&amp; true);</code>",
+
+    options: [
+        "true",
+        "false",
+        "null",
+        "undefined"
+    ],
+
+    solution: `
+<div class="code-box">
+
+    <div class="code-title">
+        <span>Answer</span>
+    </div>
+
+    <pre><code><span class="keyword">Correct Answer:</span> <span class="boolean">false</span>
+
+<span class="keyword">Explanation:</span>
+For logical AND <span class="operator">&amp;&amp;</span>, both operands
+must be true.
+
+<span class="boolean">false</span> &amp;&amp; <span class="boolean">true</span> → <span class="boolean">false</span></code></pre>
+
+</div>
+`
+};
+
+
+const javascriptLogicalQuestion91 = {
+    question: "What is the output of the following JavaScript code?<br><br><code>console.log(false || true);</code>",
+
+    options: [
+        "true",
+        "false",
+        "undefined",
+        "Error"
+    ],
+
+    solution: `
+<div class="code-box">
+
+    <div class="code-title">
+        <span>Answer</span>
+    </div>
+
+    <pre><code><span class="keyword">Correct Answer:</span> <span class="boolean">true</span>
+
+<span class="keyword">Explanation:</span>
+The OR operator <span class="operator">||</span> returns true
+when at least one operand is true.
+
+<span class="boolean">false</span> || <span class="boolean">true</span> → <span class="boolean">true</span></code></pre>
+
+</div>
+`
+};
+
+
+const javascriptLogicalQuestion92 = {
+    question: "Which logical operator is used to reverse a boolean value?",
+
+    options: [
+        "&&",
+        "||",
+        "!",
+        "!="
+    ],
+
+    solution: `
+<div class="code-box">
+
+    <div class="code-title">
+        <span>Answer</span>
+    </div>
+
+    <pre><code><span class="keyword">Correct Answer:</span> <span class="operator">!</span>
+
+<span class="keyword">Explanation:</span>
+The logical NOT operator <span class="operator">!</span>
+reverses the boolean value.
+
+<span class="boolean">!true</span>  → <span class="boolean">false</span>
+<span class="boolean">!false</span> → <span class="boolean">true</span></code></pre>
+
+</div>
+`
+};
+
+
+const javascriptLogicalQuestion93 = {
+    question: "What is the output of the following JavaScript code?<br><br><code>let age = 20;<br>console.log(age &gt;= 18 &amp;&amp; age &lt;= 60);</code>",
+
+    options: [
+        "true",
+        "false",
+        "20",
+        "Error"
+    ],
+
+    solution: `
+<div class="code-box">
+
+    <div class="code-title">
+        <span>Answer</span>
+    </div>
+
+    <pre><code><span class="keyword">Correct Answer:</span> <span class="boolean">true</span>
+
+<span class="keyword">Explanation:</span>
+Both conditions are true.
+
+<span class="number">20</span> &gt;= <span class="number">18</span> → <span class="boolean">true</span>
+<span class="number">20</span> &lt;= <span class="number">60</span> → <span class="boolean">true</span>
+
+<span class="boolean">true</span> &amp;&amp; <span class="boolean">true</span> → <span class="boolean">true</span></code></pre>
+
+</div>
+`
+};
+
+
+const javascriptLogicalQuestion94 = {
+    question: "What is the output of the following JavaScript code?<br><br><code>let age = 15;<br>console.log(age &gt;= 18 || age &lt;= 10);</code>",
+
+    options: [
+        "true",
+        "false",
+        "15",
+        "undefined"
+    ],
+
+    solution: `
+<div class="code-box">
+
+    <div class="code-title">
+        <span>Answer</span>
+    </div>
+
+    <pre><code><span class="keyword">Correct Answer:</span> <span class="boolean">false</span>
+
+<span class="keyword">Explanation:</span>
+Both conditions are false.
+
+<span class="number">15</span> &gt;= <span class="number">18</span> → <span class="boolean">false</span>
+<span class="number">15</span> &lt;= <span class="number">10</span> → <span class="boolean">false</span>
+
+<span class="boolean">false</span> || <span class="boolean">false</span> → <span class="boolean">false</span></code></pre>
+
+</div>
+`
+};
+
+
+const javascriptLogicalQuestion95 = {
+    question: "What is the output of the following JavaScript code?<br><br><code>console.log(!(10 &gt; 5));</code>",
+
+    options: [
+        "true",
+        "false",
+        "10",
+        "5"
+    ],
+
+    solution: `
+<div class="code-box">
+
+    <div class="code-title">
+        <span>Answer</span>
+    </div>
+
+    <pre><code><span class="keyword">Correct Answer:</span> <span class="boolean">false</span>
+
+<span class="keyword">Explanation:</span>
+First, <span class="number">10</span> &gt; <span class="number">5</span> is true.
+
+Then <span class="operator">!</span> reverses the result.
+
+<span class="operator">!</span><span class="boolean">true</span> → <span class="boolean">false</span></code></pre>
+
+</div>
+`
+};
+
+
+const javascriptLogicalQuestion96 = {
+    question: "Which of the following is a valid JavaScript logical expression?",
+
+    options: [
+        "age > 18 && age < 60",
+        "age > 18 AND age < 60",
+        "age > 18 &amp;&amp;&amp; age < 60",
+        "age > 18 OR age < 60"
+    ],
+
+    solution: `
+<div class="code-box">
+
+    <div class="code-title">
+        <span>Answer</span>
+    </div>
+
+    <pre><code><span class="keyword">Correct Answer:</span>
+<span class="operator">age &gt; 18 &amp;&amp; age &lt; 60</span>
+
+<span class="keyword">Explanation:</span>
+JavaScript uses <span class="operator">&amp;&amp;</span> for logical AND,
+<span class="operator">||</span> for logical OR, and
+<span class="operator">!</span> for logical NOT.</code></pre>
+
+</div>
+`
+};
+
+
+const javascriptLogicalQuestion97 = {
+    question: "What is the output of the following JavaScript code?<br><br><code>let a = 10;<br>let b = 20;<br>console.log(a &lt; b &amp;&amp; b &gt; 15);</code>",
+
+    options: [
+        "true",
+        "false",
+        "10",
+        "20"
+    ],
+
+    solution: `
+<div class="code-box">
+
+    <div class="code-title">
+        <span>Answer</span>
+    </div>
+
+    <pre><code><span class="keyword">Correct Answer:</span> <span class="boolean">true</span>
+
+<span class="keyword">Explanation:</span>
+Both conditions are true.
+
+<span class="number">10</span> &lt; <span class="number">20</span> → <span class="boolean">true</span>
+<span class="number">20</span> &gt; <span class="number">15</span> → <span class="boolean">true</span>
+
+Therefore:
+
+<span class="boolean">true</span> &amp;&amp; <span class="boolean">true</span> → <span class="boolean">true</span></code></pre>
+
+</div>
+`
+};
+
+
+const javascriptLogicalQuestion98 = {
+    question: "What is the output of the following JavaScript code?<br><br><code>let x = 5;<br>console.log(x &gt; 10 || x === 5);</code>",
+
+    options: [
+        "true",
+        "false",
+        "5",
+        "undefined"
+    ],
+
+    solution: `
+<div class="code-box">
+
+    <div class="code-title">
+        <span>Answer</span>
+    </div>
+
+    <pre><code><span class="keyword">Correct Answer:</span> <span class="boolean">true</span>
+
+<span class="keyword">Explanation:</span>
+The first condition is false:
+
+<span class="number">5</span> &gt; <span class="number">10</span> → <span class="boolean">false</span>
+
+The second condition is true:
+
+<span class="number">5</span> === <span class="number">5</span> → <span class="boolean">true</span>
+
+Therefore:
+
+<span class="boolean">false</span> || <span class="boolean">true</span> → <span class="boolean">true</span></code></pre>
+
+</div>
+`
+};
+
+
+const javascriptLogicalQuestion99 = {
+    question: "What is the output of the following JavaScript code?<br><br><code>let isLoggedIn = true;<br>console.log(!isLoggedIn);</code>",
+
+    options: [
+        "true",
+        "false",
+        "undefined",
+        "null"
+    ],
+
+    solution: `
+<div class="code-box">
+
+    <div class="code-title">
+        <span>Answer</span>
+    </div>
+
+    <pre><code><span class="keyword">Correct Answer:</span> <span class="boolean">false</span>
+
+<span class="keyword">Explanation:</span>
+The variable <span class="variable">isLoggedIn</span> contains true.
+
+The NOT operator reverses it.
+
+<span class="operator">!</span><span class="boolean">true</span> → <span class="boolean">false</span></code></pre>
+
+</div>
+`
+};
+
+
+const javascriptLogicalQuestion100 = {
+    question: "What is the output of the following JavaScript code?<br><br><code>console.log(true &amp;&amp; true || false);</code>",
+
+    options: [
+        "true",
+        "false",
+        "undefined",
+        "Error"
+    ],
+
+    solution: `
+<div class="code-box">
+
+    <div class="code-title">
+        <span>Answer</span>
+    </div>
+
+    <pre><code><span class="keyword">Correct Answer:</span> <span class="boolean">true</span>
+
+<span class="keyword">Explanation:</span>
+The logical AND operator has higher precedence
+than the logical OR operator.
+
+First:
+
+<span class="boolean">true</span> &amp;&amp; <span class="boolean">true</span> → <span class="boolean">true</span>
+
+Then:
+
+<span class="boolean">true</span> || <span class="boolean">false</span> → <span class="boolean">true</span></code></pre>
+
+</div>
+`
+};
+
+
+const javascriptLogicalQuestion101 = {
+    question: "Which program correctly checks whether a number is between 10 and 50?",
+
+    options: [
+        "if (num >= 10 && num <= 50)",
+        "if (num >= 10 AND num <= 50)",
+        "if (num >= 10 ||| num <= 50)",
+        "if (num >= 10 ! num <= 50)"
+    ],
+
+    solution: `
+<div class="code-box">
+
+    <div class="code-title">
+        <span>Program</span>
+    </div>
+
+    <pre><code><span class="keyword">Correct Answer:</span>
+<span class="operator">if</span> (num &gt;= <span class="number">10</span> &amp;&amp; num &lt;= <span class="number">50</span>)
+
+<span class="keyword">Explanation:</span>
+The <span class="operator">&amp;&amp;</span> operator ensures that both
+conditions must be true.</code></pre>
+
+</div>
+`
+};
+
+
+const javascriptLogicalQuestion102 = {
+    question: "Write a JavaScript program to check whether a person is eligible to vote. The person must be 18 years or older.",
+
+    options: [
+        "if (age >= 18)",
+        "if (age > 18)",
+        "if (age <= 18)",
+        "if (age == 18)"
+    ],
+
+    solution: `
+<div class="code-box">
+
+    <div class="code-title">
+        <span>Program</span>
+    </div>
+
+    <pre><code><span class="keyword">Correct Answer:</span>
+<span class="operator">if</span> (age &gt;= <span class="number">18</span>)
+
+<span class="keyword">Example:</span>
+
+<span class="keyword">let</span> age = <span class="number">20</span>;
+
+<span class="operator">if</span> (age &gt;= <span class="number">18</span>) {
+    console.log(<span class="string">"Eligible to vote"</span>);
+}</code></pre>
+
+</div>
+`
+};
+
+
+const javascriptLogicalQuestion103 = {
+    question: "Write a JavaScript program to check whether a number is positive and even.",
+
+    options: [
+        "if (num > 0 && num % 2 === 0)",
+        "if (num > 0 || num % 2 === 0)",
+        "if (num < 0 && num % 2 === 0)",
+        "if (num > 0 ! num % 2 === 0)"
+    ],
+
+    solution: `
+<div class="code-box">
+
+    <div class="code-title">
+        <span>Program</span>
+    </div>
+
+    <pre><code><span class="keyword">Correct Answer:</span>
+<span class="operator">if</span> (num &gt; <span class="number">0</span> &amp;&amp; num % <span class="number">2</span> === <span class="number">0</span>)
+
+<span class="keyword">Example:</span>
+
+<span class="keyword">let</span> num = <span class="number">12</span>;
+
+<span class="operator">if</span> (num &gt; <span class="number">0</span> &amp;&amp; num % <span class="number">2</span> === <span class="number">0</span>) {
+    console.log(<span class="string">"Positive and Even"</span>);
+}</code></pre>
+
+</div>
+`
+};
+
+
+const javascriptLogicalQuestion104 = {
+    question: "Write a JavaScript program to check whether a student has passed if marks are 40 or more.",
+
+    options: [
+        "if (marks >= 40)",
+        "if (marks <= 40)",
+        "if (marks > 40)",
+        "if (marks == 0)"
+    ],
+
+    solution: `
+<div class="code-box">
+
+    <div class="code-title">
+        <span>Program</span>
+    </div>
+
+    <pre><code><span class="keyword">Correct Answer:</span>
+<span class="operator">if</span> (marks &gt;= <span class="number">40</span>)
+
+<span class="keyword">Example:</span>
+
+<span class="keyword">let</span> marks = <span class="number">65</span>;
+
+<span class="operator">if</span> (marks &gt;= <span class="number">40</span>) {
+    console.log(<span class="string">"Pass"</span>);
+}</code></pre>
+
+</div>
+`
+};
+
+
+const javascriptLogicalQuestion105 = {
+    question: "Write a JavaScript program to check whether a number is either 10 or 20 using the logical OR operator.",
+
+    options: [
+        "if (num === 10 || num === 20)",
+        "if (num === 10 && num === 20)",
+        "if (num !== 10 || num !== 20)",
+        "if (num = 10 || num = 20)"
+    ],
+
+    solution: `
+<div class="code-box">
+
+    <div class="code-title">
+        <span>Program</span>
+    </div>
+
+    <pre><code><span class="keyword">Correct Answer:</span>
+<span class="operator">if</span> (num === <span class="number">10</span> || num === <span class="number">20</span>)
+
+<span class="keyword">Example:</span>
+
+<span class="keyword">let</span> num = <span class="number">20</span>;
+
+<span class="operator">if</span> (num === <span class="number">10</span> || num === <span class="number">20</span>) {
+    console.log(<span class="string">"Number is 10 or 20"</span>);
+}</code></pre>
+
+</div>
+`
+}
 
 const javascriptIntroductionQuestions = [
     javascriptIntroductionQuestion1,
@@ -2355,7 +3164,7 @@ const javascriptIntroductionQuestions = [
     javascriptVariableQuestion48,
     javascriptVariableQuestion49,
     javascriptVariableQuestion50,
-     javascriptVariableQuestion51,
+    javascriptVariableQuestion51,
     javascriptVariableQuestion52,
     javascriptVariableQuestion53,
     javascriptVariableQuestion54,
@@ -2384,5 +3193,31 @@ const javascriptIntroductionQuestions = [
     javascriptArithmeticQuestion77,
     javascriptArithmeticQuestion78,
     javascriptArithmeticQuestion79,
-    javascriptArithmeticQuestion80
+    javascriptArithmeticQuestion80,
+    javascriptEqualityQuestion81,
+    javascriptEqualityQuestion82,
+    javascriptEqualityQuestion83,
+    javascriptEqualityQuestion84,
+    javascriptEqualityQuestion85,
+    javascriptLogicalQuestion86,
+    javascriptLogicalQuestion87,
+    javascriptLogicalQuestion88,
+    javascriptLogicalQuestion89,
+    javascriptLogicalQuestion90,
+    javascriptLogicalQuestion91,
+    javascriptLogicalQuestion92,
+    javascriptLogicalQuestion93,
+    javascriptLogicalQuestion94,
+    javascriptLogicalQuestion95,
+
+    javascriptLogicalQuestion96,
+    javascriptLogicalQuestion97,
+    javascriptLogicalQuestion98,
+    javascriptLogicalQuestion99,
+    javascriptLogicalQuestion100,
+    javascriptLogicalQuestion101,
+    javascriptLogicalQuestion102,
+    javascriptLogicalQuestion103,
+    javascriptLogicalQuestion104,
+    javascriptLogicalQuestion105
 ];

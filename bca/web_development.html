@@ -6,7 +6,8 @@
     <base href="../">
     <meta charset="utf-8">
     <script src="bca/oracle.js"></script>
-
+    <script src="bca/js_questions.js"></script>
+        <script src="bca/web_development_interview_question.js"></script>
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="description" content="Unicat project">
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -423,6 +424,14 @@
                             </strong>
 
                         </div>
+                        <div class="lecture"
+                            onclick="loadNote('', practiceQuestions, event); loadQuestions(javascriptQuestions_1);">
+
+                            <strong style="color: darkred;">
+                                Practice Questions-1
+                            </strong>
+
+                        </div>
 
                     </div>
 
@@ -506,6 +515,93 @@
                         <!-- PHP Basics -->
                         <div class="lecture" onclick="loadNote('', phpIntroContent , event)">
                             L5.1: PHP Introduction
+                        </div>
+
+                        <div class="lecture" onclick="loadNote('', phpSyntaxContent , event)">
+                            L5.2: PHP Syntax
+                        </div>
+
+                        <div class="lecture" onclick="loadNote('', phpVariablesContent , event)">
+                            L5.3: PHP Variables
+                        </div>
+
+                        <div class="lecture" onclick="loadNote('', phpStringsContent , event)">
+                            L5.4: PHP Strings
+                        </div>
+
+                        <div class="lecture" onclick="loadNote('', phpOperatorsContent , event)">
+                            L5.5: PHP Operators
+                        </div>
+
+                        <!-- PHP Control Structures -->
+                        <div class="lecture" onclick="loadNote('', phpIfElseContent , event)">
+                            L5.6: if-else Statements
+                        </div>
+
+                        <div class="lecture" onclick="loadNote('', phpLoopsContent , event)">
+                            L5.7: PHP Loops
+                        </div>
+
+                        <div class="lecture" onclick="loadNote('', phpSwitchContent , event)">
+                            L5.8: Switch Statement
+                        </div>
+
+                        <!-- PHP Advanced -->
+                        <div class="lecture" onclick="loadNote('', phpArrayContent , event)">
+                            L5.9: PHP Arrays
+                        </div>
+
+                        <div class="lecture" onclick="loadNote('', phpFunctionsContent , event)">
+                            L5.10: PHP Functions
+                        </div>
+
+                        <div class="lecture" onclick="loadNote('', phpFormsContent , event)">
+                            L5.11: PHP Forms
+                        </div>
+
+                        <div class="lecture" onclick="loadNote('', phpMailContent , event)">
+                            L5.12: PHP Mail
+                        </div>
+
+                        <div class="lecture" onclick="loadNote('', phpFileUploadContent , event)">
+                            L5.13: PHP File Upload
+                        </div>
+
+                        <div class="lecture" onclick="loadNote('', phpSessionContent , event)">
+                            L5.14: PHP Session
+                        </div>
+
+                        <div class="lecture" onclick="loadNote('', phpErrorContent , event)">
+                            L5.15: PHP Error Handling
+                        </div>
+
+                        <div class="lecture" onclick="loadNote('', phpExceptionContent , event)">
+                            L5.16: PHP Exception Handling
+                        </div>
+
+                        <div class="lecture" onclick="loadNote('', phpFilterContent , event)">
+                            L5.17: PHP Filters
+                        </div>
+
+                        <div class="lecture" onclick="loadNote('', phpOdbcContent , event)">
+                            L5.18: PHP-ODBC
+                        </div>
+
+                    </div>
+
+                </div>
+
+                <div class="unit">
+
+                    <div class="unit_title" onclick="toggleUnit(this)">
+                         Interview Questions 
+                    </div>
+
+                    <div class="lecture_list">
+
+                        <!-- PHP Basics -->
+                        <div class="lecture" onclick="loadNote('', javascriptEqualityExplanation , event)">
+                            1: Difference between “ == “ and “ === “ operators.
                         </div>
 
                         <div class="lecture" onclick="loadNote('', phpSyntaxContent , event)">
