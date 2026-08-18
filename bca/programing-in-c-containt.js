@@ -6907,322 +6907,382 @@ Name = <span class="string">Pradeep</span></code></pre>
 
 `;
 
-const cTypeConversion = `
-<h3>C Type Conversion</h3>
+const typeCastingExplanation = `
+
+<h3>What is Type Casting?</h3>
 
 <p>
-Type Conversion in C is the process of converting one data type into another data type.
-It is useful when we want to perform operations on different types of data.
+Type casting is the process of converting a value from one data type
+to another data type.
 </p>
 
-<p>
-For example, if we add an <b>int</b> and a <b>float</b>, C automatically converts the integer
-to a float before performing the calculation.
-</p>
-
-<h3>Types of Type Conversion</h3>
+<h4>Common Type Casting Examples</h4>
 
 <table class="notes-table">
-<tr>
-<th>Type</th>
-<th>Description</th>
-</tr>
-
-<tr>
-<td>Implicit Type Conversion</td>
-<td>Conversion performed automatically by the C compiler.</td>
-</tr>
-
-<tr>
-<td>Explicit Type Conversion (Type Casting)</td>
-<td>Conversion performed manually by the programmer using a type cast.</td>
-</tr>
-
+    <thead>
+        <tr>
+            <th>Conversion</th>
+            <th>Example</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td>int → float</td>
+            <td><code>(float)a</code></td>
+        </tr>
+        <tr>
+            <td>float → int</td>
+            <td><code>(int)b</code></td>
+        </tr>
+        <tr>
+            <td>char → int</td>
+            <td><code>(int)ch</code></td>
+        </tr>
+        <tr>
+            <td>int → char</td>
+            <td><code>(char)a</code></td>
+        </tr>
+        <tr>
+            <td>int → double</td>
+            <td><code>(double)a</code></td>
+        </tr>
+        <tr>
+            <td>double → int</td>
+            <td><code>(int)d</code></td>
+        </tr>
+        <tr>
+            <td>float → double</td>
+            <td><code>(double)f</code></td>
+        </tr>
+        <tr>
+            <td>double → float</td>
+            <td><code>(float)d</code></td>
+        </tr>
+        <tr>
+            <td>char → float</td>
+            <td><code>(float)ch</code></td>
+        </tr>
+        <tr>
+            <td>float → char</td>
+            <td><code>(char)f</code></td>
+        </tr>
+        <tr>
+            <td>char → double</td>
+            <td><code>(double)ch</code></td>
+        </tr>
+        <tr>
+            <td>double → char</td>
+            <td><code>(char)d</code></td>
+        </tr>
+        <tr>
+            <td>int → long</td>
+            <td><code>(long)a</code></td>
+        </tr>
+        <tr>
+            <td>long → int</td>
+            <td><code>(int)num</code></td>
+        </tr>
+        <tr>
+            <td>int → short</td>
+            <td><code>(short)a</code></td>
+        </tr>
+        <tr>
+            <td>short → int</td>
+            <td><code>(int)s</code></td>
+        </tr>
+        <tr>
+            <td>unsigned int → int</td>
+            <td><code>(int)num</code></td>
+        </tr>
+        <tr>
+            <td>int → unsigned int</td>
+            <td><code>(unsigned int)a</code></td>
+        </tr>
+    </tbody>
 </table>
 
-<hr>
+<h3>Syntax of Type Casting</h3>
 
-<h3>1. Implicit Type Conversion (Automatic Conversion)</h3>
+<pre>
+(data_type) value;
+</pre>
 
 <p>
-In Implicit Type Conversion, the compiler automatically converts one data type into another.
-Generally, the smaller data type is converted into the larger data type to avoid data loss.
+The <code>data_type</code> specifies the type into which the value
+will be converted.
 </p>
 
-<h4>Example 1: Integer Converted to Float</h4>
+<h4>Example</h4>
 
 <div class="code-box">
 
-    <div class="code-title">Example: Integer Converted to Float</div>
+    <div class="code-title">
+        <span>Program: Explicit Type Casting</span>
+    </div>
 
-<pre>
-<span class="preprocessor">#include</span> <span class="header-file">&lt;stdio.h&gt;</span>
+<pre><code><span class="preprocessor">#include</span> <span class="header-file">&lt;stdio.h&gt;</span>
 
 <span class="datatype">int</span> <span class="function">main</span><span class="symbol">()</span>
 <span class="symbol">{</span>
-    <span class="datatype">int</span> a <span class="symbol">=</span> 10<span class="symbol">;</span>
-    <span class="datatype">float</span> b <span class="symbol">=</span> 2.5<span class="symbol">;</span>
+    <span class="datatype">int</span> a <span class="symbol">=</span> <span class="number">10</span><span class="symbol">;</span>
+    <span class="datatype">float</span> result<span class="symbol">;</span>
 
-    <span class="datatype">float</span> result <span class="symbol">=</span> a <span class="symbol">+</span> b<span class="symbol">;</span>
+    result <span class="symbol">=</span> <span class="symbol">(</span><span class="datatype">float</span><span class="symbol">)</span>a<span class="symbol">;</span>
 
-    <span class="function">printf</span><span class="symbol">(</span><span class="header-file">"Result = %f"</span><span class="symbol">,</span> result<span class="symbol">);</span>
+    <span class="function">printf</span><span class="symbol">(</span><span class="string">"Integer Value = %d\\n"</span><span class="symbol">,</span> a<span class="symbol">);</span>
+    <span class="function">printf</span><span class="symbol">(</span><span class="string">"Float Value = %f"</span><span class="symbol">,</span> result<span class="symbol">);</span>
 
-    <span class="keyword">return</span> 0<span class="symbol">;</span>
-<span class="symbol">}</span>
-</pre>
-
-</div>
-
-<h4>Output</h4>
-
-<div class="code-box">
-
-    <div class="code-title">Output</div>
-
-<pre>
-Result = 12.500000
-</pre>
+    <span class="keyword">return</span> <span class="number">0</span><span class="symbol">;</span>
+<span class="symbol">}</span></code></pre>
 
 </div>
 
-<h4>Explanation</h4>
+<p><strong>Output:</strong></p>
 
-<ul>
-<li><b>a</b> is an integer.</li>
-<li><b>b</b> is a float.</li>
-<li>Before addition, the compiler converts <b>a</b> from int to float.</li>
-<li>The result becomes a floating-point value.</li>
-</ul>
+<pre>
+Integer Value = 10
+Float Value = 10.000000
+</pre>
 
-<hr>
+<p>
+Here, the integer value <code>10</code> is explicitly converted into
+a <code>float</code> using <code>(float)</code>.
+</p>
 
-<h4>Example 2: Character Converted to Integer</h4>
+<h3>Types of Type Conversion in C</h3>
+
+<p>
+There are mainly two types of type conversion in C:
+</p>
+
+<ol>
+    <li><strong>Implicit Type Conversion</strong></li>
+    <li><strong>Explicit Type Casting</strong></li>
+</ol>
+
+<h3>1. Implicit Type Conversion</h3>
+
+<p>
+Implicit type conversion is performed automatically by the C compiler.
+The programmer does not need to write the target data type.
+</p>
+
+
+<h3>Integer + Integer</h3>
+
+<p>
+When both operands are integers, integer arithmetic is performed.
+</p>
+
+<div class="code-box"> 
+ 
+    <div class="code-title"> 
+        <span>Program: Integer Addition</span> 
+    </div> 
+ 
+<pre><code><span class="preprocessor">#include</span> <span class="header-file">&lt;stdio.h&gt;</span> 
+ 
+<span class="datatype">int</span> <span class="function">main</span><span class="symbol">()</span> 
+<span class="symbol">{</span> 
+    <span class="datatype">int</span> a <span class="symbol">=</span> <span class="number">10</span><span class="symbol">;</span> 
+    <span class="datatype">int</span> b <span class="symbol">=</span> <span class="number">3</span><span class="symbol">;</span> 
+    <span class="datatype">int</span> result <span class="symbol">=</span> a <span class="symbol">+</span> b<span class="symbol">;</span> 
+ 
+    <span class="function">printf</span><span class="symbol">(</span><span class="string">"Integer Value  = %d\\n"</span><span class="symbol">,</span> result<span class="symbol">);</span> 
+    <span class="function">printf</span><span class="symbol">(</span><span class="string">"Float Value = %f"</span><span class="symbol">,</span> result<span class="symbol">);</span> 
+ 
+    <span class="keyword">return</span> <span class="number">0</span><span class="symbol">;</span> 
+<span class="symbol">}</span></code></pre>
+
+<code>
+Output : 
+Integer Value = 13
+Float Value = 0.000000</code>
+</div>
+
+
+
+
+
+<p>
+The first <code>printf()</code> is correct because <code>result</code>
+is an <code>int</code> and <code>%d</code> is used to print an integer.
+</p>
+
+<p>
+The second <code>printf()</code> uses <code>%f</code>, which expects a
+<code>double</code>, but <code>result</code> is an <code>int</code>.
+Therefore, this is a <strong>format specifier mismatch</strong> and
+causes <strong>undefined behavior</strong>. The output
+<code>0.000000</code> may appear on some systems, but it is not
+guaranteed.
+</p>
+
+<p>
+If we want to print the integer value as a floating-point value,
+we must explicitly convert it:
+</p>
+
+<pre><code><span class="function">printf</span><span class="symbol">(</span><span class="string">"Result = %f"</span><span class="symbol">,</span> <span class="symbol">(</span><span class="datatype">double</span><span class="symbol">)</span>result<span class="symbol">);</span></code></pre>
+
+<p>
+This will produce:
+</p>
+
+<pre class="notes_text_pre"><code>Result = 13.000000</code></pre>
+
+<p>
+<strong>Remember:</strong> <code>%f</code> in <code>printf()</code>
+expects a <code>double</code>. Using the wrong format specifier does
+<strong>not</strong> perform type casting; it can cause
+<strong>undefined behavior</strong>.
+</p>
+
+
+
+
+<h3>Integer Division</h3>
+
+<p>
+When two integers are divided, integer division is performed.
+The decimal part of the result is discarded.
+</p>
 
 <div class="code-box">
 
-    <div class="code-title">Example: Character Converted to Integer</div>
+    <div class="code-title">
+        <span>Program: Integer Division</span>
+    </div>
 
-<pre>
-<span class="preprocessor">#include</span> <span class="header-file">&lt;stdio.h&gt;</span>
+<pre><code><span class="preprocessor">#include</span> <span class="header-file">&lt;stdio.h&gt;</span>
 
 <span class="datatype">int</span> <span class="function">main</span><span class="symbol">()</span>
 <span class="symbol">{</span>
-    <span class="datatype">char</span> ch <span class="symbol">=</span> <span class="header-file">'A'</span><span class="symbol">;</span>
+    <span class="datatype">int</span> a <span class="symbol">=</span> <span class="number">10</span><span class="symbol">;</span>
+    <span class="datatype">int</span> b <span class="symbol">=</span> <span class="number">3</span><span class="symbol">;</span>
 
-    <span class="function">printf</span><span class="symbol">(</span><span class="header-file">"%d"</span><span class="symbol">,</span> ch<span class="symbol">);</span>
+    <span class="function">printf</span><span class="symbol">(</span><span class="string">"Result = %d"</span><span class="symbol">,</span> a <span class="symbol">/</span> b<span class="symbol">);</span>
 
-    <span class="keyword">return</span> 0<span class="symbol">;</span>
-<span class="symbol">}</span>
-</pre>
+    <span class="keyword">return</span> <span class="number">0</span><span class="symbol">;</span>
+<span class="symbol">}</span></code></pre>
 
 </div>
 
-<h4>Output</h4>
-
-<div class="code-box">
-
-    <div class="code-title">Output</div>
+<p><strong>Output:</strong></p>
 
 <pre>
-65
+Result = 3
 </pre>
 
-</div>
-
-<h4>Explanation</h4>
-
 <p>
-The character <b>'A'</b> has the ASCII value <b>65</b>.
-The compiler automatically converts the character into its integer ASCII value.
+The actual mathematical result of <code>10 / 3</code> is approximately
+<code>3.333333</code>, but because both operands are integers, C performs
+integer division and discards the decimal part.
 </p>
+
+
 
 <hr>
 
-<h3>2. Explicit Type Conversion (Type Casting)</h3>
-
+<h4>Integer + Float</h4>
 <p>
-In Explicit Type Conversion, the programmer manually converts one data type into another
-using the type cast operator.
+When an integer and a float are used together, the integer is automatically
+converted to float, and the operation is performed using floating-point arithmetic.
 </p>
 
-<p><b>Syntax</b></p>
-
 <div class="code-box">
 
-    <div class="code-title">Syntax of Type Casting</div>
+    <div class="code-title">
+        <span>Program: Implicit Type Conversion</span>
+    </div>
 
-<pre>
-<span class="symbol">(</span><span class="datatype">data_type</span><span class="symbol">)</span> expression
-</pre>
-
-</div>
-
-<hr>
-
-<h4>Example 1: Integer Division Using Type Casting</h4>
-
-<div class="code-box">
-
-    <div class="code-title">Example: Integer Division Using Type Casting</div>
-
-<pre>
-<span class="preprocessor">#include</span> <span class="header-file">&lt;stdio.h&gt;</span>
+<pre><code><span class="preprocessor">#include</span> <span class="header-file">&lt;stdio.h&gt;</span>
 
 <span class="datatype">int</span> <span class="function">main</span><span class="symbol">()</span>
 <span class="symbol">{</span>
-    <span class="datatype">int</span> a <span class="symbol">=</span> 10<span class="symbol">;</span>
-    <span class="datatype">int</span> b <span class="symbol">=</span> 3<span class="symbol">;</span>
+    <span class="datatype">int</span> a <span class="symbol">=</span> <span class="number">10</span><span class="symbol">;</span>
+    <span class="datatype">float</span> b <span class="symbol">=</span> <span class="number">2.5</span><span class="symbol">;</span>
 
-    <span class="datatype">float</span> result <span class="symbol">=</span> <span class="symbol">(</span><span class="datatype">float</span><span class="symbol">)</span>a <span class="symbol">/</span> b<span class="symbol">;</span>
+    <span class="function">printf</span><span class="symbol">(</span><span class="string">"Result = %f"</span><span class="symbol">,</span> a <span class="symbol">+</span> b<span class="symbol">);</span>
 
-    <span class="function">printf</span><span class="symbol">(</span><span class="header-file">"Result = %f"</span><span class="symbol">,</span> result<span class="symbol">);</span>
-
-    <span class="keyword">return</span> 0<span class="symbol">;</span>
-<span class="symbol">}</span>
-</pre>
+    <span class="keyword">return</span> <span class="number">0</span><span class="symbol">;</span>
+<span class="symbol">}</span></code></pre>
 
 </div>
-
-<h4>Output</h4>
 
 <div class="code-box">
 
-    <div class="code-title">Output</div>
+    <div class="code-title">
+        <span>Output</span>
+    </div>
 
-<pre>
-Result = 3.333333
-</pre>
-
-</div>
-
-<h4>Explanation</h4>
-
-<ul>
-<li>Without type casting, <b>10 / 3</b> performs integer division.</li>
-<li>Integer division removes the decimal part.</li>
-<li>After converting <b>a</b> into float, floating-point division is performed.</li>
-</ul>
-
-<hr>
-
-<h4>Example 2: Float Converted to Integer</h4>
-
-<div class="code-box">
-
-    <div class="code-title">Example: Float Converted to Integer</div>
-
-<pre>
-<span class="preprocessor">#include</span> <span class="header-file">&lt;stdio.h&gt;</span>
-
-<span class="datatype">int</span> <span class="function">main</span><span class="symbol">()</span>
-<span class="symbol">{</span>
-    <span class="datatype">float</span> num <span class="symbol">=</span> 9.85<span class="symbol">;</span>
-
-    <span class="datatype">int</span> value <span class="symbol">=</span> <span class="symbol">(</span><span class="datatype">int</span><span class="symbol">)</span>num<span class="symbol">;</span>
-
-    <span class="function">printf</span><span class="symbol">(</span><span class="header-file">"%d"</span><span class="symbol">,</span> value<span class="symbol">);</span>
-
-    <span class="keyword">return</span> 0<span class="symbol">;</span>
-<span class="symbol">}</span>
-</pre>
+<pre><code>Result = 12.500000</code></pre>
 
 </div>
 
-<h4>Output</h4>
-
-<div class="code-box">
-
-    <div class="code-title">Output</div>
-
-<pre>
-9
-</pre>
-
-</div>
-
-<h4>Explanation</h4>
+<h4>What if we use <code>%d</code>?</h4>
 
 <p>
-The decimal part (.85) is removed after converting the float into an integer.
-Only the whole number (9) is stored.
+The <code>%d</code> format specifier is used to print an integer,
+but <code>a + b</code> produces a floating-point value.
 </p>
-
-<hr>
-
-<h3>Why Type Conversion is Needed?</h3>
-
-<ul>
-<li>To perform calculations between different data types.</li>
-<li>To avoid compiler warnings.</li>
-<li>To improve program accuracy.</li>
-<li>To control the result of arithmetic operations.</li>
-<li>To convert data into the required format.</li>
-</ul>
-
-<hr>
-
-<h3>Important Notes</h3>
-
-<table class="notes-table">
-
-<tr>
-<th>Point</th>
-<th>Description</th>
-</tr>
-
-<tr>
-<td>Implicit Conversion</td>
-<td>Done automatically by the compiler.</td>
-</tr>
-
-<tr>
-<td>Explicit Conversion</td>
-<td>Done manually using type casting.</td>
-</tr>
-
-<tr>
-<td>Data Loss</td>
-<td>Converting from float to int removes the decimal part.</td>
-</tr>
-
-<tr>
-<td>Safe Conversion</td>
-<td>Converting from a smaller type to a larger type is generally safe.</td>
-</tr>
-
-<tr>
-<td>Programmer Control</td>
-<td>Type casting gives the programmer full control over conversion.</td>
-</tr>
-
-</table>
-
-<hr>
-
-<h3>Real-Life Analogy</h3>
 
 <p>
-Suppose you have <b>₹10</b> (integer) and <b>₹2.50</b> (float).
-When you add them, the answer becomes <b>₹12.50</b>.
-Similarly, C converts the integer into a float so that the decimal value is preserved.
+Therefore, using <code>%d</code> with a floating-point result causes
+a <strong>format specifier mismatch</strong> and leads to
+<strong>undefined behavior</strong>.
 </p>
+
+<div class="code-box">
+
+    <div class="code-title">
+        <span>Incorrect Format Specifier</span>
+    </div>
+
+<pre><code><span class="function">printf</span><span class="symbol">(</span><span class="string">"Result = %d"</span><span class="symbol">,</span> a <span class="symbol">+</span> b<span class="symbol">);</span></code></pre>
+
+</div>
+
+<p>
+Here, <code>%d</code> expects an <code>int</code>, but
+<code>a + b</code> produces a floating-point value.
+</p>
+
+<p>
+If we want to convert the result to an integer, we must explicitly
+use type casting:
+</p>
+
+<div class="code-box">
+
+    <div class="code-title">
+        <span>Explicit Type Casting</span>
+    </div>
+
+<pre><code><span class="function">printf</span><span class="symbol">(</span><span class="string">"Result = %d"</span><span class="symbol">,</span> <span class="symbol">(</span><span class="datatype">int</span><span class="symbol">)(</span>a <span class="symbol">+</span> b<span class="symbol">));</span></code></pre>
+
+</div>
+
+<p>
+Here, <code>12.5</code> is explicitly converted to <code>int</code>,
+so the decimal part is discarded.
+</p>
+
+<pre>
+12.5 → 12
+</pre>
 
 <hr>
 
-<h3>Summary</h3>
 
-<ul>
-<li>Type Conversion means converting one data type into another.</li>
-<li>C supports two types of conversion:
-    <ul>
-        <li>Implicit Type Conversion</li>
-        <li>Explicit Type Conversion (Type Casting)</li>
-    </ul>
-</li>
-<li>Implicit conversion is performed automatically by the compiler.</li>
-<li>Explicit conversion is performed manually by the programmer.</li>
-<li>Type casting is useful for obtaining accurate calculation results.</li>
-</ul>
+
+
+
+
+
+
+
+
 `;
 
 let constantsAndLiterals = `

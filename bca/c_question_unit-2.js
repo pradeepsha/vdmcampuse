@@ -2340,7 +2340,7 @@ const cUnit_2Question51 = {
         <span>Answer</span>
     </div>
 
-    <pre><code><span class="keyword">Correct Answer:</span> <span class="string">B) switch</span></code></pre>
+    <pre><code><span class="keyword">Answer:</span> <span class="string">B) switch</span></code></pre>
 
 </div>
 `
@@ -2366,7 +2366,7 @@ const cUnit_2Question52 = {
         <span>Answer</span>
     </div>
 
-    <pre><code><span class="keyword">Correct Answer:</span> <span class="string">B) case</span></code></pre>
+    <pre><code><span class="keyword">Answer:</span> <span class="string">B) case</span></code></pre>
 
 </div>
 `
@@ -2392,7 +2392,7 @@ const cUnit_2Question53 = {
         <span>Answer</span>
     </div>
 
-    <pre><code><span class="keyword">Correct Answer:</span> <span class="string">C) default</span></code></pre>
+    <pre><code><span class="keyword">Answer:</span> <span class="string">C) default</span></code></pre>
 
 </div>
 `
@@ -2418,7 +2418,7 @@ const cUnit_2Question54 = {
         <span>Answer</span>
     </div>
 
-    <pre><code><span class="keyword">Correct Answer:</span> <span class="string">C) break</span></code></pre>
+    <pre><code><span class="keyword">Answer:</span> <span class="string">C) break</span></code></pre>
 
 </div>
 `
@@ -2444,7 +2444,7 @@ const cUnit_2Question55 = {
         <span>Answer</span>
     </div>
 
-    <pre><code><span class="keyword">Correct Answer:</span> <span class="string">B) Two</span></code></pre>
+    <pre><code><span class="keyword">Answer:</span> <span class="string">B) Two</span></code></pre>
 
 </div>
 `
@@ -2470,7 +2470,7 @@ const cUnit_2Question56 = {
         <span>Answer</span>
     </div>
 
-    <pre><code><span class="keyword">Correct Answer:</span> <span class="string">C) Execution may continue into the next case</span></code></pre>
+    <pre><code><span class="keyword">Answer:</span> <span class="string">C) Execution may continue into the next case</span></code></pre>
 
 </div>
 `
@@ -2496,7 +2496,7 @@ const cUnit_2Question57 = {
         <span>Answer</span>
     </div>
 
-    <pre><code><span class="keyword">Correct Answer:</span> <span class="string">C) AB</span></code></pre>
+    <pre><code><span class="keyword">Answer:</span> <span class="string">C) AB</span></code></pre>
 
 </div>
 `
@@ -2522,7 +2522,7 @@ const cUnit_2Question58 = {
         <span>Answer</span>
     </div>
 
-    <pre><code><span class="keyword">Correct Answer:</span> <span class="string">D) All of the above</span></code></pre>
+    <pre><code><span class="keyword">Answer:</span> <span class="string">D) All of the above</span></code></pre>
 
 </div>
 `
@@ -2548,21 +2548,78 @@ const cUnit_2Question59 = {
         <span>Answer</span>
     </div>
 
-    <pre><code><span class="keyword">Correct Answer:</span> <span class="string">C) Invalid</span></code></pre>
+    <pre><code><span class="keyword">Answer:</span> <span class="string">C) Invalid</span></code></pre>
 
 </div>
 `
 };
 
 
-const cUnit_2Question60 = {
-    question: "Which of the following is NOT allowed as a case label in a switch statement?",
+const javascriptLoopsDifficultQuestion1 = {
+    question: "What will be the output of the following JavaScript program?",
+
+    program: `
+<div class="program-code-box">
+
+    <pre class="program-code-box-pre"><code class="program-code-box-code"><span class="program-code-box-keyword">for</span> (<span class="program-code-box-keyword">var</span> i = <span class="program-code-box-number">0</span>; i &lt; <span class="program-code-box-number">3</span>; i++) {
+    setTimeout(() =&gt; console.log(i), <span class="program-code-box-number">0</span>);
+}
+
+console.log(i);</code></pre>
+
+</div>
+`,
 
     options: [
-        "case 1:",
-        "case 10:",
-        "case 'A':",
-        "case x:"
+        "0 1 2 3",
+        "3 3 3 3",
+        "0 1 2 then 3",
+        "3 then 0 1 2"
+    ],
+
+    answer: 2,
+
+    solution: `
+<div class="code-box">
+
+    <div class="code-title">
+        <span>Answer</span>
+    </div>
+
+    <pre><code><span class="keyword">Output:</span>
+<span class="string">3
+3
+3
+3</span>
+
+<span class="keyword">Explanation:</span>
+The variable declared with var is function-scoped.
+The loop completes before the setTimeout callbacks execute.
+Therefore, all callbacks access the final value of i, which is 3.</code></pre>
+
+</div>
+`
+};
+
+
+const javascriptLoopsDifficultQuestion2 = {
+    question: "What will be the output of the following JavaScript program?",
+
+    program: `
+<div class="program-code-box">
+
+    <pre class="program-code-box-pre"><code class="program-code-box-code"><span class="program-code-box-keyword">for</span> (<span class="program-code-box-keyword">let</span> i = <span class="program-code-box-number">0</span>; i &lt; <span class="program-code-box-number">3</span>; i++) {
+    setTimeout(() =&gt; console.log(i), <span class="program-code-box-number">0</span>);
+}</code></pre>
+
+</div>
+`,
+
+    options: [
+        "0 1 2",
+        "3 3 3",
+        "0 1 2 (in order, after a short delay)",
+        "Syntax error"
     ],
 
     answer: 3,
@@ -2574,7 +2631,980 @@ const cUnit_2Question60 = {
         <span>Answer</span>
     </div>
 
-    <pre><code><span class="keyword">Correct Answer:</span> <span class="string">D) case x:</span></code></pre>
+    <pre><code><span class="keyword">Output:</span>
+<span class="string">0
+1
+2</span>
+
+<span class="keyword">Explanation:</span>
+let creates a separate binding for each iteration of the loop.
+Therefore, each callback remembers its corresponding value of i.
+
+The callbacks execute after the loop completes, producing
+0, 1 and 2 in order.</code></pre>
+
+</div>
+`
+};
+
+
+const javascriptLoopsDifficultQuestion3 = {
+    question: "What will be the output of the following JavaScript program?",
+
+    program: `
+<div class="program-code-box">
+
+    <pre class="program-code-box-pre"><code class="program-code-box-code"><span class="program-code-box-keyword">let</span> i = <span class="program-code-box-number">0</span>;
+
+<span class="program-code-box-keyword">for</span> (; i &lt; <span class="program-code-box-number">3</span>; i++) {
+    <span class="program-code-box-keyword">if</span> (i === <span class="program-code-box-number">1</span>) {
+        i++;
+        <span class="program-code-box-keyword">continue</span>;
+    }
+
+    console.log(i);
+}</code></pre>
+
+</div>
+`,
+
+    options: [
+        "0 2",
+        "0 1 2",
+        "0 3",
+        "0"
+    ],
+
+    answer: 1,
+
+    solution: `
+<div class="code-box">
+
+    <div class="code-title">
+        <span>Answer</span>
+    </div>
+
+    <pre><code><span class="keyword">Output:</span>
+<span class="string">0
+2</span>
+
+<span class="keyword">Explanation:</span>
+Initially, i is 0, so 0 is printed.
+
+When i becomes 1, the if condition is true.
+Inside the condition, i is incremented to 2 and continue
+skips the remaining statements.
+
+The update expression of the for loop then increments i
+to 3. Therefore, the output is 0 and 2.</code></pre>
+
+</div>
+`
+};
+
+
+const javascriptLoopsDifficultQuestion4 = {
+    question: "What will be the output of the following JavaScript program?",
+
+    program: `
+<div class="program-code-box">
+
+    <pre class="program-code-box-pre"><code class="program-code-box-code"><span class="program-code-box-keyword">let</span> arr = [<span class="program-code-box-number">1</span>, <span class="program-code-box-number">2</span>, <span class="program-code-box-number">3</span>];
+
+<span class="program-code-box-keyword">for</span> (<span class="program-code-box-keyword">let</span> i <span class="program-code-box-keyword">in</span> arr) {
+    console.log(<span class="program-code-box-keyword">typeof</span> i);
+}</code></pre>
+
+</div>
+`,
+
+    options: [
+        "number number number",
+        "string string string",
+        "undefined undefined undefined",
+        "object object object"
+    ],
+
+    answer: 2,
+
+    solution: `
+<div class="code-box">
+
+    <div class="code-title">
+        <span>Answer</span>
+    </div>
+
+    <pre><code><span class="keyword">Output:</span>
+<span class="string">string
+string
+string</span>
+
+<span class="keyword">Explanation:</span>
+The for...in loop iterates over property keys.
+Array indexes are property keys and are returned as strings.
+
+Therefore, typeof i is "string" in every iteration.</code></pre>
+
+</div>
+`
+};
+
+
+const javascriptLoopsDifficultQuestion5 = {
+    question: "What will be the output of the following JavaScript program?",
+
+    program: `
+<div class="program-code-box">
+
+    <pre class="program-code-box-pre"><code class="program-code-box-code"><span class="program-code-box-keyword">let</span> arr = [<span class="program-code-box-number">10</span>, <span class="program-code-box-number">20</span>, <span class="program-code-box-number">30</span>];
+
+<span class="program-code-box-keyword">for</span> (<span class="program-code-box-keyword">let</span> i <span class="program-code-box-keyword">of</span> arr) {
+    i = i * <span class="program-code-box-number">2</span>;
+}
+
+console.log(arr);</code></pre>
+
+</div>
+`,
+
+    options: [
+        "[10, 20, 30]",
+        "[20, 40, 60]",
+        "[undefined, undefined, undefined]",
+        "Error"
+    ],
+
+    answer: 1,
+
+    solution: `
+<div class="code-box">
+
+    <div class="code-title">
+        <span>Answer</span>
+    </div>
+
+    <pre><code><span class="keyword">Output:</span>
+<span class="string">[10, 20, 30]</span>
+
+<span class="keyword">Explanation:</span>
+The variable i receives the value of each array element.
+Changing i does not modify the original array because
+the array contains primitive number values.
+
+Therefore, the original array remains unchanged.</code></pre>
+
+</div>
+`
+};
+
+
+const javascriptLoopsDifficultQuestion6 = {
+    question: "Which statement about the for...of loop is TRUE?",
+
+    options: [
+        "It gives the index of array elements",
+        "It can be used with plain objects directly",
+        "It works only on iterable objects",
+        "It cannot be used with strings"
+    ],
+
+    answer: 3,
+
+    solution: `
+<div class="code-box">
+
+    <div class="code-title">
+        <span>Answer</span>
+    </div>
+
+    <pre><code><span class="keyword">Answer:</span>
+<span class="string">It works only on iterable objects</span>
+
+<span class="keyword">Explanation:</span>
+The for...of loop works with iterable objects such as
+arrays, strings, Maps and Sets.
+
+A normal plain object is not directly iterable.</code></pre>
+
+</div>
+`
+};
+
+
+const javascriptLoopsDifficultQuestion7 = {
+    question: "What will be the output of the following JavaScript program?",
+
+    program: `
+<div class="program-code-box">
+
+    <pre class="program-code-box-pre"><code class="program-code-box-code"><span class="program-code-box-keyword">let</span> count = <span class="program-code-box-number">0</span>;
+
+outer:
+<span class="program-code-box-keyword">for</span> (<span class="program-code-box-keyword">let</span> i = <span class="program-code-box-number">0</span>; i &lt; <span class="program-code-box-number">3</span>; i++) {
+
+    <span class="program-code-box-keyword">for</span> (<span class="program-code-box-keyword">let</span> j = <span class="program-code-box-number">0</span>; j &lt; <span class="program-code-box-number">3</span>; j++) {
+
+        <span class="program-code-box-keyword">if</span> (i === <span class="program-code-box-number">1</span> &amp;&amp; j === <span class="program-code-box-number">1</span>) {
+            <span class="program-code-box-keyword">break</span> outer;
+        }
+
+        count++;
+    }
+}
+
+console.log(count);</code></pre>
+
+</div>
+`,
+
+    options: [
+        "9",
+        "6",
+        "4",
+        "3"
+    ],
+
+    answer: 3,
+
+    solution: `
+<div class="code-box">
+
+    <div class="code-title">
+        <span>Answer</span>
+    </div>
+
+    <pre><code><span class="keyword">Output:</span>
+<span class="string">4</span>
+
+<span class="keyword">Explanation:</span>
+For i = 0, the inner loop executes three times.
+Therefore, count becomes 3.
+
+For i = 1, j = 0 executes once, making count 4.
+
+When i = 1 and j = 1, break outer terminates
+both the inner and outer loops.
+
+Therefore, the final value is 4.</code></pre>
+
+</div>
+`
+};
+
+
+const javascriptLoopsDifficultQuestion8 = {
+    question: "What will be the output of the following JavaScript program?",
+
+    program: `
+<div class="program-code-box">
+
+    <pre class="program-code-box-pre"><code class="program-code-box-code"><span class="program-code-box-keyword">let</span> i = <span class="program-code-box-number">0</span>;
+
+<span class="program-code-box-keyword">while</span> (i &lt; <span class="program-code-box-number">5</span>) {
+
+    <span class="program-code-box-keyword">if</span> (i === <span class="program-code-box-number">3</span>) {
+        i++;
+        <span class="program-code-box-keyword">continue</span>;
+    }
+
+    console.log(i);
+    i++;
+}</code></pre>
+
+</div>
+`,
+
+    options: [
+        "0 1 2 3 4",
+        "0 1 2 4",
+        "0 1 2 3",
+        "0 1 2"
+    ],
+
+    answer: 2,
+
+    solution: `
+<div class="code-box">
+
+    <div class="code-title">
+        <span>Answer</span>
+    </div>
+
+    <pre><code><span class="keyword">Output:</span>
+<span class="string">0
+1
+2
+4</span>
+
+<span class="keyword">Explanation:</span>
+When i becomes 3, the if condition is true.
+The statement i++ changes i to 4 and continue skips
+the console.log() statement.
+
+The next iteration prints 4.
+
+Therefore, the output is 0, 1, 2 and 4.</code></pre>
+
+</div>
+`
+};
+
+
+const javascriptLoopsDifficultQuestion9 = {
+    question: "What will be the output of the following JavaScript program?",
+
+    program: `
+<div class="program-code-box">
+
+    <pre class="program-code-box-pre"><code class="program-code-box-code"><span class="program-code-box-keyword">for</span> (<span class="program-code-box-keyword">let</span> i = <span class="program-code-box-number">0</span>; i &lt; <span class="program-code-box-number">3</span>; i++) {
+    setTimeout(() =&gt; console.log(i), <span class="program-code-box-number">0</span>);
+}
+
+<span class="program-code-box-keyword">for</span> (<span class="program-code-box-keyword">let</span> j = <span class="program-code-box-number">0</span>; j &lt; <span class="program-code-box-number">3</span>; j++) {
+    console.log(j);
+}</code></pre>
+
+</div>
+`,
+
+    options: [
+        "0 1 2 0 1 2",
+        "0 1 2 then 0 1 2 (after delay)",
+        "0 1 2 0 1 2 (all immediate)",
+        "0 1 2 (only second loop runs)"
+    ],
+
+    answer: 2,
+
+    solution: `
+<div class="code-box">
+
+    <div class="code-title">
+        <span>Answer</span>
+    </div>
+
+    <pre><code><span class="keyword">Output:</span>
+<span class="string">0
+1
+2
+0
+1
+2</span>
+
+<span class="keyword">Explanation:</span>
+The second for loop executes synchronously and prints
+0, 1 and 2 immediately.
+
+The setTimeout callbacks execute later because they are
+asynchronous.
+
+Therefore, the second loop's values are printed first,
+followed by the callback values.</code></pre>
+
+</div>
+`
+};
+
+
+const javascriptLoopsDifficultQuestion10 = {
+    question: "What will be the output of the following JavaScript program?",
+
+    program: `
+<div class="program-code-box">
+
+    <pre class="program-code-box-pre"><code class="program-code-box-code"><span class="program-code-box-keyword">let</span> obj = {
+    a: <span class="program-code-box-number">1</span>,
+    b: <span class="program-code-box-number">2</span>,
+    c: <span class="program-code-box-number">3</span>
+};
+
+<span class="program-code-box-keyword">let</span> sum = <span class="program-code-box-number">0</span>;
+
+<span class="program-code-box-keyword">for</span> (<span class="program-code-box-keyword">let</span> key <span class="program-code-box-keyword">in</span> obj) {
+    sum += obj[key];
+}
+
+console.log(sum);</code></pre>
+
+</div>
+`,
+
+    options: [
+        "0",
+        "3",
+        "6",
+        "Error"
+    ],
+
+    answer: 3,
+
+    solution: `
+<div class="code-box">
+
+    <div class="code-title">
+        <span>Answer</span>
+    </div>
+
+    <pre><code><span class="keyword">Output:</span>
+<span class="string">6</span>
+
+<span class="keyword">Explanation:</span>
+The for...in loop iterates over the keys a, b and c.
+
+Their corresponding values are:
+
+1 + 2 + 3 = 6
+
+Therefore, the final value of sum is 6.</code></pre>
+
+</div>
+`
+};
+
+
+const javascriptLoopsDifficultQuestion11 = {
+    question: "What will be the output of the following JavaScript program?",
+
+    program: `
+<div class="program-code-box">
+
+    <pre class="program-code-box-pre"><code class="program-code-box-code"><span class="program-code-box-keyword">let</span> arr = [
+    <span class="program-code-box-number">1</span>,
+    <span class="program-code-box-number">2</span>,
+    <span class="program-code-box-number">3</span>,
+    <span class="program-code-box-number">4</span>,
+    <span class="program-code-box-number">5</span>
+];
+
+<span class="program-code-box-keyword">for</span> (<span class="program-code-box-keyword">let</span> i = <span class="program-code-box-number">0</span>; i &lt; arr.length; i++) {
+
+    <span class="program-code-box-keyword">if</span> (arr[i] % <span class="program-code-box-number">2</span> === <span class="program-code-box-number">0</span>) {
+        arr.splice(i, <span class="program-code-box-number">1</span>);
+        i--;
+    }
+}
+
+console.log(arr);</code></pre>
+
+</div>
+`,
+
+    options: [
+        "[1, 2, 3, 4, 5]",
+        "[1, 3, 5]",
+        "[2, 4]",
+        "[1, 3, 4, 5]"
+    ],
+
+    answer: 2,
+
+    solution: `
+<div class="code-box">
+
+    <div class="code-title">
+        <span>Answer</span>
+    </div>
+
+    <pre><code><span class="keyword">Output:</span>
+<span class="string">[1, 3, 5]</span>
+
+<span class="keyword">Explanation:</span>
+When an even number is found, splice() removes it.
+
+The statement i-- moves the index back by one.
+This ensures that the next element is not skipped.
+
+Therefore, all even numbers are removed and the final
+array becomes [1, 3, 5].</code></pre>
+
+</div>
+`
+};
+
+
+const javascriptLoopsDifficultQuestion12 = {
+    question: "What will be the output of the following JavaScript program?",
+
+    program: `
+<div class="program-code-box">
+
+    <pre class="program-code-box-pre"><code class="program-code-box-code"><span class="program-code-box-keyword">let</span> x = <span class="program-code-box-number">0</span>;
+
+<span class="program-code-box-keyword">do</span> {
+    x++;
+
+    <span class="program-code-box-keyword">if</span> (x === <span class="program-code-box-number">3</span>) {
+        <span class="program-code-box-keyword">break</span>;
+    }
+
+} <span class="program-code-box-keyword">while</span> (x &lt; <span class="program-code-box-number">5</span>);
+
+console.log(x);</code></pre>
+
+</div>
+`,
+
+    options: [
+        "2",
+        "3",
+        "4",
+        "5"
+    ],
+
+    answer: 2,
+
+    solution: `
+<div class="code-box">
+
+    <div class="code-title">
+        <span>Answer</span>
+    </div>
+
+    <pre><code><span class="keyword">Output:</span>
+<span class="string">3</span>
+
+<span class="keyword">Explanation:</span>
+The value of x is incremented on every iteration.
+
+When x becomes 3, the break statement immediately
+terminates the do...while loop.
+
+Therefore, the final value of x is 3.</code></pre>
+
+</div>
+`
+};
+
+
+const javascriptLoopsDifficultQuestion13 = {
+    question: "What will be the output of the following JavaScript program?",
+
+    program: `
+<div class="program-code-box">
+
+    <pre class="program-code-box-pre"><code class="program-code-box-code"><span class="program-code-box-keyword">let</span> sum = <span class="program-code-box-number">0</span>;
+
+<span class="program-code-box-keyword">for</span> (<span class="program-code-box-keyword">let</span> i = <span class="program-code-box-number">1</span>; i &lt;= <span class="program-code-box-number">5</span>; i++) {
+
+    <span class="program-code-box-keyword">for</span> (<span class="program-code-box-keyword">let</span> j = <span class="program-code-box-number">1</span>; j &lt;= i; j++) {
+        sum += j;
+    }
+}
+
+console.log(sum);</code></pre>
+
+</div>
+`,
+
+    options: [
+        "15",
+        "20",
+        "25",
+        "35"
+    ],
+
+    answer: 4,
+
+    solution: `
+<div class="code-box">
+
+    <div class="code-title">
+        <span>Answer</span>
+    </div>
+
+    <pre><code><span class="keyword">Output:</span>
+<span class="string">35</span>
+
+<span class="keyword">Explanation:</span>
+For i = 1:
+1
+
+For i = 2:
+1 + 2 = 3
+
+For i = 3:
+1 + 2 + 3 = 6
+
+For i = 4:
+1 + 2 + 3 + 4 = 10
+
+For i = 5:
+1 + 2 + 3 + 4 + 5 = 15
+
+Total:
+1 + 3 + 6 + 10 + 15 = 35
+
+Therefore, the output is 35.</code></pre>
+
+</div>
+`
+};
+
+
+const javascriptLoopsDifficultQuestion14 = {
+    question: "What will be the output of the following JavaScript program?",
+
+    program: `
+<div class="program-code-box">
+
+    <pre class="program-code-box-pre"><code class="program-code-box-code"><span class="program-code-box-keyword">let</span> i = <span class="program-code-box-number">5</span>;
+
+<span class="program-code-box-keyword">while</span> (i--) {
+    console.log(i);
+}</code></pre>
+
+</div>
+`,
+
+    options: [
+        "5 4 3 2 1",
+        "4 3 2 1 0",
+        "5 4 3 2 1 0",
+        "4 3 2 1"
+    ],
+
+    answer: 2,
+
+    solution: `
+<div class="code-box">
+
+    <div class="code-title">
+        <span>Answer</span>
+    </div>
+
+    <pre><code><span class="keyword">Output:</span>
+<span class="string">4
+3
+2
+1
+0</span>
+
+<span class="keyword">Explanation:</span>
+The postfix decrement operator returns the current value
+for the condition and then decreases i.
+
+The loop therefore prints 4, 3, 2, 1 and 0.</code></pre>
+
+</div>
+`
+};
+
+
+const javascriptLoopsDifficultQuestion15 = {
+    question: "Which loop is most suitable to iterate over a Map's entries?",
+
+    options: [
+        "for...in",
+        "for...of with destructuring",
+        "while",
+        "do...while"
+    ],
+
+    answer: 2,
+
+    solution: `
+<div class="code-box">
+
+    <div class="code-title">
+        <span>Answer</span>
+    </div>
+
+    <pre><code><span class="keyword">Answer:</span>
+<span class="string">for...of with destructuring</span>
+
+<span class="keyword">Example:</span>
+<span class="keyword">const</span> map = <span class="keyword">new</span> Map([
+    [<span class="string">"name"</span>, <span class="string">"Pradeep"</span>],
+    [<span class="string">"age"</span>, <span class="number">38</span>]
+]);
+
+<span class="keyword">for</span> (<span class="keyword">const</span> [key, value] <span class="keyword">of</span> map) {
+    console.log(key, value);
+}
+
+The Map object is iterable, so for...of is suitable for
+iterating over its entries.</code></pre>
+
+</div>
+`
+};
+
+
+const javascriptLoopsDifficultQuestion16 = {
+    question: "What will be the output of the following JavaScript program?",
+
+    program: `
+<div class="program-code-box">
+
+    <pre class="program-code-box-pre"><code class="program-code-box-code"><span class="program-code-box-keyword">let</span> arr = [
+    <span class="program-code-box-number">10</span>,
+    <span class="program-code-box-number">20</span>,
+    <span class="program-code-box-number">30</span>
+];
+
+<span class="program-code-box-keyword">let</span> sum = <span class="program-code-box-number">0</span>;
+
+<span class="program-code-box-keyword">for</span> (
+    <span class="program-code-box-keyword">let</span> i = <span class="program-code-box-number">0</span>;
+    i &lt; arr.length;
+    sum += arr[i], i++
+);
+
+console.log(sum);</code></pre>
+
+</div>
+`,
+
+    options: [
+        "0",
+        "60",
+        "30",
+        "Error (infinite loop)"
+    ],
+
+    answer: 2,
+
+    solution: `
+<div class="code-box">
+
+    <div class="code-title">
+        <span>Answer</span>
+    </div>
+
+    <pre><code><span class="keyword">Output:</span>
+<span class="string">60</span>
+
+<span class="keyword">Explanation:</span>
+The for loop has an empty body because of the semicolon.
+
+The update expression performs:
+
+sum += arr[i]
+i++
+
+The values added are:
+
+10 + 20 + 30 = 60
+
+Therefore, the output is 60.</code></pre>
+
+</div>
+`
+};
+
+
+const javascriptLoopsDifficultQuestion17 = {
+    question: "What will be the output of the following JavaScript program?",
+
+    program: `
+<div class="program-code-box">
+
+    <pre class="program-code-box-pre"><code class="program-code-box-code"><span class="program-code-box-keyword">let</span> i = <span class="program-code-box-number">0</span>;
+
+<span class="program-code-box-keyword">for</span> (;;) {
+
+    <span class="program-code-box-keyword">if</span> (i &gt;= <span class="program-code-box-number">3</span>) {
+        <span class="program-code-box-keyword">break</span>;
+    }
+
+    console.log(i);
+    i++;
+}</code></pre>
+
+</div>
+`,
+
+    options: [
+        "0 1 2",
+        "1 2 3",
+        "Infinite loop",
+        "Syntax error"
+    ],
+
+    answer: 1,
+
+    solution: `
+<div class="code-box">
+
+    <div class="code-title">
+        <span>Answer</span>
+    </div>
+
+    <pre><code><span class="keyword">Output:</span>
+<span class="string">0
+1
+2</span>
+
+<span class="keyword">Explanation:</span>
+The for (;;) loop has no condition, so it can run indefinitely.
+
+However, when i becomes 3, the break statement
+terminates the loop.
+
+Therefore, the output is 0, 1 and 2.</code></pre>
+
+</div>
+`
+};
+
+
+const javascriptLoopsDifficultQuestion18 = {
+    question: "What will be the output of the following JavaScript program?",
+
+    program: `
+<div class="program-code-box">
+
+    <pre class="program-code-box-pre"><code class="program-code-box-code"><span class="program-code-box-keyword">let</span> str = <span class="program-code-box-string">"abc"</span>;
+<span class="program-code-box-keyword">let</span> res = <span class="program-code-box-string">""</span>;
+
+<span class="program-code-box-keyword">for</span> (<span class="program-code-box-keyword">let</span> ch <span class="program-code-box-keyword">of</span> str) {
+    res = ch + res;
+}
+
+console.log(res);</code></pre>
+
+</div>
+`,
+
+    options: [
+        "abc",
+        "cba",
+        "aaabbbccc",
+        "Error"
+    ],
+
+    answer: 2,
+
+    solution: `
+<div class="code-box">
+
+    <div class="code-title">
+        <span>Answer</span>
+    </div>
+
+    <pre><code><span class="keyword">Output:</span>
+<span class="string">cba</span>
+
+<span class="keyword">Explanation:</span>
+The loop processes the characters in this order:
+
+a → res = "a"
+b → res = "ba"
+c → res = "cba"
+
+Each new character is added before the existing result.
+
+Therefore, the final output is "cba".</code></pre>
+
+</div>
+`
+};
+
+
+const javascriptLoopsDifficultQuestion19 = {
+    question: "What will be the output of the following JavaScript program?",
+
+    program: `
+<div class="program-code-box">
+
+    <pre class="program-code-box-pre"><code class="program-code-box-code"><span class="program-code-box-keyword">let</span> arr = [
+    <span class="program-code-box-number">1</span>,
+    <span class="program-code-box-number">2</span>,
+    <span class="program-code-box-number">3</span>
+];
+
+<span class="program-code-box-keyword">for</span> (<span class="program-code-box-keyword">let</span> i = <span class="program-code-box-number">0</span>; i &lt; arr.length; i++) {
+    setTimeout(() =&gt; console.log(arr[i]), <span class="program-code-box-number">0</span>);
+}</code></pre>
+
+</div>
+`,
+
+    options: [
+        "1 2 3",
+        "3 3 3",
+        "undefined undefined undefined",
+        "1 2 3 (after delay)"
+    ],
+
+    answer: 4,
+
+    solution: `
+<div class="code-box">
+
+    <div class="code-title">
+        <span>Answer</span>
+    </div>
+
+    <pre><code><span class="keyword">Output:</span>
+<span class="string">1
+2
+3</span>
+
+<span class="keyword">Explanation:</span>
+The loop uses let, so each iteration has its own binding
+for i.
+
+The setTimeout callbacks execute after the loop completes,
+but each callback retains the correct value of i.
+
+Therefore, 1, 2 and 3 are printed after the delay.</code></pre>
+
+</div>
+`
+};
+
+
+const javascriptLoopsDifficultQuestion20 = {
+    question: "What will be the output of the following JavaScript program?",
+
+    program: `
+<div class="program-code-box">
+    <pre class="program-code-box-pre"><code class="program-code-box-code"><span class="program-code-box-keyword">let</span> count = <span class="program-code-box-number">0</span>;
+<span class="program-code-box-keyword">for</span> (<span class="program-code-box-keyword">let</span> i = <span class="program-code-box-number">0</span>; i &lt; <span class="program-code-box-number">3</span>; i++) {
+    <span class="program-code-box-keyword">for</span> (<span class="program-code-box-keyword">let</span> j = <span class="program-code-box-number">0</span>; j &lt; <span class="program-code-box-number">3</span>; j++) {
+        <span class="program-code-box-keyword">if</span> ((i + j) % <span class="program-code-box-number">2</span> === <span class="program-code-box-number">0</span>) {
+            <span class="program-code-box-keyword">continue</span>;
+        }
+        count++;
+    }
+}
+console.log(count);</code></pre>
+</div>
+`,
+
+    options: [
+        "9",
+        "6",
+        "4",
+        "3"
+    ],
+
+    answer: 3,
+
+    solution: `
+<div class="code-box">
+
+    <div class="code-title">
+        <span>Answer</span>
+    </div>
+
+    <pre><code><span class="keyword">Output:</span>
+<span class="string">4</span>
+
+<span class="keyword">Explanation:</span>
+The continue statement skips iterations where i + j is even.
+
+The combinations where i + j is odd are:
+
+(0, 1)
+(1, 0)
+(1, 2)
+(2, 1)
+
+There are 4 such combinations.
+
+Therefore, count becomes 4.</code></pre>
 
 </div>
 `
@@ -2645,5 +3675,24 @@ const cProgrammingQuestionsUnit_2 = [
     cUnit_2Question57,
     cUnit_2Question58,
     cUnit_2Question59,
-    cUnit_2Question60
+    javascriptLoopsDifficultQuestion1,
+    javascriptLoopsDifficultQuestion2,
+    javascriptLoopsDifficultQuestion3,
+    javascriptLoopsDifficultQuestion4,
+    javascriptLoopsDifficultQuestion5,
+    javascriptLoopsDifficultQuestion6,
+    javascriptLoopsDifficultQuestion7,
+    javascriptLoopsDifficultQuestion8,
+    javascriptLoopsDifficultQuestion9,
+    javascriptLoopsDifficultQuestion10,
+    javascriptLoopsDifficultQuestion11,
+    javascriptLoopsDifficultQuestion12,
+    javascriptLoopsDifficultQuestion13,
+    javascriptLoopsDifficultQuestion14,
+    javascriptLoopsDifficultQuestion15,
+    javascriptLoopsDifficultQuestion16,
+    javascriptLoopsDifficultQuestion17,
+    javascriptLoopsDifficultQuestion18,
+    javascriptLoopsDifficultQuestion19,
+    javascriptLoopsDifficultQuestion20
 ];

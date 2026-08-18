@@ -18,7 +18,7 @@ const cUnit_3Question1 = {
         <span>Answer</span>
     </div>
 
-    <pre><code><span class="keyword">Correct Answer:</span> <span class="string">A) for(initialization; condition; increment)</span>
+    <pre><code><span class="keyword">Answer:</span> <span class="string">A) for(initialization; condition; increment)</span>
 
 <span class="keyword">Explanation:</span>
 A for loop contains three parts:
@@ -52,7 +52,7 @@ const cUnit_3Question2 = {
         <span>Answer</span>
     </div>
 
-    <pre><code><span class="keyword">Correct Answer:</span> <span class="string">B) 5</span>
+    <pre><code><span class="keyword">Answer:</span> <span class="string">B) 5</span>
 
 <span class="keyword">Explanation:</span>
 The values of i are:
@@ -85,7 +85,7 @@ const cUnit_3Question3 = {
         <span>Answer</span>
     </div>
 
-    <pre><code><span class="keyword">Correct Answer:</span> <span class="string">C) Initialization</span>
+    <pre><code><span class="keyword">Answer:</span> <span class="string">C) Initialization</span>
 
 <span class="keyword">Explanation:</span>
 The initialization part is executed only once when the loop starts.
@@ -117,7 +117,7 @@ const cUnit_3Question4 = {
         <span>Answer</span>
     </div>
 
-    <pre><code><span class="keyword">Correct Answer:</span> <span class="string">C) break</span>
+    <pre><code><span class="keyword">Answer:</span> <span class="string">C) break</span>
 
 <span class="keyword">Explanation:</span>
 The <span class="keyword">break</span> statement immediately terminates the loop and transfers control to the statement after the loop.</code></pre>
@@ -146,7 +146,7 @@ const cUnit_3Question5 = {
         <span>Answer</span>
     </div>
 
-    <pre><code><span class="keyword">Correct Answer:</span> <span class="string">B) continue</span>
+    <pre><code><span class="keyword">Answer:</span> <span class="string">B) continue</span>
 
 <span class="keyword">Explanation:</span>
 The <span class="keyword">continue</span> statement skips the remaining statements of the current iteration and starts the next iteration.</code></pre>
@@ -175,7 +175,7 @@ const cUnit_3Question6 = {
         <span>Answer</span>
     </div>
 
-    <pre><code><span class="keyword">Correct Answer:</span> <span class="string">B) 10</span>
+    <pre><code><span class="keyword">Answer:</span> <span class="string">B) 10</span>
 
 <span class="keyword">Explanation:</span>
 The loop runs for:
@@ -208,7 +208,7 @@ const cUnit_3Question7 = {
         <span>Answer</span>
     </div>
 
-    <pre><code><span class="keyword">Correct Answer:</span> <span class="string">A) for(;;)</span>
+    <pre><code><span class="keyword">Answer:</span> <span class="string">A) for(;;)</span>
 
 <span class="keyword">Explanation:</span>
 All three expressions of the for loop can be omitted.
@@ -243,7 +243,7 @@ const cUnit_3Question8 = {
         <span>Answer</span>
     </div>
 
-    <pre><code><span class="keyword">Correct Answer:</span> <span class="string">C) 10</span>
+    <pre><code><span class="keyword">Answer:</span> <span class="string">C) 10</span>
 
 <span class="keyword">Explanation:</span>
 The initialization part is:
@@ -276,7 +276,7 @@ const cUnit_3Question9 = {
         <span>Answer</span>
     </div>
 
-    <pre><code><span class="keyword">Correct Answer:</span> <span class="string">B) ++</span>
+    <pre><code><span class="keyword">Answer:</span> <span class="string">B) ++</span>
 
 <span class="keyword">Explanation:</span>
 The increment operator <span class="keyword">++</span> increases the value of a variable by <span class="number">1</span>.</code></pre>
@@ -305,7 +305,7 @@ const cUnit_3Question10 = {
         <span>Answer</span>
     </div>
 
-    <pre><code><span class="keyword">Correct Answer:</span> <span class="string">C) for</span>
+    <pre><code><span class="keyword">Answer:</span> <span class="string">C) for</span>
 
 <span class="keyword">Explanation:</span>
 The <span class="keyword">for</span> loop is commonly used when the number of iterations is known in advance.</code></pre>
@@ -1579,7 +1579,7 @@ const cUnit_3Question39 = {
         <span>Answer</span>
     </div>
 
-    <pre><code><span class="keyword">Correct Answer:</span> <span class="string">A) for(initialization; condition; increment)</span></code></pre>
+    <pre><code><span class="keyword">Answer:</span> <span class="string">A) for(initialization; condition; increment)</span></code></pre>
 
 </div>
 `

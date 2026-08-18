@@ -16,7 +16,7 @@ const javascriptRestSpreadQuestion1 = {
         <span>Answer</span>
     </div>
 
-    <pre><code><span class="keyword">Correct Answer:</span> <span class="operator">...</span>
+    <pre><code><span class="keyword">Answer:</span> <span class="operator">...</span>
 
 <span class="keyword">Explanation:</span>
 The three dots <span class="operator">...</span> are used for
@@ -46,7 +46,7 @@ const javascriptRestSpreadQuestion2 = {
         <span>Answer</span>
     </div>
 
-    <pre><code><span class="keyword">Correct Answer:</span> <span class="string">[10, 20, 30]</span>
+    <pre><code><span class="keyword">Answer:</span> <span class="string">[10, 20, 30]</span>
 
 <span class="keyword">Explanation:</span>
 The Spread operator expands the elements of
@@ -77,7 +77,7 @@ const javascriptRestSpreadQuestion3 = {
         <span>Answer</span>
     </div>
 
-    <pre><code><span class="keyword">Correct Answer:</span> <span class="string">Rest operator</span>
+    <pre><code><span class="keyword">Answer:</span> <span class="string">Rest operator</span>
 
 <span class="keyword">Explanation:</span>
 The Rest operator collects multiple values
@@ -111,7 +111,7 @@ const javascriptRestSpreadQuestion4 = {
         <span>Answer</span>
     </div>
 
-    <pre><code><span class="keyword">Correct Answer:</span> <span class="string">[10, 20, 30]</span>
+    <pre><code><span class="keyword">Answer:</span> <span class="string">[10, 20, 30]</span>
 
 <span class="keyword">Explanation:</span>
 The Rest operator collects all remaining
@@ -141,7 +141,7 @@ const javascriptRestSpreadQuestion5 = {
         <span>Answer</span>
     </div>
 
-    <pre><code><span class="keyword">Correct Answer:</span> <span class="string">[1, 2, 3, 4]</span>
+    <pre><code><span class="keyword">Answer:</span> <span class="string">[1, 2, 3, 4]</span>
 
 <span class="keyword">Explanation:</span>
 The Spread operator expands both arrays.
@@ -206,7 +206,7 @@ const javascriptRestSpreadQuestion7 = {
         <span>Answer</span>
     </div>
 
-    <pre><code><span class="keyword">Correct Answer:</span> <span class="string">[20, 30, 40]</span>
+    <pre><code><span class="keyword">Answer:</span> <span class="string">[20, 30, 40]</span>
 
 <span class="keyword">Explanation:</span>
 The first element is assigned to <span class="variable">first</span>.
@@ -239,7 +239,7 @@ const javascriptRestSpreadQuestion8 = {
         <span>Answer</span>
     </div>
 
-    <pre><code><span class="keyword">Correct Answer:</span>
+    <pre><code><span class="keyword">Answer:</span>
 <span class="string">It expands an iterable into individual elements</span>
 
 <span class="keyword">Explanation:</span>
@@ -268,7 +268,7 @@ const javascriptRestSpreadQuestion9 = {
         <span>Answer</span>
     </div>
 
-    <pre><code><span class="keyword">Correct Answer:</span> <span class="string">Pradeep</span>
+    <pre><code><span class="keyword">Answer:</span> <span class="string">Pradeep</span>
 
 <span class="keyword">Explanation:</span>
 The Spread operator copies the properties
@@ -325,7 +325,7 @@ const javascriptRestSpreadQuestion11 = {
         <span>Answer</span>
     </div>
 
-    <pre><code><span class="keyword">Correct Answer:</span> <span class="string">[30, 40, 50]</span>
+    <pre><code><span class="keyword">Answer:</span> <span class="string">[30, 40, 50]</span>
 
 <span class="keyword">Explanation:</span>
 The first two arguments are assigned to
@@ -382,7 +382,7 @@ const javascriptRestSpreadQuestion13 = {
         <span>Answer</span>
     </div>
 
-    <pre><code><span class="keyword">Correct Answer:</span>
+    <pre><code><span class="keyword">Answer:</span>
 <span class="string">{ a: 10, b: 20, c: 30 }</span>
 
 <span class="keyword">Explanation:</span>
@@ -413,7 +413,7 @@ const javascriptRestSpreadQuestion14 = {
         <span>Answer</span>
     </div>
 
-    <pre><code><span class="keyword">Correct Answer:</span>
+    <pre><code><span class="keyword">Answer:</span>
 <span class="keyword">function</span> test(<span class="operator">...</span>args) { }
 
 <span class="keyword">Explanation:</span>
@@ -442,7 +442,7 @@ const javascriptRestSpreadQuestion15 = {
         <span>Answer</span>
     </div>
 
-    <pre><code><span class="keyword">Correct Answer:</span> <span class="string">[0, 1, 2, 3, 4]</span>
+    <pre><code><span class="keyword">Answer:</span> <span class="string">[0, 1, 2, 3, 4]</span>
 
 <span class="keyword">Explanation:</span>
 The Spread operator expands the elements
@@ -506,7 +506,7 @@ const javascriptRestSpreadQuestion17 = {
         <span>Answer</span>
     </div>
 
-    <pre><code><span class="keyword">Correct Answer:</span>
+    <pre><code><span class="keyword">Answer:</span>
 <span class="number">10</span> and <span class="string">[30, 40, 50]</span>
 
 <span class="keyword">Explanation:</span>
@@ -578,7 +578,7 @@ const javascriptRestSpreadQuestion19 = {
         <span>Answer</span>
     </div>
 
-    <pre><code><span class="keyword">Correct Answer:</span>
+    <pre><code><span class="keyword">Answer:</span>
 <span class="string">The second value overwrites the first value</span>
 
 <span class="keyword">Example:</span>
@@ -644,7 +644,7 @@ const javascriptTypeConversionQuestion1 = {
         <span>Answer</span>
     </div>
 
-    <pre><code><span class="keyword">Correct Answer:</span> <span class="number">10</span>
+    <pre><code><span class="keyword">Answer:</span> <span class="number">10</span>
 
 <span class="keyword">Explanation:</span>
 The <span class="function">Number()</span> function converts
@@ -679,7 +679,7 @@ const javascriptTypeConversionQuestion2 = {
         <span>Answer</span>
     </div>
 
-    <pre><code><span class="keyword">Correct Answer:</span> <span class="string">"25"</span>
+    <pre><code><span class="keyword">Answer:</span> <span class="string">"25"</span>
 
 <span class="keyword">Explanation:</span>
 The <span class="function">String()</span> function converts
@@ -711,7 +711,7 @@ const javascriptTypeConversionQuestion3 = {
         <span>Answer</span>
     </div>
 
-    <pre><code><span class="keyword">Correct Answer:</span> <span class="number">10</span>
+    <pre><code><span class="keyword">Answer:</span> <span class="number">10</span>
 
 <span class="keyword">Explanation:</span>
 The multiplication operator <span class="operator">*</span>
@@ -746,7 +746,7 @@ const javascriptTypeConversionQuestion4 = {
         <span>Answer</span>
     </div>
 
-    <pre><code><span class="keyword">Correct Answer:</span> <span class="function">parseInt()</span>
+    <pre><code><span class="keyword">Answer:</span> <span class="function">parseInt()</span>
 
 <span class="keyword">Explanation:</span>
 The <span class="function">parseInt()</span> function converts
@@ -806,7 +806,7 @@ const javascriptControlStatementsQuestion1 = {
         <span>Answer</span>
     </div>
 
-    <pre><code><span class="keyword">Correct Answer:</span> <span class="keyword">if</span>
+    <pre><code><span class="keyword">Answer:</span> <span class="keyword">if</span>
 
 <span class="keyword">Explanation:</span>
 The <span class="keyword">if</span> statement executes a block
@@ -834,7 +834,7 @@ const javascriptControlStatementsQuestion2 = {
         <span>Answer</span>
     </div>
 
-    <pre><code><span class="keyword">Correct Answer:</span> <span class="string">"Adult"</span>
+    <pre><code><span class="keyword">Answer:</span> <span class="string">"Adult"</span>
 
 <span class="keyword">Explanation:</span>
 The value of <span class="variable">age</span> is <span class="number">20</span>.
@@ -865,7 +865,7 @@ const javascriptControlStatementsQuestion3 = {
         <span>Answer</span>
     </div>
 
-    <pre><code><span class="keyword">Correct Answer:</span> <span class="keyword">if...else if...else</span>
+    <pre><code><span class="keyword">Answer:</span> <span class="keyword">if...else if...else</span>
 
 <span class="keyword">Explanation:</span>
 The <span class="keyword">if...else if...else</span> statement
@@ -923,7 +923,7 @@ const javascriptControlStatementsQuestion5 = {
         <span>Answer</span>
     </div>
 
-    <pre><code><span class="keyword">Correct Answer:</span> <span class="string">"Tuesday"</span>
+    <pre><code><span class="keyword">Answer:</span> <span class="string">"Tuesday"</span>
 
 <span class="keyword">Explanation:</span>
 The value of <span class="variable">day</span> is <span class="number">2</span>.
@@ -955,7 +955,7 @@ const javascriptControlStatementsQuestion6 = {
         <span>Answer</span>
     </div>
 
-    <pre><code><span class="keyword">Correct Answer:</span> <span class="keyword">break</span>
+    <pre><code><span class="keyword">Answer:</span> <span class="keyword">break</span>
 
 <span class="keyword">Explanation:</span>
 The <span class="keyword">break</span> statement immediately
@@ -983,7 +983,7 @@ const javascriptControlStatementsQuestion7 = {
         <span>Answer</span>
     </div>
 
-    <pre><code><span class="keyword">Correct Answer:</span> <span class="number">1 2</span>
+    <pre><code><span class="keyword">Answer:</span> <span class="number">1 2</span>
 
 <span class="keyword">Explanation:</span>
 When <span class="variable">i</span> becomes <span class="number">3</span>,
@@ -1015,7 +1015,7 @@ const javascriptControlStatementsQuestion8 = {
         <span>Answer</span>
     </div>
 
-    <pre><code><span class="keyword">Correct Answer:</span> <span class="keyword">continue</span>
+    <pre><code><span class="keyword">Answer:</span> <span class="keyword">continue</span>
 
 <span class="keyword">Explanation:</span>
 The <span class="keyword">continue</span> statement skips
@@ -1044,7 +1044,7 @@ const javascriptControlStatementsQuestion9 = {
         <span>Answer</span>
     </div>
 
-    <pre><code><span class="keyword">Correct Answer:</span> <span class="number">1 2 4 5</span>
+    <pre><code><span class="keyword">Answer:</span> <span class="number">1 2 4 5</span>
 
 <span class="keyword">Explanation:</span>
 When <span class="variable">i</span> is <span class="number">3</span>,
@@ -1110,7 +1110,7 @@ const javascriptControlStatementsQuestion11 = {
         <span>Answer</span>
     </div>
 
-    <pre><code><span class="keyword">Correct Answer:</span> <span class="number">1 2 3</span>
+    <pre><code><span class="keyword">Answer:</span> <span class="number">1 2 3</span>
 
 <span class="keyword">Explanation:</span>
 The loop continues while:
@@ -1147,7 +1147,7 @@ const javascriptControlStatementsQuestion12 = {
         <span>Answer</span>
     </div>
 
-    <pre><code><span class="keyword">Correct Answer:</span> <span class="keyword">do...while</span>
+    <pre><code><span class="keyword">Answer:</span> <span class="keyword">do...while</span>
 
 <span class="keyword">Explanation:</span>
 A <span class="keyword">do...while</span> loop executes the
@@ -1175,7 +1175,7 @@ const javascriptControlStatementsQuestion13 = {
         <span>Answer</span>
     </div>
 
-    <pre><code><span class="keyword">Correct Answer:</span> <span class="number">10</span>
+    <pre><code><span class="keyword">Answer:</span> <span class="number">10</span>
 
 <span class="keyword">Explanation:</span>
 A <span class="keyword">do...while</span> loop executes
@@ -1240,7 +1240,7 @@ const javascriptControlStatementsQuestion15 = {
         <span>Answer</span>
     </div>
 
-    <pre><code><span class="keyword">Correct Answer:</span> <span class="string">"B"</span>
+    <pre><code><span class="keyword">Answer:</span> <span class="string">"B"</span>
 
 <span class="keyword">Explanation:</span>
 85 &gt;= 90 → <span class="boolean">false</span>
@@ -1303,7 +1303,7 @@ const javascriptControlStatementsQuestion17 = {
         <span>Answer</span>
     </div>
 
-    <pre><code><span class="keyword">Correct Answer:</span>
+    <pre><code><span class="keyword">Answer:</span>
 <span class="string">1 1, 1 2, 2 1, 2 2, 3 1, 3 2</span>
 
 <span class="keyword">Explanation:</span>
@@ -1382,7 +1382,7 @@ const javascriptControlStatementsQuestion19 = {
         <span>Answer</span>
     </div>
 
-    <pre><code><span class="keyword">Correct Answer:</span> <span class="string">"Low"</span>
+    <pre><code><span class="keyword">Answer:</span> <span class="string">"Low"</span>
 
 <span class="keyword">Explanation:</span>
 The value of <span class="variable">value</span> is <span class="number">3</span>.
@@ -1951,6 +1951,3115 @@ w
 `
 };
 
+const javascriptLoopsDifficultQuestion1 = {
+    question: "What will be the output of the following JavaScript program?",
+
+    program: `
+<div class="program-code-box">
+
+    <pre class="program-code-box-pre"><code class="program-code-box-code"><span class="program-code-box-keyword">for</span> (<span class="program-code-box-keyword">var</span> i = <span class="program-code-box-number">0</span>; i &lt; <span class="program-code-box-number">3</span>; i++) {
+    setTimeout(() =&gt; console.log(i), <span class="program-code-box-number">0</span>);
+}
+
+console.log(i);</code></pre>
+
+</div>
+`,
+
+    options: [
+        "0 1 2 3",
+        "3 3 3 3",
+        "0 1 2 then 3",
+        "3 then 0 1 2"
+    ],
+
+    answer: 2,
+
+    solution: `
+<div class="code-box">
+
+    <div class="code-title">
+        <span>Answer</span>
+    </div>
+
+    <pre><code><span class="keyword">Output:</span>
+<span class="string">3
+3
+3
+3</span>
+
+<span class="keyword">Explanation:</span>
+The variable declared using var is function-scoped.
+The for loop completes before the setTimeout callbacks execute.
+Therefore, all callbacks access the final value of i, which is 3.</code></pre>
+
+</div>
+`
+};
+
+
+const javascriptLoopsDifficultQuestion2 = {
+    question: "What will be the output of the following JavaScript program?",
+
+    program: `
+<div class="program-code-box">
+
+    <pre class="program-code-box-pre"><code class="program-code-box-code"><span class="program-code-box-keyword">for</span> (<span class="program-code-box-keyword">let</span> i = <span class="program-code-box-number">0</span>; i &lt; <span class="program-code-box-number">3</span>; i++) {
+    setTimeout(() =&gt; console.log(i), <span class="program-code-box-number">0</span>);
+}</code></pre>
+
+</div>
+`,
+
+    options: [
+        "0 1 2",
+        "3 3 3",
+        "0 1 2 (in order, after a short delay)",
+        "Syntax error"
+    ],
+
+    answer: 3,
+
+    solution: `
+<div class="code-box">
+
+    <div class="code-title">
+        <span>Answer</span>
+    </div>
+
+    <pre><code><span class="keyword">Output:</span>
+<span class="string">0
+1
+2</span>
+
+<span class="keyword">Explanation:</span>
+The let declaration creates a separate binding for each iteration.
+Therefore, each setTimeout callback remembers its corresponding
+value of i.
+
+The callbacks execute after the loop completes, so the values
+are printed as 0, 1, and 2.</code></pre>
+
+</div>
+`
+};
+
+
+const javascriptLoopsDifficultQuestion3 = {
+    question: "What will be the output of the following JavaScript program?",
+
+    program: `
+<div class="program-code-box">
+
+    <pre class="program-code-box-pre"><code class="program-code-box-code"><span class="program-code-box-keyword">let</span> i = <span class="program-code-box-number">0</span>;
+
+<span class="program-code-box-keyword">for</span> (; i &lt; <span class="program-code-box-number">3</span>; i++) {
+    <span class="program-code-box-keyword">if</span> (i === <span class="program-code-box-number">1</span>) {
+        i++;
+        <span class="program-code-box-keyword">continue</span>;
+    }
+
+    console.log(i);
+}</code></pre>
+
+</div>
+`,
+
+    options: [
+        "0 2",
+        "0 1 2",
+        "0 3",
+        "0"
+    ],
+
+    answer: 1,
+
+    solution: `
+<div class="code-box">
+
+    <div class="code-title">
+        <span>Answer</span>
+    </div>
+
+    <pre><code><span class="keyword">Output:</span>
+<span class="string">0
+2</span>
+
+<span class="keyword">Explanation:</span>
+Initially, i is 0, so 0 is printed.
+
+When i becomes 1, the if condition is true.
+Inside the condition, i is incremented to 2 and continue
+skips the remaining statements of that iteration.
+
+After continue, the for loop's update expression i++ executes,
+making i equal to 3.
+
+Therefore, the output is 0 and 2.</code></pre>
+
+</div>
+`
+};
+
+
+const javascriptLoopsDifficultQuestion4 = {
+    question: "What will be the output of the following JavaScript program?",
+
+    program: `
+<div class="program-code-box">
+
+    <pre class="program-code-box-pre"><code class="program-code-box-code"><span class="program-code-box-keyword">let</span> arr = [<span class="program-code-box-number">1</span>, <span class="program-code-box-number">2</span>, <span class="program-code-box-number">3</span>];
+
+<span class="program-code-box-keyword">for</span> (<span class="program-code-box-keyword">let</span> i <span class="program-code-box-keyword">in</span> arr) {
+    console.log(<span class="program-code-box-keyword">typeof</span> i);
+}</code></pre>
+
+</div>
+`,
+
+    options: [
+        "number number number",
+        "string string string",
+        "undefined undefined undefined",
+        "object object object"
+    ],
+
+    answer: 2,
+
+    solution: `
+<div class="code-box">
+
+    <div class="code-title">
+        <span>Answer</span>
+    </div>
+
+    <pre><code><span class="keyword">Output:</span>
+<span class="string">string
+string
+string</span>
+
+<span class="keyword">Explanation:</span>
+The for...in loop iterates over the property keys of an array.
+Array indexes are returned as strings.
+
+Therefore, typeof i returns "string" for every iteration.</code></pre>
+
+</div>
+`
+};
+
+
+const javascriptLoopsDifficultQuestion5 = {
+    question: "What will be the output of the following JavaScript program?",
+
+    program: `
+<div class="program-code-box">
+
+    <pre class="program-code-box-pre"><code class="program-code-box-code"><span class="program-code-box-keyword">let</span> arr = [<span class="program-code-box-number">10</span>, <span class="program-code-box-number">20</span>, <span class="program-code-box-number">30</span>];
+
+<span class="program-code-box-keyword">for</span> (<span class="program-code-box-keyword">let</span> i <span class="program-code-box-keyword">of</span> arr) {
+    i = i * <span class="program-code-box-number">2</span>;
+}
+
+console.log(arr);</code></pre>
+
+</div>
+`,
+
+    options: [
+        "[10, 20, 30]",
+        "[20, 40, 60]",
+        "[undefined, undefined, undefined]",
+        "Error"
+    ],
+
+    answer: 1,
+
+    solution: `
+<div class="code-box">
+
+    <div class="code-title">
+        <span>Answer</span>
+    </div>
+
+    <pre><code><span class="keyword">Output:</span>
+<span class="string">[10, 20, 30]</span>
+
+<span class="keyword">Explanation:</span>
+The variable i receives each array value.
+Since the values are primitive numbers, assigning a new value
+to i does not modify the original array.
+
+Therefore, the array remains unchanged.</code></pre>
+
+</div>
+`
+};
+
+
+const javascriptLoopsDifficultQuestion6 = {
+    question: "Which statement about the for...of loop is TRUE?",
+
+    options: [
+        "It gives the index of array elements",
+        "It can be used with plain objects directly",
+        "It works only on iterable objects",
+        "It cannot be used with strings"
+    ],
+
+    answer: 3,
+
+    solution: `
+<div class="code-box">
+
+    <div class="code-title">
+        <span>Answer</span>
+    </div>
+
+    <pre><code><span class="keyword">Answer:</span>
+<span class="string">It works only on iterable objects</span>
+
+<span class="keyword">Explanation:</span>
+The for...of loop is designed to iterate over iterable objects.
+
+Examples of iterables include arrays, strings, Maps and Sets.
+A normal plain object is not directly iterable.</code></pre>
+
+</div>
+`
+};
+
+
+const javascriptLoopsDifficultQuestion7 = {
+    question: "What will be the output of the following JavaScript program?",
+
+    program: `
+<div class="program-code-box">
+
+    <pre class="program-code-box-pre"><code class="program-code-box-code"><span class="program-code-box-keyword">let</span> count = <span class="program-code-box-number">0</span>;
+
+outer:
+<span class="program-code-box-keyword">for</span> (<span class="program-code-box-keyword">let</span> i = <span class="program-code-box-number">0</span>; i &lt; <span class="program-code-box-number">3</span>; i++) {
+    <span class="program-code-box-keyword">for</span> (<span class="program-code-box-keyword">let</span> j = <span class="program-code-box-number">0</span>; j &lt; <span class="program-code-box-number">3</span>; j++) {
+
+        <span class="program-code-box-keyword">if</span> (i === <span class="program-code-box-number">1</span> &amp;&amp; j === <span class="program-code-box-number">1</span>)
+            <span class="program-code-box-keyword">break</span> outer;
+
+        count++;
+    }
+}
+
+console.log(count);</code></pre>
+
+</div>
+`,
+
+    options: [
+        "9",
+        "6",
+        "4",
+        "3"
+    ],
+
+    answer: 3,
+
+    solution: `
+<div class="code-box">
+
+    <div class="code-title">
+        <span>Answer</span>
+    </div>
+
+    <pre><code><span class="keyword">Output:</span>
+<span class="string">4</span>
+
+<span class="keyword">Explanation:</span>
+The inner loop runs for:
+
+i = 0 → j = 0, 1, 2 → count becomes 3
+i = 1 → j = 0 → count becomes 4
+
+When i = 1 and j = 1, break outer terminates
+the outer loop as well.
+
+Therefore, count is 4.</code></pre>
+
+</div>
+`
+};
+
+
+const javascriptLoopsDifficultQuestion8 = {
+    question: "What will be the output of the following JavaScript program?",
+
+    program: `
+<div class="program-code-box">
+
+    <pre class="program-code-box-pre"><code class="program-code-box-code"><span class="program-code-box-keyword">let</span> i = <span class="program-code-box-number">0</span>;
+
+<span class="program-code-box-keyword">while</span> (i &lt; <span class="program-code-box-number">5</span>) {
+
+    <span class="program-code-box-keyword">if</span> (i === <span class="program-code-box-number">3</span>) {
+        i++;
+        <span class="program-code-box-keyword">continue</span>;
+    }
+
+    console.log(i);
+    i++;
+}</code></pre>
+
+</div>
+`,
+
+    options: [
+        "0 1 2 3 4",
+        "0 1 2 4",
+        "0 1 2 3",
+        "0 1 2"
+    ],
+
+    answer: 2,
+
+    solution: `
+<div class="code-box">
+
+    <div class="code-title">
+        <span>Answer</span>
+    </div>
+
+    <pre><code><span class="keyword">Output:</span>
+<span class="string">0
+1
+2
+4</span>
+
+<span class="keyword">Explanation:</span>
+When i becomes 3, the condition is true.
+The statement i++ changes i to 4 and continue skips console.log().
+
+The next iteration prints 4.
+
+Therefore, the output is 0, 1, 2 and 4.</code></pre>
+
+</div>
+`
+};
+
+
+const javascriptLoopsDifficultQuestion9 = {
+    question: "What will be the output of the following JavaScript program?",
+
+    program: `
+<div class="program-code-box">
+
+    <pre class="program-code-box-pre"><code class="program-code-box-code"><span class="program-code-box-keyword">for</span> (<span class="program-code-box-keyword">let</span> i = <span class="program-code-box-number">0</span>; i &lt; <span class="program-code-box-number">3</span>; i++) {
+    setTimeout(() =&gt; console.log(i), <span class="program-code-box-number">0</span>);
+}
+
+<span class="program-code-box-keyword">for</span> (<span class="program-code-box-keyword">let</span> j = <span class="program-code-box-number">0</span>; j &lt; <span class="program-code-box-number">3</span>; j++) {
+    console.log(j);
+}</code></pre>
+
+</div>
+`,
+
+    options: [
+        "0 1 2 0 1 2",
+        "0 1 2 then 0 1 2 (after delay)",
+        "0 1 2 0 1 2 (all immediate)",
+        "0 1 2 (only second loop runs)"
+    ],
+
+    answer: 2,
+
+    solution: `
+<div class="code-box">
+
+    <div class="code-title">
+        <span>Answer</span>
+    </div>
+
+    <pre><code><span class="keyword">Output:</span>
+<span class="string">0
+1
+2
+0
+1
+2</span>
+
+<span class="keyword">Explanation:</span>
+The second for loop executes synchronously and prints
+0, 1 and 2 immediately.
+
+The setTimeout callbacks are asynchronous and execute
+after the current synchronous code finishes.
+
+Therefore, the second loop's output appears first.</code></pre>
+
+</div>
+`
+};
+
+
+const javascriptLoopsDifficultQuestion10 = {
+    question: "What will be the output of the following JavaScript program?",
+
+    program: `
+<div class="program-code-box">
+
+    <pre class="program-code-box-pre"><code class="program-code-box-code"><span class="program-code-box-keyword">let</span> obj = {
+    a: <span class="program-code-box-number">1</span>,
+    b: <span class="program-code-box-number">2</span>,
+    c: <span class="program-code-box-number">3</span>
+};
+
+<span class="program-code-box-keyword">let</span> sum = <span class="program-code-box-number">0</span>;
+
+<span class="program-code-box-keyword">for</span> (<span class="program-code-box-keyword">let</span> key <span class="program-code-box-keyword">in</span> obj) {
+    sum += obj[key];
+}
+
+console.log(sum);</code></pre>
+
+</div>
+`,
+
+    options: [
+        "0",
+        "3",
+        "6",
+        "Error"
+    ],
+
+    answer: 3,
+
+    solution: `
+<div class="code-box">
+
+    <div class="code-title">
+        <span>Answer</span>
+    </div>
+
+    <pre><code><span class="keyword">Output:</span>
+<span class="string">6</span>
+
+<span class="keyword">Explanation:</span>
+The for...in loop iterates over the keys a, b and c.
+
+The corresponding values are:
+1 + 2 + 3 = 6
+
+Therefore, the value of sum is 6.</code></pre>
+
+</div>
+`
+};
+
+
+const javascriptLoopsDifficultQuestion11 = {
+    question: "What will be the output of the following JavaScript program?",
+
+    program: `
+<div class="program-code-box">
+
+    <pre class="program-code-box-pre"><code class="program-code-box-code"><span class="program-code-box-keyword">let</span> arr = [
+    <span class="program-code-box-number">1</span>, <span class="program-code-box-number">2</span>, <span class="program-code-box-number">3</span>,
+    <span class="program-code-box-number">4</span>, <span class="program-code-box-number">5</span>
+];
+
+<span class="program-code-box-keyword">for</span> (<span class="program-code-box-keyword">let</span> i = <span class="program-code-box-number">0</span>; i &lt; arr.length; i++) {
+
+    <span class="program-code-box-keyword">if</span> (arr[i] % <span class="program-code-box-number">2</span> === <span class="program-code-box-number">0</span>) {
+        arr.splice(i, <span class="program-code-box-number">1</span>);
+        i--;
+    }
+}
+
+console.log(arr);</code></pre>
+
+</div>
+`,
+
+    options: [
+        "[1, 2, 3, 4, 5]",
+        "[1, 3, 5]",
+        "[2, 4]",
+        "[1, 3, 4, 5]"
+    ],
+
+    answer: 2,
+
+    solution: `
+<div class="code-box">
+
+    <div class="code-title">
+        <span>Answer</span>
+    </div>
+
+    <pre><code><span class="keyword">Output:</span>
+<span class="string">[1, 3, 5]</span>
+
+<span class="keyword">Explanation:</span>
+When an even number is found, splice() removes it from
+the array.
+
+The statement i-- moves the index back by one so that
+the next element is checked correctly.
+
+The final array contains only the odd numbers:
+[1, 3, 5]</code></pre>
+
+</div>
+`
+};
+
+
+const javascriptLoopsDifficultQuestion12 = {
+    question: "What will be the output of the following JavaScript program?",
+
+    program: `
+<div class="program-code-box">
+
+    <pre class="program-code-box-pre"><code class="program-code-box-code"><span class="program-code-box-keyword">let</span> x = <span class="program-code-box-number">0</span>;
+
+<span class="program-code-box-keyword">do</span> {
+    x++;
+
+    <span class="program-code-box-keyword">if</span> (x === <span class="program-code-box-number">3</span>) {
+        <span class="program-code-box-keyword">break</span>;
+    }
+
+} <span class="program-code-box-keyword">while</span> (x &lt; <span class="program-code-box-number">5</span>);
+
+console.log(x);</code></pre>
+
+</div>
+`,
+
+    options: [
+        "2",
+        "3",
+        "4",
+        "5"
+    ],
+
+    answer: 2,
+
+    solution: `
+<div class="code-box">
+
+    <div class="code-title">
+        <span>Answer</span>
+    </div>
+
+    <pre><code><span class="keyword">Output:</span>
+<span class="string">3</span>
+
+<span class="keyword">Explanation:</span>
+The value of x is incremented on every iteration.
+
+When x becomes 3, the break statement immediately
+terminates the do...while loop.
+
+Therefore, x remains 3.</code></pre>
+
+</div>
+`
+};
+
+
+const javascriptLoopsDifficultQuestion13 = {
+    question: "What will be the output of the following JavaScript program?",
+
+    program: `
+<div class="program-code-box">
+
+    <pre class="program-code-box-pre"><code class="program-code-box-code"><span class="program-code-box-keyword">let</span> sum = <span class="program-code-box-number">0</span>;
+
+<span class="program-code-box-keyword">for</span> (<span class="program-code-box-keyword">let</span> i = <span class="program-code-box-number">1</span>; i &lt;= <span class="program-code-box-number">5</span>; i++) {
+
+    <span class="program-code-box-keyword">for</span> (<span class="program-code-box-keyword">let</span> j = <span class="program-code-box-number">1</span>; j &lt;= i; j++) {
+        sum += j;
+    }
+}
+
+console.log(sum);</code></pre>
+
+</div>
+`,
+
+    options: [
+        "15",
+        "20",
+        "25",
+        "35"
+    ],
+
+    answer: 4,
+
+    solution: `
+<div class="code-box">
+
+    <div class="code-title">
+        <span>Answer</span>
+    </div>
+
+    <pre><code><span class="keyword">Output:</span>
+<span class="string">35</span>
+
+<span class="keyword">Explanation:</span>
+For i = 1:
+1
+
+For i = 2:
+1 + 2 = 3
+
+For i = 3:
+1 + 2 + 3 = 6
+
+For i = 4:
+1 + 2 + 3 + 4 = 10
+
+For i = 5:
+1 + 2 + 3 + 4 + 5 = 15
+
+Total:
+1 + 3 + 6 + 10 + 15 = 35
+
+Therefore, the output is 35.</code></pre>
+
+</div>
+`
+};
+
+
+const javascriptLoopsDifficultQuestion14 = {
+    question: "What will be the output of the following JavaScript program?",
+
+    program: `
+<div class="program-code-box">
+
+    <pre class="program-code-box-pre"><code class="program-code-box-code"><span class="program-code-box-keyword">let</span> i = <span class="program-code-box-number">5</span>;
+
+<span class="program-code-box-keyword">while</span> (i--) {
+    console.log(i);
+}</code></pre>
+
+</div>
+`,
+
+    options: [
+        "5 4 3 2 1",
+        "4 3 2 1 0",
+        "5 4 3 2 1 0",
+        "4 3 2 1"
+    ],
+
+    answer: 2,
+
+    solution: `
+<div class="code-box">
+
+    <div class="code-title">
+        <span>Answer</span>
+    </div>
+
+    <pre><code><span class="keyword">Output:</span>
+<span class="string">4
+3
+2
+1
+0</span>
+
+<span class="keyword">Explanation:</span>
+The postfix decrement operator i-- returns the current
+value for the condition and then decreases i.
+
+The values printed are 4, 3, 2, 1 and 0.</code></pre>
+
+</div>
+`
+};
+
+
+const javascriptLoopsDifficultQuestion15 = {
+    question: "Which loop is most suitable to iterate over a Map's entries?",
+
+    options: [
+        "for...in",
+        "for...of with destructuring",
+        "while",
+        "do...while"
+    ],
+
+    answer: 2,
+
+    solution: `
+<div class="code-box">
+
+    <div class="code-title">
+        <span>Answer</span>
+    </div>
+
+    <pre><code><span class="keyword">Answer:</span>
+<span class="string">for...of with destructuring</span>
+
+<span class="keyword">Example:</span>
+<span class="keyword">const</span> map = <span class="keyword">new</span> Map([
+    [<span class="string">"name"</span>, <span class="string">"Pradeep"</span>],
+    [<span class="string">"age"</span>, <span class="number">38</span>]
+]);
+
+<span class="keyword">for</span> (<span class="keyword">const</span> [key, value] <span class="keyword">of</span> map) {
+    console.log(key, value);
+}
+
+The Map object is iterable, and for...of can directly
+iterate over its entries.</code></pre>
+
+</div>
+`
+};
+
+
+const javascriptLoopsDifficultQuestion16 = {
+    question: "What will be the output of the following JavaScript program?",
+
+    program: `
+<div class="program-code-box">
+
+    <pre class="program-code-box-pre"><code class="program-code-box-code"><span class="program-code-box-keyword">let</span> arr = [
+    <span class="program-code-box-number">10</span>, <span class="program-code-box-number">20</span>, <span class="program-code-box-number">30</span>
+];
+
+<span class="program-code-box-keyword">let</span> sum = <span class="program-code-box-number">0</span>;
+
+<span class="program-code-box-keyword">for</span> (
+    <span class="program-code-box-keyword">let</span> i = <span class="program-code-box-number">0</span>;
+    i &lt; arr.length;
+    sum += arr[i], i++
+);
+
+console.log(sum);</code></pre>
+
+</div>
+`,
+
+    options: [
+        "0",
+        "60",
+        "30",
+        "Error (infinite loop)"
+    ],
+
+    answer: 2,
+
+    solution: `
+<div class="code-box">
+
+    <div class="code-title">
+        <span>Answer</span>
+    </div>
+
+    <pre><code><span class="keyword">Output:</span>
+<span class="string">60</span>
+
+<span class="keyword">Explanation:</span>
+The for loop has an empty body because of the semicolon.
+
+The update expression performs two operations:
+
+sum += arr[i]
+i++
+
+The values added are:
+
+10 + 20 + 30 = 60
+
+Therefore, the output is 60.</code></pre>
+
+</div>
+`
+};
+
+
+const javascriptLoopsDifficultQuestion17 = {
+    question: "What will be the output of the following JavaScript program?",
+
+    program: `
+<div class="program-code-box">
+
+    <pre class="program-code-box-pre"><code class="program-code-box-code"><span class="program-code-box-keyword">let</span> i = <span class="program-code-box-number">0</span>;
+
+<span class="program-code-box-keyword">for</span> (;;) {
+
+    <span class="program-code-box-keyword">if</span> (i &gt;= <span class="program-code-box-number">3</span>) {
+        <span class="program-code-box-keyword">break</span>;
+    }
+
+    console.log(i);
+    i++;
+}</code></pre>
+
+</div>
+`,
+
+    options: [
+        "0 1 2",
+        "1 2 3",
+        "Infinite loop",
+        "Syntax error"
+    ],
+
+    answer: 1,
+
+    solution: `
+<div class="code-box">
+
+    <div class="code-title">
+        <span>Answer</span>
+    </div>
+
+    <pre><code><span class="keyword">Output:</span>
+<span class="string">0
+1
+2</span>
+
+<span class="keyword">Explanation:</span>
+The for loop has no initialization, condition or update expression.
+
+Therefore, for (;;) creates an infinite loop.
+
+However, when i becomes 3, the break statement
+terminates the loop.
+
+Therefore, the output is 0, 1 and 2.</code></pre>
+
+</div>
+`
+};
+
+
+const javascriptLoopsDifficultQuestion18 = {
+    question: "What will be the output of the following JavaScript program?",
+
+    program: `
+<div class="program-code-box">
+
+    <pre class="program-code-box-pre"><code class="program-code-box-code"><span class="program-code-box-keyword">let</span> str = <span class="program-code-box-string">"abc"</span>;
+<span class="program-code-box-keyword">let</span> res = <span class="program-code-box-string">""</span>;
+
+<span class="program-code-box-keyword">for</span> (<span class="program-code-box-keyword">let</span> ch <span class="program-code-box-keyword">of</span> str) {
+    res = ch + res;
+}
+
+console.log(res);</code></pre>
+
+</div>
+`,
+
+    options: [
+        "abc",
+        "cba",
+        "aaabbbccc",
+        "Error"
+    ],
+
+    answer: 2,
+
+    solution: `
+<div class="code-box">
+
+    <div class="code-title">
+        <span>Answer</span>
+    </div>
+
+    <pre><code><span class="keyword">Output:</span>
+<span class="string">cba</span>
+
+<span class="keyword">Explanation:</span>
+The for...of loop reads the characters in this order:
+
+a → res = "a"
+b → res = "ba"
+c → res = "cba"
+
+Therefore, the final output is "cba".</code></pre>
+
+</div>
+`
+};
+
+
+const javascriptLoopsDifficultQuestion19 = {
+    question: "What will be the output of the following JavaScript program?",
+
+    program: `
+<div class="program-code-box">
+
+    <pre class="program-code-box-pre"><code class="program-code-box-code"><span class="program-code-box-keyword">let</span> arr = [
+    <span class="program-code-box-number">1</span>, <span class="program-code-box-number">2</span>, <span class="program-code-box-number">3</span>
+];
+
+<span class="program-code-box-keyword">for</span> (<span class="program-code-box-keyword">let</span> i = <span class="program-code-box-number">0</span>; i &lt; arr.length; i++) {
+    setTimeout(() =&gt; console.log(arr[i]), <span class="program-code-box-number">0</span>);
+}</code></pre>
+
+</div>
+`,
+
+    options: [
+        "1 2 3",
+        "3 3 3",
+        "undefined undefined undefined",
+        "1 2 3 (after delay)"
+    ],
+
+    answer: 4,
+
+    solution: `
+<div class="code-box">
+
+    <div class="code-title">
+        <span>Answer</span>
+    </div>
+
+    <pre><code><span class="keyword">Output:</span>
+<span class="string">1
+2
+3</span>
+
+<span class="keyword">Explanation:</span>
+The loop uses let, so each iteration gets its own
+binding for i.
+
+The setTimeout callbacks execute after the loop,
+but each callback remembers the correct value of i.
+
+Therefore, the values 1, 2 and 3 are printed after the delay.</code></pre>
+
+</div>
+`
+};
+
+
+const javascriptLoopsDifficultQuestion20 = {
+    question: "What will be the output of the following JavaScript program?",
+
+    program: `
+<div class="program-code-box">
+
+    <pre class="program-code-box-pre"><code class="program-code-box-code"><span class="program-code-box-keyword">let</span> count = <span class="program-code-box-number">0</span>;
+
+<span class="program-code-box-keyword">for</span> (<span class="program-code-box-keyword">let</span> i = <span class="program-code-box-number">0</span>; i &lt; <span class="program-code-box-number">3</span>; i++) {
+
+    <span class="program-code-box-keyword">for</span> (<span class="program-code-box-keyword">let</span> j = <span class="program-code-box-number">0</span>; j &lt; <span class="program-code-box-number">3</span>; j++) {
+
+        <span class="program-code-box-keyword">if</span> ((i + j) % <span class="program-code-box-number">2</span> === <span class="program-code-box-number">0</span>)
+            <span class="program-code-box-keyword">continue</span>;
+
+        count++;
+    }
+}
+
+console.log(count);</code></pre>
+
+</div>
+`,
+
+    options: [
+        "9",
+        "6",
+        "4",
+        "3"
+    ],
+
+    answer: 3,
+
+    solution: `
+<div class="code-box">
+
+    <div class="code-title">
+        <span>Answer</span>
+    </div>
+
+    <pre><code><span class="keyword">Output:</span>
+<span class="string">4</span>
+
+<span class="keyword">Explanation:</span>
+The continue statement skips iterations where
+(i + j) is even.
+
+The combinations where (i + j) is odd are:
+
+(0, 1)
+(1, 0)
+(1, 2)
+(2, 1)
+
+There are 4 such combinations.
+
+Therefore, count becomes 4.</code></pre>
+
+</div>
+`
+};
+
+const javascriptFunctionsQuestion1 = {
+    question: "What will be the output of the following JavaScript program?",
+
+    program: `
+<div class="program-code-box">
+
+    <pre class="program-code-box-pre"><code class="program-code-box-code"><span class="program-code-box-keyword">function</span> greet(name = <span class="program-code-box-string">"Guest"</span>) {
+
+    <span class="program-code-box-keyword">return</span> <span class="program-code-box-string">"Hello, "</span> + name;
+}
+
+console.log(greet());</code></pre>
+
+</div>
+`,
+
+    options: [
+        "Hello, undefined",
+        "Hello, null",
+        "Hello, Guest",
+        "Error"
+    ],
+
+    answer: 3,
+
+    solution: `
+<div class="code-box">
+
+    <div class="code-title">
+        <span>Answer</span>
+    </div>
+
+    <pre><code><span class="keyword">Output:</span>
+<span class="string">Hello, Guest</span>
+
+<span class="keyword">Explanation:</span>
+The function parameter <span class="string">name</span> has a default value
+of <span class="string">"Guest"</span>.
+
+Since no argument is passed to <span class="string">greet()</span>,
+the default value is used.
+
+Therefore, the output is:
+
+<span class="string">Hello, Guest</span></code></pre>
+
+</div>
+`
+};
+
+
+const javascriptFunctionsQuestion2 = {
+    question: "What will be the output of the following JavaScript program?",
+
+    program: `
+<div class="program-code-box">
+
+    <pre class="program-code-box-pre"><code class="program-code-box-code"><span class="program-code-box-keyword">const</span> add = (a, b) =&gt; a + b;
+
+console.log(add(<span class="program-code-box-number">2</span>, <span class="program-code-box-number">3</span>));</code></pre>
+
+</div>
+`,
+
+    options: [
+        "5",
+        "\"23\"",
+        "undefined",
+        "Error"
+    ],
+
+    answer: 1,
+
+    solution: `
+<div class="code-box">
+
+    <div class="code-title">
+        <span>Answer</span>
+    </div>
+
+    <pre><code><span class="keyword">Output:</span>
+<span class="string">5</span>
+
+<span class="keyword">Explanation:</span>
+The arrow function adds the two arguments passed to it.
+
+2 + 3 = 5
+
+Therefore, the output is:
+
+<span class="string">5</span></code></pre>
+
+</div>
+`
+};
+
+
+const javascriptFunctionsQuestion3 = {
+    question: "What will be the output of the following JavaScript program?",
+
+    program: `
+<div class="program-code-box">
+
+    <pre class="program-code-box-pre"><code class="program-code-box-code"><span class="program-code-box-keyword">function</span> test() {
+
+    <span class="program-code-box-keyword">return</span> {
+        message: <span class="program-code-box-string">"Hi"</span>
+    };
+}
+
+console.log(test().message);</code></pre>
+
+</div>
+`,
+
+    options: [
+        "undefined",
+        "Hi",
+        "Error",
+        "null"
+    ],
+
+    answer: 2,
+
+    solution: `
+<div class="code-box">
+
+    <div class="code-title">
+        <span>Answer</span>
+    </div>
+
+    <pre><code><span class="keyword">Output:</span>
+<span class="string">Hi</span>
+
+<span class="keyword">Explanation:</span>
+The function returns an object containing the
+<span class="string">message</span> property.
+
+The expression <span class="string">test().message</span> accesses
+that property.
+
+Therefore, the output is:
+
+<span class="string">Hi</span></code></pre>
+
+</div>
+`
+};
+
+
+const javascriptFunctionsQuestion4 = {
+    question: "What will be the output of the following JavaScript program?",
+
+    program: `
+<div class="program-code-box">
+
+    <pre class="program-code-box-pre"><code class="program-code-box-code"><span class="program-code-box-keyword">function</span> outer() {
+
+    <span class="program-code-box-keyword">let</span> count = <span class="program-code-box-number">0</span>;
+
+    <span class="program-code-box-keyword">return function</span> inner() {
+        count++;
+        <span class="program-code-box-keyword">return</span> count;
+    };
+}
+
+<span class="program-code-box-keyword">const</span> fn = outer();
+
+console.log(fn(), fn(), fn());</code></pre>
+
+</div>
+`,
+
+    options: [
+        "1 1 1",
+        "1 2 3",
+        "0 1 2",
+        "Error"
+    ],
+
+    answer: 2,
+
+    solution: `
+<div class="code-box">
+
+    <div class="code-title">
+        <span>Answer</span>
+    </div>
+
+    <pre><code><span class="keyword">Output:</span>
+<span class="string">1 2 3</span>
+
+<span class="keyword">Explanation:</span>
+The inner function forms a closure over the
+<span class="string">count</span> variable.
+
+Initially:
+
+count = 0
+
+First call:
+count becomes 1
+
+Second call:
+count becomes 2
+
+Third call:
+count becomes 3
+
+Therefore, the output is:
+
+<span class="string">1 2 3</span></code></pre>
+
+</div>
+`
+};
+
+
+const javascriptFunctionsQuestion5 = {
+    question: "What will be the output of the following JavaScript program?",
+
+    program: `
+<div class="program-code-box">
+
+    <pre class="program-code-box-pre"><code class="program-code-box-code"><span class="program-code-box-keyword">const</span> arr = [<span class="program-code-box-number">1</span>, <span class="program-code-box-number">2</span>, <span class="program-code-box-number">3</span>];
+
+<span class="program-code-box-keyword">const</span> result = arr.map(<span class="program-code-box-keyword">function</span>(x) {
+    <span class="program-code-box-keyword">return</span> x * <span class="program-code-box-number">2</span>;
+});
+
+console.log(result);</code></pre>
+
+</div>
+`,
+
+    options: [
+        "[1, 2, 3]",
+        "[2, 4, 6]",
+        "[1, 4, 9]",
+        "undefined"
+    ],
+
+    answer: 2,
+
+    solution: `
+<div class="code-box">
+
+    <div class="code-title">
+        <span>Answer</span>
+    </div>
+
+    <pre><code><span class="keyword">Output:</span>
+<span class="string">[2, 4, 6]</span>
+
+<span class="keyword">Explanation:</span>
+The map() method executes the function for every
+element of the array.
+
+1 × 2 = 2
+2 × 2 = 4
+3 × 2 = 6
+
+Therefore, a new array is created:
+
+<span class="string">[2, 4, 6]</span></code></pre>
+
+</div>
+`
+};
+
+
+const javascriptFunctionsQuestion6 = {
+    question: "What will be the output of the following JavaScript program?",
+
+    program: `
+<div class="program-code-box">
+
+    <pre class="program-code-box-pre"><code class="program-code-box-code"><span class="program-code-box-keyword">function</span> test(a = <span class="program-code-box-number">10</span>, b = <span class="program-code-box-number">20</span>) {
+
+    <span class="program-code-box-keyword">return</span> a + b;
+}
+
+console.log(test(<span class="program-code-box-number">5</span>));</code></pre>
+
+</div>
+`,
+
+    options: [
+        "25",
+        "15",
+        "20",
+        "Error"
+    ],
+
+    answer: 1,
+
+    solution: `
+<div class="code-box">
+
+    <div class="code-title">
+        <span>Answer</span>
+    </div>
+
+    <pre><code><span class="keyword">Output:</span>
+<span class="string">25</span>
+
+<span class="keyword">Explanation:</span>
+The first argument is passed as 5.
+
+Therefore:
+
+a = 5
+
+No value is passed for b, so its default value
+20 is used.
+
+5 + 20 = 25
+
+Therefore, the output is:
+
+<span class="string">25</span></code></pre>
+
+</div>
+`
+};
+
+
+const javascriptFunctionsQuestion7 = {
+    question: "What will be the output of the following JavaScript program?",
+
+    program: `
+<div class="program-code-box">
+
+    <pre class="program-code-box-pre"><code class="program-code-box-code"><span class="program-code-box-keyword">const</span> fn = () =&gt; {
+
+    <span class="program-code-box-keyword">return</span> {
+        name: <span class="program-code-box-string">"John"</span>
+    };
+};
+
+console.log(fn().name);</code></pre>
+
+</div>
+`,
+
+    options: [
+        "undefined",
+        "John",
+        "Error",
+        "null"
+    ],
+
+    answer: 2,
+
+    solution: `
+<div class="code-box">
+
+    <div class="code-title">
+        <span>Answer</span>
+    </div>
+
+    <pre><code><span class="keyword">Output:</span>
+<span class="string">John</span>
+
+<span class="keyword">Explanation:</span>
+The arrow function returns an object containing
+the <span class="string">name</span> property.
+
+The expression <span class="string">fn().name</span> accesses
+the value of the name property.
+
+Therefore, the output is:
+
+<span class="string">John</span></code></pre>
+
+</div>
+`
+};
+
+
+const javascriptFunctionsQuestion8 = {
+    question: "What will be the output of the following JavaScript program?",
+
+    program: `
+<div class="program-code-box">
+
+    <pre class="program-code-box-pre"><code class="program-code-box-code"><span class="program-code-box-keyword">function</span> sum(...nums) {
+
+    <span class="program-code-box-keyword">return</span> nums.reduce(
+        (acc, n) =&gt; acc + n,
+        <span class="program-code-box-number">0</span>
+    );
+}
+
+console.log(sum(<span class="program-code-box-number">1</span>, <span class="program-code-box-number">2</span>, <span class="program-code-box-number">3</span>, <span class="program-code-box-number">4</span>));</code></pre>
+
+</div>
+`,
+
+    options: [
+        "10",
+        "4",
+        "[1, 2, 3, 4]",
+        "Error"
+    ],
+
+    answer: 1,
+
+    solution: `
+<div class="code-box">
+
+    <div class="code-title">
+        <span>Answer</span>
+    </div>
+
+    <pre><code><span class="keyword">Output:</span>
+<span class="string">10</span>
+
+<span class="keyword">Explanation:</span>
+The rest parameter <span class="string">...nums</span> collects all
+arguments into an array.
+
+The reduce() method adds all the values:
+
+1 + 2 + 3 + 4 = 10
+
+Therefore, the output is:
+
+<span class="string">10</span></code></pre>
+
+</div>
+`
+};
+
+
+const javascriptFunctionsQuestion9 = {
+    question: "What will be the output of the following JavaScript program?",
+
+    program: `
+<div class="program-code-box">
+
+    <pre class="program-code-box-pre"><code class="program-code-box-code"><span class="program-code-box-keyword">const</span> obj = {
+
+    value: <span class="program-code-box-number">10</span>,
+
+    getValue: <span class="program-code-box-keyword">function</span>() {
+        <span class="program-code-box-keyword">return</span> <span class="program-code-box-keyword">this</span>.value;
+    }
+};
+
+console.log(obj.getValue());</code></pre>
+
+</div>
+`,
+
+    options: [
+        "undefined",
+        "10",
+        "Error",
+        "null"
+    ],
+
+    answer: 2,
+
+    solution: `
+<div class="code-box">
+
+    <div class="code-title">
+        <span>Answer</span>
+    </div>
+
+    <pre><code><span class="keyword">Output:</span>
+<span class="string">10</span>
+
+<span class="keyword">Explanation:</span>
+The function <span class="string">getValue()</span> is called as a
+method of the <span class="string">obj</span> object.
+
+Therefore, <span class="string">this</span> refers to the
+<span class="string">obj</span> object.
+
+So:
+
+this.value = 10
+
+Therefore, the output is:
+
+<span class="string">10</span></code></pre>
+
+</div>
+`
+};
+
+
+const javascriptFunctionsQuestion10 = {
+    question: "What will be the output of the following JavaScript program?",
+
+    program: `
+<div class="program-code-box">
+
+    <pre class="program-code-box-pre"><code class="program-code-box-code"><span class="program-code-box-keyword">function</span> outerFunc() {
+
+    <span class="program-code-box-keyword">var</span> x = <span class="program-code-box-number">5</span>;
+
+    <span class="program-code-box-keyword">function</span> innerFunc() {
+        console.log(x);
+    }
+
+    innerFunc();
+}
+
+outerFunc();</code></pre>
+
+</div>
+`,
+
+    options: [
+        "undefined",
+        "5",
+        "Error",
+        "null"
+    ],
+
+    answer: 2,
+
+    solution: `
+<div class="code-box">
+
+    <div class="code-title">
+        <span>Answer</span>
+    </div>
+
+    <pre><code><span class="keyword">Output:</span>
+<span class="string">5</span>
+
+<span class="keyword">Explanation:</span>
+The inner function can access variables declared
+inside its outer function.
+
+The variable <span class="string">x</span> is declared inside
+<span class="string">outerFunc()</span> and is accessible to
+<span class="string">innerFunc()</span>.
+
+Therefore, the output is:
+
+<span class="string">5</span></code></pre>
+
+</div>
+`
+};
+
+const javascriptArraysQuestion1 = {
+    question: "What will be the output of the following JavaScript program?",
+
+    program: `
+<div class="program-code-box">
+
+    <pre class="program-code-box-pre"><code class="program-code-box-code"><span class="program-code-box-keyword">const</span> arr = [<span class="program-code-box-number">10</span>, <span class="program-code-box-number">20</span>, <span class="program-code-box-number">30</span>];
+
+console.log(arr[<span class="program-code-box-number">1</span>]);</code></pre>
+
+</div>
+`,
+
+    options: [
+        "10",
+        "20",
+        "30",
+        "undefined"
+    ],
+
+    answer: 2,
+
+    solution: `
+<div class="code-box">
+
+    <div class="code-title">
+        <span>Answer</span>
+    </div>
+
+    <pre><code><span class="keyword">Output:</span>
+<span class="string">20</span>
+
+<span class="keyword">Explanation:</span>
+JavaScript arrays use zero-based indexing.
+
+arr[0] = 10
+arr[1] = 20
+arr[2] = 30
+
+Therefore, arr[1] returns:
+
+<span class="string">20</span></code></pre>
+
+</div>
+`
+};
+
+
+const javascriptArraysQuestion2 = {
+    question: "What will be the output of the following JavaScript program?",
+
+    program: `
+<div class="program-code-box">
+
+    <pre class="program-code-box-pre"><code class="program-code-box-code"><span class="program-code-box-keyword">const</span> arr = [<span class="program-code-box-number">1</span>, <span class="program-code-box-number">2</span>, <span class="program-code-box-number">3</span>];
+
+arr.push(<span class="program-code-box-number">4</span>);
+
+console.log(arr);</code></pre>
+
+</div>
+`,
+
+    options: [
+        "[1, 2, 3]",
+        "[4, 1, 2, 3]",
+        "[1, 2, 3, 4]",
+        "4"
+    ],
+
+    answer: 3,
+
+    solution: `
+<div class="code-box">
+
+    <div class="code-title">
+        <span>Answer</span>
+    </div>
+
+    <pre><code><span class="keyword">Output:</span>
+<span class="string">[1, 2, 3, 4]</span>
+
+<span class="keyword">Explanation:</span>
+The push() method adds an element to the
+end of an array.
+
+The value 4 is added after 3.
+
+Therefore:
+
+<span class="string">[1, 2, 3, 4]</span></code></pre>
+
+</div>
+`
+};
+
+
+const javascriptArraysQuestion3 = {
+    question: "What will be the output of the following JavaScript program?",
+
+    program: `
+<div class="program-code-box">
+
+    <pre class="program-code-box-pre"><code class="program-code-box-code"><span class="program-code-box-keyword">const</span> arr = [<span class="program-code-box-number">10</span>, <span class="program-code-box-number">20</span>, <span class="program-code-box-number">30</span>];
+
+console.log(arr.length);</code></pre>
+
+</div>
+`,
+
+    options: [
+        "2",
+        "3",
+        "4",
+        "undefined"
+    ],
+
+    answer: 2,
+
+    solution: `
+<div class="code-box">
+
+    <div class="code-title">
+        <span>Answer</span>
+    </div>
+
+    <pre><code><span class="keyword">Output:</span>
+<span class="string">3</span>
+
+<span class="keyword">Explanation:</span>
+The length property returns the total number
+of elements present in an array.
+
+The array contains:
+
+10, 20, 30
+
+Therefore:
+
+<span class="string">arr.length = 3</span></code></pre>
+
+</div>
+`
+};
+
+
+const javascriptArraysQuestion4 = {
+    question: "What will be the output of the following JavaScript program?",
+
+    program: `
+<div class="program-code-box">
+
+    <pre class="program-code-box-pre"><code class="program-code-box-code"><span class="program-code-box-keyword">const</span> arr = [<span class="program-code-box-number">10</span>, <span class="program-code-box-number">20</span>, <span class="program-code-box-number">30</span>];
+
+arr.pop();
+
+console.log(arr);</code></pre>
+
+</div>
+`,
+
+    options: [
+        "[10, 20]",
+        "[20, 30]",
+        "[10, 20, 30]",
+        "30"
+    ],
+
+    answer: 1,
+
+    solution: `
+<div class="code-box">
+
+    <div class="code-title">
+        <span>Answer</span>
+    </div>
+
+    <pre><code><span class="keyword">Output:</span>
+<span class="string">[10, 20]</span>
+
+<span class="keyword">Explanation:</span>
+The pop() method removes the last element
+from an array.
+
+Before:
+
+[10, 20, 30]
+
+After pop():
+
+[10, 20]
+
+Therefore, the output is:
+
+<span class="string">[10, 20]</span></code></pre>
+
+</div>
+`
+};
+
+
+const javascriptArraysQuestion5 = {
+    question: "What will be the output of the following JavaScript program?",
+
+    program: `
+<div class="program-code-box">
+
+    <pre class="program-code-box-pre"><code class="program-code-box-code"><span class="program-code-box-keyword">const</span> arr = [<span class="program-code-box-number">1</span>, <span class="program-code-box-number">2</span>, <span class="program-code-box-number">3</span>, <span class="program-code-box-number">4</span>];
+
+<span class="program-code-box-keyword">const</span> result = arr.map(x =&gt; x * <span class="program-code-box-number">2</span>);
+
+console.log(result);</code></pre>
+
+</div>
+`,
+
+    options: [
+        "[1, 2, 3, 4]",
+        "[2, 4, 6, 8]",
+        "[1, 4, 9, 16]",
+        "8"
+    ],
+
+    answer: 2,
+
+    solution: `
+<div class="code-box">
+
+    <div class="code-title">
+        <span>Answer</span>
+    </div>
+
+    <pre><code><span class="keyword">Output:</span>
+<span class="string">[2, 4, 6, 8]</span>
+
+<span class="keyword">Explanation:</span>
+The map() method creates a new array by applying
+the given function to every element.
+
+1 × 2 = 2
+2 × 2 = 4
+3 × 2 = 6
+4 × 2 = 8
+
+Therefore:
+
+<span class="string">[2, 4, 6, 8]</span></code></pre>
+
+</div>
+`
+};
+
+
+const javascriptArraysQuestion6 = {
+    question: "What will be the output of the following JavaScript program?",
+
+    program: `
+<div class="program-code-box">
+
+    <pre class="program-code-box-pre"><code class="program-code-box-code"><span class="program-code-box-keyword">const</span> arr = [<span class="program-code-box-number">5</span>, <span class="program-code-box-number">10</span>, <span class="program-code-box-number">15</span>, <span class="program-code-box-number">20</span>];
+
+<span class="program-code-box-keyword">const</span> result = arr.filter(x =&gt; x &gt; <span class="program-code-box-number">10</span>);
+
+console.log(result);</code></pre>
+
+</div>
+`,
+
+    options: [
+        "[5, 10]",
+        "[10, 15, 20]",
+        "[15, 20]",
+        "[5, 15]"
+    ],
+
+    answer: 3,
+
+    solution: `
+<div class="code-box">
+
+    <div class="code-title">
+        <span>Answer</span>
+    </div>
+
+    <pre><code><span class="keyword">Output:</span>
+<span class="string">[15, 20]</span>
+
+<span class="keyword">Explanation:</span>
+The filter() method returns only those elements
+that satisfy the specified condition.
+
+Condition:
+
+x &gt; 10
+
+15 and 20 satisfy the condition.
+
+Therefore:
+
+<span class="string">[15, 20]</span></code></pre>
+
+</div>
+`
+};
+
+
+const javascriptArraysQuestion7 = {
+    question: "What will be the output of the following JavaScript program?",
+
+    program: `
+<div class="program-code-box">
+
+    <pre class="program-code-box-pre"><code class="program-code-box-code"><span class="program-code-box-keyword">const</span> arr = [<span class="program-code-box-number">1</span>, <span class="program-code-box-number">2</span>, <span class="program-code-box-number">3</span>, <span class="program-code-box-number">4</span>];
+
+<span class="program-code-box-keyword">const</span> result = arr.reduce(
+    (sum, value) =&gt; sum + value,
+    <span class="program-code-box-number">0</span>
+);
+
+console.log(result);</code></pre>
+
+</div>
+`,
+
+    options: [
+        "4",
+        "10",
+        "24",
+        "0"
+    ],
+
+    answer: 2,
+
+    solution: `
+<div class="code-box">
+
+    <div class="code-title">
+        <span>Answer</span>
+    </div>
+
+    <pre><code><span class="keyword">Output:</span>
+<span class="string">10</span>
+
+<span class="keyword">Explanation:</span>
+The reduce() method combines all array elements
+into a single value.
+
+Calculation:
+
+0 + 1 = 1
+1 + 2 = 3
+3 + 3 = 6
+6 + 4 = 10
+
+Therefore:
+
+<span class="string">10</span></code></pre>
+
+</div>
+`
+};
+
+
+const javascriptArraysQuestion8 = {
+    question: "What will be the output of the following JavaScript program?",
+
+    program: `
+<div class="program-code-box">
+
+    <pre class="program-code-box-pre"><code class="program-code-box-code"><span class="program-code-box-keyword">const</span> arr = [<span class="program-code-box-number">10</span>, <span class="program-code-box-number">20</span>, <span class="program-code-box-number">30</span>];
+
+arr.unshift(<span class="program-code-box-number">5</span>);
+
+console.log(arr);</code></pre>
+
+</div>
+`,
+
+    options: [
+        "[10, 20, 30, 5]",
+        "[5, 10, 20, 30]",
+        "[10, 5, 20, 30]",
+        "[5, 30, 20, 10]"
+    ],
+
+    answer: 2,
+
+    solution: `
+<div class="code-box">
+
+    <div class="code-title">
+        <span>Answer</span>
+    </div>
+
+    <pre><code><span class="keyword">Output:</span>
+<span class="string">[5, 10, 20, 30]</span>
+
+<span class="keyword">Explanation:</span>
+The unshift() method adds one or more elements
+to the beginning of an array.
+
+Before:
+
+[10, 20, 30]
+
+After:
+
+[5, 10, 20, 30]
+
+Therefore, the output is:
+
+<span class="string">[5, 10, 20, 30]</span></code></pre>
+
+</div>
+`
+};
+
+
+const javascriptArraysQuestion9 = {
+    question: "What will be the output of the following JavaScript program?",
+
+    program: `
+<div class="program-code-box">
+
+    <pre class="program-code-box-pre"><code class="program-code-box-code"><span class="program-code-box-keyword">const</span> arr = [<span class="program-code-box-number">10</span>, <span class="program-code-box-number">20</span>, <span class="program-code-box-number">30</span>];
+
+<span class="program-code-box-keyword">const</span> result = arr.slice(<span class="program-code-box-number">1</span>);
+
+console.log(result);</code></pre>
+
+</div>
+`,
+
+    options: [
+        "[10]",
+        "[20]",
+        "[20, 30]",
+        "[10, 20]"
+    ],
+
+    answer: 3,
+
+    solution: `
+<div class="code-box">
+
+    <div class="code-title">
+        <span>Answer</span>
+    </div>
+
+    <pre><code><span class="keyword">Output:</span>
+<span class="string">[20, 30]</span>
+
+<span class="keyword">Explanation:</span>
+The slice() method returns a portion of an array
+without modifying the original array.
+
+Starting from index 1:
+
+index 0 → 10
+index 1 → 20
+index 2 → 30
+
+Therefore:
+
+<span class="string">arr.slice(1)</span>
+
+returns:
+
+<span class="string">[20, 30]</span></code></pre>
+
+</div>
+`
+};
+
+
+const javascriptArraysQuestion10 = {
+    question: "What will be the output of the following JavaScript program?",
+
+    program: `
+<div class="program-code-box">
+
+    <pre class="program-code-box-pre"><code class="program-code-box-code"><span class="program-code-box-keyword">const</span> arr = [<span class="program-code-box-number">1</span>, <span class="program-code-box-number">2</span>, <span class="program-code-box-number">3</span>];
+
+console.log(arr.includes(<span class="program-code-box-number">2</span>));</code></pre>
+
+</div>
+`,
+
+    options: [
+        "true",
+        "false",
+        "2",
+        "undefined"
+    ],
+
+    answer: 1,
+
+    solution: `
+<div class="code-box">
+
+    <div class="code-title">
+        <span>Answer</span>
+    </div>
+
+    <pre><code><span class="keyword">Output:</span>
+<span class="string">true</span>
+
+<span class="keyword">Explanation:</span>
+The includes() method checks whether a specified
+element exists in an array.
+
+The value 2 is present in the array:
+
+[1, 2, 3]
+
+Therefore, includes() returns:
+
+<span class="string">true</span></code></pre>
+
+</div>
+`
+};
+
+const javascriptFunctionsAdvancedQuestion1 = {
+    question: "What will be the output of the following JavaScript program?",
+
+    program: `
+<div class="program-code-box">
+<pre class="program-code-box-pre"><code class="program-code-box-code"><span class="program-code-box-keyword">function</span> createCounter() {
+    <span class="program-code-box-keyword">let</span> count = <span class="program-code-box-number">0</span>;
+    <span class="program-code-box-keyword">return</span> {
+        increment: () =&gt; count++,
+        getCount: () =&gt; count
+    };
+}
+<span class="program-code-box-keyword">const</span> counter = createCounter();
+counter.increment();
+counter.increment();
+console.log(counter.getCount());</code></pre>
+</div>
+`,
+
+    options: [
+        "0",
+        "1",
+        "2",
+        "Error"
+    ],
+
+    answer: 3,
+
+    solution: `
+<div class="code-box">
+<div class="code-title">
+<span>Answer</span>
+</div>
+<pre><code><span class="keyword">Output:</span>
+<span class="string">2</span>
+
+<span class="keyword">Explanation:</span>
+The createCounter() function creates a closure around
+the count variable.
+
+First increment:
+count = 1
+
+Second increment:
+count = 2
+
+Therefore, getCount() returns:
+
+<span class="string">2</span></code></pre>
+</div>
+`
+};
+
+
+const javascriptFunctionsAdvancedQuestion2 = {
+    question: "What will be the output of the following JavaScript program?",
+
+    program: `
+<div class="program-code-box">
+<pre class="program-code-box-pre"><code class="program-code-box-code"><span class="program-code-box-keyword">const</span> obj = {
+    name: <span class="program-code-box-string">"John"</span>,
+    greet: <span class="program-code-box-keyword">function</span>() {
+        setTimeout(<span class="program-code-box-keyword">function</span>() {
+            console.log(<span class="program-code-box-string">"Hello, "</span> + <span class="program-code-box-keyword">this</span>.name);
+        }, <span class="program-code-box-number">0</span>);
+    }
+};
+obj.greet();</code></pre>
+</div>
+`,
+
+    options: [
+        "Hello, John",
+        "Hello, undefined",
+        "Error",
+        "null"
+    ],
+
+    answer: 2,
+
+    solution: `
+<div class="code-box">
+<div class="code-title">
+<span>Answer</span>
+</div>
+<pre><code><span class="keyword">Output:</span>
+<span class="string">Hello, undefined</span>
+
+<span class="keyword">Explanation:</span>
+The function passed to setTimeout() is a regular function.
+It does not preserve the this value of obj.
+
+Therefore, this.name does not refer to obj.name.
+
+The output is:
+
+<span class="string">Hello, undefined</span></code></pre>
+</div>
+`
+};
+
+
+const javascriptFunctionsAdvancedQuestion3 = {
+    question: "How can the following JavaScript program be modified to print Hello, John?",
+
+    program: `
+<div class="program-code-box">
+<pre class="program-code-box-pre"><code class="program-code-box-code"><span class="program-code-box-keyword">const</span> obj = {
+    name: <span class="program-code-box-string">"John"</span>,
+    greet: <span class="program-code-box-keyword">function</span>() {
+        setTimeout(<span class="program-code-box-keyword">function</span>() {
+            console.log(<span class="program-code-box-string">"Hello, "</span> + <span class="program-code-box-keyword">this</span>.name);
+        }, <span class="program-code-box-number">0</span>);
+    }
+};
+obj.greet();</code></pre>
+</div>
+`,
+
+    options: [
+        "Use an arrow function",
+        "Use let instead of const",
+        "Use var instead of const",
+        "Remove setTimeout()"
+    ],
+
+    answer: 1,
+
+    solution: `
+<div class="code-box">
+<div class="code-title">
+<span>Answer</span>
+</div>
+<pre><code><span class="keyword">Correct Answer:</span>
+<span class="string">Use an arrow function</span>
+
+<span class="keyword">Explanation:</span>
+An arrow function does not create its own this.
+It inherits this from the surrounding function.
+
+The code can be changed to:
+
+setTimeout(() =&gt; {
+    console.log(<span class="string">"Hello, "</span> + <span class="keyword">this</span>.name);
+}, 0);
+
+Another solution is to explicitly bind this:
+
+setTimeout(<span class="keyword">function</span>() {
+    console.log(<span class="string">"Hello, "</span> + <span class="keyword">this</span>.name);
+}.bind(<span class="keyword">this</span>), 0);</code></pre>
+</div>
+`
+};
+
+
+const javascriptFunctionsAdvancedQuestion4 = {
+    question: "What will be the output of the following JavaScript program?",
+
+    program: `
+<div class="program-code-box">
+<pre class="program-code-box-pre"><code class="program-code-box-code"><span class="program-code-box-keyword">function</span> test() {
+    console.log(a);
+    console.log(b);
+    <span class="program-code-box-keyword">var</span> a = <span class="program-code-box-number">10</span>;
+    <span class="program-code-box-keyword">let</span> b = <span class="program-code-box-number">20</span>;
+}
+test();</code></pre>
+</div>
+`,
+
+    options: [
+        "10 20",
+        "undefined 20",
+        "undefined, then ReferenceError",
+        "Error for both"
+    ],
+
+    answer: 3,
+
+    solution: `
+<div class="code-box">
+<div class="code-title">
+<span>Answer</span>
+</div>
+<pre><code><span class="keyword">Output:</span>
+<span class="string">undefined</span>
+<span class="string">ReferenceError</span>
+
+<span class="keyword">Explanation:</span>
+The var declaration is hoisted and initialized with undefined.
+
+Therefore:
+
+console.log(a);
+
+prints undefined.
+
+The let variable b is hoisted but remains in the
+Temporal Dead Zone until its declaration is reached.
+
+Therefore, accessing b before declaration causes
+a ReferenceError.</code></pre>
+</div>
+`
+};
+
+
+const javascriptFunctionsAdvancedQuestion5 = {
+    question: "What will be the output of the following JavaScript program?",
+
+    program: `
+<div class="program-code-box">
+<pre class="program-code-box-pre"><code class="program-code-box-code"><span class="program-code-box-keyword">const</span> multiply = (x) =&gt; (y) =&gt; (z) =&gt; x * y * z;
+console.log(multiply(<span class="program-code-box-number">2</span>)(<span class="program-code-box-number">3</span>)(<span class="program-code-box-number">4</span>));</code></pre>
+</div>
+`,
+
+    options: [
+        "24",
+        "9",
+        "20",
+        "Error"
+    ],
+
+    answer: 1,
+
+    solution: `
+<div class="code-box">
+<div class="code-title">
+<span>Answer</span>
+</div>
+<pre><code><span class="keyword">Output:</span>
+<span class="string">24</span>
+
+<span class="keyword">Explanation:</span>
+The function returns another function at each level.
+
+multiply(2)(3)(4)
+
+The final calculation is:
+
+2 × 3 × 4 = 24
+
+Therefore, the output is:
+
+<span class="string">24</span></code></pre>
+</div>
+`
+};
+
+
+const javascriptFunctionsAdvancedQuestion6 = {
+    question: "What will be the output of the following JavaScript program?",
+
+    program: `
+<div class="program-code-box">
+<pre class="program-code-box-pre"><code class="program-code-box-code"><span class="program-code-box-keyword">function</span> outer() {
+    <span class="program-code-box-keyword">for</span> (<span class="program-code-box-keyword">var</span> i = <span class="program-code-box-number">0</span>; i &lt; <span class="program-code-box-number">3</span>; i++) {
+        setTimeout(<span class="program-code-box-keyword">function</span>() {
+            console.log(i);
+        }, <span class="program-code-box-number">0</span>);
+    }
+}
+outer();</code></pre>
+</div>
+`,
+
+    options: [
+        "0 1 2",
+        "3 3 3",
+        "0 1 2 3",
+        "Error"
+    ],
+
+    answer: 2,
+
+    solution: `
+<div class="code-box">
+<div class="code-title">
+<span>Answer</span>
+</div>
+<pre><code><span class="keyword">Output:</span>
+<span class="string">3 3 3</span>
+
+<span class="keyword">Explanation:</span>
+The loop uses var, which is function-scoped.
+
+By the time the setTimeout() callbacks execute,
+the loop has already completed.
+
+The final value of i is 3.
+
+Therefore, all three callbacks print:
+
+<span class="string">3 3 3</span></code></pre>
+</div>
+`
+};
+
+
+const javascriptFunctionsAdvancedQuestion7 = {
+    question: "What will be the output of the following JavaScript program?",
+
+    program: `
+<div class="program-code-box">
+<pre class="program-code-box-pre"><code class="program-code-box-code"><span class="program-code-box-keyword">function</span> outer() {
+    <span class="program-code-box-keyword">for</span> (<span class="program-code-box-keyword">let</span> i = <span class="program-code-box-number">0</span>; i &lt; <span class="program-code-box-number">3</span>; i++) {
+        setTimeout(() =&gt; {
+            console.log(i);
+        }, <span class="program-code-box-number">0</span>);
+    }
+}
+outer();</code></pre>
+</div>
+`,
+
+    options: [
+        "0 1 2",
+        "3 3 3",
+        "0 1 2 3",
+        "Error"
+    ],
+
+    answer: 1,
+
+    solution: `
+<div class="code-box">
+<div class="code-title">
+<span>Answer</span>
+</div>
+<pre><code><span class="keyword">Output:</span>
+<span class="string">0 1 2</span>
+
+<span class="keyword">Explanation:</span>
+The loop uses let.
+
+A new binding of i is created for each iteration.
+The arrow function preserves the value belonging
+to that iteration.
+
+Therefore, the callbacks print:
+
+<span class="string">0 1 2</span></code></pre>
+</div>
+`
+};
+
+
+const javascriptFunctionsAdvancedQuestion8 = {
+    question: "What will be the output of the following JavaScript program?",
+
+    program: `
+<div class="program-code-box">
+<pre class="program-code-box-pre"><code class="program-code-box-code"><span class="program-code-box-keyword">const</span> fn = <span class="program-code-box-keyword">function</span>(a, b = <span class="program-code-box-number">10</span>, c = <span class="program-code-box-number">20</span>) {
+    <span class="program-code-box-keyword">return</span> a + b + c;
+};
+console.log(fn(<span class="program-code-box-number">5</span>, <span class="program-code-box-keyword">undefined</span>, <span class="program-code-box-number">30</span>));</code></pre>
+</div>
+`,
+
+    options: [
+        "55",
+        "45",
+        "35",
+        "Error"
+    ],
+
+    answer: 1,
+
+    solution: `
+<div class="code-box">
+<div class="code-title">
+<span>Answer</span>
+</div>
+<pre><code><span class="keyword">Output:</span>
+<span class="string">45</span>
+
+<span class="keyword">Explanation:</span>
+The second argument is explicitly passed as undefined.
+
+Therefore, the default value of b is used:
+
+b = 10
+
+So:
+
+5 + 10 + 30 = 45
+
+Therefore, the output is:
+
+<span class="string">45</span></code></pre>
+</div>
+`
+};
+
+
+const javascriptFunctionsAdvancedQuestion9 = {
+    question: "What will be the output of the following JavaScript program?",
+
+    program: `
+<div class="program-code-box">
+<pre class="program-code-box-pre"><code class="program-code-box-code"><span class="program-code-box-keyword">function</span> test(...args) {
+    <span class="program-code-box-keyword">return</span> args.reduce((sum, n) =&gt; sum + n, <span class="program-code-box-number">0</span>);
+}
+console.log(test(<span class="program-code-box-number">1</span>, <span class="program-code-box-number">2</span>, <span class="program-code-box-number">3</span>, <span class="program-code-box-number">4</span>, <span class="program-code-box-number">5</span>));</code></pre>
+</div>
+`,
+
+    options: [
+        "15",
+        "5",
+        "[1,2,3,4,5]",
+        "Error"
+    ],
+
+    answer: 1,
+
+    solution: `
+<div class="code-box">
+<div class="code-title">
+<span>Answer</span>
+</div>
+<pre><code><span class="keyword">Output:</span>
+<span class="string">15</span>
+
+<span class="keyword">Explanation:</span>
+The rest parameter collects all arguments into an array.
+
+args = [1, 2, 3, 4, 5]
+
+The reduce() method adds all values:
+
+1 + 2 + 3 + 4 + 5 = 15
+
+Therefore, the output is:
+
+<span class="string">15</span></code></pre>
+</div>
+`
+};
+
+
+const javascriptFunctionsAdvancedQuestion10 = {
+    question: "What will be the output of the following JavaScript program?",
+
+    program: `
+<div class="program-code-box">
+<pre class="program-code-box-pre"><code class="program-code-box-code"><span class="program-code-box-keyword">const</span> obj = {
+    value: <span class="program-code-box-number">100</span>,
+    getValue: () =&gt; {
+        <span class="program-code-box-keyword">return</span> <span class="program-code-box-keyword">this</span>.value;
+    }
+};
+console.log(obj.getValue());</code></pre>
+</div>
+`,
+
+    options: [
+        "100",
+        "undefined",
+        "Error",
+        "null"
+    ],
+
+    answer: 2,
+
+    solution: `
+<div class="code-box">
+<div class="code-title">
+<span>Answer</span>
+</div>
+<pre><code><span class="keyword">Output:</span>
+<span class="string">undefined</span>
+
+<span class="keyword">Explanation:</span>
+Arrow functions do not have their own this.
+
+The arrow function inherits this from its surrounding
+lexical scope. It does not automatically refer to obj.
+
+Therefore, this.value is undefined.
+
+<span class="string">undefined</span></code></pre>
+</div>
+`
+};
+
+
+const javascriptFunctionsAdvancedQuestion11 = {
+    question: "What will be the output of the following JavaScript program?",
+
+    program: `
+<div class="program-code-box">
+<pre class="program-code-box-pre"><code class="program-code-box-code"><span class="program-code-box-keyword">function</span> createAdder(x) {
+    <span class="program-code-box-keyword">return function</span>(y) {
+        <span class="program-code-box-keyword">return</span> x + y;
+    };
+}
+<span class="program-code-box-keyword">const</span> add5 = createAdder(<span class="program-code-box-number">5</span>);
+console.log(add5(<span class="program-code-box-number">10</span>));</code></pre>
+</div>
+`,
+
+    options: [
+        "10",
+        "15",
+        "5",
+        "Error"
+    ],
+
+    answer: 2,
+
+    solution: `
+<div class="code-box">
+<div class="code-title">
+<span>Answer</span>
+</div>
+<pre><code><span class="keyword">Output:</span>
+<span class="string">15</span>
+
+<span class="keyword">Explanation:</span>
+createAdder(5) creates a function that remembers x = 5.
+
+When add5(10) is called:
+
+5 + 10 = 15
+
+Therefore, the output is:
+
+<span class="string">15</span></code></pre>
+</div>
+`
+};
+
+
+const javascriptFunctionsAdvancedQuestion12 = {
+    question: "What will be the output of the following JavaScript program?",
+
+    program: `
+<div class="program-code-box">
+<pre class="program-code-box-pre"><code class="program-code-box-code"><span class="program-code-box-keyword">async function</span> fetchData() {
+    <span class="program-code-box-keyword">return</span> <span class="program-code-box-string">"Data loaded"</span>;
+}
+fetchData().then(result =&gt; console.log(result));</code></pre>
+</div>
+`,
+
+    options: [
+        "Data loaded",
+        "Promise {&lt;pending&gt;}",
+        "undefined",
+        "Error"
+    ],
+
+    answer: 1,
+
+    solution: `
+<div class="code-box">
+<div class="code-title">
+<span>Answer</span>
+</div>
+<pre><code><span class="keyword">Output:</span>
+<span class="string">Data loaded</span>
+
+<span class="keyword">Explanation:</span>
+An async function always returns a Promise.
+
+The returned Promise is fulfilled with the value:
+
+<span class="string">"Data loaded"</span>
+
+The then() method receives this value and
+console.log() prints it.</code></pre>
+</div>
+`
+};
+
+
+const javascriptFunctionsAdvancedQuestion13 = {
+    question: "What will be the output of the following JavaScript program?",
+
+    program: `
+<div class="program-code-box">
+<pre class="program-code-box-pre"><code class="program-code-box-code"><span class="program-code-box-keyword">function</span>* generator() {
+    <span class="program-code-box-keyword">yield</span> <span class="program-code-box-number">1</span>;
+    <span class="program-code-box-keyword">yield</span> <span class="program-code-box-number">2</span>;
+    <span class="program-code-box-keyword">yield</span> <span class="program-code-box-number">3</span>;
+}
+<span class="program-code-box-keyword">const</span> gen = generator();
+console.log(gen.next().value, gen.next().value, gen.next().value);</code></pre>
+</div>
+`,
+
+    options: [
+        "1 2 3",
+        "0 1 2",
+        "undefined undefined undefined",
+        "Error"
+    ],
+
+    answer: 1,
+
+    solution: `
+<div class="code-box">
+<div class="code-title">
+<span>Answer</span>
+</div>
+<pre><code><span class="keyword">Output:</span>
+<span class="string">1 2 3</span>
+
+<span class="keyword">Explanation:</span>
+Each call to next() resumes the generator from
+where the previous yield stopped.
+
+First next() → 1
+Second next() → 2
+Third next() → 3
+
+Therefore:
+
+<span class="string">1 2 3</span></code></pre>
+</div>
+`
+};
+
+
+const javascriptFunctionsAdvancedQuestion14 = {
+    question: "What will be the output of the following JavaScript program?",
+
+    program: `
+<div class="program-code-box">
+<pre class="program-code-box-pre"><code class="program-code-box-code"><span class="program-code-box-keyword">const</span> fn1 = () =&gt; <span class="program-code-box-string">"Hello"</span>;
+<span class="program-code-box-keyword">const</span> fn2 = () =&gt; ({ message: <span class="program-code-box-string">"Hi"</span> });
+console.log(fn1(), fn2().message);</code></pre>
+</div>
+`,
+
+    options: [
+        "Hello Hi",
+        "Hello undefined",
+        "Error",
+        "null"
+    ],
+
+    answer: 1,
+
+    solution: `
+<div class="code-box">
+<div class="code-title">
+<span>Answer</span>
+</div>
+<pre><code><span class="keyword">Output:</span>
+<span class="string">Hello Hi</span>
+
+<span class="keyword">Explanation:</span>
+fn1() directly returns the string "Hello".
+
+fn2() returns an object containing the message property.
+
+Therefore:
+
+fn1() = Hello
+fn2().message = Hi
+
+Output:
+
+<span class="string">Hello Hi</span></code></pre>
+</div>
+`
+};
+
+
+const javascriptFunctionsAdvancedQuestion15 = {
+    question: "What will be the output of the following JavaScript program?",
+
+    program: `
+<div class="program-code-box">
+<pre class="program-code-box-pre"><code class="program-code-box-code"><span class="program-code-box-keyword">function</span> test() {
+    <span class="program-code-box-keyword">return</span>
+    {
+        name: <span class="program-code-box-string">"John"</span>
+    };
+}
+console.log(test());</code></pre>
+</div>
+`,
+
+    options: [
+        "{ name: \"John\" }",
+        "undefined",
+        "Error",
+        "null"
+    ],
+
+    answer: 2,
+
+    solution: `
+<div class="code-box">
+<div class="code-title">
+<span>Answer</span>
+</div>
+<pre><code><span class="keyword">Output:</span>
+<span class="string">undefined</span>
+
+<span class="keyword">Explanation:</span>
+JavaScript applies Automatic Semicolon Insertion after
+the return statement because the object starts on the
+next line.
+
+The statement is effectively treated as:
+
+return;
+
+Therefore, the function returns:
+
+<span class="string">undefined</span></code></pre>
+</div>
+`
+};
+
+
+const javascriptFunctionsAdvancedQuestion16 = {
+    question: "What will be the output of the following JavaScript program?",
+
+    program: `
+<div class="program-code-box">
+<pre class="program-code-box-pre"><code class="program-code-box-code"><span class="program-code-box-keyword">const</span> obj = {
+    name: <span class="program-code-box-string">"Alice"</span>,
+    greet: <span class="program-code-box-keyword">function</span>() {
+        <span class="program-code-box-keyword">const</span> inner = () =&gt; {
+            console.log(<span class="program-code-box-string">"Hello, "</span> + <span class="program-code-box-keyword">this</span>.name);
+        };
+        inner();
+    }
+};
+obj.greet();</code></pre>
+</div>
+`,
+
+    options: [
+        "Hello, Alice",
+        "Hello, undefined",
+        "Error",
+        "null"
+    ],
+
+    answer: 1,
+
+    solution: `
+<div class="code-box">
+<div class="code-title">
+<span>Answer</span>
+</div>
+<pre><code><span class="keyword">Output:</span>
+<span class="string">Hello, Alice</span>
+
+<span class="keyword">Explanation:</span>
+The greet() function is called as a method of obj,
+so this refers to obj.
+
+The inner arrow function inherits this from greet().
+
+Therefore:
+
+this.name = Alice
+
+Output:
+
+<span class="string">Hello, Alice</span></code></pre>
+</div>
+`
+};
+
+
+const javascriptFunctionsAdvancedQuestion17 = {
+    question: "What will be the output of the following JavaScript program?",
+
+    program: `
+<div class="program-code-box">
+<pre class="program-code-box-pre"><code class="program-code-box-code"><span class="program-code-box-keyword">function</span> memoize(fn) {
+    <span class="program-code-box-keyword">const</span> cache = {};
+    <span class="program-code-box-keyword">return function</span>(...args) {
+        <span class="program-code-box-keyword">const</span> key = JSON.stringify(args);
+        <span class="program-code-box-keyword">if</span> (cache[key]) <span class="program-code-box-keyword">return</span> cache[key];
+        cache[key] = fn(...args);
+        <span class="program-code-box-keyword">return</span> cache[key];
+    };
+}
+<span class="program-code-box-keyword">const</span> add = memoize((a, b) =&gt; a + b);
+console.log(add(<span class="program-code-box-number">2</span>, <span class="program-code-box-number">3</span>), add(<span class="program-code-box-number">2</span>, <span class="program-code-box-number">3</span>));</code></pre>
+</div>
+`,
+
+    options: [
+        "5 5",
+        "5 undefined",
+        "Error",
+        "NaN NaN"
+    ],
+
+    answer: 1,
+
+    solution: `
+<div class="code-box">
+<div class="code-title">
+<span>Answer</span>
+</div>
+<pre><code><span class="keyword">Output:</span>
+<span class="string">5 5</span>
+
+<span class="keyword">Explanation:</span>
+The first call calculates:
+
+2 + 3 = 5
+
+The result is stored in the cache.
+
+When add(2, 3) is called again, the cached result
+5 is returned instead of executing the function again.
+
+Therefore:
+
+<span class="string">5 5</span></code></pre>
+</div>
+`
+};
+
+
+const javascriptFunctionsAdvancedQuestion18 = {
+    question: "What will be the output of the following JavaScript program?",
+
+    program: `
+<div class="program-code-box">
+<pre class="program-code-box-pre"><code class="program-code-box-code"><span class="program-code-box-keyword">function</span> test(a = <span class="program-code-box-number">10</span>, b = a + <span class="program-code-box-number">5</span>) {
+    <span class="program-code-box-keyword">return</span> a + b;
+}
+console.log(test(<span class="program-code-box-number">5</span>));</code></pre>
+</div>
+`,
+
+    options: [
+        "15",
+        "10",
+        "20",
+        "Error"
+    ],
+
+    answer: 1,
+
+    solution: `
+<div class="code-box">
+<div class="code-title">
+<span>Answer</span>
+</div>
+<pre><code><span class="keyword">Output:</span>
+<span class="string">15</span>
+
+<span class="keyword">Explanation:</span>
+The first argument sets:
+
+a = 5
+
+The default value of b depends on a:
+
+b = a + 5
+b = 5 + 5
+b = 10
+
+Therefore:
+
+a + b = 5 + 10 = 15
+
+Output:
+
+<span class="string">15</span></code></pre>
+</div>
+`
+};
+
+
+const javascriptFunctionsAdvancedQuestion19 = {
+    question: "What will be the output of the following JavaScript program?",
+
+    program: `
+<div class="program-code-box">
+<pre class="program-code-box-pre"><code class="program-code-box-code"><span class="program-code-box-keyword">const</span> compose = (f, g) =&gt; (x) =&gt; f(g(x));
+<span class="program-code-box-keyword">const</span> double = x =&gt; x * <span class="program-code-box-number">2</span>;
+<span class="program-code-box-keyword">const</span> increment = x =&gt; x + <span class="program-code-box-number">1</span>;
+<span class="program-code-box-keyword">const</span> fn = compose(double, increment);
+console.log(fn(<span class="program-code-box-number">5</span>));</code></pre>
+</div>
+`,
+
+    options: [
+        "10",
+        "11",
+        "12",
+        "Error"
+    ],
+
+    answer: 3,
+
+    solution: `
+<div class="code-box">
+<div class="code-title">
+<span>Answer</span>
+</div>
+<pre><code><span class="keyword">Output:</span>
+<span class="string">12</span>
+
+<span class="keyword">Explanation:</span>
+The compose() function executes g first and then f.
+
+Here:
+
+increment(5) = 5 + 1 = 6
+
+Then:
+
+double(6) = 6 × 2 = 12
+
+Therefore, the output is:
+
+<span class="string">12</span></code></pre>
+</div>
+`
+};
+
+
+const javascriptFunctionsAdvancedQuestion20 = {
+    question: "What will be the output of the following JavaScript program?",
+
+    program: `
+<div class="program-code-box">
+<pre class="program-code-box-pre"><code class="program-code-box-code"><span class="program-code-box-keyword">function</span> test() {
+    console.log(<span class="program-code-box-keyword">typeof</span> inner);
+    <span class="program-code-box-keyword">function</span> inner() {}
+}
+test();</code></pre>
+</div>
+`,
+
+    options: [
+        "undefined",
+        "function",
+        "Error",
+        "null"
+    ],
+
+    answer: 2,
+
+    solution: `
+<div class="code-box">
+<div class="code-title">
+<span>Answer</span>
+</div>
+<pre><code><span class="keyword">Output:</span>
+<span class="string">function</span>
+
+<span class="keyword">Explanation:</span>
+Function declarations are hoisted to the top of their
+function scope.
+
+Therefore, inner is already available when typeof inner
+is executed.
+
+The typeof operator returns:
+
+<span class="string">"function"</span>
+
+Therefore, the output is:
+
+<span class="string">function</span></code></pre>
+</div>
+`
+};
+
+
+
+
 const javascriptQuestions_1 = [
     javascriptRestSpreadQuestion1,
     javascriptRestSpreadQuestion2,
@@ -2014,5 +5123,66 @@ const javascriptQuestions_1 = [
 
     javascriptProgramQuestion11,
     javascriptProgramQuestion12,
-    javascriptProgramQuestion13
+    javascriptProgramQuestion13,
+    javascriptLoopsDifficultQuestion1,
+    javascriptLoopsDifficultQuestion2,
+    javascriptLoopsDifficultQuestion3,
+    javascriptLoopsDifficultQuestion4,
+    javascriptLoopsDifficultQuestion5,
+    javascriptLoopsDifficultQuestion6,
+    javascriptLoopsDifficultQuestion7,
+    javascriptLoopsDifficultQuestion8,
+    javascriptLoopsDifficultQuestion9,
+    javascriptLoopsDifficultQuestion10,
+    javascriptLoopsDifficultQuestion11,
+    javascriptLoopsDifficultQuestion12,
+    javascriptLoopsDifficultQuestion13,
+    javascriptLoopsDifficultQuestion14,
+    javascriptLoopsDifficultQuestion15,
+    javascriptLoopsDifficultQuestion16,
+    javascriptLoopsDifficultQuestion17,
+    javascriptLoopsDifficultQuestion18,
+    javascriptLoopsDifficultQuestion19,
+    javascriptLoopsDifficultQuestion20,
+    javascriptFunctionsQuestion1,
+    javascriptFunctionsQuestion2,
+    javascriptFunctionsQuestion3,
+    javascriptFunctionsQuestion4,
+    javascriptFunctionsQuestion5,
+    javascriptFunctionsQuestion6,
+    javascriptFunctionsQuestion7,
+    javascriptFunctionsQuestion8,
+    javascriptFunctionsQuestion9,
+    javascriptFunctionsQuestion10,
+
+    javascriptArraysQuestion1,
+    javascriptArraysQuestion2,
+    javascriptArraysQuestion3,
+    javascriptArraysQuestion4,
+    javascriptArraysQuestion5,
+    javascriptArraysQuestion6,
+    javascriptArraysQuestion7,
+    javascriptArraysQuestion8,
+    javascriptArraysQuestion9,
+    javascriptArraysQuestion10,
+        javascriptFunctionsAdvancedQuestion1,
+    javascriptFunctionsAdvancedQuestion2,
+    javascriptFunctionsAdvancedQuestion3,
+    javascriptFunctionsAdvancedQuestion4,
+    javascriptFunctionsAdvancedQuestion5,
+    javascriptFunctionsAdvancedQuestion6,
+    javascriptFunctionsAdvancedQuestion7,
+    javascriptFunctionsAdvancedQuestion8,
+    javascriptFunctionsAdvancedQuestion9,
+    javascriptFunctionsAdvancedQuestion10,
+    javascriptFunctionsAdvancedQuestion11,
+    javascriptFunctionsAdvancedQuestion12,
+    javascriptFunctionsAdvancedQuestion13,
+    javascriptFunctionsAdvancedQuestion14,
+    javascriptFunctionsAdvancedQuestion15,
+    javascriptFunctionsAdvancedQuestion16,
+    javascriptFunctionsAdvancedQuestion17,
+    javascriptFunctionsAdvancedQuestion18,
+    javascriptFunctionsAdvancedQuestion19,
+    javascriptFunctionsAdvancedQuestion20
 ];

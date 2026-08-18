@@ -296,190 +296,39 @@ function toggleSolution(button) {
     }
 }
 
+function selectOption(optionElement) {
 
-// let currentQuestionPage = 1;
+    const questionBox = optionElement.closest(".question-box");
+
+    if (!questionBox) return;
+
+    // Remove selected class from all options
+    const options = questionBox.querySelectorAll(".mcq-option");
+
+    options.forEach(option => {
+        option.classList.remove("selected");
+    });
+
+    // Select clicked option
+    optionElement.classList.add("selected");
+}
+
+function showSolution(element) {
+
+    const questionBox = element.closest(".question-box");
+
+    if (!questionBox) return;
+
+    const solution = questionBox.querySelector(".solution-content");
+
+    if (!solution) return;
+
+    solution.style.display = "block";
+}
+
+
 
 const questionsPerPage = 10;
-
-
-// function loadQuestions()
-// {
-//     const totalQuestions = cProgrammingQuestions.length;
-
-//     const totalPages = Math.ceil(
-//         totalQuestions / questionsPerPage
-//     );
-
-//     let startIndex =
-//         (currentQuestionPage - 1) * questionsPerPage;
-
-//     let endIndex =
-//         startIndex + questionsPerPage;
-
-//     let questions = cProgrammingQuestions.slice(
-//         startIndex,
-//         endIndex
-//     );
-
-//     let content = "";
-
-//     // ==============================
-//     // PAGINATION
-//     // ==============================
-
-//     content += `
-//         <div class="question-pagination">
-
-//             <button
-//                 class="pagination-btn"
-//                 onclick="previousQuestionPage()"
-//                 ${currentQuestionPage === 1 ? "disabled" : ""}>
-//                 Previous
-//             </button>
-//     `;
-
-
-//     for(let i = 1; i <= totalPages; i++)
-//     {
-//         content += `
-//             <button
-//                 class="pagination-number
-//                 ${i === currentQuestionPage ? "active" : ""}"
-//                 onclick="goToQuestionPage(${i})">
-//                 ${i}
-//             </button>
-//         `;
-//     }
-
-
-//     content += `
-//             <button
-//                 class="pagination-btn"
-//                 onclick="nextQuestionPage()"
-//                 ${currentQuestionPage === totalPages ? "disabled" : ""}>
-//                 Next
-//             </button>
-
-//         </div>
-//     `;
-
-
-//     // ==============================
-//     // QUESTIONS
-//     // ==============================
-
-//     questions.forEach((item, index) =>
-//     {
-//         let questionNumber =
-//             startIndex + index + 1;
-
-
-//         // ==============================
-//         // MCQ OPTIONS
-//         // ==============================
-
-//         const optionLetters = ["A", "B", "C", "D"];
-
-//         let optionsHTML = "";
-
-//         if (item.options)
-//         {
-//             optionsHTML = `
-//                 <div class="mcq-options">
-
-//                     ${item.options.map((option, optionIndex) => `
-
-//                         <div class="mcq-option">
-
-//                             <span class="mcq-option-label">
-//                                 ${optionLetters[optionIndex]}
-//                             </span>
-
-//                             <span class="mcq-option-text">
-//                                 ${option}
-//                             </span>
-
-//                         </div>
-
-//                     `).join("")}
-
-//                 </div>
-//             `;
-//         }
-
-
-//         // ==============================
-//         // QUESTION HTML
-//         // ==============================
-
-//         content += `
-//             <div class="question-box">
-
-//                 <div class="question-title">
-//                     Question ${questionNumber}
-//                 </div>
-
-//                 <div class="question-row">
-
-//                     <div class="question-text">
-//                         ${item.question}
-//                     </div>
-
-//                     <button
-//                         class="view-solution-btn"
-//                         onclick="toggleSolution(this)">
-//                         View
-//                     </button>
-
-//                 </div>
-
-//                 ${optionsHTML}
-
-//                 <div class="solution-content">
-//                     ${item.solution}
-//                 </div>
-
-//             </div>
-//         `;
-//     });
-
-
-//     document.getElementById("questions").innerHTML = content;
-// }
-
-// function previousQuestionPage()
-// {
-//     if(currentQuestionPage > 1)
-//     {
-//         currentQuestionPage--;
-
-//         loadQuestions();
-//     }
-// }
-
-// function nextQuestionPage()
-// {
-//     const totalPages = Math.ceil(
-//         cProgrammingQuestions.length / questionsPerPage
-//     );
-
-//     if(currentQuestionPage < totalPages)
-//     {
-//         currentQuestionPage++;
-
-//         loadQuestions();
-//     }
-// }
-
-// function goToQuestionPage(page)
-// {
-//     currentQuestionPage = page;
-
-//     loadQuestions();
-// }
-
-
-
 let currentQuestionArray = [];
 let currentQuestionPage = 1;
 
@@ -592,26 +441,29 @@ function renderQuestions() {
         if (item.options) {
 
             optionsHTML = `
-                <div class="mcq-options">
+    <div class="mcq-options">
 
-                    ${item.options.map((option, optionIndex) => `
+        ${item.options.map((option, optionIndex) => `
 
-                        <div class="mcq-option">
+            <div
+                class="mcq-option"
+                onclick="selectOption(this); showSolution(this);"
+            >
 
-                            <span class="mcq-option-label">
-                                ${optionLetters[optionIndex]}
-                            </span>
+                <span class="mcq-option-label">
+                    ${optionLetters[optionIndex]}
+                </span>
 
-                            <span class="mcq-option-text">
-                                ${option}
-                            </span>
+                <span class="mcq-option-text">
+                    ${option}
+                </span>
 
-                        </div>
+            </div>
 
-                    `).join("")}
+        `).join("")}
 
-                </div>
-            `;
+    </div>
+`;
         }
 
 

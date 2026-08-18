@@ -120,11 +120,10 @@ body.mobile_menu_btn {
 .notes_layout {
 	margin-top: -22px;
 	display: flex;
-	gap: 20px;
+	gap: 5px;
 	padding: 30px;
-	height: 100vh;
 	/* adjust based on header */
-	height: calc(106vh - 180px);
+	height: calc(106vh - 150px);
 }
 
 /* LEFT SIDEBAR */

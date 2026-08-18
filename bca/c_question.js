@@ -350,7 +350,7 @@ const cQuestion12 = {
         <span>Answer</span>
     </div>
 
-    <pre><code><span class="keyword">Correct Answer:</span> <span class="string">B) Dennis Ritchie</span></code></pre>
+    <pre><code><span class="keyword">Answer:</span> <span class="string">B) Dennis Ritchie</span></code></pre>
 
 </div>
 `
@@ -376,7 +376,7 @@ const cQuestion13 = {
         <span>Answer</span>
     </div>
 
-    <pre><code><span class="keyword">Correct Answer:</span> <span class="string">C) 1972</span></code></pre>
+    <pre><code><span class="keyword">Answer:</span> <span class="string">C) 1972</span></code></pre>
 
 </div>
 `
@@ -402,7 +402,7 @@ const cQuestion14 = {
         <span>Answer</span>
     </div>
 
-    <pre><code><span class="keyword">Correct Answer:</span> <span class="string">C) Bell Laboratories</span></code></pre>
+    <pre><code><span class="keyword">Answer:</span> <span class="string">C) Bell Laboratories</span></code></pre>
 
 </div>
 `
@@ -428,7 +428,7 @@ const cQuestion15 = {
         <span>Answer</span>
     </div>
 
-    <pre><code><span class="keyword">Correct Answer:</span> <span class="string">B) UNIX</span></code></pre>
+    <pre><code><span class="keyword">Answer:</span> <span class="string">B) UNIX</span></code></pre>
 
 </div>
 `
@@ -454,7 +454,7 @@ const cQuestion16 = {
         <span>Answer</span>
     </div>
 
-    <pre><code><span class="keyword">Correct Answer:</span> <span class="string">B) B</span></code></pre>
+    <pre><code><span class="keyword">Answer:</span> <span class="string">B) B</span></code></pre>
 
 </div>
 `
@@ -480,7 +480,7 @@ const cQuestion17 = {
         <span>Answer</span>
     </div>
 
-    <pre><code><span class="keyword">Correct Answer:</span> <span class="string">B) Ken Thompson</span></code></pre>
+    <pre><code><span class="keyword">Answer:</span> <span class="string">B) Ken Thompson</span></code></pre>
 
 </div>
 `
@@ -506,7 +506,7 @@ const cQuestion18 = {
         <span>Answer</span>
     </div>
 
-    <pre><code><span class="keyword">Correct Answer:</span> <span class="string">C) BCPL</span></code></pre>
+    <pre><code><span class="keyword">Answer:</span> <span class="string">C) BCPL</span></code></pre>
 
 </div>
 `
@@ -532,7 +532,7 @@ const cQuestion19 = {
         <span>Answer</span>
     </div>
 
-    <pre><code><span class="keyword">Correct Answer:</span> <span class="string">B) ANSI</span></code></pre>
+    <pre><code><span class="keyword">Answer:</span> <span class="string">B) ANSI</span></code></pre>
 
 </div>
 `
@@ -558,7 +558,7 @@ const cQuestion20 = {
         <span>Answer</span>
     </div>
 
-    <pre><code><span class="keyword">Correct Answer:</span> <span class="string">C) C99</span></code></pre>
+    <pre><code><span class="keyword">Answer:</span> <span class="string">C) C99</span></code></pre>
 
 </div>
 `
@@ -584,7 +584,7 @@ const cQuestion21 = {
         <span>Answer</span>
     </div>
 
-    <pre><code><span class="keyword">Correct Answer:</span> <span class="string">A) System programming</span></code></pre>
+    <pre><code><span class="keyword">Answer:</span> <span class="string">A) System programming</span></code></pre>
 
 </div>
 `
@@ -609,7 +609,7 @@ const cQuestion22 = {
         <span>Answer</span>
     </div>
 
-    <pre><code><span class="keyword">Correct Answer:</span> <span class="string">B) total_marks</span></code></pre>
+    <pre><code><span class="keyword">Answer:</span> <span class="string">B) total_marks</span></code></pre>
 
 </div>
 `
@@ -635,7 +635,7 @@ const cQuestion23 = {
         <span>Answer</span>
     </div>
 
-    <pre><code><span class="keyword">Correct Answer:</span> <span class="string">C) _</span></code></pre>
+    <pre><code><span class="keyword">Answer:</span> <span class="string">C) _</span></code></pre>
 
 </div>
 `
@@ -661,7 +661,7 @@ const cQuestion24 = {
         <span>Answer</span>
     </div>
 
-    <pre><code><span class="keyword">Correct Answer:</span> <span class="string">C) Digit</span></code></pre>
+    <pre><code><span class="keyword">Answer:</span> <span class="string">C) Digit</span></code></pre>
 
 </div>
 `
@@ -687,7 +687,7 @@ const cQuestion25 = {
         <span>Answer</span>
     </div>
 
-    <pre><code><span class="keyword">Correct Answer:</span> <span class="string">A) Case-sensitive</span></code></pre>
+    <pre><code><span class="keyword">Answer:</span> <span class="string">A) Case-sensitive</span></code></pre>
 
 </div>
 `
@@ -713,7 +713,7 @@ const cQuestion26 = {
         <span>Answer</span>
     </div>
 
-    <pre><code><span class="keyword">Correct Answer:</span> <span class="string">D) 1student</span></code></pre>
+    <pre><code><span class="keyword">Answer:</span> <span class="string">D) 1student</span></code></pre>
 
 </div>
 `
@@ -739,7 +739,7 @@ const cQuestion27 = {
         <span>Answer</span>
     </div>
 
-    <pre><code><span class="keyword">Correct Answer:</span> <span class="string">B) int num1;</span></code></pre>
+    <pre><code><span class="keyword">Answer:</span> <span class="string">B) int num1;</span></code></pre>
 
 </div>
 `
@@ -765,7 +765,7 @@ const cQuestion28 = {
         <span>Answer</span>
     </div>
 
-    <pre><code><span class="keyword">Correct Answer:</span> <span class="string">C) 3</span></code></pre>
+    <pre><code><span class="keyword">Answer:</span> <span class="string">C) 3</span></code></pre>
 
 </div>
 `
@@ -791,7 +791,7 @@ const cQuestion29 = {
         <span>Answer</span>
     </div>
 
-    <pre><code><span class="keyword">Correct Answer:</span> <span class="string">C) 10</span></code></pre>
+    <pre><code><span class="keyword">Answer:</span> <span class="string">C) 10</span></code></pre>
 
 </div>
 `
@@ -817,7 +817,7 @@ const cQuestion30 = {
         <span>Answer</span>
     </div>
 
-    <pre><code><span class="keyword">Correct Answer:</span> <span class="string">C) return</span></code></pre>
+    <pre><code><span class="keyword">Answer:</span> <span class="string">C) return</span></code></pre>
 
 </div>
 `
@@ -846,7 +846,7 @@ int A = 20;`,
         <span>Answer</span>
     </div>
 
-    <pre><code><span class="keyword">Correct Answer:</span> <span class="string">C) a = 10 and A = 20</span></code></pre>
+    <pre><code><span class="keyword">Answer:</span> <span class="string">C) a = 10 and A = 20</span></code></pre>
 
     <pre><code><span class="comment">// C identifiers are case-sensitive.</span>
 
@@ -876,7 +876,7 @@ const cQuestion32 = {
         <span>Answer</span>
     </div>
 
-    <pre><code><span class="keyword">Correct Answer:</span> <span class="string">B) int</span></code></pre>
+    <pre><code><span class="keyword">Answer:</span> <span class="string">B) int</span></code></pre>
 
 </div>
 `
@@ -902,7 +902,7 @@ const cQuestion33 = {
         <span>Answer</span>
     </div>
 
-    <pre><code><span class="keyword">Correct Answer:</span> <span class="string">C) char</span></code></pre>
+    <pre><code><span class="keyword">Answer:</span> <span class="string">C) char</span></code></pre>
 
 </div>
 `
@@ -928,7 +928,7 @@ const cQuestion34 = {
         <span>Answer</span>
     </div>
 
-    <pre><code><span class="keyword">Correct Answer:</span> <span class="string">C) float</span></code></pre>
+    <pre><code><span class="keyword">Answer:</span> <span class="string">C) float</span></code></pre>
 
 </div>
 `
@@ -954,7 +954,7 @@ const cQuestion35 = {
         <span>Answer</span>
     </div>
 
-    <pre><code><span class="keyword">Correct Answer:</span> <span class="string">D) double</span></code></pre>
+    <pre><code><span class="keyword">Answer:</span> <span class="string">D) double</span></code></pre>
 
 </div>
 `
@@ -980,7 +980,7 @@ const cQuestion36 = {
         <span>Answer</span>
     </div>
 
-    <pre><code><span class="keyword">Correct Answer:</span> <span class="string">C) void</span></code></pre>
+    <pre><code><span class="keyword">Answer:</span> <span class="string">C) void</span></code></pre>
 
 </div>
 `
@@ -1006,7 +1006,7 @@ const cQuestion37 = {
         <span>Answer</span>
     </div>
 
-    <pre><code><span class="keyword">Correct Answer:</span> <span class="string">A) int age;</span></code></pre>
+    <pre><code><span class="keyword">Answer:</span> <span class="string">A) int age;</span></code></pre>
 
 </div>
 `
@@ -1032,7 +1032,7 @@ const cQuestion38 = {
         <span>Answer</span>
     </div>
 
-    <pre><code><span class="keyword">Correct Answer:</span> <span class="string">B) %d</span></code></pre>
+    <pre><code><span class="keyword">Answer:</span> <span class="string">B) %d</span></code></pre>
 
 </div>
 `
@@ -1058,7 +1058,7 @@ const cQuestion39 = {
         <span>Answer</span>
     </div>
 
-    <pre><code><span class="keyword">Correct Answer:</span> <span class="string">C) %c</span></code></pre>
+    <pre><code><span class="keyword">Answer:</span> <span class="string">C) %c</span></code></pre>
 
 </div>
 `
@@ -1084,7 +1084,7 @@ const cQuestion40 = {
         <span>Answer</span>
     </div>
 
-    <pre><code><span class="keyword">Correct Answer:</span> <span class="string">D) string</span></code></pre>
+    <pre><code><span class="keyword">Answer:</span> <span class="string">D) string</span></code></pre>
 
 </div>
 `
@@ -1110,7 +1110,7 @@ const cQuestion41 = {
         <span>Answer</span>
     </div>
 
-    <pre><code><span class="keyword">Correct Answer:</span> <span class="string">C) double</span></code></pre>
+    <pre><code><span class="keyword">Answer:</span> <span class="string">C) double</span></code></pre>
 
 </div>
 `
@@ -1135,7 +1135,7 @@ const cQuestion42 = {
         <span>Answer</span>
     </div>
 
-    <pre><code><span class="keyword">Correct Answer:</span> <span class="string">B) %d</span></code></pre>
+    <pre><code><span class="keyword">Answer:</span> <span class="string">B) %d</span></code></pre>
 
 </div>
 `
@@ -1161,7 +1161,7 @@ const cQuestion43 = {
         <span>Answer</span>
     </div>
 
-    <pre><code><span class="keyword">Correct Answer:</span> <span class="string">C) %c</span></code></pre>
+    <pre><code><span class="keyword">Answer:</span> <span class="string">C) %c</span></code></pre>
 
 </div>
 `
@@ -1187,7 +1187,7 @@ const cQuestion44 = {
         <span>Answer</span>
     </div>
 
-    <pre><code><span class="keyword">Correct Answer:</span> <span class="string">A) %s</span></code></pre>
+    <pre><code><span class="keyword">Answer:</span> <span class="string">A) %s</span></code></pre>
 
 </div>
 `
@@ -1213,7 +1213,7 @@ const cQuestion45 = {
         <span>Answer</span>
     </div>
 
-    <pre><code><span class="keyword">Correct Answer:</span> <span class="string">C) %f</span></code></pre>
+    <pre><code><span class="keyword">Answer:</span> <span class="string">C) %f</span></code></pre>
 
 </div>
 `
@@ -1239,7 +1239,7 @@ const cQuestion46 = {
         <span>Answer</span>
     </div>
 
-    <pre><code><span class="keyword">Correct Answer:</span> <span class="string">A) %u</span></code></pre>
+    <pre><code><span class="keyword">Answer:</span> <span class="string">A) %u</span></code></pre>
 
 </div>
 `
@@ -1265,7 +1265,7 @@ const cQuestion47 = {
         <span>Answer</span>
     </div>
 
-    <pre><code><span class="keyword">Correct Answer:</span> <span class="string">C) %x</span></code></pre>
+    <pre><code><span class="keyword">Answer:</span> <span class="string">C) %x</span></code></pre>
 
 </div>
 `
@@ -1291,7 +1291,7 @@ const cQuestion48 = {
         <span>Answer</span>
     </div>
 
-    <pre><code><span class="keyword">Correct Answer:</span> <span class="string">A) %o</span></code></pre>
+    <pre><code><span class="keyword">Answer:</span> <span class="string">A) %o</span></code></pre>
 
 </div>
 `
@@ -1317,7 +1317,7 @@ const cQuestion49 = {
         <span>Answer</span>
     </div>
 
-    <pre><code><span class="keyword">Correct Answer:</span> <span class="string">B) %p</span></code></pre>
+    <pre><code><span class="keyword">Answer:</span> <span class="string">B) %p</span></code></pre>
 
 </div>
 `
@@ -1343,7 +1343,7 @@ const cQuestion50 = {
         <span>Answer</span>
     </div>
 
-    <pre><code><span class="keyword">Correct Answer:</span> <span class="string">B) %%</span></code></pre>
+    <pre><code><span class="keyword">Answer:</span> <span class="string">B) %%</span></code></pre>
 
 </div>
 `
@@ -1369,7 +1369,7 @@ const cQuestion51 = {
         <span>Answer</span>
     </div>
 
-    <pre><code><span class="keyword">Correct Answer:</span> <span class="string">C) %lf</span></code></pre>
+    <pre><code><span class="keyword">Answer:</span> <span class="string">C) %lf</span></code></pre>
 
 </div>
 `
@@ -1393,7 +1393,7 @@ const cQuestion52 = {
         <span>Answer</span>
     </div>
 
-    <pre><code><span class="keyword">Correct Answer:</span> <span class="string">B) +</span></code></pre>
+    <pre><code><span class="keyword">Answer:</span> <span class="string">B) +</span></code></pre>
 </div>
 `
 };
@@ -1417,7 +1417,7 @@ const cQuestion53 = {
         <span>Answer</span>
     </div>
 
-    <pre><code><span class="keyword">Correct Answer:</span> <span class="string">C) %</span></code></pre>
+    <pre><code><span class="keyword">Answer:</span> <span class="string">C) %</span></code></pre>
 </div>
 `
 };
@@ -1441,7 +1441,7 @@ const cQuestion54 = {
         <span>Answer</span>
     </div>
 
-    <pre><code><span class="keyword">Correct Answer:</span> <span class="string">A) 3</span></code></pre>
+    <pre><code><span class="keyword">Answer:</span> <span class="string">A) 3</span></code></pre>
 </div>
 `
 };
@@ -1465,7 +1465,7 @@ const cQuestion55 = {
         <span>Answer</span>
     </div>
 
-    <pre><code><span class="keyword">Correct Answer:</span> <span class="string">C) *</span></code></pre>
+    <pre><code><span class="keyword">Answer:</span> <span class="string">C) *</span></code></pre>
 </div>
 `
 };
@@ -1489,7 +1489,7 @@ const cQuestion56 = {
         <span>Answer</span>
     </div>
 
-    <pre><code><span class="keyword">Correct Answer:</span> <span class="string">B) =</span></code></pre>
+    <pre><code><span class="keyword">Answer:</span> <span class="string">B) =</span></code></pre>
 </div>
 `
 };
@@ -1513,7 +1513,7 @@ const cQuestion57 = {
         <span>Answer</span>
     </div>
 
-    <pre><code><span class="keyword">Correct Answer:</span> <span class="string">C) 15</span></code></pre>
+    <pre><code><span class="keyword">Answer:</span> <span class="string">C) 15</span></code></pre>
 </div>
 `
 };
@@ -1537,7 +1537,7 @@ const cQuestion58 = {
         <span>Answer</span>
     </div>
 
-    <pre><code><span class="keyword">Correct Answer:</span> <span class="string">B) x *= 5</span></code></pre>
+    <pre><code><span class="keyword">Answer:</span> <span class="string">B) x *= 5</span></code></pre>
 </div>
 `
 };
@@ -1561,7 +1561,7 @@ const cQuestion59 = {
         <span>Answer</span>
     </div>
 
-    <pre><code><span class="keyword">Correct Answer:</span> <span class="string">C) ==</span></code></pre>
+    <pre><code><span class="keyword">Answer:</span> <span class="string">C) ==</span></code></pre>
 </div>
 `
 };
@@ -1585,7 +1585,7 @@ const cQuestion60 = {
         <span>Answer</span>
     </div>
 
-    <pre><code><span class="keyword">Correct Answer:</span> <span class="string">B) &&</span></code></pre>
+    <pre><code><span class="keyword">Answer:</span> <span class="string">B) &&</span></code></pre>
 </div>
 `
 };
@@ -1609,7 +1609,7 @@ const cQuestion61 = {
         <span>Answer</span>
     </div>
 
-    <pre><code><span class="keyword">Correct Answer:</span> <span class="string">B) ||</span></code></pre>
+    <pre><code><span class="keyword">Answer:</span> <span class="string">B) ||</span></code></pre>
 </div>
 `
 };
@@ -1633,7 +1633,7 @@ const cQuestion62 = {
         <span>Answer</span>
     </div>
 
-    <pre><code><span class="keyword">Correct Answer:</span> <span class="string">B) 0</span></code></pre>
+    <pre><code><span class="keyword">Answer:</span> <span class="string">B) 0</span></code></pre>
 </div>
 `
 };
@@ -1657,7 +1657,7 @@ const cQuestion63 = {
         <span>Answer</span>
     </div>
 
-    <pre><code><span class="keyword">Correct Answer:</span> <span class="string">B) 1</span></code></pre>
+    <pre><code><span class="keyword">Answer:</span> <span class="string">B) 1</span></code></pre>
 </div>
 `
 };
@@ -1681,7 +1681,7 @@ const cQuestion64 = {
         <span>Answer</span>
     </div>
 
-    <pre><code><span class="keyword">Correct Answer:</span> <span class="string">B) !</span></code></pre>
+    <pre><code><span class="keyword">Answer:</span> <span class="string">B) !</span></code></pre>
 </div>
 `
 };
@@ -1705,7 +1705,7 @@ const cQuestion65 = {
         <span>Answer</span>
     </div>
 
-    <pre><code><span class="keyword">Correct Answer:</span> <span class="string">C) 0</span></code></pre>
+    <pre><code><span class="keyword">Answer:</span> <span class="string">C) 0</span></code></pre>
 </div>
 `
 };
@@ -1729,7 +1729,7 @@ const cQuestion66 = {
         <span>Answer</span>
     </div>
 
-    <pre><code><span class="keyword">Correct Answer:</span> <span class="string">B) &</span></code></pre>
+    <pre><code><span class="keyword">Answer:</span> <span class="string">B) &</span></code></pre>
 </div>
 `
 };
@@ -1753,7 +1753,7 @@ const cQuestion67 = {
         <span>Answer</span>
     </div>
 
-    <pre><code><span class="keyword">Correct Answer:</span> <span class="string">C) |</span></code></pre>
+    <pre><code><span class="keyword">Answer:</span> <span class="string">C) |</span></code></pre>
 </div>
 `
 };
@@ -1777,7 +1777,7 @@ const cQuestion68 = {
         <span>Answer</span>
     </div>
 
-    <pre><code><span class="keyword">Correct Answer:</span> <span class="string">A) ^</span></code></pre>
+    <pre><code><span class="keyword">Answer:</span> <span class="string">A) ^</span></code></pre>
 </div>
 `
 };
@@ -1801,7 +1801,7 @@ const cQuestion69 = {
         <span>Answer</span>
     </div>
 
-    <pre><code><span class="keyword">Correct Answer:</span> <span class="string">B) ~</span></code></pre>
+    <pre><code><span class="keyword">Answer:</span> <span class="string">B) ~</span></code></pre>
 </div>
 `
 };
@@ -1825,7 +1825,7 @@ const cQuestion70 = {
         <span>Answer</span>
     </div>
 
-    <pre><code><span class="keyword">Correct Answer:</span> <span class="string">A) 1</span></code></pre>
+    <pre><code><span class="keyword">Answer:</span> <span class="string">A) 1</span></code></pre>
 </div>
 `
 };
@@ -1849,7 +1849,7 @@ const cQuestion71 = {
         <span>Answer</span>
     </div>
 
-    <pre><code><span class="keyword">Correct Answer:</span> <span class="string">C) 7</span></code></pre>
+    <pre><code><span class="keyword">Answer:</span> <span class="string">C) 7</span></code></pre>
 </div>
 `
 };
@@ -1873,7 +1873,7 @@ const cQuestion72 = {
         <span>Answer</span>
     </div>
 
-    <pre><code><span class="keyword">Correct Answer:</span> <span class="string">B) ++</span></code></pre>
+    <pre><code><span class="keyword">Answer:</span> <span class="string">B) ++</span></code></pre>
 </div>
 `
 };
@@ -1897,7 +1897,7 @@ const cQuestion73 = {
         <span>Answer</span>
     </div>
 
-    <pre><code><span class="keyword">Correct Answer:</span> <span class="string">A) --</span></code></pre>
+    <pre><code><span class="keyword">Answer:</span> <span class="string">A) --</span></code></pre>
 </div>
 `
 };
@@ -1924,7 +1924,7 @@ int x = 5;
         <span>Answer</span>
     </div>
 
-    <pre><code><span class="keyword">Correct Answer:</span> <span class="string">C) 6</span></code></pre>
+    <pre><code><span class="keyword">Answer:</span> <span class="string">C) 6</span></code></pre>
 </div>
 `
 };
@@ -1951,7 +1951,7 @@ printf("%d", x++);`,
         <span>Answer</span>
     </div>
 
-    <pre><code><span class="keyword">Correct Answer:</span> <span class="string">B) 5</span></code></pre>
+    <pre><code><span class="keyword">Answer:</span> <span class="string">B) 5</span></code></pre>
 
     <pre><code><span class="keyword">int</span> x = <span class="number">5</span>;
 printf(<span class="string">"%d"</span>, x++);</code></pre>
@@ -1982,7 +1982,7 @@ printf("%d", ++x);`,
         <span>Answer</span>
     </div>
 
-    <pre><code><span class="keyword">Correct Answer:</span> <span class="string">C) 6</span></code></pre>
+    <pre><code><span class="keyword">Answer:</span> <span class="string">C) 6</span></code></pre>
 
     <pre><code><span class="keyword">int</span> x = <span class="number">5</span>;
 printf(<span class="string">"%d"</span>, ++x);</code></pre>
@@ -2010,7 +2010,7 @@ const cQuestion77 = {
         <span>Answer</span>
     </div>
 
-    <pre><code><span class="keyword">Correct Answer:</span> <span class="string">C) ?:</span></code></pre>
+    <pre><code><span class="keyword">Answer:</span> <span class="string">C) ?:</span></code></pre>
 </div>
 `
 };
@@ -2034,7 +2034,7 @@ const cQuestion78 = {
         <span>Answer</span>
     </div>
 
-    <pre><code><span class="keyword">Correct Answer:</span> <span class="string">B) condition ? expression1 : expression2</span></code></pre>
+    <pre><code><span class="keyword">Answer:</span> <span class="string">B) condition ? expression1 : expression2</span></code></pre>
 </div>
 `
 };
@@ -2062,7 +2062,7 @@ printf("%d", y);`,
         <span>Answer</span>
     </div>
 
-    <pre><code><span class="keyword">Correct Answer:</span> <span class="string">C) 100</span></code></pre>
+    <pre><code><span class="keyword">Answer:</span> <span class="string">C) 100</span></code></pre>
 
     <pre><code><span class="keyword">int</span> x = <span class="number">10</span>;
 <span class="keyword">int</span> y = (x &gt; <span class="number">5</span>) ? <span class="number">100</span> : <span class="number">200</span>;
@@ -2095,7 +2095,7 @@ printf("%d", max);`,
         <span>Answer</span>
     </div>
 
-    <pre><code><span class="keyword">Correct Answer:</span> <span class="string">B) 20</span></code></pre>
+    <pre><code><span class="keyword">Answer:</span> <span class="string">B) 20</span></code></pre>
 
     <pre><code><span class="keyword">int</span> a = <span class="number">10</span>, b = <span class="number">20</span>;
 <span class="keyword">int</span> max = (a &gt; b) ? a : b;
@@ -2128,7 +2128,7 @@ printf("%d", result);`,
         <span>Answer</span>
     </div>
 
-    <pre><code><span class="keyword">Correct Answer:</span> <span class="string">C) 15</span></code></pre>
+    <pre><code><span class="keyword">Answer:</span> <span class="string">C) 15</span></code></pre>
 
     <pre><code><span class="keyword">int</span> a = <span class="number">5</span>, b = <span class="number">10</span>, c = <span class="number">15</span>;
 <span class="keyword">int</span> result = (a &gt; b) ? a : (b &gt; c) ? b : c;
@@ -2160,7 +2160,7 @@ printf("%d", ++a);`,
         <span>Answer</span>
     </div>
 
-    <pre><code><span class="keyword">Correct Answer:</span> <span class="string">C) 6</span></code></pre>
+    <pre><code><span class="keyword">Answer:</span> <span class="string">C) 6</span></code></pre>
 
 </div>
 `
@@ -2189,7 +2189,7 @@ printf("%d", a++);`,
         <span>Answer</span>
     </div>
 
-    <pre><code><span class="keyword">Correct Answer:</span> <span class="string">B) 5</span></code></pre>
+    <pre><code><span class="keyword">Answer:</span> <span class="string">B) 5</span></code></pre>
 
 </div>
 `
@@ -2218,7 +2218,7 @@ printf("%d", --a);`,
         <span>Answer</span>
     </div>
 
-    <pre><code><span class="keyword">Correct Answer:</span> <span class="string">B) 9</span></code></pre>
+    <pre><code><span class="keyword">Answer:</span> <span class="string">B) 9</span></code></pre>
 
 </div>
 `
@@ -2247,7 +2247,7 @@ printf("%d", a--);`,
         <span>Answer</span>
     </div>
 
-    <pre><code><span class="keyword">Correct Answer:</span> <span class="string">C) 10</span></code></pre>
+    <pre><code><span class="keyword">Answer:</span> <span class="string">C) 10</span></code></pre>
 
 </div>
 `
@@ -2277,7 +2277,7 @@ printf("%d", a);`,
         <span>Answer</span>
     </div>
 
-    <pre><code><span class="keyword">Correct Answer:</span> <span class="string">B) 5 6</span></code></pre>
+    <pre><code><span class="keyword">Answer:</span> <span class="string">B) 5 6</span></code></pre>
 
 </div>
 `
@@ -2307,7 +2307,7 @@ printf("%d", a);`,
         <span>Answer</span>
     </div>
 
-    <pre><code><span class="keyword">Correct Answer:</span> <span class="string">C) 6 6</span></code></pre>
+    <pre><code><span class="keyword">Answer:</span> <span class="string">C) 6 6</span></code></pre>
 
 </div>
 `
@@ -2337,7 +2337,7 @@ printf("%d", a);`,
         <span>Answer</span>
     </div>
 
-    <pre><code><span class="keyword">Correct Answer:</span> <span class="string">B) 10 9</span></code></pre>
+    <pre><code><span class="keyword">Answer:</span> <span class="string">B) 10 9</span></code></pre>
 
 </div>
 `
@@ -2367,7 +2367,7 @@ printf("%d", a);`,
         <span>Answer</span>
     </div>
 
-    <pre><code><span class="keyword">Correct Answer:</span> <span class="string">B) 9 9</span></code></pre>
+    <pre><code><span class="keyword">Answer:</span> <span class="string">B) 9 9</span></code></pre>
 
 </div>
 `
@@ -2398,7 +2398,7 @@ printf("%d", a);`,
         <span>Answer</span>
     </div>
 
-    <pre><code><span class="keyword">Correct Answer:</span> <span class="string">B) 3 5 5</span></code></pre>
+    <pre><code><span class="keyword">Answer:</span> <span class="string">B) 3 5 5</span></code></pre>
 
 </div>
 `
@@ -2429,7 +2429,7 @@ printf("%d", a);`,
         <span>Answer</span>
     </div>
 
-    <pre><code><span class="keyword">Correct Answer:</span> <span class="string">A) 7 7 6</span></code></pre>
+    <pre><code><span class="keyword">Answer:</span> <span class="string">A) 7 7 6</span></code></pre>
 
 </div>
 `
@@ -2454,7 +2454,7 @@ const cQuestion92 = {
         <span>Answer</span>
     </div>
 
-    <pre><code><span class="keyword">Correct Answer:</span> <span class="string">B) &&</span></code></pre>
+    <pre><code><span class="keyword">Answer:</span> <span class="string">B) &&</span></code></pre>
 
 </div>
 `
@@ -2480,7 +2480,7 @@ const cQuestion93 = {
         <span>Answer</span>
     </div>
 
-    <pre><code><span class="keyword">Correct Answer:</span> <span class="string">C) ||</span></code></pre>
+    <pre><code><span class="keyword">Answer:</span> <span class="string">C) ||</span></code></pre>
 
 </div>
 `
@@ -2506,7 +2506,7 @@ const cQuestion94 = {
         <span>Answer</span>
     </div>
 
-    <pre><code><span class="keyword">Correct Answer:</span> <span class="string">C) !</span></code></pre>
+    <pre><code><span class="keyword">Answer:</span> <span class="string">C) !</span></code></pre>
 
 </div>
 `
@@ -2534,7 +2534,7 @@ const cQuestion95 = {
         <span>Answer</span>
     </div>
 
-    <pre><code><span class="keyword">Correct Answer:</span> <span class="string">B) 1</span></code></pre>
+    <pre><code><span class="keyword">Answer:</span> <span class="string">B) 1</span></code></pre>
 
 </div>
 `
@@ -2562,7 +2562,7 @@ const cQuestion96 = {
         <span>Answer</span>
     </div>
 
-    <pre><code><span class="keyword">Correct Answer:</span> <span class="string">A) 0</span></code></pre>
+    <pre><code><span class="keyword">Answer:</span> <span class="string">A) 0</span></code></pre>
 
 </div>
 `
@@ -2590,7 +2590,7 @@ const cQuestion97 = {
         <span>Answer</span>
     </div>
 
-    <pre><code><span class="keyword">Correct Answer:</span> <span class="string">B) 1</span></code></pre>
+    <pre><code><span class="keyword">Answer:</span> <span class="string">B) 1</span></code></pre>
 
 </div>
 `
@@ -2618,7 +2618,7 @@ const cQuestion98 = {
         <span>Answer</span>
     </div>
 
-    <pre><code><span class="keyword">Correct Answer:</span> <span class="string">B) 1</span></code></pre>
+    <pre><code><span class="keyword">Answer:</span> <span class="string">B) 1</span></code></pre>
 
 </div>
 `
@@ -2647,7 +2647,7 @@ printf("%d", a > 5 && a < 20);`,
         <span>Answer</span>
     </div>
 
-    <pre><code><span class="keyword">Correct Answer:</span> <span class="string">B) 1</span></code></pre>
+    <pre><code><span class="keyword">Answer:</span> <span class="string">B) 1</span></code></pre>
 
 </div>
 `
@@ -2676,7 +2676,7 @@ printf("%d", a < 5 || a == 10);`,
         <span>Answer</span>
     </div>
 
-    <pre><code><span class="keyword">Correct Answer:</span> <span class="string">B) 1</span></code></pre>
+    <pre><code><span class="keyword">Answer:</span> <span class="string">B) 1</span></code></pre>
 
 </div>
 `
@@ -2705,7 +2705,7 @@ printf("%d", !(a > 10));`,
         <span>Answer</span>
     </div>
 
-    <pre><code><span class="keyword">Correct Answer:</span> <span class="string">B) 1</span></code></pre>
+    <pre><code><span class="keyword">Answer:</span> <span class="string">B) 1</span></code></pre>
 
 </div>
 `

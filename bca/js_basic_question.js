@@ -1,98 +1,10 @@
 
-const javascriptIntroductionQuestion1 = {
-    question: "Which are the three broad families of computer languages?",
-
-    options: [
-        "Programming, Markup and Query Languages",
-        "Programming, Database and Operating System Languages",
-        "Client-Side, Server-Side and Database Languages",
-        "HTML, CSS and JavaScript"
-    ],
-
-    solution: `
-<div class="code-box">
-
-    <div class="code-title">
-        <span>Answer</span>
-    </div>
-
-    <pre><code><span class="keyword">Correct Answer:</span> <span class="string">A) Programming, Markup and Query Languages</span></code></pre>
-
-</div>
-`
-};
 
 
-const javascriptIntroductionQuestion2 = {
-    question: "Which classification is based on the type of application a programming language is designed to create?",
-
-    options: [
-        "Based on Purpose",
-        "Based on Paradigm",
-        "Based on Syntax",
-        "Based on Compiler"
-    ],
-
-    solution: `
-<div class="code-box">
-
-    <div class="code-title">
-        <span>Answer</span>
-    </div>
-
-    <pre><code><span class="keyword">Correct Answer:</span> <span class="string">A) Based on Purpose</span></code></pre>
-
-</div>
-`
-};
 
 
-const javascriptIntroductionQuestion3 = {
-    question: "Which classification describes the programming style or approach used to solve problems?",
-
-    options: [
-        "Based on Purpose",
-        "Based on Paradigm",
-        "Based on Application",
-        "Based on Hardware"
-    ],
-
-    solution: `
-<div class="code-box">
-
-    <div class="code-title">
-        <span>Answer</span>
-    </div>
-
-    <pre><code><span class="keyword">Correct Answer:</span> <span class="string">B) Based on Paradigm</span></code></pre>
-
-</div>
-`
-};
 
 
-const javascriptIntroductionQuestion4 = {
-    question: "Which of the following is a general-purpose programming language?",
-
-    options: [
-        "C",
-        "HTML",
-        "CSS",
-        "SQL"
-    ],
-
-    solution: `
-<div class="code-box">
-
-    <div class="code-title">
-        <span>Answer</span>
-    </div>
-
-    <pre><code><span class="keyword">Correct Answer:</span> <span class="string">A) C</span></code></pre>
-
-</div>
-`
-};
 
 
 const javascriptIntroductionQuestion5 = {
@@ -112,7 +24,7 @@ const javascriptIntroductionQuestion5 = {
         <span>Answer</span>
     </div>
 
-    <pre><code><span class="keyword">Correct Answer:</span> <span class="string">A) JavaScript</span></code></pre>
+    <pre><code><span class="keyword">Answer:</span> <span class="string">A) JavaScript</span></code></pre>
 
 </div>
 `
@@ -136,7 +48,7 @@ const javascriptIntroductionQuestion6 = {
         <span>Answer</span>
     </div>
 
-    <pre><code><span class="keyword">Correct Answer:</span> <span class="string">B) Kotlin</span></code></pre>
+    <pre><code><span class="keyword">Answer:</span> <span class="string">B) Kotlin</span></code></pre>
 
 </div>
 `
@@ -160,7 +72,7 @@ const javascriptIntroductionQuestion7 = {
         <span>Answer</span>
     </div>
 
-    <pre><code><span class="keyword">Correct Answer:</span> <span class="string">B) Object-Oriented Programming</span></code></pre>
+    <pre><code><span class="keyword">Answer:</span> <span class="string">B) Object-Oriented Programming</span></code></pre>
 
 </div>
 `
@@ -184,7 +96,7 @@ const javascriptIntroductionQuestion8 = {
         <span>Answer</span>
     </div>
 
-    <pre><code><span class="keyword">Correct Answer:</span> <span class="string">A) Haskell</span></code></pre>
+    <pre><code><span class="keyword">Answer:</span> <span class="string">A) Haskell</span></code></pre>
 
 </div>
 `
@@ -208,7 +120,7 @@ const javascriptIntroductionQuestion9 = {
         <span>Answer</span>
     </div>
 
-    <pre><code><span class="keyword">Correct Answer:</span> <span class="string">C) User's Web Browser</span></code></pre>
+    <pre><code><span class="keyword">Answer:</span> <span class="string">C) User's Web Browser</span></code></pre>
 
 </div>
 `
@@ -232,7 +144,7 @@ const javascriptIntroductionQuestion10 = {
         <span>Answer</span>
     </div>
 
-    <pre><code><span class="keyword">Correct Answer:</span> <span class="string">B) JavaScript</span></code></pre>
+    <pre><code><span class="keyword">Answer:</span> <span class="string">B) JavaScript</span></code></pre>
 
 </div>
 `
@@ -256,7 +168,7 @@ const javascriptIntroductionQuestion11 = {
         <span>Answer</span>
     </div>
 
-    <pre><code><span class="keyword">Correct Answer:</span> <span class="string">B) Web Server</span></code></pre>
+    <pre><code><span class="keyword">Answer:</span> <span class="string">B) Web Server</span></code></pre>
 
 </div>
 `
@@ -280,7 +192,7 @@ const javascriptIntroductionQuestion12 = {
         <span>Answer</span>
     </div>
 
-    <pre><code><span class="keyword">Correct Answer:</span> <span class="string">C) PHP</span></code></pre>
+    <pre><code><span class="keyword">Answer:</span> <span class="string">C) PHP</span></code></pre>
 
 </div>
 `
@@ -304,7 +216,7 @@ const javascriptIntroductionQuestion13 = {
         <span>Answer</span>
     </div>
 
-    <pre><code><span class="keyword">Correct Answer:</span> <span class="string">C) Brendan Eich</span></code></pre>
+    <pre><code><span class="keyword">Answer:</span> <span class="string">C) Brendan Eich</span></code></pre>
 
 </div>
 `
@@ -328,7 +240,7 @@ const javascriptIntroductionQuestion14 = {
         <span>Answer</span>
     </div>
 
-    <pre><code><span class="keyword">Correct Answer:</span> <span class="string">B) 1995</span></code></pre>
+    <pre><code><span class="keyword">Answer:</span> <span class="string">B) 1995</span></code></pre>
 
 </div>
 `
@@ -352,7 +264,7 @@ const javascriptIntroductionQuestion15 = {
         <span>Answer</span>
     </div>
 
-    <pre><code><span class="keyword">Correct Answer:</span> <span class="string">B) Mocha</span></code></pre>
+    <pre><code><span class="keyword">Answer:</span> <span class="string">B) Mocha</span></code></pre>
 
 </div>
 `
@@ -376,7 +288,7 @@ const javascriptIntroductionQuestion16 = {
         <span>Answer</span>
     </div>
 
-    <pre><code><span class="keyword">Correct Answer:</span> <span class="string">B) LiveScript</span></code></pre>
+    <pre><code><span class="keyword">Answer:</span> <span class="string">B) LiveScript</span></code></pre>
 
 </div>
 `
@@ -400,7 +312,7 @@ const javascriptIntroductionQuestion17 = {
         <span>Answer</span>
     </div>
 
-    <pre><code><span class="keyword">Correct Answer:</span> <span class="string">B) Two distinct programming languages</span></code></pre>
+    <pre><code><span class="keyword">Answer:</span> <span class="string">B) Two distinct programming languages</span></code></pre>
 
 </div>
 `
@@ -424,7 +336,7 @@ const javascriptIntroductionQuestion18 = {
         <span>Answer</span>
     </div>
 
-    <pre><code><span class="keyword">Correct Answer:</span> <span class="string">C) Node.js</span></code></pre>
+    <pre><code><span class="keyword">Answer:</span> <span class="string">C) Node.js</span></code></pre>
 
 </div>
 `
@@ -448,7 +360,7 @@ const javascriptIntroductionQuestion19 = {
         <span>Answer</span>
     </div>
 
-    <pre><code><span class="keyword">Correct Answer:</span> <span class="string">D) All of the above</span></code></pre>
+    <pre><code><span class="keyword">Answer:</span> <span class="string">D) All of the above</span></code></pre>
 
 </div>
 `
@@ -472,7 +384,7 @@ const javascriptIntroductionQuestion20 = {
         <span>Answer</span>
     </div>
 
-    <pre><code><span class="keyword">Correct Answer:</span> <span class="string">C) External JavaScript</span></code></pre>
+    <pre><code><span class="keyword">Answer:</span> <span class="string">C) External JavaScript</span></code></pre>
 
 </div>
 `
@@ -495,7 +407,7 @@ const javascriptHistoryQuestion21 = {
         <span>Answer</span>
     </div>
 
-    <pre><code><span class="keyword">Correct Answer:</span> <span class="string">B) Netscape Communications Corporation</span></code></pre>
+    <pre><code><span class="keyword">Answer:</span> <span class="string">B) Netscape Communications Corporation</span></code></pre>
 
 </div>
 `
@@ -519,7 +431,7 @@ const javascriptHistoryQuestion22 = {
         <span>Answer</span>
     </div>
 
-    <pre><code><span class="keyword">Correct Answer:</span> <span class="string">B) Brendan Eich</span></code></pre>
+    <pre><code><span class="keyword">Answer:</span> <span class="string">B) Brendan Eich</span></code></pre>
 
 </div>
 `
@@ -543,7 +455,7 @@ const javascriptHistoryQuestion23 = {
         <span>Answer</span>
     </div>
 
-    <pre><code><span class="keyword">Correct Answer:</span> <span class="string">B) Mocha</span></code></pre>
+    <pre><code><span class="keyword">Answer:</span> <span class="string">B) Mocha</span></code></pre>
 
 </div>
 `
@@ -567,7 +479,7 @@ const javascriptHistoryQuestion24 = {
         <span>Answer</span>
     </div>
 
-    <pre><code><span class="keyword">Correct Answer:</span> <span class="string">B) LiveScript</span></code></pre>
+    <pre><code><span class="keyword">Answer:</span> <span class="string">B) LiveScript</span></code></pre>
 
 </div>
 `
@@ -591,7 +503,7 @@ const javascriptHistoryQuestion25 = {
         <span>Answer</span>
     </div>
 
-    <pre><code><span class="keyword">Correct Answer:</span> <span class="string">C) JavaScript</span></code></pre>
+    <pre><code><span class="keyword">Answer:</span> <span class="string">C) JavaScript</span></code></pre>
 
 </div>
 `
@@ -615,7 +527,7 @@ const javascriptHistoryQuestion26 = {
         <span>Answer</span>
     </div>
 
-    <pre><code><span class="keyword">Correct Answer:</span> <span class="string">C) 1995</span></code></pre>
+    <pre><code><span class="keyword">Answer:</span> <span class="string">C) 1995</span></code></pre>
 
 </div>
 `
@@ -639,7 +551,7 @@ const javascriptHistoryQuestion27 = {
         <span>Answer</span>
     </div>
 
-    <pre><code><span class="keyword">Correct Answer:</span> <span class="string">B) 10 days</span></code></pre>
+    <pre><code><span class="keyword">Answer:</span> <span class="string">B) 10 days</span></code></pre>
 
 </div>
 `
@@ -663,7 +575,7 @@ const javascriptHistoryQuestion28 = {
         <span>Answer</span>
     </div>
 
-    <pre><code><span class="keyword">Correct Answer:</span> <span class="string">A) To make browsers interactive</span></code></pre>
+    <pre><code><span class="keyword">Answer:</span> <span class="string">A) To make browsers interactive</span></code></pre>
 
 </div>
 `
@@ -687,7 +599,7 @@ const javascriptHistoryQuestion29 = {
         <span>Answer</span>
     </div>
 
-    <pre><code><span class="keyword">Correct Answer:</span> <span class="string">A) Form validation</span></code></pre>
+    <pre><code><span class="keyword">Answer:</span> <span class="string">A) Form validation</span></code></pre>
 
 </div>
 `
@@ -711,7 +623,7 @@ const javascriptHistoryQuestion30 = {
         <span>Answer</span>
     </div>
 
-    <pre><code><span class="keyword">Correct Answer:</span> <span class="string">B) JavaScript and Java are two distinct programming languages</span></code></pre>
+    <pre><code><span class="keyword">Answer:</span> <span class="string">B) JavaScript and Java are two distinct programming languages</span></code></pre>
 
 </div>
 `
@@ -734,7 +646,7 @@ const javascriptPlacementQuestion31 = {
         <span>Answer</span>
     </div>
 
-    <pre><code><span class="keyword">Correct Answer:</span> <span class="string">B) Three</span></code></pre>
+    <pre><code><span class="keyword">Answer:</span> <span class="string">B) Three</span></code></pre>
 
 </div>
 `
@@ -758,7 +670,7 @@ const javascriptPlacementQuestion32 = {
         <span>Answer</span>
     </div>
 
-    <pre><code><span class="keyword">Correct Answer:</span> <span class="string">D) Database JavaScript</span></code></pre>
+    <pre><code><span class="keyword">Answer:</span> <span class="string">D) Database JavaScript</span></code></pre>
 
 </div>
 `
@@ -782,7 +694,7 @@ const javascriptPlacementQuestion33 = {
         <span>Answer</span>
     </div>
 
-    <pre><code><span class="keyword">Correct Answer:</span> <span class="string">A) Inside the head or body section</span></code></pre>
+    <pre><code><span class="keyword">Answer:</span> <span class="string">A) Inside the head or body section</span></code></pre>
 
 </div>
 `
@@ -806,7 +718,7 @@ const javascriptPlacementQuestion34 = {
         <span>Answer</span>
     </div>
 
-    <pre><code><span class="keyword">Correct Answer:</span> <span class="string">A) JavaScript written directly inside the HTML document</span></code></pre>
+    <pre><code><span class="keyword">Answer:</span> <span class="string">A) JavaScript written directly inside the HTML document</span></code></pre>
 
 </div>
 `
@@ -830,7 +742,7 @@ const javascriptPlacementQuestion35 = {
         <span>Answer</span>
     </div>
 
-    <pre><code><span class="keyword">Correct Answer:</span> <span class="string">A) Internal JavaScript</span></code></pre>
+    <pre><code><span class="keyword">Answer:</span> <span class="string">A) Internal JavaScript</span></code></pre>
 
 </div>
 `
@@ -854,7 +766,7 @@ const javascriptPlacementQuestion36 = {
         <span>Answer</span>
     </div>
 
-    <pre><code><span class="keyword">Correct Answer:</span> <span class="string">A) JavaScript stored in a separate .js file</span></code></pre>
+    <pre><code><span class="keyword">Answer:</span> <span class="string">A) JavaScript stored in a separate .js file</span></code></pre>
 
 </div>
 `
@@ -878,7 +790,7 @@ const javascriptPlacementQuestion37 = {
         <span>Answer</span>
     </div>
 
-    <pre><code><span class="keyword">Correct Answer:</span> <span class="string">B) src</span></code></pre>
+    <pre><code><span class="keyword">Answer:</span> <span class="string">B) src</span></code></pre>
 
 </div>
 `
@@ -902,7 +814,7 @@ const javascriptPlacementQuestion38 = {
         <span>Answer</span>
     </div>
 
-    <pre><code><span class="keyword">Correct Answer:</span> <span class="string">C) External JavaScript</span></code></pre>
+    <pre><code><span class="keyword">Answer:</span> <span class="string">C) External JavaScript</span></code></pre>
 
 </div>
 `
@@ -926,7 +838,7 @@ const javascriptPlacementQuestion39 = {
         <span>Answer</span>
     </div>
 
-    <pre><code><span class="keyword">Correct Answer:</span> <span class="string">A) Inside an HTML event attribute</span></code></pre>
+    <pre><code><span class="keyword">Answer:</span> <span class="string">A) Inside an HTML event attribute</span></code></pre>
 
 </div>
 `
@@ -950,7 +862,7 @@ const javascriptPlacementQuestion40 = {
         <span>Answer</span>
     </div>
 
-    <pre><code><span class="keyword">Correct Answer:</span> <span class="string">C) External JavaScript</span></code></pre>
+    <pre><code><span class="keyword">Answer:</span> <span class="string">C) External JavaScript</span></code></pre>
 
 </div>
 `
@@ -973,7 +885,7 @@ const javascriptVariableQuestion51 = {
         <span>Answer</span>
     </div>
 
-    <pre><code><span class="keyword">Correct Answer:</span> <span class="string">A) A named container used to store data</span></code></pre>
+    <pre><code><span class="keyword">Answer:</span> <span class="string">A) A named container used to store data</span></code></pre>
 
 </div>
 `
@@ -997,7 +909,7 @@ const javascriptVariableQuestion52 = {
         <span>Answer</span>
     </div>
 
-    <pre><code><span class="keyword">Correct Answer:</span> <span class="string">D) All of the above</span></code></pre>
+    <pre><code><span class="keyword">Answer:</span> <span class="string">D) All of the above</span></code></pre>
 
 </div>
 `
@@ -1021,7 +933,7 @@ const javascriptVariableQuestion53 = {
         <span>Answer</span>
     </div>
 
-    <pre><code><span class="keyword">Correct Answer:</span> <span class="string">C) firstName</span></code></pre>
+    <pre><code><span class="keyword">Answer:</span> <span class="string">C) firstName</span></code></pre>
 
 </div>
 `
@@ -1045,7 +957,7 @@ const javascriptVariableQuestion54 = {
         <span>Answer</span>
     </div>
 
-    <pre><code><span class="keyword">Correct Answer:</span> <span class="string">B) A letter</span></code></pre>
+    <pre><code><span class="keyword">Answer:</span> <span class="string">B) A letter</span></code></pre>
 
 </div>
 `
@@ -1069,7 +981,7 @@ const javascriptVariableQuestion55 = {
         <span>Answer</span>
     </div>
 
-    <pre><code><span class="keyword">Correct Answer:</span> <span class="string">D) 123user</span></code></pre>
+    <pre><code><span class="keyword">Answer:</span> <span class="string">D) 123user</span></code></pre>
 
 </div>
 `
@@ -1093,7 +1005,7 @@ const javascriptVariableQuestion56 = {
         <span>Answer</span>
     </div>
 
-    <pre><code><span class="keyword">Correct Answer:</span> <span class="string">A) let age = 25;</span></code></pre>
+    <pre><code><span class="keyword">Answer:</span> <span class="string">A) let age = 25;</span></code></pre>
 
 </div>
 `
@@ -1117,7 +1029,7 @@ const javascriptVariableQuestion57 = {
         <span>Answer</span>
     </div>
 
-    <pre><code><span class="keyword">Correct Answer:</span> <span class="string">B) let</span></code></pre>
+    <pre><code><span class="keyword">Answer:</span> <span class="string">B) let</span></code></pre>
 
 </div>
 `
@@ -1141,7 +1053,7 @@ const javascriptVariableQuestion58 = {
         <span>Answer</span>
     </div>
 
-    <pre><code><span class="keyword">Correct Answer:</span> <span class="string">C) const</span></code></pre>
+    <pre><code><span class="keyword">Answer:</span> <span class="string">C) const</span></code></pre>
 
 </div>
 `
@@ -1165,7 +1077,7 @@ const javascriptVariableQuestion59 = {
         <span>Answer</span>
     </div>
 
-    <pre><code><span class="keyword">Correct Answer:</span> <span class="string">C) var</span></code></pre>
+    <pre><code><span class="keyword">Answer:</span> <span class="string">C) var</span></code></pre>
 
 </div>
 `
@@ -1189,7 +1101,7 @@ const javascriptVariableQuestion60 = {
         <span>Answer</span>
     </div>
 
-    <pre><code><span class="keyword">Correct Answer:</span> <span class="string">C) An error occurs</span></code></pre>
+    <pre><code><span class="keyword">Answer:</span> <span class="string">C) An error occurs</span></code></pre>
 
 </div>
 `
@@ -1213,7 +1125,7 @@ const javascriptVariableQuestion61 = {
         <span>Answer</span>
     </div>
 
-    <pre><code><span class="keyword">Correct Answer:</span> <span class="string">A) Declaring a variable without explicitly using var, let, or const</span></code></pre>
+    <pre><code><span class="keyword">Answer:</span> <span class="string">A) Declaring a variable without explicitly using var, let, or const</span></code></pre>
 
 </div>
 `
@@ -1237,7 +1149,7 @@ const javascriptVariableQuestion62 = {
         <span>Answer</span>
     </div>
 
-    <pre><code><span class="keyword">Correct Answer:</span> <span class="string">C) Use let or const explicitly</span></code></pre>
+    <pre><code><span class="keyword">Answer:</span> <span class="string">C) Use let or const explicitly</span></code></pre>
 
 </div>
 `
@@ -1261,7 +1173,7 @@ const javascriptVariableQuestion63 = {
         <span>Answer</span>
     </div>
 
-    <pre><code><span class="keyword">Correct Answer:</span> <span class="string">B) 25</span></code></pre>
+    <pre><code><span class="keyword">Answer:</span> <span class="string">B) 25</span></code></pre>
 
 </div>
 `
@@ -1285,7 +1197,7 @@ const javascriptVariableQuestion64 = {
         <span>Answer</span>
     </div>
 
-    <pre><code><span class="keyword">Correct Answer:</span> <span class="string">A) 10</span></code></pre>
+    <pre><code><span class="keyword">Answer:</span> <span class="string">A) 10</span></code></pre>
 
 </div>
 `
@@ -1309,7 +1221,7 @@ const javascriptVariableQuestion65 = {
         <span>Answer</span>
     </div>
 
-    <pre><code><span class="keyword">Correct Answer:</span> <span class="string">B) let x = 10;</span></code></pre>
+    <pre><code><span class="keyword">Answer:</span> <span class="string">B) let x = 10;</span></code></pre>
 
 </div>
 `
@@ -1333,7 +1245,7 @@ const javascriptVariableQuestion66 = {
         <span>Answer</span>
     </div>
 
-    <pre><code><span class="keyword">Correct Answer:</span> <span class="string">A) The area of the program where the variable can be accessed</span></code></pre>
+    <pre><code><span class="keyword">Answer:</span> <span class="string">A) The area of the program where the variable can be accessed</span></code></pre>
 
 </div>
 `
@@ -1357,7 +1269,7 @@ const javascriptVariableQuestion67 = {
         <span>Answer</span>
     </div>
 
-    <pre><code><span class="keyword">Correct Answer:</span> <span class="string">C) Both let and const</span></code></pre>
+    <pre><code><span class="keyword">Answer:</span> <span class="string">C) Both let and const</span></code></pre>
 
 </div>
 `
@@ -1381,7 +1293,7 @@ const javascriptVariableQuestion68 = {
         <span>Answer</span>
     </div>
 
-    <pre><code><span class="keyword">Correct Answer:</span> <span class="string">B) Function scope</span></code></pre>
+    <pre><code><span class="keyword">Answer:</span> <span class="string">B) Function scope</span></code></pre>
 
 </div>
 `
@@ -1405,7 +1317,7 @@ const javascriptVariableQuestion69 = {
         <span>Answer</span>
     </div>
 
-    <pre><code><span class="keyword">Correct Answer:</span> <span class="string">B) 20</span></code></pre>
+    <pre><code><span class="keyword">Answer:</span> <span class="string">B) 20</span></code></pre>
 
 </div>
 `
@@ -1429,7 +1341,7 @@ const javascriptVariableQuestion70 = {
         <span>Answer</span>
     </div>
 
-    <pre><code><span class="keyword">Correct Answer:</span> <span class="string">B) Using an inner variable with the same name as an outer variable</span></code></pre>
+    <pre><code><span class="keyword">Answer:</span> <span class="string">B) Using an inner variable with the same name as an outer variable</span></code></pre>
 
 </div>
 `
@@ -2214,7 +2126,7 @@ const javascriptArithmeticQuestion78 = {
         <span>Answer</span>
     </div>
 
-    <pre><code><span class="keyword">Correct Answer:</span> <span class="string">B) **</span></code></pre>
+    <pre><code><span class="keyword">Answer:</span> <span class="string">B) **</span></code></pre>
 
 </div>
 `
@@ -2320,7 +2232,7 @@ const javascriptEqualityQuestion81 = {
         <span>Answer</span>
     </div>
 
-    <pre><code><span class="keyword">Correct Answer:</span> <span class="string">true</span>
+    <pre><code><span class="keyword">Answer:</span> <span class="string">true</span>
 
 <span class="keyword">Explanation:</span>
 The <span class="operator">==</span> operator performs
@@ -2353,7 +2265,7 @@ const javascriptEqualityQuestion82 = {
         <span>Answer</span>
     </div>
 
-    <pre><code><span class="keyword">Correct Answer:</span> <span class="string">false</span>
+    <pre><code><span class="keyword">Answer:</span> <span class="string">false</span>
 
 <span class="keyword">Explanation:</span>
 The <span class="operator">===</span> operator checks both
@@ -2385,7 +2297,7 @@ const javascriptEqualityQuestion83 = {
         <span>Answer</span>
     </div>
 
-    <pre><code><span class="keyword">Correct Answer:</span> <span class="operator">===</span>
+    <pre><code><span class="keyword">Answer:</span> <span class="operator">===</span>
 
 <span class="keyword">Explanation:</span>
 The <span class="operator">===</span> operator is called
@@ -2423,7 +2335,7 @@ const javascriptEqualityQuestion84 = {
         <span>Answer</span>
     </div>
 
-    <pre><code><span class="keyword">Correct Answer:</span> <span class="string">true, false</span>
+    <pre><code><span class="keyword">Answer:</span> <span class="string">true, false</span>
 
 <span class="keyword">Explanation:</span>
 The <span class="operator">==</span> operator performs type conversion.
@@ -2462,7 +2374,7 @@ const javascriptEqualityQuestion85 = {
         <span>Answer</span>
     </div>
 
-    <pre><code><span class="keyword">Correct Answer:</span>
+    <pre><code><span class="keyword">Answer:</span>
 <span class="string">== may perform type conversion, while === does not</span>
 
 <span class="keyword">Explanation:</span>
@@ -2498,7 +2410,7 @@ const javascriptLogicalQuestion86 = {
         <span>Answer</span>
     </div>
 
-    <pre><code><span class="keyword">Correct Answer:</span> <span class="boolean">false</span>
+    <pre><code><span class="keyword">Answer:</span> <span class="boolean">false</span>
 
 <span class="keyword">Explanation:</span>
 The <span class="operator">&amp;&amp;</span> operator returns true only when
@@ -2528,7 +2440,7 @@ const javascriptLogicalQuestion87 = {
         <span>Answer</span>
     </div>
 
-    <pre><code><span class="keyword">Correct Answer:</span> <span class="operator">||</span>
+    <pre><code><span class="keyword">Answer:</span> <span class="operator">||</span>
 
 <span class="keyword">Explanation:</span>
 The logical OR operator <span class="operator">||</span>
@@ -2556,7 +2468,7 @@ const javascriptLogicalQuestion88 = {
         <span>Answer</span>
     </div>
 
-    <pre><code><span class="keyword">Correct Answer:</span> <span class="boolean">true</span>
+    <pre><code><span class="keyword">Answer:</span> <span class="boolean">true</span>
 
 <span class="keyword">Explanation:</span>
 The <span class="operator">||</span> operator returns true if
@@ -2586,7 +2498,7 @@ const javascriptLogicalQuestion89 = {
         <span>Answer</span>
     </div>
 
-    <pre><code><span class="keyword">Correct Answer:</span> <span class="boolean">false</span>
+    <pre><code><span class="keyword">Answer:</span> <span class="boolean">false</span>
 
 <span class="keyword">Explanation:</span>
 The logical NOT operator <span class="operator">!</span>
@@ -2616,7 +2528,7 @@ const javascriptLogicalQuestion90 = {
         <span>Answer</span>
     </div>
 
-    <pre><code><span class="keyword">Correct Answer:</span> <span class="boolean">false</span>
+    <pre><code><span class="keyword">Answer:</span> <span class="boolean">false</span>
 
 <span class="keyword">Explanation:</span>
 For logical AND <span class="operator">&amp;&amp;</span>, both operands
@@ -2646,7 +2558,7 @@ const javascriptLogicalQuestion91 = {
         <span>Answer</span>
     </div>
 
-    <pre><code><span class="keyword">Correct Answer:</span> <span class="boolean">true</span>
+    <pre><code><span class="keyword">Answer:</span> <span class="boolean">true</span>
 
 <span class="keyword">Explanation:</span>
 The OR operator <span class="operator">||</span> returns true
@@ -2676,7 +2588,7 @@ const javascriptLogicalQuestion92 = {
         <span>Answer</span>
     </div>
 
-    <pre><code><span class="keyword">Correct Answer:</span> <span class="operator">!</span>
+    <pre><code><span class="keyword">Answer:</span> <span class="operator">!</span>
 
 <span class="keyword">Explanation:</span>
 The logical NOT operator <span class="operator">!</span>
@@ -2707,7 +2619,7 @@ const javascriptLogicalQuestion93 = {
         <span>Answer</span>
     </div>
 
-    <pre><code><span class="keyword">Correct Answer:</span> <span class="boolean">true</span>
+    <pre><code><span class="keyword">Answer:</span> <span class="boolean">true</span>
 
 <span class="keyword">Explanation:</span>
 Both conditions are true.
@@ -2739,7 +2651,7 @@ const javascriptLogicalQuestion94 = {
         <span>Answer</span>
     </div>
 
-    <pre><code><span class="keyword">Correct Answer:</span> <span class="boolean">false</span>
+    <pre><code><span class="keyword">Answer:</span> <span class="boolean">false</span>
 
 <span class="keyword">Explanation:</span>
 Both conditions are false.
@@ -2771,7 +2683,7 @@ const javascriptLogicalQuestion95 = {
         <span>Answer</span>
     </div>
 
-    <pre><code><span class="keyword">Correct Answer:</span> <span class="boolean">false</span>
+    <pre><code><span class="keyword">Answer:</span> <span class="boolean">false</span>
 
 <span class="keyword">Explanation:</span>
 First, <span class="number">10</span> &gt; <span class="number">5</span> is true.
@@ -2802,7 +2714,7 @@ const javascriptLogicalQuestion96 = {
         <span>Answer</span>
     </div>
 
-    <pre><code><span class="keyword">Correct Answer:</span>
+    <pre><code><span class="keyword">Answer:</span>
 <span class="operator">age &gt; 18 &amp;&amp; age &lt; 60</span>
 
 <span class="keyword">Explanation:</span>
@@ -2832,7 +2744,7 @@ const javascriptLogicalQuestion97 = {
         <span>Answer</span>
     </div>
 
-    <pre><code><span class="keyword">Correct Answer:</span> <span class="boolean">true</span>
+    <pre><code><span class="keyword">Answer:</span> <span class="boolean">true</span>
 
 <span class="keyword">Explanation:</span>
 Both conditions are true.
@@ -2866,7 +2778,7 @@ const javascriptLogicalQuestion98 = {
         <span>Answer</span>
     </div>
 
-    <pre><code><span class="keyword">Correct Answer:</span> <span class="boolean">true</span>
+    <pre><code><span class="keyword">Answer:</span> <span class="boolean">true</span>
 
 <span class="keyword">Explanation:</span>
 The first condition is false:
@@ -2903,7 +2815,7 @@ const javascriptLogicalQuestion99 = {
         <span>Answer</span>
     </div>
 
-    <pre><code><span class="keyword">Correct Answer:</span> <span class="boolean">false</span>
+    <pre><code><span class="keyword">Answer:</span> <span class="boolean">false</span>
 
 <span class="keyword">Explanation:</span>
 The variable <span class="variable">isLoggedIn</span> contains true.
@@ -2934,7 +2846,7 @@ const javascriptLogicalQuestion100 = {
         <span>Answer</span>
     </div>
 
-    <pre><code><span class="keyword">Correct Answer:</span> <span class="boolean">true</span>
+    <pre><code><span class="keyword">Answer:</span> <span class="boolean">true</span>
 
 <span class="keyword">Explanation:</span>
 The logical AND operator has higher precedence
@@ -2970,7 +2882,7 @@ const javascriptLogicalQuestion101 = {
         <span>Program</span>
     </div>
 
-    <pre><code><span class="keyword">Correct Answer:</span>
+    <pre><code><span class="keyword">Answer:</span>
 <span class="operator">if</span> (num &gt;= <span class="number">10</span> &amp;&amp; num &lt;= <span class="number">50</span>)
 
 <span class="keyword">Explanation:</span>
@@ -2999,7 +2911,7 @@ const javascriptLogicalQuestion102 = {
         <span>Program</span>
     </div>
 
-    <pre><code><span class="keyword">Correct Answer:</span>
+    <pre><code><span class="keyword">Answer:</span>
 <span class="operator">if</span> (age &gt;= <span class="number">18</span>)
 
 <span class="keyword">Example:</span>
@@ -3032,7 +2944,7 @@ const javascriptLogicalQuestion103 = {
         <span>Program</span>
     </div>
 
-    <pre><code><span class="keyword">Correct Answer:</span>
+    <pre><code><span class="keyword">Answer:</span>
 <span class="operator">if</span> (num &gt; <span class="number">0</span> &amp;&amp; num % <span class="number">2</span> === <span class="number">0</span>)
 
 <span class="keyword">Example:</span>
@@ -3065,7 +2977,7 @@ const javascriptLogicalQuestion104 = {
         <span>Program</span>
     </div>
 
-    <pre><code><span class="keyword">Correct Answer:</span>
+    <pre><code><span class="keyword">Answer:</span>
 <span class="operator">if</span> (marks &gt;= <span class="number">40</span>)
 
 <span class="keyword">Example:</span>
@@ -3098,7 +3010,7 @@ const javascriptLogicalQuestion105 = {
         <span>Program</span>
     </div>
 
-    <pre><code><span class="keyword">Correct Answer:</span>
+    <pre><code><span class="keyword">Answer:</span>
 <span class="operator">if</span> (num === <span class="number">10</span> || num === <span class="number">20</span>)
 
 <span class="keyword">Example:</span>
@@ -3114,10 +3026,7 @@ const javascriptLogicalQuestion105 = {
 }
 
 const javascriptIntroductionQuestions = [
-    javascriptIntroductionQuestion1,
-    javascriptIntroductionQuestion2,
-    javascriptIntroductionQuestion3,
-    javascriptIntroductionQuestion4,
+    
     javascriptIntroductionQuestion5,
     javascriptIntroductionQuestion6,
     javascriptIntroductionQuestion7,
