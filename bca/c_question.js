@@ -2838,7 +2838,79 @@ const cQuestion105 = {
 </div>
 `
 };
+const cBasicQuestion01 = {
+    question: "Write a C program to input two numbers and check which number is greater using the ternary operator.",
 
+    solution: `
+<div class="code-box">
+<div class="code-title">
+<span>Program</span>
+</div>
+<pre><code><span class="keyword">#include</span> &lt;stdio.h&gt;
+
+<span class="keyword">int</span> main(<span class="keyword">void</span>)
+{
+    <span class="keyword">int</span> a, b;
+
+    printf(<span class="string">"Enter the first number: "</span>);
+    scanf(<span class="string">"%d"</span>, &amp;a);
+
+    printf(<span class="string">"Enter the second number: "</span>);
+    scanf(<span class="string">"%d"</span>, &amp;b);
+
+    printf(<span class="string">"First number = %d\\n"</span>, a);
+    printf(<span class="string">"Second number = %d\\n"</span>, b);
+
+    <span class="keyword">char</span> *result = (a &gt; b) ? <span class="string">" A is greater than b"</span> : <span class="string">" B is greater than A"</span>;
+
+    printf(<span class="string">"result%s"</span>, result);
+
+    <span class="keyword">return</span> <span class="number">0</span>;
+}</code></pre>
+</div>
+
+<div class="code-box">
+<div class="code-title">
+<span>Explanation</span>
+</div>
+<pre><code><span class="keyword">Step 1:</span>
+Two integer variables <span class="string">a</span> and <span class="string">b</span> are declared to store two numbers.
+
+<span class="keyword">Step 2:</span>
+The <span class="string">scanf()</span> function takes two numbers from the user.
+
+<span class="keyword">Step 3:</span>
+The ternary operator checks:
+
+a &gt; b
+
+If the condition is true, it stores:
+
+<span class="string">" A is greater than b"</span>
+
+Otherwise, it stores:
+
+<span class="string">" B is greater than A"</span>
+
+<span class="keyword">Step 4:</span>
+The <span class="string">printf()</span> function displays the result.
+
+<span class="keyword">Example:</span>
+
+If:
+a = 10
+b = 5
+
+Then:
+
+10 &gt; 5
+
+Therefore:
+
+<span class="string">A is greater than b</span></code></pre>
+</div>
+`
+};
 
 const cQuestion106 = {
     question: "Write a C program to swap the values of two variables using assignment operators.",
@@ -3685,6 +3757,477 @@ const cQuestion131 = {
 `
 };
 
+const ctypeCastingQuestion1 = {
+    question: `What is the output of the following C program?
+
+<div class="code-box">
+
+    <div class="code-title">
+        type-casting.c
+    </div>
+
+<pre><code><span class="preprocessor">#include</span> <span class="header-file">&lt;stdio.h&gt;</span>
+
+<span class="keyword">int</span> <span class="function">main</span>()
+{
+    <span class="keyword">int</span> a = <span class="number">10</span>;
+    <span class="keyword">int</span> b = <span class="number">3</span>;
+
+    <span class="keyword">float</span> result = (<span class="keyword">float</span>)a / b;
+
+    printf(<span class="string">"%f"</span>, result);
+
+    <span class="keyword">return</span> <span class="number">0</span>;
+}</code></pre>
+
+</div>`,
+
+    options: [
+        "3.000000",
+        "3.333333",
+        "3",
+        "10.000000"
+    ],
+
+    answer: 1,
+
+    solution: `
+<div class="code-box">
+
+    <div class="code-title">
+        <span>Answer</span>
+    </div>
+
+    <pre><code><span class="keyword">Answer:</span> <span class="string">B) 3.333333</span></code></pre>
+
+</div>
+`
+};
+
+
+const ctypeCastingQuestion2 = {
+    question: `What is the output of the following C program?
+
+<div class="code-box">
+
+    <div class="code-title">
+        float-to-int.c
+    </div>
+
+<pre><code><span class="preprocessor">#include</span> <span class="header-file">&lt;stdio.h&gt;</span>
+
+<span class="keyword">int</span> <span class="function">main</span>()
+{
+    <span class="keyword">float</span> price = <span class="number">99.99</span>;
+    <span class="keyword">int</span> value = (<span class="keyword">int</span>)price;
+
+    printf(<span class="string">"%d"</span>, value);
+
+    <span class="keyword">return</span> <span class="number">0</span>;
+}</code></pre>
+
+</div>`,
+
+    options: [
+        "99",
+        "100",
+        "99.99",
+        "Error"
+    ],
+
+    answer: 0,
+
+    solution: `
+<div class="code-box">
+
+    <div class="code-title">
+        <span>Answer</span>
+    </div>
+
+    <pre><code><span class="keyword">Answer:</span> <span class="string">A) 99</span></code></pre>
+
+</div>
+`
+};
+
+
+const ctypeCastingQuestion3 = {
+    question: `What is the output of the following C program?
+
+<div class="code-box">
+
+    <div class="code-title">
+        char-to-int.c
+    </div>
+
+<pre><code><span class="preprocessor">#include</span> <span class="header-file">&lt;stdio.h&gt;</span>
+
+<span class="keyword">int</span> <span class="function">main</span>()
+{
+    <span class="keyword">char</span> ch = <span class="string">'A'</span>;
+    <span class="keyword">int</span> value = (<span class="keyword">int</span>)ch;
+
+    printf(<span class="string">"%d"</span>, value);
+
+    <span class="keyword">return</span> <span class="number">0</span>;
+}</code></pre>
+
+</div>`,
+
+    options: [
+        "A",
+        "64",
+        "65",
+        "66"
+    ],
+
+    answer: 2,
+
+    solution: `
+<div class="code-box">
+
+    <div class="code-title">
+        <span>Answer</span>
+    </div>
+
+    <pre><code><span class="keyword">Answer:</span> <span class="string">C) 65</span></code></pre>
+
+</div>
+`
+};
+
+
+const ctypeCastingQuestion4 = {
+    question: `What is the output of the following C program?
+
+<div class="code-box">
+
+    <div class="code-title">
+        int-to-char.c
+    </div>
+
+<pre><code><span class="preprocessor">#include</span> <span class="header-file">&lt;stdio.h&gt;</span>
+
+<span class="keyword">int</span> <span class="function">main</span>()
+{
+    <span class="keyword">int</span> value = <span class="number">65</span>;
+    <span class="keyword">char</span> ch = (<span class="keyword">char</span>)value;
+
+    printf(<span class="string">"%c"</span>, ch);
+
+    <span class="keyword">return</span> <span class="number">0</span>;
+}</code></pre>
+
+</div>`,
+
+    options: [
+        "65",
+        "A",
+        "a",
+        "Error"
+    ],
+
+    answer: 1,
+
+    solution: `
+<div class="code-box">
+
+    <div class="code-title">
+        <span>Answer</span>
+    </div>
+
+    <pre><code><span class="keyword">Answer:</span> <span class="string">B) A</span></code></pre>
+
+</div>
+`
+};
+
+
+const ctypeCastingQuestion5 = {
+    question: `What is the output of the following C program?
+
+<div class="code-box">
+
+    <div class="code-title">
+        division.c
+    </div>
+
+<pre><code><span class="preprocessor">#include</span> <span class="header-file">&lt;stdio.h&gt;</span>
+
+<span class="keyword">int</span> <span class="function">main</span>()
+{
+    <span class="keyword">int</span> a = <span class="number">5</span>;
+    <span class="keyword">int</span> b = <span class="number">2</span>;
+
+    <span class="keyword">float</span> result = (<span class="keyword">float</span>)(a / b);
+
+    printf(<span class="string">"%f"</span>, result);
+
+    <span class="keyword">return</span> <span class="number">0</span>;
+}</code></pre>
+
+</div>`,
+
+    options: [
+        "2.500000",
+        "2.000000",
+        "2",
+        "5.000000"
+    ],
+
+    answer: 1,
+
+    solution: `
+<div class="code-box">
+
+    <div class="code-title">
+        <span>Answer</span>
+    </div>
+
+    <pre><code><span class="keyword">Answer:</span> <span class="string">B) 2.000000</span></code></pre>
+
+</div>
+`
+};
+
+
+const ctypeCastingQuestion6 = {
+    question: `What is the output of the following C program?
+
+<div class="code-box">
+
+    <div class="code-title">
+        division.c
+    </div>
+
+<pre><code><span class="preprocessor">#include</span> <span class="header-file">&lt;stdio.h&gt;</span>
+
+<span class="keyword">int</span> <span class="function">main</span>()
+{
+    <span class="keyword">int</span> a = <span class="number">5</span>;
+    <span class="keyword">int</span> b = <span class="number">2</span>;
+
+    <span class="keyword">float</span> result = (<span class="keyword">float</span>)a / b;
+
+    printf(<span class="string">"%f"</span>, result);
+
+    <span class="keyword">return</span> <span class="number">0</span>;
+}</code></pre>
+
+</div>`,
+
+    options: [
+        "2.000000",
+        "2.500000",
+        "3.000000",
+        "5.000000"
+    ],
+
+    answer: 1,
+
+    solution: `
+<div class="code-box">
+
+    <div class="code-title">
+        <span>Answer</span>
+    </div>
+
+    <pre><code><span class="keyword">Answer:</span> <span class="string">B) 2.500000</span></code></pre>
+
+</div>
+`
+};
+
+
+const ctypeCastingQuestion7 = {
+    question: `What is the output of the following C program?
+
+<div class="code-box">
+
+    <div class="code-title">
+        expression.c
+    </div>
+
+<pre><code><span class="preprocessor">#include</span> <span class="header-file">&lt;stdio.h&gt;</span>
+
+<span class="keyword">int</span> <span class="function">main</span>()
+{
+    <span class="keyword">int</span> a = <span class="number">10</span>;
+    <span class="keyword">float</span> b = <span class="number">2.5</span>;
+
+    <span class="keyword">int</span> result = (<span class="keyword">int</span>)(a + b);
+
+    printf(<span class="string">"%d"</span>, result);
+
+    <span class="keyword">return</span> <span class="number">0</span>;
+}</code></pre>
+
+</div>`,
+
+    options: [
+        "12",
+        "12.5",
+        "13",
+        "10"
+    ],
+
+    answer: 0,
+
+    solution: `
+<div class="code-box">
+
+    <div class="code-title">
+        <span>Answer</span>
+    </div>
+
+    <pre><code><span class="keyword">Answer:</span> <span class="string">A) 12</span></code></pre>
+
+</div>
+`
+};
+
+
+const ctypeCastingQuestion8 = {
+    question: `What is the output of the following C program?
+
+<div class="code-box">
+
+    <div class="code-title">
+        expression.c
+    </div>
+
+<pre><code><span class="preprocessor">#include</span> <span class="header-file">&lt;stdio.h&gt;</span>
+
+<span class="keyword">int</span> <span class="function">main</span>()
+{
+    <span class="keyword">float</span> a = <span class="number">10.8</span>;
+
+    printf(<span class="string">"%d"</span>, (<span class="keyword">int</span>)a);
+
+    <span class="keyword">return</span> <span class="number">0</span>;
+}</code></pre>
+
+</div>`,
+
+    options: [
+        "10",
+        "11",
+        "10.8",
+        "Error"
+    ],
+
+    answer: 0,
+
+    solution: `
+<div class="code-box">
+
+    <div class="code-title">
+        <span>Answer</span>
+    </div>
+
+    <pre><code><span class="keyword">Answer:</span> <span class="string">A) 10</span></code></pre>
+
+</div>
+`
+};
+
+
+const ctypeCastingQuestion9 = {
+    question: `What is the output of the following C program?
+
+<div class="code-box">
+
+    <div class="code-title">
+        calculation.c
+    </div>
+
+<pre><code><span class="preprocessor">#include</span> <span class="header-file">&lt;stdio.h&gt;</span>
+
+<span class="keyword">int</span> <span class="function">main</span>()
+{
+    <span class="keyword">int</span> a = <span class="number">7</span>;
+    <span class="keyword">int</span> b = <span class="number">2</span>;
+
+    <span class="keyword">float</span> result = (<span class="keyword">float</span>)(a + b);
+
+    printf(<span class="string">"%f"</span>, result);
+
+    <span class="keyword">return</span> <span class="number">0</span>;
+}</code></pre>
+
+</div>`,
+
+    options: [
+        "4.500000",
+        "9.000000",
+        "9",
+        "7.000000"
+    ],
+
+    answer: 1,
+
+    solution: `
+<div class="code-box">
+
+    <div class="code-title">
+        <span>Answer</span>
+    </div>
+
+    <pre><code><span class="keyword">Answer:</span> <span class="string">B) 9.000000</span></code></pre>
+
+</div>
+`
+};
+
+
+const ctypeCastingQuestion10 = {
+    question: `What is the output of the following C program?
+
+<div class="code-box">
+
+    <div class="code-title">
+        calculation.c
+    </div>
+
+<pre class="program-code-box-pre"><code class="program-code-box-code"><span class="preprocessor">#include</span> <span class="header-file">&lt;stdio.h&gt;</span>
+
+<span class="keyword">int</span> <span class="function">main</span>()
+{
+    <span class="keyword">int</span> a = <span class="number">10</span>;
+    <span class="keyword">int</span> b = <span class="number">4</span>;
+
+    <span class="keyword">double</span> result = (<span class="keyword">double</span>)a / b;
+
+    printf(<span class="string">"%lf"</span>, result);
+
+    <span class="keyword">return</span> <span class="number">0</span>;
+}</code></pre>
+
+</div>`,
+
+    options: [
+        "2.000000",
+        "2.500000",
+        "2",
+        "10.000000"
+    ],
+
+    answer: 1,
+
+    solution: `
+<div class="code-box">
+
+    <div class="code-title">
+        <span>Answer</span>
+    </div>
+
+    <pre><code><span class="keyword">Answer:</span> <span class="string">B) 2.500000</span></code></pre>
+
+</div>
+`
+};
+
+
 // ========================================
 // ALL QUESTIONS
 // ========================================
@@ -3739,6 +4282,17 @@ const cProgrammingQuestions = [
     cQuestion48,
     cQuestion49,
     cQuestion50,
+    cBasicQuestion01,
+       ctypeCastingQuestion1,
+    ctypeCastingQuestion2,
+    ctypeCastingQuestion3,
+    ctypeCastingQuestion4,
+    ctypeCastingQuestion5,
+    ctypeCastingQuestion6,
+    ctypeCastingQuestion7,
+    ctypeCastingQuestion8,
+    ctypeCastingQuestion9,
+    ctypeCastingQuestion10,
     cQuestion51,
     cQuestion52,
     cQuestion53,
