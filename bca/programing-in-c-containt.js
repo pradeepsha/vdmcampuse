@@ -8856,24 +8856,14 @@ Grade = <span class="character">A</span></code></pre>
 
 let conditionalStatementsAndLoops = `
 
-<h3>Conditional Statements</h3>
-
-<p>
-In C programming, <strong>Conditional Statements</strong> and <strong>Loops</strong> are important control structures that help us control the flow of a program.
-</p>
-
-<p>
-A program normally executes statements one after another. However, sometimes we need to make decisions or repeat a set of instructions multiple times. For this purpose, C provides conditional statements and loops.
-</p>
-
 <h4>Conditional Statements</h4>
 
 <p>
-Conditional statements are used to make decisions in a program. They execute different blocks of code based on whether a condition is true or false.
+Conditional statements help a program make decisions. They check whether a condition is <strong>true</strong> or <strong>false</strong> and then execute the appropriate block of code.
 </p>
 
 <p>
-For example, if a student's marks are greater than 40, the program can display <strong>"Pass"</strong>; otherwise, it can display <strong>"Fail"</strong>.
+For example, if a student's marks are 40 or more, the program can display <strong>"Pass"</strong>. Otherwise, it can display <strong>"Fail"</strong>.
 </p>
 
 <p>

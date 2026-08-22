@@ -2556,7 +2556,7 @@ const cUnit_2Question59 = {
 
 
 const javascriptLoopsDifficultQuestion1 = {
-    question: "What will be the output of the following JavaScript program?",
+    question: "What will be the output of the following program?",
 
     program: `
 <div class="program-code-box">
@@ -2603,12 +2603,12 @@ Therefore, all callbacks access the final value of i, which is 3.</code></pre>
 
 
 const javascriptLoopsDifficultQuestion2 = {
-    question: "What will be the output of the following JavaScript program?",
+    question: "What will be the output of the following program?",
 
     program: `
 <div class="program-code-box">
 
-    <pre class="program-code-box-pre"><code class="program-code-box-code"><span class="program-code-box-keyword">for</span> (<span class="program-code-box-keyword">let</span> i = <span class="program-code-box-number">0</span>; i &lt; <span class="program-code-box-number">3</span>; i++) {
+    <pre class="program-code-box-pre"><code class="program-code-box-code"><span class="program-code-box-keyword">for</span> (<span class="program-code-box-keyword">int</span> i = <span class="program-code-box-number">0</span>; i &lt; <span class="program-code-box-number">3</span>; i++) {
     setTimeout(() =&gt; console.log(i), <span class="program-code-box-number">0</span>);
 }</code></pre>
 
@@ -2637,7 +2637,7 @@ const javascriptLoopsDifficultQuestion2 = {
 2</span>
 
 <span class="keyword">Explanation:</span>
-let creates a separate binding for each iteration of the loop.
+int creates a separate binding for each iteration of the loop.
 Therefore, each callback remembers its corresponding value of i.
 
 The callbacks execute after the loop completes, producing
@@ -2649,12 +2649,12 @@ The callbacks execute after the loop completes, producing
 
 
 const javascriptLoopsDifficultQuestion3 = {
-    question: "What will be the output of the following JavaScript program?",
+    question: "What will be the output of the following program?",
 
     program: `
 <div class="program-code-box">
 
-    <pre class="program-code-box-pre"><code class="program-code-box-code"><span class="program-code-box-keyword">let</span> i = <span class="program-code-box-number">0</span>;
+    <pre class="program-code-box-pre"><code class="program-code-box-code"><span class="program-code-box-keyword">int</span> i = <span class="program-code-box-number">0</span>;
 
 <span class="program-code-box-keyword">for</span> (; i &lt; <span class="program-code-box-number">3</span>; i++) {
     <span class="program-code-box-keyword">if</span> (i === <span class="program-code-box-number">1</span>) {
@@ -2704,14 +2704,14 @@ to 3. Therefore, the output is 0 and 2.</code></pre>
 
 
 const javascriptLoopsDifficultQuestion4 = {
-    question: "What will be the output of the following JavaScript program?",
+    question: "What will be the output of the following program?",
 
     program: `
 <div class="program-code-box">
 
-    <pre class="program-code-box-pre"><code class="program-code-box-code"><span class="program-code-box-keyword">let</span> arr = [<span class="program-code-box-number">1</span>, <span class="program-code-box-number">2</span>, <span class="program-code-box-number">3</span>];
+    <pre class="program-code-box-pre"><code class="program-code-box-code"><span class="program-code-box-keyword">int</span> arr = [<span class="program-code-box-number">1</span>, <span class="program-code-box-number">2</span>, <span class="program-code-box-number">3</span>];
 
-<span class="program-code-box-keyword">for</span> (<span class="program-code-box-keyword">let</span> i <span class="program-code-box-keyword">in</span> arr) {
+<span class="program-code-box-keyword">for</span> (<span class="program-code-box-keyword">int</span> i <span class="program-code-box-keyword">in</span> arr) {
     console.log(<span class="program-code-box-keyword">typeof</span> i);
 }</code></pre>
 
@@ -2751,14 +2751,14 @@ Therefore, typeof i is "string" in every iteration.</code></pre>
 
 
 const javascriptLoopsDifficultQuestion5 = {
-    question: "What will be the output of the following JavaScript program?",
+    question: "What will be the output of the following program?",
 
     program: `
 <div class="program-code-box">
 
-    <pre class="program-code-box-pre"><code class="program-code-box-code"><span class="program-code-box-keyword">let</span> arr = [<span class="program-code-box-number">10</span>, <span class="program-code-box-number">20</span>, <span class="program-code-box-number">30</span>];
+    <pre class="program-code-box-pre"><code class="program-code-box-code"><span class="program-code-box-keyword">int</span> arr = [<span class="program-code-box-number">10</span>, <span class="program-code-box-number">20</span>, <span class="program-code-box-number">30</span>];
 
-<span class="program-code-box-keyword">for</span> (<span class="program-code-box-keyword">let</span> i <span class="program-code-box-keyword">of</span> arr) {
+<span class="program-code-box-keyword">for</span> (<span class="program-code-box-keyword">int</span> i <span class="program-code-box-keyword">of</span> arr) {
     i = i * <span class="program-code-box-number">2</span>;
 }
 
@@ -2832,17 +2832,17 @@ A normal plain object is not directly iterable.</code></pre>
 
 
 const javascriptLoopsDifficultQuestion7 = {
-    question: "What will be the output of the following JavaScript program?",
+    question: "What will be the output of the following program?",
 
     program: `
 <div class="program-code-box">
 
-    <pre class="program-code-box-pre"><code class="program-code-box-code"><span class="program-code-box-keyword">let</span> count = <span class="program-code-box-number">0</span>;
+    <pre class="program-code-box-pre"><code class="program-code-box-code"><span class="program-code-box-keyword">int</span> count = <span class="program-code-box-number">0</span>;
 
 outer:
-<span class="program-code-box-keyword">for</span> (<span class="program-code-box-keyword">let</span> i = <span class="program-code-box-number">0</span>; i &lt; <span class="program-code-box-number">3</span>; i++) {
+<span class="program-code-box-keyword">for</span> (<span class="program-code-box-keyword">int</span> i = <span class="program-code-box-number">0</span>; i &lt; <span class="program-code-box-number">3</span>; i++) {
 
-    <span class="program-code-box-keyword">for</span> (<span class="program-code-box-keyword">let</span> j = <span class="program-code-box-number">0</span>; j &lt; <span class="program-code-box-number">3</span>; j++) {
+    <span class="program-code-box-keyword">for</span> (<span class="program-code-box-keyword">int</span> j = <span class="program-code-box-number">0</span>; j &lt; <span class="program-code-box-number">3</span>; j++) {
 
         <span class="program-code-box-keyword">if</span> (i === <span class="program-code-box-number">1</span> &amp;&amp; j === <span class="program-code-box-number">1</span>) {
             <span class="program-code-box-keyword">break</span> outer;
@@ -2893,12 +2893,12 @@ Therefore, the final value is 4.</code></pre>
 
 
 const javascriptLoopsDifficultQuestion8 = {
-    question: "What will be the output of the following JavaScript program?",
+    question: "What will be the output of the following program?",
 
     program: `
 <div class="program-code-box">
 
-    <pre class="program-code-box-pre"><code class="program-code-box-code"><span class="program-code-box-keyword">let</span> i = <span class="program-code-box-number">0</span>;
+    <pre class="program-code-box-pre"><code class="program-code-box-code"><span class="program-code-box-keyword">int</span> i = <span class="program-code-box-number">0</span>;
 
 <span class="program-code-box-keyword">while</span> (i &lt; <span class="program-code-box-number">5</span>) {
 
@@ -2951,16 +2951,16 @@ Therefore, the output is 0, 1, 2 and 4.</code></pre>
 
 
 const javascriptLoopsDifficultQuestion9 = {
-    question: "What will be the output of the following JavaScript program?",
+    question: "What will be the output of the following program?",
 
     program: `
 <div class="program-code-box">
 
-    <pre class="program-code-box-pre"><code class="program-code-box-code"><span class="program-code-box-keyword">for</span> (<span class="program-code-box-keyword">let</span> i = <span class="program-code-box-number">0</span>; i &lt; <span class="program-code-box-number">3</span>; i++) {
+    <pre class="program-code-box-pre"><code class="program-code-box-code"><span class="program-code-box-keyword">for</span> (<span class="program-code-box-keyword">int</span> i = <span class="program-code-box-number">0</span>; i &lt; <span class="program-code-box-number">3</span>; i++) {
     setTimeout(() =&gt; console.log(i), <span class="program-code-box-number">0</span>);
 }
 
-<span class="program-code-box-keyword">for</span> (<span class="program-code-box-keyword">let</span> j = <span class="program-code-box-number">0</span>; j &lt; <span class="program-code-box-number">3</span>; j++) {
+<span class="program-code-box-keyword">for</span> (<span class="program-code-box-keyword">int</span> j = <span class="program-code-box-number">0</span>; j &lt; <span class="program-code-box-number">3</span>; j++) {
     console.log(j);
 }</code></pre>
 
@@ -3007,20 +3007,20 @@ followed by the callback values.</code></pre>
 
 
 const javascriptLoopsDifficultQuestion10 = {
-    question: "What will be the output of the following JavaScript program?",
+    question: "What will be the output of the following program?",
 
     program: `
 <div class="program-code-box">
 
-    <pre class="program-code-box-pre"><code class="program-code-box-code"><span class="program-code-box-keyword">let</span> obj = {
+    <pre class="program-code-box-pre"><code class="program-code-box-code"><span class="program-code-box-keyword">int</span> obj = {
     a: <span class="program-code-box-number">1</span>,
     b: <span class="program-code-box-number">2</span>,
     c: <span class="program-code-box-number">3</span>
 };
 
-<span class="program-code-box-keyword">let</span> sum = <span class="program-code-box-number">0</span>;
+<span class="program-code-box-keyword">int</span> sum = <span class="program-code-box-number">0</span>;
 
-<span class="program-code-box-keyword">for</span> (<span class="program-code-box-keyword">let</span> key <span class="program-code-box-keyword">in</span> obj) {
+<span class="program-code-box-keyword">for</span> (<span class="program-code-box-keyword">int</span> key <span class="program-code-box-keyword">in</span> obj) {
     sum += obj[key];
 }
 
@@ -3063,12 +3063,12 @@ Therefore, the final value of sum is 6.</code></pre>
 
 
 const javascriptLoopsDifficultQuestion11 = {
-    question: "What will be the output of the following JavaScript program?",
+    question: "What will be the output of the following program?",
 
     program: `
 <div class="program-code-box">
 
-    <pre class="program-code-box-pre"><code class="program-code-box-code"><span class="program-code-box-keyword">let</span> arr = [
+    <pre class="program-code-box-pre"><code class="program-code-box-code"><span class="program-code-box-keyword">int</span> arr = [
     <span class="program-code-box-number">1</span>,
     <span class="program-code-box-number">2</span>,
     <span class="program-code-box-number">3</span>,
@@ -3076,7 +3076,7 @@ const javascriptLoopsDifficultQuestion11 = {
     <span class="program-code-box-number">5</span>
 ];
 
-<span class="program-code-box-keyword">for</span> (<span class="program-code-box-keyword">let</span> i = <span class="program-code-box-number">0</span>; i &lt; arr.length; i++) {
+<span class="program-code-box-keyword">for</span> (<span class="program-code-box-keyword">int</span> i = <span class="program-code-box-number">0</span>; i &lt; arr.length; i++) {
 
     <span class="program-code-box-keyword">if</span> (arr[i] % <span class="program-code-box-number">2</span> === <span class="program-code-box-number">0</span>) {
         arr.splice(i, <span class="program-code-box-number">1</span>);
@@ -3123,12 +3123,12 @@ array becomes [1, 3, 5].</code></pre>
 
 
 const javascriptLoopsDifficultQuestion12 = {
-    question: "What will be the output of the following JavaScript program?",
+    question: "What will be the output of the following program?",
 
     program: `
 <div class="program-code-box">
 
-    <pre class="program-code-box-pre"><code class="program-code-box-code"><span class="program-code-box-keyword">let</span> x = <span class="program-code-box-number">0</span>;
+    <pre class="program-code-box-pre"><code class="program-code-box-code"><span class="program-code-box-keyword">int</span> x = <span class="program-code-box-number">0</span>;
 
 <span class="program-code-box-keyword">do</span> {
     x++;
@@ -3182,11 +3182,11 @@ const javascriptLoopsDifficultQuestion13 = {
     program: `
 <div class="program-code-box">
 
-    <pre class="program-code-box-pre"><code class="program-code-box-code"><span class="program-code-box-keyword">let</span> sum = <span class="program-code-box-number">0</span>;
+    <pre class="program-code-box-pre"><code class="program-code-box-code"><span class="program-code-box-keyword">int</span> sum = <span class="program-code-box-number">0</span>;
 
-<span class="program-code-box-keyword">for</span> (<span class="program-code-box-keyword">let</span> i = <span class="program-code-box-number">1</span>; i &lt;= <span class="program-code-box-number">5</span>; i++) {
+<span class="program-code-box-keyword">for</span> (<span class="program-code-box-keyword">int</span> i = <span class="program-code-box-number">1</span>; i &lt;= <span class="program-code-box-number">5</span>; i++) {
 
-    <span class="program-code-box-keyword">for</span> (<span class="program-code-box-keyword">let</span> j = <span class="program-code-box-number">1</span>; j &lt;= i; j++) {
+    <span class="program-code-box-keyword">for</span> (<span class="program-code-box-keyword">int</span> j = <span class="program-code-box-number">1</span>; j &lt;= i; j++) {
         sum += j;
     }
 }
@@ -3247,7 +3247,7 @@ const javascriptLoopsDifficultQuestion14 = {
     program: `
 <div class="program-code-box">
 
-    <pre class="program-code-box-pre"><code class="program-code-box-code"><span class="program-code-box-keyword">let</span> i = <span class="program-code-box-number">5</span>;
+    <pre class="program-code-box-pre"><code class="program-code-box-code"><span class="program-code-box-keyword">int</span> i = <span class="program-code-box-number">5</span>;
 
 <span class="program-code-box-keyword">while</span> (i--) {
     console.log(i);
@@ -3336,16 +3336,16 @@ const javascriptLoopsDifficultQuestion16 = {
     program: `
 <div class="program-code-box">
 
-    <pre class="program-code-box-pre"><code class="program-code-box-code"><span class="program-code-box-keyword">let</span> arr = [
+    <pre class="program-code-box-pre"><code class="program-code-box-code"><span class="program-code-box-keyword">int</span> arr = [
     <span class="program-code-box-number">10</span>,
     <span class="program-code-box-number">20</span>,
     <span class="program-code-box-number">30</span>
 ];
 
-<span class="program-code-box-keyword">let</span> sum = <span class="program-code-box-number">0</span>;
+<span class="program-code-box-keyword">int</span> sum = <span class="program-code-box-number">0</span>;
 
 <span class="program-code-box-keyword">for</span> (
-    <span class="program-code-box-keyword">let</span> i = <span class="program-code-box-number">0</span>;
+    <span class="program-code-box-keyword">int</span> i = <span class="program-code-box-number">0</span>;
     i &lt; arr.length;
     sum += arr[i], i++
 );
@@ -3399,7 +3399,7 @@ const javascriptLoopsDifficultQuestion17 = {
     program: `
 <div class="program-code-box">
 
-    <pre class="program-code-box-pre"><code class="program-code-box-code"><span class="program-code-box-keyword">let</span> i = <span class="program-code-box-number">0</span>;
+    <pre class="program-code-box-pre"><code class="program-code-box-code"><span class="program-code-box-keyword">int</span> i = <span class="program-code-box-number">0</span>;
 
 <span class="program-code-box-keyword">for</span> (;;) {
 
@@ -3454,10 +3454,10 @@ const javascriptLoopsDifficultQuestion18 = {
     program: `
 <div class="program-code-box">
 
-    <pre class="program-code-box-pre"><code class="program-code-box-code"><span class="program-code-box-keyword">let</span> str = <span class="program-code-box-string">"abc"</span>;
-<span class="program-code-box-keyword">let</span> res = <span class="program-code-box-string">""</span>;
+    <pre class="program-code-box-pre"><code class="program-code-box-code"><span class="program-code-box-keyword">int</span> str = <span class="program-code-box-string">"abc"</span>;
+<span class="program-code-box-keyword">int</span> res = <span class="program-code-box-string">""</span>;
 
-<span class="program-code-box-keyword">for</span> (<span class="program-code-box-keyword">let</span> ch <span class="program-code-box-keyword">of</span> str) {
+<span class="program-code-box-keyword">for</span> (<span class="program-code-box-keyword">int</span> ch <span class="program-code-box-keyword">of</span> str) {
     res = ch + res;
 }
 
@@ -3507,13 +3507,13 @@ const javascriptLoopsDifficultQuestion19 = {
     program: `
 <div class="program-code-box">
 
-    <pre class="program-code-box-pre"><code class="program-code-box-code"><span class="program-code-box-keyword">let</span> arr = [
+    <pre class="program-code-box-pre"><code class="program-code-box-code"><span class="program-code-box-keyword">int</span> arr = [
     <span class="program-code-box-number">1</span>,
     <span class="program-code-box-number">2</span>,
     <span class="program-code-box-number">3</span>
 ];
 
-<span class="program-code-box-keyword">for</span> (<span class="program-code-box-keyword">let</span> i = <span class="program-code-box-number">0</span>; i &lt; arr.length; i++) {
+<span class="program-code-box-keyword">for</span> (<span class="program-code-box-keyword">int</span> i = <span class="program-code-box-number">0</span>; i &lt; arr.length; i++) {
     setTimeout(() =&gt; console.log(arr[i]), <span class="program-code-box-number">0</span>);
 }</code></pre>
 
@@ -3542,7 +3542,7 @@ const javascriptLoopsDifficultQuestion19 = {
 3</span>
 
 <span class="keyword">Explanation:</span>
-The loop uses let, so each iteration has its own binding
+The loop uses int, so each iteration has its own binding
 for i.
 
 The setTimeout callbacks execute after the loop completes,
@@ -3560,9 +3560,9 @@ const javascriptLoopsDifficultQuestion20 = {
 
     program: `
 <div class="program-code-box">
-    <pre class="program-code-box-pre"><code class="program-code-box-code"><span class="program-code-box-keyword">let</span> count = <span class="program-code-box-number">0</span>;
-<span class="program-code-box-keyword">for</span> (<span class="program-code-box-keyword">let</span> i = <span class="program-code-box-number">0</span>; i &lt; <span class="program-code-box-number">3</span>; i++) {
-    <span class="program-code-box-keyword">for</span> (<span class="program-code-box-keyword">let</span> j = <span class="program-code-box-number">0</span>; j &lt; <span class="program-code-box-number">3</span>; j++) {
+    <pre class="program-code-box-pre"><code class="program-code-box-code"><span class="program-code-box-keyword">int</span> count = <span class="program-code-box-number">0</span>;
+<span class="program-code-box-keyword">for</span> (<span class="program-code-box-keyword">int</span> i = <span class="program-code-box-number">0</span>; i &lt; <span class="program-code-box-number">3</span>; i++) {
+    <span class="program-code-box-keyword">for</span> (<span class="program-code-box-keyword">int</span> j = <span class="program-code-box-number">0</span>; j &lt; <span class="program-code-box-number">3</span>; j++) {
         <span class="program-code-box-keyword">if</span> ((i + j) % <span class="program-code-box-number">2</span> === <span class="program-code-box-number">0</span>) {
             <span class="program-code-box-keyword">continue</span>;
         }
@@ -3610,6 +3610,892 @@ Therefore, count becomes 4.</code></pre>
 `
 };
 
+const switchquestion1 = {
+    question: "write a program that accepts a number from 1 to 12 and displays the corresponding month using a switch statement. Display \"Invalid month number\" if the entered number is not between 1 and 12.",
+
+    solution: ` 
+<div class="code-box"> 
+ 
+    <div class="code-title"> 
+        <span>Solution</span> 
+    </div> 
+ 
+    <pre><code><span class="keyword">int</span> month = Number(prompt(<span class="string">"Enter month number (1-12): "</span>)); 
+ 
+<span class="keyword">switch</span> (month) 
+{ 
+    <span class="keyword">case</span> <span class="number">1</span>: 
+        alert(<span class="string">"January"</span>); 
+        <span class="keyword">break</span>; 
+ 
+    <span class="keyword">case</span> <span class="number">2</span>: 
+        alert(<span class="string">"February"</span>); 
+        <span class="keyword">break</span>; 
+ 
+    <span class="keyword">case</span> <span class="number">3</span>: 
+        alert(<span class="string">"March"</span>); 
+        <span class="keyword">break</span>; 
+ 
+    <span class="keyword">case</span> <span class="number">4</span>: 
+        alert(<span class="string">"April"</span>); 
+        <span class="keyword">break</span>; 
+ 
+    <span class="keyword">case</span> <span class="number">5</span>: 
+        alert(<span class="string">"May"</span>); 
+        <span class="keyword">break</span>; 
+ 
+    <span class="keyword">case</span> <span class="number">6</span>: 
+        alert(<span class="string">"June"</span>); 
+        <span class="keyword">break</span>; 
+ 
+    <span class="keyword">case</span> <span class="number">7</span>: 
+        alert(<span class="string">"July"</span>); 
+        <span class="keyword">break</span>; 
+ 
+    <span class="keyword">case</span> <span class="number">8</span>: 
+        alert(<span class="string">"August"</span>); 
+        <span class="keyword">break</span>; 
+ 
+    <span class="keyword">case</span> <span class="number">9</span>: 
+        alert(<span class="string">"September"</span>); 
+        <span class="keyword">break</span>; 
+ 
+    <span class="keyword">case</span> <span class="number">10</span>: 
+        alert(<span class="string">"October"</span>); 
+        <span class="keyword">break</span>; 
+ 
+    <span class="keyword">case</span> <span class="number">11</span>: 
+        alert(<span class="string">"November"</span>); 
+        <span class="keyword">break</span>; 
+ 
+    <span class="keyword">case</span> <span class="number">12</span>: 
+        alert(<span class="string">"December"</span>); 
+        <span class="keyword">break</span>; 
+ 
+    <span class="keyword">default</span>: 
+        alert(<span class="string">"Invalid month number"</span>); 
+}</code></pre> 
+ 
+</div> 
+`
+};
+
+
+const switchquestion2 = {
+    question: "write a program that accepts a number from 1 to 7 and displays the corresponding day using a switch statement. Display \"Invalid day number\" if the entered number is not between 1 and 7.",
+
+    solution: ` 
+<div class="code-box"> 
+ 
+    <div class="code-title"> 
+        <span>Solution</span> 
+    </div> 
+ 
+    <pre><code><span class="keyword">int</span> day = Number(prompt(<span class="string">"Enter day number (1-7): "</span>)); 
+ 
+<span class="keyword">switch</span> (day) 
+{ 
+    <span class="keyword">case</span> <span class="number">1</span>: 
+        alert(<span class="string">"Monday"</span>); 
+        <span class="keyword">break</span>; 
+ 
+    <span class="keyword">case</span> <span class="number">2</span>: 
+        alert(<span class="string">"Tuesday"</span>); 
+        <span class="keyword">break</span>; 
+ 
+    <span class="keyword">case</span> <span class="number">3</span>: 
+        alert(<span class="string">"Wednesday"</span>); 
+        <span class="keyword">break</span>; 
+ 
+    <span class="keyword">case</span> <span class="number">4</span>: 
+        alert(<span class="string">"Thursday"</span>); 
+        <span class="keyword">break</span>; 
+ 
+    <span class="keyword">case</span> <span class="number">5</span>: 
+        alert(<span class="string">"Friday"</span>); 
+        <span class="keyword">break</span>; 
+ 
+    <span class="keyword">case</span> <span class="number">6</span>: 
+        alert(<span class="string">"Saturday"</span>); 
+        <span class="keyword">break</span>; 
+ 
+    <span class="keyword">case</span> <span class="number">7</span>: 
+        alert(<span class="string">"Sunday"</span>); 
+        <span class="keyword">break</span>; 
+ 
+    <span class="keyword">default</span>: 
+        alert(<span class="string">"Invalid day number"</span>); 
+}</code></pre> 
+ 
+</div> 
+`
+};
+
+
+const switchquestion3 = {
+    question: "write a program that accepts two numbers and an operator (+, -, *, or /). Use a switch statement to perform the selected operation. Display \"Invalid operator\" for any other operator and handle division by zero appropriately.",
+
+    solution: ` 
+<div class="code-box"> 
+ 
+    <div class="code-title"> 
+        <span>Solution</span> 
+    </div> 
+ 
+    <pre><code><span class="keyword">int</span> a = Number(prompt(<span class="string">"Enter first number: "</span>)); 
+<span class="keyword">int</span> b = Number(prompt(<span class="string">"Enter second number: "</span>)); 
+<span class="keyword">int</span> operator = prompt(<span class="string">"Enter operator (+, -, *, /): "</span>); 
+ 
+<span class="keyword">switch</span> (operator) 
+{ 
+    <span class="keyword">case</span> <span class="string">"+"</span>: 
+        alert(<span class="string">"Result = "</span> + (a + b)); 
+        <span class="keyword">break</span>; 
+ 
+    <span class="keyword">case</span> <span class="string">"-"</span>: 
+        alert(<span class="string">"Result = "</span> + (a - b)); 
+        <span class="keyword">break</span>; 
+ 
+    <span class="keyword">case</span> <span class="string">"*"</span>: 
+        alert(<span class="string">"Result = "</span> + (a * b)); 
+        <span class="keyword">break</span>; 
+ 
+    <span class="keyword">case</span> <span class="string">"/"</span>: 
+        <span class="keyword">if</span> (b === <span class="number">0</span>) 
+        { 
+            alert(<span class="string">"Cannot divide by zero"</span>); 
+        } 
+        <span class="keyword">else</span> 
+        { 
+            alert(<span class="string">"Result = "</span> + (a / b)); 
+        } 
+        <span class="keyword">break</span>; 
+ 
+    <span class="keyword">default</span>: 
+        alert(<span class="string">"Invalid operator"</span>); 
+}</code></pre> 
+ 
+</div> 
+`
+};
+
+
+const switchquestion4 = {
+    question: "write a program that accepts a traffic signal color (red, yellow, or green) and displays the appropriate instruction using a switch statement. Display \"Invalid signal\" for any other color.",
+
+    solution: ` 
+<div class="code-box"> 
+ 
+    <div class="code-title"> 
+        <span>Solution</span> 
+    </div> 
+ 
+    <pre><code><span class="keyword">int</span> signal = prompt(<span class="string">"Enter traffic signal color: "</span>).toLowerCase(); 
+ 
+<span class="keyword">switch</span> (signal) 
+{ 
+    <span class="keyword">case</span> <span class="string">"red"</span>: 
+        alert(<span class="string">"Stop"</span>); 
+        <span class="keyword">break</span>; 
+ 
+    <span class="keyword">case</span> <span class="string">"yellow"</span>: 
+        alert(<span class="string">"Wait"</span>); 
+        <span class="keyword">break</span>; 
+ 
+    <span class="keyword">case</span> <span class="string">"green"</span>: 
+        alert(<span class="string">"Go"</span>); 
+        <span class="keyword">break</span>; 
+ 
+    <span class="keyword">default</span>: 
+        alert(<span class="string">"Invalid signal"</span>); 
+}</code></pre> 
+ 
+</div> 
+`
+};
+
+
+const switchquestion5 = {
+    question: "Write a program that accepts a character and uses a switch statement to check whether it is a vowel. If the character is a, e, i, o, or u, display \"Vowel\"; otherwise, display \"Consonant\".",
+
+    solution: ` 
+<div class="code-box"> 
+ 
+    <div class="code-title"> 
+        <span>Solution</span> 
+    </div> 
+ 
+    <pre><code><span class="keyword">int</span> ch = prompt(<span class="string">"Enter a character: "</span>).toLowerCase(); 
+ 
+<span class="keyword">switch</span> (ch) 
+{ 
+    <span class="keyword">case</span> <span class="string">"a"</span>: 
+    <span class="keyword">case</span> <span class="string">"e"</span>: 
+    <span class="keyword">case</span> <span class="string">"i"</span>: 
+    <span class="keyword">case</span> <span class="string">"o"</span>: 
+    <span class="keyword">case</span> <span class="string">"u"</span>: 
+        alert(<span class="string">"Vowel"</span>); 
+        <span class="keyword">break</span>; 
+ 
+    <span class="keyword">default</span>: 
+        alert(<span class="string">"Consonant"</span>); 
+}</code></pre> 
+ 
+</div> 
+`
+};
+
+const javascriptSwitchCaseDifficultQuestion1 = {
+    question: "What will be the output of the following program?",
+
+    program: `
+<div class="program-code-box">
+
+    <pre class="program-code-box-pre"><code class="program-code-box-code"><span class="program-code-box-keyword">int</span> value = <span class="program-code-box-number">2</span>;
+
+<span class="program-code-box-keyword">switch</span> (value) {
+    <span class="program-code-box-keyword">case</span> <span class="program-code-box-number">1</span>:
+        console.log(<span class="program-code-box-string">"One"</span>);
+        <span class="program-code-box-keyword">break</span>;
+
+    <span class="program-code-box-keyword">case</span> <span class="program-code-box-number">2</span>:
+        console.log(<span class="program-code-box-string">"Two"</span>);
+
+    <span class="program-code-box-keyword">case</span> <span class="program-code-box-number">3</span>:
+        console.log(<span class="program-code-box-string">"Three"</span>);
+        <span class="program-code-box-keyword">break</span>;
+
+    <span class="program-code-box-keyword">default</span>:
+        console.log(<span class="program-code-box-string">"Other"</span>);
+}</code></pre>
+
+</div>
+`,
+
+    options: [
+        "Two",
+        "Two Three",
+        "Three",
+        "Other"
+    ],
+
+    answer: 1,
+
+    solution: `
+<div class="code-box">
+
+    <div class="code-title">
+        <span>Answer</span>
+    </div>
+
+    <pre><code><span class="keyword">Output:</span>
+<span class="string">Two
+Three</span>
+
+<span class="keyword">Explanation:</span>
+The value 2 matches case 2.
+Since case 2 does not contain a break statement, execution falls through to case 3.
+Therefore, both "Two" and "Three" are printed.</code></pre>
+
+</div>
+`
+};
+
+
+const javascriptSwitchCaseDifficultQuestion2 = {
+    question: "What will be the output of the following C program?",
+
+    program: `
+<div class="program-code-box">
+
+    <pre class="program-code-box-pre"><code class="program-code-box-code"><span class="program-code-box-preprocessor">#include</span> <span class="program-code-box-header-file">&lt;stdio.h&gt;</span>
+
+<span class="program-code-box-keyword">int</span> main()
+{
+    <span class="program-code-box-keyword">int</span> x = <span class="program-code-box-number">5</span>;
+
+    <span class="program-code-box-keyword">switch</span> (x)
+    {
+        <span class="program-code-box-keyword">case</span> <span class="program-code-box-number">5</span>:
+            printf(<span class="program-code-box-string">"Number"</span>);
+            <span class="program-code-box-keyword">break</span>;
+
+        <span class="program-code-box-keyword">case</span> <span class="program-code-box-number">10</span>:
+            printf(<span class="program-code-box-string">"Ten"</span>);
+            <span class="program-code-box-keyword">break</span>;
+
+        <span class="program-code-box-keyword">default</span>:
+            printf(<span class="program-code-box-string">"Other"</span>);
+    }
+
+    <span class="program-code-box-keyword">return</span> <span class="program-code-box-number">0</span>;
+}</code></pre>
+
+</div>
+`,
+
+    options: [
+        "Number",
+        "Ten",
+        "Number Ten",
+        "Other"
+    ],
+
+    answer: 0,
+
+    solution: `
+<div class="code-box">
+
+    <div class="code-title">
+        <span>Answer</span>
+    </div>
+
+    <pre><code><span class="keyword">Output:</span>
+<span class="string">Number</span>
+
+<span class="keyword">Explanation:</span>
+The value of x is 5.
+Therefore, case 5 is matched and "Number" is printed.
+The break statement terminates the switch statement.</code></pre>
+
+</div>
+`
+};
+
+
+const javascriptSwitchCaseDifficultQuestion3 = {
+    question: "What will be the output of the following program?",
+
+    program: `
+<div class="program-code-box">
+
+    <pre class="program-code-box-pre"><code class="program-code-box-code"><span class="program-code-box-keyword">int</span> num = <span class="program-code-box-number">10</span>;
+
+<span class="program-code-box-keyword">switch</span> (<span class="program-code-box-keyword">true</span>) {
+    <span class="program-code-box-keyword">case</span> num &gt; <span class="program-code-box-number">0</span> &amp;&amp; num &lt; <span class="program-code-box-number">5</span>:
+        console.log(<span class="program-code-box-string">"Small"</span>);
+        <span class="program-code-box-keyword">break</span>;
+
+    <span class="program-code-box-keyword">case</span> num &gt;= <span class="program-code-box-number">5</span> &amp;&amp; num &lt; <span class="program-code-box-number">10</span>:
+        console.log(<span class="program-code-box-string">"Medium"</span>);
+        <span class="program-code-box-keyword">break</span>;
+
+    <span class="program-code-box-keyword">case</span> num &gt;= <span class="program-code-box-number">10</span>:
+        console.log(<span class="program-code-box-string">"Large"</span>);
+        <span class="program-code-box-keyword">break</span>;
+
+    <span class="program-code-box-keyword">default</span>:
+        console.log(<span class="program-code-box-string">"Invalid"</span>);
+}</code></pre>
+
+</div>
+`,
+
+    options: [
+        "Small",
+        "Medium",
+        "Large",
+        "Invalid"
+    ],
+
+    answer: 2,
+
+    solution: `
+<div class="code-box">
+
+    <div class="code-title">
+        <span>Answer</span>
+    </div>
+
+    <pre><code><span class="keyword">Output:</span>
+<span class="string">Large</span>
+
+<span class="keyword">Explanation:</span>
+switch(true) compares true with each case condition.
+The condition num &gt;= 10 evaluates to true.
+Therefore, the third case is executed.</code></pre>
+
+</div>
+`
+};
+
+
+const javascriptSwitchCaseDifficultQuestion4 = {
+    question: "What will be the output of the following program?",
+
+    program: `
+<div class="program-code-box">
+
+    <pre class="program-code-box-pre"><code class="program-code-box-code"><span class="program-code-box-keyword">int</span> result = <span class="program-code-box-number">0</span>;
+
+<span class="program-code-box-keyword">switch</span> (<span class="program-code-box-number">3</span>) {
+    <span class="program-code-box-keyword">case</span> <span class="program-code-box-number">1</span>:
+        result += <span class="program-code-box-number">10</span>;
+        <span class="program-code-box-keyword">break</span>;
+
+    <span class="program-code-box-keyword">case</span> <span class="program-code-box-number">2</span>:
+        result += <span class="program-code-box-number">20</span>;
+        <span class="program-code-box-keyword">break</span>;
+
+    <span class="program-code-box-keyword">case</span> <span class="program-code-box-number">3</span>:
+        result += <span class="program-code-box-number">30</span>;
+
+    <span class="program-code-box-keyword">case</span> <span class="program-code-box-number">4</span>:
+        result += <span class="program-code-box-number">40</span>;
+        <span class="program-code-box-keyword">break</span>;
+
+    <span class="program-code-box-keyword">default</span>:
+        result += <span class="program-code-box-number">50</span>;
+}
+
+console.log(result);</code></pre>
+
+</div>
+`,
+
+    options: [
+        "30",
+        "40",
+        "70",
+        "120"
+    ],
+
+    answer: 2,
+
+    solution: `
+<div class="code-box">
+
+    <div class="code-title">
+        <span>Answer</span>
+    </div>
+
+    <pre><code><span class="keyword">Output:</span>
+<span class="string">70</span>
+
+<span class="keyword">Explanation:</span>
+Case 3 matches first and adds 30 to result.
+There is no break after case 3, so execution falls through to case 4.
+Another 40 is added.
+Therefore, result becomes 70.</code></pre>
+
+</div>
+`
+};
+
+
+const javascriptSwitchCaseDifficultQuestion5 = {
+    question: "What will be the output of the following program?",
+
+    program: `
+<div class="program-code-box">
+
+    <pre class="program-code-box-pre"><code class="program-code-box-code"><span class="program-code-box-keyword">int</span> day = <span class="program-code-box-number">6</span>;
+<span class="program-code-box-keyword">int</span> type;
+
+<span class="program-code-box-keyword">switch</span> (day) {
+    <span class="program-code-box-keyword">case</span> <span class="program-code-box-number">1</span>:
+    <span class="program-code-box-keyword">case</span> <span class="program-code-box-number">2</span>:
+    <span class="program-code-box-keyword">case</span> <span class="program-code-box-number">3</span>:
+    <span class="program-code-box-keyword">case</span> <span class="program-code-box-number">4</span>:
+    <span class="program-code-box-keyword">case</span> <span class="program-code-box-number">5</span>:
+        type = <span class="program-code-box-string">"Weekday"</span>;
+        <span class="program-code-box-keyword">break</span>;
+
+    <span class="program-code-box-keyword">case</span> <span class="program-code-box-number">6</span>:
+    <span class="program-code-box-keyword">case</span> <span class="program-code-box-number">7</span>:
+        type = <span class="program-code-box-string">"Weekend"</span>;
+        <span class="program-code-box-keyword">break</span>;
+
+    <span class="program-code-box-keyword">default</span>:
+        type = <span class="program-code-box-string">"Invalid"</span>;
+}
+
+console.log(type);</code></pre>
+
+</div>
+`,
+
+    options: [
+        "Weekday",
+        "Weekend",
+        "Saturday",
+        "Invalid"
+    ],
+
+    answer: 1,
+
+    solution: `
+<div class="code-box">
+
+    <div class="code-title">
+        <span>Answer</span>
+    </div>
+
+    <pre><code><span class="keyword">Output:</span>
+<span class="string">Weekend</span>
+
+<span class="keyword">Explanation:</span>
+Cases 6 and 7 share the same block of code.
+Since day is 6, the Weekend block is executed.</code></pre>
+
+</div>
+`
+};
+
+
+const javascriptSwitchCaseDifficultQuestion6 = {
+    question: "What will be the output of the following program?",
+
+    program: `
+<div class="program-code-box">
+
+    <pre class="program-code-box-pre"><code class="program-code-box-code"><span class="program-code-box-keyword">int</span> a = <span class="program-code-box-number">10</span>;
+<span class="program-code-box-keyword">int</span> b = <span class="program-code-box-number">5</span>;
+<span class="program-code-box-keyword">int</span> operator = <span class="program-code-box-string">"+"</span>;
+<span class="program-code-box-keyword">int</span> result;
+
+<span class="program-code-box-keyword">switch</span> (operator) {
+    <span class="program-code-box-keyword">case</span> <span class="program-code-box-string">"+"</span>:
+        result = a + b;
+        <span class="program-code-box-keyword">break</span>;
+
+    <span class="program-code-box-keyword">case</span> <span class="program-code-box-string">"-"</span>:
+        result = a - b;
+        <span class="program-code-box-keyword">break</span>;
+
+    <span class="program-code-box-keyword">case</span> <span class="program-code-box-string">"*"</span>:
+        result = a * b;
+        <span class="program-code-box-keyword">break</span>;
+
+    <span class="program-code-box-keyword">default</span>:
+        result = <span class="program-code-box-string">"Invalid"</span>;
+}
+
+console.log(result);</code></pre>
+
+</div>
+`,
+
+    options: [
+        "5",
+        "15",
+        "50",
+        "Invalid"
+    ],
+
+    answer: 1,
+
+    solution: `
+<div class="code-box">
+
+    <div class="code-title">
+        <span>Answer</span>
+    </div>
+
+    <pre><code><span class="keyword">Output:</span>
+<span class="string">15</span>
+
+<span class="keyword">Explanation:</span>
+The value of operator is "+".
+Therefore, case "+" executes and adds 10 and 5.
+The result is 15.</code></pre>
+
+</div>
+`
+};
+
+
+const javascriptSwitchCaseDifficultQuestion7 = {
+    question: "What will be the output of the following program?",
+
+    program: `
+<div class="program-code-box">
+
+    <pre class="program-code-box-pre"><code class="program-code-box-code"><span class="program-code-box-keyword">int</span> value = <span class="program-code-box-number">0</span>;
+
+<span class="program-code-box-keyword">switch</span> (value) {
+    <span class="program-code-box-keyword">case</span> <span class="program-code-box-number">0</span>:
+        console.log(<span class="program-code-box-string">"Zero"</span>);
+
+    <span class="program-code-box-keyword">case</span> <span class="program-code-box-number">1</span>:
+        console.log(<span class="program-code-box-string">"One"</span>);
+        <span class="program-code-box-keyword">break</span>;
+
+    <span class="program-code-box-keyword">default</span>:
+        console.log(<span class="program-code-box-string">"Other"</span>);
+}</code></pre>
+
+</div>
+`,
+
+    options: [
+        "Zero",
+        "Zero One",
+        "One",
+        "Other"
+    ],
+
+    answer: 1,
+
+    solution: `
+<div class="code-box">
+
+    <div class="code-title">
+        <span>Answer</span>
+    </div>
+
+    <pre><code><span class="keyword">Output:</span>
+<span class="string">Zero
+One</span>
+
+<span class="keyword">Explanation:</span>
+Case 0 matches the value.
+Since case 0 has no break statement, execution continues into case 1.
+Therefore, both messages are printed.</code></pre>
+
+</div>
+`
+};
+
+
+const javascriptSwitchCaseDifficultQuestion8 = {
+    question: "What will be the output of the following program?",
+
+    program: `
+<div class="program-code-box">
+
+    <pre class="program-code-box-pre"><code class="program-code-box-code"><span class="program-code-box-keyword">int</span> x = <span class="program-code-box-number">2</span>;
+<span class="program-code-box-keyword">int</span> output = <span class="program-code-box-string">""</span>;
+
+<span class="program-code-box-keyword">switch</span> (x) {
+    <span class="program-code-box-keyword">case</span> <span class="program-code-box-number">1</span>:
+        output += <span class="program-code-box-string">"A"</span>;
+        <span class="program-code-box-keyword">break</span>;
+
+    <span class="program-code-box-keyword">case</span> <span class="program-code-box-number">2</span>:
+        output += <span class="program-code-box-string">"B"</span>;
+
+    <span class="program-code-box-keyword">case</span> <span class="program-code-box-number">3</span>:
+        output += <span class="program-code-box-string">"C"</span>;
+
+    <span class="program-code-box-keyword">case</span> <span class="program-code-box-number">4</span>:
+        output += <span class="program-code-box-string">"D"</span>;
+        <span class="program-code-box-keyword">break</span>;
+
+    <span class="program-code-box-keyword">default</span>:
+        output += <span class="program-code-box-string">"E"</span>;
+}
+
+console.log(output);</code></pre>
+
+</div>
+`,
+
+    options: [
+        "B",
+        "BC",
+        "BCD",
+        "BCDE"
+    ],
+
+    answer: 2,
+
+    solution: `
+<div class="code-box">
+
+    <div class="code-title">
+        <span>Answer</span>
+    </div>
+
+    <pre><code><span class="keyword">Output:</span>
+<span class="string">BCD</span>
+
+<span class="keyword">Explanation:</span>
+Case 2 matches and adds B.
+There is no break, so execution continues to case 3 and case 4.
+Therefore, C and D are also added.
+The final output is BCD.</code></pre>
+
+</div>
+`
+};
+
+
+const javascriptSwitchCaseDifficultQuestion9 = {
+    question: "What will be the output of the following program?",
+
+    program: `
+<div class="program-code-box">
+
+    <pre class="program-code-box-pre"><code class="program-code-box-code"><span class="program-code-box-keyword">int</span> input = <span class="program-code-box-number">3</span>;
+
+<span class="program-code-box-keyword">switch</span> (input + <span class="program-code-box-number">1</span>) {
+    <span class="program-code-box-keyword">case</span> <span class="program-code-box-number">3</span>:
+        console.log(<span class="program-code-box-string">"Three"</span>);
+        <span class="program-code-box-keyword">break</span>;
+
+    <span class="program-code-box-keyword">case</span> <span class="program-code-box-number">4</span>:
+        console.log(<span class="program-code-box-string">"Four"</span>);
+        <span class="program-code-box-keyword">break</span>;
+
+    <span class="program-code-box-keyword">case</span> <span class="program-code-box-number">5</span>:
+        console.log(<span class="program-code-box-string">"Five"</span>);
+        <span class="program-code-box-keyword">break</span>;
+
+    <span class="program-code-box-keyword">default</span>:
+        console.log(<span class="program-code-box-string">"Other"</span>);
+}</code></pre>
+
+</div>
+`,
+
+    options: [
+        "Three",
+        "Four",
+        "Five",
+        "Other"
+    ],
+
+    answer: 1,
+
+    solution: `
+<div class="code-box">
+
+    <div class="code-title">
+        <span>Answer</span>
+    </div>
+
+    <pre><code><span class="keyword">Output:</span>
+<span class="string">Four</span>
+
+<span class="keyword">Explanation:</span>
+The switch expression is input + 1.
+Since input is 3, the expression becomes 4.
+Therefore, case 4 is executed.</code></pre>
+
+</div>
+`
+};
+
+
+const javascriptSwitchCaseDifficultQuestion10 = {
+    question: "What will be the output of the following program?",
+
+    program: `
+<div class="program-code-box">
+
+    <pre class="program-code-box-pre"><code class="program-code-box-code"><span class="program-code-box-keyword">int</span> value = <span class="program-code-box-number">10</span>;
+<span class="program-code-box-keyword">int</span> result = <span class="program-code-box-number">0</span>;
+
+<span class="program-code-box-keyword">switch</span> (value % <span class="program-code-box-number">3</span>) {
+    <span class="program-code-box-keyword">case</span> <span class="program-code-box-number">0</span>:
+        result = <span class="program-code-box-number">30</span>;
+        <span class="program-code-box-keyword">break</span>;
+
+    <span class="program-code-box-keyword">case</span> <span class="program-code-box-number">1</span>:
+        result = <span class="program-code-box-number">10</span>;
+        <span class="program-code-box-keyword">break</span>;
+
+    <span class="program-code-box-keyword">case</span> <span class="program-code-box-number">2</span>:
+        result = <span class="program-code-box-number">20</span>;
+        <span class="program-code-box-keyword">break</span>;
+
+    <span class="program-code-box-keyword">default</span>:
+        result = <span class="program-code-box-number">40</span>;
+}
+
+console.log(result);</code></pre>
+
+</div>
+`,
+
+    options: [
+        "10",
+        "20",
+        "30",
+        "40"
+    ],
+
+    answer: 0,
+
+    solution: `
+<div class="code-box">
+
+    <div class="code-title">
+        <span>Answer</span>
+    </div>
+
+    <pre><code><span class="keyword">Output:</span>
+<span class="string">10</span>
+
+<span class="keyword">Explanation:</span>
+The expression value % 3 is evaluated first.
+10 % 3 gives 1.
+Therefore, case 1 executes and assigns 10 to result.</code></pre>
+
+</div>
+`
+};
+
+
+const javascriptQuestion5 = {
+    question: `
+<p>Write a JavaScript program to calculate an electricity bill based on the number of units consumed.</p>
+
+<ol>
+    Apply the following rules:
+    <li>If the number of units is less than <strong>0</strong>, display <strong>"Invalid units"</strong>.</li>
+
+    <li>For the first <strong>100</strong> units, charge ₹5 per unit.</li>
+
+    <li>For units between <strong>101</strong> and <strong>200</strong>, charge ₹5 per unit for the first 100 units and ₹7 per additional unit.</li>
+
+    <li>For units above <strong>200</strong>, charge ₹5 per unit for the first 100 units, ₹7 per unit for the next 100 units, and ₹10 per additional unit.</li>
+
+    <li>Display the final electricity bill in rupees.</li>
+</ol>
+`,
+
+    solution: `
+<div class="code-box">
+
+    <div class="code-title">
+        <span>Solution</span>
+    </div>
+
+    <pre><code><span class="keyword">let</span> units = Number(prompt(<span class="string">"Enter electricity units: "</span>));
+<span class="keyword">let</span> bill;
+
+<span class="keyword">if</span> (units &lt; <span class="number">0</span>)
+{
+    alert(<span class="string">"Invalid units"</span>);
+}
+<span class="keyword">else if</span> (units &lt;= <span class="number">100</span>)
+{
+    bill = units * <span class="number">5</span>;
+    alert(<span class="string">"Electricity bill = ₹"</span> + bill);
+}
+<span class="keyword">else if</span> (units &lt;= <span class="number">200</span>)
+{
+    bill = (<span class="number">100</span> * <span class="number">5</span>) +
+           ((units - <span class="number">100</span>) * <span class="number">7</span>);
+
+    alert(<span class="string">"Electricity bill = ₹"</span> + bill);
+}
+<span class="keyword">else</span>
+{
+    bill = (<span class="number">100</span> * <span class="number">5</span>) +
+           (<span class="number">100</span> * <span class="number">7</span>) +
+           ((units - <span class="number">200</span>) * <span class="number">10</span>);
+
+    alert(<span class="string">"Electricity bill = ₹"</span> + bill);
+}</code></pre>
+
+</div>
+`
+};
+
+
 const cProgrammingQuestionsUnit_2 = [
     cUnit_2Question1,
     cUnit_2Question2,
@@ -3621,6 +4507,8 @@ const cProgrammingQuestionsUnit_2 = [
     cUnit_2Question8,
     cUnit_2Question9,
     cUnit_2Question10,
+
+    javascriptQuestion5,
 
     cUnit_2Question11,
     cUnit_2Question12,
@@ -3643,6 +4531,22 @@ const cProgrammingQuestionsUnit_2 = [
     cUnit_2Question28,
     cUnit_2Question29,
     cUnit_2Question30,
+
+    switchquestion1,
+    switchquestion2,
+    switchquestion3,
+    switchquestion4,
+    switchquestion5,
+    javascriptSwitchCaseDifficultQuestion1,
+    javascriptSwitchCaseDifficultQuestion2,
+    javascriptSwitchCaseDifficultQuestion3,
+    javascriptSwitchCaseDifficultQuestion4,
+    javascriptSwitchCaseDifficultQuestion5,
+    javascriptSwitchCaseDifficultQuestion6,
+    javascriptSwitchCaseDifficultQuestion7,
+    javascriptSwitchCaseDifficultQuestion8,
+    javascriptSwitchCaseDifficultQuestion9,
+    javascriptSwitchCaseDifficultQuestion10,
 
     cUnit_2Question31,
     cUnit_2Question32,

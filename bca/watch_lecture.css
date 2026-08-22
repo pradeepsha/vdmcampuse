@@ -324,7 +324,7 @@ body.mobile_menu_btn {
 
 /* LAYOUT LEFT SIDEBAR RIGHT SIDEBAR AND CONTENT */
 
-.question {
+.question { 
 	margin-bottom: 30px;
 	padding: 20px;
 	border-left: 5px solid #007bff;
@@ -348,7 +348,7 @@ body.mobile_menu_btn {
 }
 
 .q-title {
-	font-size: 15px;
+	font-size: 13px;
 	color: #2c3e50;
 	margin-bottom: 2px;
 }

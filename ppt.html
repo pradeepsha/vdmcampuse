@@ -1,113 +1,390 @@
-<div class="program-code-box">
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <pre class="program-code-box-pre"><code class="program-code-box-code"><span class="program-code-box-keyword">#include</span> &lt;stdio.h&gt;
+    <title>BCA C Programming Model Paper</title>
 
-<span class="program-code-box-keyword">int</span> main()
-{
-    <span class="program-code-box-keyword">for</span>(<span class="program-code-box-keyword">int</span> i = <span class="program-code-box-number">1</span>; i &lt;= <span class="program-code-box-number">5</span>; i++)
-    {
-        printf(<span class="program-code-box-string">"%d "</span>, i);
-    }
+    <style>
+        * {
+            box-sizing: border-box;
+        }
 
-    <span class="program-code-box-keyword">return</span> <span class="program-code-box-number">0</span>;
-}</code></pre>
+        body {
+            margin: 0;
+            background: #fff;
+            color: #000;
+            font-family: "Times New Roman", Times, serif;
+            font-size: 15px;
+        }
+
+        .question-paper {
+            width: 210mm;
+            min-height: 297mm;
+            margin: 0 auto;
+            padding: 15mm 18mm;
+            background: #fff;
+        }
+
+        .paper-code {
+            font-weight: bold;
+            font-size: 17px;
+            margin-bottom: 3px;
+        }
+
+        .exam-title {
+            text-align: center;
+            font-weight: bold;
+            font-size: 17px;
+            margin-bottom: 3px;
+        }
+
+        .semester {
+            text-align: center;
+            font-weight: bold;
+            font-size: 15px;
+            margin-bottom: 8px;
+        }
+
+        .paper-info {
+            text-align: center;
+            line-height: 1.5;
+            margin-bottom: 10px;
+        }
+
+        .paper-info .paper-name {
+            font-weight: bold;
+            font-size: 16px;
+        }
+
+        .paper-info .paper-number {
+            font-weight: bold;
+            margin-top: 5px;
+        }
+
+        .exam-details {
+            display: flex;
+            justify-content: space-between;
+            margin-top: 12px;
+            margin-bottom: 15px;
+            font-weight: bold;
+        }
+
+        .note {
+            margin-bottom: 18px;
+        }
+
+        .note-title {
+            font-weight: bold;
+        }
+
+        .note p {
+            margin: 4px 0;
+        }
+
+        .section-title {
+            text-align: center;
+            font-weight: bold;
+            font-size: 17px;
+            margin: 18px 0 12px;
+            text-decoration: underline;
+        }
+
+        .question {
+            margin-bottom: 18px;
+            line-height: 1.55;
+            text-align: justify;
+        }
+
+        .question-number {
+            font-weight: bold;
+        }
+
+        .sub-question {
+            margin-left: 25px;
+            margin-top: 8px;
+        }
+
+        .question-text {
+            margin-left: 25px;
+        }
+
+        .or {
+            text-align: center;
+            font-weight: bold;
+            margin: 8px 0;
+        }
+
+        .page-footer {
+            display: flex;
+            justify-content: space-between;
+            margin-top: 30px;
+            padding-top: 8px;
+            border-top: 1px solid #000;
+            font-weight: bold;
+            font-size: 13px;
+        }
+
+        @media print {
+
+            @page {
+                size: A4;
+                margin: 0;
+            }
+
+            body {
+                margin: 0;
+            }
+
+            .question-paper {
+                width: 210mm;
+                min-height: 297mm;
+                padding: 12mm 16mm;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+<div class="question-paper">
+
+    <div class="paper-code">
+        BCA 601
+    </div>
+
+    <div class="exam-title">
+        B.C.A. (PART-III) EXAMINATION, 2025-26
+    </div>
+
+    <div class="semester">
+        (Six Semester)
+    </div>
+
+    <div class="paper-info">
+        <div>Paper : I</div>
+
+        <div class="paper-name">
+            BCA-601 C Programming
+        </div>
+
+        <div class="paper-number">
+            2234
+        </div>
+    </div>
+
+
+    <div class="exam-details">
+        <span>Time : Three Hours</span>
+        <span>[Maximum Marks : 70]</span>
+    </div>
+
+
+    <div class="note">
+
+        <div class="note-title">Note:</div>
+
+        <p>
+            (i)&nbsp;&nbsp;&nbsp;&nbsp;Answer Five Questions in all.
+        </p>
+
+        <p>
+            (ii)&nbsp;&nbsp;&nbsp;Question No.-1 is Compulsory.
+        </p>
+
+        <p>
+            (iii)&nbsp;&nbsp;Answer two questions from Section 'A' and
+            'B' each.
+        </p>
+
+        <p>
+            (iv)&nbsp;&nbsp;&nbsp;All questions carry equal marks.
+        </p>
+
+    </div>
+
+
+    <!-- QUESTION 1 -->
+
+    <div class="question">
+
+        <div class="question-number">
+            1. Answer all parts of the following :
+        </div>
+
+        <div class="sub-question">
+            (a) What is the difference between Hardware and Software?
+        </div>
+
+        <div class="sub-question">
+            (b) What is C language? Mention any two features of C.
+        </div>
+
+        <div class="sub-question">
+            (c) What is a flowchart? Name any four flowchart symbols.
+        </div>
+
+        <div class="sub-question">
+            (d) Define variable and identifier in C.
+        </div>
+
+        <div class="sub-question">
+            (e) What are data types in C? Give examples.
+        </div>
+
+        <div class="sub-question">
+            (f) What are format specifiers in C?
+        </div>
+
+        <div class="sub-question">
+            (g) What is type casting in C?
+        </div>
+
+        <div class="sub-question">
+            (h) What is operator precedence?
+        </div>
+
+        <div class="sub-question">
+            (i) Differentiate between break and continue statements.
+        </div>
+
+        <div class="sub-question">
+            (j) Define structure and union in C.
+        </div>
+
+    </div>
+
+
+    <!-- SECTION A -->
+
+    <div class="section-title">
+        Section-A
+    </div>
+
+
+    <div class="question">
+
+        <div class="question-number">
+            2.
+        </div>
+
+        <div class="question-text">
+            Explain the different decision-making statements in C.
+            Explain if, if-else, nested if and else-if ladder with
+            suitable examples.
+        </div>
+
+    </div>
+
+
+    <div class="question">
+
+        <div class="question-number">
+            3.
+        </div>
+
+        <div class="question-text">
+            Explain the switch-case statement in C. Discuss the use of
+            switch, case, break and default statements with a suitable
+            example.
+        </div>
+
+    </div>
+
+
+    <div class="question">
+
+        <div class="question-number">
+            4.
+        </div>
+
+        <div class="question-text">
+            Explain for, while and do-while loops in C. Differentiate
+            between entry-controlled and exit-controlled loops.
+        </div>
+
+    </div>
+
+
+    <!-- SECTION B -->
+
+    <div class="section-title">
+        Section-B
+    </div>
+
+
+    <div class="question">
+
+        <div class="question-number">
+            5.
+        </div>
+
+        <div class="question-text">
+            Explain functions in C. Discuss function declaration,
+            definition, function calling, arguments and return values
+            with suitable examples.
+        </div>
+
+    </div>
+
+
+    <div class="question">
+
+        <div class="question-number">
+            6.
+        </div>
+
+        <div class="question-text">
+            What is an array? Explain one-dimensional and
+            multidimensional arrays in C with suitable examples.
+            Also explain the applications of arrays.
+        </div>
+
+    </div>
+
+
+    <div class="question">
+
+        <div class="question-number">
+            7.
+        </div>
+
+        <div class="question-text">
+            What is a pointer in C? Explain pointer declaration,
+            initialization, dereferencing and pointer arithmetic with
+            suitable examples.
+        </div>
+
+    </div>
+
+
+    <div class="question">
+
+        <div class="question-number">
+            8.
+        </div>
+
+        <div class="question-text">
+            Explain structures and unions in C. Differentiate between
+            structure and union with respect to memory allocation and
+            usage.
+        </div>
+
+    </div>
+
+
+    <div class="page-footer">
+
+        <span>2234</span>
+
+        <span>BCA 601</span>
+
+        <span>Page-1</span>
+
+    </div>
 
 </div>
 
-<style>
-
-    /* =================================
-   PROGRAM CODE BOX
-================================= */
-
-.program-code-box {
-    width: 100%;
-    margin: 16px 0;
-    background: #f8fafc;
-    box-sizing: border-box;
-}
-
-
-/* =================================
-   PROGRAM CODE
-================================= */
-
-.program-code-box-pre {
-    margin: 0;
-    padding: 16px;
-
-    overflow-x: auto;
-
-    background: #f8fafc;
-
-    font-family:
-        "Consolas",
-        "Courier New",
-        monospace;
-
-    font-size: 14px;
-    line-height: 1.7;
-
-    color: #334155;
-
-    white-space: pre;
-}
-
-
-/* =================================
-   CODE
-================================= */
-
-.program-code-box-code {
-    font-family: inherit;
-    font-size: inherit;
-    color: inherit;
-}
-
-
-/* =================================
-   KEYWORDS
-================================= */
-
-.program-code-box-keyword {
-    color: #7c3aed;
-    font-weight: 600;
-}
-
-
-/* =================================
-   NUMBERS
-================================= */
-
-.program-code-box-number {
-    color: #2563eb;
-}
-
-
-/* =================================
-   STRINGS
-================================= */
-
-.program-code-box-string {
-    color: #059669;
-}
-
-
-/* =================================
-   MOBILE
-================================= */
-
-@media (max-width: 600px) {
-
-    .program-code-box {
-        margin: 12px 0;
-    }
-
-    .program-code-box-pre {
-        padding: 12px;
-        font-size: 13px;
-        line-height: 1.6;
-    }
-
-}
-</style>
+</body>
+</html>
