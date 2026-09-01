@@ -7,7 +7,9 @@
     <meta charset="utf-8">
     <script src="bca/oracle.js"></script>
     <script src="bca/js_questions.js"></script>
-        <script src="bca/web_development_interview_question.js"></script>
+    <script src="bca/web_development_interview_question.js"></script>
+    <script src="bca/c_question_ugc.js"></script>
+     <script src="bca/c_questions_ugc_loops.js"></script>
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="description" content="Unicat project">
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -594,7 +596,7 @@
                 <div class="unit">
 
                     <div class="unit_title" onclick="toggleUnit(this)">
-                         Interview Questions 
+                        Interview Questions
                     </div>
 
                     <div class="lecture_list">
@@ -673,6 +675,114 @@
                         <div class="lecture" onclick="loadNote('', phpOdbcContent , event)">
                             L5.18: PHP-ODBC
                         </div>
+
+                    </div>
+
+                </div>
+
+                <div class="unit">
+
+                    <div class="unit_title" onclick="toggleUnit(this)">
+                        UGC NET CS
+                    </div>
+
+                    <div class="lecture_list">
+
+                        <!-- Functions with Sub Unit -->
+                        <div class="lecture">
+
+                            <div onclick="toggleSubUnit(this)">
+                                L4.1 C Language
+                            </div>
+
+                            <div class="sub_lecture_list">
+
+                                <div class="lecture"
+                                    onclick="loadNote('', practiceQuestions, event); loadQuestions(ugcNetCBasicsQuestions);">
+
+                                    <strong style="color: darkred;">
+                                        Bacics Questions
+                                    </strong>
+
+                                </div>
+
+
+                                <div class="lecture"
+                                    onclick="loadNote('', practiceQuestions, event); loadQuestions(ugcNetCLoopQuestions);">
+
+                                    <strong style="color: darkred;">
+                                        Loops
+                                    </strong>
+
+                                </div>
+
+                                <div class="sub_lecture" onclick="loadNote('',typesOfFunctionsContent, event)">
+                                    2. Types of Function
+                                </div>
+
+                                <div class="sub_lecture" onclick="loadNote('',callByValueContent, event)">
+                                    3. Call by Value
+                                </div>
+
+                                <div class="sub_lecture" onclick="loadNote('',callByReferenceContent, event)">
+                                    4. Call by Reference
+                                </div>
+
+                            </div>
+                        </div>
+
+
+                        <!-- Arrays -->
+                        <div class="lecture">
+
+                            <div onclick="toggleSubUnit(this)">
+                                L5.3 Arrays
+                            </div>
+
+                            <div class="sub_lecture_list">
+
+                                <div class="sub_lecture" onclick="loadNote('',arrayContent, event)">
+                                    Introduction to Arrays
+                                </div>
+
+                                <div class="sub_lecture" onclick="loadNote('',arrayOperationsContent, event)">
+                                    Operations in Array
+                                </div>
+
+                                <div class="sub_lecture" onclick="loadNote('',traversalCContent, event)">
+                                    Array Traversal
+                                </div>
+
+                                <div class="sub_lecture" onclick="loadNote('',insertionCContent, event)">
+                                    Array Insertion
+                                </div>
+                                <div class="sub_lecture" onclick="loadNote('',deletionCContent, event)">
+                                    Array Deletion
+                                </div>
+                                <div class="sub_lecture" onclick="loadNote('',searchingCContent, event)">
+                                    Array Searching
+                                </div>
+                                <div class="sub_lecture" onclick="loadNote('',arrayCRUDContent, event)">
+                                    Array CRUD
+                                </div>
+
+
+                            </div>
+                        </div>
+
+                        <!-- Multidimensional Arrays -->
+                        <div class="lecture" onclick="loadNote('',multidimensionalArraysContent, event)">
+                            L3.4 Multidimensional Arrays
+                        </div>
+
+                        <div class="lecture" onclick="loadNote('',pointersContent, event)">
+                            L3.5 Pointers
+                        </div>
+
+                        <div class="lecture" onclick="loadNote('', prQuestionsUnitThree, event)">
+                            <strong style="color: darkred;">Previous Year Questions </strong>
+                        </div>
+
 
                     </div>
 

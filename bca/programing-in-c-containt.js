@@ -10325,20 +10325,6 @@ Instead of writing many if-else statements, we can use a switch statement to mak
 
 <img src="bca_images/switch.png" class="notes_img">
 
-<hr>
-
-<h4>Working of Switch Statement</h4>
-
-<ul>
-<li>The expression is evaluated first.</li>
-<li>The value of the expression is compared with each case value.</li>
-<li>If a matching case is found, its statements execute.</li>
-<li>The break statement terminates the switch block.</li>
-<li>If no case matches, the default block executes.</li>
-</ul>
-
-<hr>
-
 <h4>Example 1: Display Day Name</h4>
 
 <div class="code-box">
@@ -10450,6 +10436,955 @@ Wednesday
 Subtraction = 10
 </pre>
 <hr>
+
+
+
+<h4>Important: Statement Before the First <code>case</code></h4>
+
+<p>
+A statement written before the first <code>case</code> is <strong>not executed</strong>.
+When the <code>switch</code> expression matches a case, execution starts
+directly from that matching <code>case</code> label.
+</p>
+
+<div class="code-box">
+
+    <div class="code-title">
+        <span class="code-dot red"></span>
+        <span class="code-dot yellow"></span>
+        <span class="code-dot green"></span>
+        <span class="code-text">Example</span>
+    </div>
+
+<pre><code>
+<span class="datatype">int</span> choice = <span class="number">2</span>;
+
+<span class="keyword">switch</span>(choice)
+{
+    <span class="function">printf</span>(<span class="string">"Hello"</span>);
+
+    <span class="keyword">case</span> <span class="number">1</span>:
+        <span class="function">printf</span>(<span class="string">"Add"</span>);
+        <span class="keyword">break</span>;
+
+    <span class="keyword">case</span> <span class="number">2</span>:
+        <span class="function">printf</span>(<span class="string">"Subtract"</span>);
+        <span class="keyword">break</span>;
+}
+</code></pre>
+
+</div>
+
+<h4>Output</h4>
+
+<pre class="notes_text_pre">
+Subtract
+</pre>
+
+<p>
+Here, <code>choice</code> is <strong>2</strong>, so execution starts from
+<code>case 2</code>. Therefore, <code>"Hello"</code> is not printed.
+</p>
+
+
+<h3>IMPORTANT RULES OF <code>switch</code> EXPRESSION IN C</h3>
+
+<p>
+There are some important rules that must be followed while using a
+<strong>switch expression</strong> in C.
+</p>
+
+<hr>
+
+<h4>Rule 1: The switch Expression Must Be of Integral Type</h4>
+
+<p>
+The expression written inside <strong>switch()</strong> must produce an
+<strong>integral value</strong>.
+In C, types such as <strong>int</strong> and <strong>char</strong> can be
+used as a switch expression.
+</p>
+
+
+<h4>Example 1:</h4>
+
+<div class="code-box">
+    <div class="code-title">
+        <span class="code-dot red"></span>
+        <span class="code-dot yellow"></span>
+        <span class="code-dot green"></span>
+        <span class="code-text">switch_int.c</span>
+    </div>
+
+<pre><code>
+<span class="header-file">#include &lt;stdio.h&gt;</span>
+
+<span class="datatype">int</span> <span class="function">main</span>()
+{
+    <span class="datatype">int</span> choice = <span class="number">2</span>;
+
+    <span class="keyword">switch</span>(choice)
+    {
+        <span class="keyword">case</span> <span class="number">1</span>:
+            <span class="function">printf</span>(<span class="string">"Add"</span>);
+            <span class="keyword">break</span>;
+
+        <span class="keyword">case</span> <span class="number">2</span>:
+            <span class="function">printf</span>(<span class="string">"Subtract"</span>);
+            <span class="keyword">break</span>;
+    }
+
+    <span class="keyword">return</span> <span class="number">0</span>;
+}
+</code></pre>
+</div>
+
+<h4>Output</h4>
+
+<pre class="notes_text_pre">
+Subtract
+</pre>
+
+<p>
+Here, <strong>choice</strong> is an integer variable, so it can be used
+as the switch expression.
+</p>
+
+<hr>
+
+
+<h4>Rule 2: float and double Cannot Be Used in switch</h4>
+
+<p>
+The <strong>switch expression cannot be of type float or double</strong>.
+The switch statement works with integral values.
+</p>
+
+<h4>Example 2:</h4>
+
+<div class="code-box">
+    <div class="code-title">
+        <span class="code-dot red"></span>
+        <span class="code-dot yellow"></span>
+        <span class="code-dot green"></span>
+        <span class="code-text">Invalid switch Expression</span>
+    </div>
+
+<pre><code>
+<span class="datatype">float</span> x = <span class="number">2.5</span>;
+
+<span class="keyword">switch</span>(x)
+{
+    <span class="keyword">case</span> <span class="number">2</span>:
+        <span class="function">printf</span>(<span class="string">"Two"</span>);
+        <span class="keyword">break</span>;
+}
+</code></pre>
+</div>
+
+<p>
+<strong>❌ Invalid:</strong> A <code>float</code> or <code>double</code>
+expression cannot be used with <code>switch</code>.
+</p>
+
+<hr>
+
+
+<h4>Rule 3: char Can Be Used as a switch Expression</h4>
+
+<p>
+A <strong>char</strong> can be used as a switch expression because
+character types are integral types in C.
+</p>
+
+<h4>Example 3: </h4>
+
+<div class="code-box">
+    <div class="code-title">
+        <span class="code-dot red"></span>
+        <span class="code-dot yellow"></span>
+        <span class="code-dot green"></span>
+        <span class="code-text">switch_char.c</span>
+    </div>
+
+<pre><code>
+<span class="header-file">#include &lt;stdio.h&gt;</span>
+
+<span class="datatype">int</span> <span class="function">main</span>()
+{
+    <span class="datatype">char</span> grade = <span class="string">'A'</span>;
+
+    <span class="keyword">switch</span>(grade)
+    {
+        <span class="keyword">case</span> <span class="string">'A'</span>:
+            <span class="function">printf</span>(<span class="string">"Excellent"</span>);
+            <span class="keyword">break</span>;
+
+        <span class="keyword">case</span> <span class="string">'B'</span>:
+            <span class="function">printf</span>(<span class="string">"Good"</span>);
+            <span class="keyword">break</span>;
+
+        <span class="keyword">case</span> <span class="string">'C'</span>:
+            <span class="function">printf</span>(<span class="string">"Average"</span>);
+            <span class="keyword">break</span>;
+    }
+
+    <span class="keyword">return</span> <span class="number">0</span>;
+}
+</code></pre>
+</div>
+
+<h4>Output</h4>
+
+<pre class="notes_text_pre">
+Excellent
+</pre>
+
+<hr>
+
+
+<h4>Rule 4: case Value Must Be a Constant Integral Expression</h4>
+
+<p>
+The value written after the <strong>case</strong> keyword must be a
+<strong>constant integral expression</strong>.
+</p>
+
+<p>
+A normal variable cannot be used directly as a case value because the case value must be a constant known at compile time.
+</p>
+
+<h4>Example 4:</h4>
+
+<div class="code-box">
+    <div class="code-title">
+        <span class="code-dot red"></span>
+        <span class="code-dot yellow"></span>
+        <span class="code-dot green"></span>
+        <span class="code-text">case_constant.c</span>
+    </div>
+
+<pre><code>
+<span class="comment">#include &lt;stdio.h&gt;</span>
+
+<span class="datatype">int</span> <span class="function">main</span>()
+{
+    <span class="datatype">int</span> num = <span class="number">10</span>;
+    <span class="datatype">int</span> value = <span class="number">10</span>;
+
+    <span class="keyword">switch</span>(num)
+    {
+        <span class="comment">// &#10004; Correct: A constant value can be used as a case value.</span>
+        <span class="keyword">case</span> <span class="number">10</span>:
+            <span class="function">printf</span>(<span class="string">"Ten"</span>);
+            <span class="keyword">break</span>;
+
+        <span class="comment">// &#10008; Incorrect: A normal variable cannot be used as a case value.</span>
+        <span class="keyword">case</span> <span class="number">value</span>:
+            <span class="function">printf</span>(<span class="string">"Ten"</span>);
+            <span class="keyword">break</span>;
+    }
+
+    <span class="keyword">return</span> <span class="number">0</span>;
+}
+</code></pre>
+</div>
+
+<p>
+Here, <strong>10</strong> is a constant integral value, so it can be
+used as a case value.
+</p>
+
+
+
+<h4>Why Must the case Value Be Constant?</h4>
+
+<p>
+The compiler needs to know the <strong>fixed case values</strong> while compiling the program.
+It uses these values to prepare the different branches of the
+<strong>switch</strong> statement.
+</p>
+
+<p>
+If a case label depended on a <strong>run-time variable</strong>, the
+compiler would not know the fixed case value in advance. Therefore,
+<strong>case values must be constant integral expressions</strong>.
+</p>
+
+
+<h4>Run-Time Variable Cannot Be Used as a case Value</h4>
+
+
+<h4>Example:</h4>
+
+<div class="code-box">
+    <div class="code-title">
+        <span class="code-dot red"></span>
+        <span class="code-dot yellow"></span>
+        <span class="code-dot green"></span>
+        <span class="code-text">runtime_case.c</span>
+    </div>
+
+<pre><code>
+<span class="datatype">int</span> choice = <span class="function">getChoice</span>();
+<span class="datatype">int</span> option = <span class="function">getOption</span>();
+
+<span class="keyword">switch</span>(choice)
+{
+    <span class="comment">// &#10008; Incorrect: option is a run-time variable.</span>
+    <span class="keyword">case</span> option:
+        <span class="function">printf</span>(<span class="string">"Option"</span>);
+        <span class="keyword">break</span>;
+}
+</code></pre>
+</div>
+
+<p>
+Here, <strong>choice</strong> can be a run-time value because it is used
+as the <strong>switch expression</strong>.
+However, <strong>option</strong> cannot be used as a
+<strong>case value</strong> because it is a normal variable whose value
+is determined at run time.
+</p>
+
+<p>
+<strong>Rule:</strong> The <strong>switch expression</strong> may be a
+run-time value, but every <strong>case label</strong> must be a
+<strong>compile-time constant integral value</strong>.
+</p>
+
+<hr>
+
+<hr>
+
+
+<h4>Rule 5: Duplicate case Values Are Not Allowed</h4>
+
+<p>
+Each <strong>case value must be unique</strong> within a switch statement.
+The same case value cannot be used more than once.
+</p>
+
+<h4>Example 5: </h4>
+
+<div class="code-box">
+    <div class="code-title">
+        <span class="code-dot red"></span>
+        <span class="code-dot yellow"></span>
+        <span class="code-dot green"></span>
+        <span class="code-text">duplicate_case.c</span>
+    </div>
+
+<pre><code>
+<span class="datatype">int</span> num = <span class="number">1</span>;
+
+<span class="keyword">switch</span>(num)
+{
+    <span class="keyword">case</span> <span class="number">1</span>:
+        <span class="function">printf</span>(<span class="string">"One"</span>);
+        <span class="keyword">break</span>;
+
+    <span class="keyword">case</span> <span class="number">1</span>:
+        <span class="function">printf</span>(<span class="string">"Another One"</span>);
+        <span class="keyword">break</span>;
+}
+</code></pre>
+</div>
+
+<p>
+<strong>❌ Error:</strong> Duplicate case value.
+</p>
+
+<hr>
+
+
+<h4>Rule 6: case Values Can Be Positive, Negative or Zero</h4>
+
+<p>
+A case value can be <strong>positive, negative, or zero</strong>,
+provided it is a valid constant integral expression.
+</p>
+
+<h4>Example 6: </h4>
+
+<div class="code-box">
+    <div class="code-title">
+        <span class="code-dot red"></span>
+        <span class="code-dot yellow"></span>
+        <span class="code-dot green"></span>
+        <span class="code-text">case_values.c</span>
+    </div>
+
+<pre><code>
+<span class="header-file">#include &lt;stdio.h&gt;</span>
+
+<span class="datatype">int</span> <span class="function">main</span>()
+{
+    <span class="datatype">int</span> num = <span class="number">-1</span>;
+
+    <span class="keyword">switch</span>(num)
+    {
+        <span class="keyword">case</span> <span class="number">-1</span>:
+            <span class="function">printf</span>(<span class="string">"Negative One"</span>);
+            <span class="keyword">break</span>;
+
+        <span class="keyword">case</span> <span class="number">0</span>:
+            <span class="function">printf</span>(<span class="string">"Zero"</span>);
+            <span class="keyword">break</span>;
+
+        <span class="keyword">case</span> <span class="number">1</span>:
+            <span class="function">printf</span>(<span class="string">"Positive One"</span>);
+            <span class="keyword">break</span>;
+    }
+
+    <span class="keyword">return</span> <span class="number">0</span>;
+}
+</code></pre>
+</div>
+
+<h4>Output</h4>
+
+<pre class="notes_text_pre">
+Negative One
+</pre>
+
+<hr>
+
+
+<h4>Rule 7: case Values Do Not Need to Be in Sequence</h4>
+
+<p>
+The case values do not have to be consecutive or arranged in ascending
+or descending order. They can be written in <strong>any order</strong>.
+</p>
+
+<h4>Example 7: </h4>
+
+<div class="code-box">
+    <div class="code-title">
+        <span class="code-dot red"></span>
+        <span class="code-dot yellow"></span>
+        <span class="code-dot green"></span>
+        <span class="code-text">non_sequential.c</span>
+    </div>
+
+<pre><code>
+<span class="header-file">#include &lt;stdio.h&gt;</span>
+
+<span class="datatype">int</span> <span class="function">main</span>()
+{
+    <span class="datatype">int</span> num = <span class="number">50</span>;
+
+    <span class="keyword">switch</span>(num)
+    {
+        <span class="keyword">case</span> <span class="number">10</span>:
+            <span class="function">printf</span>(<span class="string">"Ten"</span>);
+            <span class="keyword">break</span>;
+
+        <span class="keyword">case</span> <span class="number">50</span>:
+            <span class="function">printf</span>(<span class="string">"Fifty"</span>);
+            <span class="keyword">break</span>;
+
+        <span class="keyword">case</span> <span class="number">100</span>:
+            <span class="function">printf</span>(<span class="string">"Hundred"</span>);
+            <span class="keyword">break</span>;
+    }
+
+    <span class="keyword">return</span> <span class="number">0</span>;
+}
+</code></pre>
+</div>
+
+<h4>Output</h4>
+
+<pre class="notes_text_pre">
+Fifty
+</pre>
+
+<hr>
+
+
+<h4>Rule 8: default Case Is Optional</h4>
+
+<p>
+The <strong>default</strong> case is executed when none of the case
+values matches the switch expression.
+</p>
+
+<p>
+The <strong>default case is optional</strong>. It is similar to the
+<strong>else</strong> block of an if-else statement.
+</p>
+
+<h4>Example 8: </h4>
+
+<div class="code-box">
+
+    <div class="code-title">
+        <span class="code-dot red"></span>
+        <span class="code-dot yellow"></span>
+        <span class="code-dot green"></span>
+        <span class="code-text">default.c</span>
+    </div>
+
+<pre><code>
+<span class="header-file">#include &lt;stdio.h&gt;</span>
+
+<span class="datatype">int</span> <span class="function">main</span>()
+{
+    <span class="datatype">int</span> choice = <span class="number">10</span>;
+
+    <span class="keyword">switch</span>(choice)
+    {
+        <span class="keyword">case</span> <span class="number">1</span>:
+            <span class="function">printf</span>(<span class="string">"Option 1"</span>);
+            <span class="keyword">break</span>;
+
+        <span class="keyword">case</span> <span class="number">2</span>:
+            <span class="function">printf</span>(<span class="string">"Option 2"</span>);
+            <span class="keyword">break</span>;
+
+        <span class="keyword">default</span>:
+            <span class="function">printf</span>(<span class="string">"Invalid Option"</span>);
+    }
+
+    <span class="keyword">return</span> <span class="number">0</span>;
+}
+</code></pre>
+
+</div>
+
+<h4>Output</h4>
+
+<pre class="notes_text_pre">
+Invalid Option
+</pre>
+
+<hr>
+
+
+<h4>Rule 9: break Is Used to Exit the switch</h4>
+
+<p>
+The <strong>break</strong> statement terminates the switch statement.
+After executing break, control moves to the statement immediately after
+the switch.
+</p>
+
+<h4>Example 9:</h4>
+
+<div class="code-box">
+
+    <div class="code-title">
+        <span class="code-dot red"></span>
+        <span class="code-dot yellow"></span>
+        <span class="code-dot green"></span>
+        <span class="code-text">break.c</span>
+    </div>
+
+<pre><code>
+<span class="header-file">#include &lt;stdio.h&gt;</span>
+
+<span class="datatype">int</span> <span class="function">main</span>()
+{
+    <span class="datatype">int</span> num = <span class="number">1</span>;
+
+    <span class="keyword">switch</span>(num)
+    {
+        <span class="keyword">case</span> <span class="number">1</span>:
+            <span class="function">printf</span>(<span class="string">"One\\n"</span>);
+            <span class="keyword">break</span>;
+
+        <span class="keyword">case</span> <span class="number">2</span>:
+            <span class="function">printf</span>(<span class="string">"Two\\n"</span>);
+            <span class="keyword">break</span>;
+    }
+
+    <span class="function">printf</span>(<span class="string">"End"</span>);
+
+    <span class="keyword">return</span> <span class="number">0</span>;
+}
+</code></pre>
+
+</div>
+
+<h4>Output</h4>
+
+<pre class="notes_text_pre">
+One
+End
+</pre>
+
+<hr>
+
+
+<h4>Rule 10: Without break, Fall-Through Occurs</h4>
+
+<p>
+If a matching case does not contain a <strong>break</strong> statement,
+execution continues into the next case, even if that case does not
+match the switch expression.
+</p>
+
+<p>
+This behavior is called <strong>fall-through</strong>.
+</p>
+
+<h4>Example 10: </h4>
+
+<div class="code-box">
+    <div class="code-title">
+        <span class="code-dot red"></span>
+        <span class="code-dot yellow"></span>
+        <span class="code-dot green"></span>
+        <span class="code-text">switch_without_break.c</span>
+    </div>
+
+<pre>
+<span class="header-file">#include &lt;stdio.h&gt;</span>
+
+<span class="datatype">int</span> <span class="function">main</span>()
+{
+    <span class="datatype">int</span> num = <span class="number">1</span>;
+
+    <span class="keyword">switch</span>(num)
+    {
+        <span class="keyword">case</span> <span class="number">1</span>:
+            <span class="function">printf</span>(<span class="string">"One\\n"</span>);
+
+        <span class="keyword">case</span> <span class="number">2</span>:
+            <span class="function">printf</span>(<span class="string">"Two\\n"</span>);
+
+        <span class="keyword">case</span> <span class="number">3</span>:
+            <span class="function">printf</span>(<span class="string">"Three\\n"</span>);
+    }
+
+    <span class="keyword">return</span> <span class="number">0</span>;
+}
+</pre>
+</div>
+
+<h4>Output</h4>
+
+<pre class="notes_text_pre">
+One
+Two
+Three
+</pre>
+
+<p>
+Because there is no <strong>break</strong> statement, all remaining cases
+execute after the matching case.
+</p>
+
+<hr>
+
+
+<h4>Rule 11: Multiple case Labels Can Share the Same Statements</h4>
+
+<p>
+Multiple case labels can be written together when they need to execute
+the <strong>same block of statements</strong>.
+</p>
+
+<h4>Example 11: </h4>
+
+<div class="code-box">
+
+    <div class="code-title">
+        <span class="code-dot red"></span>
+        <span class="code-dot yellow"></span>
+        <span class="code-dot green"></span>
+        <span class="code-text">multiple_case.c</span>
+    </div>
+
+<pre><code>
+<span class="header-file">#include &lt;stdio.h&gt;</span>
+
+<span class="datatype">int</span> <span class="function">main</span>()
+{
+    <span class="datatype">int</span> day = <span class="number">7</span>;
+
+    <span class="keyword">switch</span>(day)
+    {
+        <span class="keyword">case</span> <span class="number">1</span>:
+        <span class="keyword">case</span> <span class="number">7</span>:
+            <span class="function">printf</span>(<span class="string">"Weekend"</span>);
+            <span class="keyword">break</span>;
+
+        <span class="keyword">default</span>:
+            <span class="function">printf</span>(<span class="string">"Weekday"</span>);
+    }
+
+    <span class="keyword">return</span> <span class="number">0</span>;
+}
+</code></pre>
+
+</div>
+
+<h4>Output</h4>
+
+<pre class="notes_text_pre">
+Weekend
+</pre>
+
+<p>
+Here, <strong>case 1</strong> and <strong>case 7</strong> share the same
+statements.
+</p>
+
+<hr>
+
+
+<h4>Rule 12: case Cannot Be Used with a Variable</h4>
+
+<p>
+A normal variable cannot be directly used as a case value because a
+case label must contain a <strong>constant integral expression</strong>.
+</p>
+
+<h4>Example 12: </h4>
+
+<div class="code-box">
+
+    <div class="code-title">
+        <span class="code-dot red"></span>
+        <span class="code-dot yellow"></span>
+        <span class="code-dot green"></span>
+        <span class="code-text">Invalid case Value</span>
+    </div>
+
+<pre><code>
+<span class="datatype">int</span> x = <span class="number">10</span>;
+<span class="datatype">int</span> num = <span class="number">10</span>;
+
+<span class="keyword">switch</span>(num)
+{
+    <span class="keyword">case</span> x:
+        <span class="function">printf</span>(<span class="string">"Ten"</span>);
+        <span class="keyword">break</span>;
+}
+</code></pre>
+
+</div>
+
+<p>
+<strong>❌ Invalid:</strong> <code>x</code> is a variable, not a constant
+integral expression.
+</p>
+
+<hr>
+
+
+<h4>Rule 13: case Is Not a Condition</h4>
+
+<p>
+The <strong>case</strong> label is used to specify a constant value that
+is compared with the value of the switch expression.
+It is not used like a condition in an if statement.
+</p>
+
+<h4>Example 13: </h4>
+
+<div class="code-box">
+
+    <div class="code-title">
+        <span class="code-dot red"></span>
+        <span class="code-dot yellow"></span>
+        <span class="code-dot green"></span>
+        <span class="code-text">case_value.c</span>
+    </div>
+
+<pre><code>
+<span class="datatype">int</span> num = <span class="number">2</span>;
+
+<span class="keyword">switch</span>(num)
+{
+    <span class="keyword">case</span> <span class="number">1</span>:
+        <span class="function">printf</span>(<span class="string">"One"</span>);
+        <span class="keyword">break</span>;
+
+    <span class="keyword">case</span> <span class="number">2</span>:
+        <span class="function">printf</span>(<span class="string">"Two"</span>);
+        <span class="keyword">break</span>;
+}
+</code></pre>
+
+</div>
+
+<h4>Output</h4>
+
+<pre class="notes_text_pre">
+Two
+</pre>
+
+<p>
+Here, the value of <strong>num</strong> is 2, so
+<strong>case 2</strong> is selected.
+</p>
+
+<hr>
+
+
+<h4>Rule 14: Relational Conditions Cannot Be Used as case Values</h4>
+
+<p>
+A case label cannot be written as a condition such as
+<strong>num &gt; 10</strong>.
+For such conditions, we should use <strong>if-else</strong>.
+</p>
+
+<h4>Example 14: </h4>
+
+<div class="code-box">
+
+    <div class="code-title">
+        <span class="code-dot red"></span>
+        <span class="code-dot yellow"></span>
+        <span class="code-dot green"></span>
+        <span class="code-text">Invalid case Condition</span>
+    </div>
+
+<pre><code>
+<span class="datatype">int</span> num = <span class="number">20</span>;
+
+<span class="keyword">switch</span>(num)
+{
+    <span class="keyword">case</span> num &gt; <span class="number">10</span>:
+        <span class="function">printf</span>(<span class="string">"Greater than 10"</span>);
+        <span class="keyword">break</span>;
+}
+</code></pre>
+
+</div>
+
+<p>
+<strong>❌ Invalid:</strong> A case label cannot be used as a
+variable-dependent relational condition.
+</p>
+
+<p>
+For conditions such as <code>num &gt; 10</code>, use an
+<strong>if-else statement</strong>.
+</p>
+
+<hr>
+
+
+<h4>Rule 15: switch Can Contain an Integer Expression</h4>
+
+<p>
+The expression inside <strong>switch()</strong> does not have to be
+only a variable. It can be an expression that produces an
+<strong>integral value</strong>.
+</p>
+
+<h4>Example 15: </h4>
+
+<div class="code-box">
+
+    <div class="code-title">
+        <span class="code-dot red"></span>
+        <span class="code-dot yellow"></span>
+        <span class="code-dot green"></span>
+        <span class="code-text">switch_expression.c</span>
+    </div>
+
+<pre><code>
+<span class="header-file">#include &lt;stdio.h&gt;</span>
+
+<span class="datatype">int</span> <span class="function">main</span>()
+{
+    <span class="datatype">int</span> a = <span class="number">10</span>;
+    <span class="datatype">int</span> b = <span class="number">20</span>;
+
+    <span class="keyword">switch</span>(a + b)
+    {
+        <span class="keyword">case</span> <span class="number">30</span>:
+            <span class="function">printf</span>(<span class="string">"Sum is 30"</span>);
+            <span class="keyword">break</span>;
+
+        <span class="keyword">case</span> <span class="number">40</span>:
+            <span class="function">printf</span>(<span class="string">"Sum is 40"</span>);
+            <span class="keyword">break</span>;
+    }
+
+    <span class="keyword">return</span> <span class="number">0</span>;
+}
+</code></pre>
+
+</div>
+
+<h4>Output</h4>
+
+<pre class="notes_text_pre">
+Sum is 30
+</pre>
+
+<p>
+Here, <strong>a + b</strong> produces the integral value 30, so
+<strong>case 30</strong> is executed.
+</p>
+
+<hr>
+
+
+<h4>Quick Revision of switch Rules</h4>
+
+<ul>
+    <li>
+        <strong>switch expression</strong> must produce an integral value.
+    </li>
+
+    <li>
+        <strong>int</strong> and <strong>char</strong> can be used.
+    </li>
+
+    <li>
+        <strong>float</strong> and <strong>double</strong> cannot be used.
+    </li>
+
+    <li>
+        <strong>case value</strong> must be a constant integral expression.
+    </li>
+
+    <li>
+        Duplicate <strong>case values</strong> are not allowed.
+    </li>
+
+    <li>
+        Case values can be positive, negative, or zero.
+    </li>
+
+    <li>
+        Case values do not need to be in sequence.
+    </li>
+
+    <li>
+        <strong>default</strong> case is optional.
+    </li>
+
+    <li>
+        <strong>break</strong> is used to exit the switch statement.
+    </li>
+
+    <li>
+        Without <strong>break</strong>, fall-through occurs.
+    </li>
+
+    <li>
+        Multiple case labels can share the same statements.
+    </li>
+
+    <li>
+        Relational conditions should be handled using
+        <strong>if-else</strong>.
+    </li>
+</ul>
+
+<hr>
+
+
 
 <h4> Write a C program to perform arithmetic operations using switch and dynamic user input.  </h4>
 <div class="code-box">
@@ -10688,64 +11623,9 @@ Invalid Option
 </pre>
 <hr>
 
-<h4>Real-Life Applications of Switch Statement</h4>
 
-<table class="notes-table">
-<tr>
-<th>Application</th>
-<th>Purpose</th>
-</tr>
 
-<tr>
-<td>ATM Machine</td>
-<td>Select banking operations.</td>
-</tr>
 
-<tr>
-<td>Calculator</td>
-<td>Select arithmetic operations.</td>
-</tr>
-
-<tr>
-<td>Menu-Driven Programs</td>
-<td>Choose different options.</td>
-</tr>
-
-<tr>
-<td>Game Development</td>
-<td>Handle game choices and actions.</td>
-</tr>
-
-<tr>
-<td>Student Management System</td>
-<td>Select various functions from menus.</td>
-</tr>
-
-</table>
-
-<hr>
-
-<h4>Advantages of Switch Statement</h4>
-
-<ul>
-<li>Easy to read and understand.</li>
-<li>Reduces the complexity of multiple if-else statements.</li>
-<li>Suitable for menu-driven programs.</li>
-<li>Improves program readability.</li>
-<li>Makes code cleaner and more organized.</li>
-</ul>
-
-<hr>
-
-<h4>Limitations of Switch Statement</h4>
-
-<ul>
-<li>Works only with integer, character, and constant expressions.</li>
-<li>Cannot directly use floating-point values.</li>
-<li>Cannot evaluate complex logical conditions like if-else.</li>
-</ul>
-
-<hr>
 
 <h4>Difference Between Else-if Ladder and Switch Statement</h4>
 
@@ -10791,31 +11671,9 @@ Invalid Option
 
 <hr>
 
-<h4>Summary</h4>
 
-<ul>
-<li>The switch statement is used for multi-way decision making.</li>
-<li>It selects one block of code from many choices.</li>
-<li>Case labels represent different options.</li>
-<li>The break statement prevents fall-through.</li>
-<li>The default case executes when no match is found.</li>
-<li>It is widely used in menu-driven applications.</li>
-</ul>
 
-<hr>
 
-<h4>Important Exam Questions</h4>
-
-<ul>
-<li>What is a switch case statement in C language?</li>
-<li>Write the syntax of a switch statement.</li>
-<li>Explain the working of switch case with a suitable example.</li>
-<li>What is the purpose of the break statement?</li>
-<li>What is the role of the default case?</li>
-<li>Differentiate between else-if ladder and switch statement.</li>
-<li>What is fall-through in a switch statement?</li>
-<li>Write a menu-driven calculator program using switch case.</li>
-</ul>
 
 `;
 
@@ -10933,7 +11791,7 @@ For example, if you want to print numbers from 1 to 10, the for loop is the best
 <h4>Syntax of For Loop</h4>
 
 <pre class="notes_text_pre">
-for(initialization; condition; increment/decrement)
+for(initialization; condition; update expression)
 {
     // statements
 }
@@ -10978,6 +11836,74 @@ for(initialization; condition; increment/decrement)
 <li>The condition is checked again.</li>
 <li>The process continues until the condition becomes false.</li>
 </ol>
+
+<hr>
+
+    <div class="notes-heading-box">
+        <h3>FOR LOOP – DIFFERENT UPDATE EXPRESSIONS</h3>
+    </div>
+
+    <p class="notes_text">
+        In a <strong>for loop</strong>, the update expression can be
+        written in different ways depending on the requirement.
+    </p>
+
+    <h4>1. Increment</h4>
+
+    <pre class="notes_text_pre"><code>for (i = 0; i &lt; 10; i++)       // increment</code></pre>
+
+    <p class="notes_text">
+        Here, <code>i++</code> increases the value of <code>i</code>
+        by <strong>1</strong> after each iteration.
+    </p>
+
+
+    <h4>2. Decrement</h4>
+
+    <pre class="notes_text_pre"><code>for (i = 10; i &gt; 0; i--)       // decrement</code></pre>
+
+    <p class="notes_text">
+        Here, <code>i--</code> decreases the value of <code>i</code>
+        by <strong>1</strong> after each iteration.
+    </p>
+
+
+    <h4>3. Division and Assignment</h4>
+
+    <pre class="notes_text_pre"><code>for (; n != 0; n /= 10)        // division and assignment</code></pre>
+
+    <p class="notes_text">
+        Here, <code>n /= 10</code> means:
+    </p>
+
+    <pre class="notes_text_pre"><code>n = n / 10;</code></pre>
+
+    <p class="notes_text">
+        The value of <code>n</code> is divided by <strong>10</strong>
+        after every iteration.
+    </p>
+
+
+    <h4>4. Multiplication and Assignment</h4>
+
+    <pre class="notes_text_pre"><code>for (x = 1; x &lt; 100; x *= 2)   // multiplication and assignment</code></pre>
+
+    <p class="notes_text">
+        Here, <code>x *= 2</code> means:
+    </p>
+
+    <pre class="notes_text_pre"><code>x = x * 2;</code></pre>
+
+    <p class="notes_text">
+        The value of <code>x</code> is multiplied by <strong>2</strong>
+        after every iteration.
+    </p>
+
+
+
+
+
+
 
 <hr>
 
@@ -11244,99 +12170,442 @@ It is commonly used for patterns, tables, and matrix operations.
 
 <hr>
 
-<h4>Advantages of For Loop</h4>
+    <h3>For Loop Syntax Variations</h3>
 
-<ul>
-<li>Easy to understand and use.</li>
-<li>Reduces code repetition.</li>
-<li>Suitable when the number of iterations is known.</li>
-<li>Makes programs shorter and cleaner.</li>
-<li>Improves program readability.</li>
-</ul>
+    <p>
+        In C, C++, Java, and JavaScript, a <strong>for loop</strong>
+        has three sections:
+    </p>
+
+    <div class="syntax-box">
+        <pre><code>for (initialization; condition; update) {
+    // statements to repeat
+}</code></pre>
+    </div>
+
+    <p>
+        All three sections are optional, but the <strong>two semicolons are always required</strong>.
+        The initialization runs once, the condition is checked before every iteration,
+        and the update runs after the loop body.
+    </p>
+
+    <h4>1. Complete for Loop</h4>
+
+    <div class="code-box">
+        <pre><code>for (int i = 1; i &lt;= 5; i++) {
+    printf("%d ", i);
+}</code></pre>
+    </div>
+
+    <h4>Meaning:</h4>
+
+    <table class="notes-table">
+        <tr>
+            <th>Part</th>
+            <th>Purpose</th>
+        </tr>
+        <tr>
+            <td><code>int i = 1</code></td>
+            <td>Initializes the counter</td>
+        </tr>
+        <tr>
+            <td><code>i &lt;= 5</code></td>
+            <td>Continues while the condition is true</td>
+        </tr>
+        <tr>
+            <td><code>i++</code></td>
+            <td>Increases <code>i</code> after each iteration</td>
+        </tr>
+    </table>
+
+    <h4>Execution:</h4>
+
+    <div class="execution-box">
+        <p>i = 1 → print 1 → i becomes 2</p>
+        <p>i = 2 → print 2 → i becomes 3</p>
+        <p>...</p>
+        <p>i = 5 → print 5 → i becomes 6</p>
+        <p><strong>i &lt;= 5 is false → stop</strong></p>
+    </div>
+
+
+    <h4>2. Initialization Omitted</h4>
+
+    <div class="code-box">
+        <pre><code>int i = 1;
+
+for (; i &lt;= 5; i++) {
+    printf("%d ", i);
+}</code></pre>
+    </div>
+
+    <p>
+        The counter is initialized <strong>before</strong> the loop.
+    </p>
+
+    <p>
+        The first semicolon is still required:
+    </p>
+
+    <div class="syntax-box">
+        <pre><code>for (; condition; update)</code></pre>
+    </div>
+
+    <p>
+        This is useful when the variable must be initialized earlier
+        or shared with other statements.
+    </p>
+
+
+    <h4>3. Condition Omitted</h4>
+
+    <div class="code-box">
+        <pre><code>for (int i = 1; ; i++) {
+    printf("%d ", i);
+
+    if (i == 5) {
+        break;
+    }
+}</code></pre>
+    </div>
+
+    <p>
+        When the condition is omitted, it is treated as
+        <strong>always true</strong>.
+    </p>
+
+    <p>
+        Therefore, the loop would continue forever unless
+        <code>break</code>, <code>return</code>, or another control
+        mechanism stops it.
+    </p>
+
+
+    <h4>4. Update Omitted</h4>
+
+    <div class="syntax-box">
+        <pre><code>for (initialization; condition; )</code></pre>
+    </div>
+
+    <div class="code-box">
+        <pre><code>for (int i = 1; i &lt;= 5; ) {
+    printf("%d ", i);
+    i++;
+}</code></pre>
+    </div>
+
+    <p>
+        The update is written inside the loop body instead of in the header.
+    </p>
+
+    <p>
+        The third section is empty, but its semicolon remains.
+    </p>
+
+
+    <h4>5. Initialization and Update Omitted</h4>
+
+    <div class="code-box">
+        <pre><code>int i = 1;
+
+for (; i &lt;= 5; ) {
+    printf("%d ", i);
+    i++;
+}</code></pre>
+    </div>
+
+    <p><strong>Here:</strong></p>
+
+    <ul>
+        <li>Initialization happens before the loop.</li>
+        <li>The condition remains in the loop header.</li>
+        <li>The update happens inside the body.</li>
+    </ul>
+
+    <p>
+        This syntax is valid, but a <strong>while loop</strong> is usually clearer:
+    </p>
+
+    <div class="code-box">
+        <pre><code>int i = 1;
+
+while (i &lt;= 5) {
+    printf("%d ", i);
+    i++;
+}</code></pre>
+    </div>
+
+
+    <h4>6. Initialization and Condition Omitted</h4>
+
+    <div class="code-box">
+        <pre><code>int i = 1;
+
+for (; ; i++) {
+    printf("%d ", i);
+
+    if (i == 5) {
+        break;
+    }
+}</code></pre>
+    </div>
+
+    <p>
+        The loop must be stopped using <code>break</code>.
+    </p>
+
+
+    <h4>7. Condition and Update Omitted</h4>
+
+    <div class="code-box">
+        <pre><code>for (int i = 1; ; ) {
+    printf("%d ", i);
+
+    i++;
+
+    if (i &gt; 5) {
+        break;
+    }
+}</code></pre>
+    </div>
+
+
+    <h4>8. All Three Sections Omitted</h4>
+
+    <div class="code-box">
+        <pre><code>for (;;) {
+    // statements
+}</code></pre>
+    </div>
+
+    <p>
+        This creates an <strong>infinite loop</strong>.
+    </p>
+
+    <div class="code-box">
+        <pre><code>for (;;) {
+    int choice;
+
+    printf("\\n1. Continue\\n2. Exit\\n");
+    scanf("%d", &amp;choice);
+
+    if (choice == 2) {
+        break;
+    }
+}</code></pre>
+    </div>
+
+
+    <h4>9. Multiple Initialization Expressions</h4>
+
+    <p>
+        In C and JavaScript, multiple expressions can be written in the
+        initialization section using commas:
+    </p>
+
+    <div class="code-box">
+        <pre><code>for (int i = 1, j = 5; i &lt;= 5; i++, j--) {
+    printf("i = %d, j = %d\\n", i, j);
+}</code></pre>
+    </div>
+
+    <div class="output-box">
+        <pre><code>i = 1, j = 5
+i = 2, j = 4
+i = 3, j = 3
+i = 4, j = 2
+i = 5, j = 1</code></pre>
+    </div>
+
+    <p><strong>Here:</strong></p>
+
+    <ul>
+        <li><code>i</code> increases.</li>
+        <li><code>j</code> decreases.</li>
+        <li>Both variables are updated during every iteration.</li>
+    </ul>
+
+
+    <h4>10. Multiple Update Expressions</h4>
+
+    <div class="code-box">
+        <pre><code>for (int i = 1, j = 10; i &lt;= 5; i++, j -= 2) {
+    printf("i = %d, j = %d\\n", i, j);
+}</code></pre>
+    </div>
+
+    <p>
+        Multiple update expressions are separated by a comma:
+    </p>
+
+    <div class="syntax-box">
+        <pre><code>for (initialization; condition; update1, update2)</code></pre>
+    </div>
+
+
+    <h4>11. Update by More Than One</h4>
+
+    <div class="code-box">
+        <pre><code>for (int i = 0; i &lt;= 20; i += 5) {
+    printf("%d ", i);
+}</code></pre>
+    </div>
+
+    <p><strong>Output:</strong></p>
+
+    <div class="output-box">
+        <pre><code>0 5 10 15 20</code></pre>
+    </div>
+
+
+    <h4>12. Decreasing Loop</h4>
+
+    <div class="code-box">
+        <pre><code>for (int i = 10; i &gt;= 1; i--) {
+    printf("%d ", i);
+}</code></pre>
+    </div>
+
+    <div class="output-box">
+        <pre><code>10 9 8 7 6 5 4 3 2 1</code></pre>
+    </div>
+
+
+    <h4>13. Empty Body</h4>
+
+    <p>
+        A <code>for</code> loop can have an empty body if the required
+        work is already performed in the header.
+    </p>
+
+    <div class="code-box">
+        <pre><code>for (int i = 0; i &lt; 10; i++);</code></pre>
+    </div>
+
+    <p>
+        The semicolon means the loop body is <strong>empty</strong>.
+    </p>
+
+
+    <h4>14. for Loop with break</h4>
+
+    <div class="code-box">
+        <pre><code>for (int i = 1; i &lt;= 10; i++) {
+
+    if (i == 6) {
+        break;
+    }
+
+    printf("%d ", i);
+}</code></pre>
+    </div>
+
+    <p>
+        <code>break</code> immediately terminates the loop.
+    </p>
+
+
+    <h4>15. for Loop with continue</h4>
+
+    <div class="code-box">
+        <pre><code>for (int i = 1; i &lt;= 10; i++) {
+
+    if (i % 2 == 0) {
+        continue;
+    }
+
+    printf("%d ", i);
+}</code></pre>
+    </div>
+
+    <p>
+        <code>continue</code> skips the current iteration and moves
+        to the next iteration.
+    </p>
+
+
+    <h4>16. Nested for Loop</h4>
+
+    <p>
+        A <strong>for loop inside another for loop</strong> is called
+        a nested loop.
+    </p>
+
+    <div class="code-box">
+        <pre><code>for (int row = 1; row &lt;= 3; row++) {
+
+    for (int column = 1; column &lt;= 4; column++) {
+        printf("* ");
+    }
+
+    printf("\\n");
+}</code></pre>
+    </div>
+
+    <p><strong>Output:</strong></p>
+
+    <div class="output-box">
+        <pre><code>* * * *
+* * * *
+* * * *</code></pre>
+    </div>
+
+    <p>
+        The <strong>outer loop</strong> controls the rows, and the
+        <strong>inner loop</strong> controls the columns.
+    </p>
+
+
+    <h3>Complete Syntax Table</h3>
+
+    <table class="notes-table">
+        <tr>
+            <th>Syntax</th>
+            <th>Meaning</th>
+        </tr>
+
+        <tr>
+            <td><code>for (init; condition; update)</code></td>
+            <td>Normal for loop</td>
+        </tr>
+
+        <tr>
+            <td><code>for (; condition; update)</code></td>
+            <td>Initialization omitted</td>
+        </tr>
+
+        <tr>
+            <td><code>for (init; ; update)</code></td>
+            <td>Condition omitted; usually infinite</td>
+        </tr>
+
+        <tr>
+            <td><code>for (init; condition; )</code></td>
+            <td>Update omitted</td>
+        </tr>
+
+        <tr>
+            <td><code>for (; condition; )</code></td>
+            <td>Initialization and update omitted</td>
+        </tr>
+
+        <tr>
+            <td><code>for (init; ; )</code></td>
+            <td>Condition and update omitted</td>
+        </tr>
+
+        <tr>
+            <td><code>for (; ; update)</code></td>
+            <td>Initialization and condition omitted</td>
+        </tr>
+
+        <tr>
+            <td><code>for (;;)</code></td>
+            <td>All three sections omitted; infinite loop</td>
+        </tr>
+    </table>
 
 <hr>
-
-<h4>Common Mistakes in For Loop</h4>
-
-<table class="notes-table">
-<tr>
-<th>Wrong</th>
-<th>Correct</th>
-</tr>
-
-<tr>
-<td>for(i=1 i<=10 i++)</td>
-<td>for(i=1; i<=10; i++)</td>
-</tr>
-
-<tr>
-<td>for(i=1; i<=10;)</td>
-<td>for(i=1; i<=10; i++)</td>
-</tr>
-
-<tr>
-<td>Using comma instead of semicolon</td>
-<td>Use semicolon (;) properly.</td>
-</tr>
-
-</table>
-
-<hr>
-
-<h4>Difference Between for Loop and while Loop</h4>
-
-<table class="notes-table">
-<tr>
-<th>For Loop</th>
-<th>While Loop</th>
-</tr>
-
-<tr>
-<td>Used when iterations are known.</td>
-<td>Used when iterations are unknown.</td>
-</tr>
-
-<tr>
-<td>Initialization, condition, and update are written together.</td>
-<td>Initialization and update are usually written separately.</td>
-</tr>
-
-<tr>
-<td>More compact.</td>
-<td>More flexible.</td>
-</tr>
-
-</table>
-
-<hr>
-
-<h4>Summary</h4>
-
-<ul>
-<li>A loop is used to repeat a block of code.</li>
-<li>C provides three loops: for, while, and do-while.</li>
-<li>The for loop is used when the number of repetitions is known.</li>
-<li>It consists of initialization, condition, and increment/decrement.</li>
-<li>The loop continues until the condition becomes false.</li>
-<li>For loops are widely used in tables, patterns, counting, and calculations.</li>
-</ul>
-
-<hr>
-
-<h4>Important Exam Questions</h4>
-
-<ul>
-<li>What is a loop in C language?</li>
-<li>Why are loops used in programming?</li>
-<li>Name the types of loops in C.</li>
-<li>What is a for loop?</li>
-<li>Write the syntax of a for loop.</li>
-<li>Explain the working of a for loop with a suitable example.</li>
-<li>Write a C program to print numbers from 1 to 10 using a for loop.</li>
-<li>Write a program to display the multiplication table of a number.</li>
-<li>What is a nested for loop?</li>
-<li>State the advantages of a for loop.</li>
-</ul>
 
 `;
 

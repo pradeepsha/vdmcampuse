@@ -7238,368 +7238,6 @@ connection establishment, acknowledgement, and reliability.
 `;
 
 
-let framingContent = `
-
-<h3>Framing</h3>
-
-<p>
-Framing is one of the most important functions of the Data Link Layer. It is the process
-of dividing a continuous stream of bits received from the Network Layer into smaller,
-manageable units called <b>frames</b>.
-</p>
-
-<p>
-A frame is a structured block of data that contains the actual information along with
-control information such as source address, destination address, error detection fields,
-and frame delimiters.
-</p>
-
-<p>
-The sender converts data into frames before transmission, and the receiver extracts the
-original data from the received frames.
-</p>
-
-<h4>Introduction to Framing</h4>
-
-<p>
-The Physical Layer simply transmits bits from one device to another. It does not know
-where a message starts or ends. If a large amount of data is sent as a continuous stream
-of bits, the receiver will have difficulty determining the boundaries of each message.
-</p>
-
-<p>
-To solve this problem, the Data Link Layer divides the data into frames. Each frame has
-a clear beginning and ending, making communication more organized and reliable.
-</p>
-
-<h4>What is a Frame?</h4>
-
-<p>
-A frame is the Protocol Data Unit (PDU) of the Data Link Layer.
-</p>
-
-<p>
-A typical frame contains:
-</p>
-
-<ul>
-<li>Header</li>
-<li>Source Address</li>
-<li>Destination Address</li>
-<li>Actual Data</li>
-<li>Error Detection Information</li>
-<li>Trailer</li>
-</ul>
-
-<p>
-General Structure of a Frame:
-</p>
-
-<p>
-Header → Data → Trailer
-</p>
-
-<h4>Why is Framing Required?</h4>
-
-<p>
-Framing is necessary because networks need a systematic way to transmit and receive data.
-Without framing, the receiver would not be able to identify individual messages.
-</p>
-
-<h4>Advantages of Framing</h4>
-
-<ul>
-<li>Identifies the beginning and end of data.</li>
-<li>Provides organized data transmission.</li>
-<li>Supports error detection.</li>
-<li>Improves communication reliability.</li>
-<li>Makes data processing easier for the receiver.</li>
-<li>Helps in flow control and error control.</li>
-</ul>
-
-<h4>Functions of Framing</h4>
-
-<ul>
-<li>Divides data into manageable units.</li>
-<li>Provides synchronization between sender and receiver.</li>
-<li>Supports addressing information.</li>
-<li>Allows error detection mechanisms.</li>
-<li>Improves transmission efficiency.</li>
-</ul>
-
-<h4>Methods of Framing</h4>
-
-<p>
-Several techniques are used to create and identify frames during communication.
-The most commonly used framing methods are discussed below.
-</p>
-
-<hr>
-
-<h4>1. Character Count Method</h4>
-
-<p>
-In the Character Count Method, the first field of the frame contains the total number
-of characters present in that frame.
-</p>
-
-<p>
-The receiver reads the count value and determines where the frame ends.
-</p>
-
-<h5>Working</h5>
-
-<p>
-Suppose a frame contains 10 characters.
-The first field will contain the value 10.
-</p>
-
-<p>
-10 DATA DATA DATA
-</p>
-
-<p>
-The receiver reads the count value and knows that the next 10 characters belong
-to the frame.
-</p>
-
-<h5>Advantages</h5>
-
-<ul>
-<li>Simple implementation.</li>
-<li>Easy to understand.</li>
-<li>Less overhead.</li>
-</ul>
-
-<h5>Disadvantages</h5>
-
-<ul>
-<li>If the count field is corrupted, synchronization is lost.</li>
-<li>A single error can affect multiple frames.</li>
-<li>Not commonly used in modern networks.</li>
-</ul>
-
-<hr>
-
-<h4>2. Byte Stuffing Method</h4>
-
-<p>
-Byte Stuffing is also known as Character Stuffing. In this method, special bytes are
-used to indicate the beginning and end of a frame.
-</p>
-
-<p>
-A problem occurs when the same special byte appears inside the actual data.
-To solve this problem, an additional escape character is inserted before the special byte.
-</p>
-
-<h5>Working</h5>
-
-<p>
-Flag Byte → Data → Flag Byte
-</p>
-
-<p>
-If the flag byte appears inside the data, an escape byte is inserted before it.
-</p>
-
-<h5>Example</h5>
-
-<p>
-FLAG DATA ESC FLAG DATA FLAG
-</p>
-
-<p>
-The receiver recognizes that the escaped flag byte is part of the data and not a frame boundary.
-</p>
-
-<h5>Advantages</h5>
-
-<ul>
-<li>Provides clear frame boundaries.</li>
-<li>Easy error detection.</li>
-<li>Widely used in character-oriented protocols.</li>
-</ul>
-
-<h5>Disadvantages</h5>
-
-<ul>
-<li>Additional bytes increase frame size.</li>
-<li>Transmission overhead increases.</li>
-</ul>
-
-<hr>
-
-<h4>3. Bit Stuffing Method</h4>
-
-<p>
-Bit Stuffing is widely used in modern computer networks and bit-oriented protocols
-such as HDLC.
-</p>
-
-<p>
-In this method, a special bit pattern is used as a frame delimiter.
-Whenever the sender finds five consecutive 1s in the data, it automatically inserts
-an extra 0 bit.
-</p>
-
-<p>
-The receiver removes the inserted 0 bit during frame processing.
-</p>
-
-<h5>Working</h5>
-
-<p>
-Flag Pattern:
-01111110
-</p>
-
-<p>
-Original Data:
-111110111111
-</p>
-
-<p>
-After Bit Stuffing:
-11111001111101
-</p>
-
-<p>
-The inserted 0 prevents confusion between data bits and flag bits.
-</p>
-
-<h5>Advantages</h5>
-
-<ul>
-<li>Highly reliable.</li>
-<li>Supports bit-oriented communication.</li>
-<li>Widely used in networking protocols.</li>
-<li>Prevents accidental flag generation.</li>
-</ul>
-
-<h5>Disadvantages</h5>
-
-<ul>
-<li>Additional processing is required.</li>
-<li>Slight increase in transmission overhead.</li>
-</ul>
-
-<hr>
-
-<h4>4. Physical Layer Coding Violations</h4>
-
-<p>
-In this method, special signal patterns that are not used for normal data transmission
-are reserved to indicate the beginning and end of a frame.
-</p>
-
-<p>
-These unique signal patterns are recognized by the receiver as frame boundaries.
-</p>
-
-<h5>Working</h5>
-
-<p>
-Special electrical or signal codes are used to mark frame start and frame end.
-</p>
-
-<h5>Advantages</h5>
-
-<ul>
-<li>No extra bits or bytes are required.</li>
-<li>Efficient frame identification.</li>
-<li>Fast processing.</li>
-</ul>
-
-<h5>Disadvantages</h5>
-
-<ul>
-<li>Requires special hardware support.</li>
-<li>Not suitable for all transmission systems.</li>
-</ul>
-
-<hr>
-
-<h4>Comparison of Framing Methods</h4>
-
-<table class="notes-table">
-
-<tr>
-<th>Method</th>
-<th>Working Principle</th>
-<th>Advantage</th>
-<th>Limitation</th>
-</tr>
-
-<tr>
-<td>Character Count</td>
-<td>Uses count field to specify frame length</td>
-<td>Simple</td>
-<td>Count field errors affect synchronization</td>
-</tr>
-
-<tr>
-<td>Byte Stuffing</td>
-<td>Uses special bytes and escape characters</td>
-<td>Clear frame boundaries</td>
-<td>Extra bytes increase overhead</td>
-</tr>
-
-<tr>
-<td>Bit Stuffing</td>
-<td>Inserts 0 after five consecutive 1s</td>
-<td>Highly reliable</td>
-<td>Additional processing required</td>
-</tr>
-
-<tr>
-<td>Physical Layer Coding Violations</td>
-<td>Uses special signal patterns</td>
-<td>No extra bits required</td>
-<td>Requires special hardware support</td>
-</tr>
-
-</table>
-
-<h4>Real-Life Example</h4>
-
-<p>
-Imagine a teacher checking answer sheets.
-Each student's answer sheet is kept separately with a cover page and roll number.
-This makes it easy to identify where one student's answers begin and end.
-</p>
-
-<p>
-Similarly, framing separates data into distinct frames so that the receiver can easily
-identify and process each message.
-</p>
-
-<h4>Important Exam Points</h4>
-
-<ul>
-<li>Framing is a function of the Data Link Layer.</li>
-<li>It divides a stream of bits into identifiable units called frames.</li>
-<li>A frame is the PDU of the Data Link Layer.</li>
-<li>Framing helps identify the beginning and end of data.</li>
-<li>Main framing methods are Character Count, Byte Stuffing, Bit Stuffing, and Physical Layer Coding Violations.</li>
-<li>Bit Stuffing is widely used in modern networking protocols.</li>
-<li>HDLC uses the Bit Stuffing method.</li>
-</ul>
-
-<h4>Short Interview Question</h4>
-
-<p>
-<b>Question:</b> What is Framing in the Data Link Layer?
-</p>
-
-<p>
-<b>Answer:</b> Framing is the process of dividing a stream of data into smaller units called frames.
-The Data Link Layer adds headers and trailers to create frames, allowing the receiver to identify
-the beginning and end of data and ensuring reliable communication.
-</p>
-
-`;
-
 
 let errorAndFlowControlContent = `
 
@@ -21654,5 +21292,481 @@ Similarly, HTML provides the structure of a web page, CSS provides design, and J
 <p>
 HTML (Hyper Text Markup Language) is the standard markup language used to create and structure web pages. It uses tags to organize content and serves as the foundation of web development. HTML works together with CSS and JavaScript to create modern websites and web applications.
 </p>
+
+`;
+
+const framingInDataLinkLayer = `
+
+    <!-- TITLE -->
+    <div >
+        <h3>FRAMING IN DATA LINK LAYER</h3>
+    </div>
+
+
+    <!-- INTRODUCTION -->
+
+    <p>
+        Framing is one of the main functions of the
+        <strong>Data Link Layer.</strong>
+    </p>
+
+    <h4>In simple words:</h4>
+
+    <p>
+        Framing means dividing a large stream of data into small,
+        manageable units called <strong>FRAMES</strong> before sending
+        it over the network.
+    </p>
+
+
+    <!-- EXAMPLE -->
+
+    <h4>Example:</h4>
+
+    <div class="data-display-box">
+
+        <span class="data-label">
+            Original Data
+        </span>
+
+        <div class="data-value">
+            HELLOWORLDTHISISMYMESSAGE
+        </div>
+
+    </div>
+
+
+    <div class="framing-arrow">
+        ↓
+        <span>Framing</span>
+        ↓
+    </div>
+
+
+    <!-- FRAMES -->
+
+    <div class="frames-row">
+
+        <div class="frame-box">
+
+            <div class="frame-label">
+                Frame 1
+            </div>
+
+            <div class="frame-value">
+                HELLO
+            </div>
+
+        </div>
+
+
+        <div class="frame-box">
+
+            <div class="frame-label">
+                Frame 2
+            </div>
+
+            <div class="frame-value">
+                WORLD
+            </div>
+
+        </div>
+
+
+        <div class="frame-box">
+
+            <div class="frame-label">
+                Frame 3
+            </div>
+
+            <div class="frame-value">
+                THIS
+            </div>
+
+        </div>
+
+    </div>
+
+
+    <!-- WHY FRAMING -->
+
+    <h4>WHY DO WE NEED FRAMING?</h4>
+
+    <p>
+        Framing helps the receiver to identify:
+    </p>
+
+    <ol>
+        <li>Where the data starts.</li>
+        <li>Where the data ends.</li>
+        <li>Which data belongs to a particular frame.</li>
+        <li>Whether any error occurred during transmission.</li>
+    </ol>
+
+
+    <!-- FRAME STRUCTURE -->
+
+    <div class="frame-section">
+
+        <div class="frame-title">
+            STRUCTURE OF A FRAME
+        </div>
+
+        <div class="frame-structure">
+
+            <div class="frame-header">
+                HEADER
+            </div>
+
+            <div class="frame-data">
+                DATA
+            </div>
+
+            <div class="frame-trailer">
+                TRAILER
+            </div>
+
+        </div>
+
+    </div>
+
+
+    <!-- FRAME DETAILS -->
+
+    <div class="frame-explanation">
+
+        <div class="frame-detail">
+
+            <div class="detail-number">
+                01
+            </div>
+
+            <div>
+                <strong>HEADER:</strong>
+
+                <p>
+                    Contains control information such as source address,
+                    destination address, and other control information.
+                </p>
+            </div>
+
+        </div>
+
+
+        <div class="frame-detail">
+
+            <div class="detail-number">
+                02
+            </div>
+
+            <div>
+                <strong>DATA:</strong>
+
+                <p>
+                    Contains the actual information received from the
+                    Network Layer.
+                </p>
+            </div>
+
+        </div>
+
+
+        <div class="frame-detail">
+
+            <div class="detail-number">
+                03
+            </div>
+
+            <div>
+                <strong>TRAILER:</strong>
+
+                <p>
+                    Contains error-detection information such as CRC.
+                </p>
+            </div>
+
+        </div>
+
+    </div>
+
+
+    <!-- REAL LIFE EXAMPLE -->
+
+    <h4>REAL-LIFE EXAMPLE:</h4>
+
+    <p>
+        Suppose you want to send <strong>100 pages</strong> of documents.
+    </p>
+
+    <p>
+        Instead of sending all 100 pages as one large package,
+        you can divide them into smaller packages.
+    </p>
+
+
+    <div class="package-list">
+
+        <div class="package-item">
+            <strong>Package 1</strong>
+            <span>→ Pages 1–25</span>
+        </div>
+
+        <div class="package-item">
+            <strong>Package 2</strong>
+            <span>→ Pages 26–50</span>
+        </div>
+
+        <div class="package-item">
+            <strong>Package 3</strong>
+            <span>→ Pages 51–75</span>
+        </div>
+
+        <div class="package-item">
+            <strong>Package 4</strong>
+            <span>→ Pages 76–100</span>
+        </div>
+
+    </div>
+
+
+    <p>
+        Similarly, the Data Link Layer divides large data into
+        small units called <strong>FRAMES.</strong>
+    </p>
+
+
+    <!-- OSI DATA UNIT -->
+
+    <h4>DATA UNIT AT DIFFERENT OSI LAYERS:</h4>
+
+    <div class="osi-table">
+
+        <div class="osi-row">
+            <span>Application Layer</span>
+            <strong>Data</strong>
+        </div>
+
+        <div class="osi-row">
+            <span>Transport Layer</span>
+            <strong>Segment</strong>
+        </div>
+
+        <div class="osi-row">
+            <span>Network Layer</span>
+            <strong>Packet</strong>
+        </div>
+
+        <div class="osi-row active">
+            <span>Data Link Layer</span>
+            <strong>Frame</strong>
+        </div>
+
+        <div class="osi-row">
+            <span>Physical Layer</span>
+            <strong>Bits</strong>
+        </div>
+
+    </div>
+
+
+    <!-- TYPES OF FRAMING -->
+
+    <h4>TYPES OF FRAMING:</h4>
+
+    <ol class="framing-types">
+
+        <li>Character Count</li>
+        <li>Character Stuffing</li>
+        <li>Bit Stuffing</li>
+        <li>Physical Layer Coding Violations</li>
+
+    </ol>
+
+
+
+    <div class="notes-content">
+
+    <h3>1. Character Count</h3>
+
+    <p>
+        <strong>Character Count</strong> is one of the methods used for
+        <strong>framing</strong> in the Data Link Layer.
+    </p>
+
+    <p>
+        In this method, a special field called the
+        <strong>COUNT field</strong> is added at the beginning of the frame.
+    </p>
+
+    <p>
+        The COUNT field tells the receiver how many
+        <strong>characters (bytes)</strong> are present in that frame.
+    </p>
+
+    <h4>How It Works</h4>
+
+    <div class="notes-text-box">
+        <pre>
+Sender
+  ↓
+Divide data into frames
+  ↓
+Count the characters in each frame
+  ↓
+Add the character count at the beginning
+  ↓
+Send the frame
+  ↓
+Receiver
+  ↓
+Read the count
+  ↓
+Read that many characters
+  ↓
+Identify the end of the frame
+        </pre>
+    </div>
+
+    <h4>Example</h4>
+
+    <p>
+        Suppose we have the following data:
+    </p>
+
+    <div class="notes-code-box">
+        <pre>HELLO</pre>
+    </div>
+
+    <p>
+        Number of characters = <strong>5</strong>
+    </p>
+
+    <div class="notes-frame-box">
+        <div class="frame-header">COUNT = 5</div>
+        <div class="frame-data">HELLO</div>
+    </div>
+
+    <p>
+        Here, <strong>COUNT = 5</strong> tells the receiver that
+        the frame contains <strong>5 characters</strong>.
+    </p>
+
+    <p>
+        <strong>HELLO</strong> is the actual data.
+    </p>
+
+    <h4>Multiple Frame Example</h4>
+
+    <p>
+        Suppose the data is:
+    </p>
+
+    <div class="notes-code-box">
+        <pre>HELLO WORLD STUDENT</pre>
+    </div>
+
+    <p>
+        It can be divided into different frames:
+    </p>
+
+    <div class="notes-frame-box">
+        <div class="frame-header">COUNT = 5</div>
+        <div class="frame-data">HELLO</div>
+    </div>
+
+    <div class="notes-frame-box">
+        <div class="frame-header">COUNT = 5</div>
+        <div class="frame-data">WORLD</div>
+    </div>
+
+    <div class="notes-frame-box">
+        <div class="frame-header">COUNT = 7</div>
+        <div class="frame-data">STUDENT</div>
+    </div>
+
+    <h4>How Receiver Identifies the Frame</h4>
+
+    <div class="notes-text-box">
+        <pre>
+COUNT = 5
+     ↓
+Read the next 5 characters
+     ↓
+HELLO
+        </pre>
+    </div>
+
+    <h4>Advantage</h4>
+
+    <ul>
+        <li>Simple and easy to implement.</li>
+        <li>The receiver can easily identify the frame length.</li>
+    </ul>
+
+    <h4>Disadvantage</h4>
+
+    <p>
+        The main problem with Character Count is that if the
+        <strong>COUNT value is corrupted</strong> during transmission,
+        the receiver may incorrectly identify the frame boundary.
+    </p>
+
+    <p>
+        For example:
+    </p>
+
+    <div class="notes-text-box">
+        <pre>
+Original:
+5 HELLO
+
+If COUNT changes:
+8 HELLO...
+        </pre>
+    </div>
+
+    <p>
+        The receiver will try to read <strong>8 characters</strong>
+        instead of <strong>5 characters</strong>. This can cause
+        the following frames to be interpreted incorrectly.
+    </p>
+
+    <h4>Real-Life Example</h4>
+
+    <p>
+        Suppose a teacher says:
+    </p>
+
+    <div class="notes-highlight-box">
+        "Read the next 5 words."
+    </div>
+
+    <p>
+        The student knows exactly how many words to read.
+        Similarly, in Character Count framing:
+    </p>
+
+    <div class="notes-highlight-box">
+        COUNT = 5 → Read the next 5 characters
+    </div>
+
+    <h4>Exam Definition</h4>
+
+    <div class="notes-definition-box">
+        Character Count is a framing method in which a count field
+        is added at the beginning of each frame to indicate the
+        number of characters or bytes present in that frame.
+    </div>
+
+    <h4>Remember</h4>
+
+    <div class="notes-highlight-box">
+        COUNT → tells the FRAME SIZE
+        <br><br>
+        Data Link Layer → Frame
+    </div>
+
+</div>
+
 
 `;

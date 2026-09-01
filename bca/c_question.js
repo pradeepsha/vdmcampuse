@@ -145,9 +145,9 @@ const cQuestion5 = {
     printf(<span class="string">"Enter two numbers: "</span>);
     scanf(<span class="string">"%d %d"</span>, &amp;a, &amp;b);
 
-    printf(<span class="string">"Addition = %d\n"</span>, a + b);
-    printf(<span class="string">"Subtraction = %d\n"</span>, a - b);
-    printf(<span class="string">"Multiplication = %d\n"</span>, a * b);
+    printf(<span class="string">"Addition = %d\\n"</span>, a + b);
+    printf(<span class="string">"Subtraction = %d\\n"</span>, a - b);
+    printf(<span class="string">"Multiplication = %d\\n"</span>, a * b);
     printf(<span class="string">"Division = %d"</span>, a / b);
 
     <span class="keyword">return</span> <span class="number">0</span>;
@@ -4227,6 +4227,120 @@ const ctypeCastingQuestion10 = {
 `
 };
 
+const cProgrammingQuestion = {
+    question: "What will be the output of the following C program?",
+
+    program: `
+<div class="program-code-box">
+<pre class="program-code-box-pre"><code class="program-code-box-code"><span class="program-code-box-preprocessor">#include</span> <span class="program-code-box-header">&lt;stdio.h&gt;</span>
+
+<span class="program-code-box-keyword">int</span> main()
+{
+    <span class="program-code-box-keyword">int</span> a = <span class="program-code-box-number">10</span>;
+    <span class="program-code-box-keyword">int</span> b = <span class="program-code-box-number">3</span>;
+
+    printf(<span class="program-code-box-string">"%f\\n"</span>, (<span class="program-code-box-keyword">float</span>)a / b);
+
+    <span class="program-code-box-keyword">return</span> <span class="program-code-box-number">0</span>;
+}</code></pre>
+</div>
+`,
+
+    options: [
+        "3.000000",
+        "3.333333",
+        "3",
+        "Compilation Error"
+    ],
+
+    answer: 2,
+
+    solution: `
+<div class="code-box">
+<div class="code-title">
+<span>Answer</span>
+</div>
+<pre><code><span class="keyword">Output:</span>
+<span class="string">3.333333</span>
+
+<span class="keyword">Explanation:</span>
+The expression (<span class="keyword">float</span>)a converts the integer
+value of a into a floating-point value.
+
+Therefore, floating-point division is performed:
+
+<span class="string">10.0 / 3 = 3.333333</span>
+
+The <span class="keyword">%f</span> format specifier is used to display
+the floating-point result.
+
+Therefore, the output is:
+
+<span class="string">3.333333</span></code></pre>
+</div>
+`
+};
+const cProgrammingQuestion1 = {
+    question: "What will be the output of the following C program?",
+
+    program: `
+<div class="program-code-box">
+<pre class="program-code-box-pre"><code class="program-code-box-code"><span class="program-code-box-preprocessor">#include</span> <span class="program-code-box-header">&lt;stdio.h&gt;</span>
+
+<span class="program-code-box-keyword">int</span> main()
+{
+    <span class="program-code-box-keyword">int</span> a = <span class="program-code-box-number">10</span>;
+    <span class="program-code-box-keyword">int</span> b = <span class="program-code-box-number">3</span>;
+
+    printf(<span class="program-code-box-string">"%f"</span>, (<span class="program-code-box-keyword">float</span>)(a / b));
+
+    <span class="program-code-box-keyword">return</span> <span class="program-code-box-number">0</span>;
+}</code></pre>
+</div>
+`,
+
+    options: [
+        "3.000000",
+        "3.333333",
+        "3",
+        "Compilation Error"
+    ],
+
+    answer: 1,
+
+    solution: `
+<div class="code-box">
+<div class="code-title">
+<span>Answer</span>
+</div>
+<pre><code><span class="keyword">Output:</span>
+<span class="string">3.000000</span>
+
+<span class="keyword">Explanation:</span>
+First, <span class="string">a / b</span> is evaluated.
+
+Both <span class="string">a</span> and <span class="string">b</span> are integers, so integer
+division is performed:
+
+<span class="string">10 / 3 = 3</span>
+
+After that, the result <span class="string">3</span> is converted to
+<span class="string">float</span>:
+
+<span class="string">(float)3 = 3.0</span>
+
+The <span class="keyword">%f</span> format specifier displays the
+floating-point value as:
+
+<span class="string">3.000000</span>
+
+Therefore, the output is:
+
+<span class="string">3.000000</span></code></pre>
+</div>
+`
+};
+
 
 // ========================================
 // ALL QUESTIONS
@@ -4293,6 +4407,8 @@ const cProgrammingQuestions = [
     ctypeCastingQuestion8,
     ctypeCastingQuestion9,
     ctypeCastingQuestion10,
+        cProgrammingQuestion,
+    cProgrammingQuestion1,
     cQuestion51,
     cQuestion52,
     cQuestion53,

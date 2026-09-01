@@ -5060,6 +5060,8 @@ Therefore, the output is:
 
 
 
+
+
 const javascriptQuestions_1 = [
     javascriptRestSpreadQuestion1,
     javascriptRestSpreadQuestion2,
@@ -5165,7 +5167,7 @@ const javascriptQuestions_1 = [
     javascriptArraysQuestion8,
     javascriptArraysQuestion9,
     javascriptArraysQuestion10,
-        javascriptFunctionsAdvancedQuestion1,
+    javascriptFunctionsAdvancedQuestion1,
     javascriptFunctionsAdvancedQuestion2,
     javascriptFunctionsAdvancedQuestion3,
     javascriptFunctionsAdvancedQuestion4,
