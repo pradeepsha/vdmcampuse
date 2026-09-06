@@ -12457,6 +12457,157 @@ i = 5, j = 1</code></pre>
         <pre><code>0 5 10 15 20</code></pre>
     </div>
 
+    
+
+<h3>More Than One Condition in a <code>for</code> Loop</h3>
+
+<p>
+    Sometimes, we need to check <strong>more than one condition</strong>
+    to decide whether a <code>for</code> loop should continue.
+</p>
+
+<p>
+    In such cases, we can combine two or more conditions using
+    <strong>logical operators</strong> such as <code>&amp;&amp;</code>
+    (AND) and <code>||</code> (OR).
+</p>
+
+<h4>Definition</h4>
+
+<p>
+    <strong>
+        A <code>for</code> loop can contain multiple conditions in its
+        condition part by combining them with logical operators.
+    </strong>
+    The complete condition becomes a single
+    <strong>boolean expression</strong> that evaluates to either
+    <strong>true</strong> or <strong>false</strong>.
+</p>
+
+<h4>Syntax</h4>
+
+<div class="notes-code-box">
+
+<pre class="notes-code-box-pre"><code>for (initialization; condition1 &amp;&amp; condition2; update) {
+    // statements
+}</code></pre>
+
+</div>
+
+<p>
+    Here, <strong>condition1</strong> and <strong>condition2</strong>
+    are two different conditions. The <code>&amp;&amp;</code> operator
+    means that <strong>both conditions must be true</strong>.
+</p>
+
+<h4>Example</h4>
+
+<div class="notes-code-box">
+
+<pre class="notes-code-box-pre"><code>for (int i = 0, j = 10; i &lt; 5 &amp;&amp; j &gt; 5; i++, j--) {
+    printf("i = %d, j = %d\n", i, j);
+}</code></pre>
+
+</div>
+
+<h4>Explanation</h4>
+
+<ul>
+    <li>
+        <strong>Initialization:</strong>
+        <code>int i = 0, j = 10</code>
+        <br>
+        We initialize two variables:
+        <strong>i = 0</strong> and <strong>j = 10</strong>.
+    </li>
+
+
+<li>
+    <strong>Condition:</strong>
+    <code>i &lt; 5 &amp;&amp; j &gt; 5</code>
+    <br>
+    We are checking two conditions:
+    <strong>i &lt; 5</strong> and <strong>j &gt; 5</strong>.
+</li>
+
+<li>
+    <strong>Update:</strong>
+    <code>i++, j--</code>
+    <br>
+    After every iteration, <strong>i</strong> increases by 1
+    and <strong>j</strong> decreases by 1.
+</li>
+
+
+</ul>
+
+<h4>How Does the Condition Work?</h4>
+
+<p>
+    Initially, <strong>i = 0</strong> and <strong>j = 10</strong>.
+</p>
+
+<p>
+    The condition is:
+    <code>i &lt; 5 &amp;&amp; j &gt; 5</code>
+</p>
+
+<p>
+    We check both conditions:
+</p>
+
+<ul>
+    <li><code>i &lt; 5</code> → <strong>true</strong></li>
+    <li><code>j &gt; 5</code> → <strong>true</strong></li>
+</ul>
+
+<p>
+    Since both conditions are <strong>true</strong>, the loop body executes.
+</p>
+
+<p>
+    After that, <code>i++</code> and <code>j--</code> are performed.
+    This process continues until the complete condition becomes
+    <strong>false</strong>.
+</p>
+
+<h4>Output</h4>
+
+<div class="notes-code-box">
+
+<pre class="notes-code-box-pre"><code>i = 0, j = 10
+i = 1, j = 9
+i = 2, j = 8
+i = 3, j = 7
+i = 4, j = 6</code></pre>
+
+</div>
+
+<h4>Important Point</h4>
+
+<p>
+    Remember that a <code>for</code> loop has only
+    <strong>one condition section</strong>, but that condition can contain
+    <strong>multiple conditions</strong> connected using logical operators.
+</p>
+
+<p>
+    For example:
+</p>
+
+<div class="notes-code-box">
+
+<pre class="notes-code-box-pre"><code>i &lt; 5 &amp;&amp; j &gt; 5</code></pre>
+
+</div>
+
+<p>
+    Although there are two checks here, the complete expression
+    <code>i &lt; 5 &amp;&amp; j &gt; 5</code> is treated as
+    <strong>one boolean expression</strong>.
+</p>
+
+
 
     <h4>12. Decreasing Loop</h4>
 

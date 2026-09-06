@@ -3025,8 +3025,2040 @@ const javascriptLogicalQuestion105 = {
 `
 }
 
+
+const javaScriptForInForOfQuestion1 = {
+    question: "What will be the output of the following JavaScript program?",
+
+    program: `
+<div class="program-code-box">
+
+    <pre class="program-code-box-pre"><code class="program-code-box-code"><span class="program-code-box-keyword">let</span> arr = [<span class="program-code-box-number">10</span>, <span class="program-code-box-number">20</span>, <span class="program-code-box-number">30</span>];
+
+<span class="program-code-box-keyword">for</span> (<span class="program-code-box-keyword">let</span> x <span class="program-code-box-keyword">in</span> arr)
+{
+    console.log(x);
+}</code></pre>
+
+</div>
+`,
+
+    options: [
+        "10 20 30",
+        "0 1 2",
+        "1 2 3",
+        "undefined undefined undefined"
+    ],
+
+    answer: 1,
+
+    solution: `
+<div class="code-box">
+
+    <div class="code-title">
+        <span>Answer</span>
+    </div>
+
+    <pre><code><span class="keyword">Output:</span>
+<span class="string">0
+1
+2</span>
+
+<span class="keyword">Explanation:</span>
+The for...in loop iterates over the enumerable property keys of an array.
+
+For an array, the indexes are 0, 1 and 2.
+
+Therefore, x receives "0", "1" and "2".
+
+The indexes are returned as strings.</code></pre>
+
+</div>
+`
+};
+
+
+const javaScriptForInForOfQuestion2 = {
+    question: "What will be the output of the following JavaScript program?",
+
+    program: `
+<div class="program-code-box">
+
+    <pre class="program-code-box-pre"><code class="program-code-box-code"><span class="program-code-box-keyword">let</span> arr = [<span class="program-code-box-number">10</span>, <span class="program-code-box-number">20</span>, <span class="program-code-box-number">30</span>];
+
+<span class="program-code-box-keyword">for</span> (<span class="program-code-box-keyword">let</span> x <span class="program-code-box-keyword">of</span> arr)
+{
+    console.log(x);
+}</code></pre>
+
+</div>
+`,
+
+    options: [
+        "0 1 2",
+        "1 2 3",
+        "10 20 30",
+        "undefined undefined undefined"
+    ],
+
+    answer: 2,
+
+    solution: `
+<div class="code-box">
+
+    <div class="code-title">
+        <span>Answer</span>
+    </div>
+
+    <pre><code><span class="keyword">Output:</span>
+<span class="string">10
+20
+30</span>
+
+<span class="keyword">Explanation:</span>
+The for...of loop iterates over the values of an iterable.
+
+Here, arr is an array.
+
+Therefore, x directly receives 10, 20 and 30.</code></pre>
+
+</div>
+`
+};
+
+
+const javaScriptForInForOfQuestion3 = {
+    question: "What will be the output of the following JavaScript program?",
+
+    program: `
+<div class="program-code-box">
+
+    <pre class="program-code-box-pre"><code class="program-code-box-code"><span class="program-code-box-keyword">let</span> student = {
+    name: <span class="program-code-box-string">"Amit"</span>,
+    age: <span class="program-code-box-number">21</span>
+};
+
+<span class="program-code-box-keyword">for</span> (<span class="program-code-box-keyword">let</span> x <span class="program-code-box-keyword">in</span> student)
+{
+    console.log(x);
+}</code></pre>
+
+</div>
+`,
+
+    options: [
+        "Amit 21",
+        "name age",
+        "0 1",
+        "student"
+    ],
+
+    answer: 1,
+
+    solution: `
+<div class="code-box">
+
+    <div class="code-title">
+        <span>Answer</span>
+    </div>
+
+    <pre><code><span class="keyword">Output:</span>
+<span class="string">name
+age</span>
+
+<span class="keyword">Explanation:</span>
+The for...in loop iterates over the property keys of an object.
+
+The object contains two properties:
+
+name
+age
+
+Therefore, name and age are printed.</code></pre>
+
+</div>
+`
+};
+
+
+const javaScriptForInForOfQuestion4 = {
+    question: "What will be the output of the following JavaScript program?",
+
+    program: `
+<div class="program-code-box">
+
+    <pre class="program-code-box-pre"><code class="program-code-box-code"><span class="program-code-box-keyword">let</span> student = {
+    name: <span class="program-code-box-string">"Amit"</span>,
+    age: <span class="program-code-box-number">21</span>
+};
+
+<span class="program-code-box-keyword">for</span> (<span class="program-code-box-keyword">let</span> x <span class="program-code-box-keyword">of</span> student)
+{
+    console.log(x);
+}</code></pre>
+
+</div>
+`,
+
+    options: [
+        "name age",
+        "Amit 21",
+        "TypeError",
+        "undefined undefined"
+    ],
+
+    answer: 2,
+
+    solution: `
+<div class="code-box">
+
+    <div class="code-title">
+        <span>Answer</span>
+    </div>
+
+    <pre><code><span class="keyword">Output:</span>
+<span class="string">TypeError</span>
+
+<span class="keyword">Explanation:</span>
+A normal JavaScript object is not iterable by default.
+
+The for...of loop requires an iterable object.
+
+Therefore, using for...of directly with a normal object causes a TypeError.</code></pre>
+
+</div>
+`
+};
+
+
+const javaScriptForInForOfQuestion5 = {
+    question: "What will be the output of the following JavaScript program?",
+
+    program: `
+<div class="program-code-box">
+
+    <pre class="program-code-box-pre"><code class="program-code-box-code"><span class="program-code-box-keyword">let</span> numbers = [<span class="program-code-box-number">5</span>, <span class="program-code-box-number">10</span>, <span class="program-code-box-number">15</span>];
+
+<span class="program-code-box-keyword">for</span> (<span class="program-code-box-keyword">let</span> x <span class="program-code-box-keyword">in</span> numbers)
+{
+    console.log(<span class="program-code-box-keyword">typeof</span> x);
+}</code></pre>
+
+</div>
+`,
+
+    options: [
+        "number number number",
+        "string string string",
+        "object object object",
+        "undefined undefined undefined"
+    ],
+
+    answer: 1,
+
+    solution: `
+<div class="code-box">
+
+    <div class="code-title">
+        <span>Answer</span>
+    </div>
+
+    <pre><code><span class="keyword">Output:</span>
+<span class="string">string
+string
+string</span>
+
+<span class="keyword">Explanation:</span>
+The for...in loop returns the indexes of the array.
+
+Array indexes are property keys and are represented as strings.
+
+Therefore, typeof x returns "string".</code></pre>
+
+</div>
+`
+};
+
+
+const javaScriptForInForOfQuestion6 = {
+    question: "What will be the output of the following JavaScript program?",
+
+    program: `
+<div class="program-code-box">
+
+    <pre class="program-code-box-pre"><code class="program-code-box-code"><span class="program-code-box-keyword">let</span> numbers = [<span class="program-code-box-number">5</span>, <span class="program-code-box-number">10</span>, <span class="program-code-box-number">15</span>];
+
+<span class="program-code-box-keyword">for</span> (<span class="program-code-box-keyword">let</span> x <span class="program-code-box-keyword">of</span> numbers)
+{
+    console.log(<span class="program-code-box-keyword">typeof</span> x);
+}</code></pre>
+
+</div>
+`,
+
+    options: [
+        "string string string",
+        "number number number",
+        "object object object",
+        "boolean boolean boolean"
+    ],
+
+    answer: 1,
+
+    solution: `
+<div class="code-box">
+
+    <div class="code-title">
+        <span>Answer</span>
+    </div>
+
+    <pre><code><span class="keyword">Output:</span>
+<span class="string">number
+number
+number</span>
+
+<span class="keyword">Explanation:</span>
+The for...of loop returns the actual values of the array.
+
+The values 5, 10 and 15 are numbers.
+
+Therefore, typeof x returns "number".</code></pre>
+
+</div>
+`
+};
+
+
+const javaScriptForInForOfQuestion7 = {
+    question: "What will be the output of the following JavaScript program?",
+
+    program: `
+<div class="program-code-box">
+
+    <pre class="program-code-box-pre"><code class="program-code-box-code"><span class="program-code-box-keyword">let</span> arr = [<span class="program-code-box-string">"A"</span>, <span class="program-code-box-string">"B"</span>, <span class="program-code-box-string">"C"</span>];
+
+<span class="program-code-box-keyword">for</span> (<span class="program-code-box-keyword">let</span> i <span class="program-code-box-keyword">in</span> arr)
+{
+    console.log(arr[i]);
+}</code></pre>
+
+</div>
+`,
+
+    options: [
+        "0 1 2",
+        "A B C",
+        "undefined undefined undefined",
+        "1 2 3"
+    ],
+
+    answer: 1,
+
+    solution: `
+<div class="code-box">
+
+    <div class="code-title">
+        <span>Answer</span>
+    </div>
+
+    <pre><code><span class="keyword">Output:</span>
+<span class="string">A
+B
+C</span>
+
+<span class="keyword">Explanation:</span>
+The for...in loop returns indexes.
+
+The indexes 0, 1 and 2 are used with arr[i].
+
+Therefore, arr[0], arr[1] and arr[2] produce A, B and C.</code></pre>
+
+</div>
+`
+};
+
+
+const javaScriptForInForOfQuestion8 = {
+    question: "What will be the output of the following JavaScript program?",
+
+    program: `
+<div class="program-code-box">
+
+    <pre class="program-code-box-pre"><code class="program-code-box-code"><span class="program-code-box-keyword">let</span> str = <span class="program-code-box-string">"ABC"</span>;
+
+<span class="program-code-box-keyword">for</span> (<span class="program-code-box-keyword">let</span> x <span class="program-code-box-keyword">of</span> str)
+{
+    console.log(x);
+}</code></pre>
+
+</div>
+`,
+
+    options: [
+        "0 1 2",
+        "A B C",
+        "ABC",
+        "TypeError"
+    ],
+
+    answer: 1,
+
+    solution: `
+<div class="code-box">
+
+    <div class="code-title">
+        <span>Answer</span>
+    </div>
+
+    <pre><code><span class="keyword">Output:</span>
+<span class="string">A
+B
+C</span>
+
+<span class="keyword">Explanation:</span>
+A string is iterable in JavaScript.
+
+The for...of loop iterates over each character.
+
+Therefore, A, B and C are printed.</code></pre>
+
+</div>
+`
+};
+
+
+const javaScriptForInForOfQuestion9 = {
+    question: "What will be the output of the following JavaScript program?",
+
+    program: `
+<div class="program-code-box">
+
+    <pre class="program-code-box-pre"><code class="program-code-box-code"><span class="program-code-box-keyword">let</span> str = <span class="program-code-box-string">"ABC"</span>;
+
+<span class="program-code-box-keyword">for</span> (<span class="program-code-box-keyword">let</span> x <span class="program-code-box-keyword">in</span> str)
+{
+    console.log(x);
+}</code></pre>
+
+</div>
+`,
+
+    options: [
+        "A B C",
+        "0 1 2",
+        "ABC",
+        "TypeError"
+    ],
+
+    answer: 1,
+
+    solution: `
+<div class="code-box">
+
+    <div class="code-title">
+        <span>Answer</span>
+    </div>
+
+    <pre><code><span class="keyword">Output:</span>
+<span class="string">0
+1
+2</span>
+
+<span class="keyword">Explanation:</span>
+The for...in loop iterates over enumerable property keys.
+
+For a string, the character positions are represented by indexes.
+
+Therefore, 0, 1 and 2 are printed.</code></pre>
+
+</div>
+`
+};
+
+
+const javaScriptForInForOfQuestion10 = {
+    question: "Which statement correctly compares for...in and for...of?",
+
+    program: `
+<div class="program-code-box">
+
+    <pre class="program-code-box-pre"><code class="program-code-box-code"><span class="program-code-box-keyword">let</span> arr = [<span class="program-code-box-number">10</span>, <span class="program-code-box-number">20</span>];
+
+<span class="program-code-box-keyword">for</span> (<span class="program-code-box-keyword">let</span> x <span class="program-code-box-keyword">in</span> arr)
+    console.log(x);
+
+<span class="program-code-box-keyword">for</span> (<span class="program-code-box-keyword">let</span> x <span class="program-code-box-keyword">of</span> arr)
+    console.log(x);</code></pre>
+
+</div>
+`,
+
+    options: [
+        "Both loops return indexes",
+        "Both loops return values",
+        "for...in returns keys/indexes and for...of returns values",
+        "for...in returns values and for...of returns keys"
+    ],
+
+    answer: 2,
+
+    solution: `
+<div class="code-box">
+
+    <div class="code-title">
+        <span>Answer</span>
+    </div>
+
+    <pre><code><span class="keyword">Answer:</span>
+<span class="string">for...in returns keys/indexes and for...of returns values</span>
+
+<span class="keyword">Explanation:</span>
+for...in is used to iterate over enumerable property keys.
+
+for...of is used to iterate over values of an iterable.
+
+Therefore, the correct statement is option 3.</code></pre>
+
+</div>
+`
+};
+
+
+const javaScriptForInForOfQuestion11 = {
+    question: "What will be the output of the following JavaScript program?",
+
+    program: `
+<div class="program-code-box">
+
+    <pre class="program-code-box-pre"><code class="program-code-box-code"><span class="program-code-box-keyword">let</span> set = <span class="program-code-box-keyword">new</span> Set([<span class="program-code-box-number">10</span>, <span class="program-code-box-number">20</span>, <span class="program-code-box-number">30</span>]);
+
+<span class="program-code-box-keyword">for</span> (<span class="program-code-box-keyword">let</span> x <span class="program-code-box-keyword">of</span> set)
+{
+    console.log(x);
+}</code></pre>
+
+</div>
+`,
+
+    options: [
+        "0 1 2",
+        "10 20 30",
+        "undefined undefined undefined",
+        "TypeError"
+    ],
+
+    answer: 1,
+
+    solution: `
+<div class="code-box">
+
+    <div class="code-title">
+        <span>Answer</span>
+    </div>
+
+    <pre><code><span class="keyword">Output:</span>
+<span class="string">10
+20
+30</span>
+
+<span class="keyword">Explanation:</span>
+A Set is an iterable object.
+
+The for...of loop iterates over the values stored in the Set.
+
+Therefore, 10, 20 and 30 are printed.</code></pre>
+
+</div>
+`
+};
+
+
+const javaScriptForInForOfQuestion12 = {
+    question: "What will be the output of the following JavaScript program?",
+
+    program: `
+<div class="program-code-box">
+
+    <pre class="program-code-box-pre"><code class="program-code-box-code"><span class="program-code-box-keyword">let</span> arr = [<span class="program-code-box-number">10</span>, <span class="program-code-box-number">20</span>, <span class="program-code-box-number">30</span>];
+
+arr.extra = <span class="program-code-box-number">100</span>;
+
+<span class="program-code-box-keyword">for</span> (<span class="program-code-box-keyword">let</span> x <span class="program-code-box-keyword">in</span> arr)
+{
+    console.log(x);
+}</code></pre>
+
+</div>
+`,
+
+    options: [
+        "0 1 2",
+        "10 20 30",
+        "0 1 2 extra",
+        "0 1 2 100"
+    ],
+
+    answer: 2,
+
+    solution: `
+<div class="code-box">
+
+    <div class="code-title">
+        <span>Answer</span>
+    </div>
+
+    <pre><code><span class="keyword">Output:</span>
+<span class="string">0
+1
+2
+extra</span>
+
+<span class="keyword">Explanation:</span>
+for...in iterates over enumerable properties.
+
+The array contains indexes 0, 1 and 2.
+
+The property extra is also enumerable.
+
+Therefore, extra is also visited by for...in.</code></pre>
+
+</div>
+`
+};
+
+
+const javaScriptForInForOfQuestion13 = {
+    question: "What will be the output of the following JavaScript program?",
+
+    program: `
+<div class="program-code-box">
+
+    <pre class="program-code-box-pre"><code class="program-code-box-code"><span class="program-code-box-keyword">let</span> arr = [<span class="program-code-box-number">10</span>, <span class="program-code-box-number">20</span>, <span class="program-code-box-number">30</span>];
+
+arr.extra = <span class="program-code-box-number">100</span>;
+
+<span class="program-code-box-keyword">for</span> (<span class="program-code-box-keyword">let</span> x <span class="program-code-box-keyword">of</span> arr)
+{
+    console.log(x);
+}</code></pre>
+
+</div>
+`,
+
+    options: [
+        "10 20 30 100",
+        "0 1 2 extra",
+        "10 20 30",
+        "TypeError"
+    ],
+
+    answer: 2,
+
+    solution: `
+<div class="code-box">
+
+    <div class="code-title">
+        <span>Answer</span>
+    </div>
+
+    <pre><code><span class="keyword">Output:</span>
+<span class="string">10
+20
+30</span>
+
+<span class="keyword">Explanation:</span>
+for...of iterates over the values produced by the array iterator.
+
+The extra property is not an array iteration value.
+
+Therefore, only 10, 20 and 30 are printed.</code></pre>
+
+</div>
+`
+};
+
+
+const javaScriptForInForOfQuestion14 = {
+    question: "What will be the output of the following JavaScript program?",
+
+    program: `
+<div class="program-code-box">
+
+    <pre class="program-code-box-pre"><code class="program-code-box-code"><span class="program-code-box-keyword">let</span> arr = [<span class="program-code-box-number">1</span>, <span class="program-code-box-number">2</span>, <span class="program-code-box-number">3</span>];
+
+<span class="program-code-box-keyword">for</span> (<span class="program-code-box-keyword">let</span> x <span class="program-code-box-keyword">of</span> arr)
+{
+    x = x * <span class="program-code-box-number">2</span>;
+}
+
+console.log(arr);</code></pre>
+
+</div>
+`,
+
+    options: [
+        "[2, 4, 6]",
+        "[1, 2, 3]",
+        "[0, 1, 2]",
+        "TypeError"
+    ],
+
+    answer: 1,
+
+    solution: `
+<div class="code-box">
+
+    <div class="code-title">
+        <span>Answer</span>
+    </div>
+
+    <pre><code><span class="keyword">Output:</span>
+<span class="string">[1, 2, 3]</span>
+
+<span class="keyword">Explanation:</span>
+The variable x receives each array value.
+
+Changing x does not modify the original array elements.
+
+Therefore, the original array remains [1, 2, 3].</code></pre>
+
+</div>
+`
+};
+
+
+const javaScriptForInForOfQuestion15 = {
+    question: "What will be the output of the following JavaScript program?",
+
+    program: `
+<div class="program-code-box">
+
+    <pre class="program-code-box-pre"><code class="program-code-box-code"><span class="program-code-box-keyword">let</span> obj = {
+    a: <span class="program-code-box-number">10</span>,
+    b: <span class="program-code-box-number">20</span>
+};
+
+<span class="program-code-box-keyword">for</span> (<span class="program-code-box-keyword">let</span> key <span class="program-code-box-keyword">in</span> obj)
+{
+    console.log(obj[key]);
+}</code></pre>
+
+</div>
+`,
+
+    options: [
+        "a b",
+        "10 20",
+        "0 1",
+        "undefined undefined"
+    ],
+
+    answer: 1,
+
+    solution: `
+<div class="code-box">
+
+    <div class="code-title">
+        <span>Answer</span>
+    </div>
+
+    <pre><code><span class="keyword">Output:</span>
+<span class="string">10
+20</span>
+
+<span class="keyword">Explanation:</span>
+The for...in loop gives the property names a and b.
+
+These keys are used with bracket notation.
+
+obj["a"] gives 10.
+
+obj["b"] gives 20.
+
+Therefore, 10 and 20 are printed.</code></pre>
+
+</div>
+`
+};
+
+
+const javaScriptForInForOfQuestion16 = {
+    question: "Which of the following statements is NOT correct about the for...of loop?",
+
+    program: `
+<div class="program-code-box">
+
+    <pre class="program-code-box-pre"><code class="program-code-box-code"><span class="program-code-box-keyword">let</span> arr = [<span class="program-code-box-number">10</span>, <span class="program-code-box-number">20</span>, <span class="program-code-box-number">30</span>];
+
+<span class="program-code-box-keyword">for</span> (<span class="program-code-box-keyword">let</span> x <span class="program-code-box-keyword">of</span> arr)
+{
+    console.log(x);
+}</code></pre>
+
+</div>
+`,
+
+    options: [
+        "It works with arrays",
+        "It works with strings",
+        "It returns iterable values",
+        "It directly iterates over normal object properties"
+    ],
+
+    answer: 3,
+
+    solution: `
+<div class="code-box">
+
+    <div class="code-title">
+        <span>Answer</span>
+    </div>
+
+    <pre><code><span class="keyword">Answer:</span>
+<span class="string">It directly iterates over normal object properties</span>
+
+<span class="keyword">Explanation:</span>
+for...of works with iterable objects.
+
+Arrays and strings are iterable.
+
+A normal object is not iterable by default.
+
+Therefore, it cannot directly iterate over normal object properties.</code></pre>
+
+</div>
+`
+};
+
+
+const javaScriptForInForOfQuestion17 = {
+    question: "What will be the output of the following JavaScript program?",
+
+    program: `
+<div class="program-code-box">
+
+    <pre class="program-code-box-pre"><code class="program-code-box-code"><span class="program-code-box-keyword">let</span> arr = [<span class="program-code-box-number">10</span>, <span class="program-code-box-number">20</span>];
+
+<span class="program-code-box-keyword">for</span> (<span class="program-code-box-keyword">let</span> x <span class="program-code-box-keyword">in</span> arr)
+{
+    console.log(x + <span class="program-code-box-number">1</span>);
+}</code></pre>
+
+</div>
+`,
+
+    options: [
+        "1 2",
+        "11 21",
+        "01 11",
+        "10 20"
+    ],
+
+    answer: 2,
+
+    solution: `
+<div class="code-box">
+
+    <div class="code-title">
+        <span>Answer</span>
+    </div>
+
+    <pre><code><span class="keyword">Output:</span>
+<span class="string">01
+11</span>
+
+<span class="keyword">Explanation:</span>
+for...in returns array indexes as strings.
+
+Therefore:
+
+"0" + 1 = "01"
+
+"1" + 1 = "11"
+
+The + operator performs string concatenation because x is a string.</code></pre>
+
+</div>
+`
+};
+
+
+const javaScriptForInForOfQuestion18 = {
+    question: "What will be the output of the following JavaScript program?",
+
+    program: `
+<div class="program-code-box">
+
+    <pre class="program-code-box-pre"><code class="program-code-box-code"><span class="program-code-box-keyword">let</span> arr = [<span class="program-code-box-number">10</span>, <span class="program-code-box-number">20</span>];
+
+<span class="program-code-box-keyword">for</span> (<span class="program-code-box-keyword">let</span> x <span class="program-code-box-keyword">of</span> arr)
+{
+    console.log(x + <span class="program-code-box-number">1</span>);
+}</code></pre>
+
+</div>
+`,
+
+    options: [
+        "01 11",
+        "10 20",
+        "11 21",
+        "1 2"
+    ],
+
+    answer: 2,
+
+    solution: `
+<div class="code-box">
+
+    <div class="code-title">
+        <span>Answer</span>
+    </div>
+
+    <pre><code><span class="keyword">Output:</span>
+<span class="string">11
+21</span>
+
+<span class="keyword">Explanation:</span>
+for...of returns the actual values of the array.
+
+Therefore:
+
+10 + 1 = 11
+
+20 + 1 = 21
+
+Hence, the output is 11 and 21.</code></pre>
+
+</div>
+`
+};
+
+
+const javaScriptForInForOfQuestion19 = {
+    question: "Which loop is more appropriate when the requirement is to process the values of an array without using its indexes?",
+
+    program: `
+<div class="program-code-box">
+
+    <pre class="program-code-box-pre"><code class="program-code-box-code"><span class="program-code-box-keyword">let</span> marks = [<span class="program-code-box-number">70</span>, <span class="program-code-box-number">80</span>, <span class="program-code-box-number">90</span>];
+
+<span class="program-code-box-keyword">for</span> (<span class="program-code-box-keyword">let</span> mark <span class="program-code-box-keyword">of</span> marks)
+{
+    console.log(mark);
+}</code></pre>
+
+</div>
+`,
+
+    options: [
+        "for...in",
+        "for...of",
+        "for...key",
+        "for...index"
+    ],
+
+    answer: 1,
+
+    solution: `
+<div class="code-box">
+
+    <div class="code-title">
+        <span>Answer</span>
+    </div>
+
+    <pre><code><span class="keyword">Answer:</span>
+<span class="string">for...of</span>
+
+<span class="keyword">Explanation:</span>
+for...of directly provides the values of an iterable.
+
+Here, mark receives 70, 80 and 90.
+
+Therefore, for...of is suitable for processing array values directly.</code></pre>
+
+</div>
+`
+};
+
+
+const javaScriptForInForOfQuestion20 = {
+    question: "What will be the output of the following JavaScript program?",
+
+    program: `
+<div class="program-code-box">
+
+    <pre class="program-code-box-pre"><code class="program-code-box-code"><span class="program-code-box-keyword">let</span> arr = [<span class="program-code-box-number">10</span>, <span class="program-code-box-number">20</span>, <span class="program-code-box-number">30</span>];
+
+<span class="program-code-box-keyword">let</span> result = <span class="program-code-box-string">""</span>;
+
+<span class="program-code-box-keyword">for</span> (<span class="program-code-box-keyword">let</span> x <span class="program-code-box-keyword">in</span> arr)
+{
+    result += x;
+}
+
+console.log(result);</code></pre>
+
+</div>
+`,
+
+    options: [
+        "102030",
+        "012",
+        "123",
+        "60"
+    ],
+
+    answer: 1,
+
+    solution: `
+<div class="code-box">
+
+    <div class="code-title">
+        <span>Answer</span>
+    </div>
+
+    <pre><code><span class="keyword">Output:</span>
+<span class="string">012</span>
+
+<span class="keyword">Explanation:</span>
+The for...in loop returns the array indexes.
+
+The indexes are 0, 1 and 2.
+
+Since result is initially a string, these values are concatenated.
+
+Therefore:
+
+result = "" + "0" + "1" + "2"
+
+result = "012"</code></pre>
+
+</div>
+`
+};
+
+const javaScriptForInForOfQuestion21 = {
+    question: "What will be the output of the following JavaScript program?",
+
+    program: `
+<div class="program-code-box">
+
+    <pre class="program-code-box-pre"><code class="program-code-box-code"><span class="program-code-box-keyword">let</span> arr = [<span class="program-code-box-number">10</span>, <span class="program-code-box-number">20</span>];
+
+arr.x = <span class="program-code-box-number">30</span>;
+
+<span class="program-code-box-keyword">for</span> (<span class="program-code-box-keyword">let</span> i <span class="program-code-box-keyword">in</span> arr)
+{
+    console.log(i);
+}</code></pre>
+
+</div>
+`,
+
+    options: [
+        "0 1",
+        "0 1 x",
+        "10 20 30",
+        "0 1 2"
+    ],
+
+    answer: 1,
+
+    solution: `
+<div class="code-box">
+
+    <div class="code-title">
+        <span>Answer</span>
+    </div>
+
+    <pre><code><span class="keyword">Output:</span>
+<span class="string">0
+1
+x</span>
+
+<span class="keyword">Explanation:</span>
+for...in iterates over enumerable string properties.
+
+Array indexes 0 and 1 are enumerable properties.
+
+The property x is also enumerable because it was added normally.
+
+Therefore, all three properties are visited.</code></pre>
+
+</div>
+`
+};
+
+
+const javaScriptForInForOfQuestion22 = {
+    question: "What will be the output of the following JavaScript program?",
+
+    program: `
+<div class="program-code-box">
+
+    <pre class="program-code-box-pre"><code class="program-code-box-code"><span class="program-code-box-keyword">let</span> arr = [<span class="program-code-box-number">10</span>, <span class="program-code-box-number">20</span>];
+
+arr.x = <span class="program-code-box-number">30</span>;
+
+<span class="program-code-box-keyword">for</span> (<span class="program-code-box-keyword">let</span> value <span class="program-code-box-keyword">of</span> arr)
+{
+    console.log(value);
+}</code></pre>
+
+</div>
+`,
+
+    options: [
+        "10 20",
+        "10 20 30",
+        "0 1 x",
+        "TypeError"
+    ],
+
+    answer: 0,
+
+    solution: `
+<div class="code-box">
+
+    <div class="code-title">
+        <span>Answer</span>
+    </div>
+
+    <pre><code><span class="keyword">Output:</span>
+<span class="string">10
+20</span>
+
+<span class="keyword">Explanation:</span>
+for...of uses the array iterator.
+
+The iterator visits the array elements, not arbitrary enumerable properties.
+
+The property x is not an array element.
+
+Therefore, only 10 and 20 are printed.</code></pre>
+
+</div>
+`
+};
+
+
+const javaScriptForInForOfQuestion23 = {
+    question: "What will be the output of the following JavaScript program?",
+
+    program: `
+<div class="program-code-box">
+
+    <pre class="program-code-box-pre"><code class="program-code-box-code"><span class="program-code-box-keyword">let</span> obj = {
+    a: <span class="program-code-box-number">10</span>,
+    b: <span class="program-code-box-number">20</span>
+};
+
+<span class="program-code-box-keyword">for</span> (<span class="program-code-box-keyword">let</span> key <span class="program-code-box-keyword">in</span> obj)
+{
+    console.log(obj[key] + <span class="program-code-box-number">5</span>);
+}</code></pre>
+
+</div>
+`,
+
+    options: [
+        "a5 b5",
+        "10 20",
+        "15 25",
+        "undefined undefined"
+    ],
+
+    answer: 2,
+
+    solution: `
+<div class="code-box">
+
+    <div class="code-title">
+        <span>Answer</span>
+    </div>
+
+    <pre><code><span class="keyword">Output:</span>
+<span class="string">15
+25</span>
+
+<span class="keyword">Explanation:</span>
+The variable key contains the property name.
+
+For key = "a", obj[key] gives 10.
+
+For key = "b", obj[key] gives 20.
+
+Therefore, 5 is added to each value.</code></pre>
+
+</div>
+`
+};
+
+
+const javaScriptForInForOfQuestion24 = {
+    question: "What will be the output of the following JavaScript program?",
+
+    program: `
+<div class="program-code-box">
+
+    <pre class="program-code-box-pre"><code class="program-code-box-code"><span class="program-code-box-keyword">let</span> arr = [<span class="program-code-box-number">10</span>, <span class="program-code-box-number">20</span>, <span class="program-code-box-number">30</span>];
+
+<span class="program-code-box-keyword">for</span> (<span class="program-code-box-keyword">let</span> i <span class="program-code-box-keyword">in</span> arr)
+{
+    console.log(i + <span class="program-code-box-number">1</span>);
+}</code></pre>
+
+</div>
+`,
+
+    options: [
+        "1 2 3",
+        "01 11 21",
+        "1 2 3 as numbers",
+        "TypeError"
+    ],
+
+    answer: 1,
+
+    solution: `
+<div class="code-box">
+
+    <div class="code-title">
+        <span>Answer</span>
+    </div>
+
+    <pre><code><span class="keyword">Output:</span>
+<span class="string">01
+11
+21</span>
+
+<span class="keyword">Explanation:</span>
+The indexes returned by for...in are strings.
+
+Therefore:
+
+"0" + 1 = "01"
+"1" + 1 = "11"
+"2" + 1 = "21"
+
+The + operator performs string concatenation.</code></pre>
+
+</div>
+`
+};
+
+
+const javaScriptForInForOfQuestion25 = {
+    question: "What will be the output of the following JavaScript program?",
+
+    program: `
+<div class="program-code-box">
+
+    <pre class="program-code-box-pre"><code class="program-code-box-code"><span class="program-code-box-keyword">let</span> set = <span class="program-code-box-keyword">new</span> Set([<span class="program-code-box-number">10</span>, <span class="program-code-box-number">20</span>, <span class="program-code-box-number">30</span>]);
+
+<span class="program-code-box-keyword">for</span> (<span class="program-code-box-keyword">let</span> x <span class="program-code-box-keyword">of</span> set)
+{
+    console.log(x);
+}</code></pre>
+
+</div>
+`,
+
+    options: [
+        "0 1 2",
+        "10 20 30",
+        "undefined",
+        "TypeError"
+    ],
+
+    answer: 1,
+
+    solution: `
+<div class="code-box">
+
+    <div class="code-title">
+        <span>Answer</span>
+    </div>
+
+    <pre><code><span class="keyword">Output:</span>
+<span class="string">10
+20
+30</span>
+
+<span class="keyword">Explanation:</span>
+Set is iterable.
+
+Its iterator returns the values stored in the Set.
+
+Therefore, for...of prints 10, 20 and 30.</code></pre>
+
+</div>
+`
+};
+
+
+const javaScriptForInForOfQuestion26 = {
+    question: "What will be the output of the following JavaScript program?",
+
+    program: `
+<div class="program-code-box">
+
+    <pre class="program-code-box-pre"><code class="program-code-box-code"><span class="program-code-box-keyword">let</span> set = <span class="program-code-box-keyword">new</span> Set([<span class="program-code-box-number">10</span>, <span class="program-code-box-number">20</span>, <span class="program-code-box-number">30</span>]);
+
+<span class="program-code-box-keyword">for</span> (<span class="program-code-box-keyword">let</span> x <span class="program-code-box-keyword">in</span> set)
+{
+    console.log(x);
+}</code></pre>
+
+</div>
+`,
+
+    options: [
+        "10 20 30",
+        "0 1 2",
+        "No output",
+        "TypeError"
+    ],
+
+    answer: 2,
+
+    solution: `
+<div class="code-box">
+
+    <div class="code-title">
+        <span>Answer</span>
+    </div>
+
+    <pre><code><span class="keyword">Output:</span>
+<span class="string">No output</span>
+
+<span class="keyword">Explanation:</span>
+for...in checks enumerable string-keyed properties.
+
+A Set stores its values internally and does not expose them as enumerable string properties.
+
+Therefore, for...in does not print the Set values.</code></pre>
+
+</div>
+`
+};
+
+
+const javaScriptForInForOfQuestion27 = {
+    question: "What will be the output of the following JavaScript program?",
+
+    program: `
+<div class="program-code-box">
+
+    <pre class="program-code-box-pre"><code class="program-code-box-code"><span class="program-code-box-keyword">let</span> map = <span class="program-code-box-keyword">new</span> Map([
+    [<span class="program-code-box-string">"a"</span>, <span class="program-code-box-number">10</span>],
+    [<span class="program-code-box-string">"b"</span>, <span class="program-code-box-number">20</span>]
+]);
+
+<span class="program-code-box-keyword">for</span> (<span class="program-code-box-keyword">let</span> item <span class="program-code-box-keyword">of</span> map)
+{
+    console.log(item);
+}</code></pre>
+
+</div>
+`,
+
+    options: [
+        "a b",
+        "10 20",
+        "[\"a\", 10] [\"b\", 20]",
+        "TypeError"
+    ],
+
+    answer: 2,
+
+    solution: `
+<div class="code-box">
+
+    <div class="code-title">
+        <span>Answer</span>
+    </div>
+
+    <pre><code><span class="keyword">Output:</span>
+<span class="string">["a", 10]
+["b", 20]</span>
+
+<span class="keyword">Explanation:</span>
+A Map is iterable.
+
+The default Map iterator returns each entry as a two-element array:
+
+[key, value]
+
+Therefore, each item contains both the key and value.</code></pre>
+
+</div>
+`
+};
+
+
+const javaScriptForInForOfQuestion28 = {
+    question: "What will be the output of the following JavaScript program?",
+
+    program: `
+<div class="program-code-box">
+
+    <pre class="program-code-box-pre"><code class="program-code-box-code"><span class="program-code-box-keyword">let</span> map = <span class="program-code-box-keyword">new</span> Map([
+    [<span class="program-code-box-string">"a"</span>, <span class="program-code-box-number">10</span>],
+    [<span class="program-code-box-string">"b"</span>, <span class="program-code-box-number">20</span>]
+]);
+
+<span class="program-code-box-keyword">for</span> (<span class="program-code-box-keyword">let</span> key <span class="program-code-box-keyword">in</span> map)
+{
+    console.log(key);
+}</code></pre>
+
+</div>
+`,
+
+    options: [
+        "a b",
+        "10 20",
+        "No output",
+        "TypeError"
+    ],
+
+    answer: 2,
+
+    solution: `
+<div class="code-box">
+
+    <div class="code-title">
+        <span>Answer</span>
+    </div>
+
+    <pre><code><span class="keyword">Output:</span>
+<span class="string">No output</span>
+
+<span class="keyword">Explanation:</span>
+for...in does not use the Map iterator.
+
+It checks enumerable string-keyed properties.
+
+Map entries are not enumerable properties of the Map object.
+
+Therefore, no keys are printed.</code></pre>
+
+</div>
+`
+};
+
+
+const javaScriptForInForOfQuestion29 = {
+    question: "What will be the output of the following JavaScript program?",
+
+    program: `
+<div class="program-code-box">
+
+    <pre class="program-code-box-pre"><code class="program-code-box-code"><span class="program-code-box-keyword">let</span> arr = [<span class="program-code-box-number">1</span>, <span class="program-code-box-number">2</span>, <span class="program-code-box-number">3</span>];
+
+<span class="program-code-box-keyword">for</span> (<span class="program-code-box-keyword">let</span> value <span class="program-code-box-keyword">of</span> arr)
+{
+    value = value * <span class="program-code-box-number">2</span>;
+}
+
+console.log(arr);</code></pre>
+
+</div>
+`,
+
+    options: [
+        "[2, 4, 6]",
+        "[1, 2, 3]",
+        "[2, 2, 2]",
+        "TypeError"
+    ],
+
+    answer: 1,
+
+    solution: `
+<div class="code-box">
+
+    <div class="code-title">
+        <span>Answer</span>
+    </div>
+
+    <pre><code><span class="keyword">Output:</span>
+<span class="string">[1, 2, 3]</span>
+
+<span class="keyword">Explanation:</span>
+The variable value receives a copy of each primitive array value.
+
+Changing value does not modify the original array.
+
+Therefore, arr remains [1, 2, 3].</code></pre>
+
+</div>
+`
+};
+
+
+const javaScriptForInForOfQuestion30 = {
+    question: "Which statement correctly describes the difference between for...in and for...of in JavaScript?",
+
+    program: ``,
+
+    options: [
+        "for...in returns values and for...of returns keys",
+        "for...in returns enumerable property keys and for...of returns iterable values",
+        "Both always return the same result",
+        "for...of works only with objects"
+    ],
+
+    answer: 1,
+
+    solution: `
+<div class="code-box">
+
+    <div class="code-title">
+        <span>Answer</span>
+    </div>
+
+    <pre><code><span class="keyword">Correct Answer:</span>
+<span class="string">for...in returns enumerable property keys and for...of returns iterable values</span>
+
+<span class="keyword">Explanation:</span>
+for...in is designed for property enumeration.
+
+for...of is designed for iteration over iterable objects.
+
+For an array:
+
+for...in → indexes
+for...of → values</code></pre>
+
+</div>
+`
+};
+
+
+const javaScriptForInForOfQuestion31 = {
+    question: "What will be the output of the following JavaScript program?",
+
+    program: `
+<div class="program-code-box">
+
+    <pre class="program-code-box-pre"><code class="program-code-box-code"><span class="program-code-box-keyword">let</span> str = <span class="program-code-box-string">"HELLO"</span>;
+
+<span class="program-code-box-keyword">for</span> (<span class="program-code-box-keyword">let</span> x <span class="program-code-box-keyword">in</span> str)
+{
+    console.log(str[x]);
+}</code></pre>
+
+</div>
+`,
+
+    options: [
+        "0 1 2 3 4",
+        "H E L L O",
+        "HELLO",
+        "TypeError"
+    ],
+
+    answer: 1,
+
+    solution: `
+<div class="code-box">
+
+    <div class="code-title">
+        <span>Answer</span>
+    </div>
+
+    <pre><code><span class="keyword">Output:</span>
+<span class="string">H
+E
+L
+L
+O</span>
+
+<span class="keyword">Explanation:</span>
+for...in returns the indexes of the string.
+
+Those indexes are then used with str[x] to access each character.</code></pre>
+
+</div>
+`
+};
+
+
+const javaScriptForInForOfQuestion32 = {
+    question: "What will be the output of the following JavaScript program?",
+
+    program: `
+<div class="program-code-box">
+
+    <pre class="program-code-box-pre"><code class="program-code-box-code"><span class="program-code-box-keyword">let</span> str = <span class="program-code-box-string">"ABC"</span>;
+
+<span class="program-code-box-keyword">for</span> (<span class="program-code-box-keyword">let</span> x <span class="program-code-box-keyword">of</span> str)
+{
+    console.log(x + <span class="program-code-box-string">"X"</span>);
+}</code></pre>
+
+</div>
+`,
+
+    options: [
+        "0X 1X 2X",
+        "AX BX CX",
+        "ABCX",
+        "TypeError"
+    ],
+
+    answer: 1,
+
+    solution: `
+<div class="code-box">
+
+    <div class="code-title">
+        <span>Answer</span>
+    </div>
+
+    <pre><code><span class="keyword">Output:</span>
+<span class="string">AX
+BX
+CX</span>
+
+<span class="keyword">Explanation:</span>
+for...of directly returns each character.
+
+Each character is concatenated with the string "X".</code></pre>
+
+</div>
+`
+};
+
+
+const javaScriptForInForOfQuestion33 = {
+    question: "What will be the output of the following JavaScript program?",
+
+    program: `
+<div class="program-code-box">
+
+    <pre class="program-code-box-pre"><code class="program-code-box-code"><span class="program-code-box-keyword">let</span> obj = {
+    a: <span class="program-code-box-number">1</span>
+};
+
+Object.defineProperty(obj, <span class="program-code-box-string">"b"</span>, {
+    value: <span class="program-code-box-number">2</span>,
+    enumerable: <span class="program-code-box-keyword">false</span>
+});
+
+<span class="program-code-box-keyword">for</span> (<span class="program-code-box-keyword">let</span> key <span class="program-code-box-keyword">in</span> obj)
+{
+    console.log(key);
+}</code></pre>
+
+</div>
+`,
+
+    options: [
+        "a b",
+        "a",
+        "b",
+        "No output"
+    ],
+
+    answer: 1,
+
+    solution: `
+<div class="code-box">
+
+    <div class="code-title">
+        <span>Answer</span>
+    </div>
+
+    <pre><code><span class="keyword">Output:</span>
+<span class="string">a</span>
+
+<span class="keyword">Explanation:</span>
+for...in visits enumerable properties only.
+
+Property b was explicitly created with enumerable: false.
+
+Therefore, b is skipped.</code></pre>
+
+</div>
+`
+};
+
+
+const javaScriptForInForOfQuestion34 = {
+    question: "What will be the output of the following JavaScript program?",
+
+    program: `
+<div class="program-code-box">
+
+    <pre class="program-code-box-pre"><code class="program-code-box-code"><span class="program-code-box-keyword">let</span> parent = {
+    x: <span class="program-code-box-number">10</span>
+};
+
+<span class="program-code-box-keyword">let</span> child = Object.create(parent);
+
+child.y = <span class="program-code-box-number">20</span>;
+
+<span class="program-code-box-keyword">for</span> (<span class="program-code-box-keyword">let</span> key <span class="program-code-box-keyword">in</span> child)
+{
+    console.log(key);
+}</code></pre>
+
+</div>
+`,
+
+    options: [
+        "y only",
+        "x only",
+        "y x",
+        "No output"
+    ],
+
+    answer: 2,
+
+    solution: `
+<div class="code-box">
+
+    <div class="code-title">
+        <span>Answer</span>
+    </div>
+
+    <pre><code><span class="keyword">Output:</span>
+<span class="string">y
+x</span>
+
+<span class="keyword">Explanation:</span>
+for...in can enumerate enumerable inherited properties as well as own properties.
+
+y is an own enumerable property of child.
+
+x is an enumerable inherited property from parent.
+
+Therefore, both are visited.</code></pre>
+
+</div>
+`
+};
+
+
+const javaScriptForInForOfQuestion35 = {
+    question: "What will be the output of the following JavaScript program?",
+
+    program: `
+<div class="program-code-box">
+
+    <pre class="program-code-box-pre"><code class="program-code-box-code"><span class="program-code-box-keyword">let</span> arr = [<span class="program-code-box-number">10</span>, <span class="program-code-box-number">20</span>, <span class="program-code-box-number">30</span>];
+
+<span class="program-code-box-keyword">for</span> (<span class="program-code-box-keyword">let</span> i <span class="program-code-box-keyword">in</span> arr)
+{
+    <span class="program-code-box-keyword">if</span> (i == <span class="program-code-box-string">"1"</span>)
+        <span class="program-code-box-keyword">continue</span>;
+
+    console.log(arr[i]);
+}</code></pre>
+
+</div>
+`,
+
+    options: [
+        "10 20 30",
+        "20 30",
+        "10 30",
+        "10 20"
+    ],
+
+    answer: 2,
+
+    solution: `
+<div class="code-box">
+
+    <div class="code-title">
+        <span>Answer</span>
+    </div>
+
+    <pre><code><span class="keyword">Output:</span>
+<span class="string">10
+30</span>
+
+<span class="keyword">Explanation:</span>
+for...in gives indexes 0, 1 and 2.
+
+When i is "1", continue skips that iteration.
+
+Therefore, arr[0] and arr[2] are printed.</code></pre>
+
+</div>
+`
+};
+
+
+const javaScriptForInForOfQuestion36 = {
+    question: "What will be the output of the following JavaScript program?",
+
+    program: `
+<div class="program-code-box">
+
+    <pre class="program-code-box-pre"><code class="program-code-box-code"><span class="program-code-box-keyword">let</span> arr = [<span class="program-code-box-number">1</span>, <span class="program-code-box-number">2</span>, <span class="program-code-box-number">3</span>];
+
+<span class="program-code-box-keyword">for</span> (<span class="program-code-box-keyword">let</span> value <span class="program-code-box-keyword">of</span> arr)
+{
+    <span class="program-code-box-keyword">if</span> (value === <span class="program-code-box-number">2</span>)
+        <span class="program-code-box-keyword">break</span>;
+
+    console.log(value);
+}</code></pre>
+
+</div>
+`,
+
+    options: [
+        "1",
+        "1 2",
+        "1 2 3",
+        "2 3"
+    ],
+
+    answer: 0,
+
+    solution: `
+<div class="code-box">
+
+    <div class="code-title">
+        <span>Answer</span>
+    </div>
+
+    <pre><code><span class="keyword">Output:</span>
+<span class="string">1</span>
+
+<span class="keyword">Explanation:</span>
+The first value is 1, so it is printed.
+
+The next value is 2.
+
+The break statement immediately terminates the loop.
+
+Therefore, 2 and 3 are not printed.</code></pre>
+
+</div>
+`
+};
+
+
+const javaScriptForInForOfQuestion37 = {
+    question: "What will be the output of the following JavaScript program?",
+
+    program: `
+<div class="program-code-box">
+
+    <pre class="program-code-box-pre"><code class="program-code-box-code"><span class="program-code-box-keyword">let</span> arr = [<span class="program-code-box-number">10</span>, <span class="program-code-box-number">20</span>];
+
+<span class="program-code-box-keyword">for</span> (<span class="program-code-box-keyword">let</span> i <span class="program-code-box-keyword">in</span> arr)
+{
+    console.log(<span class="program-code-box-keyword">typeof</span> i, i);
+}
+
+<span class="program-code-box-keyword">for</span> (<span class="program-code-box-keyword">let</span> value <span class="program-code-box-keyword">of</span> arr)
+{
+    console.log(<span class="program-code-box-keyword">typeof</span> value, value);
+}</code></pre>
+
+</div>
+`,
+
+    options: [
+        "number 0, number 1, number 10, number 20",
+        "string 0, string 1, number 10, number 20",
+        "string 0, string 1, string 10, string 20",
+        "number 0, number 1, string 10, string 20"
+    ],
+
+    answer: 1,
+
+    solution: `
+<div class="code-box">
+
+    <div class="code-title">
+        <span>Answer</span>
+    </div>
+
+    <pre><code><span class="keyword">Output:</span>
+<span class="string">string 0
+string 1
+number 10
+number 20</span>
+
+<span class="keyword">Explanation:</span>
+for...in returns array indexes as strings.
+
+for...of returns the actual array values.
+
+Therefore, the first loop produces string values and the second loop produces number values.</code></pre>
+
+</div>
+`
+};
+
+
+const javaScriptForInForOfQuestion38 = {
+    question: "What will be the output of the following JavaScript program?",
+
+    program: `
+<div class="program-code-box">
+
+    <pre class="program-code-box-pre"><code class="program-code-box-code"><span class="program-code-box-keyword">let</span> arr = [<span class="program-code-box-number">10</span>, <span class="program-code-box-number">20</span>];
+
+<span class="program-code-box-keyword">for</span> (<span class="program-code-box-keyword">let</span> i <span class="program-code-box-keyword">in</span> arr)
+{
+    i++;
+    console.log(i);
+}</code></pre>
+
+</div>
+`,
+
+    options: [
+        "0 1",
+        "1 2",
+        "0 1 2",
+        "1 3"
+    ],
+
+    answer: 1,
+
+    solution: `
+<div class="code-box">
+
+    <div class="code-title">
+        <span>Answer</span>
+    </div>
+
+    <pre><code><span class="keyword">Output:</span>
+<span class="string">1
+2</span>
+
+<span class="keyword">Explanation:</span>
+Although for...in initially gives indexes as strings, the ++ operator converts the string index into a number.
+
+For "0": i++ makes it 1.
+
+For "1": i++ makes it 2.</code></pre>
+
+</div>
+`
+};
+
+
+const javaScriptForInForOfQuestion39 = {
+    question: "What will be the output of the following JavaScript program?",
+
+    program: `
+<div class="program-code-box">
+
+    <pre class="program-code-box-pre"><code class="program-code-box-code"><span class="program-code-box-keyword">let</span> arr = [<span class="program-code-box-number">10</span>, <span class="program-code-box-number">20</span>, <span class="program-code-box-number">30</span>];
+
+<span class="program-code-box-keyword">for</span> (<span class="program-code-box-keyword">let</span> i <span class="program-code-box-keyword">in</span> arr)
+{
+    <span class="program-code-box-keyword">if</span> (i === <span class="program-code-box-string">"1"</span>)
+        arr[i] = <span class="program-code-box-number">100</span>;
+}
+
+console.log(arr);</code></pre>
+
+</div>
+`,
+
+    options: [
+        "[10, 20, 30]",
+        "[100, 100, 100]",
+        "[10, 100, 30]",
+        "[10, 20, 100]"
+    ],
+
+    answer: 2,
+
+    solution: `
+<div class="code-box">
+
+    <div class="code-title">
+        <span>Answer</span>
+    </div>
+
+    <pre><code><span class="keyword">Output:</span>
+<span class="string">[10, 100, 30]</span>
+
+<span class="keyword">Explanation:</span>
+When i becomes "1", the condition is true.
+
+arr[i] means arr["1"], which refers to the second element.
+
+Therefore, 20 is replaced by 100.</code></pre>
+
+</div>
+`
+};
+
+
+const javaScriptForInForOfQuestion40 = {
+    question: "What will be the output of the following JavaScript program?",
+
+    program: `
+<div class="program-code-box">
+
+    <pre class="program-code-box-pre"><code class="program-code-box-code"><span class="program-code-box-keyword">let</span> arr = [<span class="program-code-box-number">1</span>, <span class="program-code-box-number">2</span>, <span class="program-code-box-number">3</span>];
+
+<span class="program-code-box-keyword">for</span> (<span class="program-code-box-keyword">let</span> i <span class="program-code-box-keyword">in</span> arr)
+{
+    <span class="program-code-box-keyword">for</span> (<span class="program-code-box-keyword">let</span> value <span class="program-code-box-keyword">of</span> arr)
+    {
+        console.log(i, value);
+    }
+}</code></pre>
+
+</div>
+`,
+
+    options: [
+        "0 1 1 2 2 3",
+        "0 1 0 2 0 3",
+        "0 1 0 2 0 3 1 1 1 2 1 3 2 1 2 2 2 3",
+        "1 0 2 0 3 0"
+    ],
+
+    answer: 2,
+
+    solution: `
+<div class="code-box">
+
+    <div class="code-title">
+        <span>Answer</span>
+    </div>
+
+    <pre><code><span class="keyword">Output:</span>
+<span class="string">0 1
+0 2
+0 3
+1 1
+1 2
+1 3
+2 1
+2 2
+2 3</span>
+
+<span class="keyword">Explanation:</span>
+The outer for...in loop runs 3 times with indexes 0, 1 and 2.
+
+For every outer iteration, the inner for...of loop runs through all three values.
+
+Therefore, 3 × 3 = 9 combinations are printed.</code></pre>
+
+</div>
+`
+};
+
 const javascriptIntroductionQuestions = [
-    
+
     javascriptIntroductionQuestion5,
     javascriptIntroductionQuestion6,
     javascriptIntroductionQuestion7,
@@ -3073,6 +5105,46 @@ const javascriptIntroductionQuestions = [
     javascriptVariableQuestion48,
     javascriptVariableQuestion49,
     javascriptVariableQuestion50,
+    javaScriptForInForOfQuestion1,
+    javaScriptForInForOfQuestion2,
+    javaScriptForInForOfQuestion3,
+    javaScriptForInForOfQuestion4,
+    javaScriptForInForOfQuestion5,
+    javaScriptForInForOfQuestion6,
+    javaScriptForInForOfQuestion7,
+    javaScriptForInForOfQuestion8,
+    javaScriptForInForOfQuestion9,
+    javaScriptForInForOfQuestion10,
+    javaScriptForInForOfQuestion11,
+    javaScriptForInForOfQuestion12,
+    javaScriptForInForOfQuestion13,
+    javaScriptForInForOfQuestion14,
+    javaScriptForInForOfQuestion15,
+    javaScriptForInForOfQuestion16,
+    javaScriptForInForOfQuestion17,
+    javaScriptForInForOfQuestion18,
+    javaScriptForInForOfQuestion19,
+    javaScriptForInForOfQuestion20,
+    javaScriptForInForOfQuestion21,
+    javaScriptForInForOfQuestion22,
+    javaScriptForInForOfQuestion23,
+    javaScriptForInForOfQuestion24,
+    javaScriptForInForOfQuestion25,
+    javaScriptForInForOfQuestion26,
+    javaScriptForInForOfQuestion27,
+    javaScriptForInForOfQuestion28,
+    javaScriptForInForOfQuestion29,
+    javaScriptForInForOfQuestion30,
+    javaScriptForInForOfQuestion31,
+    javaScriptForInForOfQuestion32,
+    javaScriptForInForOfQuestion33,
+    javaScriptForInForOfQuestion34,
+    javaScriptForInForOfQuestion35,
+    javaScriptForInForOfQuestion36,
+    javaScriptForInForOfQuestion37,
+    javaScriptForInForOfQuestion38,
+    javaScriptForInForOfQuestion39,
+    javaScriptForInForOfQuestion40,
     javascriptVariableQuestion51,
     javascriptVariableQuestion52,
     javascriptVariableQuestion53,
